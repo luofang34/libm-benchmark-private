@@ -1,0 +1,6 @@
+cargo +nightly clean
+     Removed 9398 files, 1.6GiB total
+cargo clean --manifest-path benchmarks/Cargo.toml
+     Removed 870 files, 82.6MiB total
+cargo clean --manifest-path benchmarks/boards/esp32c6/Cargo.toml
+     Removed 1756 files, 437.6MiB total

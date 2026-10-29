@@ -8,10 +8,10 @@ section                    size         addr
 .bss                        432   1082134324
 .noinit                       0   1082134756
 .rodata_desc                256   1107296288
-.rodata                   14560   1107296544
-.rodata.wifi                  0   1107311104
-.text_gap                    36   1107311104
-.text                     41874   1107311140
+.rodata                   14608   1107296544
+.rodata.wifi                  0   1107311152
+.text_gap                    36   1107311152
+.text                     41968   1107311188
 .rtc_fast.text                0   1342177280
 .rtc_fast.data                0   1342177280
 .rtc_fast.bss                 0   1342177280
@@ -21,6 +21,6 @@ section                    size         addr
 .eh_frame                  2516            0
 .comment                    153            0
 .riscv.attributes            78            0
-Total                    511599
+Total                    511741
 
 

@@ -29,6 +29,10 @@ def capability(device, manifest):
         raise ValueError('application image extent differs')
     if not device['spi_ctrl'] & (1 << 23):
         raise ValueError('Flash is not in DIO mode')
+    if (device['mspi_clock'] != 0x500 or device['spi_clock'] != 0x80000000
+            or (device['sysclk'] >> 16) & 3 != 1 or (device['sysclk'] >> 24) & 127 != 40
+            or device['cache_ctrl'] & 1):
+        raise ValueError('unexpected runtime MSPI clock or cache configuration')
 
 
 def check_intervals(trials, device):
@@ -110,7 +114,7 @@ def metadata(device, firmware):
         dataset_sha=device['dataset_sha'], build_flags=firmware['build_flags'],
         clock_hz=device['clock_hz'], timer='core_cycles', timer_hz=device['clock_hz'], counter_bits=32,
         interrupt_configuration='mstatus.MIE=0; hardware USB Serial/JTAG; no RTOS or radio tasks',
-        memory_configuration=f"cached DIO Flash; header 40 MHz; runtime MSPI_CONF={device['mspi_clock']:#x}, SYSCLK={device['sysclk']:#x}, CACHE_CTRL={device['cache_ctrl']:#x}; SPI CTRL={device['spi_ctrl']:#x}; SPI CLOCK={device['spi_clock']:#x}; SRAM stack; SYSTIMER cross-check={device['timer_clock_hz']} Hz; HP core only",
+        memory_configuration=f"cached DIO Flash 80 MHz (PLL 480/6, SPI divider 1); header requests 40 MHz; MSPI_CONF={device['mspi_clock']:#x}, SYSCLK={device['sysclk']:#x}, CACHE_CTRL={device['cache_ctrl']:#x}; SPI CTRL={device['spi_ctrl']:#x}; SPI CLOCK={device['spi_clock']:#x}; SRAM stack; SYSTIMER cross-check={device['timer_clock_hz']} Hz; HP core only",
         text_bytes=sections['.text'] + sections['.rwtext'] + sections['.trap'], rodata_bytes=sections['.rodata'] + sections['.rodata_desc'],
         ram_bytes=sections['.data'] + sections['.bss'] + sections['.rwtext'] + sections['.trap'], data_bytes=sections['.data'], bss_bytes=sections['.bss'],
         size_scope='whole dual-algorithm app; static RAM includes IRAM code; excludes 128 KiB payload and other stack frames',

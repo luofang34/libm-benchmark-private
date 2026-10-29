@@ -36,7 +36,19 @@ def retrieve(fd, directory, timeout=30):
         selector.register(fd, selectors.EVENT_READ)
         deadline = time.monotonic() + timeout
         os.write(fd, b'POWBENCH/1 INFO\n')
-        metadata = json.loads(read_line(fd, selector, pending, deadline))
+        preamble = bytearray()
+        while True:
+            line = read_line(fd, selector, pending, deadline)
+            start = line.find(b'{"protocol"')
+            if start >= 0:
+                preamble.extend(line[:start])
+                if len(preamble) > 65536:
+                    raise ValueError('boot output exceeds the size limit')
+                metadata = json.loads(line[start:])
+                break
+            preamble.extend(line + b'\n')
+            if len(preamble) > 65536:
+                raise ValueError('boot output exceeds the size limit')
         if metadata.get('protocol') != 'POWBENCH/1' or metadata.get('state') != 'complete':
             raise ValueError('device has not identified a completed pow benchmark')
         for key in ['run_id', 'firmware_sha', 'dataset_sha', 'payload_sha256']:
@@ -63,6 +75,8 @@ def retrieve(fd, directory, timeout=30):
         directory.mkdir(parents=True, exist_ok=False)
         (directory / 'device.json').write_text(json.dumps(metadata, indent=2) + '\n')
         (directory / 'payload.bin').write_bytes(payload)
+        if preamble:
+            (directory / 'boot-output.bin').write_bytes(preamble)
         return metadata
 
 

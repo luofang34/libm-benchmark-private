@@ -8,34 +8,34 @@
 42000354 00000018 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.15
 4200036c 00000040 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.18
 420003ac 00000041 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.19
-420003ed 0000015e r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.20
-4200054c 00000018 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.21
-42000564 00000018 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.22
-4200057c 0000000f r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.23
-4200058b 00000012 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.24
-420005a8 00000018 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.26
-420005c0 00000009 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.28
-420005c9 0000000a r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.29
-420005d3 0000000a r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.30
+420003ed 0000018a r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.20
+42000578 00000018 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.21
+42000590 00000018 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.22
+420005a8 0000000f r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.23
+420005b7 00000012 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.24
+420005d4 00000018 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.26
+420005ec 00000009 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.28
+420005f5 0000000a r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.29
+420005ff 0000000a r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.30
 42000208 00000009 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.4
 42000211 00000009 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.6
 4200021a 0000000a r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.7
 42000224 00000007 r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.8
 4200022c 0000008c r .Lanon.00abb1c17cd56555fba714ee6b4ecc91.9
-420007d3 00000019 r .Lanon.3a59becad8ee3320e381879aee46d712.247
-420007ec 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.269
-420007f1 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.270
-420007f6 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.271
-420007fb 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.272
-420007a7 0000001d r .Lanon.3a59becad8ee3320e381879aee46d712.70
-420007c4 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.71
-420007c9 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.72
-420007ce 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.73
-420005dd 000000c8 r .Lanon.de5ab5713a2521bdc646a87325d741e7.193
-420006a5 00000100 r .Lanon.de5ab5713a2521bdc646a87325d741e7.198
-420007a5 00000002 r .Lanon.de5ab5713a2521bdc646a87325d741e7.395
-42000900 00000800 r .Lanon.e2b037d13fea814f7152e09544110e45.95
-42001100 00000c00 r .Lanon.e2b037d13fea814f7152e09544110e45.96
+420007ff 00000019 r .Lanon.3a59becad8ee3320e381879aee46d712.247
+42000818 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.269
+4200081d 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.270
+42000822 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.271
+42000827 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.272
+420007d3 0000001d r .Lanon.3a59becad8ee3320e381879aee46d712.70
+420007f0 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.71
+420007f5 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.72
+420007fa 00000005 r .Lanon.3a59becad8ee3320e381879aee46d712.73
+42000609 000000c8 r .Lanon.de5ab5713a2521bdc646a87325d741e7.193
+420006d1 00000100 r .Lanon.de5ab5713a2521bdc646a87325d741e7.198
+420007d1 00000002 r .Lanon.de5ab5713a2521bdc646a87325d741e7.395
+42000930 00000800 r .Lanon.e2b037d13fea814f7152e09544110e45.95
+42001130 00000c00 r .Lanon.e2b037d13fea814f7152e09544110e45.96
 00000000 00000000 a .Lline_table_start0
 00000000 00000000 a .Lline_table_start0
 00000000 00000000 a .Lline_table_start0
@@ -74,8 +74,8 @@
 00000331 00000000 a .Lline_table_start2
 000003a1 00000000 a .Lline_table_start2
 00001047 00000000 a .Lline_table_start2
-42003a24 00000000 t .Lpcrel_hi0
-42003a2c 00000000 t .Lpcrel_hi1
+42003a54 00000000 t .Lpcrel_hi0
+42003a5c 00000000 t .Lpcrel_hi1
 40800284 00000000 t .Lpcrel_hi10
 40800294 00000000 t .Lpcrel_hi11
 408002a4 00000000 t .Lpcrel_hi12
@@ -86,7 +86,7 @@
 408002f4 00000000 t .Lpcrel_hi17
 40800304 00000000 t .Lpcrel_hi18
 40800314 00000000 t .Lpcrel_hi19
-42003a56 00000000 t .Lpcrel_hi2
+42003a86 00000000 t .Lpcrel_hi2
 40800324 00000000 t .Lpcrel_hi20
 40800334 00000000 t .Lpcrel_hi21
 40800344 00000000 t .Lpcrel_hi22
@@ -97,7 +97,7 @@
 40800394 00000000 t .Lpcrel_hi27
 408003a4 00000000 t .Lpcrel_hi28
 408003b4 00000000 t .Lpcrel_hi29
-42003a5e 00000000 t .Lpcrel_hi3
+42003a8e 00000000 t .Lpcrel_hi3
 408003c4 00000000 t .Lpcrel_hi30
 408003d4 00000000 t .Lpcrel_hi31
 408003e4 00000000 t .Lpcrel_hi32
@@ -106,16 +106,16 @@
 40800414 00000000 t .Lpcrel_hi35
 40800424 00000000 t .Lpcrel_hi36
 40800438 00000000 t .Lpcrel_hi37
-42003a8a 00000000 t .Lpcrel_hi38
-42003aa2 00000000 t .Lpcrel_hi39
+42003aba 00000000 t .Lpcrel_hi38
+42003ad2 00000000 t .Lpcrel_hi39
 4080017a 00000000 t .Lpcrel_hi4
-42003aaa 00000000 t .Lpcrel_hi40
-42003abe 00000000 t .Lpcrel_hi41
-42003ac6 00000000 t .Lpcrel_hi42
-42003ace 00000000 t .Lpcrel_hi43
-42003aee 00000000 t .Lpcrel_hi44
-42003af6 00000000 t .Lpcrel_hi45
-42003b1e 00000000 t .Lpcrel_hi46
+42003ada 00000000 t .Lpcrel_hi40
+42003aee 00000000 t .Lpcrel_hi41
+42003af6 00000000 t .Lpcrel_hi42
+42003afe 00000000 t .Lpcrel_hi43
+42003b1e 00000000 t .Lpcrel_hi44
+42003b26 00000000 t .Lpcrel_hi45
+42003b4e 00000000 t .Lpcrel_hi46
 4080018c 00000000 t .Lpcrel_hi5
 40800244 00000000 t .Lpcrel_hi6
 40800254 00000000 t .Lpcrel_hi7
@@ -193,18 +193,18 @@
 40000e08 00000000 A //wDev_ProcessRxSucData
 40000e0c 00000000 A //wdevProcessRxSucDataAll
 40000e34 00000000 A //wdev_is_data_in_rxlist
-420080ee 00000000 T AES
-420080ee 00000000 T APB_SARADC
-420080ee 00000000 T ASSIST_DEBUG
-420080ee 00000000 T BLE_SEC
-420080ee 00000000 T BLE_TIMER
-420080ee 00000000 T BT_BB
-420080ee 00000000 T BT_BB_NMI
-420080ee 00000000 T BT_MAC
+4200817c 00000000 T AES
+4200817c 00000000 T APB_SARADC
+4200817c 00000000 T ASSIST_DEBUG
+4200817c 00000000 T BLE_SEC
+4200817c 00000000 T BLE_TIMER
+4200817c 00000000 T BT_BB
+4200817c 00000000 T BT_BB_NMI
+4200817c 00000000 T BT_MAC
 4087ff1c 00000000 A BasicOFDMSched_ptr
-420080ee 00000000 T CACHE
-420080ee 00000000 T COEX
-420080ee 00000000 T CPU_PERI_TIMEOUT
+4200817c 00000000 T CACHE
+4200817c 00000000 T COEX
+4200817c 00000000 T CPU_PERI_TIMEOUT
 40000630 00000000 A Cache_Address_Through_Cache
 4000066c 00000000 A Cache_Config_ICache_Autoload
 40000690 00000000 A Cache_Disable_ICache
@@ -241,66 +241,66 @@
 40000654 00000000 A Cache_UnMask_Dram0
 4000068c 00000000 A Cache_Unlock_Addr
 40000684 00000000 A Cache_Unlock_ICache_Items
-420080ee 00000000 T DMA_IN_CH0
-420080ee 00000000 T DMA_IN_CH1
-420080ee 00000000 T DMA_IN_CH2
-420080ee 00000000 T DMA_OUT_CH0
-420080ee 00000000 T DMA_OUT_CH1
-420080ee 00000000 T DMA_OUT_CH2
-420080ee 00000000 T DefaultHandler
+4200817c 00000000 T DMA_IN_CH0
+4200817c 00000000 T DMA_IN_CH1
+4200817c 00000000 T DMA_IN_CH2
+4200817c 00000000 T DMA_OUT_CH0
+4200817c 00000000 T DMA_OUT_CH1
+4200817c 00000000 T DMA_OUT_CH2
+4200817c 00000000 T DefaultHandler
 400001d4 00000000 A Disable_QMode
-420080ee 00000000 T ECC
-420080ee 00000000 T EFUSE
+4200817c 00000000 T ECC
+4200817c 00000000 T EFUSE
 400001d8 00000000 A Enable_QMode
-420080ee 00000008 T EspDefaultHandler
-42003b50 00000000 T ExceptionHandler
-420080ee 00000000 T FROM_CPU_INTR0
-420080ee 00000000 T FROM_CPU_INTR1
-420080ee 00000000 T FROM_CPU_INTR2
-420080ee 00000000 T FROM_CPU_INTR3
-420080ee 00000000 T GPIO
-420080ee 00000000 T GPIO_NMI
+4200817c 00000008 T EspDefaultHandler
+42003b80 00000000 T ExceptionHandler
+4200817c 00000000 T FROM_CPU_INTR0
+4200817c 00000000 T FROM_CPU_INTR1
+4200817c 00000000 T FROM_CPU_INTR2
+4200817c 00000000 T FROM_CPU_INTR3
+4200817c 00000000 T GPIO
+4200817c 00000000 T GPIO_NMI
 40000bf4 00000000 A GetAccess
 400000bc 00000000 A GetSecurityInfoProc
 400000b4 00000000 A GetUartDevice
-420080ee 00000000 T HP_APM_M0
-420080ee 00000000 T HP_APM_M1
-420080ee 00000000 T HP_APM_M2
-420080ee 00000000 T HP_APM_M3
-420080ee 00000000 T HP_PERI_TIMEOUT
-420080ee 00000000 T I2C_EXT0
-420080ee 00000000 T I2C_MASTER
-420080ee 00000000 T I2S0
-420080ee 00000000 T LEDC
-420080ee 00000000 T LP_APM0
-420080ee 00000000 T LP_APM_M0
-420080ee 00000000 T LP_APM_M1
-420080ee 00000000 T LP_I2C
-420080ee 00000000 T LP_PERI_TIMEOUT
-420080ee 00000000 T LP_RTC_TIMER
-420080ee 00000000 T LP_TIMER
-420080ee 00000000 T LP_UART
-420080ee 00000000 T LP_WDT
-420080ee 00000000 T MCPWM0
+4200817c 00000000 T HP_APM_M0
+4200817c 00000000 T HP_APM_M1
+4200817c 00000000 T HP_APM_M2
+4200817c 00000000 T HP_APM_M3
+4200817c 00000000 T HP_PERI_TIMEOUT
+4200817c 00000000 T I2C_EXT0
+4200817c 00000000 T I2C_MASTER
+4200817c 00000000 T I2S0
+4200817c 00000000 T LEDC
+4200817c 00000000 T LP_APM0
+4200817c 00000000 T LP_APM_M0
+4200817c 00000000 T LP_APM_M1
+4200817c 00000000 T LP_I2C
+4200817c 00000000 T LP_PERI_TIMEOUT
+4200817c 00000000 T LP_RTC_TIMER
+4200817c 00000000 T LP_TIMER
+4200817c 00000000 T LP_UART
+4200817c 00000000 T LP_WDT
+4200817c 00000000 T MCPWM0
 40000754 00000000 A MD5Final
 4000074c 00000000 A MD5Init
 40000750 00000000 A MD5Update
 4000063c 00000000 A MMU_Get_Page_Mode
 40000638 00000000 A MMU_Set_Page_Mode
-420080ee 00000000 T MODEM_PERI_TIMEOUT
-420080ee 00000000 T MSPI
-420080ee 00000000 T PARL_IO
-420080ee 00000000 T PAU
-420080ee 00000000 T PCNT
-420080ee 00000000 T PMU
+4200817c 00000000 T MODEM_PERI_TIMEOUT
+4200817c 00000000 T MSPI
+4200817c 00000000 T PARL_IO
+4200817c 00000000 T PAU
+4200817c 00000000 T PCNT
+4200817c 00000000 T PMU
 40000be0 00000000 A RC_GetBlockAckTime
-420080ee 00000000 T RMT
+4200817c 00000000 T RMT
 40000634 00000000 A ROM_Boot_Cache_Init
-420080ee 00000000 T RSA
-420080ee 00000000 T SHA
-420080ee 00000000 T SLC0
-420080ee 00000000 T SLC1
-420080ee 00000000 T SPI2
+4200817c 00000000 T RSA
+4200817c 00000000 T SHA
+4200817c 00000000 T SLC0
+4200817c 00000000 T SLC1
+4200817c 00000000 T SPI2
 40000158 00000000 A SPIEraseArea
 4000019c 00000000 A SPILock
 400001a0 00000000 A SPIMasterReadModeCnfig
@@ -313,23 +313,23 @@
 400001bc 00000000 A SPI_read_data
 400001c0 00000000 A SPI_sector_erase
 4000015c 00000000 A SPI_write_enable
-420080ee 00000000 T SYSTIMER_TARGET0
-420080ee 00000000 T SYSTIMER_TARGET1
-420080ee 00000000 T SYSTIMER_TARGET2
+4200817c 00000000 T SYSTIMER_TARGET0
+4200817c 00000000 T SYSTIMER_TARGET1
+4200817c 00000000 T SYSTIMER_TARGET2
 400001c4 00000000 A SelectSpiFunction
 400001c8 00000000 A SetSpiDrvs
-420080ee 00000000 T TG0_T0_LEVEL
-420080ee 00000000 T TG0_T1_LEVEL
-420080ee 00000000 T TG0_WDT_LEVEL
-420080ee 00000000 T TG1_T0_LEVEL
-420080ee 00000000 T TG1_T1_LEVEL
-420080ee 00000000 T TG1_WDT_LEVEL
-420080ee 00000000 T TRACE
+4200817c 00000000 T TG0_T0_LEVEL
+4200817c 00000000 T TG0_T1_LEVEL
+4200817c 00000000 T TG0_WDT_LEVEL
+4200817c 00000000 T TG1_T0_LEVEL
+4200817c 00000000 T TG1_T1_LEVEL
+4200817c 00000000 T TG1_WDT_LEVEL
+4200817c 00000000 T TRACE
 40000dac 00000000 A TRC_AMPDU_PER_DOWN_THRESHOLD
 40000db0 00000000 A TRC_AMPDU_PER_UP_THRESHOLD
 40000dc0 00000000 A TRC_PER_IS_GOOD
-420080ee 00000000 T TWAI0
-420080ee 00000000 T TWAI1
+4200817c 00000000 T TWAI0
+4200817c 00000000 T TWAI1
 40800080 00000006 T Trap1
 40800088 00000006 T Trap10
 40800090 00000006 T Trap11
@@ -361,55 +361,55 @@
 40800160 00000006 T Trap7
 40800168 00000006 T Trap8
 40800170 00000006 T Trap9
-420080ee 00000000 T UART0
-420080ee 00000000 T UART1
-420080ee 00000000 T UHCI0
-420080ee 00000000 T USB_DEVICE
+4200817c 00000000 T UART0
+4200817c 00000000 T UART1
+4200817c 00000000 T UHCI0
+4200817c 00000000 T USB_DEVICE
 400000b8 00000000 A UartDwnLdProc
 40000054 00000000 A UartGetCmdLn
 40000050 00000000 A UartRxString
 400000c0 00000000 A Uart_Init
-420080ee 00000000 T WIFI_BB
-420080ee 00000000 T WIFI_MAC
-420080ee 00000000 T WIFI_MAC_NMI
-420080ee 00000000 T WIFI_PWR
+4200817c 00000000 T WIFI_BB
+4200817c 00000000 T WIFI_MAC
+4200817c 00000000 T WIFI_MAC_NMI
+4200817c 00000000 T WIFI_PWR
 400001cc 00000000 A Wait_SPI_Idle
-420080ee 00000000 T ZB_MAC
+4200817c 00000000 T ZB_MAC
 40801064 00000001 B _ESP_HAL_DEVICE_PERIPHERALS
-42003b54 00000256 t <str>::trim_matches::<<char>::is_whitespace>
-420080f6 00000008 t esp_hal::fmt::__unwrap_failed::<esp_hal::interrupt::riscv::Error>
-42003daa 00000002 t core::ptr::drop_glue::<heapless::string::String<131072>>
+42003b84 00000256 t <str>::trim_matches::<<char>::is_whitespace>
+42008184 00000008 t esp_hal::fmt::__unwrap_failed::<esp_hal::interrupt::riscv::Error>
+42003dda 00000002 t core::ptr::drop_glue::<heapless::string::String<131072>>
 40801065 00000001 b esp_hal::ESP_HAL_LOCK (.0)
-420080fe 0000014e t <esp_hal::rom::regi2c::RawRegI2cField>::write_field
-42007bd6 00000224 t <core::ffi::c_str::CStr>::to_str
-42007744 0000022c t <core::fmt::Formatter>::pad_integral
-4200743a 0000030a t <core::fmt::Formatter>::pad
-42003dac 0000035c t pow_esp32c6::telemetry::serve
-4200a542 0000385c t sha2::sha256::compress256
+4200818c 0000014e t <esp_hal::rom::regi2c::RawRegI2cField>::write_field
+42007c64 00000224 t <core::ffi::c_str::CStr>::to_str
+420077d2 0000022c t <core::fmt::Formatter>::pad_integral
+420074c8 0000030a t <core::fmt::Formatter>::pad
+42003ddc 0000035c t pow_esp32c6::telemetry::serve
+4200a5d0 0000385c t sha2::sha256::compress256
 40800b54 00000044 t esp_storage::chip_specific::spiflash_read
 40800e98 0000009c d esp_rom_sys::syscall::SYSCALL_TABLE
 40801066 00000001 b esp_hal::gpio::GPIO_LOCK (.0)
 4080106c 00000078 b esp_hal::system::PERIPHERAL_REF_COUNT
 40801067 00000001 b esp_hal::debugger::DEBUGGER_LOCK (.0)
-4200727c 000001be t core::fmt::write
-42007f68 00000010 t core::result::unwrap_failed
-42007bc6 00000010 t core::panicking::panic_bounds_check
-42007bb6 00000010 t core::panicking::panic
-42007276 00000006 t core::panicking::panic_fmt
-42009894 00000ca0 t pow_bench_core::kernel::baseline_pow
-42008e46 00000a4e t pow_bench_core::kernel::candidate_pow
-42008a8a 0000003c t pow_bench_core::kernel::arithmetic_f32
-42008ac6 00000380 t pow_bench_core::kernel::run
-42001e00 00001c00 r pow_bench_core::vectors::DATA
-420087da 0000020a t libm::math::sqrt::sqrt
-420089e4 000000a6 t libm::math::scalbn::scalbn
+4200730a 000001be t core::fmt::write
+42007ff6 00000010 t core::result::unwrap_failed
+42007c54 00000010 t core::panicking::panic_bounds_check
+42007c44 00000010 t core::panicking::panic
+42007304 00000006 t core::panicking::panic_fmt
+42009922 00000ca0 t pow_bench_core::kernel::baseline_pow
+42008ed4 00000a4e t pow_bench_core::kernel::candidate_pow
+42008b18 0000003c t pow_bench_core::kernel::arithmetic_f32
+42008b54 00000380 t pow_bench_core::kernel::run
+42001e30 00001c00 r pow_bench_core::vectors::DATA
+42008868 0000020a t libm::math::sqrt::sqrt
+42008a72 000000a6 t libm::math::scalbn::scalbn
 40800508 00000280 t esp_hal::gpio::interrupt::default_gpio_interrupt_handler
-42007ba6 00000010 t core::slice::index::slice_index_fail
-42001d00 00000100 r libm::math::generic::sqrt::RSQRT_TAB
+42007c34 00000010 t core::slice::index::slice_index_fail
+42001d30 00000100 r libm::math::generic::sqrt::RSQRT_TAB
 40800b98 00000014 t esp_hal::interrupt::riscv::plic::INTERRUPT_TO_PRIORITY
-42000800 00000100 r core::unicode::unicode_data::white_space::WHITESPACE_MAP
+4200082c 00000100 r core::unicode::unicode_data::white_space::WHITESPACE_MAP
 40801060 00000001 b esp_storage::maybe_with_critical_section::LOCK (.0)
-42007970 0000005e t <core::fmt::Formatter>::pad_integral::write_prefix
+420079fe 0000005e t <core::fmt::Formatter>::pad_integral::write_prefix
 40801068 00000004 b <esp_hal::gpio::GpioBank>::async_operations::FLAGS (.0)
 40800f34 0000000c b <esp_hal::peripherals::GPIO0 as esp_hal::gpio::InputPin>::waker::WAKER
 40800f40 0000000c b <esp_hal::peripherals::GPIO1 as esp_hal::gpio::InputPin>::waker::WAKER
@@ -436,32 +436,32 @@
 4080103c 0000000c b <esp_hal::peripherals::GPIO22 as esp_hal::gpio::InputPin>::waker::WAKER
 40801048 0000000c b <esp_hal::peripherals::GPIO23 as esp_hal::gpio::InputPin>::waker::WAKER
 40801054 0000000c b <esp_hal::peripherals::GPIO27 as esp_hal::gpio::InputPin>::waker::WAKER
-420086b4 00000126 t <esp_storage::common::FlashStorage as embedded_storage::ReadStorage>::read
-42007f78 000000a0 t <u8 as core::fmt::Display>::fmt
-42004108 00000032 t <pow_bench_core::kernel::Implementation as core::fmt::Debug>::fmt
-4200413a 00000010 t <&str as core::fmt::Display>::fmt
-4200414a 00000010 t <heapless::string::String<64> as core::fmt::Display>::fmt
-4200415a 00000012 t <heapless::string::String<12> as core::fmt::Display>::fmt
-4200416c 00000030 t <pow_bench_core::kernel::Mode as core::fmt::Debug>::fmt
-42007dfa 0000016e t <u32 as core::fmt::Display>::fmt
-4200419c 000000e2 t <heapless::string::String<131072> as core::fmt::Write>::write_char
-4200427e 0000003c t <heapless::string::String<131072> as core::fmt::Write>::write_str
-420042ba 000000d6 t <heapless::string::String<32> as core::fmt::Write>::write_char
-42004390 00000036 t <heapless::string::String<32> as core::fmt::Write>::write_str
-420043c6 000000d8 t <heapless::string::String<64> as core::fmt::Write>::write_char
-4200449e 00000036 t <heapless::string::String<64> as core::fmt::Write>::write_str
-420044d4 000000ea t <heapless::string::String<2048> as core::fmt::Write>::write_char
-420045be 00000040 t <heapless::string::String<2048> as core::fmt::Write>::write_str
-420045fe 000000d8 t <heapless::string::String<12> as core::fmt::Write>::write_char
-420046d6 00000040 t <heapless::string::String<12> as core::fmt::Write>::write_str
-4200807e 00000070 t <u64 as core::fmt::LowerHex>::fmt
-42008018 00000066 t <u8 as core::fmt::LowerHex>::fmt
-420079ce 000001d8 t <u64 as core::fmt::Display>::fmt
-42004716 0000001e t <heapless::string::String<131072> as core::fmt::Write>::write_fmt
-42004734 0000001e t <heapless::string::String<32> as core::fmt::Write>::write_fmt
-42004752 0000001e t <heapless::string::String<64> as core::fmt::Write>::write_fmt
-42004770 0000001e t <heapless::string::String<2048> as core::fmt::Write>::write_fmt
-4200478e 00000014 t <heapless::string::String<12> as core::fmt::Write>::write_fmt
+42008742 00000126 t <esp_storage::common::FlashStorage as embedded_storage::ReadStorage>::read
+42008006 000000a0 t <u8 as core::fmt::Display>::fmt
+42004138 00000032 t <pow_bench_core::kernel::Implementation as core::fmt::Debug>::fmt
+4200416a 00000010 t <&str as core::fmt::Display>::fmt
+4200417a 00000010 t <heapless::string::String<64> as core::fmt::Display>::fmt
+4200418a 00000012 t <heapless::string::String<12> as core::fmt::Display>::fmt
+4200419c 00000030 t <pow_bench_core::kernel::Mode as core::fmt::Debug>::fmt
+42007e88 0000016e t <u32 as core::fmt::Display>::fmt
+420041cc 000000e2 t <heapless::string::String<131072> as core::fmt::Write>::write_char
+420042ae 0000003c t <heapless::string::String<131072> as core::fmt::Write>::write_str
+420042ea 000000d6 t <heapless::string::String<32> as core::fmt::Write>::write_char
+420043c0 00000036 t <heapless::string::String<32> as core::fmt::Write>::write_str
+420043f6 000000d8 t <heapless::string::String<64> as core::fmt::Write>::write_char
+420044ce 00000036 t <heapless::string::String<64> as core::fmt::Write>::write_str
+42004504 000000ea t <heapless::string::String<2048> as core::fmt::Write>::write_char
+420045ee 00000040 t <heapless::string::String<2048> as core::fmt::Write>::write_str
+4200462e 000000d8 t <heapless::string::String<12> as core::fmt::Write>::write_char
+42004706 00000040 t <heapless::string::String<12> as core::fmt::Write>::write_str
+4200810c 00000070 t <u64 as core::fmt::LowerHex>::fmt
+420080a6 00000066 t <u8 as core::fmt::LowerHex>::fmt
+42007a5c 000001d8 t <u64 as core::fmt::Display>::fmt
+42004746 0000001e t <heapless::string::String<131072> as core::fmt::Write>::write_fmt
+42004764 0000001e t <heapless::string::String<32> as core::fmt::Write>::write_fmt
+42004782 0000001e t <heapless::string::String<64> as core::fmt::Write>::write_fmt
+420047a0 0000001e t <heapless::string::String<2048> as core::fmt::Write>::write_fmt
+420047be 00000014 t <heapless::string::String<12> as core::fmt::Write>::write_fmt
 4000013c 00000000 A _SPIEraseArea
 40000140 00000000 A _SPI_write_enable
 40800bac 00000134 T __EXTERNAL_INTERRUPTS
@@ -473,8 +473,8 @@
 40000898 00000000 A __addvsi3
 4000089c 00000000 A __ashldi3
 400008a0 00000000 A __ashrdi3
-42008408 00000078 T __assert_func
-42008480 000000ba T __atoi
+42008496 00000078 T __assert_func
+4200850e 000000ba T __atoi
 400008a4 00000000 A __bswapdi2
 400008a8 00000000 A __bswapsi2
 400008ac 00000000 A __clear_cache
@@ -525,7 +525,7 @@
 40000950 00000000 A __lshrdi3
 40000a5c 00000000 a __ltdf2
 40000a60 00000000 A __ltsf2
-4200853a 0000015c T __mktime
+420085c8 0000015c T __mktime
 4000095c 00000000 A __moddi3
 40000960 00000000 A __modsi3
 40000964 00000000 A __muldc3
@@ -548,13 +548,13 @@
 400009a8 00000000 A __popcountsi2
 400009ac 00000000 A __powidf2
 400009b0 00000000 A __powisf2
-42003a24 00000000 W __pre_init
+42003a54 00000000 W __pre_init
 40800f34 00000000 A __sbss
 00000000 00000000 A __sdata
 00000000 00000000 A __sidata
-420080ee 00000008 T __stack_chk_fail
+4200817c 00000008 T __stack_chk_fail
 40801120 00000000 A __stack_chk_guard
-42008696 0000001e T __strnlen
+42008724 0000001e T __strnlen
 40000a74 00000000 a __subdf3
 40000a78 00000000 A __subsf3
 400009bc 00000000 A __subvdi3
@@ -570,14 +570,14 @@
 400009e0 00000000 A __umodsi3
 400009e4 00000000 A __unorddf2
 400009e8 00000000 A __unordsf2
-42003a7e 00000000 t _abs_start
+42003aae 00000000 t _abs_start
 408010e4 00000000 A _bss_end
 40800f34 00000000 A _bss_start
 40800440 00000000 T _continue_interrupt_trap
 40800f34 00000000 A _data_end
 40800ce0 00000000 A _data_start
-42003b50 00000000 T _default_abort
-4200a534 0000000e T _default_setup_interrupts
+42003b80 00000000 T _default_abort
+4200a5c2 0000000e T _default_setup_interrupts
 408001a8 00000000 T _default_start_trap
 40800ce0 00000000 A _dram_data_start
 4000012c 00000000 A _esp_rom_spiflash_erase_block
@@ -587,8 +587,8 @@
 40000130 00000000 A _esp_rom_spiflash_write
 40800176 00000000 T _pre_default_start_trap
 408001ac 00000000 T _pre_default_start_trap_ret
-42003b50 00000000 T _pre_init_trap
-42003a00 00000000 A _rodata_end
+42003b80 00000000 T _pre_init_trap
+42003a30 00000000 A _rodata_end
 42000120 00000000 A _rodata_start
 40000010 00000000 A _rom_chip_id
 40000014 00000000 A _rom_eco_version
@@ -598,15 +598,15 @@
 50000000 00000000 A _rtc_fast_data_start
 50000000 00000000 A _rtc_fast_persistent_end
 50000000 00000000 A _rtc_fast_persistent_start
-4200ddb6 00000000 A _rtc_fast_sidata
+4200de44 00000000 A _rtc_fast_sidata
 00000ce0 00000000 R _rwtext_len
-4200824c 000001bc T _setup_interrupts
+420082da 000001bc T _setup_interrupts
 40800ce0 00000000 A _sidata
 408010e4 00000000 A _stack_end
 408010e4 00000000 A _stack_end_cpu0
 4086e610 00000000 A _stack_start
 4086e610 00000000 A _stack_start_cpu0
-42003a76 00000000 T _start
+42003aa6 00000000 T _start
 40800430 00000000 T _start_DefaultHandler_trap
 408002c0 00000000 T _start_Trap10_trap
 408002d0 00000000 T _start_Trap11_trap
@@ -639,13 +639,13 @@
 40800290 00000000 T _start_Trap7_trap
 408002a0 00000000 T _start_Trap8_trap
 408002b0 00000000 T _start_Trap9_trap
-42003b2a 00000024 T _start_rust
+42003b5a 00000024 T _start_rust
 408001a8 00000000 T _start_trap
 408004e0 00000028 T _start_trap_rust
 408004c8 00000018 T _start_trap_rust_hal
 40800000 00000000 T _trap_section_origin
 40800000 00000000 W _vector_table
-42003b50 00000000 T abort
+42003b80 00000000 T abort
 40000578 00000000 A abs
 40001130 00000000 A abs_temp
 4000137c 00000000 A agc_reg_init
@@ -1062,7 +1062,7 @@
 40001354 00000000 A mac_tx_chan_offset
 40000c60 00000000 A mac_tx_set_duration
 40000c6c 00000000 A mac_tx_set_plcp2
-420047a2 00002ad4 T main
+420047d2 00002b32 T main
 40000748 00000000 A md5_vector
 400011bc 00000000 A meas_tone_pwr_db
 400004b4 00000000 a memcmp
@@ -1503,7 +1503,7 @@
 40001428 00000000 A spur_reg_write_one_tone
 4087ff8c 00000000 A sta_rxcb
 400004b8 00000000 A strcpy
-4200dd9e 00000018 t strlen
+4200de2c 00000018 t strlen
 400004c4 00000000 A strncmp
 400004bc 00000000 A strncpy
 4087ffd4 00000000 A syscall_table_ptr

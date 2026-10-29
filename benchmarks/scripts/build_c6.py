@@ -18,11 +18,14 @@ FLAGS = '-C target-cpu=generic-rv32 -C link-arg=-Tlinkall.x'
 
 def app_image(merged):
     image = merged[0x10000:]
-    if image[0] != 0xe9 or image[12:14] != b'\x0d\x00' or image[23] != 1:
+    if (len(image) < 24 or image[0] != 0xe9 or not 1 <= image[1] <= 16
+            or image[12:14] != b'\x0d\x00' or image[23] != 1):
         raise ValueError('wrong ESP32-C6 image header')
     offset, checksum = 24, 0xef
     segments = []
     for _ in range(image[1]):
+        if offset + 8 > len(image):
+            raise ValueError('truncated load segment header')
         address, length = struct.unpack_from('<II', image, offset)
         offset += 8
         segment = image[offset:offset + length]
@@ -33,10 +36,10 @@ def app_image(merged):
         segments.append(dict(address=hex(address), bytes=length))
         offset += length
     end = (offset + 16) // 16 * 16
-    if image[end - 1] != checksum or hashlib.sha256(image[:end]).digest() != image[end:end + 32]:
-        raise ValueError('ESP image checksum or appended SHA mismatch')
     if len(image) != end + 32 or len(image) > 0x100000:
         raise ValueError('unexpected application extent')
+    if image[end - 1] != checksum or hashlib.sha256(image[:end]).digest() != image[end:end + 32]:
+        raise ValueError('ESP image checksum or appended SHA mismatch')
     return image, segments
 
 

@@ -1,10 +1,10 @@
-[2026-10-29T18:24:39Z WARN ] Monitor options were provided, but `--monitor/-M` flag isn't set. These options will be ignored.
-[2026-10-29T18:24:39Z INFO ] Serial port: '/dev/cu.usbmodem1101'
-[2026-10-29T18:24:39Z INFO ] Connecting...
-[2026-10-29T18:24:39Z INFO ] Using flash stub
+[2026-10-29T18:29:18Z WARN ] Monitor options were provided, but `--monitor/-M` flag isn't set. These options will be ignored.
+[2026-10-29T18:29:18Z INFO ] Serial port: '/dev/cu.usbmodem1101'
+[2026-10-29T18:29:18Z INFO ] Connecting...
+[2026-10-29T18:29:18Z INFO ] Using flash stub
 Chip type:         esp32c6 (revision v0.1)
 Crystal frequency: 40 MHz
 Flash size:        8MB
 Features:          WiFi 6, BT 5
 MAC address:       f0:f5:bd:0c:22:88
-[2026-10-29T18:24:40Z INFO ] Binary successfully written to flash!
+[2026-10-29T18:29:19Z INFO ] Binary successfully written to flash!

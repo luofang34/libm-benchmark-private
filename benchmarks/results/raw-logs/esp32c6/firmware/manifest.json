@@ -1,7 +1,7 @@
 {
-  "firmware_sha": "f515ea9e57f9747424edfee9c27c3dcbd76f24800d4bd77e7bb3f80de2067bbd",
-  "firmware_bytes": 60688,
-  "merged_sha": "8b57552536f893ebf3799241b37f4e03d9945bdba5d6e1e56b555cc94612d880",
+  "firmware_sha": "fe65c2c9d89a8d41f3818f0598a7cce3e96dbfebc710574d8f594a8f39d3c2b5",
+  "firmware_bytes": 60816,
+  "merged_sha": "f30f7f28bd13131167f527bd2c75a2b35b2f76f6813206601aa6fcc432c383e7",
   "sections": {
     ".trap": 1288,
     ".rwtext": 2008,
@@ -11,10 +11,10 @@
     ".bss": 432,
     ".noinit": 0,
     ".rodata_desc": 256,
-    ".rodata": 14560,
+    ".rodata": 14608,
     ".rodata.wifi": 0,
     ".text_gap": 36,
-    ".text": 41874,
+    ".text": 41968,
     ".rtc_fast.text": 0,
     ".rtc_fast.data": 0,
     ".rtc_fast.bss": 0,
@@ -28,15 +28,15 @@
   "segments": [
     {
       "address": "0x42000020",
-      "bytes": 14816
+      "bytes": 14864
     },
     {
       "address": "0x40800000",
       "bytes": 20
     },
     {
-      "address": "0x42003a24",
-      "bytes": 41876
+      "address": "0x42003a54",
+      "bytes": 41968
     },
     {
       "address": "0x40800014",
@@ -90,8 +90,8 @@
     ]
   },
   "compiler_version": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: aarch64-apple-darwin\nrelease: 1.99.0\nLLVM version: 23.1.1\n",
-  "build_flags": "-C target-cpu=generic-rv32 -C link-arg=-Tlinkall.x; release opt-level=3,lto=fat,codegen-units=1,panic=abort; DIO Flash 40 MHz",
-  "source_sha": "b33d67631e55fd0790ab3e2d198d17993d547ecd",
+  "build_flags": "-C target-cpu=generic-rv32 -C link-arg=-Tlinkall.x; release opt-level=3,lto=fat,codegen-units=1,panic=abort; DIO image header 40 MHz; runtime MSPI source/clock reported by device",
+  "source_sha": "dae5e159d1d17f208e9832bc0863b86d911fa5d3",
   "hal_revision": "5ba50dd2d21136370050dd2f7a767761e01cfeef; esp-hal 1.0.0",
   "rom_revision": "160b10794227eb84805b8676fe188c1110801e9d; esp-rom-sys 0.1.5; esp32c6.rom.rvfp.ld",
   "clock_source": "ROM detected 40 MHz crystal; PLL 160 MHz; cycle counter cross-checked against SYSTIMER within 0.5%",

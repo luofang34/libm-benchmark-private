@@ -1,0 +1,68 @@
+[
+  {
+    "check": "fmt",
+    "command": [
+      "cargo",
+      "fmt",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "clippy",
+    "command": [
+      "cargo",
+      "clippy",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 101
+  },
+  {
+    "check": "test",
+    "command": [
+      "cargo",
+      "test",
+      "--all-targets"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "doc",
+    "command": [
+      "cargo",
+      "doc"
+    ],
+    "exit_code": 101
+  },
+  {
+    "check": "release",
+    "command": [
+      "cargo",
+      "build",
+      "--release"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "api",
+    "command": [
+      "python3",
+      "etc/update-api-list.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "api-test",
+    "command": [
+      "cargo",
+      "test",
+      "-p",
+      "update-api-list"
+    ],
+    "exit_code": 0
+  }
+]

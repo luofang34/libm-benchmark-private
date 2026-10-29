@@ -13,7 +13,7 @@ from collect import retrieve
 
 
 class Transport(unittest.TestCase):
-    def transfer(self, corrupt=False):
+    def transfer(self, corrupt=False, boot_output=False):
         master, slave = pty.openpty()
         tty.setraw(slave)
         payload = b'actual serial payload\nwith a second line\n'
@@ -29,6 +29,8 @@ class Transport(unittest.TestCase):
                         received.extend(os.read(master, 1024))
                     self.assertEqual(received, expected)
                     if expected.endswith(b'INFO\n'):
+                        if boot_output:
+                            os.write(master, b'ESP-ROM boot\n\x1b[0;32mI (20) boot: app\x1b[0m\npartial boot line')
                         info = dict(protocol='POWBENCH/1', state='complete', run_id='pty-test',
                                     firmware_sha='test-firmware', dataset_sha='test-dataset',
                                     payload_sha256=hashlib.sha256(payload).hexdigest())
@@ -51,6 +53,8 @@ class Transport(unittest.TestCase):
                 else:
                     retrieve(slave, destination, timeout=3)
                     self.assertEqual((destination / 'payload.bin').read_bytes(), payload)
+                    if boot_output:
+                        self.assertIn(b'ESP-ROM boot', (destination / 'boot-output.bin').read_bytes())
         finally:
             thread.join(timeout=5)
             os.close(master)
@@ -64,6 +68,9 @@ class Transport(unittest.TestCase):
 
     def test_corrupt_transfer_is_not_persisted(self):
         self.transfer(corrupt=True)
+
+    def test_boot_output_preceding_real_protocol_is_preserved(self):
+        self.transfer(boot_output=True)
 
 
 if __name__ == '__main__':

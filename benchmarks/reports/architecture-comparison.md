@@ -155,6 +155,34 @@ The approximately 3× WASM improvement does not generalize to these MCUs. Ordina
 
 Nine target profiles pass compilation and instruction/helper inspection in [codegen.json](../results/codegen/codegen.json). Those unlinked objects are not board measurements. Unconnected boards remain explicitly blocked in [profiles.json](../boards/profiles.json). K230 CPU0/CPU1 and ATmega328P are deferred and have not been built or flashed. No upstream PR has been opened.
 
+## ESP32-C6: ROM software FP32/FP64
+
+The ESP32-C6 v0.1, MAC `f0:f5:bd:0c:22:88`, completed 420 timed batches and 448 accuracy pairs through USB Serial/JTAG CDC (`303a:1001`). ROM identification reports a 40 MHz crystal and 8 MiB Flash; the PCB model remains unreported. Source is `dae5e159d1d17f208e9832bc0863b86d911fa5d3`; the running application's self-hash matches `fe65c2c9d89a8d41f3818f0598a7cce3e96dbfebc710574d8f594a8f39d3c2b5`. The successful flash log and complete boot/capture evidence are in [raw-logs/esp32c6](../results/raw-logs/esp32c6/).
+
+The HP core uses `riscv32imac-unknown-none-elf`, `generic-rv32`, ILP32, Rust 1.99.0/LLVM 23.1.1, optimization 3, fat LTO and one codegen unit. MISA reports no F/D extensions. This population uses **Espressif ROM software floating point**, not Rust compiler arithmetic helpers. Decoded AUIPC/JALR targets confirm binary64 add/multiply/divide calls to `0x400009f4`, `0x40000a64`, and `0x400008d0`; the FP32 probe also reaches the corresponding ROM helpers. These addresses follow the pinned [esp-rom-sys runtime](https://github.com/esp-rs/esp-hal/blob/160b10794227eb84805b8676fe188c1110801e9d/esp-rom-sys/ld/esp32c6/rom/esp32c6.rom.rvfp.ld). No hardware FP or unintended pow/exp/log/FMA libcall is found.
+
+The nominal core clock is 160 MHz; the SYSTIMER check observes 159,962,003 Hz. MPCER=1 selects cycles, MPCMR=1 enables wrapping, and MSTATUS.MIE=0 disables interrupts. Each batch is cross-checked against SYSTIMER; the longest batch including warmups is 3,999 microseconds. No radio, RTOS or LP-core workload starts. These are clock-ratio checks, not absolute crystal calibration. Five warmups precede 15 alternating paired rounds in one accepted boot; the narrow intervals do not establish across-boot or across-board variability.
+
+**Actual cached Flash is DIO at 80 MHz**, although the image header requests 40 MHz. The [HAL clock initialization](https://github.com/esp-rs/esp-hal/blob/5ba50dd2d21136370050dd2f7a767761e01cfeef/esp-hal/src/clock/clocks_ll/esp32c6.rs) selects PLL 480/6 for MSPI. Captured MSPI_CONF=`0x500`, SPI_CLOCK=`0x80000000`, SYSCLK=`0x28010000`, and CACHE_CTRL=0 confirm that source, divider 1 and enabled cache access. The ingester enforces these settings so a header field cannot substitute for measured runtime configuration.
+
+| Ordinary-positive mode | Baseline cycles/op | Candidate cycles/op | Candidate ns/op (p10–p90) | Paired speedup (p10–p90) |
+|---|---:|---:|---:|---:|
+| Throughput | 9,847.05 | 6,998.91 | 43,743.16 (43,743.16–43,743.46) | 1.406941× (1.406925–1.406941) |
+| Dependency | 9,853.63 | 7,000.89 | 43,755.57 (43,755.57–43,755.86) | 1.407482× (1.407466–1.407482) |
+
+| Distribution | Throughput speedup | Dependency speedup |
+|---|---:|---:|
+| Near one, large exponent | 1.136× | 1.136× |
+| Small/large magnitudes | 1.378× | 1.378× |
+| Negative, integer exponent | 1.308× | 1.305× |
+| Subnormal | 1.175× | 1.175× |
+| Overflow/underflow edge | 1.073× | 1.073× |
+| Special values | **0.720×** | **0.784×** |
+
+All checksums, per-round timings and both implementations' intervals are retained in [hardware.csv](../results/raw-logs/esp32c6/hardware.csv) and [timing.csv](../results/raw-logs/esp32c6/timing.csv). MPFR at 256 bits accepts every pair: candidate observed maximum `0.4999999999955404` ULP, baseline `0.6710095080248282` ULP, with zero classification or signed-zero mismatches. This finite corpus does not prove a global error bound.
+
+Separate offline compute fixtures occupy 16,960 bytes (baseline) and 20,480 bytes (candidate), a **3,520-byte Flash increase**. Text changes by −1,282 bytes, read-only data by +4,864 bytes, and static RAM by −48 bytes (2,668 → 2,620, including IRAM code). Image padding/checksum/hash are included; the common bootloader and partition table are excluded. Peak stack is unmeasured. The dual-algorithm telemetry app is 60,816 bytes with 4,324 bytes of static RAM including IRAM, excluding its 128 KiB retained payload and other stack frames. Size fixtures use source `b33d67631e55fd0790ab3e2d198d17993d547ecd`; their math/size entry points are unchanged by the telemetry register fields. These are MCU replacement costs, not compressed application deltas.
+
 ## Hosted hardware comparison
 
 The same 448-pair corpus and shared kernel ran on three hosted configurations. Each used Rust 1.99.0, LLVM 23.1.1, `target-cpu=native`, five warmup rounds and 15 paired rounds. Source commit: `a177542435f4aab8a8bc1fe235604537193094f7`. The [manual Linux workflow](https://github.com/luofang34/libm-benchmark-private/actions/runs/40862882436) completed successfully on both architectures; downloaded artifact SHA-256 values were checked against GitHub's recorded digests.
@@ -184,8 +212,38 @@ The DFU log records successful erase/download followed by an error while request
 
 For F411, both DFU downloads exited successfully, but departure did not establish CDC. A BOOT0-released power cycle produced CDC and the complete matching capture. The successful image explicitly initializes startup state; the experiment does not isolate which bootloader state caused the departure failure. Revalidate without hardware using `python3 benchmarks/scripts/ingest_f411.py benchmarks/results/raw-logs/stm32f411 --firmware benchmarks/results/raw-logs/stm32f411/firmware`. No original Flash backup was retained.
 
-The shared benchmark's four Rust tests, 28 Python tests, strict Clippy/doc checks and H743/F411/RP2350/RP2040 build preflights pass. RP2350 regression tests reprocess the real captures and require the DCP accuracy failure to remain visible; passing test execution does not mean that DCP arithmetic passed accuracy. The repository-wide tests (2,198 passed), release, format and API gates pass using nightly `41089d07a`; the API script also requires `RUSTUP_TOOLCHAIN=nightly`. Stable cannot compile the root compiler-builtins workspace's nightly features. Strict repository-wide Clippy and documentation gates fail on existing upstream documentation issues (including 105 compiler-builtins Clippy errors for missing safety sections and other documentation issues). Those failures are not reported as successful CI.
+The shared benchmark's four Rust tests, 36 Python tests, strict Clippy/doc checks and H743/F411/RP2350/RP2040/ESP32-C6 build preflights pass. RP2350 regression tests reprocess the real captures and require the DCP accuracy failure to remain visible; passing test execution does not mean that DCP arithmetic passed accuracy. The repository-wide tests (2,198 passed), release, format and API gates pass using nightly `41089d07a`; the API script also requires `RUSTUP_TOOLCHAIN=nightly`. Stable cannot compile the root compiler-builtins workspace's nightly features. Strict repository-wide Clippy and documentation gates fail on existing upstream documentation issues (including 105 compiler-builtins Clippy errors for missing safety sections and other documentation issues). Those failures are not reported as successful CI.
 
 Revalidate RP2350 using `python3 benchmarks/scripts/ingest_rp2350.py benchmarks/results/raw-logs/rp2350-<mode> --firmware benchmarks/results/raw-logs/rp2350-<mode>/firmware`. Arm and Hazard3 pass normally; DCP requires the explicit failed-evidence option described above. All three flashes were verified, booted directly to USB CDC, and returned matching hashes; no original Flash backup was retained.
 
 Revalidate RP2040 using `python3 benchmarks/scripts/ingest_rp2040.py benchmarks/results/raw-logs/rp2040 --firmware benchmarks/results/raw-logs/rp2040/firmware`. The accepted flash verified and booted directly to CDC. Regression checks cover the real capture, rejected Flash divider, incorrect SysTick/USB clock, inconsistent batch interval and firmware substitution. Archived gate logs preserve successful benchmark/firmware checks and the repository-wide documentation failures described above.
+
+Revalidate C6 with `python3 benchmarks/scripts/ingest_c6.py benchmarks/results/raw-logs/esp32c6 --firmware benchmarks/results/raw-logs/esp32c6/firmware`. Regression checks reprocess the real capture and image; they reject counter saturation, wrong clock/memory settings, inconsistent intervals, firmware substitution, image corruption/truncation, and mismatched ROM symbols. The collector's PTY test covers boot output immediately adjacent to its metadata frame. C6 firmware checks use its cross target; host test harnesses cannot run on this bare-metal binary. Shared-kernel host tests and the complete physical execution provide the runtime validation. No original Flash backup was retained.
+
+## Proposed default scope for the pow patch
+
+The experiment branch deliberately invokes the candidate on every measured target. **The following dispatch policy is a proposal, not applied to these measurements.** The strongest immediate production case is `wasm32-unknown-unknown`: rebuilt ordinary std obtains 3.17× positive throughput, with a measured representative-application delta of +3,551 gzip / +3,207 Brotli bytes. Hosted direct-libm results support adding x86-64 GNU/Linux, AArch64 GNU/Linux and AArch64 macOS; native `std::f64::powf` generally reaches system libm, so this Rust-libm patch does not automatically speed it up. See [STD_INTEGRATION.md](../../experiments/pow/STD_INTEGRATION.md).
+
+Use compile-time target selection rather than `target_os != "none"` or a `std` feature. OS presence does not establish hardware FP64 or arithmetic semantics. An initial whitelist could select the candidate only for:
+
+```rust
+#[cfg_attr(
+    not(any(
+        all(target_arch = "wasm32", target_os = "unknown"),
+        all(
+            target_os = "linux",
+            target_env = "gnu",
+            any(target_arch = "x86_64", target_arch = "aarch64")
+        ),
+        all(target_arch = "aarch64", target_os = "macos")
+    )),
+    path = "pow_fdlibm.rs"
+)]
+mod pow;
+```
+
+Keep the Arm implementation and its tables in `math/pow.rs` and `math/pow/`; restore the baseline as `math/pow_fdlibm.rs`, with its word-setting helper local to that fallback. The public `libm::pow` interface and `no_std` support stay unchanged. Unselected targets compile the fallback without the candidate's tables or runtime dispatch. `powf` (binary32), exp/log and other functions remain outside the patch. Windows, WASI, musl, RISC-V Linux and bare-metal targets would use the fallback until separately qualified; K230 and ATmega remain deferred.
+
+The native whitelist still needs default-CPU and MSRV coverage before release: the measured hosted builds use `target-cpu=native`, which cannot establish results for every compiler-feature configuration. A WASM-only initial patch has the smallest acceptance surface; the three hosted target groups can follow as independent enablement changes. Special-value regressions and table costs must remain visible in either scope. MCU normal-input gains around 1.17–1.55× do not by themselves justify default table costs around 3.4–4 KiB, and the tested DCP runtime fails precision acceptance.
+
+A scoped implementation must retain an explicit benchmark-only path to the Arm algorithm on excluded targets. Otherwise `Candidate` would silently become the fallback and invalidate hardware comparisons. Acceptance should exercise both dispatch branches, verify excluded builds omit the tables, and rerun the actual WASM std sysroot experiment. Keeping the fallback limits rollout risk but adds maintenance of a second algorithm; preserving licensing, exact table generation/provenance, and rounding-mode assumptions remains necessary before an upstream proposal.
