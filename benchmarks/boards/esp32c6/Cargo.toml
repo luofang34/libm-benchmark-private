@@ -16,7 +16,7 @@ path = "src/size.rs"
 required-features = ["size-fixture"]
 
 [dependencies]
-pow-bench-core = { path = "../../core" }
+pow-bench-core = { path = "../../core", features = ["direct-candidate"] }
 esp-hal = { version = "=1.0.0", default-features = false, features = ["esp32c6", "rt", "unstable"] }
 esp-bootloader-esp-idf = { version = "=0.3.0", default-features = false, features = ["esp32c6"] }
 esp-storage = { version = "=0.8.1", features = ["esp32c6"] }

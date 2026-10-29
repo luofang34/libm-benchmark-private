@@ -44,6 +44,9 @@ fn baseline_pow(x: f64, y: f64) -> f64 {
 
 #[inline(never)]
 fn candidate_pow(x: f64, y: f64) -> f64 {
+    #[cfg(feature = "direct-candidate")]
+    return crate::arm::pow(x, y);
+    #[cfg(not(feature = "direct-candidate"))]
     candidate::pow(x, y)
 }
 

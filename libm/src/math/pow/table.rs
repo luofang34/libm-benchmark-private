@@ -1,5 +1,5 @@
 // Copyright (c) 2018-2026, Arm Limited. SPDX-License-Identifier: MIT
-// Generated from the compiled ARM tables by experiments/pow/dump_tables.c.
+// Binary64 tables from ARM optimized-routines math/pow_log_data.c and math/exp_data.c.
 pub(super) const LN2_HI: f64 = 0.6931471805598903;
 pub(super) const LN2_LO: f64 = 5.497923018708371e-14;
 pub(super) const INV_LN2_N: f64 = 184.6649652337873;

@@ -16,7 +16,7 @@ path = "src/size.rs"
 required-features = ["size-fixture"]
 
 [dependencies]
-pow-bench-core = { path = "../../core" }
+pow-bench-core = { path = "../../core", features = ["direct-candidate"] }
 cortex-m = "=0.7.7"
 # Initialize the application stack and vector table independently of bootloader state.
 cortex-m-rt = { version = "=0.7.7", features = ["set-sp", "set-vtor"] }

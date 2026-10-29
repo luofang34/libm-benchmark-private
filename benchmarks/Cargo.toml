@@ -9,6 +9,7 @@ candidate = { package = "libm", path = "../libm", default-features = false }
 
 [workspace.lints.rust]
 unsafe_code = "forbid"
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(assert_no_panic)', 'cfg(x86_no_sse2)'] }
 
 [workspace.lints.clippy]
 unwrap_used = "forbid"

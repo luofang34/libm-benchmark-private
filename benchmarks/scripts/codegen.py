@@ -20,7 +20,7 @@ def build(profile, directory):
     env = os.environ.copy() | {'RUSTFLAGS': flags, 'CARGO_TARGET_DIR': str(target_dir)}
     toolchain = profile.get('toolchain', 'stable')
     cmd = ['cargo', '+' + toolchain, 'rustc', '--release', '--locked', '-p', 'pow-bench-core',
-           '--target', profile['target_triple']]
+           '--features', 'direct-candidate', '--target', profile['target_triple']]
     if toolchain == 'esp':
         cmd += ['-Z', 'build-std=core']
     cmd += ['--', '--emit=llvm-ir,asm,obj']

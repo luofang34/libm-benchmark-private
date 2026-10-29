@@ -23,7 +23,7 @@ def generate():
     domains = {k: [] for k in ['positive', 'near_one', 'magnitude',
                               'negative_integer', 'subnormal', 'range_edge', 'special']}
     special = [0., -0., 1., -1., 2., -2., math.inf, -math.inf,
-               math.nan, number(0x7ff0000000000001), number(1), number(0x10000000000000)]
+               number(0x7ff8000000000000), number(0x7ff0000000000001), number(1), number(0x10000000000000)]
     for i in range(64):
         u, v = rng.random(), rng.random()
         domains['positive'].append((.5 + 1.5 * u, -8 + 16 * v))

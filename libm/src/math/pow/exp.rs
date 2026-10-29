@@ -40,7 +40,7 @@ fn specialcase(tmp: f64, sbits: u64, ki: u64) -> f64 {
     let sbits = sbits.wrapping_add(1022u64 << 52);
     let scale = f64::from_bits(sbits);
     let mut y = scale + scale * tmp;
-    if y.abs() < 1.0 {
+    if y.to_bits() & 0x7fff_ffff_ffff_ffff < 1.0f64.to_bits() {
         // Round before scaling to avoid double rounding in the subnormal range.
         let one = if y < 0.0 { -1.0 } else { 1.0 };
         let lo = scale - y + scale * tmp;

@@ -46,8 +46,8 @@ jobs:
       - name: Measure default CPU and native CPU separately
         shell: bash
         run: |
-          python benchmarks/scripts/run_host.py --target-cpu default --output benchmarks/results/runs/hosted-default
-          python benchmarks/scripts/run_host.py --target-cpu native --output benchmarks/results/runs/hosted-native
+          python benchmarks/scripts/run_host.py --target-cpu default --large-accuracy --output benchmarks/results/runs/hosted-default
+          python benchmarks/scripts/run_host.py --target-cpu native --large-accuracy --output benchmarks/results/runs/hosted-native
       - name: Clean build caches
         if: always()
         shell: bash

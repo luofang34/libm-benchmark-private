@@ -16,7 +16,7 @@ path = "src/size.rs"
 required-features = ["size-fixture"]
 
 [dependencies]
-pow-bench-core = { path = "../../core" }
+pow-bench-core = { path = "../../core", features = ["direct-candidate"] }
 rp2040-hal = { version = "=0.11.0", default-features = false, features = ["rt", "critical-section-impl", "disable-intrinsics"] }
 rp2040-boot2 = "=0.3.0"
 rp2040-flash = "=0.6.0"

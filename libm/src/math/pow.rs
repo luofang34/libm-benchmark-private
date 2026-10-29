@@ -1,7 +1,7 @@
 // Copyright (c) 2018-2026, Arm Limited.
 // SPDX-License-Identifier: MIT
 /*
-Permission is herebygranted, free of charge, to any person obtaining a copy
+Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
@@ -21,10 +21,14 @@ SOFTWARE.
 */
 // Scalar algorithm from ARM optimized-routines math/pow.c.
 
+#[path = "pow/exp.rs"]
 mod exp;
+#[path = "pow/log.rs"]
 mod log;
+#[path = "pow/table.rs"]
 mod table;
 #[cfg(test)]
+#[path = "pow/tests.rs"]
 mod tests;
 
 const SIGN_BIAS: u32 = 0x800 << 7;

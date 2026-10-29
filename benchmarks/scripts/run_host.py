@@ -12,6 +12,7 @@ import subprocess
 import uuid
 
 from results import summarize, write_csv
+from host_accuracy import validate as validate_large_accuracy
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -122,6 +123,7 @@ def main():
     parser.add_argument('--output', type=Path, default=ROOT / 'results/runs' / str(uuid.uuid4()))
     parser.add_argument('--source-revision', default='HEAD')
     parser.add_argument('--target-cpu', choices=['default', 'native'], default='native')
+    parser.add_argument('--large-accuracy', action='store_true')
     args = parser.parse_args()
     directory = args.output.resolve()
     directory.mkdir(parents=True, exist_ok=False)
@@ -131,6 +133,8 @@ def main():
         with (directory / filename).open('w') as f:
             subprocess.run([str(binary), *arguments], stdout=f, check=True)
     references(directory)
+    if args.large_accuracy:
+        validate_large_accuracy(directory, binary, references)
     rows = summarize(list(csv.DictReader((directory / 'timing.csv').open())), meta)
     accuracy = {(r['test_distribution'], r['implementation']): r for r in csv.DictReader((directory / 'accuracy.csv').open())}
     for row in rows:

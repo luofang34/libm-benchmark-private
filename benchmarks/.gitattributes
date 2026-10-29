@@ -1,0 +1,4 @@
+core/src/vectors/data.rs text eol=lf
+vectors/timing.sha256 text eol=lf
+vectors/manifest.json text eol=lf
+vectors/timing.bin -text

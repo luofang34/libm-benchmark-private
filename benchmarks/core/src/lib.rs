@@ -1,6 +1,8 @@
 //! Allocation-free pow kernels and fixed input vectors shared by host and MCU tests.
 #![no_std]
 
+#[cfg(feature = "direct-candidate")]
+mod arm;
 mod kernel;
 mod vectors;
 

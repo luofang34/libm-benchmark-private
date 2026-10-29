@@ -1,4 +1,6 @@
 //! Hosted paired timing and bit-exact output collection for the common pow kernel.
+mod accuracy;
+
 use std::io::{self, Write};
 use std::time::Instant;
 
@@ -6,8 +8,15 @@ use pow_bench_core::{DOMAINS, Implementation, Mode, cases, run, value};
 
 fn main() -> io::Result<()> {
     let mut out = io::BufWriter::new(io::stdout().lock());
-    match std::env::args().nth(1).as_deref() {
+    let mut args = std::env::args().skip(1);
+    match args.next().as_deref() {
         Some("accuracy") => accuracy_blocking(&mut out)?,
+        Some("accuracy-file") => {
+            let path = args.next().ok_or_else(|| {
+                io::Error::new(io::ErrorKind::InvalidInput, "accuracy-file requires a path")
+            })?;
+            accuracy::file_blocking(&mut out, &path)?;
+        }
         _ => benchmark_blocking(&mut out)?,
     }
     out.flush()
