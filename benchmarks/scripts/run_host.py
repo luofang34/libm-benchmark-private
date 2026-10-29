@@ -65,7 +65,7 @@ def references(directory):
                        stdout=csvfile, stderr=log, check=True)
 
 
-def metadata(directory, binary, cpu, features):
+def metadata(directory, binary, cpu, features, source_revision):
     compiler = output(['rustc', '-vV'])
     target = next(line[6:] for line in compiler.splitlines() if line.startswith('host: '))
     arch = platform.machine()
@@ -83,7 +83,7 @@ def metadata(directory, binary, cpu, features):
         compiler_backend=next(s for s in compiler.splitlines() if s.startswith('LLVM version:')),
         compiler_version=compiler.splitlines()[0], run_id=directory.name,
         device_id=platform.node(), architecture=arch,
-        source_sha=output(['git', 'rev-parse', 'HEAD']),
+        source_sha=output(['git', 'rev-parse', source_revision]),
         firmware_sha=hashlib.sha256(binary.read_bytes()).hexdigest(),
         dataset_sha=json.loads((ROOT / 'vectors/manifest.json').read_text())['sha256'],
         build_flags='opt-level=3,lto=fat,codegen-units=1,panic=abort,target-cpu=native',
@@ -100,11 +100,12 @@ def metadata(directory, binary, cpu, features):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, default=ROOT / 'results/runs' / str(uuid.uuid4()))
+    parser.add_argument('--source-revision', default='HEAD')
     args = parser.parse_args()
     directory = args.output.resolve()
     directory.mkdir(parents=True, exist_ok=False)
     binary, cpu, features = build(directory)
-    meta = metadata(directory, binary, cpu, features)
+    meta = metadata(directory, binary, cpu, features, args.source_revision)
     for filename, arguments in [('timing.csv', []), ('accuracy-bits.csv', ['accuracy'])]:
         with (directory / filename).open('w') as f:
             subprocess.run([str(binary), *arguments], stdout=f, check=True)

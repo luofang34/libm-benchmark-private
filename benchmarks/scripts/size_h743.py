@@ -1,4 +1,5 @@
 """Link single-algorithm H743 fixtures and audit actual section replacement costs."""
+import argparse
 import csv
 import hashlib
 import json
@@ -46,6 +47,9 @@ def build(implementation, directory):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source-revision', default='HEAD')
+    args = parser.parse_args()
     directory = ROOT / 'results/runs/h743-size'
     directory.mkdir(parents=True, exist_ok=True)
     rows = [build(implementation, directory) for implementation in ['Baseline', 'Candidate']]
@@ -58,7 +62,7 @@ def main():
         writer.writeheader()
         writer.writerows(rows)
     manifest = dict(build_flags=FLAGS, compiler_version=subprocess.check_output(['rustc', '-vV'], text=True),
-                    source_sha=subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
+                    source_sha=subprocess.check_output(['git', 'rev-parse', args.source_revision], text=True).strip(),
                     dataset_sha=(ROOT / 'vectors/timing.sha256').read_text().strip(), rows=rows)
     (directory / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(json.dumps(rows, indent=2))
