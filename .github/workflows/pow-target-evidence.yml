@@ -1,0 +1,63 @@
+name: Pow target enablement evidence
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm, windows-2025]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Install Linux reference arithmetic
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libmpfr-dev libgmp-dev
+      - name: Install Windows reference arithmetic
+        id: msys
+        if: runner.os == 'Windows'
+        uses: msys2/setup-msys2@ec48f7c5447b3140e2b088413ae3a55687bccb6e
+        with:
+          msystem: UCRT64
+          install: mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-mpfr
+      - name: Expose Windows reference tools
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          POW_MSYS_ROOT: ${{ steps.msys.outputs.msys2-location }}
+        run: Add-Content $env:GITHUB_PATH (Join-Path $env:POW_MSYS_ROOT 'ucrt64\bin')
+      - name: Select Rust toolchain
+        shell: bash
+        run: |
+          rustup toolchain install 1.99.0 --profile minimal
+          rustup override set 1.99.0
+      - name: Verify corpus and shared kernel
+        shell: bash
+        run: |
+          python benchmarks/scripts/generate_vectors.py --check
+          cargo test --manifest-path benchmarks/Cargo.toml --locked
+      - name: Measure default CPU and native CPU separately
+        shell: bash
+        run: |
+          python benchmarks/scripts/run_host.py --target-cpu default --output benchmarks/results/runs/hosted-default
+          python benchmarks/scripts/run_host.py --target-cpu native --output benchmarks/results/runs/hosted-native
+      - name: Clean build caches
+        if: always()
+        shell: bash
+        run: |
+          cargo clean --manifest-path benchmarks/Cargo.toml
+          cargo clean --manifest-path benchmarks/Cargo.toml --target-dir benchmarks/results/runs/hosted-default/target
+          cargo clean --manifest-path benchmarks/Cargo.toml --target-dir benchmarks/results/runs/hosted-native/target
+      - name: Preserve exact results and compiler output
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: pow-target-${{ matrix.runner }}-${{ github.sha }}
+          path: benchmarks/results/runs/hosted-*/
