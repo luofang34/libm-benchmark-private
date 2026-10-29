@@ -1,0 +1,51 @@
+[workspace]
+
+[package]
+name = "pow-esp32c6"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[features]
+size-fixture = []
+size-candidate = ["size-fixture"]
+
+[[bin]]
+name = "pow-size"
+path = "src/size.rs"
+required-features = ["size-fixture"]
+
+[dependencies]
+pow-bench-core = { path = "../../core" }
+esp-hal = { version = "=1.0.0", default-features = false, features = ["esp32c6", "rt", "unstable"] }
+esp-bootloader-esp-idf = { version = "=0.3.0", default-features = false, features = ["esp32c6"] }
+esp-storage = { version = "=0.8.1", features = ["esp32c6"] }
+esp32c6 = "=0.22.0"
+embedded-storage = "=0.3.1"
+heapless = "=0.8.0"
+sha2 = { version = "=0.10.9", default-features = false }
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+
+[lints.rust]
+# Device registers, reset entry and fixed Flash bounds are isolated in hardware modules.
+unsafe_code = "deny"
+
+[lints.clippy]
+unwrap_used = "forbid"
+expect_used = "forbid"
+panic = "forbid"
+todo = "forbid"
+unimplemented = "forbid"
+unreachable = "forbid"
+exit = "forbid"
+mem_forget = "forbid"
+get_unwrap = "forbid"
+let_underscore_must_use = "deny"
+let_underscore_future = "deny"
+await_holding_lock = "deny"
+
