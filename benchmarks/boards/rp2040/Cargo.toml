@@ -1,0 +1,55 @@
+[workspace]
+
+[package]
+name = "pow-rp2040"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[features]
+size-fixture = []
+size-candidate = ["size-fixture"]
+
+[[bin]]
+name = "pow-size"
+path = "src/size.rs"
+required-features = ["size-fixture"]
+
+[dependencies]
+pow-bench-core = { path = "../../core" }
+rp2040-hal = { version = "=0.11.0", default-features = false, features = ["rt", "critical-section-impl", "disable-intrinsics"] }
+rp2040-boot2 = "=0.3.0"
+rp2040-flash = "=0.6.0"
+usb-device = "=0.3.2"
+usbd-serial = "=0.2.2"
+heapless = "=0.8.0"
+sha2 = { version = "=0.10.9", default-features = false }
+
+cortex-m = "=0.7.7"
+cortex-m-rt = { version = "=0.7.7", features = ["set-sp", "set-vtor"] }
+
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+
+[lints.rust]
+# Device registers, reset entry and fixed Flash bounds are isolated in hardware modules.
+unsafe_code = "deny"
+
+[lints.clippy]
+unwrap_used = "forbid"
+expect_used = "forbid"
+panic = "forbid"
+todo = "forbid"
+unimplemented = "forbid"
+unreachable = "forbid"
+exit = "forbid"
+mem_forget = "forbid"
+get_unwrap = "forbid"
+let_underscore_must_use = "deny"
+let_underscore_future = "deny"
+await_holding_lock = "deny"
+
