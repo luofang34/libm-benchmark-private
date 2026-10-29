@@ -117,7 +117,7 @@ def main():
         target_triple=TARGET, target_cpu='generic-rv32', float_abi='ilp32', fpu_mode='software_fp32_fp64',
         target_features={'cpu_defaults': 'generic-rv32', 'rustc_cfg': re.findall(r'target_feature="([^"]+)"', cfg)},
         compiler_version=subprocess.check_output(['rustc', '-vV'], text=True),
-        build_flags=FLAGS + '; release opt-level=3,lto=fat,codegen-units=1,panic=abort; DIO Flash 40 MHz',
+        build_flags=FLAGS + '; release opt-level=3,lto=fat,codegen-units=1,panic=abort; DIO image header 40 MHz; runtime MSPI source/clock reported by device',
         source_sha=subprocess.check_output(['git', 'rev-parse', 'experiment/pow-wasm'], text=True).strip(),
         hal_revision='5ba50dd2d21136370050dd2f7a767761e01cfeef; esp-hal 1.0.0',
         rom_revision='160b10794227eb84805b8676fe188c1110801e9d; esp-rom-sys 0.1.5; esp32c6.rom.rvfp.ld',

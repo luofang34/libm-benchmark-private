@@ -1,0 +1,26 @@
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/firmware/esp32c6/pow-esp32c6.elf  :
+section                    size         addr
+.trap                      1288   1082130432
+.rwtext                    2008   1082131720
+.rwtext.wifi                  0   1082133728
+.data                       596   1082133728
+.data.wifi                    0   1082134324
+.bss                        432   1082134324
+.noinit                       0   1082134756
+.rodata_desc                256   1107296288
+.rodata                   14560   1107296544
+.rodata.wifi                  0   1107311104
+.text_gap                    36   1107311104
+.text                     41874   1107311140
+.rtc_fast.text                0   1342177280
+.rtc_fast.data                0   1342177280
+.rtc_fast.bss                 0   1342177280
+.rtc_fast.persistent          0   1342177280
+.stack                   447788   1082134756
+.espressif.metadata          14            0
+.eh_frame                  2516            0
+.comment                    153            0
+.riscv.attributes            78            0
+Total                    511599
+
+

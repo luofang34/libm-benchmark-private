@@ -105,17 +105,23 @@ fn identity(
     }
     let (misa, mstatus, event, mode): (u32, u32, u32, u32);
     // SAFETY: CSR and SPI register reads do not modify hardware state.
-    let (spi_ctrl, spi_clock) = unsafe {
+    let (spi_ctrl, spi_clock, mspi_clock, sysclk, cache_ctrl) = unsafe {
         asm!("csrr {isa}, misa", "csrr {status}, mstatus", "csrr {event}, 0x7e0", "csrr {mode}, 0x7e1",
             isa = out(reg) misa, status = out(reg) mstatus, event = out(reg) event, mode = out(reg) mode,
             options(nostack));
         let spi = &*esp32c6::SPI0::ptr();
-        (spi.ctrl().read().bits(), spi.clock().read().bits())
+        (
+            spi.ctrl().read().bits(),
+            spi.clock().read().bits(),
+            (*esp32c6::PCR::ptr()).mspi_clk_conf().read().bits(),
+            (*esp32c6::PCR::ptr()).sysclk_conf().read().bits(),
+            (*esp32c6::EXTMEM::ptr()).l1_icache_ctrl().read().bits(),
+        )
     };
     let mut info = String::new();
     writeln!(
         info,
-        "{{\"protocol\":\"POWBENCH/1\",\"state\":\"complete\",\"run_id\":\"esp32c6-{uid}\",\"device_id\":\"{uid}\",\"major_revision\":{},\"minor_revision\":{},\"misa\":{misa},\"mstatus\":{mstatus},\"counter_event\":{event},\"counter_mode\":{mode},\"clock_hz\":{hz},\"timer_clock_hz\":{checked_hz},\"max_batch_us\":{maximum},\"spi_ctrl\":{spi_ctrl},\"spi_clock\":{spi_clock},\"firmware_sha\":\"{hash}\",\"firmware_bytes\":{bytes},\"payload_sha256\":\"{}\",\"dataset_sha\":\"{}\"}}",
+        "{{\"protocol\":\"POWBENCH/1\",\"state\":\"complete\",\"run_id\":\"esp32c6-{uid}\",\"device_id\":\"{uid}\",\"major_revision\":{},\"minor_revision\":{},\"misa\":{misa},\"mstatus\":{mstatus},\"counter_event\":{event},\"counter_mode\":{mode},\"clock_hz\":{hz},\"timer_clock_hz\":{checked_hz},\"max_batch_us\":{maximum},\"spi_ctrl\":{spi_ctrl},\"spi_clock\":{spi_clock},\"mspi_clock\":{mspi_clock},\"sysclk\":{sysclk},\"cache_ctrl\":{cache_ctrl},\"firmware_sha\":\"{hash}\",\"firmware_bytes\":{bytes},\"payload_sha256\":\"{}\",\"dataset_sha\":\"{}\"}}",
         Efuse::major_chip_version(),
         Efuse::minor_chip_version(),
         telemetry::digest(payload)?,

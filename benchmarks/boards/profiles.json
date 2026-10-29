@@ -86,16 +86,19 @@
   {
     "id": "esp32-c6",
     "execution_order": 6,
-    "board": null,
-    "soc": "ESP32-C6",
+    "board": "ESP32-C6 USB board; PCB model unreported",
+    "soc": "ESP32-C6 v0.1",
     "core": "HP RISC-V",
     "target_triple": "riscv32imac-unknown-none-elf",
     "target_cpu": "generic-rv32",
     "requested_target_features": "+m,+a,+c",
     "float_abi": "ilp32",
     "expected_fpu_mode": "software_fp32_fp64",
-    "measurement_status": "BLOCKED",
-    "reason": "Physical board, boot layout and capture transport have not been detected."
+    "measurement_status": "PASS",
+    "reason": "",
+    "accuracy_status": "PASS",
+    "device_id": "f0f5bd0c2288",
+    "results": "results/raw-logs/esp32c6"
   },
   {
     "id": "esp32-p4",

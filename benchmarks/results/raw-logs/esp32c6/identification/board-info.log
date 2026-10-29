@@ -1,0 +1,20 @@
+[2026-10-29T18:14:50Z INFO ] Serial port: '/dev/cu.usbmodem1101'
+[2026-10-29T18:14:50Z INFO ] Connecting...
+[2026-10-29T18:14:50Z INFO ] Using flash stub
+Chip type:         esp32c6 (revision v0.1)
+Crystal frequency: 40 MHz
+Flash size:        8MB
+Features:          WiFi 6, BT 5
+MAC address:       f0:f5:bd:0c:22:88
+
+Security Information:
+=====================
+Flags: 0x00000000 (0)
+Key Purposes: [0, 0, 0, 0, 0, 0, 12]
+Chip ID: 13
+API Version: 0
+Secure Boot: Disabled
+Flash Encryption: Disabled
+SPI Boot Crypt Count (SPI_BOOT_CRYPT_CNT): 0x0
+
+[2026-10-29T18:14:50Z INFO ] Staying in bootloader

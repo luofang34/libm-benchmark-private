@@ -1,0 +1,26 @@
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/results/runs/esp32c6-size/Candidate/pow-size.elf  :
+section                    size         addr
+.trap                      1288   1082130432
+.rwtext                    1300   1082131720
+.rwtext.wifi                  0   1082133020
+.data                        32   1082133020
+.data.wifi                    0   1082133052
+.bss                          0   1082133052
+.noinit                       0   1082133052
+.rodata_desc                256   1107296288
+.rodata                   12288   1107296544
+.rodata.wifi                  0   1107308832
+.text_gap                    36   1107308832
+.text                      5220   1107308868
+.rtc_fast.text                0   1342177280
+.rtc_fast.data                0   1342177280
+.rtc_fast.bss                 0   1342177280
+.rtc_fast.persistent          0   1342177280
+.stack                   449492   1082133052
+.espressif.metadata          14            0
+.eh_frame                   540            0
+.comment                    153            0
+.riscv.attributes            78            0
+Total                    470697
+
+
