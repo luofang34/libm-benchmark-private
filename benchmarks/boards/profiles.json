@@ -2,7 +2,7 @@
   {
     "id": "stm32h743",
     "execution_order": 1,
-    "board": null,
+    "board": "STM32H743 USB2 DFU board; PCB model unreported",
     "soc": "STM32H743",
     "core": "Cortex-M7",
     "target_triple": "thumbv7em-none-eabihf",
@@ -10,8 +10,10 @@
     "requested_target_features": "",
     "float_abi": "aapcs-vfp",
     "expected_fpu_mode": "hardware_fp64",
-    "measurement_status": "BLOCKED",
-    "reason": "Physical board, boot layout and capture transport have not been detected."
+    "measurement_status": "PASS",
+    "reason": "",
+    "device_id": "430030001051333336393535",
+    "results": "results/raw-logs/stm32h743"
   },
   {
     "id": "stm32f411",
@@ -130,7 +132,7 @@
   {
     "id": "stm32h743-soft64",
     "execution_order": 10,
-    "board": null,
+    "board": "STM32H743 USB2 DFU board; PCB model unreported",
     "soc": "STM32H743",
     "core": "Cortex-M7",
     "target_triple": "thumbv7em-none-eabihf",
@@ -139,7 +141,7 @@
     "float_abi": "aapcs-vfp",
     "expected_fpu_mode": "hardware_fp32_software_fp64",
     "measurement_status": "BLOCKED",
-    "reason": "Physical board, boot layout and capture transport have not been detected.",
+    "reason": "Optional second firmware has not been built or measured.",
     "optional": true
   },
   {

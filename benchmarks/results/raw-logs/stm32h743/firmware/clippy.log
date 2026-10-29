@@ -1,0 +1,3 @@
+    Checking pow-bench-core v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/core)
+    Checking pow-h743 v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/boards/stm32h743)
+    Finished `release` profile [optimized] target(s) in 0.59s

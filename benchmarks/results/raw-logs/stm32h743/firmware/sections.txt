@@ -1,0 +1,14 @@
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/boards/stm32h743/target/thumbv7em-none-eabihf/release/pow-h743  :
+section              size        addr
+.vector_table         664   134217728
+.text               51652   134218392
+.rodata             16780   134270048
+.data                   0   603979776
+.gnu.sgstubs            0   134286848
+.bss                    4   603979776
+.uninit                 0   603979780
+.comment              153           0
+.ARM.attributes        67           0
+Total               69320
+
+

@@ -30,7 +30,7 @@ fn start() -> Result<(), core::fmt::Error> {
     let mut cp = cortex_m::Peripherals::take().ok_or(core::fmt::Error)?;
     cortex_m::interrupt::disable();
     cp.SCB.enable_icache();
-    // D-cache stays disabled: USB FIFO data and timing inputs have explicit SRAM placement.
+    // Preserve the bootloader's D-cache state and report the actual CCR with each capture.
     cp.DCB.enable_trace();
     cortex_m::peripheral::DWT::unlock();
     cp.DWT.enable_cycle_counter();

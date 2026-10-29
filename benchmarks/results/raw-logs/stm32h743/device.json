@@ -1,0 +1,15 @@
+{
+  "protocol": "POWBENCH/1",
+  "state": "complete",
+  "run_id": "h743-430030001051333336393535",
+  "device_id": "430030001051333336393535",
+  "chip_id": 537093200,
+  "clock_hz": 200000000,
+  "fpscr": 536870943,
+  "mvfr0": 269550113,
+  "scb_ccr": 393728,
+  "flash_kib": 2048,
+  "firmware_sha": "b6015f7c4617b94d2ac18e1bef77ceeb0b05e369be6aa6c142a81a55ac280b2a",
+  "payload_sha256": "bbb59efd4a7686a3efd52ae83e2070e31d75909ed6e0d23edb19c41406a49e11",
+  "dataset_sha": "1b227b1001dd0b99b6b495f911d6ff83f6744557c7fb63778ed4ea259136bcbf"
+}

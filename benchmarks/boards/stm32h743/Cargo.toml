@@ -6,6 +6,15 @@ version = "0.1.0"
 edition = "2024"
 publish = false
 
+[features]
+size-fixture = []
+size-candidate = ["size-fixture"]
+
+[[bin]]
+name = "pow-size"
+path = "src/size.rs"
+required-features = ["size-fixture"]
+
 [dependencies]
 pow-bench-core = { path = "../../core" }
 cortex-m = "=0.7.7"
