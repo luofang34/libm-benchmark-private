@@ -1,0 +1,91 @@
+[
+  {
+    "check": "fmt",
+    "command": [
+      "cargo",
+      "fmt",
+      "--manifest-path",
+      "benchmarks/Cargo.toml",
+      "-p",
+      "pow-bench-core",
+      "-p",
+      "pow-bench-host",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "clippy",
+    "command": [
+      "cargo",
+      "clippy",
+      "--manifest-path",
+      "benchmarks/Cargo.toml",
+      "--all-targets",
+      "--locked",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "test",
+    "command": [
+      "cargo",
+      "test",
+      "--manifest-path",
+      "benchmarks/Cargo.toml",
+      "--all-targets",
+      "--locked"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "doc",
+    "command": [
+      "cargo",
+      "doc",
+      "--manifest-path",
+      "benchmarks/Cargo.toml",
+      "--locked",
+      "--no-deps"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "release",
+    "command": [
+      "cargo",
+      "build",
+      "--manifest-path",
+      "benchmarks/Cargo.toml",
+      "--release",
+      "--locked"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "vectors",
+    "command": [
+      "python3",
+      "benchmarks/scripts/generate_vectors.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "python",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "benchmarks/scripts",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0
+  }
+]

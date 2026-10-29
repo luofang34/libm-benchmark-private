@@ -1,0 +1,15 @@
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/results/runs/rp2040-size/Candidate/pow-size.elf  :
+section              size        addr
+.vector_table         192   268435712
+.boot2                256   268435456
+.text                6740   268435904
+.rodata             12288   268442648
+.data                   0   536870912
+.gnu.sgstubs            0   268454944
+.bss                    0   536870912
+.uninit                 0   536870912
+.comment              153           0
+.ARM.attributes        67           0
+Total               19696
+
+

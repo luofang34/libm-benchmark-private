@@ -1,0 +1,2 @@
+
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/results/runs/rp2040-size/Candidate/pow-size.elf:	file format elf32-littlearm

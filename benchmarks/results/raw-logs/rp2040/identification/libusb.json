@@ -1,0 +1,12 @@
+[
+  {
+    "bus": 1,
+    "address": 4,
+    "vid": 11914,
+    "pid": 3,
+    "open_result": 0,
+    "manufacturer": "Raspberry Pi",
+    "product": "RP2 Boot",
+    "serial": "E0C9125B0D9B"
+  }
+]

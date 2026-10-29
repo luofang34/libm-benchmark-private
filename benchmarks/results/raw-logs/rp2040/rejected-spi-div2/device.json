@@ -1,0 +1,20 @@
+{
+  "protocol": "POWBENCH/1",
+  "state": "complete",
+  "run_id": "rp2040-e66430a64b826d39",
+  "device_id": "e66430a64b826d39",
+  "chip_id": 536881447,
+  "flash_jedec": 15679509,
+  "cpuid": 1091356161,
+  "clock_hz": 125000000,
+  "sof_clock_hz": 124995700,
+  "systick_csr": 65541,
+  "max_batch_us": 21434,
+  "xip_ctrl": 3,
+  "spi_baud": 2,
+  "spi_ctrl": 536,
+  "rom_version": 3,
+  "firmware_sha": "5832142bd1922c4d64e7587c0c186a26ebbf7f2254bf7d6fedd9f26c2fe98f17",
+  "payload_sha256": "409a82fac5b0d352e8a079acddab9211ba4f9c0bb7973749b2b300fbcda8e1c2",
+  "dataset_sha": "1b227b1001dd0b99b6b495f911d6ff83f6744557c7fb63778ed4ea259136bcbf"
+}

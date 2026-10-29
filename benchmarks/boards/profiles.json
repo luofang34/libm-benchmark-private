@@ -69,16 +69,19 @@
   {
     "id": "rp2040",
     "execution_order": 5,
-    "board": null,
-    "soc": "RP2040",
+    "board": "RP2040 USB BOOTSEL board; PCB model unreported",
+    "soc": "RP2040 B2",
     "core": "Cortex-M0+",
     "target_triple": "thumbv6m-none-eabi",
     "target_cpu": "cortex-m0plus",
     "requested_target_features": "",
     "float_abi": "aapcs-soft",
     "expected_fpu_mode": "software_fp32_fp64",
-    "measurement_status": "BLOCKED",
-    "reason": "Physical board, boot layout and capture transport have not been detected."
+    "measurement_status": "PASS",
+    "reason": "",
+    "accuracy_status": "PASS",
+    "device_id": "e66430a64b826d39",
+    "results": "results/raw-logs/rp2040"
   },
   {
     "id": "esp32-c6",

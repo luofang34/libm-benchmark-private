@@ -1,0 +1,65 @@
+[
+  {
+    "check": "fmt",
+    "command": [
+      "cargo",
+      "fmt",
+      "--manifest-path",
+      "benchmarks/boards/rp2040/Cargo.toml",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "clippy",
+    "command": [
+      "cargo",
+      "clippy",
+      "--manifest-path",
+      "benchmarks/boards/rp2040/Cargo.toml",
+      "--locked",
+      "--release",
+      "--target",
+      "thumbv6m-none-eabi",
+      "--bin",
+      "pow-rp2040",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "doc",
+    "command": [
+      "cargo",
+      "doc",
+      "--manifest-path",
+      "benchmarks/boards/rp2040/Cargo.toml",
+      "--locked",
+      "--release",
+      "--target",
+      "thumbv6m-none-eabi",
+      "--bin",
+      "pow-rp2040",
+      "--no-deps"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "release",
+    "command": [
+      "cargo",
+      "build",
+      "--manifest-path",
+      "benchmarks/boards/rp2040/Cargo.toml",
+      "--locked",
+      "--release",
+      "--target",
+      "thumbv6m-none-eabi",
+      "--bin",
+      "pow-rp2040"
+    ],
+    "exit_code": 0
+  }
+]

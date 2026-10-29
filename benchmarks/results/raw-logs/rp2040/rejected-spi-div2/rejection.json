@@ -1,0 +1,5 @@
+{
+  "measurement_status": "REJECTED",
+  "reason": "Generic 03h SPI at clk_sys/2 = 62.5 MHz; exceeds 50 MHz 03h specification. Excluded from all accepted performance and accuracy aggregates.",
+  "source_sha": "7a1b37ae645b6aaccea06701b109185789989dbe"
+}

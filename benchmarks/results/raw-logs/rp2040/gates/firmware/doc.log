@@ -1,0 +1,10 @@
+ Documenting pow-rp2040 v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/boards/rp2040)
+warning: lint `broken_intra_doc_links` has been renamed to `rustdoc::broken_intra_doc_links`
+  |
+  = help: use the new name `rustdoc::broken_intra_doc_links`
+  = note: requested on the command line with `-D broken_intra_doc_links`
+  = note: `#[warn(renamed_and_removed_lints)]` on by default
+
+warning: `pow-rp2040` (bin "pow-rp2040" doc) generated 1 warning
+    Finished `release` profile [optimized] target(s) in 0.46s
+   Generated /Users/fangluo/Documents/ChatGPT/libm/benchmarks/boards/rp2040/target/thumbv6m-none-eabi/doc/pow_rp2040/index.html

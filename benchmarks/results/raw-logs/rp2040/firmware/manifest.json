@@ -1,0 +1,37 @@
+{
+  "firmware_sha": "102f316b03c6ff193eb242f66a76b0c4f59bce451074cf88b1ba14d305497141",
+  "firmware_bytes": 66920,
+  "sections": {
+    ".vector_table": 192,
+    ".boot2": 256,
+    ".text": 49896,
+    ".rodata": 16412,
+    ".data": 164,
+    ".gnu.sgstubs": 0,
+    ".bss": 4,
+    ".uninit": 0,
+    ".comment": 153,
+    ".ARM.attributes": 65
+  },
+  "board": "RP2040 USB BOOTSEL board; PCB model unreported",
+  "soc": "RP2040 B2",
+  "bootsel_serial": "E0C9125B0D9B",
+  "flash_address": "0x10000000",
+  "linker_flash_window": 131072,
+  "target_triple": "thumbv6m-none-eabi",
+  "target_cpu": "cortex-m0plus",
+  "float_abi": "aapcs-soft",
+  "fpu_mode": "software_fp32_fp64",
+  "target_features": {
+    "cpu_defaults": "cortex-m0plus",
+    "rustc_cfg": []
+  },
+  "compiler_version": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: aarch64-apple-darwin\nrelease: 1.99.0\nLLVM version: 23.1.1\n",
+  "build_flags": "-C target-cpu=cortex-m0plus -C link-arg=--nmagic -C link-arg=-Tlink.x; release opt-level=3,lto=fat,codegen-units=1,panic=abort; HAL disable-intrinsics",
+  "source_sha": "319d5046d42c7de1c5641d622a9e23b77918ed07",
+  "hal_revision": "2fb63064c98edcf688694bc63dc05f57b89a71b2; rp2040-hal 0.11.0",
+  "clock_source": "12 MHz XOSC assumption; PLL 125 MHz; checked against 50 USB SOF frames within 0.5%",
+  "flash_mode": "rp2040-boot2 0.3.0 GENERIC_03H; SRAM routine sets clk_sys/4 before PLL; one-bit SPI 31.25 MHz; XIP cache",
+  "scope": "dual-algorithm firmware; static RAM excludes 128 KiB retained payload and other stack frames",
+  "preflight": "PASS"
+}

@@ -1,0 +1,15 @@
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/firmware/rp2040/pow-rp2040.elf  :
+section              size        addr
+.vector_table         192   268435712
+.boot2                256   268435456
+.text               49896   268435904
+.rodata             16412   268485800
+.data                 164   536870912
+.gnu.sgstubs            0   268502400
+.bss                    4   536871076
+.uninit                 0   536871080
+.comment              153           0
+.ARM.attributes        65           0
+Total               67142
+
+

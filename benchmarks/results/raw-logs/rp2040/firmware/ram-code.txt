@@ -1,0 +1,87 @@
+
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/firmware/rp2040/pow-rp2040.elf:	file format elf32-littlearm
+
+Disassembly of section .data:
+
+20000000 <__sdata>:
+20000000: b580         	push	{r7, lr}
+20000002: af00         	add	r7, sp, #0x0
+20000004: 4805         	ldr	r0, [pc, #0x14]         @ 0x2000001c <__sdata+0x1c>
+20000006: 2100         	movs	r1, #0x0
+20000008: 6001         	str	r1, [r0]
+2000000a: 2104         	movs	r1, #0x4
+2000000c: 60c1         	str	r1, [r0, #0xc]
+2000000e: 2101         	movs	r1, #0x1
+20000010: 6001         	str	r1, [r0]
+20000012: f3bf 8f4f    	dsb	sy
+20000016: f3bf 8f6f    	isb	sy
+2000001a: bd80         	pop	{r7, pc}
+2000001c: 08 00 00 18  	.word	0x18000008
+
+20000020 <rp2040_flash::flash::read_flash_inner>:
+20000020: b5b0         	push	{r4, r5, r7, lr}
+20000022: af02         	add	r7, sp, #0x8
+20000024: b4c0         	push	{r6, r7}
+20000026: 4607         	mov	r7, r0
+20000028: 460d         	mov	r5, r1
+2000002a: 682c         	ldr	r4, [r5]
+2000002c: 47a0         	blx	r4
+2000002e: 686c         	ldr	r4, [r5, #0x4]
+20000030: 47a0         	blx	r4
+20000032: 2418         	movs	r4, #0x18
+20000034: 0624         	lsls	r4, r4, #0x18
+20000036: 2000         	movs	r0, #0x0
+20000038: 60a0         	str	r0, [r4, #0x8]
+2000003a: 2003         	movs	r0, #0x3
+2000003c: 0200         	lsls	r0, r0, #0x8
+2000003e: 6821         	ldr	r1, [r4]
+20000040: 4301         	orrs	r1, r0
+20000042: 6021         	str	r1, [r4]
+20000044: 68b8         	ldr	r0, [r7, #0x8]
+20000046: 6939         	ldr	r1, [r7, #0x10]
+20000048: 4408         	add	r0, r1
+2000004a: 3801         	subs	r0, #0x1
+2000004c: 6060         	str	r0, [r4, #0x4]
+2000004e: 2001         	movs	r0, #0x1
+20000050: 60a0         	str	r0, [r4, #0x8]
+20000052: 4622         	mov	r2, r4
+20000054: 3260         	adds	r2, #0x60
+20000056: 6838         	ldr	r0, [r7]
+20000058: 6879         	ldr	r1, [r7, #0x4]
+2000005a: 7803         	ldrb	r3, [r0]
+2000005c: 7013         	strb	r3, [r2]
+2000005e: 3001         	adds	r0, #0x1
+20000060: 3901         	subs	r1, #0x1
+20000062: d1fa         	bne	0x2000005a <rp2040_flash::flash::read_flash_inner+0x3a> @ imm = #-0xc
+20000064: 68b9         	ldr	r1, [r7, #0x8]
+20000066: 2900         	cmp	r1, #0x0
+20000068: d008         	beq	0x2000007c <rp2040_flash::flash::read_flash_inner+0x5c> @ imm = #0x10
+2000006a: 6aa3         	ldr	r3, [r4, #0x28]
+2000006c: 2208         	movs	r2, #0x8
+2000006e: 4213         	tst	r3, r2
+20000070: d0fb         	beq	0x2000006a <rp2040_flash::flash::read_flash_inner+0x4a> @ imm = #-0xa
+20000072: 4622         	mov	r2, r4
+20000074: 3260         	adds	r2, #0x60
+20000076: 7813         	ldrb	r3, [r2]
+20000078: 3901         	subs	r1, #0x1
+2000007a: d1f6         	bne	0x2000006a <rp2040_flash::flash::read_flash_inner+0x4a> @ imm = #-0x14
+2000007c: 68f8         	ldr	r0, [r7, #0xc]
+2000007e: 6939         	ldr	r1, [r7, #0x10]
+20000080: 6aa3         	ldr	r3, [r4, #0x28]
+20000082: 2208         	movs	r2, #0x8
+20000084: 4213         	tst	r3, r2
+20000086: d0fb         	beq	0x20000080 <rp2040_flash::flash::read_flash_inner+0x60> @ imm = #-0xa
+20000088: 4622         	mov	r2, r4
+2000008a: 3260         	adds	r2, #0x60
+2000008c: 7813         	ldrb	r3, [r2]
+2000008e: 7003         	strb	r3, [r0]
+20000090: 3001         	adds	r0, #0x1
+20000092: 3901         	subs	r1, #0x1
+20000094: d1f4         	bne	0x20000080 <rp2040_flash::flash::read_flash_inner+0x60> @ imm = #-0x18
+20000096: 2000         	movs	r0, #0x0
+20000098: 60a0         	str	r0, [r4, #0x8]
+2000009a: 6060         	str	r0, [r4, #0x4]
+2000009c: 696c         	ldr	r4, [r5, #0x14]
+2000009e: 47a0         	blx	r4
+200000a0: bcc0         	pop	{r6, r7}
+200000a2: bdb0         	pop	{r4, r5, r7, pc}

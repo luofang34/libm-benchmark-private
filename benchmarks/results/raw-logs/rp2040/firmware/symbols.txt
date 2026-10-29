@@ -1,0 +1,203 @@
+10005868 00000000 T ADC_IRQ_FIFO
+10000000 00000100 R BOOT2_FIRMWARE
+10005868 00000000 T CLOCKS_IRQ
+200000a6 00000001 B DEVICE_PERIPHERALS
+10005868 00000000 T DMA_IRQ_0
+10005868 00000000 T DMA_IRQ_1
+10005868 00000000 T DefaultHandler
+10005868 00000006 T DefaultHandler_
+1000586e 00000006 T DefaultPreInit
+1000c4a0 00000000 T HardFault
+1000c4a0 00000006 T HardFault_
+10005868 00000000 T I2C0_IRQ
+10005868 00000000 T I2C1_IRQ
+10005868 00000000 T IO_IRQ_BANK0
+10005868 00000000 T IO_IRQ_QSPI
+10005868 00000000 T NonMaskableInt
+10005868 00000000 T PIO0_IRQ_0
+10005868 00000000 T PIO0_IRQ_1
+10005868 00000000 T PIO1_IRQ_0
+10005868 00000000 T PIO1_IRQ_1
+10005868 00000000 T PWM_IRQ_WRAP
+10005868 00000000 T PendSV
+10005868 00000000 T RTC_IRQ
+100001c0 00000034 T Reset
+10005868 00000000 T SIO_IRQ_PROC0
+10005868 00000000 T SIO_IRQ_PROC1
+10005868 00000000 T SPI0_IRQ
+10005868 00000000 T SPI1_IRQ
+10005868 00000000 T SVCall
+10005868 00000000 T SW0_IRQ
+10005868 00000000 T SW1_IRQ
+10005868 00000000 T SW2_IRQ
+10005868 00000000 T SW3_IRQ
+10005868 00000000 T SW4_IRQ
+10005868 00000000 T SW5_IRQ
+10005868 00000000 T SysTick
+10005868 00000000 T TIMER_IRQ_0
+10005868 00000000 T TIMER_IRQ_1
+10005868 00000000 T TIMER_IRQ_2
+10005868 00000000 T TIMER_IRQ_3
+10005868 00000000 T UART0_IRQ
+10005868 00000000 T UART1_IRQ
+10005868 00000000 T USBCTRL_IRQ
+10005868 00000000 T XIP_IRQ
+10000214 000001c0 t <str>::trim_matches::<<char>::is_whitespace>
+100003d4 000000f0 t <usb_device::descriptor::DescriptorWriter>::endpoint_ex::<rp2040_hal::usb::UsbBus, usb_device::endpoint::In, <usb_device::descriptor::DescriptorWriter>::endpoint<rp2040_hal::usb::UsbBus, usb_device::endpoint::In>::{closure#0}>
+100004c4 00000006 t core::ptr::drop_glue::<heapless::string::String<131072>>
+100004cc 000007a4 t pow_rp2040::measurements::measure::<pow_rp2040::hardware::start::{closure#4}>
+10000c70 00000008 t __rustc::rust_begin_unwind
+10009f70 000000dc t <usb_device::descriptor::DescriptorWriter>::interface_alt
+1000a04c 00000090 t <usb_device::descriptor::DescriptorWriter>::write
+10000c78 0000005c t <usb_device::control_pipe::ControlPipe<rp2040_hal::usb::UsbBus>>::accept_out
+10000cd4 00000180 t <usb_device::control_pipe::ControlPipe<rp2040_hal::usb::UsbBus>>::handle_out
+10000e54 000000ec t <usb_device::control_pipe::ControlPipe<rp2040_hal::usb::UsbBus>>::write_in_chunk
+10000f40 00000048 t <usb_device::control_pipe::ControlPipe<rp2040_hal::usb::UsbBus>>::set_error
+10000f88 000002b0 t <usb_device::device::UsbDevice<rp2040_hal::usb::UsbBus>>::control_in
+10001238 000001d0 t <usb_device::device::UsbDevice<rp2040_hal::usb::UsbBus>>::control_out
+10001408 000005b8 t <usb_device::device::UsbDevice<rp2040_hal::usb::UsbBus>>::get_descriptor
+100019c0 0000078c t <usb_device::device::UsbDevice<rp2040_hal::usb::UsbBus>>::poll
+1000a0dc 0000002c t <usb_device::descriptor::BosWriter>::end_bos
+100051a4 000001b8 t <core::fmt::Formatter>::pad_integral
+10004bfc 000005a8 t <core::fmt::Formatter>::pad
+200000a4 00000001 b cortex_m::peripheral::TAKEN (.0)
+10006754 00000aa0 t pow_bench_core::kernel::baseline_pow
+10005ebc 00000898 t pow_bench_core::kernel::candidate_pow
+10005ba8 00000024 t pow_bench_core::kernel::arithmetic_f32
+10005bcc 000002ee t pow_bench_core::kernel::run
+1000e750 00001c00 r pow_bench_core::vectors::DATA
+10004ab0 0000014c t core::fmt::write
+1000561c 00000014 t core::cell::panic_already_borrowed
+10005630 00000018 t core::option::expect_failed
+10005648 00000014 t core::result::unwrap_failed
+10005514 00000010 t core::panicking::panic_bounds_check
+10005508 0000000c t core::panicking::panic
+10004aa8 00000008 t core::panicking::panic_fmt
+1000ad8c 0000021a t compiler_builtins::mem::memcpy
+1000afa6 00000506 t compiler_builtins::mem::memmove
+20000020 00000084 t rp2040_flash::flash::read_flash_inner
+100079d0 000025a0 t sha2::sha256::compress256
+200000a5 00000001 b rp2040_hal::critical_section_impl::LOCK_OWNER (.0)
+1000214c 00000054 t pow_rp2040::hardware::__cortex_m_rt_main
+20000000 00000020 t pow_rp2040::hardware::configure_flash_clock
+100021a0 00000d48 t pow_rp2040::hardware::start
+10002ee8 000001a4 t pow_rp2040::hardware::identity
+1000308c 00000a58 t pow_rp2040::telemetry::serve
+10003ae4 00000170 t pow_rp2040::telemetry::digest
+10005874 0000029c t libm::math::sqrt::sqrt
+10005b10 00000098 t libm::math::scalbn::scalbn
+100054cc 0000003c t core::slice::index::slice_index_fail
+1000565c 00000014 t core::panicking::panic_const::panic_const_div_by_zero
+1000b502 00000186 t compiler_builtins::int::specialized_div_rem::u32_div_rem (.llvm.14276830409391420118)
+1000b688 0000037c t compiler_builtins::int::specialized_div_rem::u64_div_rem
+1000a778 00000378 t compiler_builtins::float::add::__adddf3
+1000aaf0 000001f8 t compiler_builtins::float::add::__addsf3
+1000a15c 00000400 t compiler_builtins::float::div::__divdf3
+1000a55c 00000210 t compiler_builtins::float::div::__divsf3
+1000bab4 00000338 t compiler_builtins::float::mul::__muldf3
+1000bdec 000001a0 t compiler_builtins::float::mul::__mulsf3
+1000d250 00000100 r libm::math::generic::sqrt::RSQRT_TAB
+1000d06d 00000100 r core::unicode::unicode_data::white_space::WHITESPACE_MAP
+1000535c 0000003a t <core::fmt::Formatter>::pad_integral::write_prefix
+10005670 0000006c t <u8 as core::fmt::Display>::fmt
+10003c54 000000b0 t <usbd_serial::serial_port::SerialPort<rp2040_hal::usb::UsbBus> as usb_device::class::UsbClass<rp2040_hal::usb::UsbBus>>::control_in
+10003d04 00000036 t <usbd_serial::serial_port::SerialPort<rp2040_hal::usb::UsbBus> as usb_device::class::UsbClass<rp2040_hal::usb::UsbBus>>::get_string
+10003d3c 00000108 t <usbd_serial::serial_port::SerialPort<rp2040_hal::usb::UsbBus> as usb_device::class::UsbClass<rp2040_hal::usb::UsbBus>>::control_out
+10003e44 000000f4 t <usbd_serial::serial_port::SerialPort<rp2040_hal::usb::UsbBus> as usb_device::class::UsbClass<rp2040_hal::usb::UsbBus>>::endpoint_in_complete
+10003f38 00000270 t <usbd_serial::serial_port::SerialPort<rp2040_hal::usb::UsbBus> as usb_device::class::UsbClass<rp2040_hal::usb::UsbBus>>::get_configuration_descriptors
+100041a8 0000002a t <usbd_serial::serial_port::SerialPort<rp2040_hal::usb::UsbBus> as usb_device::class::UsbClass<rp2040_hal::usb::UsbBus>>::reset
+100041d4 0000002c t <pow_bench_core::kernel::Implementation as core::fmt::Debug>::fmt
+100071f4 00000120 t <rp2040_hal::usb::UsbBus as usb_device::bus::UsbBus>::set_stalled
+10007314 000000e0 t <rp2040_hal::usb::UsbBus as usb_device::bus::UsbBus>::set_device_address
+100073f4 00000274 t <rp2040_hal::usb::UsbBus as usb_device::bus::UsbBus>::read
+10007668 00000184 t <rp2040_hal::usb::UsbBus as usb_device::bus::UsbBus>::write
+100077ec 000001e4 t <rp2040_hal::usb::UsbBus as usb_device::bus::UsbBus>::alloc_ep
+10004200 00000010 t <&str as core::fmt::Display>::fmt
+10004210 00000044 t <&u8 as core::fmt::LowerHex>::fmt
+10004254 00000012 t <heapless::string::String<64> as core::fmt::Display>::fmt
+10004268 00000024 t <pow_bench_core::kernel::Mode as core::fmt::Debug>::fmt
+10005524 000000f8 t <u32 as core::fmt::Display>::fmt
+1000428c 00000150 t <heapless::string::String<131072> as core::fmt::Write>::write_char
+100043dc 000000b4 t <heapless::string::String<131072> as core::fmt::Write>::write_str
+10004490 00000134 t <heapless::string::String<32> as core::fmt::Write>::write_char
+100045c4 00000096 t <heapless::string::String<32> as core::fmt::Write>::write_str
+1000465a 00000134 t <heapless::string::String<64> as core::fmt::Write>::write_char
+1000478e 00000096 t <heapless::string::String<64> as core::fmt::Write>::write_str
+10004824 00000152 t <heapless::string::String<2048> as core::fmt::Write>::write_char
+10004976 000000b4 t <heapless::string::String<2048> as core::fmt::Write>::write_str
+100057a4 000000c4 t <u64 as core::fmt::LowerHex>::fmt
+100056dc 00000040 t <u8 as core::fmt::LowerHex>::fmt
+10005398 00000134 t <u64 as core::fmt::Display>::fmt
+1000571c 00000088 t <u32 as core::fmt::LowerHex>::fmt
+10004a2c 00000014 t <heapless::string::String<131072> as core::fmt::Write>::write_fmt
+10004a40 00000014 t <heapless::string::String<32> as core::fmt::Write>::write_fmt
+10004a54 00000014 t <heapless::string::String<64> as core::fmt::Write>::write_fmt
+10004a68 00000014 t <heapless::string::String<2048> as core::fmt::Write>::write_fmt
+10004a7c 00000006 t <usbd_serial::serial_port::SerialPort<rp2040_hal::usb::UsbBus> as usb_device::class::UsbClass<rp2040_hal::usb::UsbBus>>::endpoint_out
+10004a82 00000008 t <usbd_serial::serial_port::SerialPort<rp2040_hal::usb::UsbBus> as usb_device::class::UsbClass<rp2040_hal::usb::UsbBus>>::get_alt_setting
+10004a8a 00000008 t <usbd_serial::serial_port::SerialPort<rp2040_hal::usb::UsbBus> as usb_device::class::UsbClass<rp2040_hal::usb::UsbBus>>::set_alt_setting
+10004a92 00000008 t <usbd_serial::serial_port::SerialPort<rp2040_hal::usb::UsbBus> as usb_device::class::UsbClass<rp2040_hal::usb::UsbBus>>::get_bos_descriptors
+10004a9a 00000006 t <usbd_serial::serial_port::SerialPort<rp2040_hal::usb::UsbBus> as usb_device::class::UsbClass<rp2040_hal::usb::UsbBus>>::poll
+10000108 00000038 R __EXCEPTIONS
+10000140 00000080 R __INTERRUPTS
+10000104 00000004 R __RESET_VECTOR
+1000c488 0000000c t __Thumbv6MABSLongThunk__RNvNtCsDNOOtaWvrP_12rp2040_flash5flash16read_flash_inner
+1000c494 0000000c t __Thumbv6MABSLongThunk__RNvNtCskfLpIv7mrYB_10pow_rp20408hardware21configure_flash_clock
+1000a76c 0000000a t __aeabi_dadd
+1000c240 00000054 t __aeabi_dcmpeq
+1000c010 0000006c t __aeabi_dcmpgt
+1000c07c 00000084 t __aeabi_dcmple
+1000ba3c 0000006c t __aeabi_dcmplt
+1000ba04 0000000a t __aeabi_ddiv
+1000baa8 0000000a t __aeabi_dmul
+1000c34c 00000010 t __aeabi_dsub
+1000bf8c 0000000a t __aeabi_fadd
+1000a152 0000000a t __aeabi_fdiv
+1000bf96 0000000a t __aeabi_fmul
+1000b4ac 0000004c t __aeabi_i2d
+1000c35c 0000007c t __aeabi_l2d
+1000ba0e 0000002e t __aeabi_llsl
+1000c210 00000030 t __aeabi_llsr
+1000c3d8 0000004a t __aeabi_lmul
+1000c294 000000b8 t __aeabi_memclr
+1000ace8 0000009a t __aeabi_memclr4
+1000c100 0000009a t __aeabi_memclr8
+1000ad82 0000000a t __aeabi_memcpy
+1000bfa0 0000006e t __aeabi_memcpy4
+1000c206 0000000a t __aeabi_memmove
+1000b4f8 0000000a t __aeabi_uidiv
+1000c464 00000010 t __aeabi_uidivmod
+1000c424 00000014 t __aeabi_uldivmod
+1000c19a 0000006c t __clzsi2
+1000a108 00000004 T __cpsid
+1000a10c 00000004 T __cpsie
+1000a110 0000000a T __delay
+200000a8 00000000 B __ebss
+200000a4 00000000 T __edata
+10000140 00000000 R __eexceptions
+100104c4 00000000 R __erodata
+1000c4a8 00000000 T __etext
+200000a8 00000000 B __euninit
+10000108 00000000 R __exceptions
+10010568 00000000 A __flash_image_end
+1000586e 00000000 T __pre_init
+1000a11a 00000006 T __primask_r
+200000a4 00000000 B __sbss
+20000000 00000000 T __sdata
+200000a8 00000000 B __sheap
+100104c4 00000000 A __sidata
+1000c4a8 00000000 R __srodata
+100001c0 00000000 T __stext
+200000a8 00000000 B __suninit
+1000a120 00000004 T __udf
+1000c438 0000002c t __udivmoddi4
+1000c474 00000012 t __udivmodsi4
+10000100 00000000 R __vector_table
+10010580 00000000 R __veneer_base
+10010580 00000000 R __veneer_limit
+20040000 00000000 A _ram_end
+200000a8 00000000 B _stack_end
+20040000 00000000 A _stack_start
+100001c0 00000000 R _stext
+10004aa0 00000008 T main
+1000a124 0000002e t memcmp
