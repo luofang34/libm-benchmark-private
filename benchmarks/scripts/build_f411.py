@@ -44,6 +44,12 @@ def main():
         (DEST / (name + '.txt')).write_text(reports[name])
     if subprocess.check_output([tool('nm'), '--undefined-only', str(elf)], text=True).strip():
         raise ValueError('firmware contains unresolved symbols')
+    reset = reports['assembly'].split('<__stext>:', 1)[1].split('\n\n', 1)[0]
+    preinit = reports['assembly'].split('<__pre_init>:', 1)[1].split('\n\n', 1)[0]
+    if not re.search(r'\bmsr\s+msp,', reset) or '0xe000ed08' not in reset:
+        raise ValueError('reset must initialize the application stack and vector table')
+    if 'cpsid i' not in preinit or '0xe000e010' not in preinit:
+        raise ValueError('pre-init must disable inherited interrupts and SysTick')
     for function in ['baseline_pow', 'candidate_pow']:
         if not re.search(r'\bbl\s+.*' + function, reports['assembly']):
             raise ValueError('missing actual pow call: ' + function)

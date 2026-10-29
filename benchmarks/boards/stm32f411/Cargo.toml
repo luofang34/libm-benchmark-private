@@ -18,7 +18,8 @@ required-features = ["size-fixture"]
 [dependencies]
 pow-bench-core = { path = "../../core" }
 cortex-m = "=0.7.7"
-cortex-m-rt = "=0.7.7"
+# Initialize the application stack and vector table independently of bootloader state.
+cortex-m-rt = { version = "=0.7.7", features = ["set-sp", "set-vtor"] }
 stm32f4xx-hal = { version = "=0.23.0", features = ["stm32f411", "usb_fs"] }
 usb-device = "=0.3.2"
 usbd-serial = "=0.2.2"

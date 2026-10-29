@@ -11,6 +11,20 @@ use usb_device::prelude::*;
 
 use crate::{measurements, telemetry};
 
+// SAFETY: This runs before RAM initialization and accesses only core registers. Disabling
+// inherited interrupts prevents bootloader handlers from running against application memory.
+core::arch::global_asm!(
+    ".section .text.__pre_init,\"ax\"",
+    ".global __pre_init",
+    ".thumb_func",
+    "__pre_init:",
+    "cpsid i",
+    "ldr r0, =0xe000e010",
+    "movs r1, #0",
+    "str r1, [r0]",
+    "bx lr",
+);
+
 #[entry]
 fn main() -> ! {
     if start().is_err() {
