@@ -1,0 +1,479 @@
+﻿2026-10-29T19:20:24.9142303Z Current runner version: '2.338.0'
+2026-10-29T19:20:24.9180075Z ##[group]Runner Image Provisioner
+2026-10-29T19:20:24.9181440Z Hosted Compute Agent
+2026-10-29T19:20:24.9182337Z Version: 20261021.618
+2026-10-29T19:20:24.9183406Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-29T19:20:24.9184643Z Build Date: 2026-10-21T00:45:21Z
+2026-10-29T19:20:24.9185881Z Worker ID: {60b62529-836c-40ea-a98a-d757be413eff}
+2026-10-29T19:20:24.9187194Z Region: westus3
+2026-10-29T19:20:24.9188106Z Cloud: Azure
+2026-10-29T19:20:24.9189023Z ##[endgroup]
+2026-10-29T19:20:24.9191321Z ##[group]Operating System
+2026-10-29T19:20:24.9192409Z Microsoft Windows Server 2025
+2026-10-29T19:20:24.9193573Z 10.0.26100
+2026-10-29T19:20:24.9194451Z Datacenter
+2026-10-29T19:20:24.9195322Z ##[endgroup]
+2026-10-29T19:20:24.9196244Z ##[group]Runner Image
+2026-10-29T19:20:24.9197256Z Image: windows-2025-vs2026
+2026-10-29T19:20:24.9198794Z Version: 20261021.278.1
+2026-10-29T19:20:24.9201529Z Included Software: https://github.com/actions/runner-images/blob/win25-vs2026/20261021.278/images/windows/Windows2025-VS2026-Readme.md
+2026-10-29T19:20:24.9204647Z Image Release: https://github.com/actions/runner-images/releases/tag/win25-vs2026%2F20261021.278
+2026-10-29T19:20:24.9206340Z ##[endgroup]
+2026-10-29T19:20:24.9208423Z ##[group]GITHUB_TOKEN Permissions
+2026-10-29T19:20:24.9211081Z Contents: read
+2026-10-29T19:20:24.9212274Z Metadata: read
+2026-10-29T19:20:24.9213183Z ##[endgroup]
+2026-10-29T19:20:24.9216295Z Secret source: Actions
+2026-10-29T19:20:24.9218727Z Cache mode: write
+2026-10-29T19:20:24.9219973Z Prepare workflow directory
+2026-10-29T19:20:24.9724704Z Prepare all required actions
+2026-10-29T19:20:24.9798333Z Getting action download info
+2026-10-29T19:20:25.3029144Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-29T19:20:25.4549325Z Download action repository 'msys2/setup-msys2@ec48f7c5447b3140e2b088413ae3a55687bccb6e' (SHA:ec48f7c5447b3140e2b088413ae3a55687bccb6e)
+2026-10-29T19:20:25.9098595Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-10-29T19:20:26.2362695Z Complete job name: benchmark (windows-2025)
+2026-10-29T19:20:26.4367446Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-29T19:20:26.4368807Z with:
+2026-10-29T19:20:26.4369305Z   persist-credentials: false
+2026-10-29T19:20:26.4369963Z   repository: luofang34/libm-benchmark-private
+2026-10-29T19:20:26.4375037Z   token: ***
+2026-10-29T19:20:26.4375516Z   ssh-strict: true
+2026-10-29T19:20:26.4375999Z   ssh-user: git
+2026-10-29T19:20:26.4376472Z   clean: true
+2026-10-29T19:20:26.4376960Z   sparse-checkout-cone-mode: true
+2026-10-29T19:20:26.4377545Z   fetch-depth: 1
+2026-10-29T19:20:26.4378018Z   fetch-tags: false
+2026-10-29T19:20:26.4378435Z   show-progress: true
+2026-10-29T19:20:26.4378830Z   lfs: false
+2026-10-29T19:20:26.4379234Z   submodules: false
+2026-10-29T19:20:26.4379633Z   set-safe-directory: true
+2026-10-29T19:20:26.4380091Z   allow-unsafe-pr-checkout: false
+2026-10-29T19:20:26.4380803Z ##[endgroup]
+2026-10-29T19:20:28.1427600Z Syncing repository: luofang34/libm-benchmark-private
+2026-10-29T19:20:28.1430158Z ##[group]Getting Git version info
+2026-10-29T19:20:28.1431470Z Working directory is 'D:\a\libm-benchmark-private\libm-benchmark-private'
+2026-10-29T19:20:28.1434221Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-29T19:20:28.1435273Z git version 2.56.0.windows.2
+2026-10-29T19:20:28.1438514Z ##[endgroup]
+2026-10-29T19:20:28.1443989Z Temporarily overriding HOME='D:\a\_temp\41e30ff2-ec31-42b0-8c2a-b31cbc3e63ab' before making global git config changes
+2026-10-29T19:20:28.1446358Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-29T19:20:28.1449125Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\libm-benchmark-private\libm-benchmark-private
+2026-10-29T19:20:28.1457417Z Deleting the contents of 'D:\a\libm-benchmark-private\libm-benchmark-private'
+2026-10-29T19:20:28.1459682Z ##[group]Determining repository object format
+2026-10-29T19:20:28.1461291Z ##[endgroup]
+2026-10-29T19:20:28.1462870Z ##[group]Initializing the repository
+2026-10-29T19:20:28.1465022Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\libm-benchmark-private\libm-benchmark-private
+2026-10-29T19:20:28.1468038Z Initialized empty Git repository in D:/a/libm-benchmark-private/libm-benchmark-private/.git/
+2026-10-29T19:20:28.1473170Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/luofang34/libm-benchmark-private
+2026-10-29T19:20:28.1477602Z ##[endgroup]
+2026-10-29T19:20:28.1479399Z ##[group]Disabling automatic garbage collection
+2026-10-29T19:20:28.1481232Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-10-29T19:20:28.1484881Z ##[endgroup]
+2026-10-29T19:20:28.1486565Z ##[group]Setting up auth
+2026-10-29T19:20:28.1487807Z Removing SSH command configuration
+2026-10-29T19:20:28.1489900Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T19:20:28.1496169Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-29T19:20:30.1164042Z Removing HTTP extra header
+2026-10-29T19:20:30.1174981Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T19:20:30.1581562Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-29T19:20:30.7829609Z Removing includeIf entries pointing to credentials config files
+2026-10-29T19:20:30.7847180Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T19:20:30.8264575Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-29T19:20:31.4268571Z [command]"C:\Program Files\Git\bin\git.exe" config --file D:\a\_temp\git-credentials-b123c13b-89b6-47b0-bc47-26401bc4e793.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-10-29T19:20:31.4681956Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/libm-benchmark-private/libm-benchmark-private/.git.path D:\a\_temp\git-credentials-b123c13b-89b6-47b0-bc47-26401bc4e793.config
+2026-10-29T19:20:31.5087221Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:D:/a/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path D:\a\_temp\git-credentials-b123c13b-89b6-47b0-bc47-26401bc4e793.config
+2026-10-29T19:20:31.5593740Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-b123c13b-89b6-47b0-bc47-26401bc4e793.config
+2026-10-29T19:20:31.5989328Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-b123c13b-89b6-47b0-bc47-26401bc4e793.config
+2026-10-29T19:20:31.6644745Z ##[endgroup]
+2026-10-29T19:20:31.6645650Z ##[group]Fetching the repository
+2026-10-29T19:20:31.6647560Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f39774d821b2bbc19c98dca827678fdce636d075:refs/remotes/origin/experiment/pow-wasm
+2026-10-29T19:20:34.1658255Z From https://github.com/luofang34/libm-benchmark-private
+2026-10-29T19:20:34.1659575Z  * [new ref]         f39774d821b2bbc19c98dca827678fdce636d075 -> origin/experiment/pow-wasm
+2026-10-29T19:20:34.1740078Z [command]"C:\Program Files\Git\bin\git.exe" branch --list --remote origin/experiment/pow-wasm
+2026-10-29T19:20:34.2457601Z   origin/experiment/pow-wasm
+2026-10-29T19:20:34.2510974Z [command]"C:\Program Files\Git\bin\git.exe" rev-parse refs/remotes/origin/experiment/pow-wasm
+2026-10-29T19:20:34.2965723Z f39774d821b2bbc19c98dca827678fdce636d075
+2026-10-29T19:20:34.3007145Z ##[endgroup]
+2026-10-29T19:20:34.3008141Z ##[group]Determining the checkout info
+2026-10-29T19:20:34.3009139Z ##[endgroup]
+2026-10-29T19:20:34.3018895Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-10-29T19:20:34.3605287Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-10-29T19:20:34.4148534Z ##[group]Checking out the ref
+2026-10-29T19:20:34.4159351Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B experiment/pow-wasm refs/remotes/origin/experiment/pow-wasm
+2026-10-29T19:20:34.9546901Z Switched to a new branch 'experiment/pow-wasm'
+2026-10-29T19:20:34.9549731Z branch 'experiment/pow-wasm' set up to track 'origin/experiment/pow-wasm'.
+2026-10-29T19:20:34.9954455Z ##[endgroup]
+2026-10-29T19:20:35.0745666Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-10-29T19:20:35.1241249Z f39774d821b2bbc19c98dca827678fdce636d075
+2026-10-29T19:20:35.1412045Z ##[group]Removing auth
+2026-10-29T19:20:35.1414007Z Removing SSH command configuration
+2026-10-29T19:20:35.1511002Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T19:20:35.2025270Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-29T19:20:35.8475051Z Removing HTTP extra header
+2026-10-29T19:20:35.8486793Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T19:20:35.8930814Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-29T19:20:36.5189286Z Removing includeIf entries pointing to credentials config files
+2026-10-29T19:20:36.5199322Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T19:20:36.5575318Z includeif.gitdir:D:/a/libm-benchmark-private/libm-benchmark-private/.git.path
+2026-10-29T19:20:36.5577260Z includeif.gitdir:D:/a/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path
+2026-10-29T19:20:36.5578831Z includeif.gitdir:/github/workspace/.git.path
+2026-10-29T19:20:36.5579852Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-29T19:20:36.5629017Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/libm-benchmark-private/libm-benchmark-private/.git.path
+2026-10-29T19:20:36.5997457Z D:\a\_temp\git-credentials-b123c13b-89b6-47b0-bc47-26401bc4e793.config
+2026-10-29T19:20:36.6044628Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/libm-benchmark-private/libm-benchmark-private/.git.path D\:\\a\\_temp\\git\-credentials\-b123c13b\-89b6\-47b0\-bc47\-26401bc4e793\.config
+2026-10-29T19:20:36.6467005Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:D:/a/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path
+2026-10-29T19:20:36.6833022Z D:\a\_temp\git-credentials-b123c13b-89b6-47b0-bc47-26401bc4e793.config
+2026-10-29T19:20:36.6942004Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:D:/a/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path D\:\\a\\_temp\\git\-credentials\-b123c13b\-89b6\-47b0\-bc47\-26401bc4e793\.config
+2026-10-29T19:20:36.7459581Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-29T19:20:36.7832783Z /github/runner_temp/git-credentials-b123c13b-89b6-47b0-bc47-26401bc4e793.config
+2026-10-29T19:20:36.7899887Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-b123c13b\-89b6\-47b0\-bc47\-26401bc4e793\.config
+2026-10-29T19:20:36.8313429Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-29T19:20:36.8668283Z /github/runner_temp/git-credentials-b123c13b-89b6-47b0-bc47-26401bc4e793.config
+2026-10-29T19:20:36.8719877Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-b123c13b\-89b6\-47b0\-bc47\-26401bc4e793\.config
+2026-10-29T19:20:36.9122582Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-29T19:20:37.5345523Z Removing credentials config 'D:\a\_temp\git-credentials-b123c13b-89b6-47b0-bc47-26401bc4e793.config'
+2026-10-29T19:20:37.5359261Z ##[endgroup]
+2026-10-29T19:20:37.5874449Z ##[group]Run msys2/setup-msys2@ec48f7c5447b3140e2b088413ae3a55687bccb6e
+2026-10-29T19:20:37.5874897Z with:
+2026-10-29T19:20:37.5875077Z   msystem: UCRT64
+2026-10-29T19:20:37.5875350Z   install: mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-mpfr
+2026-10-29T19:20:37.5875681Z   path-type: minimal
+2026-10-29T19:20:37.5875893Z   update: false
+2026-10-29T19:20:37.5876062Z   release: true
+2026-10-29T19:20:37.5876251Z   platform-check-severity: fatal
+2026-10-29T19:20:37.5876470Z   cache: true
+2026-10-29T19:20:37.5876633Z ##[endgroup]
+2026-10-29T19:20:37.7543909Z ##[group]Downloading MSYS2...
+2026-10-29T19:20:38.6745234Z ##[endgroup]
+2026-10-29T19:20:38.6746298Z ##[group]Extracting MSYS2...
+2026-10-29T19:20:38.6764983Z [command]C:\hostedtoolcache\windows\msys2-installer\0.0.20260927\x64\base.exe -y
+2026-10-29T19:20:39.4811852Z 
+2026-10-29T19:20:39.4813670Z 7-Zip SFX 26.02 ZS v1.5.7 R1 (x64) : Copyright (c) 1999- Igor Pavlov, 2016- Tino Reichardt, 2022- Sergey G. Brester : 2026-06-27
+2026-10-29T19:20:39.4814797Z 
+2026-10-29T19:20:39.4815468Z Extracting archive: C:\hostedtoolcache\windows\msys2-installer\0.0.20260927\x64\base.exe
+2026-10-29T19:20:39.4816539Z --
+2026-10-29T19:20:39.4817305Z Path = C:\hostedtoolcache\windows\msys2-installer\0.0.20260927\x64\base.exe
+2026-10-29T19:20:39.4818364Z Type = 7z
+2026-10-29T19:20:39.4844628Z 
+2026-10-29T19:20:39.6584021Z   0%
+2026-10-29T19:20:39.6584655Z     
+2026-10-29T19:20:39.8611729Z   0% 581 - msys64\usr\share\zoneinfo\right\US
+2026-10-29T19:20:39.8612527Z                                              
+2026-10-29T19:20:40.0649822Z   1% 1121 - msys64\usr\lib\terminfo\61\apple-80
+2026-10-29T19:20:40.0650712Z                                                
+2026-10-29T19:20:40.2677326Z   1% 1591 - msys64\usr\lib\terminfo\64\darwin-100x37
+2026-10-29T19:20:40.2678210Z                                                     
+2026-10-29T19:20:40.4704975Z   1% 1982 - msys64\usr\lib\terminfo\68\hterm-256color
+2026-10-29T19:20:40.4705944Z                                                      
+2026-10-29T19:20:40.6739794Z   1% 2477 - msys64\usr\lib\terminfo\6f\opennt-100
+2026-10-29T19:20:40.6740698Z                                                  
+2026-10-29T19:20:40.8762871Z   1% 2948 - msys64\usr\lib\terminfo\74\ti707
+2026-10-29T19:20:40.8763645Z                                             
+2026-10-29T19:20:41.0803259Z   2% 3446 - msys64\usr\lib\terminfo\77\wyse+cvis
+2026-10-29T19:20:41.0804114Z                                                 
+2026-10-29T19:20:41.2830625Z   2% 3948 - msys64\usr\share\bash-completion\completions-core\chmod.bash
+2026-10-29T19:20:41.2831666Z                                                                         
+2026-10-29T19:20:41.4873341Z   3% 4404 - msys64\usr\share\bash-completion\completions-core\pylint-3.bash
+2026-10-29T19:20:41.4874785Z                                                                            
+2026-10-29T19:20:41.8296383Z   3% 4907 - msys64\usr\share\bash-completion\completions-fallback\tilt.bash
+2026-10-29T19:20:41.8297469Z                                                                            
+2026-10-29T19:20:42.0172082Z   5% 5122 - msys64\usr\share\doc\mpfr\examples\version.c
+2026-10-29T19:20:42.0172906Z                                                         
+2026-10-29T19:20:42.2206214Z  10% 5495 - msys64\usr\share\locale\cs\LC_MESSAGES\coreutils.mo
+2026-10-29T19:20:42.2207136Z                                                                
+2026-10-29T19:20:42.4249403Z  19% 5835 - msys64\usr\share\locale\it\LC_MESSAGES\gnupg2.mo
+2026-10-29T19:20:42.4253767Z                                                             
+2026-10-29T19:20:42.6271431Z  29% 6158 - msys64\usr\share\locale\sr\LC_MESSAGES\libalpm.mo
+2026-10-29T19:20:42.6272463Z                                                              
+2026-10-29T19:20:42.8295107Z  36% 6561 - msys64\usr\share\man\man1\clear.1.gz
+2026-10-29T19:20:42.8295973Z                                                 
+2026-10-29T19:20:43.1015314Z  36% 7015 - msys64\usr\share\man\man3\alloc_pair.3x.gz
+2026-10-29T19:20:43.1016372Z                                                       
+2026-10-29T19:20:43.2996782Z  36% 7316 - msys64\usr\share\man\man3\CURLOPT_HTTPPOST.3.gz
+2026-10-29T19:20:43.2997708Z                                                            
+2026-10-29T19:20:43.5025925Z  37% 7806 - msys64\usr\share\man\man3\form_field_opts.3x.gz
+2026-10-29T19:20:43.5026839Z                                                            
+2026-10-29T19:20:43.7055054Z  37% 8284 - msys64\usr\share\man\man3\mvgetch.3x.gz
+2026-10-29T19:20:43.7056419Z                                                    
+2026-10-29T19:20:43.9161104Z  38% 8777 - msys64\usr\share\man\man5\alpm-hooks.5.gz
+2026-10-29T19:20:43.9161896Z                                                      
+2026-10-29T19:20:44.1111119Z  44% 9219 - msys64\usr\share\terminfo\61\aj832
+2026-10-29T19:20:44.1111933Z                                               
+2026-10-29T19:20:44.5010493Z  44% 9708 - msys64\usr\share\terminfo\64\d413-unix-s
+2026-10-29T19:20:44.5113684Z                                                     
+2026-10-29T19:20:44.6891321Z  45% 10198 - msys64\usr\share\terminfo\68\hz1552
+2026-10-29T19:20:44.6892144Z                                                 
+2026-10-29T19:20:44.8922083Z  45% 10539 - msys64\usr\share\terminfo\6e\ndr9500-25-nl
+2026-10-29T19:20:44.8923058Z                                                        
+2026-10-29T19:20:45.0956211Z  45% 11048 - msys64\usr\share\terminfo\73\sun-cgsix
+2026-10-29T19:20:45.0957073Z                                                    
+2026-10-29T19:20:45.3048772Z  45% 11521 - msys64\usr\share\terminfo\77\wsvt25m
+2026-10-29T19:20:45.3073029Z                                                  
+2026-10-29T19:20:45.5035240Z  45% 11957 - msys64\usr\share\terminfo\7a\zenith39-ansi
+2026-10-29T19:20:45.5040371Z                                                        
+2026-10-29T19:20:45.7149268Z  46% 12362 - msys64\usr\share\zoneinfo\Etc\GMT+10
+2026-10-29T19:20:45.7150046Z                                                  
+2026-10-29T19:20:45.9128009Z  46% 12641 - msys64\usr\share\zoneinfo\posix\America\Cordoba
+2026-10-29T19:20:45.9136175Z                                                             
+2026-10-29T19:20:46.1236434Z  46% 12810 - msys64\usr\share\zoneinfo\posix\Asia\Gaza
+2026-10-29T19:20:46.1252346Z                                                       
+2026-10-29T19:20:46.3165650Z  46% 13173 - msys64\usr\share\zoneinfo\right\Africa\Khartoum
+2026-10-29T19:20:46.3166549Z                                                             
+2026-10-29T19:20:46.5174787Z  46% 13522 - msys64\usr\share\zoneinfo\right\Canada\Mountain
+2026-10-29T19:20:46.5176586Z                                                             
+2026-10-29T19:20:46.7219333Z  46% 13901 - msys64\var\lib\pacman\local\libhogweed-4.0-1\files
+2026-10-29T19:20:46.7227986Z                                                                
+2026-10-29T19:20:46.9309423Z  49% 14122 - msys64\usr\bin\bzip2.exe
+2026-10-29T19:20:46.9320819Z                                      
+2026-10-29T19:20:47.1377614Z  63% 14287 - msys64\usr\bin\msys-crypto-3.dll
+2026-10-29T19:20:47.1386861Z                                              
+2026-10-29T19:20:47.3311398Z  70% 14343 - msys64\usr\bin\mv.exe
+2026-10-29T19:20:47.3312652Z                                   
+2026-10-29T19:20:47.4834937Z  84% 14421 - msys64\usr\bin\stat.exe
+2026-10-29T19:20:47.4838568Z                                     
+2026-10-29T19:20:47.4878855Z Everything is Ok
+2026-10-29T19:20:47.5382206Z ##[endgroup]
+2026-10-29T19:20:47.5413725Z ##[group]Disable Key Refresh...
+2026-10-29T19:20:47.5426339Z ##[endgroup]
+2026-10-29T19:20:47.5444958Z ##[group]Restoring package cache...
+2026-10-29T19:20:47.9093406Z Cache hit for restore-key: msys2-pkgs-upd:false-conf:a2842ce0-files:696580d3795260ed7fbe07f34ed04fe1db1e00aa514342fec7169e9173a943e6
+2026-10-29T19:20:49.1281428Z Received 41943040 of 72284526 (58.0%), 40.0 MBs/sec
+2026-10-29T19:20:49.9756680Z Received 72284526 of 72284526 (100.0%), 37.9 MBs/sec
+2026-10-29T19:20:49.9757636Z Cache Size: ~69 MB (72284526 B)
+2026-10-29T19:20:49.9759940Z [command]"C:\Program Files\Git\usr\bin\tar.exe" -xf D:/a/_temp/2eea6964-0dfc-4360-bd22-cc86c6f93c8c/cache.tzst -P -C D:/a/libm-benchmark-private/libm-benchmark-private --force-local --use-compress-program "zstd -d"
+2026-10-29T19:20:50.3523589Z Cache restored successfully
+2026-10-29T19:20:50.3579046Z Cache restore for msys2-pkgs-upd:false-conf:a2842ce0, got msys2-pkgs-upd:false-conf:a2842ce0-files:696580d3795260ed7fbe07f34ed04fe1db1e00aa514342fec7169e9173a943e6
+2026-10-29T19:20:50.3585282Z Cache restore for msys2-pkgs-upd:false-conf:a2842ce0, got msys2-pkgs-upd:false-conf:a2842ce0-files:696580d3795260ed7fbe07f34ed04fe1db1e00aa514342fec7169e9173a943e6
+2026-10-29T19:20:50.3588210Z ##[endgroup]
+2026-10-29T19:20:50.3589604Z ##[group]Starting MSYS2 for the first time...
+2026-10-29T19:20:50.5317587Z [command]C:\Windows\system32\cmd.exe /D /S /C D:\a\_temp\setup-msys2\msys2.cmd -c "'uname' '-a'"
+2026-10-29T19:20:50.6048650Z [1;32mMSYS2 is starting for the first time. Executing the initial setup.[1;0m
+2026-10-29T19:20:50.7180964Z Copying skeleton files.
+2026-10-29T19:20:50.7182313Z These files are for the users to personalise their msys2 experience.
+2026-10-29T19:20:50.7183363Z 
+2026-10-29T19:20:50.7183848Z They will never be overwritten nor automatically updated.
+2026-10-29T19:20:50.7184543Z 
+2026-10-29T19:20:50.7872017Z './.bashrc' -> '/home/runneradmin/.bashrc'
+2026-10-29T19:20:50.8079536Z './.bash_profile' -> '/home/runneradmin/.bash_profile'
+2026-10-29T19:20:50.8282053Z './.profile' -> '/home/runneradmin/.profile'
+2026-10-29T19:20:50.8957603Z 'C:\Windows\system32\drivers\etc\hosts' -> '/etc/hosts'
+2026-10-29T19:20:50.9897123Z 'C:\Windows\system32\drivers\etc\protocol' -> '/etc/protocols'
+2026-10-29T19:20:51.0524250Z 'C:\Windows\system32\drivers\etc\services' -> '/etc/services'
+2026-10-29T19:20:51.1235829Z 'C:\Windows\system32\drivers\etc\networks' -> '/etc/networks'
+2026-10-29T19:20:51.3382859Z gpg: /etc/pacman.d/gnupg/trustdb.gpg: trustdb created
+2026-10-29T19:20:51.3470812Z gpg: no ultimately trusted keys found
+2026-10-29T19:20:51.7192411Z gpg: starting migration from earlier GnuPG versions
+2026-10-29T19:20:51.7847877Z gpg: porting secret keys from '/etc/pacman.d/gnupg/secring.gpg' to gpg-agent
+2026-10-29T19:20:51.7860783Z gpg: migration succeeded
+2026-10-29T19:20:51.8128049Z ==> Generating pacman master key. This may take some time.
+2026-10-29T19:20:51.8353123Z gpg: Generating pacman keyring master key...
+2026-10-29T19:20:52.6653644Z gpg: directory '/etc/pacman.d/gnupg/openpgp-revocs.d' created
+2026-10-29T19:20:52.6909581Z gpg: revocation certificate stored as '/etc/pacman.d/gnupg/openpgp-revocs.d/146F6BD9A7ACAFC6A2B2644D946CB1D891887EA8.rev'
+2026-10-29T19:20:52.6910978Z gpg: Done
+2026-10-29T19:20:52.7127595Z ==> Updating trust database...
+2026-10-29T19:20:52.7708323Z gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+2026-10-29T19:20:52.7709225Z gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+2026-10-29T19:20:52.9442330Z ==> Appending keys from msys2.gpg...
+2026-10-29T19:20:53.6887805Z ==> Locally signing trusted keys in keyring...
+2026-10-29T19:20:54.3422777Z   -> Locally signed 5 keys.
+2026-10-29T19:20:54.3611799Z ==> Importing owner trust values...
+2026-10-29T19:20:54.3895886Z gpg: setting ownertrust to 4
+2026-10-29T19:20:54.3919879Z gpg: setting ownertrust to 4
+2026-10-29T19:20:54.3921043Z gpg: setting ownertrust to 4
+2026-10-29T19:20:54.3921804Z gpg: setting ownertrust to 4
+2026-10-29T19:20:54.4026711Z gpg: setting ownertrust to 4
+2026-10-29T19:20:54.4290137Z ==> Disabling revoked keys in keyring...
+2026-10-29T19:20:54.7522642Z   -> Disabled 4 keys.
+2026-10-29T19:20:54.7712577Z ==> Updating trust database...
+2026-10-29T19:20:54.8177780Z gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+2026-10-29T19:20:54.8211237Z gpg: depth: 0  valid:   1  signed:   5  trust: 0-, 0q, 0n, 0m, 0f, 1u
+2026-10-29T19:20:54.8255260Z gpg: depth: 1  valid:   5  signed:   7  trust: 0-, 0q, 0n, 5m, 0f, 0u
+2026-10-29T19:20:54.8273334Z gpg: depth: 2  valid:   4  signed:   2  trust: 4-, 0q, 0n, 0m, 0f, 0u
+2026-10-29T19:20:54.8277899Z gpg: next trustdb check due at 2027-02-10
+2026-10-29T19:20:54.8737914Z pacman-key (pacman) 6.1.0
+2026-10-29T19:20:54.8738995Z Copyright (c) 2010-2024 Pacman Development Team <pacman-dev@lists.archlinux.org>.
+2026-10-29T19:20:54.8740208Z 
+2026-10-29T19:20:54.8941028Z This is free software; see the source for copying conditions.
+2026-10-29T19:20:54.8942010Z There is NO WARRANTY, to the extent permitted by law.
+2026-10-29T19:20:55.1574134Z [1;32mInitial setup complete. MSYS2 is now ready to use.[1;0m
+2026-10-29T19:20:55.1774972Z MINGW64_NT-10.0-26100 runnervmdaln5 3.6.10-c770e1b9.x86_64 2026-09-26 06:38 UTC x86_64 Msys
+2026-10-29T19:20:55.1838516Z ##[endgroup]
+2026-10-29T19:20:55.1839394Z ##[group]Disable CheckSpace...
+2026-10-29T19:20:55.3035551Z [command]C:\Windows\system32\cmd.exe /D /S /C D:\a\_temp\setup-msys2\msys2.cmd -c "'sed' '-i' 's/^CheckSpace/#CheckSpace/g' '/etc/pacman.conf'"
+2026-10-29T19:20:55.5532931Z ##[endgroup]
+2026-10-29T19:20:55.5533985Z ##[group]Installing additional packages through pacman...
+2026-10-29T19:20:55.6687494Z [command]C:\Windows\system32\cmd.exe /D /S /C D:\a\_temp\setup-msys2\msys2.cmd -c "'pacman' '--noconfirm' '-S' '--needed' '--overwrite' '*' 'mingw-w64-ucrt-x86_64-gcc' 'mingw-w64-ucrt-x86_64-mpfr'"
+2026-10-29T19:20:56.6973391Z resolving dependencies...
+2026-10-29T19:20:56.7094021Z looking for conflicting packages...
+2026-10-29T19:20:56.7125256Z 
+2026-10-29T19:20:56.7131521Z Packages (21) mingw-w64-ucrt-x86_64-binutils-2.47-3  mingw-w64-ucrt-x86_64-cc-libs-16.2.0-4  mingw-w64-ucrt-x86_64-crt-14.0.0.r426.g4564ee4b5-1  mingw-w64-ucrt-x86_64-gettext-runtime-1.0-1  mingw-w64-ucrt-x86_64-gmp-6.3.0-2  mingw-w64-ucrt-x86_64-headers-14.0.0.r426.g4564ee4b5-1  mingw-w64-ucrt-x86_64-isl-0.28-1  mingw-w64-ucrt-x86_64-libatomic-16.2.0-4  mingw-w64-ucrt-x86_64-libgcc-16.2.0-4  mingw-w64-ucrt-x86_64-libiconv-1.19-1  mingw-w64-ucrt-x86_64-libquadmath-16.2.0-4  mingw-w64-ucrt-x86_64-libstdc++-16.2.0-4  mingw-w64-ucrt-x86_64-libwinpthread-14.0.0.r426.g4564ee4b5-1  mingw-w64-ucrt-x86_64-mpc-1.4.1-1  mingw-w64-ucrt-x86_64-tzdata-2026d-1  mingw-w64-ucrt-x86_64-windows-default-manifest-20260815-1  mingw-w64-ucrt-x86_64-winpthreads-14.0.0.r426.g4564ee4b5-1  mingw-w64-ucrt-x86_64-zlib-1.3.2-2  mingw-w64-ucrt-x86_64-zstd-1.5.7-2  mingw-w64-ucrt-x86_64-gcc-16.2.0-4  mingw-w64-ucrt-x86_64-mpfr-4.2.2-3
+2026-10-29T19:20:56.7138224Z 
+2026-10-29T19:20:56.7156717Z Total Installed Size:  471.99 MiB
+2026-10-29T19:20:56.7158015Z 
+2026-10-29T19:20:56.7182162Z :: Proceed with installation? [Y/n] 
+2026-10-29T19:20:56.7182829Z checking keyring...
+2026-10-29T19:20:56.7679791Z checking package integrity...
+2026-10-29T19:21:00.6582791Z loading package files...
+2026-10-29T19:21:00.7186444Z checking for file conflicts...
+2026-10-29T19:21:01.0280343Z :: Processing package changes...
+2026-10-29T19:21:01.0366889Z installing mingw-w64-ucrt-x86_64-libwinpthread...
+2026-10-29T19:21:01.0466339Z installing mingw-w64-ucrt-x86_64-libatomic...
+2026-10-29T19:21:01.0506612Z installing mingw-w64-ucrt-x86_64-libgcc...
+2026-10-29T19:21:01.0528727Z installing mingw-w64-ucrt-x86_64-tzdata...
+2026-10-29T19:21:03.1422221Z installing mingw-w64-ucrt-x86_64-libstdc++...
+2026-10-29T19:21:03.1541718Z installing mingw-w64-ucrt-x86_64-libquadmath...
+2026-10-29T19:21:03.1601982Z installing mingw-w64-ucrt-x86_64-cc-libs...
+2026-10-29T19:21:03.1630733Z installing mingw-w64-ucrt-x86_64-libiconv...
+2026-10-29T19:21:03.1933661Z installing mingw-w64-ucrt-x86_64-gettext-runtime...
+2026-10-29T19:21:03.3674864Z installing mingw-w64-ucrt-x86_64-zlib...
+2026-10-29T19:21:03.3776505Z installing mingw-w64-ucrt-x86_64-zstd...
+2026-10-29T19:21:03.4006931Z installing mingw-w64-ucrt-x86_64-binutils...
+2026-10-29T19:21:03.7079476Z installing mingw-w64-ucrt-x86_64-headers...
+2026-10-29T19:21:05.3512540Z installing mingw-w64-ucrt-x86_64-crt...
+2026-10-29T19:21:06.1211941Z installing mingw-w64-ucrt-x86_64-gmp...
+2026-10-29T19:21:06.1376665Z installing mingw-w64-ucrt-x86_64-isl...
+2026-10-29T19:21:06.2280163Z installing mingw-w64-ucrt-x86_64-mpfr...
+2026-10-29T19:21:06.2544832Z installing mingw-w64-ucrt-x86_64-mpc...
+2026-10-29T19:21:06.2626964Z installing mingw-w64-ucrt-x86_64-windows-default-manifest...
+2026-10-29T19:21:06.2662389Z installing mingw-w64-ucrt-x86_64-winpthreads...
+2026-10-29T19:21:06.2786392Z installing mingw-w64-ucrt-x86_64-gcc...
+2026-10-29T19:21:07.8156261Z Optional dependencies for mingw-w64-ucrt-x86_64-gcc
+2026-10-29T19:21:07.8159200Z     mingw-w64-ucrt-x86_64-libatomic [installed]
+2026-10-29T19:21:07.8200480Z     mingw-w64-ucrt-x86_64-libgomp: OpenMP
+2026-10-29T19:21:07.8245193Z     mingw-w64-ucrt-x86_64-libquadmath: Quad Math [installed]
+2026-10-29T19:21:07.8607745Z ##[endgroup]
+2026-10-29T19:21:07.8608726Z ##[group]Saving package cache...
+2026-10-29T19:21:07.9775244Z [command]C:\Windows\system32\cmd.exe /D /S /C D:\a\_temp\setup-msys2\msys2.cmd -c "'paccache' '-r' '-f' '-u' '-k0'"
+2026-10-29T19:21:09.0487058Z ==> no candidate packages found for pruning
+2026-10-29T19:21:09.1717608Z [command]C:\Windows\system32\cmd.exe /D /S /C D:\a\_temp\setup-msys2\msys2.cmd -c "'paccache' '-r' '-f' '-k1'"
+2026-10-29T19:21:09.5316366Z ==> no candidate packages found for pruning
+2026-10-29T19:21:09.7952440Z Cache unchanged, skipping save for msys2-pkgs-upd:false-conf:a2842ce0-files:696580d3795260ed7fbe07f34ed04fe1db1e00aa514342fec7169e9173a943e6
+2026-10-29T19:21:09.8963090Z [command]C:\Windows\system32\cmd.exe /D /S /C D:\a\_temp\setup-msys2\msys2.cmd -c "'pacman' '--noconfirm' '-Scc'"
+2026-10-29T19:21:12.0003915Z 
+2026-10-29T19:21:12.0004662Z Cache directory: /var/cache/pacman/pkg/
+2026-10-29T19:21:12.0152643Z :: Do you want to remove ALL files from cache? [Y/n] 
+2026-10-29T19:21:12.0153583Z removing all files from cache...
+2026-10-29T19:21:12.0154132Z 
+2026-10-29T19:21:12.0154509Z Database directory: /var/lib/pacman/
+2026-10-29T19:21:12.0177317Z :: Do you want to remove unused repositories? [Y/n] 
+2026-10-29T19:21:12.0178415Z removing unused sync repositories...
+2026-10-29T19:21:12.0250562Z ##[endgroup]
+2026-10-29T19:21:12.1140343Z ##[group]Run Add-Content $env:GITHUB_PATH (Join-Path $env:POW_MSYS_ROOT 'ucrt64\bin')
+2026-10-29T19:21:12.1141360Z [36;1mAdd-Content $env:GITHUB_PATH (Join-Path $env:POW_MSYS_ROOT 'ucrt64\bin')[0m
+2026-10-29T19:21:12.9587537Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-29T19:21:12.9588154Z env:
+2026-10-29T19:21:12.9588378Z   MSYSTEM: UCRT64
+2026-10-29T19:21:12.9588631Z   POW_MSYS_ROOT: D:\a\_temp\msys64
+2026-10-29T19:21:12.9589213Z ##[endgroup]
+2026-10-29T19:21:13.9188155Z ##[group]Run rustup toolchain install 1.99.0 --profile minimal
+2026-10-29T19:21:13.9188686Z [36;1mrustup toolchain install 1.99.0 --profile minimal[0m
+2026-10-29T19:21:13.9189032Z [36;1mrustup override set 1.99.0[0m
+2026-10-29T19:21:13.9206450Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-10-29T19:21:13.9206850Z env:
+2026-10-29T19:21:13.9207048Z   MSYSTEM: UCRT64
+2026-10-29T19:21:13.9207233Z ##[endgroup]
+2026-10-29T19:21:18.6706651Z info: syncing channel updates for 1.99.0-x86_64-pc-windows-msvc
+2026-10-29T19:21:19.6496965Z info: latest update on 2026-10-01 for version 1.99.0 (b940084d7 2026-09-28)
+2026-10-29T19:21:19.6724525Z info: downloading 3 components
+2026-10-29T19:21:34.1741258Z 
+2026-10-29T19:21:34.2435313Z   1.99.0-x86_64-pc-windows-msvc installed - rustc 1.99.0 (b940084d7 2026-09-28)
+2026-10-29T19:21:34.2444528Z 
+2026-10-29T19:21:34.3340936Z info: override toolchain for D:\a\libm-benchmark-private\libm-benchmark-private set to 1.99.0-x86_64-pc-windows-msvc
+2026-10-29T19:21:34.4366829Z ##[group]Run python benchmarks/scripts/generate_vectors.py --check
+2026-10-29T19:21:34.4368054Z [36;1mpython benchmarks/scripts/generate_vectors.py --check[0m
+2026-10-29T19:21:34.4369100Z [36;1mcargo test --manifest-path benchmarks/Cargo.toml --locked[0m
+2026-10-29T19:21:34.4404501Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-10-29T19:21:34.4405469Z env:
+2026-10-29T19:21:34.4405754Z   MSYSTEM: UCRT64
+2026-10-29T19:21:34.4406349Z ##[endgroup]
+2026-10-29T19:21:43.6438823Z     Updating git repository `https://github.com/rust-lang/compiler-builtins`
+2026-10-29T19:21:46.2113884Z    Compiling libm v0.2.16 (D:\a\libm-benchmark-private\libm-benchmark-private\libm)
+2026-10-29T19:21:46.2151139Z    Compiling libm v0.2.16 (https://github.com/rust-lang/compiler-builtins?rev=6bc104a50f83cb205790c61c5d33508046f5fad3#6bc104a5)
+2026-10-29T19:21:53.0038895Z    Compiling pow-bench-core v0.1.0 (D:\a\libm-benchmark-private\libm-benchmark-private\benchmarks\core)
+2026-10-29T19:21:53.1584655Z    Compiling pow-bench-host v0.1.0 (D:\a\libm-benchmark-private\libm-benchmark-private\benchmarks\host)
+2026-10-29T19:21:53.5585371Z     Finished `test` profile [unoptimized + debuginfo] target(s) in 9.98s
+2026-10-29T19:21:53.5608222Z      Running unittests src\lib.rs (benchmarks\target\debug\deps\pow_bench_core-71f2eef0bfa192d6.exe)
+2026-10-29T19:21:53.5718615Z 
+2026-10-29T19:21:53.5719056Z running 4 tests
+2026-10-29T19:21:53.5723629Z test kernel::tests::empty_batch_never_divides_by_zero ... ok
+2026-10-29T19:21:53.5724641Z test kernel::tests::consumes_remainder_and_every_repeat ... ok
+2026-10-29T19:21:53.5727727Z test kernel::tests::ieee_identities_and_signed_zero ... ok
+2026-10-29T19:21:53.5731977Z test kernel::tests::feedback_matches_scalar_execution ... ok
+2026-10-29T19:21:53.5732661Z 
+2026-10-29T19:21:53.5733290Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-10-29T19:21:53.5734161Z 
+2026-10-29T19:21:53.5750886Z      Running unittests src\main.rs (benchmarks\target\debug\deps\pow_bench_host-da35dac401f0ddaf.exe)
+2026-10-29T19:21:53.5865686Z 
+2026-10-29T19:21:53.5866089Z running 0 tests
+2026-10-29T19:21:53.5866573Z 
+2026-10-29T19:21:53.5867228Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-10-29T19:21:53.5868099Z 
+2026-10-29T19:21:53.5883384Z    Doc-tests pow_bench_core
+2026-10-29T19:21:53.6315801Z 
+2026-10-29T19:21:53.6316500Z running 0 tests
+2026-10-29T19:21:53.6317076Z 
+2026-10-29T19:21:53.6318059Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-10-29T19:21:53.6318935Z 
+2026-10-29T19:21:53.6903948Z ##[group]Run python benchmarks/scripts/run_host.py --target-cpu default --large-accuracy --output benchmarks/results/runs/hosted-default
+2026-10-29T19:21:53.6905297Z [36;1mpython benchmarks/scripts/run_host.py --target-cpu default --large-accuracy --output benchmarks/results/runs/hosted-default[0m
+2026-10-29T19:21:53.6907001Z [36;1mpython benchmarks/scripts/run_host.py --target-cpu native --large-accuracy --output benchmarks/results/runs/hosted-native[0m
+2026-10-29T19:21:53.6925481Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-10-29T19:21:53.6925880Z env:
+2026-10-29T19:21:53.6926052Z   MSYSTEM: UCRT64
+2026-10-29T19:21:53.6926248Z ##[endgroup]
+2026-10-29T19:22:15.5837888Z D:\a\libm-benchmark-private\libm-benchmark-private\benchmarks\results\runs\hosted-default
+2026-10-29T19:22:35.6185871Z D:\a\libm-benchmark-private\libm-benchmark-private\benchmarks\results\runs\hosted-native
+2026-10-29T19:22:35.6525990Z ##[group]Run cargo clean --manifest-path benchmarks/Cargo.toml
+2026-10-29T19:22:35.6526536Z [36;1mcargo clean --manifest-path benchmarks/Cargo.toml[0m
+2026-10-29T19:22:35.6527397Z [36;1mcargo clean --manifest-path benchmarks/Cargo.toml --target-dir benchmarks/results/runs/hosted-default/target[0m
+2026-10-29T19:22:35.6528216Z [36;1mcargo clean --manifest-path benchmarks/Cargo.toml --target-dir benchmarks/results/runs/hosted-native/target[0m
+2026-10-29T19:22:35.6544051Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2026-10-29T19:22:35.6544442Z env:
+2026-10-29T19:22:35.6544620Z   MSYSTEM: UCRT64
+2026-10-29T19:22:35.6544805Z ##[endgroup]
+2026-10-29T19:22:35.7757390Z      Removed 70 files, 25.5MiB total
+2026-10-29T19:22:35.8500093Z      Removed 77 files, 16.6MiB total
+2026-10-29T19:22:35.9291723Z      Removed 77 files, 16.6MiB total
+2026-10-29T19:22:35.9653765Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-10-29T19:22:35.9654222Z with:
+2026-10-29T19:22:35.9654543Z   name: pow-target-windows-2025-f39774d821b2bbc19c98dca827678fdce636d075
+2026-10-29T19:22:35.9654961Z   path: benchmarks/results/runs/hosted-*/
+2026-10-29T19:22:35.9655484Z   if-no-files-found: warn
+2026-10-29T19:22:35.9655718Z   compression-level: 6
+2026-10-29T19:22:35.9655914Z   overwrite: false
+2026-10-29T19:22:35.9656108Z   include-hidden-files: false
+2026-10-29T19:22:35.9656379Z   archive: true
+2026-10-29T19:22:35.9656679Z env:
+2026-10-29T19:22:35.9656847Z   MSYSTEM: UCRT64
+2026-10-29T19:22:35.9657024Z ##[endgroup]
+2026-10-29T19:22:36.1762949Z With the provided path, there will be 34 files uploaded
+2026-10-29T19:22:36.1847711Z Artifact name is valid!
+2026-10-29T19:22:36.1851455Z Root directory input is valid!
+2026-10-29T19:22:36.5619034Z Uploading artifact: pow-target-windows-2025-f39774d821b2bbc19c98dca827678fdce636d075.zip
+2026-10-29T19:22:36.5660879Z Beginning upload of artifact content to blob storage
+2026-10-29T19:22:38.0089207Z Uploaded bytes 8388608
+2026-10-29T19:22:38.0655527Z Uploaded bytes 8493494
+2026-10-29T19:22:38.1250414Z Finished uploading artifact content to blob storage!
+2026-10-29T19:22:38.1251725Z SHA256 digest of uploaded artifact is 0803ab2751270a43c814a4f3912581647db5d3ff38a05cd43e9cbb6ba33a5c91
+2026-10-29T19:22:38.1252783Z Finalizing artifact upload
+2026-10-29T19:22:38.7558474Z Artifact pow-target-windows-2025-f39774d821b2bbc19c98dca827678fdce636d075 successfully finalized. Artifact ID 12926601180
+2026-10-29T19:22:38.7561148Z Artifact pow-target-windows-2025-f39774d821b2bbc19c98dca827678fdce636d075 has been successfully uploaded! Final size is 8493494 bytes. Artifact ID is 12926601180
+2026-10-29T19:22:38.7562912Z Artifact download URL: https://github.com/luofang34/libm-benchmark-private/actions/runs/40939173049/artifacts/12926601180
+2026-10-29T19:22:38.7866600Z Post job cleanup.
+2026-10-29T19:22:39.2253070Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-29T19:22:39.2801462Z git version 2.56.0.windows.2
+2026-10-29T19:22:39.2957784Z Temporarily overriding HOME='D:\a\_temp\d4a44b4c-0082-4ac8-9787-94ab3055e8fd' before making global git config changes
+2026-10-29T19:22:39.2972539Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-29T19:22:39.3079526Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\libm-benchmark-private\libm-benchmark-private
+2026-10-29T19:22:39.3566165Z Removing SSH command configuration
+2026-10-29T19:22:39.3567330Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T19:22:39.4137697Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-29T19:22:40.3415824Z Removing HTTP extra header
+2026-10-29T19:22:40.3417387Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T19:22:40.3960372Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-29T19:22:41.2645321Z Removing includeIf entries pointing to credentials config files
+2026-10-29T19:22:41.2647840Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T19:22:41.3098156Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-29T19:22:42.1107658Z Cleaning up orphan processes
+2026-10-29T19:22:42.1912616Z Terminate orphan process: pid (8920) (vctip)
+

@@ -1,0 +1,32 @@
+{
+  "board": "runnervmdaln5",
+  "soc": "AMD EPYC 7763 64-Core Processor",
+  "core": "OS-scheduled; affinity not pinned",
+  "target_triple": "x86_64-pc-windows-msvc",
+  "target_cpu": "x86-64",
+  "target_features": "{\"cpu_defaults\": \"x86-64\", \"llvm_explicit\": [\"+cx16,+sse,+sse2,+sse3,+sahf\"], \"rustc_cfg\": [\"cmpxchg16b\", \"fxsr\", \"sse\", \"sse2\", \"sse3\"]}",
+  "float_abi": "win64",
+  "fpu_mode": "hardware_fp64",
+  "libc_or_runtime": "Rust core/compiler_builtins; x86_64-pc-windows-msvc;  ; Windows",
+  "compiler_backend": "LLVM version: 23.1.1",
+  "compiler_version": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "run_id": "hosted-default",
+  "device_id": "runnervmdaln5",
+  "architecture": "x86_64",
+  "source_sha": "f39774d821b2bbc19c98dca827678fdce636d075",
+  "firmware_sha": "f3cd13f66e94b5237618c3cebc78d9d36d33d0f554f43a9bc3c05d368b36337f",
+  "dataset_sha": "1b227b1001dd0b99b6b495f911d6ff83f6744557c7fb63778ed4ea259136bcbf",
+  "build_flags": "opt-level=3,lto=fat,codegen-units=1,panic=abort,target-cpu=default",
+  "timer": "std::time::Instant",
+  "timer_hz": 1000000000,
+  "counter_bits": "128 duration representation",
+  "interrupt_configuration": "OS managed",
+  "memory_configuration": "OS managed; warm caches; no core affinity",
+  "algorithm_revisions": {
+    "Baseline": "git:6bc104a50f83cb205790c61c5d33508046f5fad3",
+    "Candidate": "sha256:a042bb5e7776b1c62144d282b5a62527739892125f1f275e6df9165ae419b099"
+  },
+  "rustc_vV": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.0\nLLVM version: 23.1.1",
+  "cpu_details": "{\n  \"Name\": \"AMD EPYC 7763 64-Core Processor                \",\n  \"Manufacturer\": \"AuthenticAMD\",\n  \"Architecture\": 9,\n  \"NumberOfCores\": 1,\n  \"NumberOfLogicalProcessors\": 2\n}",
+  "os": "Windows-2025Server-10.0.26100-SP0"
+}

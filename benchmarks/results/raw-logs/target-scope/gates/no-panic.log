@@ -1,0 +1,23 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling no-panic v0.1.37
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling syn v3.0.6
+    Finished `release-opt` profile [optimized] target(s) in 9.37s
+     Running unittests src/lib.rs (target/release-opt/build/libm/379edac8af6bce64/out/libm-379edac8af6bce64)
+
+running 10 tests
+test math::pow::tests::infinity_as_exponent ... ok
+test math::pow::tests::nan_inputs ... ok
+test math::pow::tests::infinity_as_base ... ok
+test math::pow::tests::signed_underflow_and_nan_identities ... ok
+test math::pow::tests::one_as_base ... ok
+test math::pow::tests::normal_cases ... ok
+test math::pow::tests::special_cases ... ok
+test math::pow::tests::subnormal_log_reduction ... ok
+test math::pow::tests::zero_as_base ... ok
+test math::pow::tests::zero_as_exponent ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 104 filtered out; finished in 0.00s
+

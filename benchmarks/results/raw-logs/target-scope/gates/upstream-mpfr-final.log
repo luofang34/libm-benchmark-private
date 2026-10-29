@@ -1,0 +1,20 @@
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+   Compiling libm-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/libm-test)
+    Finished `release-checked` profile [optimized] target(s) in 10.53s
+     Running tests/z_extensive/main.rs (target/release-checked/build/libm-test/c3f02524fb1f2ac5/out/z_extensive-c3f02524fb1f2ac5)
+
+running 4 tests
+test mp_extensive_pow     ... 
+Spaced Mpfr pow arg 1/2: 1000 iterations (1000000 total)
+Spaced Mpfr pow arg 2/2: 1000 iterations (1000000 total)
+starting extensive tests for `pow`
+[  0s 100%] pow          1000000/1000000       14318732.67/s done in 0
+
+ok
+test mp_extensive_powf    ... ignored
+test mp_extensive_powif32 ... ignored
+test mp_extensive_powif64 ... ignored
+
+test result: ok. 1 passed; 0 failed; 3 ignored; 0 measured; 217 filtered out; finished in 0.58s
+

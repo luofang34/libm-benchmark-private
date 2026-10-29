@@ -1,0 +1,14 @@
+{
+  "cases": 151083,
+  "module_sha256": "4503ddba191a08b74515f2eb1f89f33a7d09cb7f88c8279f38f6d32a73ca81e4",
+  "input_sha256": "858210471bda65f0b8c094fe8ff41cef05aaaa4a8ab44142f4807d0e7445f0d9",
+  "output_sha256": "c7d454872132189f2171c15f40e9192de764e6caa2a3290b96a52ec14b454d97",
+  "node": "v26.12.1",
+  "v8": "14.6.202.34-node.40",
+  "checks": [
+    "ordinary std equals direct libm",
+    "ordinary std equals archived candidate"
+  ],
+  "comparison": "exact bits for non-NaN results; NaN classification without payload equality",
+  "reference": "MPFR validation is separate; these equality checks are not an accuracy proof"
+}

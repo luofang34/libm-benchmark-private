@@ -1,0 +1,116 @@
+[
+  {
+    "file": "application-base-O3.wasm",
+    "bytes": 117214,
+    "sha256": "2c185afe27e204b0f0a9203c410c873025ef58b18fb2dfc4a3405259b6ea04ac"
+  },
+  {
+    "file": "application-base-Oz.wasm",
+    "bytes": 116411,
+    "sha256": "7ff1200a5ed009cc6ff6d13fe84bb5a8c130a7e38ed966c98d29a6be8cf82928"
+  },
+  {
+    "file": "application-base.wasm",
+    "bytes": 128761,
+    "sha256": "23dd3cfb6779b9d9f22dfeffe5cb547196acce4a1ba3826a5e0396ddcfc0fb07",
+    "table_occurrences": {
+      "LOG_TAB": 0,
+      "EXP_TAB": 0
+    }
+  },
+  {
+    "file": "application-patched-O3.wasm",
+    "bytes": 121570,
+    "sha256": "5cf2ba6c6bf475f0b85d4c922e0d35e5795205b73a489c941ffc85bf9224a3a2"
+  },
+  {
+    "file": "application-patched-Oz.wasm",
+    "bytes": 120769,
+    "sha256": "b08cba43a9a04a9d28358b0bbcab9c6f7b01b4252ad415e416f1e345a0fcda53"
+  },
+  {
+    "file": "application-patched.wasm",
+    "bytes": 132985,
+    "sha256": "4c59eb18382c61678a3b9017331e2b4645811981224947536aa9dbd9b30946cc",
+    "table_occurrences": {
+      "LOG_TAB": 1,
+      "EXP_TAB": 1
+    }
+  },
+  {
+    "file": "medium-base-O3.wasm",
+    "bytes": 15677,
+    "sha256": "983ff3508271cff0a66154a9e40a3a05254c4ad44756bbf1c969a4f617344355"
+  },
+  {
+    "file": "medium-base-Oz.wasm",
+    "bytes": 15672,
+    "sha256": "ff231bb1210c3b4a1ce513ca03a4e0314939cd6fef3de505c2041796442829e9"
+  },
+  {
+    "file": "medium-base.wasm",
+    "bytes": 16565,
+    "sha256": "094d507fd50453bc2d14a255e9859cca903285cf90ec8f45ad33b3d59af6b8b4",
+    "table_occurrences": {
+      "LOG_TAB": 0,
+      "EXP_TAB": 0
+    }
+  },
+  {
+    "file": "medium-patched-O3.wasm",
+    "bytes": 19985,
+    "sha256": "9ac7a6952c70e99d1a7d6d02638588c07fdde398dcbb2c88a061c4a45dde9eda"
+  },
+  {
+    "file": "medium-patched-Oz.wasm",
+    "bytes": 19982,
+    "sha256": "61b498cd52e7fc80b2a65aa55a5f1020cabb5d2062da8bd3b070491c0ed4b0d7"
+  },
+  {
+    "file": "medium-patched.wasm",
+    "bytes": 20725,
+    "sha256": "c2bfd947a509071d9f5a0163b75aa5e135732e9d1dc7bbecc7768d9434cf9351",
+    "table_occurrences": {
+      "LOG_TAB": 1,
+      "EXP_TAB": 1
+    }
+  },
+  {
+    "file": "minimal-base-O3.wasm",
+    "bytes": 2271,
+    "sha256": "f74e47182e69b664ca84e0c580279c1bf4c9cea7e00bad9245d26947a09950ae"
+  },
+  {
+    "file": "minimal-base-Oz.wasm",
+    "bytes": 2267,
+    "sha256": "94d7dc920c27acd3f70e724f080d2be764e957b5f8acb8dbcabe65b3b4d54c50"
+  },
+  {
+    "file": "minimal-base.wasm",
+    "bytes": 2524,
+    "sha256": "1a768c7fb4091288b7d155f08eb18abcce25a3f5a6391682ed0e1471a5bd0af9",
+    "table_occurrences": {
+      "LOG_TAB": 0,
+      "EXP_TAB": 0
+    }
+  },
+  {
+    "file": "minimal-patched-O3.wasm",
+    "bytes": 6575,
+    "sha256": "3b195d37dbf456aaaa8815d6d5491ecd8a07bbbf25590de6f731d2c6a9e4a4dd"
+  },
+  {
+    "file": "minimal-patched-Oz.wasm",
+    "bytes": 6569,
+    "sha256": "09094334cb9e0bf8a54976f728cc9491266c731784a00528a8e8a16077ed35c3"
+  },
+  {
+    "file": "minimal-patched.wasm",
+    "bytes": 6686,
+    "sha256": "cfceb436c860485a29bd993d1336ca7218e892ab4e8f5bc670c4d02cf3d6590f",
+    "table_occurrences": {
+      "LOG_TAB": 1,
+      "EXP_TAB": 1
+    }
+  }
+]

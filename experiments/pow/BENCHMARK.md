@@ -37,6 +37,8 @@ The candidate was transcribed from [ARM's permissive C implementation](https://g
 
 ## P0 results
 
+This table records the initial algorithm comparison. The compile-time scoped source `f39774d821b2bbc19c98dca827678fdce636d075` has a separate [WASM rerun](../../benchmarks/results/raw-logs/target-scope/std/performance.csv) and [default/native CPU hardware evidence](../../benchmarks/reports/architecture-comparison.md#hosted-hardware-comparison). These populations are retained separately.
+
 Normal positive inputs, ns/call: median [p10, p90].
 
 | Runtime | Implementation | Independent throughput | Dependency kernel |
@@ -67,7 +69,7 @@ Corrected C++ native median: **8.862 ns/op**, 15 rounds, same precomputed positi
 
 ## Patch and retained artifacts
 
-The standalone [libm-pow-arm.patch](libm-pow-arm.patch) applies to checkout `6bc104a50f83cb205790c61c5d33508046f5fad3` and is already applied on the `experiment/pow-wasm` branch. It changes only f64 pow, its lookup data/tests, and removal of the helper only that function used. The experimental harness and logs are outside the patch. Reverse application was checked without modifying files.
+The standalone [libm-pow-arm.patch](libm-pow-arm.patch) applies to checkout `6bc104a50f83cb205790c61c5d33508046f5fad3` and is already applied on the `experiment/pow-wasm` branch. It changes only f64 pow, its lookup data/tests, target selection and preserved fdlibm fallback. The selector enables WASM unknown, AArch64 macOS/GNU Linux with NEON, and x86-64 GNU Linux/Windows MSVC with SSE2. The fallback arithmetic is preserved with its helper localized. The experimental harness, private workflow and logs are outside the seven-file patch. Forward/reverse application and byte equality against the tested source are [verified](../../benchmarks/results/raw-logs/target-scope/patch-verification.json).
 
 The actual tested WASM modules are retained in `results/wasm/`, with SHA-256 values in `results/artifact-manifest.json`. `inputs.bin.gz`, `outputs.bin.gz`, and `accuracy-domains.txt.gz` preserve the raw accuracy stream and labels. Each output record contains eight little-endian u64 bit patterns: x, y, old libm, petir, stable std, candidate, rebuilt baseline std, rebuilt candidate std. To check the archived fixtures without rebuilding:
 
@@ -102,7 +104,7 @@ node experiments/pow/bench.mjs experiments/pow/target/wasm32-unknown-unknown/rel
 
 - Debug and Release libm unit tests: **114 passed** in each, including signed-zero, signaling-NaN identities, minimum subnormal, and a difficult logarithm-reduction regression.
 - Clippy with `-D warnings`: libm, benchmark harness, and all fixture features pass. Formatting passes. Generated tables agree with the compiled ARM reference.
-- The candidate remains `no_std`; wasm32-unknown-unknown and thumbv7em-none-eabihf builds pass. Native ARM64 execution and 151,083-case native/WASM bit comparison pass (excluding unspecified NaN payload differences).
+- The candidate remains `no_std`. Eleven actual target builds enforce selection/table omission; Rust 1.67.0 builds the library-only production source for AArch64 macOS, WASM and Cortex-M fallback. Eight default/native hosted configurations each pass 151,083 MPFR cases. Ten pow tests pass with no-panic verification; the upstream MPFR extensive harness passes 1,000,000 spaced pairs. Logs are in [target-scope/gates](../../benchmarks/results/raw-logs/target-scope/gates/).
 - Strict `RUSTDOCFLAGS="-D missing_docs -D broken_intra_doc_links" cargo doc -p libm --no-deps` fails on existing public functions outside pow. The identical gate also fails on an unmodified baseline copy: [baseline](results/raw/doc-baseline.log), [candidate](results/raw/doc-libm.log). No unrelated documentation or lint policy is changed. No claim is made that all repository CI jobs passed.
-- The repository has no `scripts/check-structure.sh` or `quality-gates` job. This experiment does not alter CI.
+- The repository has no `scripts/check-structure.sh` or `quality-gates` job. The standalone math patch does not alter upstream CI. Manual evidence workflows exist only in the private benchmark repository.
 - See [STD_INTEGRATION.md](STD_INTEGRATION.md), [size.csv](size.csv), and [accuracy.md](accuracy.md) for integration, marginal size, and accuracy evidence. The patch is intended for private hardware testing.

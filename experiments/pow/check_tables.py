@@ -4,6 +4,7 @@ import subprocess,re,ast
 root=Path(__file__).resolve().parent
 arm=root/'vendor/optimized-routines/math'
 exe=root/'results/artifacts/dump_tables'
+exe.parent.mkdir(parents=True,exist_ok=True)
 subprocess.run(['clang','-O2','-DHAVE_FAST_FMA=0','-DHAVE_FAST_ROUND=0','-DUSE_GLIBC_ABI=0','-I',str(arm),str(root/'dump_tables.c'),str(arm/'pow_log_data.c'),str(arm/'exp_data.c'),'-o',str(exe)],check=True)
 generated=subprocess.check_output([exe],text=True)
 actual=(root.parent.parent/'libm/src/math/pow/table.rs').read_text()

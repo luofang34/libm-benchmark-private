@@ -1,0 +1,57 @@
+[
+  {
+    "target": "wasm32-unknown-unknown",
+    "reachable_functions": [
+      "_RNvNtNtCsjy7uZ191KsW_4libm4math3pow3pow"
+    ],
+    "external_calls": [
+      "llvm.fabs.f64"
+    ],
+    "status": "PASS; no math or FMA libcall",
+    "ir_sha256": "b5f94f22d4f4b738c97ce96f65b85aa2abf311e57afcb5cb13e4565acfb4fb92"
+  },
+  {
+    "target": "aarch64-apple-darwin",
+    "reachable_functions": [
+      "_RNvNtNtCsc4zDiVTVMeN_4libm4math3pow3pow"
+    ],
+    "external_calls": [
+      "llvm.fabs.f64"
+    ],
+    "status": "PASS; no math or FMA libcall",
+    "ir_sha256": "69c926d5d2dee25eaa791421746c8a71b93064007202083791874b9290cdd388"
+  },
+  {
+    "target": "aarch64-unknown-linux-gnu",
+    "reachable_functions": [
+      "_RNvNtNtCs3S3nnAuctSq_4libm4math3pow3pow"
+    ],
+    "external_calls": [
+      "llvm.fabs.f64"
+    ],
+    "status": "PASS; no math or FMA libcall",
+    "ir_sha256": "259707a806db55c709f29cbdec2c3d6097c9b8af110d27de1c5303f7a4110209"
+  },
+  {
+    "target": "x86_64-unknown-linux-gnu",
+    "reachable_functions": [
+      "_RNvNtNtCsbvBC7H8SNgu_4libm4math3pow3pow"
+    ],
+    "external_calls": [
+      "llvm.fabs.f64"
+    ],
+    "status": "PASS; no math or FMA libcall",
+    "ir_sha256": "3e6c560b68d1b77f456420ec861449441f6d45fb2dd07fd8a307b2a0e614318c"
+  },
+  {
+    "target": "x86_64-pc-windows-msvc",
+    "reachable_functions": [
+      "_RNvNtNtCsgbKoC6ieNxQ_4libm4math3pow3pow"
+    ],
+    "external_calls": [
+      "llvm.fabs.f64"
+    ],
+    "status": "PASS; no math or FMA libcall",
+    "ir_sha256": "fd68e6cc12fd6e4ea61ea3f0d2f1f2cce2f4ae994e1bc3a8e53ef999b54abfa5"
+  }
+]

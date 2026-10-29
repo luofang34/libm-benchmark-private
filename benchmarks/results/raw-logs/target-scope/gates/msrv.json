@@ -1,0 +1,53 @@
+{
+  "manifest_adjustment": "Library-only isolated copy; dev-dependencies removed, empty workspace added. Production src copied unchanged.",
+  "results": [
+    {
+      "target": "aarch64-apple-darwin",
+      "command": [
+        "cargo",
+        "+1.67.0",
+        "build",
+        "--manifest-path",
+        "benchmarks/results/runs/msrv-libm/libm/Cargo.toml",
+        "--offline",
+        "--release",
+        "--no-default-features",
+        "--target",
+        "aarch64-apple-darwin"
+      ],
+      "exit_code": 0
+    },
+    {
+      "target": "wasm32-unknown-unknown",
+      "command": [
+        "cargo",
+        "+1.67.0",
+        "build",
+        "--manifest-path",
+        "benchmarks/results/runs/msrv-libm/libm/Cargo.toml",
+        "--offline",
+        "--release",
+        "--no-default-features",
+        "--target",
+        "wasm32-unknown-unknown"
+      ],
+      "exit_code": 0
+    },
+    {
+      "target": "thumbv7em-none-eabihf",
+      "command": [
+        "cargo",
+        "+1.67.0",
+        "build",
+        "--manifest-path",
+        "benchmarks/results/runs/msrv-libm/libm/Cargo.toml",
+        "--offline",
+        "--release",
+        "--no-default-features",
+        "--target",
+        "thumbv7em-none-eabihf"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

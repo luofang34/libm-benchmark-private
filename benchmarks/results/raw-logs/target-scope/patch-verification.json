@@ -1,0 +1,51 @@
+{
+  "base_sha": "6bc104a50f83cb205790c61c5d33508046f5fad3",
+  "source_sha": "f39774d821b2bbc19c98dca827678fdce636d075",
+  "patch_sha256": "47a4a9732d78d2d744bf9d48d10c3159f001fe10d76cd572c5d89c41537fc5e6",
+  "paths": [
+    "libm/src/math/mod.rs",
+    "libm/src/math/pow.rs",
+    "libm/src/math/pow/exp.rs",
+    "libm/src/math/pow/log.rs",
+    "libm/src/math/pow/table.rs",
+    "libm/src/math/pow/tests.rs",
+    "libm/src/math/pow_fdlibm.rs"
+  ],
+  "checks": [
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/libm-pow-arm.patch"
+      ],
+      "output": "",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "patch",
+        "-p1",
+        "--batch",
+        "-i",
+        "/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/libm-pow-arm.patch"
+      ],
+      "output": "patching file 'libm/src/math/mod.rs'\npatching file 'libm/src/math/pow.rs'\npatching file 'libm/src/math/pow/exp.rs'\npatching file 'libm/src/math/pow/log.rs'\npatching file 'libm/src/math/pow/table.rs'\npatching file 'libm/src/math/pow/tests.rs'\npatching file 'libm/src/math/pow_fdlibm.rs'\n",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--reverse",
+        "--check",
+        "/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/libm-pow-arm.patch"
+      ],
+      "output": "",
+      "exit_code": 0
+    }
+  ],
+  "post_apply_source_comparison": "all seven files byte-identical",
+  "fallback_normalized_production_sha256": "748a2a9706d2d720016110de4a3504292dfb8c89240be1a82ed848ec55d6e4c3",
+  "fallback_normalization": "Only remove with_set_high_word from upstream import; compare the complete production prefix before shared tests/local helper."
+}

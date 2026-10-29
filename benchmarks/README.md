@@ -1,5 +1,7 @@
 # Pow hardware benchmarks
 
+Host runs call the public target-selected `libm::pow`. MCU crates and cross-target code-generation runs enable the benchmark-only `direct-candidate` feature so excluded production targets still measure the Arm algorithm. This feature is not part of libm or the standalone upstream patch.
+
 The common `no_std` kernel compares upstream revision `6bc104a50f83cb205790c61c5d33508046f5fad3` with the local Arm pow candidate. `vectors/timing.bin` contains 448 exact binary64 pairs in seven separate distributions. Input generation, formatting, USB traffic and MPFR reference work occur outside timed intervals. There are five warmup rounds and at least 15 paired measurement rounds. Dependency measurements include feedback overhead and may traverse different inputs when results differ.
 
 `boards/profiles.json` is the execution inventory. Capability classes are software FP32/FP64, hardware FP32 with software FP64, hardware FP64, and RP2350 DCP-assisted FP64. Planned capability is separate from emitted instructions and physical measurements. K230 CPU0/CPU1 and ATmega328P are deferred; their profiles must not cause compilation or flashing. K230's P0/P1 labels describe its two cores within that deferred phase.
@@ -13,10 +15,11 @@ python3 benchmarks/scripts/generate_vectors.py --check
 cargo test --manifest-path benchmarks/Cargo.toml --locked
 python3 -m unittest discover -s benchmarks/scripts -p 'test_*.py'
 python3 benchmarks/scripts/codegen.py --output benchmarks/results/codegen
-python3 benchmarks/scripts/run_host.py
+python3 benchmarks/scripts/run_host.py --target-cpu default --large-accuracy
+python3 benchmarks/scripts/run_host.py --target-cpu native --large-accuracy
 ```
 
-Host validation needs a C compiler and MPFR/GMP development libraries (Homebrew on macOS, `libmpfr-dev libgmp-dev` on Ubuntu). The manually dispatched `pow-hardware-hosts.yml` workflow tests Ubuntu x86-64 and AArch64 with the same kernel. Archived WASM experiments remain under `experiments/pow`; their datasets and timings are separate.
+Host validation needs a C compiler and MPFR/GMP development libraries (Homebrew on macOS, `libmpfr-dev libgmp-dev` on Ubuntu, UCRT64 GCC/MPFR on Windows). Windows uses an MSVC Rust target; GCC builds only the MPFR checker. The manually dispatched `pow-target-evidence.yml` workflow tests Ubuntu x86-64/AArch64 and Windows MSVC with separate default/native CPU settings and 151,083-pair accuracy runs. `--large-accuracy` verifies the archived corpus hashes and the exact input/output stream. `scripts/check_pow_scope.py --output <directory>` compiles real libm objects for the target allowlist and representative fallback targets, requiring the candidate tables to be present or absent as appropriate; install its listed Rust targets first. Archived WASM experiments remain under `experiments/pow`; their datasets and timings are separate.
 
 Accepted captures under `results/raw-logs/<device>/` retain their source metadata and per-round measurements. `python3 scripts/assemble_results.py` from this component directory regenerates the aggregate hardware, hosted and accuracy CSV files without combining different machines. `run_host.py` and `size_h743.py` accept `--source-revision` when a workspace tool uses a synthetic checkout commit; select the published revision containing the measured source.
 

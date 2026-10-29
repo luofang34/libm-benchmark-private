@@ -1,0 +1,66 @@
+   Compiling libc v0.2.190
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling crossbeam-utils v0.8.23
+   Compiling gmp-mpfr-sys v1.7.1
+   Compiling crossbeam-epoch v0.9.21
+   Compiling zerocopy v0.8.62
+   Compiling rand_core v0.10.1
+   Compiling utf8parse v0.2.2
+   Compiling heck v0.5.0
+   Compiling libm v0.2.16
+   Compiling crossbeam-deque v0.8.8
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+   Compiling getrandom v0.4.3
+   Compiling cfg-if v1.0.5
+   Compiling anstyle-parse v1.0.0
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling colorchoice v1.0.5
+   Compiling anstyle-query v1.1.5
+   Compiling anstyle v1.0.14
+   Compiling portable-atomic v1.15.0
+   Compiling strsim v0.11.1
+   Compiling clap_lex v1.1.1
+   Compiling anyhow v1.0.104
+   Compiling anstream v1.0.0
+   Compiling paste v1.0.15
+   Compiling rug v1.30.0
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling rayon-core v1.13.0
+   Compiling chacha20 v0.10.2
+   Compiling az v1.3.0
+   Compiling clap_builder v4.6.7
+   Compiling libm-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/libm-test)
+   Compiling api-list-common v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/api-list-common)
+   Compiling syn v3.0.6
+   Compiling console v0.16.6
+   Compiling either v1.19.0
+   Compiling escape8259 v0.5.4
+   Compiling rand v0.10.3
+   Compiling unit-prefix v0.5.2
+   Compiling indicatif v0.18.6
+   Compiling rayon v1.12.0
+   Compiling ppv-lite86 v0.2.21
+   Compiling clap_derive v4.6.7
+   Compiling libm-macros v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/libm-macros)
+   Compiling rand_chacha v0.10.0
+   Compiling clap v4.6.7
+   Compiling libtest-mimic v0.8.2
+    Finished `release-checked` profile [optimized] target(s) in 12.72s
+     Running tests/z_extensive/main.rs (target/release-checked/build/libm-test/c3f02524fb1f2ac5/out/z_extensive-c3f02524fb1f2ac5)
+
+running 4 tests
+test mp_extensive_pow     ... 
+Spaced Mpfr pow arg 1/2: 1000 iterations (1000000 total)
+Spaced Mpfr pow arg 2/2: 1000 iterations (1000000 total)
+starting extensive tests for `pow`
+[  0s 100%] pow          1000000/1000000       14095773.73/s done in 0
+
+ok
+test mp_extensive_powf    ... ignored
+test mp_extensive_powif32 ... ignored
+test mp_extensive_powif64 ... ignored
+
+test result: ok. 1 passed; 0 failed; 3 ignored; 0 measured; 217 filtered out; finished in 0.58s
+

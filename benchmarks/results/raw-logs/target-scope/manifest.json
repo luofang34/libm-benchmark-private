@@ -1,0 +1,28 @@
+{
+  "math_source_sha": "f39774d821b2bbc19c98dca827678fdce636d075",
+  "upstream_sha": "6bc104a50f83cb205790c61c5d33508046f5fad3",
+  "source_files": {
+    "libm/src/math/mod.rs": "bf547bca1ab365c9a16f66f6ebfeae9881fcf13b582ac18d232d351dd0f0c05f",
+    "libm/src/math/pow.rs": "31d2ee6b57d0d479b77c71f3cb2fb7f5270bcebe5b5d8d8b967d02f3a508da24",
+    "libm/src/math/pow_fdlibm.rs": "1d0ac93f1d5cdb3291b88fca2000d6abc28a86f1f05d73cd93f667c6287fccf9",
+    "libm/src/math/pow/exp.rs": "16f51c05c94dce117d6790953196f52de383bbe7b2ddcb1ba68824376f8ef980",
+    "libm/src/math/pow/log.rs": "f818e2d22f656e8d64cb93a95e447c80d127487b480dcbd25bfd464c30e44ba7",
+    "libm/src/math/pow/table.rs": "d35b159af2b7179f534dd69b556b6a081597a26cbb5d0e5aea671470e0676fb3",
+    "libm/src/math/pow/tests.rs": "5667c0e35671a8294b9cac273ba60cca77e474c5b7c8ca7cecfecd7584b600b1"
+  },
+  "workflow": "https://github.com/luofang34/libm-benchmark-private/actions/runs/40939173049",
+  "scope": "f64 pow only; explicit target and feature allowlist",
+  "msrv": "1.67.0 library-only isolated manifest; unchanged production src",
+  "local_tools": {
+    "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: aarch64-apple-darwin\nrelease: 1.99.0\nLLVM version: 23.1.1",
+    "nightly": "rustc 1.101.0-nightly (41089d07a 2026-10-27)\nbinary: rustc\ncommit-hash: 41089d07a0a2afc16adfe28a760d94d73d7298a4\ncommit-date: 2026-10-27\nhost: aarch64-apple-darwin\nrelease: 1.101.0-nightly\nLLVM version: 23.1.4",
+    "cargo": "cargo 1.99.0 (5f94df478 2026-08-27)",
+    "clang": "Apple clang version 21.0.0 (clang-2100.4.1.1)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+    "node": "{\"node\":\"v26.12.1\",\"v8\":\"14.6.202.34-node.40\"}",
+    "wasm_opt": "wasm-opt version 128",
+    "brotli": "brotli 1.2.1"
+  },
+  "std_call_path": "(func $_RNvNtCs48gFmcikNpg_14pow_experiment6kernel8standard (param $0 f64) (param $1 f64) (result f64)\n  (call $pow\n   (local.get $0)\n   (local.get $1)\n  )\n )",
+  "std_module_sha256": "4503ddba191a08b74515f2eb1f89f33a7d09cb7f88c8279f38f6d32a73ca81e4",
+  "fallback_preservation": "Production arithmetic identical to upstream, except helper import localized; tests shared separately."
+}

@@ -1,0 +1,36 @@
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling pow-bench-core v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/core)
+   Compiling pow-bench-host v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/host)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.82s
+     Running unittests src/lib.rs (benchmarks/target/debug/deps/pow_bench_core-da48920db72d52ff)
+
+running 14 tests
+test arm::implementation::tests::infinity_as_base ... ok
+test arm::implementation::tests::infinity_as_exponent ... ok
+test arm::implementation::tests::nan_inputs ... ok
+test arm::implementation::tests::normal_cases ... ok
+test arm::implementation::tests::one_as_base ... ok
+test arm::implementation::tests::signed_underflow_and_nan_identities ... ok
+test arm::implementation::tests::subnormal_log_reduction ... ok
+test arm::implementation::tests::zero_as_base ... ok
+test arm::implementation::tests::zero_as_exponent ... ok
+test kernel::tests::consumes_remainder_and_every_repeat ... ok
+test kernel::tests::empty_batch_never_divides_by_zero ... ok
+test kernel::tests::ieee_identities_and_signed_zero ... ok
+test arm::implementation::tests::special_cases ... ok
+test kernel::tests::feedback_matches_scalar_execution ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (benchmarks/target/debug/deps/pow_bench_host-5859af8ebb5f86fa)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests pow_bench_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

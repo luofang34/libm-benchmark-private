@@ -1,0 +1,28 @@
+   Compiling libc v0.2.190
+   Compiling rand_core v0.10.1
+   Compiling proc-macro2 v1.0.107
+   Compiling gmp-mpfr-sys v1.7.1
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+   Compiling zerocopy v0.8.62
+   Compiling cfg-if v1.0.5
+   Compiling libm v0.2.16
+   Compiling getrandom v0.4.3
+   Compiling paste v1.0.15
+   Compiling anyhow v1.0.104
+   Compiling rug v1.30.0
+   Compiling heck v0.5.0
+   Compiling api-list-common v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/api-list-common)
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling builtins-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/builtins-test)
+   Compiling chacha20 v0.10.2
+   Compiling az v1.3.0
+   Compiling libm-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/libm-test)
+   Compiling rand_xoshiro v0.8.1
+   Compiling syn v3.0.6
+   Compiling rand v0.10.3
+   Compiling libm-macros v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/libm-macros)
+   Compiling ppv-lite86 v0.2.21
+   Compiling rand_chacha v0.10.0
+    Finished `release` profile [optimized] target(s) in 6.69s

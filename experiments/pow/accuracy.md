@@ -2,6 +2,8 @@
 
 Native MPFR **4.2.2**, **256-bit** precision, round-to-nearest, evaluates **151,083 input pairs**. Each candidate is executed in Node/V8 WASM and its output bits are checked by the native MPFR program. Input and output use integer bit-pattern exports (`pow_bits`) to preserve signed zeros and signaling NaNs across the JS boundary. Native Rust candidate results also agree with WASM for all 151,083 inputs, excluding unspecified NaN payload differences.
 
+The scoped source `f39774d821b2bbc19c98dca827678fdce636d075` executes the same corpus on AArch64 macOS, AArch64 GNU/Linux, x86-64 GNU/Linux and x86-64 Windows MSVC, with default/native CPU builds kept separate. All eight builds have the candidate histogram and maximum below, with zero classification/signed-zero errors. [Hosted per-domain evidence](../../benchmarks/results/raw-logs/target-scope/large-accuracy.csv) and [rebuilt ordinary WASM std evidence](../../benchmarks/results/raw-logs/target-scope/std/large-accuracy/accuracy.csv) retain actual outputs and binary identities. The upstream MPFR extensive harness additionally passes 1,000,000 spaced input pairs; this is finite coverage, not an exhaustive binary64 proof.
+
 ## Coverage and metric
 
 `accuracy_inputs.py` uses seed 20261029. Seven groups of 20,000 inputs cover normal positive values, near-one with large exponents, negative integer exponents, subnormal bases, overflow/underflow neighborhoods, arbitrary 64-bit inputs, and logarithmically spread bases with scaled exponents. Additional cases straddle all 128 logarithm-table boundaries, probe adjacent representations near one with exponents through 2^64, and form a 20×20 exceptional-value matrix.

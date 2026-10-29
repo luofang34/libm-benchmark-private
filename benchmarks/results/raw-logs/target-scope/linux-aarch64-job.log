@@ -1,0 +1,324 @@
+﻿2026-10-29T19:20:28.5586109Z Current runner version: '2.338.0'
+2026-10-29T19:20:28.5618682Z ##[group]Runner Image Provisioner
+2026-10-29T19:20:28.5619867Z Hosted Compute Agent
+2026-10-29T19:20:28.5620483Z Version: 20261021.618
+2026-10-29T19:20:28.5621300Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-29T19:20:28.5622024Z Build Date: 2026-10-21T00:45:21Z
+2026-10-29T19:20:28.5623239Z Worker ID: {71d23197-8c1f-4403-a27c-2de55f56fe75}
+2026-10-29T19:20:28.5624156Z Region: westus3
+2026-10-29T19:20:28.5624776Z Cloud: Azure
+2026-10-29T19:20:28.5625422Z ##[endgroup]
+2026-10-29T19:20:28.5628223Z ##[group]Operating System
+2026-10-29T19:20:28.5629035Z Ubuntu
+2026-10-29T19:20:28.5629647Z 24.04.5
+2026-10-29T19:20:28.5630223Z LTS
+2026-10-29T19:20:28.5630835Z ##[endgroup]
+2026-10-29T19:20:28.5631429Z ##[group]Runner Image
+2026-10-29T19:20:28.5632047Z Image: ubuntu-24.04-arm
+2026-10-29T19:20:28.5633296Z Version: 20261025.165.1
+2026-10-29T19:20:28.5634833Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24-arm64/20261025.165/images/ubuntu/Ubuntu2404-Arm64-Readme.md
+2026-10-29T19:20:28.5636629Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24-arm64%2F20261025.165
+2026-10-29T19:20:28.5637648Z ##[endgroup]
+2026-10-29T19:20:28.5638987Z ##[group]GITHUB_TOKEN Permissions
+2026-10-29T19:20:28.5642282Z Contents: read
+2026-10-29T19:20:28.5643511Z Metadata: read
+2026-10-29T19:20:28.5644175Z ##[endgroup]
+2026-10-29T19:20:28.5647956Z Secret source: Actions
+2026-10-29T19:20:28.5648971Z Cache mode: write
+2026-10-29T19:20:28.5650264Z Prepare workflow directory
+2026-10-29T19:20:28.6040414Z Prepare all required actions
+2026-10-29T19:20:28.6093512Z Getting action download info
+2026-10-29T19:20:29.0081157Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-29T19:20:29.3515623Z Download action repository 'msys2/setup-msys2@ec48f7c5447b3140e2b088413ae3a55687bccb6e' (SHA:ec48f7c5447b3140e2b088413ae3a55687bccb6e)
+2026-10-29T19:20:29.8352452Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-10-29T19:20:30.1058602Z Complete job name: benchmark (ubuntu-24.04-arm)
+2026-10-29T19:20:30.2062010Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-29T19:20:30.2064123Z with:
+2026-10-29T19:20:30.2064768Z   persist-credentials: false
+2026-10-29T19:20:30.2065626Z   repository: luofang34/libm-benchmark-private
+2026-10-29T19:20:30.2069715Z   token: ***
+2026-10-29T19:20:30.2070363Z   ssh-strict: true
+2026-10-29T19:20:30.2070950Z   ssh-user: git
+2026-10-29T19:20:30.2071499Z   clean: true
+2026-10-29T19:20:30.2072160Z   sparse-checkout-cone-mode: true
+2026-10-29T19:20:30.2073264Z   fetch-depth: 1
+2026-10-29T19:20:30.2073977Z   fetch-tags: false
+2026-10-29T19:20:30.2074648Z   show-progress: true
+2026-10-29T19:20:30.2075226Z   lfs: false
+2026-10-29T19:20:30.2075877Z   submodules: false
+2026-10-29T19:20:30.2076511Z   set-safe-directory: true
+2026-10-29T19:20:30.2077266Z   allow-unsafe-pr-checkout: false
+2026-10-29T19:20:30.2078523Z ##[endgroup]
+2026-10-29T19:20:30.3118165Z Syncing repository: luofang34/libm-benchmark-private
+2026-10-29T19:20:30.3121318Z ##[group]Getting Git version info
+2026-10-29T19:20:30.3123065Z Working directory is '/home/runner/work/libm-benchmark-private/libm-benchmark-private'
+2026-10-29T19:20:30.3125133Z [command]/usr/bin/git version
+2026-10-29T19:20:30.3948907Z git version 2.56.0
+2026-10-29T19:20:30.3953481Z ##[endgroup]
+2026-10-29T19:20:30.3960117Z Temporarily overriding HOME='/home/runner/work/_temp/7f7f2365-dd0a-450e-a6a8-e48d31ab0f7f' before making global git config changes
+2026-10-29T19:20:30.3962154Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-29T19:20:30.3964343Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/libm-benchmark-private/libm-benchmark-private
+2026-10-29T19:20:30.4059985Z Deleting the contents of '/home/runner/work/libm-benchmark-private/libm-benchmark-private'
+2026-10-29T19:20:30.4062576Z ##[group]Determining repository object format
+2026-10-29T19:20:30.4066503Z ##[endgroup]
+2026-10-29T19:20:30.4067974Z ##[group]Initializing the repository
+2026-10-29T19:20:30.4069465Z [command]/usr/bin/git init /home/runner/work/libm-benchmark-private/libm-benchmark-private
+2026-10-29T19:20:30.4466769Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-29T19:20:30.4468209Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-29T19:20:30.4469349Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-29T19:20:30.4470314Z hint: call:
+2026-10-29T19:20:30.4470848Z hint:
+2026-10-29T19:20:30.4471582Z hint: 	git config --global init.defaultBranch <name>
+2026-10-29T19:20:30.4472415Z hint:
+2026-10-29T19:20:30.4473448Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-29T19:20:30.4474634Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-29T19:20:30.4475540Z hint:
+2026-10-29T19:20:30.4476130Z hint: 	git branch -m <name>
+2026-10-29T19:20:30.4476843Z hint:
+2026-10-29T19:20:30.4477644Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-29T19:20:30.4514671Z Initialized empty Git repository in /home/runner/work/libm-benchmark-private/libm-benchmark-private/.git/
+2026-10-29T19:20:30.4518526Z [command]/usr/bin/git remote add origin https://github.com/luofang34/libm-benchmark-private
+2026-10-29T19:20:30.4677386Z ##[endgroup]
+2026-10-29T19:20:30.4679058Z ##[group]Disabling automatic garbage collection
+2026-10-29T19:20:30.4680365Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-29T19:20:30.4717392Z ##[endgroup]
+2026-10-29T19:20:30.4719007Z ##[group]Setting up auth
+2026-10-29T19:20:30.4720011Z Removing SSH command configuration
+2026-10-29T19:20:30.4721401Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T19:20:30.4755286Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-29T19:20:30.6226657Z Removing HTTP extra header
+2026-10-29T19:20:30.6245560Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T19:20:30.6271944Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-29T19:20:30.6515406Z Removing includeIf entries pointing to credentials config files
+2026-10-29T19:20:30.6524836Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T19:20:30.6576417Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-29T19:20:30.6795457Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-6da57d5f-b59a-4daf-87ae-fccc0bc199fc.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-29T19:20:30.6845163Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/libm-benchmark-private/libm-benchmark-private/.git.path /home/runner/work/_temp/git-credentials-6da57d5f-b59a-4daf-87ae-fccc0bc199fc.config
+2026-10-29T19:20:30.6870491Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-6da57d5f-b59a-4daf-87ae-fccc0bc199fc.config
+2026-10-29T19:20:30.6909947Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-6da57d5f-b59a-4daf-87ae-fccc0bc199fc.config
+2026-10-29T19:20:30.6931841Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-6da57d5f-b59a-4daf-87ae-fccc0bc199fc.config
+2026-10-29T19:20:30.6967223Z ##[endgroup]
+2026-10-29T19:20:30.6968447Z ##[group]Fetching the repository
+2026-10-29T19:20:30.6970071Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f39774d821b2bbc19c98dca827678fdce636d075:refs/remotes/origin/experiment/pow-wasm
+2026-10-29T19:20:33.6752401Z From https://github.com/luofang34/libm-benchmark-private
+2026-10-29T19:20:33.6755797Z  * [new ref]         f39774d821b2bbc19c98dca827678fdce636d075 -> origin/experiment/pow-wasm
+2026-10-29T19:20:33.6762302Z [command]/usr/bin/git branch --list --remote origin/experiment/pow-wasm
+2026-10-29T19:20:33.6783678Z   origin/experiment/pow-wasm
+2026-10-29T19:20:33.6802892Z [command]/usr/bin/git rev-parse refs/remotes/origin/experiment/pow-wasm
+2026-10-29T19:20:33.6813280Z f39774d821b2bbc19c98dca827678fdce636d075
+2026-10-29T19:20:33.6820155Z ##[endgroup]
+2026-10-29T19:20:33.6822329Z ##[group]Determining the checkout info
+2026-10-29T19:20:33.6825217Z ##[endgroup]
+2026-10-29T19:20:33.6826742Z [command]/usr/bin/git sparse-checkout disable
+2026-10-29T19:20:33.7083042Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-29T19:20:33.7131425Z ##[group]Checking out the ref
+2026-10-29T19:20:33.7134513Z [command]/usr/bin/git checkout --progress --force -B experiment/pow-wasm refs/remotes/origin/experiment/pow-wasm
+2026-10-29T19:20:33.8978789Z Switched to a new branch 'experiment/pow-wasm'
+2026-10-29T19:20:33.9016305Z branch 'experiment/pow-wasm' set up to track 'origin/experiment/pow-wasm'.
+2026-10-29T19:20:33.9042419Z ##[endgroup]
+2026-10-29T19:20:33.9121639Z [command]/usr/bin/git log -1 --format=%H
+2026-10-29T19:20:33.9143994Z f39774d821b2bbc19c98dca827678fdce636d075
+2026-10-29T19:20:33.9167971Z ##[group]Removing auth
+2026-10-29T19:20:33.9168825Z Removing SSH command configuration
+2026-10-29T19:20:33.9169966Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T19:20:33.9188272Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-29T19:20:33.9398239Z Removing HTTP extra header
+2026-10-29T19:20:33.9399771Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T19:20:33.9431303Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-29T19:20:33.9649123Z Removing includeIf entries pointing to credentials config files
+2026-10-29T19:20:33.9650426Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T19:20:33.9669314Z includeif.gitdir:/home/runner/work/libm-benchmark-private/libm-benchmark-private/.git.path
+2026-10-29T19:20:33.9678369Z includeif.gitdir:/home/runner/work/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path
+2026-10-29T19:20:33.9688569Z includeif.gitdir:/github/workspace/.git.path
+2026-10-29T19:20:33.9689590Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-29T19:20:33.9695451Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/libm-benchmark-private/libm-benchmark-private/.git.path
+2026-10-29T19:20:33.9700597Z /home/runner/work/_temp/git-credentials-6da57d5f-b59a-4daf-87ae-fccc0bc199fc.config
+2026-10-29T19:20:33.9712173Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/libm-benchmark-private/libm-benchmark-private/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-6da57d5f\-b59a\-4daf\-87ae\-fccc0bc199fc\.config
+2026-10-29T19:20:33.9938865Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path
+2026-10-29T19:20:33.9964200Z /home/runner/work/_temp/git-credentials-6da57d5f-b59a-4daf-87ae-fccc0bc199fc.config
+2026-10-29T19:20:33.9984946Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-6da57d5f\-b59a\-4daf\-87ae\-fccc0bc199fc\.config
+2026-10-29T19:20:34.0054295Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-29T19:20:34.0057804Z /github/runner_temp/git-credentials-6da57d5f-b59a-4daf-87ae-fccc0bc199fc.config
+2026-10-29T19:20:34.0063562Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-6da57d5f\-b59a\-4daf\-87ae\-fccc0bc199fc\.config
+2026-10-29T19:20:34.0123935Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-29T19:20:34.0158097Z /github/runner_temp/git-credentials-6da57d5f-b59a-4daf-87ae-fccc0bc199fc.config
+2026-10-29T19:20:34.0168200Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-6da57d5f\-b59a\-4daf\-87ae\-fccc0bc199fc\.config
+2026-10-29T19:20:34.0711996Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-29T19:20:34.0927448Z Removing credentials config '/home/runner/work/_temp/git-credentials-6da57d5f-b59a-4daf-87ae-fccc0bc199fc.config'
+2026-10-29T19:20:34.0976656Z ##[endgroup]
+2026-10-29T19:20:34.1520514Z ##[group]Run sudo apt-get update && sudo apt-get install -y libmpfr-dev libgmp-dev
+2026-10-29T19:20:34.1521380Z [36;1msudo apt-get update && sudo apt-get install -y libmpfr-dev libgmp-dev[0m
+2026-10-29T19:20:34.2141006Z shell: /usr/bin/bash -e {0}
+2026-10-29T19:20:34.2141509Z ##[endgroup]
+2026-10-29T19:20:34.3761066Z Get:1 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-29T19:20:34.8427886Z Get:2 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [607 kB]
+2026-10-29T19:20:34.8674232Z Get:3 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [671 kB]
+2026-10-29T19:20:34.9039544Z Hit:4 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+2026-10-29T19:20:35.0572282Z Get:5 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
+2026-10-29T19:20:35.7164961Z Get:6 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease [126 kB]
+2026-10-29T19:20:35.9803043Z Get:7 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease [126 kB]
+2026-10-29T19:20:36.2277406Z Get:8 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Packages [1459 kB]
+2026-10-29T19:20:36.9012098Z Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates/main Translation-en [310 kB]
+2026-10-29T19:20:37.0765373Z Get:10 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Packages [1754 kB]
+2026-10-29T19:20:37.3585417Z Get:11 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe Translation-en [343 kB]
+2026-10-29T19:20:37.5299925Z Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted arm64 Packages [2685 kB]
+2026-10-29T19:20:37.8372615Z Get:13 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted Translation-en [411 kB]
+2026-10-29T19:20:38.0017892Z Get:14 http://ports.ubuntu.com/ubuntu-ports noble-updates/multiverse arm64 Packages [88.7 kB]
+2026-10-29T19:20:38.1563936Z Get:15 http://ports.ubuntu.com/ubuntu-ports noble-updates/multiverse Translation-en [14.3 kB]
+2026-10-29T19:20:38.3098651Z Get:16 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Packages [1206 kB]
+2026-10-29T19:20:38.5092635Z Get:17 http://ports.ubuntu.com/ubuntu-ports noble-security/main Translation-en [231 kB]
+2026-10-29T19:20:38.8632935Z Get:18 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Packages [1298 kB]
+2026-10-29T19:20:39.0670693Z Get:19 http://ports.ubuntu.com/ubuntu-ports noble-security/universe Translation-en [246 kB]
+2026-10-29T19:20:43.7246346Z Fetched 11.7 MB in 5s (2455 kB/s)
+2026-10-29T19:20:44.9185563Z Reading package lists...
+2026-10-29T19:20:44.9524459Z Reading package lists...
+2026-10-29T19:20:45.2338500Z Building dependency tree...
+2026-10-29T19:20:45.2346675Z Reading state information...
+2026-10-29T19:20:45.4769237Z libgmp-dev is already the newest version (2:6.3.0+dfsg-2ubuntu6.1).
+2026-10-29T19:20:45.4794302Z libgmp-dev set to manually installed.
+2026-10-29T19:20:45.4794892Z Suggested packages:
+2026-10-29T19:20:45.4795160Z   libmpfr-doc
+2026-10-29T19:20:45.4986295Z The following NEW packages will be installed:
+2026-10-29T19:20:45.4990681Z   libmpfr-dev
+2026-10-29T19:20:45.9548170Z 0 upgraded, 1 newly installed, 0 to remove and 5 not upgraded.
+2026-10-29T19:20:45.9549221Z Need to get 289 kB of archives.
+2026-10-29T19:20:45.9571463Z After this operation, 1346 kB of additional disk space will be used.
+2026-10-29T19:20:45.9572970Z Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libmpfr-dev arm64 4.2.1-1build1.1 [289 kB]
+2026-10-29T19:20:46.9424031Z Fetched 289 kB in 1s (248 kB/s)
+2026-10-29T19:20:46.9848329Z Selecting previously unselected package libmpfr-dev:arm64.
+2026-10-29T19:20:47.0078839Z (Reading database ... 
+2026-10-29T19:20:47.0084213Z (Reading database ... 5%
+2026-10-29T19:20:47.0084679Z (Reading database ... 10%
+2026-10-29T19:20:47.0085362Z (Reading database ... 15%
+2026-10-29T19:20:47.0085921Z (Reading database ... 20%
+2026-10-29T19:20:47.0086344Z (Reading database ... 25%
+2026-10-29T19:20:47.0089339Z (Reading database ... 30%
+2026-10-29T19:20:47.0090354Z (Reading database ... 35%
+2026-10-29T19:20:47.0091042Z (Reading database ... 40%
+2026-10-29T19:20:47.0091484Z (Reading database ... 45%
+2026-10-29T19:20:47.0091959Z (Reading database ... 50%
+2026-10-29T19:20:47.0951025Z (Reading database ... 55%
+2026-10-29T19:20:47.3095147Z (Reading database ... 60%
+2026-10-29T19:20:47.4594745Z (Reading database ... 65%
+2026-10-29T19:20:47.5274976Z (Reading database ... 70%
+2026-10-29T19:20:47.6135008Z (Reading database ... 75%
+2026-10-29T19:20:47.9918507Z (Reading database ... 80%
+2026-10-29T19:20:48.4323129Z (Reading database ... 85%
+2026-10-29T19:20:48.8450174Z (Reading database ... 90%
+2026-10-29T19:20:49.2495945Z (Reading database ... 95%
+2026-10-29T19:20:49.2497670Z (Reading database ... 100%
+2026-10-29T19:20:49.2498301Z (Reading database ... 218279 files and directories currently installed.)
+2026-10-29T19:20:49.2546429Z Preparing to unpack .../libmpfr-dev_4.2.1-1build1.1_arm64.deb ...
+2026-10-29T19:20:49.2652566Z Unpacking libmpfr-dev:arm64 (4.2.1-1build1.1) ...
+2026-10-29T19:20:49.3204731Z Setting up libmpfr-dev:arm64 (4.2.1-1build1.1) ...
+2026-10-29T19:20:52.6726367Z 
+2026-10-29T19:20:52.6727362Z Running kernel seems to be up-to-date.
+2026-10-29T19:20:52.6728176Z 
+2026-10-29T19:20:52.6728529Z No services need to be restarted.
+2026-10-29T19:20:52.6728881Z 
+2026-10-29T19:20:52.6729447Z No containers need to be restarted.
+2026-10-29T19:20:52.6729836Z 
+2026-10-29T19:20:52.6730129Z No user sessions are running outdated binaries.
+2026-10-29T19:20:52.6730629Z 
+2026-10-29T19:20:52.6730956Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-29T19:20:53.8771056Z ##[group]Run rustup toolchain install 1.99.0 --profile minimal
+2026-10-29T19:20:53.8771647Z [36;1mrustup toolchain install 1.99.0 --profile minimal[0m
+2026-10-29T19:20:53.8772119Z [36;1mrustup override set 1.99.0[0m
+2026-10-29T19:20:53.8820728Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T19:20:53.8821172Z ##[endgroup]
+2026-10-29T19:20:54.2469357Z info: syncing channel updates for 1.99.0-aarch64-unknown-linux-gnu
+2026-10-29T19:20:54.4257092Z info: latest update on 2026-10-01 for version 1.99.0 (b940084d7 2026-09-28)
+2026-10-29T19:20:54.4259669Z info: downloading 3 components
+2026-10-29T19:21:00.4633690Z 
+2026-10-29T19:21:00.4697156Z   1.99.0-aarch64-unknown-linux-gnu installed - rustc 1.99.0 (b940084d7 2026-09-28)
+2026-10-29T19:21:00.4697769Z 
+2026-10-29T19:21:00.4843614Z info: override toolchain for /home/runner/work/libm-benchmark-private/libm-benchmark-private set to 1.99.0-aarch64-unknown-linux-gnu
+2026-10-29T19:21:00.4899771Z ##[group]Run python benchmarks/scripts/generate_vectors.py --check
+2026-10-29T19:21:00.4900385Z [36;1mpython benchmarks/scripts/generate_vectors.py --check[0m
+2026-10-29T19:21:00.4900990Z [36;1mcargo test --manifest-path benchmarks/Cargo.toml --locked[0m
+2026-10-29T19:21:00.4944345Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T19:21:00.4944757Z ##[endgroup]
+2026-10-29T19:21:00.5609279Z     Updating git repository `https://github.com/rust-lang/compiler-builtins`
+2026-10-29T19:21:01.5973248Z    Compiling libm v0.2.16 (https://github.com/rust-lang/compiler-builtins?rev=6bc104a50f83cb205790c61c5d33508046f5fad3#6bc104a5)
+2026-10-29T19:21:01.6004349Z    Compiling libm v0.2.16 (/home/runner/work/libm-benchmark-private/libm-benchmark-private/libm)
+2026-10-29T19:21:03.3184706Z    Compiling pow-bench-core v0.1.0 (/home/runner/work/libm-benchmark-private/libm-benchmark-private/benchmarks/core)
+2026-10-29T19:21:03.3725826Z    Compiling pow-bench-host v0.1.0 (/home/runner/work/libm-benchmark-private/libm-benchmark-private/benchmarks/host)
+2026-10-29T19:21:03.5787729Z     Finished `test` profile [unoptimized + debuginfo] target(s) in 3.03s
+2026-10-29T19:21:03.5800530Z      Running unittests src/lib.rs (benchmarks/target/debug/deps/pow_bench_core-55f4ff6667f685cb)
+2026-10-29T19:21:03.5809112Z 
+2026-10-29T19:21:03.5809767Z running 4 tests
+2026-10-29T19:21:03.5818137Z test kernel::tests::consumes_remainder_and_every_repeat ... ok
+2026-10-29T19:21:03.5819520Z test kernel::tests::empty_batch_never_divides_by_zero ... ok
+2026-10-29T19:21:03.5820256Z test kernel::tests::feedback_matches_scalar_execution ... ok
+2026-10-29T19:21:03.5820997Z      Running unittests src/main.rs (benchmarks/target/debug/deps/pow_bench_host-0adec2f2cb4790a4)
+2026-10-29T19:21:03.5830989Z test kernel::tests::ieee_identities_and_signed_zero ... ok
+2026-10-29T19:21:03.5832339Z    Doc-tests pow_bench_core
+2026-10-29T19:21:03.5843702Z 
+2026-10-29T19:21:03.5844249Z test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-10-29T19:21:03.5844821Z 
+2026-10-29T19:21:03.5844844Z 
+2026-10-29T19:21:03.5844952Z running 0 tests
+2026-10-29T19:21:03.5845109Z 
+2026-10-29T19:21:03.5845352Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-10-29T19:21:03.5845702Z 
+2026-10-29T19:21:03.5987108Z 
+2026-10-29T19:21:03.5987900Z running 0 tests
+2026-10-29T19:21:03.5988533Z 
+2026-10-29T19:21:03.5989023Z test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+2026-10-29T19:21:03.5989514Z 
+2026-10-29T19:21:03.6072080Z ##[group]Run python benchmarks/scripts/run_host.py --target-cpu default --large-accuracy --output benchmarks/results/runs/hosted-default
+2026-10-29T19:21:03.6073778Z [36;1mpython benchmarks/scripts/run_host.py --target-cpu default --large-accuracy --output benchmarks/results/runs/hosted-default[0m
+2026-10-29T19:21:03.6074726Z [36;1mpython benchmarks/scripts/run_host.py --target-cpu native --large-accuracy --output benchmarks/results/runs/hosted-native[0m
+2026-10-29T19:21:03.6118531Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T19:21:03.6119034Z ##[endgroup]
+2026-10-29T19:21:17.1993737Z /home/runner/work/libm-benchmark-private/libm-benchmark-private/benchmarks/results/runs/hosted-default
+2026-10-29T19:21:29.8576005Z /home/runner/work/libm-benchmark-private/libm-benchmark-private/benchmarks/results/runs/hosted-native
+2026-10-29T19:21:29.8697679Z ##[group]Run cargo clean --manifest-path benchmarks/Cargo.toml
+2026-10-29T19:21:29.8698381Z [36;1mcargo clean --manifest-path benchmarks/Cargo.toml[0m
+2026-10-29T19:21:29.8699074Z [36;1mcargo clean --manifest-path benchmarks/Cargo.toml --target-dir benchmarks/results/runs/hosted-default/target[0m
+2026-10-29T19:21:29.8699857Z [36;1mcargo clean --manifest-path benchmarks/Cargo.toml --target-dir benchmarks/results/runs/hosted-native/target[0m
+2026-10-29T19:21:29.8745429Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-29T19:21:29.8745955Z ##[endgroup]
+2026-10-29T19:21:29.8974042Z      Removed 64 files, 44.5MiB total
+2026-10-29T19:21:29.9118285Z      Removed 71 files, 11.5MiB total
+2026-10-29T19:21:29.9261208Z      Removed 71 files, 11.6MiB total
+2026-10-29T19:21:29.9369844Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-10-29T19:21:29.9370470Z with:
+2026-10-29T19:21:29.9370920Z   name: pow-target-ubuntu-24.04-arm-f39774d821b2bbc19c98dca827678fdce636d075
+2026-10-29T19:21:29.9371373Z   path: benchmarks/results/runs/hosted-*/
+2026-10-29T19:21:29.9371737Z   if-no-files-found: warn
+2026-10-29T19:21:29.9372029Z   compression-level: 6
+2026-10-29T19:21:29.9372317Z   overwrite: false
+2026-10-29T19:21:29.9372619Z   include-hidden-files: false
+2026-10-29T19:21:29.9373271Z   archive: true
+2026-10-29T19:21:29.9373588Z ##[endgroup]
+2026-10-29T19:21:30.0734862Z With the provided path, there will be 34 files uploaded
+2026-10-29T19:21:30.0736176Z Artifact name is valid!
+2026-10-29T19:21:30.0736640Z Root directory input is valid!
+2026-10-29T19:21:30.4151066Z Uploading artifact: pow-target-ubuntu-24.04-arm-f39774d821b2bbc19c98dca827678fdce636d075.zip
+2026-10-29T19:21:30.4182957Z Beginning upload of artifact content to blob storage
+2026-10-29T19:21:31.3881405Z Uploaded bytes 8388608
+2026-10-29T19:21:31.4500795Z Uploaded bytes 8672559
+2026-10-29T19:21:31.5058407Z Finished uploading artifact content to blob storage!
+2026-10-29T19:21:31.5062065Z SHA256 digest of uploaded artifact is 643e4538f3ca5c4bd8ba7eeb3e049dee334b74e88fcfb9f5dd5e19ee95ae80fb
+2026-10-29T19:21:31.5066722Z Finalizing artifact upload
+2026-10-29T19:21:32.0766698Z Artifact pow-target-ubuntu-24.04-arm-f39774d821b2bbc19c98dca827678fdce636d075 successfully finalized. Artifact ID 12926137124
+2026-10-29T19:21:32.0768122Z Artifact pow-target-ubuntu-24.04-arm-f39774d821b2bbc19c98dca827678fdce636d075 has been successfully uploaded! Final size is 8672559 bytes. Artifact ID is 12926137124
+2026-10-29T19:21:32.0769501Z Artifact download URL: https://github.com/luofang34/libm-benchmark-private/actions/runs/40939173049/artifacts/12926137124
+2026-10-29T19:21:32.1015422Z Post job cleanup.
+2026-10-29T19:21:32.1770336Z [command]/usr/bin/git version
+2026-10-29T19:21:32.1809537Z git version 2.56.0
+2026-10-29T19:21:32.1851014Z Temporarily overriding HOME='/home/runner/work/_temp/dffd8d4f-dd41-405d-ac88-bd3980b8c4ed' before making global git config changes
+2026-10-29T19:21:32.1852227Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-29T19:21:32.1858232Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/libm-benchmark-private/libm-benchmark-private
+2026-10-29T19:21:32.1902603Z Removing SSH command configuration
+2026-10-29T19:21:32.1903850Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-29T19:21:32.1943075Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-29T19:21:32.2154746Z Removing HTTP extra header
+2026-10-29T19:21:32.2160564Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-29T19:21:32.2198491Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-29T19:21:32.2411929Z Removing includeIf entries pointing to credentials config files
+2026-10-29T19:21:32.2419365Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-29T19:21:32.2462621Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-29T19:21:32.2810857Z Cleaning up orphan processes
+

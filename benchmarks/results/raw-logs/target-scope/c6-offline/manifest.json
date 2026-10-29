@@ -1,0 +1,74 @@
+{
+  "firmware_sha": "fa5acf241169815ea24edb90bab7fa8c9a7de2f270891f45b9caa03422e86e33",
+  "firmware_bytes": 60800,
+  "merged_sha": "c804beb1cdbbb4602d40ecdbf3f9e7329fc1ed686609e4c308ceebc0314f5ccc",
+  "sections": {
+    ".trap": 1288,
+    ".rwtext": 2008,
+    ".rwtext.wifi": 0,
+    ".data": 596,
+    ".data.wifi": 0,
+    ".bss": 432,
+    ".noinit": 0,
+    ".rodata_desc": 256,
+    ".rodata": 14608,
+    ".rodata.wifi": 0,
+    ".text_gap": 36,
+    ".text": 41952,
+    ".rtc_fast.text": 0,
+    ".rtc_fast.data": 0,
+    ".rtc_fast.bss": 0,
+    ".rtc_fast.persistent": 0,
+    ".stack": 447788,
+    ".espressif.metadata": 14,
+    ".eh_frame": 2516,
+    ".comment": 153,
+    ".riscv.attributes": 78
+  },
+  "segments": [
+    {
+      "address": "0x42000020",
+      "bytes": 14864
+    },
+    {
+      "address": "0x40800000",
+      "bytes": 20
+    },
+    {
+      "address": "0x42003a54",
+      "bytes": 41952
+    },
+    {
+      "address": "0x40800014",
+      "bytes": 3872
+    }
+  ],
+  "rom_helpers": {
+    "__adddf3": {
+      "address": "0x400009f4",
+      "calls": 79
+    },
+    "__muldf3": {
+      "address": "0x40000a64",
+      "calls": 85
+    },
+    "__divdf3": {
+      "address": "0x400008d0",
+      "calls": 6
+    },
+    "__addsf3": {
+      "address": "0x400009f8",
+      "calls": 1
+    },
+    "__mulsf3": {
+      "address": "0x40000a68",
+      "calls": 1
+    },
+    "__divsf3": {
+      "address": "0x400008dc",
+      "calls": 1
+    }
+  },
+  "source_sha": "f39774d821b2bbc19c98dca827678fdce636d075",
+  "execution": "offline build and linked ROM call audit only; not flashed"
+}

@@ -185,19 +185,26 @@ Separate offline compute fixtures occupy 16,960 bytes (baseline) and 20,480 byte
 
 ## Hosted hardware comparison
 
-The same 448-pair corpus and shared kernel ran on three hosted configurations. Each used Rust 1.99.0, LLVM 23.1.1, `target-cpu=native`, five warmup rounds and 15 paired rounds. Source commit: `a177542435f4aab8a8bc1fe235604537193094f7`. The [manual Linux workflow](https://github.com/luofang34/libm-benchmark-private/actions/runs/40862882436) completed successfully on both architectures; downloaded artifact SHA-256 values were checked against GitHub's recorded digests.
+The compile-time selected public `libm::pow` ran on four hosted target groups, each with separate default-CPU and native-CPU builds. Math/kernel source is `f39774d821b2bbc19c98dca827678fdce636d075`; Rust is 1.99.0 and LLVM 23.1.1. The [private workflow](https://github.com/luofang34/libm-benchmark-private/actions/runs/40939173049) passed on both Linux architectures and Windows. Its three downloaded ZIPs match GitHub's [recorded SHA-256 digests](../results/raw-logs/target-scope/workflow-artifacts.json). Local Mac measurements use the same source and runner.
 
-| Observed host identity / LLVM CPU | Positive baseline ns/op | Positive candidate ns/op | Throughput speedup (p10–p90) | Dependency speedup |
-|---|---:|---:|---:|---:|
-| Apple M3 Max / `apple-m3` | 32.087 | 9.568 | 3.349× (3.121–3.482) | 2.454× |
-| AMD EPYC 9V74 VM / `znver4` | 33.105 | 13.166 | 2.514× (2.500–2.543) | 2.331× |
-| Arm VM, implementer `0x41`, part `0xd49` / `neoverse-n2` | 46.001 | 20.462 | 2.247× (2.244–2.251) | 2.212× |
+| Observed host | Build / LLVM CPU | Positive baseline ns/op | Positive candidate ns/op | Paired throughput speedup (p10–p90) | Dependency speedup |
+|---|---|---:|---:|---:|---:|
+| Apple M3 Max; macOS AArch64 | default / `apple-m1` | 31.826 | 9.673 | 3.293× (3.248–3.338) | 2.468× |
+| Apple M3 Max; macOS AArch64 | native / `apple-m3` | 31.669 | 9.620 | 3.292× (3.232–3.345) | 2.442× |
+| Arm VM (implementer 0x41, part 0xd49); GNU/Linux AArch64 | default / `generic` | 46.997 | 19.176 | 2.451× (2.448–2.452) | 2.464× |
+| Arm VM (implementer 0x41, part 0xd49); GNU/Linux AArch64 | native / `neoverse-n2` | 46.099 | 20.449 | 2.253× (2.249–2.257) | 2.221× |
+| AMD EPYC 9V45 VM; GNU/Linux x86-64 | default / `x86-64` | 27.035 | 10.920 | 2.481× (2.446–2.532) | 2.261× |
+| AMD EPYC 9V45 VM; GNU/Linux x86-64 | native / `znver5` | 25.807 | 10.357 | 2.469× (2.449–2.506) | 2.263× |
+| AMD EPYC 7763 VM; Windows Server 2025 MSVC x86-64 | default / `x86-64` | 49.075 | 17.933 | 2.735× (2.638–2.827) | 2.303× |
+| AMD EPYC 7763 VM; Windows Server 2025 MSVC x86-64 | native / `znver3` | 47.870 | 16.586 | 2.923× (2.484–3.286) | 2.280× |
 
-The Arm VM does not expose a SoC product name; raw `/proc/cpuinfo` and compiler CPU/features are retained instead of inferring one. Hosts use OS scheduling without core affinity; no host cycle counts are inferred from nominal frequencies. Each timing population stays separate in [hosted.csv](../results/hosted.csv). Single workflow runs do not establish long-term GitHub runner stability.
+Five warmups precede 15 alternating paired rounds in every domain/mode. These are OS-scheduled, unpinned executions; cycle counts and unmeasured section/stack sizes remain blank. The Arm VM does not expose a SoC product name. CPU implementer/part, raw OS identity, ABI, compiler CPU and effective features are retained in each `environment.json`, without treating every triple or GitHub VM as identical. Windows runs an MSVC-built Rust executable; MSYS2 GCC builds only the external MPFR reference checker. Earlier native-only captures remain separately identified in [hosted.csv](../results/hosted.csv).
 
-All three hosts passed the 256-bit MPFR check with candidate observed maximum `0.4999999999955404` ULP, baseline `0.6710095080248282` ULP, and zero classification/signed-zero mismatches. Full raw inputs, outputs, per-domain bins and environments are in `results/raw-logs/`. These samples remain targeted evidence rather than a whole-domain worst-case bound.
+All 14 domain/mode combinations improve in these eight hosted builds, but the gain varies: ordinary-positive throughput is 2.253–3.293×; near-one throughput is 1.548–2.118×; range-edge dependency is only 1.053× on the Mac native build. The special mixture improves on these hosts, unlike the MCU populations above. Full medians, p10–p90, checksums and source identities remain in the CSV and `raw-logs/*-pow-{default,native}/`. One run per host/configuration does not establish performance across all processors or future runner populations.
 
-One quiet-NaN/signaling-NaN input pair has a different NaN payload on x86-64 versus Arm. Both implementations agree within each architecture, and both results classify as NaN. Cross-platform bitwise identity of NaN payloads is not claimed.
+Every executable independently passes both the 448-pair timing corpus and the archived **151,083-pair** random/boundary/adversarial corpus against 256-bit MPFR. In the larger corpus, baseline/candidate maximum observed errors are **0.7858855121846906 / 0.5055620758593419 ULP**. Candidate bins are 8,734 exact, 122,196 in (0,0.5], and 107 in (0.5,1], with zero classification/signed-zero mismatches. [large-accuracy.csv](../results/raw-logs/target-scope/large-accuracy.csv) keeps target and CPU identity beside every distribution. These are repeated executions of the same inputs, not eight independent random corpora or a global error proof. NaN payload identity across platforms is not required.
+
+The first Windows job stopped while checking generated input files, before timing. Generated text is now pinned to LF and quiet-NaN inputs to an explicit bit pattern; the successful run verifies the same corpus hash as Linux/macOS. The [failed log](../results/raw-logs/target-scope/windows-first-attempt.log) is retained and never counted as a measurement.
 
 ## Verification and reproduction
 
@@ -220,30 +227,18 @@ Revalidate RP2040 using `python3 benchmarks/scripts/ingest_rp2040.py benchmarks/
 
 Revalidate C6 with `python3 benchmarks/scripts/ingest_c6.py benchmarks/results/raw-logs/esp32c6 --firmware benchmarks/results/raw-logs/esp32c6/firmware`. Regression checks reprocess the real capture and image; they reject counter saturation, wrong clock/memory settings, inconsistent intervals, firmware substitution, image corruption/truncation, and mismatched ROM symbols. The collector's PTY test covers boot output immediately adjacent to its metadata frame. C6 firmware checks use its cross target; host test harnesses cannot run on this bare-metal binary. Shared-kernel host tests and the complete physical execution provide the runtime validation. No original Flash backup was retained.
 
-## Proposed default scope for the pow patch
+## Compile-time scope and upstream review
 
-The experiment branch deliberately invokes the candidate on every measured target. **The following dispatch policy is a proposal, not applied to these measurements.** The strongest immediate production case is `wasm32-unknown-unknown`: rebuilt ordinary std obtains 3.17× positive throughput, with a measured representative-application delta of +3,551 gzip / +3,207 Brotli bytes. Hosted direct-libm results support adding x86-64 GNU/Linux, AArch64 GNU/Linux and AArch64 macOS; native `std::f64::powf` generally reaches system libm, so this Rust-libm patch does not automatically speed it up. See [STD_INTEGRATION.md](../../experiments/pow/STD_INTEGRATION.md).
+The [standalone patch](../../experiments/pow/libm-pow-arm.patch) selects the non-FMA table algorithm for `wasm32-unknown-unknown`, AArch64 macOS, AArch64 GNU/Linux, x86-64 GNU/Linux, and x86-64 Windows MSVC. AArch64 additionally requires the `neon` target feature; x86-64 requires `sse2`. All other targets select the preserved fdlibm implementation. This is an explicit compile-time allowlist, with no runtime dispatch, public feature or API change. `powf(f32)` and every other math function stay outside the patch.
 
-Use compile-time target selection rather than `target_os != "none"` or a `std` feature. OS presence does not establish hardware FP64 or arithmetic semantics. An initial whitelist could select the candidate only for:
+The seven-file math-only diff contains the algorithm, tables, regression tests, target selection and fallback; it excludes the private CI and benchmark infrastructure. Fallback production arithmetic is byte-identical to the upstream source apart from localizing its word-setting helper. Shared tests avoid duplicating the test body. [Patch verification](../results/raw-logs/target-scope/patch-verification.json) checks application to upstream `6bc104a50f83cb205790c61c5d33508046f5fad3`, reverse applicability, and byte equality of all seven resulting files.
 
-```rust
-#[cfg_attr(
-    not(any(
-        all(target_arch = "wasm32", target_os = "unknown"),
-        all(
-            target_os = "linux",
-            target_env = "gnu",
-            any(target_arch = "x86_64", target_arch = "aarch64")
-        ),
-        all(target_arch = "aarch64", target_os = "macos")
-    )),
-    path = "pow_fdlibm.rs"
-)]
-mod pow;
-```
+Actual release objects from [11 targets](../results/raw-logs/target-scope/codegen/scope.json) contain both complete tables exactly once on the five selected targets and neither table on WASI, AArch64 bare metal, Cortex-M hard-float, RV32 bare metal, iOS and x86-64 macOS. The [reachable pow call graph](../results/raw-logs/target-scope/codegen/pow-callgraph.json) on all five selected targets has only `llvm.fabs.f64` outside its own definitions, with no math or FMA libcall. This is code-generation evidence, separate from hardware execution. MCU benchmark crates explicitly enable `direct-candidate`; their candidate cannot silently turn into the fallback. The C6 linked build passes the same ROM-helper audit with this direct path, without reflashing or replacing its archived physical measurement.
 
-Keep the Arm implementation and its tables in `math/pow.rs` and `math/pow/`; restore the baseline as `math/pow_fdlibm.rs`, with its word-setting helper local to that fallback. The public `libm::pow` interface and `no_std` support stay unchanged. Unselected targets compile the fallback without the candidate's tables or runtime dispatch. `powf` (binary32), exp/log and other functions remain outside the patch. Windows, WASI, musl, RISC-V Linux and bare-metal targets would use the fallback until separately qualified; K230 and ATmega remain deferred.
+Rust **1.67.0** builds the unchanged production library source for AArch64 macOS, WASM and Cortex-M fallback in an isolated library-only manifest; development dependencies are omitted to avoid modern workspace resolution. [MSRV logs](../results/raw-logs/target-scope/gates/msrv.json) preserve that scope. Ten pow tests pass with `assert_no_panic`, and the upstream MPFR extensive harness passes **1,000,000** spaced pairs in `release-checked`. Existing repository-wide strict Clippy/doc failures remain disclosed above. These checks do not substitute for all upstream CI targets or rounding modes.
 
-The native whitelist still needs default-CPU and MSRV coverage before release: the measured hosted builds use `target-cpu=native`, which cannot establish results for every compiler-feature configuration. A WASM-only initial patch has the smallest acceptance surface; the three hosted target groups can follow as independent enablement changes. Special-value regressions and table costs must remain visible in either scope. MCU normal-input gains around 1.17–1.55× do not by themselves justify default table costs around 3.4–4 KiB, and the tested DCP runtime fails precision acceptance.
+Rebuilt ordinary WASM `std::powf` also uses the selection: positive throughput improves **3.12×**, dependency kernel **2.53×**, and all 151,083 outputs agree with direct candidate results and MPFR acceptance. The representative application grows **3,551 gzip / 3,272 Brotli bytes** under the paired sysroot builds. [STD_INTEGRATION.md](../../experiments/pow/STD_INTEGRATION.md) records actual call paths, code sizes and limits. Hosted measurements establish direct Rust `libm::pow` gains; native `std::powf` generally calls a platform library and is not accelerated by this patch.
 
-A scoped implementation must retain an explicit benchmark-only path to the Arm algorithm on excluded targets. Otherwise `Candidate` would silently become the fallback and invalidate hardware comparisons. Acceptance should exercise both dispatch branches, verify excluded builds omit the tables, and rerun the actual WASM std sysroot experiment. Keeping the fallback limits rollout risk but adds maintenance of a second algorithm; preserving licensing, exact table generation/provenance, and rounding-mode assumptions remains necessary before an upstream proposal.
+The maintainer's [review of log2f #1347](https://github.com/rust-lang/compiler-builtins/pull/1347#pullrequestreview-5482130704) requires compatible provenance and explains that ordinary libm does not guarantee cross-platform bit reproducibility. Their [follow-up](https://github.com/rust-lang/compiler-builtins/pull/1347#issuecomment-6167996403) asks for benchmark evidence; this is not approval of the present pow translation or its scope. The candidate derives from [ARM optimized-routines](https://github.com/ARM-software/optimized-routines/blob/2ee4b0d45680a9880412c1d186224b08652c35f6/math/pow.c), selecting its MIT license and retaining attribution/permission text. No glibc or Petir implementation is incorporated.
+
+The evidence supports discussing a narrow f64-pow proposal for these measured target groups. Default-CPU support does not establish every hardware/feature combination, and the table cost plus maintenance of two algorithms are real tradeoffs. An upstream review should keep the source/rounding differences, worst observed ULP, domain-dependent timings and marginal bytes visible. WASI, musl, Windows GNU/ARM64, RISC-V Linux and bare metal remain fallback targets; K230 and ATmega stay deferred. No upstream PR has been opened.

@@ -1,0 +1,208 @@
+    Checking compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+error: doc list item without indentation
+ --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:4:5
+  |
+4 | //! To avoid breaking backwards compat, C toolchains introduced a concept of "outlined atomics",
+  |     ^
+  |
+  = help: if this is supposed to be its own paragraph, add a blank line
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#doc_lazy_continuation
+  = note: `-D clippy::doc-lazy-continuation` implied by `-D warnings`
+  = help: to override `-D warnings` add `#[allow(clippy::doc_lazy_continuation)]`
+help: indent this line
+  |
+4 | //!    To avoid breaking backwards compat, C toolchains introduced a concept of "outlined atomics",
+  |     +++
+
+error: doc list item without indentation
+ --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:5:5
+  |
+5 | //! where atomic operations call into the compiler runtime to dispatch between two depending on
+  |     ^
+  |
+  = help: if this is supposed to be its own paragraph, add a blank line
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#doc_lazy_continuation
+help: indent this line
+  |
+5 | //!    where atomic operations call into the compiler runtime to dispatch between two depending on
+  |     +++
+
+error: doc list item without indentation
+ --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:6:5
+  |
+6 | //! which is supported on the current CPU.
+  |     ^
+  |
+  = help: if this is supposed to be its own paragraph, add a blank line
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#doc_lazy_continuation
+help: indent this line
+  |
+6 | //!    which is supported on the current CPU.
+  |     +++
+
+error: doc list item without indentation
+ --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:7:5
+  |
+7 | //! See <https://community.arm.com/arm-community-blogs/b/tools-software-ides-blog/posts/making-the-most-of-the-arm-architecture-in-gc...
+  |     ^
+  |
+  = help: if this is supposed to be its own paragraph, add a blank line
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#doc_lazy_continuation
+help: indent this line
+  |
+7 | //!    See <https://community.arm.com/arm-community-blogs/b/tools-software-ides-blog/posts/making-the-most-of-the-arm-architecture-in-gcc-10#:~:text=out%20of%20line%20atomics> for more discussion.
+  |     +++
+
+error: unsafe function's docs are missing a `# Safety` section
+  --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:38:1
+   |
+38 | pub unsafe fn set_have_lse_atomics(has_lse: bool) {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#missing_safety_doc
+   = note: `-D clippy::missing-safety-doc` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::missing_safety_doc)]`
+
+error: unsafe function's docs are missing a `# Safety` section
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_cas`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:485:1
+    |
+485 |   foreach_cas!(compare_and_swap);
+    |   ------------------------------ in this macro invocation
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#missing_safety_doc
+
+error: unsafe function's docs are missing a `# Safety` section
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_cas16`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:486:1
+    |
+486 |   foreach_cas16!(compare_and_swap_u128);
+    |   ------------------------------------- in this macro invocation
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#missing_safety_doc
+
+error: unsafe function's docs are missing a `# Safety` section
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_swp`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:487:1
+    |
+487 |   foreach_swp!(swap);
+    |   ------------------ in this macro invocation
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#missing_safety_doc
+
+error: unsafe function's docs are missing a `# Safety` section
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_ldadd`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:488:1
+    |
+488 |   foreach_ldadd!(add);
+    |   ------------------- in this macro invocation
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#missing_safety_doc
+
+error: unsafe function's docs are missing a `# Safety` section
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_ldclr`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:489:1
+    |
+489 |   foreach_ldclr!(and);
+    |   ------------------- in this macro invocation
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#missing_safety_doc
+
+error: unsafe function's docs are missing a `# Safety` section
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_ldeor`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:490:1
+    |
+490 |   foreach_ldeor!(xor);
+    |   ------------------- in this macro invocation
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#missing_safety_doc
+
+error: unsafe function's docs are missing a `# Safety` section
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_ldset`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:491:1
+    |
+491 |   foreach_ldset!(or);
+    |   ------------------ in this macro invocation
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#missing_safety_doc
+
+error: could not compile `compiler_builtins` (lib) due to 105 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `compiler_builtins` (lib) due to 105 previous errors

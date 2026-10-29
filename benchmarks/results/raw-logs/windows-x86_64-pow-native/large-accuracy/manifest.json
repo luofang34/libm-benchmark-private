@@ -1,0 +1,9 @@
+{
+  "cases": 151083,
+  "input_sha256": "858210471bda65f0b8c094fe8ff41cef05aaaa4a8ab44142f4807d0e7445f0d9",
+  "binary_sha256": "bb753962999d845970663490c65cb385b6bc9782ef0415799e29961e09fe9c84",
+  "output_sha256": "41dbfd8751eec6738a7f10cad2908541b619a3c918ab481345d06c7f1f5ee147",
+  "input_source": "experiments/pow/results/raw/inputs.bin.gz",
+  "domain_source": "experiments/pow/results/raw/accuracy-domains.txt.gz",
+  "acceptance": "PASS; MPFR 256-bit, round-to-nearest, error <= 1 ULP, classification and signed zero"
+}

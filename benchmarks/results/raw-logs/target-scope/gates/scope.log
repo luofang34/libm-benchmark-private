@@ -1,0 +1,11 @@
+wasm32-unknown-unknown candidate PASS
+aarch64-apple-darwin candidate PASS
+aarch64-unknown-linux-gnu candidate PASS
+x86_64-unknown-linux-gnu candidate PASS
+x86_64-pc-windows-msvc candidate PASS
+wasm32-wasip1 fallback PASS
+aarch64-unknown-none fallback PASS
+thumbv7em-none-eabihf fallback PASS
+riscv32imac-unknown-none-elf fallback PASS
+aarch64-apple-ios fallback PASS
+x86_64-apple-darwin fallback PASS
