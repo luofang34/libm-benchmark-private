@@ -1,0 +1,77 @@
+[
+  {
+    "gate": "fmt",
+    "command": [
+      "cargo",
+      "+nightly",
+      "fmt",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "gate": "clippy",
+    "command": [
+      "cargo",
+      "+nightly",
+      "clippy",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 101
+  },
+  {
+    "gate": "test",
+    "command": [
+      "cargo",
+      "+nightly",
+      "test",
+      "--all-targets"
+    ],
+    "exit_code": 0
+  },
+  {
+    "gate": "doc",
+    "command": [
+      "cargo",
+      "+nightly",
+      "doc"
+    ],
+    "exit_code": 101
+  },
+  {
+    "gate": "release",
+    "command": [
+      "cargo",
+      "+nightly",
+      "build",
+      "--release"
+    ],
+    "exit_code": 0
+  },
+  {
+    "gate": "api",
+    "command": [
+      "python3",
+      "etc/update-api-list.py",
+      "--check"
+    ],
+    "exit_code": 0,
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly"
+    }
+  },
+  {
+    "gate": "api-test",
+    "command": [
+      "cargo",
+      "+nightly",
+      "test",
+      "-p",
+      "update-api-list"
+    ],
+    "exit_code": 0
+  }
+]

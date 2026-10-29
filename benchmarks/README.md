@@ -18,6 +18,8 @@ python3 benchmarks/scripts/run_host.py
 
 Host validation needs a C compiler and MPFR/GMP development libraries (Homebrew on macOS, `libmpfr-dev libgmp-dev` on Ubuntu). The manually dispatched `pow-hardware-hosts.yml` workflow tests Ubuntu x86-64 and AArch64 with the same kernel. Archived WASM experiments remain under `experiments/pow`; their datasets and timings are separate.
 
+Accepted captures under `results/raw-logs/<device>/` retain their source metadata and per-round measurements. `python3 scripts/assemble_results.py` from this component directory regenerates the aggregate hardware, hosted and accuracy CSV files without combining different machines. `run_host.py` and `size_h743.py` accept `--source-revision` when a workspace tool uses a synthetic checkout commit; select the published revision containing the measured source.
+
 ## H743 USB2 firmware
 
 `python3 benchmarks/scripts/build_h743.py` builds both algorithms in one image, runs Clippy, checks reset/stack bounds and actual pow calls, rejects unintended math libcalls, and records the flashable image hash. It needs the Rust `thumbv7em-none-eabihf` target and LLVM binary tools. The target is a 2 MiB STM32H743 using USB2 FS on PA11/PA12, internally clocked at nominal 200 MHz. It uses 512 KiB AXI SRAM, enables I-cache, preserves the bootloader's D-cache state, and disables interrupts during timing. Use the reported CCR for the actual cache configuration. DWT's 32-bit counter uses wrapping subtraction; batches are bounded well below a full wrap. Nanoseconds are derived from the configured clock, with internal oscillator uncertainty; cycles are the primary MCU metric.

@@ -1,0 +1,3 @@
+    Checking pow-bench-core v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/core)
+    Checking pow-bench-host v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/host)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.49s

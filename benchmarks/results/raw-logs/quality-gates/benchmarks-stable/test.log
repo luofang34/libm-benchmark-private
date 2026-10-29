@@ -1,0 +1,19 @@
+   Compiling pow-bench-core v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/core)
+   Compiling pow-bench-host v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/host)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.45s
+     Running unittests src/lib.rs (target/debug/deps/pow_bench_core-9181cae4d5a3fcf1)
+
+running 4 tests
+test kernel::tests::empty_batch_never_divides_by_zero ... ok
+test kernel::tests::consumes_remainder_and_every_repeat ... ok
+test kernel::tests::ieee_identities_and_signed_zero ... ok
+test kernel::tests::feedback_matches_scalar_execution ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/pow_bench_host-77ae506bee6f58ad)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,32 @@
+{
+  "board": "Virtual Machine",
+  "soc": "aarch64",
+  "core": "OS-scheduled; affinity not pinned",
+  "target_triple": "aarch64-unknown-linux-gnu",
+  "target_cpu": "neoverse-n2",
+  "target_features": "{\"cpu_defaults\": \"neoverse-n2\", \"llvm_explicit\": [\"+sve-sm4,+sve2,+sve-sha3,+lse,+sm4,+aes,+sve,+fp-armv8,+sha2,+neon,+sve-aes,+sha3,+crc,-rand,+v8a,+outline-atomics\"], \"rustc_cfg\": [\"aes\", \"bf16\", \"bti\", \"crc\", \"dit\", \"dotprod\", \"dpb\", \"dpb2\", \"fcma\", \"fhm\", \"flagm\", \"fp16\", \"frintts\", \"i8mm\", \"jsconv\", \"lor\", \"lse\", \"mte\", \"neon\", \"paca\", \"pacg\", \"pan\", \"pmuv3\", \"ras\", \"rcpc\", \"rcpc2\", \"rdm\", \"sb\", \"sha2\", \"sha3\", \"sm4\", \"ssbs\", \"sve\", \"sve2\", \"vh\"]}",
+  "float_abi": "aapcs64",
+  "fpu_mode": "hardware_fp64",
+  "libc_or_runtime": "Rust core/compiler_builtins; glibc 2.39; Linux",
+  "compiler_backend": "LLVM version: 23.1.1",
+  "compiler_version": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "run_id": "hosted",
+  "device_id": "runnervm9u1px",
+  "architecture": "aarch64",
+  "source_sha": "a177542435f4aab8a8bc1fe235604537193094f7",
+  "firmware_sha": "9dfac41625700d6648e2f42179a76836239eacd2734be601b3edc24187e39809",
+  "dataset_sha": "1b227b1001dd0b99b6b495f911d6ff83f6744557c7fb63778ed4ea259136bcbf",
+  "build_flags": "opt-level=3,lto=fat,codegen-units=1,panic=abort,target-cpu=native",
+  "timer": "std::time::Instant",
+  "timer_hz": 1000000000,
+  "counter_bits": "128 duration representation",
+  "interrupt_configuration": "OS managed",
+  "memory_configuration": "OS managed; warm caches; no core affinity",
+  "algorithm_revisions": {
+    "Baseline": "git:6bc104a50f83cb205790c61c5d33508046f5fad3",
+    "Candidate": "sha256:53252dcd92d95a95fbb160f65f389c1767166b899b7662bc6dbc19d4afd65a12"
+  },
+  "rustc_vV": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: aarch64-unknown-linux-gnu\nrelease: 1.99.0\nLLVM version: 23.1.1",
+  "cpu_details": "processor\t: 0\nBogoMIPS\t: 2000.00\nFeatures\t: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 sm3 sm4 asimddp sha512 sve asimdfhm uscat ilrcpc flagm sb paca pacg dcpodp sve2 sveaes svebitperm svesha3 svesm4 flagm2 frint svei8mm svebf16 i8mm bf16\nCPU implementer\t: 0x41\nCPU architecture: 8\nCPU variant\t: 0x0\nCPU part\t: 0xd49\nCPU revision\t: 0\n\nprocessor\t: 1\nBogoMIPS\t: 2000.00\nFeatures\t: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 sm3 sm4 asimddp sha512 sve asimdfhm uscat ilrcpc flagm sb paca pacg dcpodp sve2 sveaes svebitperm svesha3 svesm4 flagm2 frint svei8mm svebf16 i8mm bf16\nCPU implementer\t: 0x41\nCPU architecture: 8\nCPU variant\t: 0x0\nCPU part\t: 0xd49\nCPU revision\t: 0\n\n",
+  "os": "Linux-7.0.0-1017-azure-aarch64-with-glibc2.39"
+}

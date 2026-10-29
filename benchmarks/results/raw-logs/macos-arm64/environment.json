@@ -1,0 +1,32 @@
+{
+  "board": "Mac15,9",
+  "soc": "Apple M3 Max",
+  "core": "OS-scheduled; performance/efficiency core not pinned",
+  "target_triple": "aarch64-apple-darwin",
+  "target_cpu": "apple-m3",
+  "target_features": "{\"cpu_defaults\": \"apple-m3\", \"llvm_explicit\": [], \"rustc_cfg\": [\"aes\", \"bf16\", \"bti\", \"crc\", \"dit\", \"dotprod\", \"dpb\", \"dpb2\", \"fcma\", \"fhm\", \"flagm\", \"fp16\", \"frintts\", \"i8mm\", \"jsconv\", \"lor\", \"lse\", \"neon\", \"paca\", \"pacg\", \"pan\", \"pmuv3\", \"ras\", \"rcpc\", \"rcpc2\", \"rdm\", \"sb\", \"sha2\", \"sha3\", \"ssbs\", \"vh\"]}",
+  "float_abi": "aapcs64",
+  "fpu_mode": "hardware_fp64",
+  "libc_or_runtime": "Rust core/compiler_builtins;  ; Darwin",
+  "compiler_backend": "LLVM version: 23.1.1",
+  "compiler_version": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "run_id": "macos-arm64-hardware",
+  "device_id": "MacBookPro",
+  "architecture": "arm64",
+  "source_sha": "a177542435f4aab8a8bc1fe235604537193094f7",
+  "firmware_sha": "6c54ab60dd06b415fab31172300b69a2201f7f816c7d1a404719cbeb847f27a4",
+  "dataset_sha": "1b227b1001dd0b99b6b495f911d6ff83f6744557c7fb63778ed4ea259136bcbf",
+  "build_flags": "opt-level=3,lto=fat,codegen-units=1,panic=abort,target-cpu=native",
+  "timer": "std::time::Instant",
+  "timer_hz": 1000000000,
+  "counter_bits": "128 duration representation",
+  "interrupt_configuration": "OS managed",
+  "memory_configuration": "OS managed; warm caches; no core affinity",
+  "algorithm_revisions": {
+    "Baseline": "git:6bc104a50f83cb205790c61c5d33508046f5fad3",
+    "Candidate": "sha256:53252dcd92d95a95fbb160f65f389c1767166b899b7662bc6dbc19d4afd65a12"
+  },
+  "rustc_vV": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: aarch64-apple-darwin\nrelease: 1.99.0\nLLVM version: 23.1.1",
+  "cpu_details": "hw.model: Mac15,9\nhw.ncpu: 16\nmachdep.cpu.brand_string: Apple M3 Max",
+  "os": "macOS-27.0-arm64-arm-64bit-Mach-O"
+}

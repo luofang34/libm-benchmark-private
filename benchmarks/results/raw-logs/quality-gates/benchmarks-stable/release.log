@@ -1,0 +1,3 @@
+   Compiling pow-bench-core v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/core)
+   Compiling pow-bench-host v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/host)
+    Finished `release` profile [optimized] target(s) in 2.89s

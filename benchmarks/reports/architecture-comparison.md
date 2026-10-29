@@ -41,6 +41,22 @@ The approximately 3× WASM improvement does not generalize to H743: ordinary-pos
 
 Nine target profiles pass compilation and instruction/helper inspection in [codegen.json](../results/codegen/codegen.json). Those unlinked objects are not board measurements. Unconnected boards remain explicitly blocked in [profiles.json](../boards/profiles.json). K230 CPU0/CPU1 and ATmega328P are deferred and have not been built or flashed. No upstream PR has been opened.
 
+## Hosted hardware comparison
+
+The same 448-pair corpus and shared kernel ran on three hosted configurations. Each used Rust 1.99.0, LLVM 23.1.1, `target-cpu=native`, five warmup rounds and 15 paired rounds. Source commit: `a177542435f4aab8a8bc1fe235604537193094f7`. The [manual Linux workflow](https://github.com/luofang34/libm-benchmark-private/actions/runs/40862882436) completed successfully on both architectures; downloaded artifact SHA-256 values were checked against GitHub's recorded digests.
+
+| Observed host identity / LLVM CPU | Positive baseline ns/op | Positive candidate ns/op | Throughput speedup (p10–p90) | Dependency speedup |
+|---|---:|---:|---:|---:|
+| Apple M3 Max / `apple-m3` | 32.087 | 9.568 | 3.349× (3.121–3.482) | 2.454× |
+| AMD EPYC 9V74 VM / `znver4` | 33.105 | 13.166 | 2.514× (2.500–2.543) | 2.331× |
+| Arm VM, implementer `0x41`, part `0xd49` / `neoverse-n2` | 46.001 | 20.462 | 2.247× (2.244–2.251) | 2.212× |
+
+The Arm VM does not expose a SoC product name; raw `/proc/cpuinfo` and compiler CPU/features are retained instead of inferring one. Hosts use OS scheduling without core affinity; no host cycle counts are inferred from nominal frequencies. Each timing population stays separate in [hosted.csv](../results/hosted.csv). Single workflow runs do not establish long-term GitHub runner stability.
+
+All three hosts passed the 256-bit MPFR check with candidate observed maximum `0.4999999999955404` ULP, baseline `0.6710095080248282` ULP, and zero classification/signed-zero mismatches. Full raw inputs, outputs, per-domain bins and environments are in `results/raw-logs/`. These samples remain targeted evidence rather than a whole-domain worst-case bound.
+
+One quiet-NaN/signaling-NaN input pair has a different NaN payload on x86-64 versus Arm. Both implementations agree within each architecture, and both results classify as NaN. Cross-platform bitwise identity of NaN payloads is not claimed.
+
 ## Verification and reproduction
 
 Run the commands in the component [README](../README.md). The archived H743 capture can be revalidated with:
@@ -52,4 +68,4 @@ python3 benchmarks/scripts/ingest_h743.py benchmarks/results/raw-logs/stm32h743 
 
 The DFU log records successful erase/download followed by an error while requesting departure from DFU (exit 74). USB CDC subsequently enumerated and returned the exact expected Flash hash and complete result payload; those observations establish successful execution. Existing firmware was overwritten with explicit authorization and no backup was retained.
 
-The shared benchmark tests, strict Clippy/doc checks and H743 preflight pass. The repository-wide test/release/format/API gates pass; strict repository-wide Clippy and documentation gates fail on existing upstream documentation issues (including missing safety sections and missing public documentation). Those failures are not reported as successful CI.
+The shared benchmark's four Rust tests, 12 Python tests, strict Clippy/doc checks and H743 preflight pass. The repository-wide tests (2,198 passed), release, format and API gates pass using nightly `41089d07a`; the API script also requires `RUSTUP_TOOLCHAIN=nightly`. Stable cannot compile the root compiler-builtins workspace's nightly features. Strict repository-wide Clippy and documentation gates fail on existing upstream documentation issues (including 105 compiler-builtins Clippy errors for missing safety sections and other documentation issues). Those failures are not reported as successful CI.
