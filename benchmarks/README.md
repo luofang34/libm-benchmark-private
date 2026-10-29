@@ -32,4 +32,12 @@ The USB routing is confirmed by ST AN2606's H743 DFU interface. The HSI48 synchr
 
 Device firmware images are not interchangeable with code-generation `.o` files. Each board needs a verified clock, memory layout, transport, image and flashing procedure before use. DCP requires its own runtime integration and precision result; an M33 build alone does not demonstrate DCP acceleration.
 
+## F411 USB FS firmware
+
+`python3 benchmarks/scripts/build_f411.py` audits the Cortex-M4 image for the connected 512 KiB F411 DFU device. It verifies hardware FP32 instructions, software FP64 helper calls, both pow calls and reset/stack bounds. The image uses 128 KiB SRAM and an 80 KiB stack-resident retained-result buffer. No H743 artifact may be flashed to this board.
+
+At startup TIM11 measures HSE/31 against HSI with an eight-edge capture prescaler and 256 intervals. Following the integer-MHz oscillator requirement of the F411 ROM DFU interface, the firmware rounds the estimate and rejects deviations above 1/66 of the nominal frequency. It reports both values. This identifies the crystal for PLL configuration, not precision oscillator calibration. A 48 MHz core/USB clock is selected to work within every F411 regulator voltage scale. Code and constants remain in internal Flash; the reported Flash ACR describes prefetch/cache settings. DWT timing, datasets and pow kernels match the H743 experiment.
+
+Collect with `scripts/collect.py`, then run `python3 benchmarks/scripts/ingest_f411.py <capture>` to validate image identity, dataset completeness, FP32/software-FP64 mode, clocks and MPFR accuracy. `python3 benchmarks/scripts/size_f411.py` builds the two offline single-algorithm size fixtures. Factory signatures and clock registers can be unavailable through ROM DFU; the running firmware reports these directly. Reference: [STM32F411 RM0383, internal clock measurement](https://www.st.com/resource/en/reference_manual/DM00119316.pdf).
+
 References: [ST bootloader resources](https://www.st.com/resource/en/application_note/cd00167594-stm32-microcontroller-system-memory-boot-mode-stmicroelectronics.pdf), [ST H743](https://www.st.com/en/microcontrollers-microprocessors/stm32h743ig.html), [ST CRS implementation](https://github.com/STMicroelectronics/stm32h7xx-hal-driver/blob/master/Src/stm32h7xx_hal_rcc_ex.c), [RP2350 DCP runtime](https://github.com/raspberrypi/pico-sdk/blob/master/src/rp2_common/pico_double/include/pico/double.h), [K230 cores](https://www.kendryte.com/k230/en/v2.0/K230_brief_datasheet.html).
