@@ -1,0 +1,14 @@
+   Compiling pow-rp2350 v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/boards/rp2350)
+    Checking rp235x-hal v0.4.0
+ Documenting pow-rp2350 v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/boards/rp2350)
+warning: lint `broken_intra_doc_links` has been renamed to `rustdoc::broken_intra_doc_links`
+  |
+  = help: use the new name `rustdoc::broken_intra_doc_links`
+  = note: requested on the command line with `-D broken_intra_doc_links`
+  = note: `#[warn(renamed_and_removed_lints)]` on by default
+
+warning: `pow-rp2350` (bin "pow-rp2350" doc) generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.96s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+   Generated /Users/fangluo/Documents/ChatGPT/libm/benchmarks/boards/rp2350/target/thumbv8m.main-none-eabihf/doc/pow_rp2350/index.html

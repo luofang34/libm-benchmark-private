@@ -1,0 +1,17 @@
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/results/runs/rp2350-arm-size/Candidate/pow-size.elf  :
+section              size        addr
+.vector_table         272   268435456
+.start_block            0   268435728
+.text                6932   268435728
+.bi_entries             0   268442660
+.rodata             12288   268442664
+.data                   0   536870912
+.gnu.sgstubs            0   268454976
+.bss                    0   536870912
+.uninit                 0   536870912
+.end_block              0   268454976
+.comment              153           0
+.ARM.attributes        74           0
+Total               19719
+
+

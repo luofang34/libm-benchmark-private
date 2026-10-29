@@ -1,0 +1,299 @@
+20000000 00000003 b .L_MergedGlobals
+1000c725 000000c8 r .Lanon.33c69806d66b2efe4daa541ba6fd110c.193
+1000c7ed 00000019 r .Lanon.33c69806d66b2efe4daa541ba6fd110c.208
+1000c806 00000002 r .Lanon.33c69806d66b2efe4daa541ba6fd110c.395
+1000c908 00000800 r .Lanon.94990c17f904d360e6008c29dae987b8.95
+1000d108 00000c00 r .Lanon.94990c17f904d360e6008c29dae987b8.96
+1000f928 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.10
+1000f938 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.11
+1000f948 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.12
+1000f958 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.13
+1000f968 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.14
+1000f978 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.15
+1000f988 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.16
+1000f998 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.17
+1000f9a8 00000044 r .Lanon.a25d36d5c58b46c1db81b65690b62881.18
+1000f9ec 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.20
+1000f9fc 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.74
+1000fa0c 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.75
+1000f908 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.8
+1000f918 00000010 r .Lanon.a25d36d5c58b46c1db81b65690b62881.9
+1000bf6c 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.10
+1000bf7c 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.11
+1000bf8c 00000051 r .Lanon.a389e6b632b77885533a6923b4c85cbc.12
+1000bfe0 00000018 r .Lanon.a389e6b632b77885533a6923b4c85cbc.13
+1000c094 0000008c r .Lanon.a389e6b632b77885533a6923b4c85cbc.21
+1000c120 0000004c r .Lanon.a389e6b632b77885533a6923b4c85cbc.22
+1000c16c 0000002b r .Lanon.a389e6b632b77885533a6923b4c85cbc.23
+1000c197 0000001f r .Lanon.a389e6b632b77885533a6923b4c85cbc.24
+1000c1b8 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.26
+1000c1c8 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.28
+1000c1d8 0000003c r .Lanon.a389e6b632b77885533a6923b4c85cbc.29
+1000c214 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.31
+1000c224 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.32
+1000c234 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.33
+1000c244 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.34
+1000c254 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.35
+1000c264 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.36
+1000c274 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.37
+1000c284 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.38
+1000c294 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.39
+1000ba78 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.4
+1000c2a4 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.40
+1000c2b4 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.42
+1000c308 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.45
+1000c318 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.46
+1000c328 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.47
+1000c338 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.48
+1000c348 0000000f r .Lanon.a389e6b632b77885533a6923b4c85cbc.49
+1000c358 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.50
+1000c368 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.51
+1000c378 00000022 r .Lanon.a389e6b632b77885533a6923b4c85cbc.52
+1000c39c 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.54
+1000c3ac 0000000f r .Lanon.a389e6b632b77885533a6923b4c85cbc.55
+1000c3bc 00000018 r .Lanon.a389e6b632b77885533a6923b4c85cbc.56
+1000c3d4 0000000d r .Lanon.a389e6b632b77885533a6923b4c85cbc.57
+1000c3e1 00000015 r .Lanon.a389e6b632b77885533a6923b4c85cbc.58
+1000c3f6 00000035 r .Lanon.a389e6b632b77885533a6923b4c85cbc.59
+1000bf04 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.6
+1000c42b 00000003 r .Lanon.a389e6b632b77885533a6923b4c85cbc.60
+1000c42e 00000041 r .Lanon.a389e6b632b77885533a6923b4c85cbc.61
+1000c46f 0000011d r .Lanon.a389e6b632b77885533a6923b4c85cbc.62
+1000c58c 00000018 r .Lanon.a389e6b632b77885533a6923b4c85cbc.63
+1000c5a4 0000000f r .Lanon.a389e6b632b77885533a6923b4c85cbc.64
+1000c5b3 00000012 r .Lanon.a389e6b632b77885533a6923b4c85cbc.65
+1000c5c5 00000012 r .Lanon.a389e6b632b77885533a6923b4c85cbc.66
+1000c5d8 00000018 r .Lanon.a389e6b632b77885533a6923b4c85cbc.68
+1000c5f0 00000018 r .Lanon.a389e6b632b77885533a6923b4c85cbc.70
+1000c608 00000009 r .Lanon.a389e6b632b77885533a6923b4c85cbc.72
+1000bf14 00000010 r .Lanon.a389e6b632b77885533a6923b4c85cbc.8
+1000c611 0000000a r .Lanon.a389e6b632b77885533a6923b4c85cbc.82
+1000c61b 0000000a r .Lanon.a389e6b632b77885533a6923b4c85cbc.83
+1000bf24 00000045 r .Lanon.a389e6b632b77885533a6923b4c85cbc.9
+1000fa1c 00000010 r .Lanon.eaff1142e563b49f6e9fabfba6cdf58e.1
+1000fa6c 00000010 r .Lanon.eaff1142e563b49f6e9fabfba6cdf58e.15
+1000fa2c 00000010 r .Lanon.eaff1142e563b49f6e9fabfba6cdf58e.2
+1000fa3c 00000010 r .Lanon.eaff1142e563b49f6e9fabfba6cdf58e.3
+1000fa4c 00000010 r .Lanon.eaff1142e563b49f6e9fabfba6cdf58e.4
+1000fa5c 00000010 r .Lanon.eaff1142e563b49f6e9fabfba6cdf58e.5
+100058f0 00000000 T ADC_IRQ_FIFO
+100058f0 00000000 T BusFault
+100058f0 00000000 T CLOCKS_IRQ
+20000002 00000001 B DEVICE_PERIPHERALS
+100058f0 00000000 T DMA_IRQ_0
+100058f0 00000000 T DMA_IRQ_1
+100058f0 00000000 T DMA_IRQ_2
+100058f0 00000000 T DMA_IRQ_3
+100058f0 00000000 T DebugMonitor
+100058f0 00000000 T DefaultHandler
+100058f0 00000006 T DefaultHandler_
+100058f8 00000006 T DefaultPreInit
+1000ba70 00000000 T HardFault
+1000ba70 00000006 T HardFault_
+100058f0 00000000 T I2C0_IRQ
+100058f0 00000000 T I2C1_IRQ
+100058f0 00000000 T IO_IRQ_BANK0
+100058f0 00000000 T IO_IRQ_BANK0_NS
+100058f0 00000000 T IO_IRQ_QSPI
+100058f0 00000000 T IO_IRQ_QSPI_NS
+100058f0 00000000 T MemoryManagement
+100058f0 00000000 T NonMaskableInt
+100058f0 00000000 T OTP_IRQ
+100058f0 00000000 T PIO0_IRQ_0
+100058f0 00000000 T PIO0_IRQ_1
+100058f0 00000000 T PIO1_IRQ_0
+100058f0 00000000 T PIO1_IRQ_1
+100058f0 00000000 T PIO2_IRQ_0
+100058f0 00000000 T PIO2_IRQ_1
+100058f0 00000000 T PLL_SYS_IRQ
+100058f0 00000000 T PLL_USB_IRQ
+100058f0 00000000 T POWMAN_IRQ_POW
+100058f0 00000000 T POWMAN_IRQ_TIMER
+100058f0 00000000 T PWM_IRQ_WRAP_0
+100058f0 00000000 T PWM_IRQ_WRAP_1
+100058f0 00000000 T PendSV
+10000124 0000004a T Reset
+100058f0 00000000 T SIO_IRQ_BELL
+100058f0 00000000 T SIO_IRQ_BELL_NS
+100058f0 00000000 T SIO_IRQ_FIFO
+100058f0 00000000 T SIO_IRQ_FIFO_NS
+100058f0 00000000 T SIO_IRQ_MTIMECMP
+100058f0 00000000 T SPI0_IRQ
+100058f0 00000000 T SPI1_IRQ
+100058f0 00000000 T SVCall
+100058f0 00000000 T SW0_IRQ
+100058f0 00000000 T SW1_IRQ
+100058f0 00000000 T SW2_IRQ
+100058f0 00000000 T SW3_IRQ
+100058f0 00000000 T SW4_IRQ
+100058f0 00000000 T SW5_IRQ
+100058f0 00000000 T SecureFault
+100058f0 00000000 T SysTick
+100058f0 00000000 T TIMER0_IRQ_0
+100058f0 00000000 T TIMER0_IRQ_1
+100058f0 00000000 T TIMER0_IRQ_2
+100058f0 00000000 T TIMER0_IRQ_3
+100058f0 00000000 T TIMER1_IRQ_0
+100058f0 00000000 T TIMER1_IRQ_1
+100058f0 00000000 T TIMER1_IRQ_2
+100058f0 00000000 T TIMER1_IRQ_3
+100058f0 00000000 T TRNG_IRQ
+100058f0 00000000 T UART0_IRQ
+100058f0 00000000 T UART1_IRQ
+100058f0 00000000 T USBCTRL_IRQ
+100058f0 00000000 T UsageFault
+10000194 000001ac t <str>::trim_matches::<<char>::is_whitespace>
+10000340 0000012a t <usb_device::descriptor::DescriptorWriter>::endpoint_ex::<rp235x_hal::usb::UsbBus, usb_device::endpoint::In, <usb_device::descriptor::DescriptorWriter>::endpoint<rp235x_hal::usb::UsbBus, usb_device::endpoint::In>::{closure#0}>
+1000046c 00000006 t core::ptr::drop_glue::<heapless::string::String<16>>
+10000474 00000836 t pow_rp2350::measurements::measure::<pow_rp2350::hardware::start::{closure#4}>
+10000cac 00000008 t __rustc::rust_begin_unwind
+10007510 0000006a t rp235x_hal::halt
+10009bec 000000fe t <usb_device::descriptor::DescriptorWriter>::interface_alt
+10009cec 00000098 t <usb_device::descriptor::DescriptorWriter>::write
+10000cb4 0000005e t <usb_device::control_pipe::ControlPipe<rp235x_hal::usb::UsbBus>>::accept_out
+10000d14 00000168 t <usb_device::control_pipe::ControlPipe<rp235x_hal::usb::UsbBus>>::handle_out
+10000e7c 000000ce t <usb_device::control_pipe::ControlPipe<rp235x_hal::usb::UsbBus>>::write_in_chunk
+10000f4c 00000046 t <usb_device::control_pipe::ControlPipe<rp235x_hal::usb::UsbBus>>::set_error
+10000f94 000002aa t <usb_device::device::UsbDevice<rp235x_hal::usb::UsbBus>>::control_in
+10001240 000001be t <usb_device::device::UsbDevice<rp235x_hal::usb::UsbBus>>::control_out
+10001400 0000054c t <usb_device::device::UsbDevice<rp235x_hal::usb::UsbBus>>::get_descriptor
+1000194c 000007bc t <usb_device::device::UsbDevice<rp235x_hal::usb::UsbBus>>::poll
+1000757c 00000102 t <rp235x_hal::usb::UsbBus>::new
+10009d84 00000028 t <usb_device::descriptor::BosWriter>::end_bos
+1000524c 000001e8 t <core::fmt::Formatter>::pad_integral
+10004c14 00000638 t <core::fmt::Formatter>::pad
+10004b08 0000010c t core::fmt::write
+10005702 00000016 t core::cell::panic_already_borrowed
+10005718 0000001c t core::option::expect_failed
+10005734 00000016 t core::result::unwrap_failed
+1000560c 00000010 t core::panicking::panic_bounds_check
+10005600 0000000c t core::panicking::panic
+10004b00 00000008 t core::panicking::panic_fmt
+10008074 00001b78 t sha2::sha256::compress256
+20000001 00000001 b rp235x_hal::critical_section_impl::LOCK_OWNER (.0)
+10007680 00000102 t rp235x_hal::reboot::reboot
+10006950 00000bc0 t pow_bench_core::kernel::baseline_pow
+10005f50 00000a00 t pow_bench_core::kernel::candidate_pow
+10005ba8 00000012 t pow_bench_core::kernel::arithmetic_f32
+10005bbc 0000038e t pow_bench_core::kernel::run
+1000dd08 00001c00 r pow_bench_core::vectors::DATA
+10002108 00000068 t pow_rp2350::hardware::__cortex_m_rt_main
+10002170 00000b4e t pow_rp2350::hardware::start
+10002cc0 0000019e t pow_rp2350::hardware::identity
+10000110 00000014 r pow_rp2350::hardware::IMAGE_DEF
+10002e60 000009bc t pow_rp2350::telemetry::serve
+1000381c 0000017a t pow_rp2350::telemetry::digest
+20000000 00000001 b cortex_m::peripheral::TAKEN (.0)
+1000abf4 00000294 t compiler_builtins::mem::memcpy
+1000ae88 00000582 t compiler_builtins::mem::memmove
+100055be 00000042 t core::slice::index::slice_index_fail
+1000574a 00000014 t core::panicking::panic_const::panic_const_div_by_zero
+10005900 000001d8 t libm::math::sqrt::sqrt
+10005ad8 000000d0 t libm::math::scalbn::scalbn
+1000b70c 00000362 t compiler_builtins::int::specialized_div_rem::u64_div_rem
+1000a7c8 00000388 t compiler_builtins::float::add::__adddf3
+1000a0b8 000003c8 t compiler_builtins::float::div::__divdf3
+1000a490 00000310 t compiler_builtins::float::mul::__muldf3
+1000c625 00000100 r core::unicode::unicode_data::white_space::WHITESPACE_MAP
+1000c808 00000100 r libm::math::generic::sqrt::RSQRT_TAB
+10005434 00000044 t <core::fmt::Formatter>::pad_integral::write_prefix
+10003998 000000b6 t <usbd_serial::serial_port::SerialPort<rp235x_hal::usb::UsbBus> as usb_device::class::UsbClass<rp235x_hal::usb::UsbBus>>::control_in
+10003a50 0000002e t <usbd_serial::serial_port::SerialPort<rp235x_hal::usb::UsbBus> as usb_device::class::UsbClass<rp235x_hal::usb::UsbBus>>::get_string
+10003a80 0000011a t <usbd_serial::serial_port::SerialPort<rp235x_hal::usb::UsbBus> as usb_device::class::UsbClass<rp235x_hal::usb::UsbBus>>::control_out
+10003b9c 000000f2 t <usbd_serial::serial_port::SerialPort<rp235x_hal::usb::UsbBus> as usb_device::class::UsbClass<rp235x_hal::usb::UsbBus>>::endpoint_in_complete
+10003c90 000002ba t <usbd_serial::serial_port::SerialPort<rp235x_hal::usb::UsbBus> as usb_device::class::UsbClass<rp235x_hal::usb::UsbBus>>::get_configuration_descriptors
+10003f4c 00000020 t <usbd_serial::serial_port::SerialPort<rp235x_hal::usb::UsbBus> as usb_device::class::UsbClass<rp235x_hal::usb::UsbBus>>::reset
+10007784 00000152 t <rp235x_hal::usb::UsbBus as usb_device::bus::UsbBus>::set_stalled
+100078d8 000000fa t <rp235x_hal::usb::UsbBus as usb_device::bus::UsbBus>::set_device_address
+100079d4 0000024a t <rp235x_hal::usb::UsbBus as usb_device::bus::UsbBus>::read
+10007c20 00000192 t <rp235x_hal::usb::UsbBus as usb_device::bus::UsbBus>::write
+10007db4 000000da t <rp235x_hal::usb::UsbBus as usb_device::bus::UsbBus>::enable
+10007e90 000001e2 t <rp235x_hal::usb::UsbBus as usb_device::bus::UsbBus>::alloc_ep
+10003f6c 00000034 t <pow_bench_core::kernel::Implementation as core::fmt::Debug>::fmt
+10003fa0 00000014 t <&str as core::fmt::Display>::fmt
+10003fb4 00000014 t <heapless::string::String<64> as core::fmt::Display>::fmt
+10003fc8 0000002c t <pow_bench_core::kernel::Mode as core::fmt::Debug>::fmt
+1000561c 000000e6 t <u32 as core::fmt::Display>::fmt
+10003ff4 0000015a t <heapless::string::String<16> as core::fmt::Write>::write_char
+10004150 000000a0 t <heapless::string::String<16> as core::fmt::Write>::write_str
+100041f0 00000162 t <heapless::string::String<131072> as core::fmt::Write>::write_char
+10004354 000000c6 t <heapless::string::String<131072> as core::fmt::Write>::write_str
+1000441c 0000015a t <heapless::string::String<32> as core::fmt::Write>::write_char
+10004578 000000a0 t <heapless::string::String<32> as core::fmt::Write>::write_str
+10004618 0000015a t <heapless::string::String<64> as core::fmt::Write>::write_char
+10004774 000000a0 t <heapless::string::String<64> as core::fmt::Write>::write_str
+10004814 00000182 t <heapless::string::String<2048> as core::fmt::Write>::write_char
+10004998 000000c0 t <heapless::string::String<2048> as core::fmt::Write>::write_str
+10005830 000000c0 t <u64 as core::fmt::LowerHex>::fmt
+1000575e 00000048 t <u8 as core::fmt::LowerHex>::fmt
+10005478 00000146 t <u64 as core::fmt::Display>::fmt
+100057a6 0000008a t <u32 as core::fmt::LowerHex>::fmt
+10004a58 00000006 t <usbd_serial::serial_port::SerialPort<rp235x_hal::usb::UsbBus> as usb_device::class::UsbClass<rp235x_hal::usb::UsbBus>>::endpoint_out
+10004a60 00000008 t <usbd_serial::serial_port::SerialPort<rp235x_hal::usb::UsbBus> as usb_device::class::UsbClass<rp235x_hal::usb::UsbBus>>::get_alt_setting
+10004a68 00000008 t <usbd_serial::serial_port::SerialPort<rp235x_hal::usb::UsbBus> as usb_device::class::UsbClass<rp235x_hal::usb::UsbBus>>::set_alt_setting
+10004a70 00000008 t <usbd_serial::serial_port::SerialPort<rp235x_hal::usb::UsbBus> as usb_device::class::UsbClass<rp235x_hal::usb::UsbBus>>::get_bos_descriptors
+10004a78 00000006 t <usbd_serial::serial_port::SerialPort<rp235x_hal::usb::UsbBus> as usb_device::class::UsbClass<rp235x_hal::usb::UsbBus>>::poll
+10004a80 00000018 t <heapless::string::String<16> as core::fmt::Write>::write_fmt
+10004a98 00000018 t <heapless::string::String<131072> as core::fmt::Write>::write_fmt
+10004ab0 00000018 t <heapless::string::String<32> as core::fmt::Write>::write_fmt
+10004ac8 00000018 t <heapless::string::String<64> as core::fmt::Write>::write_fmt
+10004ae0 00000018 t <heapless::string::String<2048> as core::fmt::Write>::write_fmt
+10000008 00000038 R __EXCEPTIONS
+10000040 000000d0 R __INTERRUPTS
+10000004 00000004 R __RESET_VECTOR
+1000b580 0000000c t __aeabi_dadd
+1000b49a 00000054 t __aeabi_dcmpeq
+10009e4e 0000006a t __aeabi_dcmpgt
+1000b416 00000078 t __aeabi_dcmple
+1000b58c 0000006a t __aeabi_dcmplt
+1000a09c 00000016 t __aeabi_ddiv
+1000a480 0000000c t __aeabi_dmul
+1000a7a0 00000028 t __aeabi_dsub
+10009f7c 0000005c t __aeabi_i2d
+1000b4ee 00000092 t __aeabi_l2d
+1000b5f6 000000d0 t __aeabi_memclr
+10009fd8 000000c4 t __aeabi_memclr4
+10009eb8 000000c4 t __aeabi_memclr8
+1000b40a 0000000c t __aeabi_memcpy
+1000ab50 000000a4 t __aeabi_memcpy4
+1000b48e 0000000c t __aeabi_memmove
+1000b6c8 00000014 t __aeabi_uldivmod
+1000ba78 00000000 R __bi_entries_end
+1000ba78 00000000 R __bi_entries_start
+10009dac 00000004 T __cpsid
+10009db0 00000004 T __cpsie
+10009db4 0000000c T __delay
+20000004 00000000 B __ebss
+20000000 00000000 R __edata
+10000040 00000000 R __eexceptions
+1000fa80 00000000 D __end_block_addr
+1000fa7c 00000000 R __erodata
+1000ba78 00000000 T __etext
+20000004 00000000 B __euninit
+10000008 00000000 R __exceptions
+1000fa80 00000000 D __flash_binary_end
+1000fa80 00000000 A __flash_image_end
+10009dd4 00000006 T __fpscr_r
+10009dc0 00000006 T __isb
+10009dc6 00000004 T __nop
+100058f8 00000000 T __pre_init
+10009dca 00000006 T __primask_r
+20000000 00000000 B __sbss
+20000000 00000000 R __sdata
+1000fa80 00000000 D __sheap
+1000fa7c 00000000 A __sidata
+1000ba78 00000000 R __srodata
+10000110 00000000 R __start_block_addr
+10000124 00000000 T __stext
+20000004 00000000 B __suninit
+1000b6dc 00000030 t __udivmoddi4
+10000000 00000000 R __vector_table
+1000fa80 00000000 R __veneer_base
+1000fa80 00000000 R __veneer_limit
+10009dd0 00000004 T __wfe
+20080000 00000000 A _ram_end
+1000fa80 00000000 D _stack_end
+20080000 00000000 A _stack_start
+10000124 00000000 R _stext
+10004af8 00000008 T main
+10009dda 00000074 t memcmp

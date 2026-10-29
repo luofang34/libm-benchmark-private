@@ -1,0 +1,25 @@
+File /Users/fangluo/Documents/ChatGPT/libm/benchmarks/firmware/rp2350-riscv/pow-rp2350.bin:
+
+Program Information
+ target chip:         RP2350
+ image type:          RISC-V
+
+Fixed Pin Information
+ none
+
+Build Information
+ none
+
+Metadata Block 1
+ address:             0x10000138
+ next block address:  0x10000138
+ block type:          image def
+ target chip:         RP2350
+ image type:          RISC-V
+
+Metadata Block 2
+ address:             0x10000138
+ next block address:  0x10000138
+ block type:          image def
+ target chip:         RP2350
+ image type:          RISC-V

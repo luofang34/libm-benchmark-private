@@ -33,7 +33,7 @@ def capability(device, manifest):
         raise ValueError('core cycle counter disagrees with USB frame clock')
 
 
-def accept(capture, firmware):
+def accept(capture, firmware, record_accuracy_failure=False):
     device = json.loads((capture / 'device.json').read_text())
     manifest = json.loads((firmware / 'manifest.json').read_text())
     expected_dataset = json.loads((ROOT / 'vectors/manifest.json').read_text())
@@ -65,8 +65,20 @@ def accept(capture, firmware):
         raise ValueError('timing stream is incomplete or contains duplicate trials')
     if any(int(r['timer_hz']) != device['clock_hz'] for r in trials):
         raise ValueError('timer frequency differs from audited clock configuration')
-    references(capture)
+    try:
+        references(capture)
+    except subprocess.CalledProcessError as error:
+        if (not record_accuracy_failure or error.returncode != 1
+                or error.cmd[0] != str(capture / 'mpfr-check')):
+            raise
+        stats = list(csv.DictReader((capture / 'accuracy.csv').read_text().splitlines()))
+        if len(stats) != 16 or not any(failed(row) for row in stats):
+            raise
     return device, manifest
+
+
+def failed(row):
+    return int(row['class_mismatch']) or int(row['signed_zero_mismatch']) or float(row['accuracy_max_ulp']) > 1
 
 
 def metadata(device, firmware):
@@ -104,15 +116,20 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('capture', type=Path)
     parser.add_argument('--firmware', type=Path, required=True)
+    parser.add_argument('--record-accuracy-failure', action='store_true',
+                        help='retain timing evidence with accuracy FAIL; never waive image/capability checks')
     args = parser.parse_args()
-    device, firmware = accept(args.capture, args.firmware)
-    rows = summarize(list(csv.DictReader((args.capture / 'timing.csv').open())), metadata(device, firmware))
-    accuracy = {(r['test_distribution'], r['implementation']): r for r in csv.DictReader((args.capture / 'accuracy.csv').open())}
+    device, firmware = accept(args.capture, args.firmware, args.record_accuracy_failure)
+    rows = summarize(list(csv.DictReader((args.capture / 'timing.csv').read_text().splitlines())), metadata(device, firmware))
+    accuracy = {(r['test_distribution'], r['implementation']): r for r in csv.DictReader((args.capture / 'accuracy.csv').read_text().splitlines())}
+    status = 'FAIL' if any(failed(r) for r in accuracy.values()) else 'PASS'
     for row in rows:
         row['accuracy_max_ulp'] = accuracy[row['test_distribution'], row['implementation']]['accuracy_max_ulp']
-        row['accuracy_status'] = 'PASS'
+        row['accuracy_status'] = status
+        if status == 'FAIL':
+            row['reason'] = 'Runtime fails full-corpus MPFR acceptance; timing is diagnostic, not a qualified optimization'
     write_csv(args.capture / 'hardware.csv', rows)
-    print(f'Accepted {len(rows)} hardware results after firmware/capability/MPFR validation')
+    print(f'Recorded {len(rows)} verified hardware timings; full-corpus MPFR accuracy {status}')
 
 
 if __name__ == '__main__':

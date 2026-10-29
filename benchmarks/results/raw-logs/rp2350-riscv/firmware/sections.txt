@@ -1,0 +1,17 @@
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/firmware/rp2350-riscv/pow-rp2350.elf  :
+section                 size        addr
+.text.dummy                0   268435456
+.text                  59492   268435456
+.bi_entries                0   268494948
+.rodata                14624   268494952
+.data                      0   536870912
+.bss                      32   536870912
+.end_block                 0   268509600
+.heap                      0   536870944
+.stack                524256   536870944
+.eh_frame               4240           0
+.comment                 153           0
+.riscv.attributes         78           0
+Total                 602875
+
+

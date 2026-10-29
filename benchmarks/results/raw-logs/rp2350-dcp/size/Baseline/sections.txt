@@ -1,0 +1,17 @@
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/results/runs/rp2350-dcp-size/Baseline/pow-size.elf  :
+section             size        addr
+.vector_table        272   268435456
+.start_block           0   268435728
+.text               7516   268435728
+.bi_entries            0   268443244
+.rodata             7472   268443248
+.data                  0   536870912
+.gnu.sgstubs           0   268450720
+.bss                   0   536870912
+.uninit                0   536870912
+.end_block             0   268450720
+.comment             153           0
+.ARM.attributes       74           0
+Total              15487
+
+

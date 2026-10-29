@@ -1,0 +1,17 @@
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/results/runs/rp2350-riscv-size/Candidate/pow-size.elf  :
+section                 size        addr
+.text.dummy                0   268435456
+.text                  10724   268435456
+.bi_entries                0   268446180
+.rodata                12608   268446184
+.data                      0   536870912
+.bss                       0   536870912
+.end_block                 0   268458816
+.heap                      0   536870912
+.stack                524288   536870912
+.eh_frame                848           0
+.comment                 153           0
+.riscv.attributes         78           0
+Total                 548699
+
+

@@ -1,0 +1,17 @@
+/Users/fangluo/Documents/ChatGPT/libm/benchmarks/firmware/rp2350-dcp/pow-rp2350.elf  :
+section              size        addr
+.vector_table         272   268435456
+.start_block           20   268435728
+.text               46816   268435748
+.bi_entries             0   268482564
+.rodata             16388   268482568
+.data                   0   536870912
+.gnu.sgstubs            0   268498976
+.bss                    4   536870912
+.uninit                 0   536870916
+.end_block              0   268498976
+.comment              153           0
+.ARM.attributes        72           0
+Total               63725
+
+

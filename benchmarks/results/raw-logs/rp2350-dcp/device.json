@@ -1,0 +1,19 @@
+{
+  "protocol": "POWBENCH/1",
+  "state": "complete",
+  "run_id": "rp2350-dcp-e4552bccfbae6dad",
+  "device_id": "e4552bccfbae6dad",
+  "chip_id": 536889639,
+  "clock_hz": 150000000,
+  "sof_clock_hz": 150000470,
+  "mode": "dcp",
+  "fpscr": 16,
+  "mvfr0": 269549601,
+  "cpacr": 15778563,
+  "misa": 0,
+  "xip_ctrl": 131,
+  "rom_gitrev": 825107194,
+  "firmware_sha": "e818da1aa3a461bed962e15a5ba0e5dd3d8578b4caa8b93a0f5732ca791e5129",
+  "payload_sha256": "8719e029adfbb9844fb690486090f8dc015aced3ba49f92f6770207e5dd61a05",
+  "dataset_sha": "1b227b1001dd0b99b6b495f911d6ff83f6744557c7fb63778ed4ea259136bcbf"
+}

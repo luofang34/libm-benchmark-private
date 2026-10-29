@@ -1,0 +1,150 @@
+[
+  {
+    "check": "fmt",
+    "command": [
+      "cargo",
+      "+nightly",
+      "fmt",
+      "--manifest-path",
+      "benchmarks/Cargo.toml",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "clippy",
+    "command": [
+      "cargo",
+      "clippy",
+      "--manifest-path",
+      "benchmarks/Cargo.toml",
+      "--locked",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "test",
+    "command": [
+      "cargo",
+      "test",
+      "--manifest-path",
+      "benchmarks/Cargo.toml",
+      "--locked",
+      "--all-targets"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "doc",
+    "command": [
+      "cargo",
+      "doc",
+      "--manifest-path",
+      "benchmarks/Cargo.toml",
+      "--locked",
+      "--no-deps"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "release",
+    "command": [
+      "cargo",
+      "build",
+      "--manifest-path",
+      "benchmarks/Cargo.toml",
+      "--locked",
+      "--release"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "vectors",
+    "command": [
+      "python3",
+      "benchmarks/scripts/generate_vectors.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "python",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "benchmarks/scripts",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "firmware-fmt",
+    "command": [
+      "cargo",
+      "+nightly",
+      "fmt",
+      "--manifest-path",
+      "benchmarks/boards/rp2350/Cargo.toml",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "arm-doc",
+    "command": [
+      "cargo",
+      "doc",
+      "--manifest-path",
+      "benchmarks/boards/rp2350/Cargo.toml",
+      "--locked",
+      "--no-deps",
+      "--target",
+      "thumbv8m.main-none-eabihf",
+      "--bin",
+      "pow-rp2350"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "riscv-doc",
+    "command": [
+      "cargo",
+      "doc",
+      "--manifest-path",
+      "benchmarks/boards/rp2350/Cargo.toml",
+      "--locked",
+      "--no-deps",
+      "--target",
+      "riscv32imac-unknown-none-elf",
+      "--bin",
+      "pow-rp2350"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "dcp-doc",
+    "command": [
+      "cargo",
+      "doc",
+      "--manifest-path",
+      "benchmarks/boards/rp2350/Cargo.toml",
+      "--locked",
+      "--no-deps",
+      "--target",
+      "thumbv8m.main-none-eabihf",
+      "--bin",
+      "pow-rp2350",
+      "--features",
+      "dcp"
+    ],
+    "exit_code": 0
+  }
+]

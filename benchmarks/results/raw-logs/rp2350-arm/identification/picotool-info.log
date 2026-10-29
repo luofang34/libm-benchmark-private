@@ -1,0 +1,45 @@
+Program Information
+ target chip:            RP2350
+ image type:             ARM Non-Secure
+
+Fixed Pin Information
+ none
+
+Build Information
+ none
+
+Metadata Block 1
+ address:                0x10000114
+ next block address:     0x10000114
+ block type:             image def
+ target chip:            RP2350
+ image type:             ARM Non-Secure
+
+Metadata Block 2
+ address:                0x10000114
+ next block address:     0x10000114
+ block type:             image def
+ target chip:            RP2350
+ image type:             ARM Non-Secure
+
+Device Information
+ type:                   RP2350
+ revision:               A2
+ package:                QFN60
+ chipid:                 0xe4552bccfbae6dad
+ flash devinfo:          0x0c00
+ current cpu:            ARM
+ available cpus:         ARM, RISC-V
+ default cpu:            ARM
+ secure boot:            0
+ debug enable:           1
+ secure debug enable:    1
+ boot_random:            1a8386b1:699749ad:79277727:87125f94
+ boot type:              bootsel
+ last booted partition:  none
+ diagnostic source:      slot 0
+ last boot diagnostics:  0x00000000
+ reboot param 0:         0x00000000
+ reboot param 1:         0x00000000
+ rom gitrev:             0x312e22fa
+ flash size:             4096K

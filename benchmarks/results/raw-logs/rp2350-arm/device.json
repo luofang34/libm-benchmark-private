@@ -1,0 +1,19 @@
+{
+  "protocol": "POWBENCH/1",
+  "state": "complete",
+  "run_id": "rp2350-arm-e4552bccfbae6dad",
+  "device_id": "e4552bccfbae6dad",
+  "chip_id": 536889639,
+  "clock_hz": 150000000,
+  "sof_clock_hz": 149999780,
+  "mode": "arm",
+  "fpscr": 16,
+  "mvfr0": 269549601,
+  "cpacr": 15777795,
+  "misa": 0,
+  "xip_ctrl": 131,
+  "rom_gitrev": 825107194,
+  "firmware_sha": "78ebd93d37c671837416e91074d6db0c1b719729c83fed9d24c1c5805c462eff",
+  "payload_sha256": "3dd7bcf7cbf5fd2abc99027d8e9698f560508337ba5a9fee8cc1ff2142e3c9ee",
+  "dataset_sha": "1b227b1001dd0b99b6b495f911d6ff83f6744557c7fb63778ed4ea259136bcbf"
+}

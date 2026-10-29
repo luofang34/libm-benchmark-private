@@ -1,0 +1,40 @@
+picotool load -v -x benchmarks/firmware/rp2350-arm/pow-rp2350.bin -t bin -o 0x10000000 --ser E4552BCCFBAE6DAD
+Loading into Flash:   [                              ]  0%
+Loading into Flash:   [=                             ]  6%
+Loading into Flash:   [===                           ]  12%
+Loading into Flash:   [=====                         ]  19%
+Loading into Flash:   [=======                       ]  25%
+Loading into Flash:   [=========                     ]  31%
+Loading into Flash:   [===========                   ]  38%
+Loading into Flash:   [=============                 ]  44%
+Loading into Flash:   [===============               ]  51%
+Loading into Flash:   [=================             ]  57%
+Loading into Flash:   [==================            ]  63%
+Loading into Flash:   [=====================         ]  70%
+Loading into Flash:   [======================        ]  76%
+Loading into Flash:   [========================      ]  83%
+Loading into Flash:   [==========================    ]  89%
+Loading into Flash:   [============================  ]  95%
+Loading into Flash:   [==============================]  100%
+Verifying Flash:      [                              ]  0%
+Verifying Flash:      [=                             ]  6%
+Verifying Flash:      [===                           ]  12%
+Verifying Flash:      [=====                         ]  19%
+Verifying Flash:      [=======                       ]  25%
+Verifying Flash:      [=========                     ]  31%
+Verifying Flash:      [===========                   ]  38%
+Verifying Flash:      [=============                 ]  44%
+Verifying Flash:      [===============               ]  51%
+Verifying Flash:      [=================             ]  57%
+Verifying Flash:      [==================            ]  63%
+Verifying Flash:      [=====================         ]  70%
+Verifying Flash:      [======================        ]  76%
+Verifying Flash:      [========================      ]  83%
+Verifying Flash:      [==========================    ]  89%
+Verifying Flash:      [============================  ]  95%
+Verifying Flash:      [==============================]  100%
+  OK
+
+The device was rebooted to start the application.
+
+exit_code=0

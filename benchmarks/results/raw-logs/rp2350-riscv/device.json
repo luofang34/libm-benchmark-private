@@ -1,0 +1,19 @@
+{
+  "protocol": "POWBENCH/1",
+  "state": "complete",
+  "run_id": "rp2350-riscv-e4552bccfbae6dad",
+  "device_id": "e4552bccfbae6dad",
+  "chip_id": 536889639,
+  "clock_hz": 150000000,
+  "sof_clock_hz": 150000940,
+  "mode": "riscv",
+  "fpscr": 0,
+  "mvfr0": 0,
+  "cpacr": 0,
+  "misa": 1083183365,
+  "xip_ctrl": 131,
+  "rom_gitrev": 825107194,
+  "firmware_sha": "6131f511fa4f2e45ccb9eb365cb40d535d51b540e36465e7d833f53d9b872b80",
+  "payload_sha256": "77f5234e32dfc8f22704cfb24080da52a447d4d22278d14cc95e14a1fc75a538",
+  "dataset_sha": "1b227b1001dd0b99b6b495f911d6ff83f6744557c7fb63778ed4ea259136bcbf"
+}

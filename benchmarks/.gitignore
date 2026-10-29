@@ -6,3 +6,5 @@ __pycache__/
 # Linked evidence must survive the repository's baseline benchmark-cache ignore rule.
 !/results/raw-logs/**/size/Baseline-*
 
+!/results/raw-logs/**/size/Baseline/
+!/results/raw-logs/**/size/Baseline/**

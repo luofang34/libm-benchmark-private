@@ -1,0 +1,39 @@
+{
+  "firmware_sha": "e818da1aa3a461bed962e15a5ba0e5dd3d8578b4caa8b93a0f5732ca791e5129",
+  "firmware_bytes": 63520,
+  "sections": {
+    ".vector_table": 272,
+    ".start_block": 20,
+    ".text": 46816,
+    ".bi_entries": 0,
+    ".rodata": 16388,
+    ".data": 0,
+    ".gnu.sgstubs": 0,
+    ".bss": 4,
+    ".uninit": 0,
+    ".end_block": 0,
+    ".comment": 153,
+    ".ARM.attributes": 72
+  },
+  "board": "RP2350 USB BOOTSEL board; PCB model unreported",
+  "soc": "RP2350 A2",
+  "mode": "dcp",
+  "device_id": "e4552bccfbae6dad",
+  "flash_address": "0x10000000",
+  "flash_capacity": 4194304,
+  "target_triple": "thumbv8m.main-none-eabihf",
+  "target_cpu": "cortex-m33",
+  "float_abi": "aapcs-vfp",
+  "fpu_mode": "dcp_assisted_fp64",
+  "target_features": {
+    "cpu_defaults": "cortex-m33",
+    "rustc_cfg": []
+  },
+  "compiler_version": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: aarch64-apple-darwin\nrelease: 1.99.0\nLLVM version: 23.1.1\n",
+  "build_flags": "-C target-cpu=cortex-m33 -C link-arg=--nmagic -C link-arg=-Tlink.x -C link-arg=-Timage-end.x; release opt-level=3,lto=fat,codegen-units=1,panic=abort; features=dcp",
+  "source_sha": "486947580a6c980cc1ae8c091e9a79f4d823b281",
+  "hal_revision": "fa430d279b8f185769fe2e5e9aca0e57290acd1f; rp235x-hal 0.4.0",
+  "clock_source": "12 MHz XOSC assumption; PLL 150 MHz; checked against USB SOF within 0.5%",
+  "scope": "dual-algorithm firmware; static RAM excludes 128 KiB retained payload and other stack frames",
+  "preflight": "PASS"
+}

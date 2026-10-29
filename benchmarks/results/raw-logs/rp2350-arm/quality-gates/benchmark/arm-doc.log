@@ -1,0 +1,125 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling version_check v0.9.5
+   Compiling libc v0.2.191
+   Compiling rustversion v1.0.23
+   Compiling typenum v1.20.1
+   Compiling memchr v2.8.3
+   Compiling parking_lot_core v0.9.12
+   Compiling regex-syntax v0.8.11
+   Compiling cfg-if v1.0.5
+   Compiling scopeguard v1.2.0
+   Compiling smallvec v1.16.4
+   Compiling siphasher v1.0.4
+   Compiling equivalent v1.0.3
+   Compiling hashbrown v0.17.1
+   Compiling fixedbitset v0.5.7
+   Compiling either v1.19.0
+   Compiling lock_api v0.4.14
+   Compiling phf_shared v0.11.3
+   Compiling semver-parser v0.7.0
+   Compiling log v0.4.34
+   Compiling bit-vec v0.8.0
+   Compiling term v1.2.1
+   Compiling precomputed-hash v0.1.1
+   Compiling aho-corasick v1.1.5
+   Compiling generic-array v0.14.7
+   Compiling same-file v1.0.6
+   Compiling paste v1.0.15
+   Compiling new_debug_unreachable v1.0.6
+   Compiling ena v0.14.4
+   Compiling semver v0.9.0
+   Compiling indexmap v2.14.2
+   Compiling walkdir v2.5.0
+   Compiling bit-set v0.8.0
+   Compiling itertools v0.14.0
+   Compiling unicode-xid v0.2.6
+   Compiling ascii-canvas v4.0.0
+    Checking nb v1.1.0
+   Compiling pico-args v0.5.0
+   Compiling rustc_version v0.2.3
+   Compiling cortex-m v0.7.7
+   Compiling cortex-m-rt v0.7.7
+    Checking nb v0.1.3
+   Compiling portable-atomic v1.15.0
+    Checking void v1.0.2
+   Compiling bare-metal v0.2.5
+    Checking stable_deref_trait v1.2.1
+   Compiling heapless v0.8.0
+    Checking byteorder v1.5.0
+   Compiling arrayvec v0.7.8
+   Compiling petgraph v0.7.1
+    Checking embedded-hal v0.2.7
+   Compiling unicode-width v0.1.14
+    Checking hash32 v0.3.1
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling cpufeatures v0.2.17
+   Compiling syn v2.0.119
+   Compiling syn v3.0.9
+   Compiling digest v0.10.7
+    Checking vcell v0.1.3
+   Compiling keccak v0.1.6
+   Compiling termcolor v1.4.1
+   Compiling frunk_core v0.5.0
+   Compiling regex-automata v0.4.18
+   Compiling parking_lot v0.12.5
+   Compiling sha3 v0.10.9
+   Compiling proc-macro-error-attr2 v2.0.0
+   Compiling codespan-reporting v0.11.1
+   Compiling string_cache v0.8.9
+    Checking volatile-register v0.2.2
+   Compiling rp235x-pac v0.2.0
+    Checking embedded-hal v1.0.0
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling embedded-hal-async v1.0.0
+    Checking gcd v2.3.0
+   Compiling libm v0.2.16 (https://github.com/rust-lang/compiler-builtins?rev=6bc104a50f83cb205790c61c5d33508046f5fad3#6bc104a5)
+    Checking bitfield v0.13.2
+    Checking usb-device v0.3.2
+    Checking frunk_core v0.4.4
+    Checking fugit v0.3.9
+    Checking critical-section v1.2.0
+    Checking embedded-hal-nb v1.0.0
+    Checking embedded-dma v0.2.0
+    Checking rp-hal-common v0.1.0
+    Checking rp-binary-info v0.1.2
+    Checking embedded-io v0.6.1
+    Checking itertools v0.13.0
+    Checking rand_core v0.9.5
+    Checking sha2-const-stable v0.1.0
+    Checking embedded-io v0.7.1
+    Checking bitfield v0.14.0
+   Compiling pow-rp2350 v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/boards/rp2350)
+    Checking sha2 v0.10.9
+    Checking usbd-serial v0.2.2
+   Compiling lalrpop-util v0.22.2
+   Compiling regex v1.13.1
+   Compiling lalrpop v0.22.2
+   Compiling proc-macro-error2 v2.0.1
+   Compiling frunk_proc_macro_helpers v0.1.5
+    Checking pow-bench-core v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/core)
+   Compiling num_enum_derive v0.7.6
+   Compiling frunk_derives v0.4.4
+   Compiling rp235x-hal-macros v0.1.0
+   Compiling cortex-m-rt-macros v0.7.7
+    Checking frunk v0.4.4
+   Compiling num_enum v0.7.6
+   Compiling pio-core v0.3.0
+   Compiling pio-parser v0.3.0
+   Compiling pio-proc v0.3.0
+    Checking pio v0.3.0
+    Checking rp235x-hal v0.4.0
+ Documenting pow-rp2350 v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/boards/rp2350)
+warning: lint `broken_intra_doc_links` has been renamed to `rustdoc::broken_intra_doc_links`
+  |
+  = help: use the new name `rustdoc::broken_intra_doc_links`
+  = note: requested on the command line with `-D broken_intra_doc_links`
+  = note: `#[warn(renamed_and_removed_lints)]` on by default
+
+warning: `pow-rp2350` (bin "pow-rp2350" doc) generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 12.92s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`
+   Generated /Users/fangluo/Documents/ChatGPT/libm/benchmarks/boards/rp2350/target/thumbv8m.main-none-eabihf/doc/pow_rp2350/index.html

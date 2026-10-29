@@ -1,0 +1,46 @@
+{
+  "firmware_sha": "6131f511fa4f2e45ccb9eb365cb40d535d51b540e36465e7d833f53d9b872b80",
+  "firmware_bytes": 74144,
+  "sections": {
+    ".text.dummy": 0,
+    ".text": 59492,
+    ".bi_entries": 0,
+    ".rodata": 14624,
+    ".data": 0,
+    ".bss": 32,
+    ".end_block": 0,
+    ".heap": 0,
+    ".stack": 524256,
+    ".eh_frame": 4240,
+    ".comment": 153,
+    ".riscv.attributes": 78
+  },
+  "board": "RP2350 USB BOOTSEL board; PCB model unreported",
+  "soc": "RP2350 A2",
+  "mode": "riscv",
+  "device_id": "e4552bccfbae6dad",
+  "flash_address": "0x10000000",
+  "flash_capacity": 4194304,
+  "target_triple": "riscv32imac-unknown-none-elf",
+  "target_cpu": "generic-rv32",
+  "float_abi": "ilp32",
+  "fpu_mode": "software_fp32_fp64",
+  "target_features": {
+    "cpu_defaults": "generic-rv32",
+    "rustc_cfg": [
+      "a",
+      "c",
+      "m",
+      "zaamo",
+      "zalrsc",
+      "zca"
+    ]
+  },
+  "compiler_version": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: aarch64-apple-darwin\nrelease: 1.99.0\nLLVM version: 23.1.1\n",
+  "build_flags": "-C target-cpu=generic-rv32 -C link-arg=--nmagic -C link-arg=-Trp235x_riscv.x -C link-arg=-Timage-end.x; release opt-level=3,lto=fat,codegen-units=1,panic=abort; features=none",
+  "source_sha": "486947580a6c980cc1ae8c091e9a79f4d823b281",
+  "hal_revision": "fa430d279b8f185769fe2e5e9aca0e57290acd1f; rp235x-hal 0.4.0",
+  "clock_source": "12 MHz XOSC assumption; PLL 150 MHz; checked against USB SOF within 0.5%",
+  "scope": "dual-algorithm firmware; static RAM excludes 128 KiB retained payload and other stack frames",
+  "preflight": "PASS"
+}

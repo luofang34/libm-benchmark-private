@@ -1,0 +1,2156 @@
+warning: output filename collision at /Users/fangluo/Documents/ChatGPT/libm/target/doc/libm/index.html
+  |
+  = note: the lib target `libm` in package `libm v0.2.16` has the same output filename as the lib target `libm` in package `libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)`
+  = note: this is a known bug where multiple crates with the same name use the same path; see <https://github.com/rust-lang/cargo/issues/6313>
+   Compiling proc-macro2 v1.0.107
+   Compiling libc v0.2.190
+    Checking unicode-ident v1.0.26
+ Documenting rand_core v0.10.1
+ Documenting unicode-ident v1.0.26
+   Compiling quote v1.0.47
+ Documenting cfg-if v1.0.5
+ Documenting zerocopy v0.8.62
+ Documenting libm v0.2.16
+ Documenting compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+    Checking ppv-lite86 v0.2.21
+    Checking compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+    Checking api-list-common v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/api-list-common)
+ Documenting az v1.3.0
+ Documenting heck v0.5.0
+    Checking heck v0.5.0
+warning: lint `broken_intra_doc_links` has been renamed to `rustdoc::broken_intra_doc_links`
+  |
+  = help: use the new name `rustdoc::broken_intra_doc_links`
+  = note: requested on the command line with `-D broken_intra_doc_links`
+  = note: `#[warn(renamed_and_removed_lints)]` on by default
+
+ Documenting paste v1.0.15
+ Documenting libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+ Documenting anyhow v1.0.104
+ Documenting proc-macro2 v1.0.107
+ Documenting chacha20 v0.10.2
+    Checking rand_chacha v0.10.0
+ Documenting rand_xoshiro v0.8.1
+    Checking libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+ Documenting api-list-common v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/api-list-common)
+error: missing documentation for a method
+  --> crates/api-list-common/src/lib.rs:35:5
+   |
+35 |     pub fn defined_in_compiler_builtins(self) -> bool {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: requested on the command line with `-D missing-docs`
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1362:5
+     |
+1362 |     F16,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1363:5
+     |
+1363 |     F32,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1364:5
+     |
+1364 |     F64,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1365:5
+     |
+1365 |     F128,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1366:5
+     |
+1366 |     I32,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1367:5
+     |
+1367 |     I64,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1368:5
+     |
+1368 |     I128,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1369:5
+     |
+1369 |     U32,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1370:5
+     |
+1370 |     U64,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1371:5
+     |
+1371 |     U128,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1372:5
+     |
+1372 |     USize,
+     |     ^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1373:5
+     |
+1373 |     Bool,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1374:5
+     |
+1374 |     CInt,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1375:5
+     |
+1375 |     MutF16,
+     |     ^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1376:5
+     |
+1376 |     MutF32,
+     |     ^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1377:5
+     |
+1377 |     MutF64,
+     |     ^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1378:5
+     |
+1378 |     MutF128,
+     |     ^^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1379:5
+     |
+1379 |     MutI32,
+     |     ^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1380:5
+     |
+1380 |     MutCInt,
+     |     ^^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1448:5
+     |
+1448 |     F16,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1449:5
+     |
+1449 |     F32,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1450:5
+     |
+1450 |     F64,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1451:5
+     |
+1451 |     F128,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1452:5
+     |
+1452 |     Integer,
+     |     ^^^^^^^
+
+error: missing documentation for a struct field
+    --> crates/api-list-common/src/lib.rs:1485:5
+     |
+1485 |     pub args: &'static [Ty],
+     |     ^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+    --> crates/api-list-common/src/lib.rs:1486:5
+     |
+1486 |     pub returns: &'static [Ty],
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+    --> crates/api-list-common/src/lib.rs:1492:5
+     |
+1492 |     pub name: &'static str,
+     |     ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `api-list-common` (lib doc) generated 1 warning (1 duplicate)
+error: could not document `api-list-common`
+warning: build failed, waiting for other jobs to finish...
+error: missing documentation for an associated function
+   --> libm/src/libm_helper.rs:41:9
+    |
+ 24 |   macro_rules! libm_helper {
+...
+ 41 |           pub fn $func($($arg: $arg_typ),*) -> ($($ret_typ),*) {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+ 48 | / libm_helper! {
+ 49 | |     f32,
+ 50 | |     funcs: {
+...   |
+113 | | }
+    | |_- in this macro invocation
+    |
+    = note: requested on the command line with `-D missing-docs`
+
+error: missing documentation for an associated function
+   --> libm/src/libm_helper.rs:41:9
+    |
+ 24 |   macro_rules! libm_helper {
+...
+ 41 |           pub fn $func($($arg: $arg_typ),*) -> ($($ret_typ),*) {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+ 48 | / libm_helper! {
+ 49 | |     f32,
+ 50 | |     funcs: {
+...   |
+113 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for an associated function
+   --> libm/src/libm_helper.rs:41:9
+    |
+ 24 |   macro_rules! libm_helper {
+...
+ 41 |           pub fn $func($($arg: $arg_typ),*) -> ($($ret_typ),*) {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+115 | / libm_helper! {
+116 | |     f64,
+117 | |     funcs: {
+...   |
+188 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for an associated function
+   --> libm/src/libm_helper.rs:41:9
+    |
+ 24 |   macro_rules! libm_helper {
+...
+ 41 |           pub fn $func($($arg: $arg_typ),*) -> ($($ret_typ),*) {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+191 | / libm_helper! {
+192 | |     f16,
+193 | |     funcs: {
+...   |
+220 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for an associated function
+   --> libm/src/libm_helper.rs:41:9
+    |
+ 24 |   macro_rules! libm_helper {
+...
+ 41 |           pub fn $func($($arg: $arg_typ),*) -> ($($ret_typ),*) {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+223 | / libm_helper! {
+224 | |     f128,
+225 | |     funcs: {
+...   |
+251 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a module
+  --> libm/src/math/mod.rs:64:1
+   |
+64 | pub mod support;
+   | ^^^^^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> libm/src/math/support/mod.rs:2:1
+  |
+2 | pub mod macros;
+  | ^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/support/mod.rs:75:1
+   |
+75 | pub fn div_ceil_u32(a: u32, b: u32) -> u32 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/support/mod.rs:83:1
+   |
+83 | pub fn unbounded_shr_u64(x: u64, shift: u32) -> u64 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> libm/src/math/support/big.rs:16:5
+   |
+16 |     pub hi: u128,
+   |     ^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> libm/src/math/support/big.rs:17:5
+   |
+17 |     pub lo: u128,
+   |     ^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/big.rs:21:5
+   |
+21 |     pub const MAX: Self = Self {
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/big.rs:25:5
+   |
+25 |     pub const MIN: Self = Self { lo: 0, hi: 0 };
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> libm/src/math/support/big.rs:40:5
+   |
+40 |     pub hi: i128,
+   |     ^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> libm/src/math/support/big.rs:41:5
+   |
+41 |     pub lo: u128,
+   |     ^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/big.rs:45:5
+   |
+45 |     pub const MAX: Self = Self {
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/big.rs:49:5
+   |
+49 |     pub const MIN: Self = Self {
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> libm/src/math/support/env.rs:16:5
+   |
+16 |     pub val: T,
+   |     ^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> libm/src/math/support/env.rs:18:5
+   |
+18 |     pub status: Status,
+   |     ^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated function
+  --> libm/src/math/support/env.rs:22:5
+   |
+22 |     pub fn new(val: T, status: Status) -> Self {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/env.rs:110:5
+    |
+110 |     pub fn set_underflow(&mut self, val: bool) {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/env.rs:119:5
+    |
+119 |     pub fn set_inexact(&mut self, val: bool) {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:45:5
+   |
+45 |     const ZERO: Self;
+   |     ^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:46:5
+   |
+46 |     const NEG_ZERO: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:47:5
+   |
+47 |     const ONE: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:48:5
+   |
+48 |     const NEG_ONE: Self;
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:49:5
+   |
+49 |     const INFINITY: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:50:5
+   |
+50 |     const NEG_INFINITY: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:51:5
+   |
+51 |     const MAX: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:52:5
+   |
+52 |     const MIN: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:58:5
+   |
+58 |     const NEG_NAN: Self;
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:59:5
+   |
+59 |     const NEG_SNAN: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:62:5
+   |
+62 |     const NEG_QSNAN: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:64:5
+   |
+64 |     const EPSILON: Self;
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:65:5
+   |
+65 |     const PI: Self;
+   |     ^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:66:5
+   |
+66 |     const NEG_PI: Self;
+   |     ^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:67:5
+   |
+67 |     const FRAC_PI_2: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:69:5
+   |
+69 |     const MIN_POSITIVE_NORMAL: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/float_traits.rs:70:5
+   |
+70 |     const MIN_POSITIVE_SUBNORMAL: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/float_traits.rs:143:5
+    |
+143 |     fn is_qnan(self) -> bool {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/float_traits.rs:157:5
+    |
+157 |     fn is_snan(self) -> bool {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/float_traits.rs:218:5
+    |
+218 |     fn abs(self) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct
+  --> libm/src/math/support/hex_float.rs:42:1
+   |
+42 | pub struct HexFloatParseError(&'static str);
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/hex_float.rs:385:9
+    |
+385 |         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/int_traits.rs:28:5
+   |
+28 |     const ZERO: Self;
+   |     ^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/int_traits.rs:29:5
+   |
+29 |     const ONE: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/int_traits.rs:30:5
+   |
+30 |     const MIN: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> libm/src/math/support/int_traits.rs:31:5
+   |
+31 |     const MAX: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> libm/src/math/support/int_traits.rs:82:5
+   |
+82 |     fn signed(self) -> OtherSign<Self::Unsigned>;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> libm/src/math/support/int_traits.rs:83:5
+   |
+83 |     fn unsigned(self) -> Self::Unsigned;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated function
+  --> libm/src/math/support/int_traits.rs:84:5
+   |
+84 |     fn from_unsigned(unsigned: Self::Unsigned) -> Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> libm/src/math/support/int_traits.rs:85:5
+   |
+85 |     fn abs(self) -> Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> libm/src/math/support/int_traits.rs:86:5
+   |
+86 |     fn unsigned_abs(self) -> Self::Unsigned;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated function
+  --> libm/src/math/support/int_traits.rs:88:5
+   |
+88 |     fn from_bool(b: bool) -> Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> libm/src/math/support/int_traits.rs:97:5
+   |
+97 |     fn is_zero(self) -> bool;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> libm/src/math/support/int_traits.rs:98:5
+   |
+98 |     fn checked_add(self, other: Self) -> Option<Self>;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> libm/src/math/support/int_traits.rs:99:5
+   |
+99 |     fn checked_sub(self, other: Self) -> Option<Self>;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:100:5
+    |
+100 |     fn wrapping_neg(self) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:101:5
+    |
+101 |     fn wrapping_add(self, other: Self) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:102:5
+    |
+102 |     fn wrapping_mul(self, other: Self) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:103:5
+    |
+103 |     fn wrapping_sub(self, other: Self) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:104:5
+    |
+104 |     fn wrapping_shl(self, other: u32) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:105:5
+    |
+105 |     fn wrapping_shr(self, other: u32) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:106:5
+    |
+106 |     fn rotate_left(self, other: u32) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:107:5
+    |
+107 |     fn overflowing_add(self, other: Self) -> (Self, bool);
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:108:5
+    |
+108 |     fn overflowing_sub(self, other: Self) -> (Self, bool);
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:109:5
+    |
+109 |     fn carrying_add(self, other: Self, carry: bool) -> (Self, bool);
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:110:5
+    |
+110 |     fn borrowing_sub(self, other: Self, borrow: bool) -> (Self, bool);
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:111:5
+    |
+111 |     fn leading_zeros(self) -> u32;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:112:5
+    |
+112 |     fn trailing_zeros(self) -> u32;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:113:5
+    |
+113 |     fn count_ones(self) -> u32;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> libm/src/math/support/int_traits.rs:114:5
+    |
+114 |     fn ilog2(self) -> u32;
+    |     ^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a trait
+   --> libm/src/math/support/int_traits.rs:425:1
+    |
+425 | pub trait CastFrom<T: Copy>: Copy {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/generic/ceil.rs:13:1
+   |
+13 | pub fn ceil_status<F: Float>(x: F) -> FpResult<F> {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/generic/fdim.rs:4:1
+  |
+4 | pub fn fdim<F: Float>(x: F, y: F) -> F {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/generic/floor.rs:13:1
+   |
+13 | pub fn floor_status<F: Float>(x: F) -> FpResult<F> {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/generic/fmax.rs:24:1
+   |
+24 | pub fn fmax<F: Float>(x: F, y: F) -> F {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/generic/fmaximum.rs:16:1
+   |
+16 | pub fn fmaximum<F: Float>(x: F, y: F) -> F {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/generic/fmaximum_num.rs:18:1
+   |
+18 | pub fn fmaximum_num<F: Float>(x: F, y: F) -> F {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/generic/fmin.rs:24:1
+   |
+24 | pub fn fmin<F: Float>(x: F, y: F) -> F {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/generic/fminimum.rs:16:1
+   |
+16 | pub fn fminimum<F: Float>(x: F, y: F) -> F {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/generic/fminimum_num.rs:18:1
+   |
+18 | pub fn fminimum_num<F: Float>(x: F, y: F) -> F {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/generic/fmod.rs:5:1
+  |
+5 | / pub fn fmod<F: Float>(x: F, y: F) -> F
+6 | | where
+7 | |     F::Int: HInt,
+8 | |     <F::Int as HInt>::D: NarrowingDiv,
+  | |______________________________________^
+
+error: missing documentation for a function
+ --> libm/src/math/generic/frexp.rs:4:1
+  |
+4 | pub fn frexp<F: Float>(x: F) -> (F, i32) {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/generic/ilogb.rs:7:1
+  |
+7 | pub fn ilogb<F: Float>(x: F) -> i32 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/generic/round.rs:5:1
+  |
+5 | pub fn round<F: Float>(x: F) -> F {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/generic/sqrt.rs:49:1
+   |
+49 | / pub fn sqrt_round<F>(x: F, _round: Round) -> FpResult<F>
+50 | | where
+51 | |     F: Float + SqrtHelper,
+52 | |     F::Int: HInt,
+...  |
+56 | |     F::Int: CastInto<F::ISet2>,
+57 | |     u32: CastInto<F::Int>,
+   | |__________________________^
+
+error: missing documentation for a function
+ --> libm/src/math/generic/trunc.rs:7:1
+  |
+7 | pub fn trunc_status<F: Float>(x: F) -> FpResult<F> {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/relaxed/hypotf64.rs:19:1
+   |
+19 | pub fn hypotf64(mut x: f64, mut y: f64) -> f64 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/hypot.rs:24:1
+   |
+24 | pub fn hypot(x: f64, y: f64) -> f64 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/hypotf.rs:4:1
+  |
+4 | pub fn hypotf(mut x: f32, mut y: f32) -> f32 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/ldexp.rs:3:1
+  |
+3 | pub fn ldexpf16(x: f16, n: i32) -> f16 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/ldexp.rs:8:1
+  |
+8 | pub fn ldexpf(x: f32, n: i32) -> f32 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/ldexp.rs:13:1
+   |
+13 | pub fn ldexp(x: f64, n: i32) -> f64 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/ldexp.rs:19:1
+   |
+19 | pub fn ldexpf128(x: f128, n: i32) -> f128 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+   --> libm/src/math/lgamma_r.rs:171:1
+    |
+171 | pub fn lgamma_r(mut x: f64) -> (f64, i32) {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+   --> libm/src/math/lgammaf_r.rs:106:1
+    |
+106 | pub fn lgammaf_r(mut x: f32) -> (f32, i32) {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/modf.rs:2:1
+  |
+2 | pub fn modf(x: f64) -> (f64, f64) {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/modff.rs:2:1
+  |
+2 | pub fn modff(x: f32) -> (f32, f32) {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/nextafter.rs:2:1
+  |
+2 | pub fn nextafter(x: f64, y: f64) -> f64 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/nextafterf.rs:2:1
+  |
+2 | pub fn nextafterf(x: f32, y: f32) -> f32 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/remainder.rs:2:1
+  |
+2 | pub fn remainder(x: f64, y: f64) -> f64 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/remainderf.rs:2:1
+  |
+2 | pub fn remainderf(x: f32, y: f32) -> f32 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/remquo.rs:2:1
+  |
+2 | pub fn remquo(mut x: f64, mut y: f64) -> (f64, i32) {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/remquof.rs:2:1
+  |
+2 | pub fn remquof(mut x: f32, mut y: f32) -> (f32, i32) {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/scalbn.rs:3:1
+  |
+3 | pub fn scalbnf16(x: f16, n: i32) -> f16 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/scalbn.rs:8:1
+  |
+8 | pub fn scalbnf(x: f32, n: i32) -> f32 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/scalbn.rs:13:1
+   |
+13 | pub fn scalbn(x: f64, n: i32) -> f64 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/scalbn.rs:19:1
+   |
+19 | pub fn scalbnf128(x: f128, n: i32) -> f128 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for the crate
+  --> builtins-shim/../compiler-builtins/src/lib.rs:1:1
+   |
+ 1 | / #![cfg_attr(feature = "compiler-builtins", compiler_builtins)]
+ 2 | | #![no_builtins]
+ 3 | | #![no_std]
+...  |
+84 | | pub mod probestack;
+   | |___________________^
+   |
+   = note: requested on the command line with `-D missing-docs`
+
+error: missing documentation for a module
+  --> builtins-shim/../compiler-builtins/src/lib.rs:43:1
+   |
+43 | pub mod float;
+   | ^^^^^^^^^^^^^
+
+error: missing documentation for a module
+  --> builtins-shim/../compiler-builtins/src/lib.rs:44:1
+   |
+44 | pub mod int;
+   | ^^^^^^^^^^^
+
+error: missing documentation for a module
+  --> builtins-shim/../compiler-builtins/src/lib.rs:45:1
+   |
+45 | pub mod math;
+   | ^^^^^^^^^^^^
+
+error: missing documentation for a module
+  --> builtins-shim/../compiler-builtins/src/lib.rs:46:1
+   |
+46 | pub mod mem;
+   | ^^^^^^^^^^^
+
+error: missing documentation for a module
+  --> builtins-shim/../compiler-builtins/src/lib.rs:47:1
+   |
+47 | pub mod sync;
+   | ^^^^^^^^^^^^
+
+error: missing documentation for a module
+  --> builtins-shim/../compiler-builtins/src/lib.rs:59:1
+   |
+59 | pub mod aarch64;
+   | ^^^^^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/float/mod.rs:1:1
+  |
+1 | pub mod add;
+  | ^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/float/mod.rs:2:1
+  |
+2 | pub mod cmp;
+  | ^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/float/mod.rs:3:1
+  |
+3 | pub mod complex;
+  | ^^^^^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/float/mod.rs:4:1
+  |
+4 | pub mod conv;
+  | ^^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/float/mod.rs:6:1
+  |
+6 | pub mod extend;
+  | ^^^^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/float/mod.rs:7:1
+  |
+7 | pub mod mul;
+  | ^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/float/mod.rs:8:1
+  |
+8 | pub mod pow;
+  | ^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/float/mod.rs:9:1
+  |
+9 | pub mod sub;
+  | ^^^^^^^^^^^
+
+error: missing documentation for a module
+  --> builtins-shim/../compiler-builtins/src/float/mod.rs:10:1
+   |
+10 | pub mod trunc;
+   | ^^^^^^^^^^^^^
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/add.rs:192:1
+    |
+192 | / intrinsics! {
+193 | |     #[cfg(f16_enabled)]
+194 | |     pub extern "C" fn __addhf3(a: f16, b: f16) -> f16 {
+195 | |         add(a, b)
+...   |
+213 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a type alias
+  --> builtins-shim/../compiler-builtins/src/float/cmp.rs:19:9
+   |
+19 |         pub type CmpResult = i32;
+   |         ^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/cmp.rs:138:1
+    |
+138 | / intrinsics! {
+139 | |     pub extern "C" fn __lehf2(a: f16, b: f16) -> crate::float::cmp::CmpResult {
+140 | |         cmp(a, b).to_default_cmp_result()
+...   |
+166 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/cmp.rs:168:1
+    |
+168 | / intrinsics! {
+169 | |     pub extern "C" fn __lesf2(a: f32, b: f32) -> crate::float::cmp::CmpResult {
+170 | |         cmp(a, b).to_default_cmp_result()
+...   |
+226 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/cmp.rs:229:1
+    |
+229 | / intrinsics! {
+230 | |     #[ppc_name = __lekf2]
+231 | |     pub extern "C" fn __letf2(a: f128, b: f128) -> crate::float::cmp::CmpResult {
+232 | |         cmp(a, b).to_default_cmp_result()
+...   |
+264 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/float/complex/mod.rs:1:1
+  |
+1 | pub mod div;
+  | ^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/float/complex/mod.rs:2:1
+  |
+2 | pub mod mul;
+  | ^^^^^^^^^^^
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/complex/div.rs:56:1
+    |
+ 56 | / intrinsics! {
+ 57 | |     #[cfg(f16_enabled)]
+ 58 | |     pub extern "Rust" fn __rust_divhc3(a: f16, b: f16, c: f16, d: f16) -> core::num::Complex<f16> {
+ 59 | |         complex_div(a, b, c, d)
+...   |
+ 74 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/complex/mul.rs:62:1
+    |
+ 62 | / intrinsics! {
+ 63 | |     #[cfg(f16_enabled)]
+ 64 | |     pub extern "Rust" fn __rust_mulhc3(a: f16, b: f16, c: f16, d: f16) -> core::num::Complex<f16> {
+ 65 | |         complex_mul(a, b, c, d)
+...   |
+ 80 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/conv.rs:210:1
+    |
+210 | / intrinsics! {
+211 | |     /* u32 -> fN */
+212 | |
+213 | |     #[arm_aeabi_alias = __aeabi_ui2f]
+...   |
+274 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/conv.rs:277:1
+    |
+277 | / intrinsics! {
+278 | |     /* i32 -> fN */
+279 | |
+280 | |     #[arm_aeabi_alias = __aeabi_i2f]
+...   |
+341 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/conv.rs:425:1
+    |
+425 | / intrinsics! {
+426 | |     /* f32 -> uN */
+427 | |
+428 | |     #[arm_aeabi_alias = __aeabi_f2uiz]
+...   |
+477 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/conv.rs:480:1
+    |
+480 | / intrinsics! {
+481 | |     /* f32 -> iN */
+482 | |
+483 | |     #[arm_aeabi_alias = __aeabi_f2iz]
+...   |
+532 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/div.rs:607:1
+    |
+607 | / intrinsics! {
+608 | |     #[arm_aeabi_alias = __aeabi_fdiv]
+609 | |     pub extern "C" fn __divsf3(a: f32, b: f32) -> f32 {
+610 | |         div(a, b)
+...   |
+633 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/extend.rs:71:1
+    |
+ 71 | / intrinsics! {
+ 72 | |     #[arm_aeabi_alias = __aeabi_f2d]
+ 73 | |     pub extern "C" fn  __extendsfdf2(a: f32) -> f64 {
+ 74 | |         extend(a)
+ 75 | |     }
+ 76 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/extend.rs:78:1
+    |
+ 78 | / intrinsics! {
+ 79 | |     #[apple_f16_arg_abi]
+ 80 | |     #[arm_aeabi_alias = __aeabi_h2f]
+ 81 | |     #[cfg(f16_enabled)]
+...   |
+114 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/mul.rs:181:1
+    |
+181 | / intrinsics! {
+182 | |     #[cfg(f16_enabled)]
+183 | |     pub extern "C" fn __mulhf3(a: f16, b: f16) -> f16 {
+184 | |         mul(a, b)
+...   |
+202 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/pow.rs:23:1
+    |
+ 23 | / intrinsics! {
+ 24 | |     pub extern "C" fn __powisf2(a: f32, b: i32) -> f32 {
+ 25 | |         pow(a, b)
+...   |
+ 37 | | }
+    | |_- in this macro invocation
+
+warning: `libm` (lib doc) generated 1 warning (1 duplicate)
+error: could not document `libm`
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/sub.rs:3:1
+    |
+  3 | / intrinsics! {
+  4 | |     #[cfg(f16_enabled)]
+  5 | |     pub extern "C" fn __subhf3(a: f16, b: f16) -> f16 {
+  6 | |         crate::float::add::__addhf3(a, f16::from_bits(b.to_bits() ^ f16::SIGN_MASK))
+...   |
+ 29 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/trunc.rs:116:1
+    |
+116 | / intrinsics! {
+117 | |     #[arm_aeabi_alias = __aeabi_d2f]
+118 | |     pub extern "C" fn __truncdfsf2(a: f64) -> f32 {
+119 | |         trunc(a)
+120 | |     }
+121 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/float/trunc.rs:123:1
+    |
+123 | / intrinsics! {
+124 | |     #[apple_f16_ret_abi]
+125 | |     #[arm_aeabi_alias = __aeabi_f2h]
+126 | |     #[cfg(f16_enabled)]
+...   |
+160 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/int/mod.rs:3:1
+  |
+3 | pub mod addsub;
+  | ^^^^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/int/mod.rs:4:1
+  |
+4 | pub mod bswap;
+  | ^^^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/int/mod.rs:5:1
+  |
+5 | pub mod leading_zeros;
+  | ^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/int/mod.rs:6:1
+  |
+6 | pub mod mul;
+  | ^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/int/mod.rs:7:1
+  |
+7 | pub mod sdiv;
+  | ^^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/int/mod.rs:8:1
+  |
+8 | pub mod shift;
+  | ^^^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/int/mod.rs:9:1
+  |
+9 | pub mod trailing_zeros;
+  | ^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a module
+  --> builtins-shim/../compiler-builtins/src/int/mod.rs:10:1
+   |
+10 | pub mod udiv;
+   | ^^^^^^^^^^^^
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/int/addsub.rs:64:1
+    |
+ 64 | / intrinsics! {
+ 65 | |     pub extern "C" fn __rust_i128_add(a: i128, b: i128) -> i128 {
+ 66 | |         AddSub::add(a,b)
+...   |
+104 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/int/mul.rs:100:1
+    |
+100 | / intrinsics! {
+...   |
+206 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+424 |           pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/int/shift.rs:71:1
+    |
+ 71 | / intrinsics! {
+ 72 | |     #[maybe_use_optimized_c_shim]
+ 73 | |     pub extern "C" fn __ashlsi3(a: u32, b: u32) -> u32 {
+ 74 | |         a.ashl(b)
+...   |
+116 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a module
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/mod.rs:64:1
+   |
+64 | pub mod support;
+   | ^^^^^^^^^^^^^^^
+
+error: missing documentation for a module
+ --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/mod.rs:2:1
+  |
+2 | pub mod macros;
+  | ^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/mod.rs:75:1
+   |
+75 | pub fn div_ceil_u32(a: u32, b: u32) -> u32 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/mod.rs:83:1
+   |
+83 | pub fn unbounded_shr_u64(x: u64, shift: u32) -> u64 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/big.rs:16:5
+   |
+16 |     pub hi: u128,
+   |     ^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/big.rs:17:5
+   |
+17 |     pub lo: u128,
+   |     ^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/big.rs:21:5
+   |
+21 |     pub const MAX: Self = Self {
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/big.rs:25:5
+   |
+25 |     pub const MIN: Self = Self { lo: 0, hi: 0 };
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/big.rs:40:5
+   |
+40 |     pub hi: i128,
+   |     ^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/big.rs:41:5
+   |
+41 |     pub lo: u128,
+   |     ^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/big.rs:45:5
+   |
+45 |     pub const MAX: Self = Self {
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/big.rs:49:5
+   |
+49 |     pub const MIN: Self = Self {
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/env.rs:16:5
+   |
+16 |     pub val: T,
+   |     ^^^^^^^^^^
+
+error: missing documentation for a struct field
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/env.rs:18:5
+   |
+18 |     pub status: Status,
+   |     ^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated function
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/env.rs:22:5
+   |
+22 |     pub fn new(val: T, status: Status) -> Self {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/env.rs:110:5
+    |
+110 |     pub fn set_underflow(&mut self, val: bool) {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/env.rs:119:5
+    |
+119 |     pub fn set_inexact(&mut self, val: bool) {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:45:5
+   |
+45 |     const ZERO: Self;
+   |     ^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:46:5
+   |
+46 |     const NEG_ZERO: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:47:5
+   |
+47 |     const ONE: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:48:5
+   |
+48 |     const NEG_ONE: Self;
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:49:5
+   |
+49 |     const INFINITY: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:50:5
+   |
+50 |     const NEG_INFINITY: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:51:5
+   |
+51 |     const MAX: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:52:5
+   |
+52 |     const MIN: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:58:5
+   |
+58 |     const NEG_NAN: Self;
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:59:5
+   |
+59 |     const NEG_SNAN: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:62:5
+   |
+62 |     const NEG_QSNAN: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:64:5
+   |
+64 |     const EPSILON: Self;
+   |     ^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:65:5
+   |
+65 |     const PI: Self;
+   |     ^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:66:5
+   |
+66 |     const NEG_PI: Self;
+   |     ^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:67:5
+   |
+67 |     const FRAC_PI_2: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:69:5
+   |
+69 |     const MIN_POSITIVE_NORMAL: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:70:5
+   |
+70 |     const MIN_POSITIVE_SUBNORMAL: Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:143:5
+    |
+143 |     fn is_qnan(self) -> bool {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:157:5
+    |
+157 |     fn is_snan(self) -> bool {
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:218:5
+    |
+218 |     fn abs(self) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/hex_float.rs:42:1
+   |
+42 | pub struct HexFloatParseError(&'static str);
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/hex_float.rs:385:9
+    |
+385 |         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result;
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:28:5
+   |
+28 |     const ZERO: Self;
+   |     ^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:29:5
+   |
+29 |     const ONE: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:30:5
+   |
+30 |     const MIN: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated constant
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:31:5
+   |
+31 |     const MAX: Self;
+   |     ^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:82:5
+   |
+82 |     fn signed(self) -> OtherSign<Self::Unsigned>;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:83:5
+   |
+83 |     fn unsigned(self) -> Self::Unsigned;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated function
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:84:5
+   |
+84 |     fn from_unsigned(unsigned: Self::Unsigned) -> Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:85:5
+   |
+85 |     fn abs(self) -> Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:86:5
+   |
+86 |     fn unsigned_abs(self) -> Self::Unsigned;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for an associated function
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:88:5
+   |
+88 |     fn from_bool(b: bool) -> Self;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:97:5
+   |
+97 |     fn is_zero(self) -> bool;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:98:5
+   |
+98 |     fn checked_add(self, other: Self) -> Option<Self>;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+  --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:99:5
+   |
+99 |     fn checked_sub(self, other: Self) -> Option<Self>;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:100:5
+    |
+100 |     fn wrapping_neg(self) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:101:5
+    |
+101 |     fn wrapping_add(self, other: Self) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:102:5
+    |
+102 |     fn wrapping_mul(self, other: Self) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:103:5
+    |
+103 |     fn wrapping_sub(self, other: Self) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:104:5
+    |
+104 |     fn wrapping_shl(self, other: u32) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:105:5
+    |
+105 |     fn wrapping_shr(self, other: u32) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:106:5
+    |
+106 |     fn rotate_left(self, other: u32) -> Self;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:107:5
+    |
+107 |     fn overflowing_add(self, other: Self) -> (Self, bool);
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:108:5
+    |
+108 |     fn overflowing_sub(self, other: Self) -> (Self, bool);
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:109:5
+    |
+109 |     fn carrying_add(self, other: Self, carry: bool) -> (Self, bool);
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:110:5
+    |
+110 |     fn borrowing_sub(self, other: Self, borrow: bool) -> (Self, bool);
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:111:5
+    |
+111 |     fn leading_zeros(self) -> u32;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:112:5
+    |
+112 |     fn trailing_zeros(self) -> u32;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:113:5
+    |
+113 |     fn count_ones(self) -> u32;
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a method
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:114:5
+    |
+114 |     fn ilog2(self) -> u32;
+    |     ^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a trait
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/int_traits.rs:425:1
+    |
+425 | pub trait CastFrom<T: Copy>: Copy {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `libm_intrinsics`
+    |
+   ::: builtins-shim/../compiler-builtins/src/math/mod.rs:24:5
+    |
+ 24 | /     libm_intrinsics! {
+ 25 | |         fn ceilf16(x: f16) -> f16;
+ 26 | |         fn copysignf16(x: f16, y: f16) -> f16;
+ 27 | |         fn fabsf16(x: f16) -> f16;
+...   |
+ 42 | |         fn truncf16(x: f16) -> f16;
+ 43 | |     }
+    | |_____- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `libm_intrinsics`
+    |
+   ::: builtins-shim/../compiler-builtins/src/math/mod.rs:85:5
+    |
+ 85 | /     libm_intrinsics! {
+ 86 | |         fn fmaximum(x: f64, y: f64) -> f64;
+ 87 | |         fn fmaximum_num(x: f64, y: f64) -> f64;
+ 88 | |         fn fmaximum_numf(x: f32, y: f32) -> f32;
+...   |
+ 95 | |         fn roundevenf(x: f32) -> f32;
+ 96 | |     }
+    | |_____- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `libm_intrinsics`
+    |
+   ::: builtins-shim/../compiler-builtins/src/math/mod.rs:99:5
+    |
+ 99 | /     libm_intrinsics! {
+100 | |         fn ceilf128(x: f128) -> f128;
+101 | |         fn copysignf128(x: f128, y: f128) -> f128;
+102 | |         fn fabsf128(x: f128) -> f128;
+...   |
+117 | |         fn truncf128(x: f128) -> f128;
+118 | |     }
+    | |_____- in this macro invocation
+
+error: missing documentation for a type alias
+  --> builtins-shim/../compiler-builtins/src/mem/mod.rs:17:1
+   |
+17 | pub type wchar_t = i32;
+   | ^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:361:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+361 |           pub unsafe extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+   ::: builtins-shim/../compiler-builtins/src/mem/mod.rs:19:1
+    |
+ 19 | / intrinsics! {
+ 20 | |     #[mem_builtin]
+ 21 | |     #[allow(suspicious_runtime_symbol_definitions)]
+ 22 | |     pub unsafe extern "C" fn memcpy(dest: *mut u8, src: *const u8, n: usize) -> *mut u8 {
+...   |
+ 75 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a module
+   --> builtins-shim/../compiler-builtins/src/macros.rs:390:9
+    |
+ 49 |   macro_rules! intrinsics {
+...
+390 | /         pub mod $name {
+391 | |             #[unsafe(naked)]
+392 | |             $(#[$($attr)*])*
+393 | |             #[cfg_attr(feature = "unmangled-names", unsafe(no_mangle))]
+...   |
+398 | |         }
+    | |_________^
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64.rs:1:1
+    |
+  1 | / intrinsics! {
+  2 | |     #[unsafe(naked)]
+  3 | |     #[cfg(any(all(windows, target_env = "gnu"), target_os = "uefi"))]
+  4 | |     pub unsafe extern "custom" fn __chkstk() {
+...   |
+ 17 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a macro
+   --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:414:1
+    |
+414 | macro_rules! foreach_ordering {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a macro
+   --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:430:1
+    |
+430 | macro_rules! foreach_bytes {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a macro
+   --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:455:1
+    |
+455 | macro_rules! foreach_swp {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a macro
+   --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:461:1
+    |
+461 | macro_rules! foreach_ldadd {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a macro
+   --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:467:1
+    |
+467 | macro_rules! foreach_ldclr {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a macro
+   --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:473:1
+    |
+473 | macro_rules! foreach_ldeor {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a macro
+   --> builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:479:1
+    |
+479 | macro_rules! foreach_ldset {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_cas`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:485:1
+    |
+485 |   foreach_cas!(compare_and_swap);
+    |   ------------------------------ in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_cas16`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:486:1
+    |
+486 |   foreach_cas16!(compare_and_swap_u128);
+    |   ------------------------------------- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_swp`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:487:1
+    |
+487 |   foreach_swp!(swap);
+    |   ------------------ in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_ldadd`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:488:1
+    |
+488 |   foreach_ldadd!(add);
+    |   ------------------- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_ldclr`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:489:1
+    |
+489 |   foreach_ldclr!(and);
+    |   ------------------- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_ldeor`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:490:1
+    |
+490 |   foreach_ldeor!(xor);
+    |   ------------------- in this macro invocation
+
+error: missing documentation for a function
+   --> builtins-shim/../compiler-builtins/src/macros.rs:424:9
+    |
+ 49 | / macro_rules! intrinsics {
+ 50 | |     () => ();
+...   |
+424 | |         pub $(unsafe $($empty)?)? extern $abi fn $name( $($argname: $ty),* ) $(-> $ret)? {
+    | |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...   |
+440 | |     );
+441 | | }
+    | |_- this error originates in the macro `intrinsics` which comes from the expansion of the macro `foreach_ldset`
+    |
+   ::: builtins-shim/../compiler-builtins/src/aarch64_outline_atomics.rs:491:1
+    |
+491 |   foreach_ldset!(or);
+    |   ------------------ in this macro invocation
+
+warning: `compiler_builtins` (lib doc) generated 1 warning
+error: could not document `compiler_builtins`
