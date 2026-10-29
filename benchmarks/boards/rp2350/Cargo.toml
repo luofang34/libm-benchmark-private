@@ -1,0 +1,58 @@
+[workspace]
+
+[package]
+name = "pow-rp2350"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[features]
+size-fixture = []
+size-candidate = ["size-fixture"]
+dcp = ["rp235x-hal/dcp-fast-f64"]
+
+[[bin]]
+name = "pow-size"
+path = "src/size.rs"
+required-features = ["size-fixture"]
+
+[dependencies]
+pow-bench-core = { path = "../../core" }
+rp235x-hal = { version = "=0.4.0", default-features = false, features = ["rt", "critical-section-impl"] }
+usb-device = "=0.3.2"
+usbd-serial = "=0.2.2"
+heapless = "=0.8.0"
+sha2 = { version = "=0.10.9", default-features = false }
+
+[target.'cfg(target_arch = "arm")'.dependencies]
+cortex-m = "=0.7.7"
+cortex-m-rt = { version = "=0.7.7", features = ["set-sp", "set-vtor"] }
+
+[target.'cfg(target_arch = "riscv32")'.dependencies]
+riscv = "=0.11.1"
+riscv-rt = "=0.12.2"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+
+[lints.rust]
+# Device registers, reset entry and fixed Flash bounds are isolated in hardware modules.
+unsafe_code = "deny"
+
+[lints.clippy]
+unwrap_used = "forbid"
+expect_used = "forbid"
+panic = "forbid"
+todo = "forbid"
+unimplemented = "forbid"
+unreachable = "forbid"
+exit = "forbid"
+mem_forget = "forbid"
+get_unwrap = "forbid"
+let_underscore_must_use = "deny"
+let_underscore_future = "deny"
+await_holding_lock = "deny"
+
