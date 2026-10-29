@@ -1,0 +1,21 @@
+test_corrupt_transfer_is_not_persisted (test_collect.Transport.test_corrupt_transfer_is_not_persisted) ... ok
+test_request_response_on_real_pty (test_collect.Transport.test_request_response_on_real_pty) ... ok
+test_ambiguous_crystal_measurement_is_rejected (test_ingest_f411.F411Acceptance.test_ambiguous_crystal_measurement_is_rejected) ... ok
+test_hardware_fp64_identity_cannot_enter_software_fp64_population (test_ingest_f411.F411Acceptance.test_hardware_fp64_identity_cannot_enter_software_fp64_population) ... ok
+test_inconsistent_clock_is_rejected (test_ingest_f411.F411Acceptance.test_inconsistent_clock_is_rejected) ... ok
+test_real_capture_passes_mpfr_and_image_validation (test_ingest_f411.F411Acceptance.test_real_capture_passes_mpfr_and_image_validation) ... ok
+test_flush_to_zero_is_rejected (test_ingest_h743.HardwareAcceptance.test_flush_to_zero_is_rejected) ... ok
+test_real_capture_passes_mpfr_and_image_validation (test_ingest_h743.HardwareAcceptance.test_real_capture_passes_mpfr_and_image_validation) ... ok
+test_substituted_firmware_is_rejected (test_ingest_h743.HardwareAcceptance.test_substituted_firmware_is_rejected) ... ok
+test_truncated_timing_with_valid_transport_hash_is_rejected (test_ingest_h743.HardwareAcceptance.test_truncated_timing_with_valid_transport_hash_is_rejected) ... ok
+test_blocked_is_explicit_and_has_no_zero_placeholder (test_results.ResultValidation.test_blocked_is_explicit_and_has_no_zero_placeholder) ... ok
+test_duplicate_trial_fails (test_results.ResultValidation.test_duplicate_trial_fails) ... ok
+test_paired_speedup_and_unknown_cycles (test_results.ResultValidation.test_paired_speedup_and_unknown_cycles) ... ok
+test_same_triple_missing_cpu_is_rejected (test_results.ResultValidation.test_same_triple_missing_cpu_is_rejected) ... ok
+test_unknown_accuracy_cannot_pass (test_results.ResultValidation.test_unknown_accuracy_cannot_pass) ... ok
+test_unpaired_trial_fails (test_results.ResultValidation.test_unpaired_trial_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.457s
+
+OK

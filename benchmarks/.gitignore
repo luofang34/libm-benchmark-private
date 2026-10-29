@@ -2,4 +2,7 @@
 /results/runs/
 /firmware/
 __pycache__/
+/results/**/mpfr-check
+# Linked evidence must survive the repository's baseline benchmark-cache ignore rule.
+!/results/raw-logs/**/size/Baseline-*
 

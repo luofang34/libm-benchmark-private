@@ -1,0 +1,19 @@
+{
+  "serial_ports": [],
+  "measurement_status": "NOT_TESTED",
+  "usb": {
+    "exit_code": 0,
+    "output": "",
+    "stderr": ""
+  },
+  "cdc": {
+    "exit_code": 0,
+    "output": "+-o IOSerialBSDClient  <class IOSerialBSDClient, id 0x10000067d, registered, matched, active, busy 0 (4 ms), retain 5>\n    {\n      \"IOClass\" = \"IOSerialBSDClient\"\n      \"CFBundleIdentifier\" = \"com.apple.iokit.IOSerialFamily\"\n      \"IOProviderClass\" = \"IOSerialStreamSync\"\n      \"IOTTYBaseName\" = \"debug-console\"\n      \"IOSerialBSDClientType\" = \"IOSerialStream\"\n      \"IOProbeScore\" = 1000\n      \"IOResourceMatch\" = \"IOBSD\"\n      \"IOMatchedAtBoot\" = Yes\n      \"IOMatchCategory\" = \"IODefaultMatchCategory\"\n      \"IOTTYDevice\" = \"debug-console\"\n      \"IOCalloutDevice\" = \"/dev/cu.debug-console\"\n      \"IODialinDevice\" = \"/dev/tty.debug-console\"\n      \"IOPersonalityPublisher\" = \"com.apple.iokit.IOSerialFamily\"\n      \"CFBundleIdentifierKernel\" = \"com.apple.iokit.IOSerialFamily\"\n      \"IOTTYSuffix\" = \"\"\n    }\n    \n\n+-o IOSerialBSDClient  <class IOSerialBSDClient, id 0x100001184, registered, matched, active, busy 0 (0 ms), retain 5>\n    {\n      \"IOClass\" = \"IOSerialBSDClient\"\n      \"CFBundleIdentifier\" = \"com.apple.iokit.IOSerialFamily\"\n      \"IOProviderClass\" = \"IOSerialStreamSync\"\n      \"IOTTYBaseName\" = \"Bluetooth-Incoming-Port\"\n      \"IOSerialBSDClientType\" = \"IOSerialStream\"\n      \"IOProbeScore\" = 1000\n      \"IOResourceMatch\" = \"IOBSD\"\n      \"IOMatchedAtBoot\" = Yes\n      \"IOMatchCategory\" = \"IODefaultMatchCategory\"\n      \"IOTTYDevice\" = \"Bluetooth-Incoming-Port\"\n      \"IOCalloutDevice\" = \"/dev/cu.Bluetooth-Incoming-Port\"\n      \"IODialinDevice\" = \"/dev/tty.Bluetooth-Incoming-Port\"\n      \"IOPersonalityPublisher\" = \"com.apple.iokit.IOSerialFamily\"\n      \"CFBundleIdentifierKernel\" = \"com.apple.iokit.IOSerialFamily\"\n      \"IOTTYSuffix\" = \"\"\n    }\n    \n\n",
+    "stderr": ""
+  },
+  "debug_probes": {
+    "exit_code": 0,
+    "output": "No debug probes were found.\n",
+    "stderr": ""
+  }
+}

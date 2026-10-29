@@ -1,0 +1,324 @@
+20000000 00000002 b .L_MergedGlobals
+08011de4 0000001f r .Lanon.03c83b14eaa0b094745265b7190b81f1.1
+08011e64 00000010 r .Lanon.03c83b14eaa0b094745265b7190b81f1.10
+08011e74 00000010 r .Lanon.03c83b14eaa0b094745265b7190b81f1.11
+08011e84 00000010 r .Lanon.03c83b14eaa0b094745265b7190b81f1.13
+08011e94 00000010 r .Lanon.03c83b14eaa0b094745265b7190b81f1.14
+08011e04 00000010 r .Lanon.03c83b14eaa0b094745265b7190b81f1.2
+08011e14 00000010 r .Lanon.03c83b14eaa0b094745265b7190b81f1.4
+08011e24 00000010 r .Lanon.03c83b14eaa0b094745265b7190b81f1.5
+08011e34 00000010 r .Lanon.03c83b14eaa0b094745265b7190b81f1.7
+08011e44 00000010 r .Lanon.03c83b14eaa0b094745265b7190b81f1.8
+08011e54 00000010 r .Lanon.03c83b14eaa0b094745265b7190b81f1.9
+08011ea4 00000010 r .Lanon.517d1bed2dfd1c304c86ca4710674e53.1
+08011ef4 00000010 r .Lanon.517d1bed2dfd1c304c86ca4710674e53.15
+08011eb4 00000010 r .Lanon.517d1bed2dfd1c304c86ca4710674e53.2
+08011ec4 00000010 r .Lanon.517d1bed2dfd1c304c86ca4710674e53.3
+08011ed4 00000010 r .Lanon.517d1bed2dfd1c304c86ca4710674e53.4
+08011ee4 00000010 r .Lanon.517d1bed2dfd1c304c86ca4710674e53.5
+0800e8ac 0000002b r .Lanon.631166b6f96d0ee7a89901bdcdfc2f35.172
+0800e8d7 000000c8 r .Lanon.631166b6f96d0ee7a89901bdcdfc2f35.193
+0800e99f 00000019 r .Lanon.631166b6f96d0ee7a89901bdcdfc2f35.208
+0800e9b8 00000002 r .Lanon.631166b6f96d0ee7a89901bdcdfc2f35.395
+0800e9c0 00000800 r .Lanon.64f5803f79e50098bd801452bd6ebf49.95
+0800f1c0 00000c00 r .Lanon.64f5803f79e50098bd801452bd6ebf49.96
+08011ad0 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.13
+08011ae0 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.14
+08011af0 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.15
+08011b00 00000025 r .Lanon.b486bf6e428ac862895d5e88796cd791.21
+08011b28 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.22
+08011b38 00000027 r .Lanon.b486bf6e428ac862895d5e88796cd791.23
+08011b60 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.24
+08011b70 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.25
+08011b80 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.30
+08011b90 0000005c r .Lanon.b486bf6e428ac862895d5e88796cd791.31
+08011bec 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.32
+08011bfc 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.33
+08011c0c 00000028 r .Lanon.b486bf6e428ac862895d5e88796cd791.34
+08011c34 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.35
+08011c44 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.36
+08011c54 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.37
+08011c64 00000031 r .Lanon.b486bf6e428ac862895d5e88796cd791.38
+08011c98 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.39
+08011ac0 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.4
+08011ca8 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.40
+08011cb8 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.41
+08011cc8 00000031 r .Lanon.b486bf6e428ac862895d5e88796cd791.42
+08011cfc 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.43
+08011d0c 0000002c r .Lanon.b486bf6e428ac862895d5e88796cd791.44
+08011d38 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.45
+08011d48 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.61
+08011d58 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.62
+08011d68 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.63
+08011d78 0000003b r .Lanon.b486bf6e428ac862895d5e88796cd791.64
+08011db4 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.65
+08011dc4 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.66
+08011dd4 00000010 r .Lanon.b486bf6e428ac862895d5e88796cd791.67
+0800e08c 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.1
+0800e114 00000051 r .Lanon.e86cae81e24804716db24a55026e9438.11
+0800e168 00000018 r .Lanon.e86cae81e24804716db24a55026e9438.12
+0800e09c 00000045 r .Lanon.e86cae81e24804716db24a55026e9438.2
+0800e21c 0000008c r .Lanon.e86cae81e24804716db24a55026e9438.20
+0800e2a8 0000004c r .Lanon.e86cae81e24804716db24a55026e9438.21
+0800e2f4 0000002b r .Lanon.e86cae81e24804716db24a55026e9438.22
+0800e31f 0000001f r .Lanon.e86cae81e24804716db24a55026e9438.23
+0800e340 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.25
+0800e350 0000003c r .Lanon.e86cae81e24804716db24a55026e9438.26
+0800e38c 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.28
+0800e39c 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.29
+0800e0e4 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.3
+0800e3ac 00000018 r .Lanon.e86cae81e24804716db24a55026e9438.30
+0800e3c4 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.31
+0800e3d4 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.32
+0800e3e4 0000000f r .Lanon.e86cae81e24804716db24a55026e9438.33
+0800e3f4 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.34
+0800e404 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.35
+0800e414 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.36
+0800e424 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.38
+0800e434 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.39
+0800e0f4 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.4
+0800e444 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.40
+0800e454 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.41
+0800e464 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.42
+0800e474 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.43
+0800e484 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.44
+0800e494 0000001c r .Lanon.e86cae81e24804716db24a55026e9438.45
+0800e4b0 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.46
+0800e4c0 0000003c r .Lanon.e86cae81e24804716db24a55026e9438.47
+0800e4fc 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.48
+0800e50c 00000022 r .Lanon.e86cae81e24804716db24a55026e9438.49
+0800e530 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.51
+0800e540 00000018 r .Lanon.e86cae81e24804716db24a55026e9438.53
+0800e558 0000000d r .Lanon.e86cae81e24804716db24a55026e9438.54
+0800e565 00000013 r .Lanon.e86cae81e24804716db24a55026e9438.55
+0800e578 00000035 r .Lanon.e86cae81e24804716db24a55026e9438.56
+0800e5ad 00000041 r .Lanon.e86cae81e24804716db24a55026e9438.57
+0800e5ee 0000010f r .Lanon.e86cae81e24804716db24a55026e9438.58
+0800e700 00000018 r .Lanon.e86cae81e24804716db24a55026e9438.59
+0800e718 0000000f r .Lanon.e86cae81e24804716db24a55026e9438.60
+0800e727 00000012 r .Lanon.e86cae81e24804716db24a55026e9438.61
+0800e73c 00000018 r .Lanon.e86cae81e24804716db24a55026e9438.63
+0800e754 00000018 r .Lanon.e86cae81e24804716db24a55026e9438.64
+0800e76c 00000009 r .Lanon.e86cae81e24804716db24a55026e9438.66
+0800e798 0000000a r .Lanon.e86cae81e24804716db24a55026e9438.68
+0800e7a2 0000000a r .Lanon.e86cae81e24804716db24a55026e9438.69
+0800e104 00000010 r .Lanon.e86cae81e24804716db24a55026e9438.9
+080072b4 00000000 T ADC
+080072b4 00000000 T BusFault
+20000001 00000001 B DEVICE_PERIPHERALS
+080072b4 00000000 T DMA1_STREAM0
+080072b4 00000000 T DMA1_STREAM1
+080072b4 00000000 T DMA1_STREAM2
+080072b4 00000000 T DMA1_STREAM3
+080072b4 00000000 T DMA1_STREAM4
+080072b4 00000000 T DMA1_STREAM5
+080072b4 00000000 T DMA1_STREAM6
+080072b4 00000000 T DMA1_STREAM7
+080072b4 00000000 T DMA2_STREAM0
+080072b4 00000000 T DMA2_STREAM1
+080072b4 00000000 T DMA2_STREAM2
+080072b4 00000000 T DMA2_STREAM3
+080072b4 00000000 T DMA2_STREAM4
+080072b4 00000000 T DMA2_STREAM5
+080072b4 00000000 T DMA2_STREAM6
+080072b4 00000000 T DMA2_STREAM7
+080072b4 00000000 T DebugMonitor
+080072b4 00000000 T DefaultHandler
+080072b4 00000006 T DefaultHandler_
+080072b4 00000000 T EXTI0
+080072b4 00000000 T EXTI1
+080072b4 00000000 T EXTI15_10
+080072b4 00000000 T EXTI2
+080072b4 00000000 T EXTI3
+080072b4 00000000 T EXTI4
+080072b4 00000000 T EXTI9_5
+080072b4 00000000 T FLASH
+080072b4 00000000 T FPU
+0800daac 00000000 T HardFault
+0800daac 00000006 T HardFault_
+080072b4 00000000 T I2C1_ER
+080072b4 00000000 T I2C1_EV
+080072b4 00000000 T I2C2_ER
+080072b4 00000000 T I2C2_EV
+080072b4 00000000 T I2C3_ER
+080072b4 00000000 T I2C3_EV
+080072b4 00000000 T MemoryManagement
+080072b4 00000000 T NonMaskableInt
+080072b4 00000000 T OTG_FS
+080072b4 00000000 T OTG_FS_WKUP
+080072b4 00000000 T PVD
+080072b4 00000000 T PendSV
+080072b4 00000000 T RCC
+080072b4 00000000 T RTC_ALARM
+080072b4 00000000 T RTC_WKUP
+08000198 0000004a T Reset
+080072b4 00000000 T SDIO
+080072b4 00000000 T SPI1
+080072b4 00000000 T SPI2
+080072b4 00000000 T SPI3
+080072b4 00000000 T SPI4
+080072b4 00000000 T SPI5
+080072b4 00000000 T SVCall
+080072b4 00000000 T SysTick
+080072b4 00000000 T TAMP_STAMP
+080072b4 00000000 T TIM1_BRK_TIM9
+080072b4 00000000 T TIM1_CC
+080072b4 00000000 T TIM1_TRG_COM_TIM11
+080072b4 00000000 T TIM1_UP_TIM10
+080072b4 00000000 T TIM2
+080072b4 00000000 T TIM3
+080072b4 00000000 T TIM4
+080072b4 00000000 T TIM5
+080072b4 00000000 T USART1
+080072b4 00000000 T USART2
+080072b4 00000000 T USART6
+080072b4 00000000 T UsageFault
+080072b4 00000000 T WWDG
+08000218 0000012a t <usb_device::descriptor::DescriptorWriter>::endpoint_ex::<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>, usb_device::endpoint::In, <usb_device::descriptor::DescriptorWriter>::endpoint<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>, usb_device::endpoint::In>::{closure#0}>
+08000344 000001ac t <str>::trim_matches::<<char>::is_whitespace>
+080004f0 00000006 t core::ptr::drop_glue::<heapless::string::String<81920>>
+0800af88 000003d6 t <stm32f4xx_hal::rcc::f4::pll::I2sPll>::setup::{closure#0}
+080004f8 0000000a t __rustc::rust_begin_unwind
+0800bc6c 000000fe t <usb_device::descriptor::DescriptorWriter>::interface_alt
+0800bd6c 00000098 t <usb_device::descriptor::DescriptorWriter>::write
+08000504 000000be t <usb_device::control_pipe::ControlPipe<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::accept_out
+080005c4 00000284 t <usb_device::control_pipe::ControlPipe<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::handle_out
+08000848 0000020a t <usb_device::control_pipe::ControlPipe<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::write_in_chunk
+08000a54 000000c6 t <usb_device::control_pipe::ControlPipe<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::set_error
+08000b1c 0000027e t <usb_device::device::UsbDevice<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::control_in
+08000d9c 0000023e t <usb_device::device::UsbDevice<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::control_out
+08000fdc 0000069c t <usb_device::device::UsbDevice<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::get_descriptor
+08001678 00001d86 t <usb_device::device::UsbDevice<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::poll
+0800b8e4 000000ce t <synopsys_usb_otg::endpoint_memory::EndpointBuffer>::fill_from_fifo
+0800b9b4 0000012c t <synopsys_usb_otg::endpoint::EndpointOut>::read
+0800ae68 0000011e t <stm32f4xx_hal::rcc::f4::pll::I2sPll>::setup
+08003400 0000027a t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::flush
+0800be04 00000028 t <usb_device::descriptor::BosWriter>::end_bos
+0800bae0 0000012e t <synopsys_usb_otg::endpoint::EndpointIn>::write
+0800aa48 00000420 t <stm32f4xx_hal::rcc::f4::pll::MainPll>::fast_setup
+08006be8 000001e8 t <core::fmt::Formatter>::pad_integral
+080065c4 00000624 t <core::fmt::Formatter>::pad
+08008ed0 00001b78 t sha2::sha256::compress256
+08008310 00000bc0 t pow_bench_core::kernel::baseline_pow
+08007910 00000a00 t pow_bench_core::kernel::candidate_pow
+08007568 00000012 t pow_bench_core::kernel::arithmetic_f32
+0800757c 0000038e t pow_bench_core::kernel::run
+0800fec0 00001c00 r pow_bench_core::vectors::DATA
+0800c058 00000294 t compiler_builtins::mem::memcpy
+0800c2ec 00000582 t compiler_builtins::mem::memmove
+0800367c 00001410 t pow_f411::hardware::__cortex_m_rt_main
+08004a8c 00000660 t pow_f411::telemetry::serve
+080050ec 0000017a t pow_f411::telemetry::digest
+20000000 00000001 b cortex_m::peripheral::TAKEN (.0)
+080064b8 0000010c t core::fmt::write
+080070b2 00000016 t core::cell::panic_already_borrowed
+080070c8 0000001c t core::cell::panic_already_mutably_borrowed
+080070e4 00000014 t core::option::expect_failed
+0800709e 00000014 t core::option::unwrap_failed
+08006fa8 00000010 t core::panicking::panic_bounds_check
+08006f9c 0000000c t core::panicking::panic
+080064b0 00000008 t core::panicking::panic_fmt
+0800bc10 0000005a t synopsys_usb_otg::endpoint::set_stalled
+080072c0 000001d8 t libm::math::sqrt::sqrt
+08007498 000000d0 t libm::math::scalbn::scalbn
+0800d74c 00000360 t compiler_builtins::int::specialized_div_rem::u64_div_rem
+0800c898 00000388 t compiler_builtins::float::add::__adddf3
+0800d370 00000398 t compiler_builtins::float::div::__divdf3
+0800cd78 00000308 t compiler_builtins::float::mul::__muldf3
+08006f5a 00000042 t core::slice::index::slice_index_fail
+080070f8 00000014 t core::panicking::panic_const::panic_const_div_by_zero
+0800fdc0 00000100 r libm::math::generic::sqrt::RSQRT_TAB
+0800e7ac 00000100 r core::unicode::unicode_data::white_space::WHITESPACE_MAP
+08006dd0 00000044 t <core::fmt::Formatter>::pad_integral::write_prefix
+0800b360 00000540 t <stm32f4::generic::Periph<stm32f4::stm32f411::rcc::RegisterBlock, 1073887232> as stm32f4xx_hal::rcc::RccExt>::freeze
+0800b8a0 00000042 t <stm32f4xx_hal::otg_fs::USB as synopsys_usb_otg::UsbPeripheral>::enable
+08005268 0000013e t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>> as usb_device::class::UsbClass<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::control_in
+080053a8 0000002e t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>> as usb_device::class::UsbClass<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::get_string
+080053d8 000001ba t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>> as usb_device::class::UsbClass<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::control_out
+08005594 00000018 t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>> as usb_device::class::UsbClass<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::endpoint_in_complete
+080055ac 000002ba t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>> as usb_device::class::UsbClass<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::get_configuration_descriptors
+08005868 00000020 t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>> as usb_device::class::UsbClass<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::reset
+08005888 00000042 t <synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB> as usb_device::bus::UsbBus>::set_device_address
+080058cc 00000034 t <pow_bench_core::kernel::Implementation as core::fmt::Debug>::fmt
+08005900 00000014 t <&str as core::fmt::Display>::fmt
+08005914 0000004e t <&u8 as core::fmt::LowerHex>::fmt
+0800710c 0000009e t <u16 as core::fmt::Display>::fmt
+08005964 00000014 t <heapless::string::String<64> as core::fmt::Display>::fmt
+08005978 0000002c t <pow_bench_core::kernel::Mode as core::fmt::Debug>::fmt
+08006fb8 000000e6 t <u32 as core::fmt::Display>::fmt
+080059a4 00000162 t <heapless::string::String<81920> as core::fmt::Write>::write_char
+08005b08 000000c6 t <heapless::string::String<81920> as core::fmt::Write>::write_str
+08005bd0 0000015a t <heapless::string::String<24> as core::fmt::Write>::write_char
+08005d2c 000000a0 t <heapless::string::String<24> as core::fmt::Write>::write_str
+08005dcc 0000015a t <heapless::string::String<32> as core::fmt::Write>::write_char
+08005f28 000000a0 t <heapless::string::String<32> as core::fmt::Write>::write_str
+08005fc8 0000015a t <heapless::string::String<64> as core::fmt::Write>::write_char
+08006124 000000a0 t <heapless::string::String<64> as core::fmt::Write>::write_str
+080061c4 00000182 t <heapless::string::String<2048> as core::fmt::Write>::write_char
+08006348 000000c0 t <heapless::string::String<2048> as core::fmt::Write>::write_str
+080071f2 000000c0 t <u64 as core::fmt::LowerHex>::fmt
+080071aa 00000048 t <u8 as core::fmt::LowerHex>::fmt
+08006e14 00000146 t <u64 as core::fmt::Display>::fmt
+08006408 00000018 t <heapless::string::String<81920> as core::fmt::Write>::write_fmt
+08006420 00000018 t <heapless::string::String<24> as core::fmt::Write>::write_fmt
+08006438 00000018 t <heapless::string::String<32> as core::fmt::Write>::write_fmt
+08006450 00000018 t <heapless::string::String<64> as core::fmt::Write>::write_fmt
+08006468 00000018 t <heapless::string::String<2048> as core::fmt::Write>::write_fmt
+08006480 00000006 t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>> as usb_device::class::UsbClass<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::endpoint_out
+08006488 00000008 t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>> as usb_device::class::UsbClass<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::get_alt_setting
+08006490 00000008 t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>> as usb_device::class::UsbClass<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::set_alt_setting
+08006498 00000008 t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>> as usb_device::class::UsbClass<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::get_bos_descriptors
+080064a0 00000006 t <usbd_serial::serial_port::SerialPort<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>> as usb_device::class::UsbClass<synopsys_usb_otg::bus::UsbBus<stm32f4xx_hal::otg_fs::USB>>>::poll
+08000008 00000038 R __EXCEPTIONS
+08000040 00000158 R __INTERRUPTS
+08000004 00000004 R __RESET_VECTOR
+0800cc8a 0000000c t __aeabi_dadd
+0800beca 00000054 t __aeabi_dcmpeq
+0800bfe2 0000006a t __aeabi_dcmpgt
+0800d080 00000078 t __aeabi_dcmple
+0800cc20 0000006a t __aeabi_dcmplt
+0800d35a 00000016 t __aeabi_ddiv
+0800cd66 0000000c t __aeabi_dmul
+0800c86e 00000028 t __aeabi_dsub
+0800d25a 0000005c t __aeabi_i2d
+0800d1bc 00000092 t __aeabi_l2d
+0800cc96 000000d0 t __aeabi_memclr
+0800bf1e 000000c4 t __aeabi_memclr4
+0800d0f8 000000c4 t __aeabi_memclr8
+0800c04c 0000000c t __aeabi_memcpy
+0800d2b6 000000a4 t __aeabi_memcpy4
+0800d24e 0000000c t __aeabi_memmove
+0800d708 00000014 t __aeabi_uldivmod
+0800be2c 00000004 T __cpsid
+0800be30 00000004 T __cpsie
+0800be34 0000000c T __delay
+0800be40 00000006 T __dsb
+20000004 00000000 B __ebss
+20000000 00000000 R __edata
+08000040 00000000 R __eexceptions
+08011f04 00000000 R __erodata
+0800dab4 00000000 T __etext
+20000004 00000000 B __euninit
+08000008 00000000 R __exceptions
+08011f04 00000000 A __flash_image_end
+0800be50 00000006 T __fpscr_r
+08000208 00000000 T __pre_init
+0800be46 00000006 T __primask_r
+20000000 00000000 B __sbss
+20000000 00000000 R __sdata
+20000004 00000000 B __sheap
+08011f04 00000000 A __sidata
+0800dab8 00000000 R __srodata
+08000198 00000000 T __stext
+20000004 00000000 B __suninit
+0800d71c 00000030 t __udivmoddi4
+08000000 00000000 R __vector_table
+08011f20 00000000 R __veneer_base
+08011f20 00000000 R __veneer_limit
+0800be4c 00000004 T __wfi
+20020000 00000000 A _ram_end
+20000004 00000000 B _stack_end
+20020000 00000000 A _stack_start
+08000198 00000000 R _stext
+080064a8 00000008 T main
+0800be56 00000074 t memcmp

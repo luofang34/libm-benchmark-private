@@ -1,0 +1,18 @@
+{
+  "protocol": "POWBENCH/1",
+  "state": "complete",
+  "run_id": "f411-550055000951333138353736",
+  "device_id": "550055000951333138353736",
+  "chip_id": 268461105,
+  "clock_hz": 48000000,
+  "hse_hz": 26000000,
+  "hse_estimate_hz": 25647183,
+  "fpscr": 16,
+  "mvfr0": 269549601,
+  "scb_ccr": 512,
+  "flash_acr": 1793,
+  "flash_kib": 512,
+  "firmware_sha": "2bb4472d31e4826ebe04dfc3563cc8a502b25cf6c301360b5f7d3926291c297b",
+  "payload_sha256": "6f6e3571eb3c05d3fe7b8f734cae82b0f256dabae2e1f80b4f406e4c4e0bddd0",
+  "dataset_sha": "1b227b1001dd0b99b6b495f911d6ff83f6744557c7fb63778ed4ea259136bcbf"
+}

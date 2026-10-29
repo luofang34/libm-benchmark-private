@@ -18,7 +18,7 @@
   {
     "id": "stm32f411",
     "execution_order": 2,
-    "board": null,
+    "board": "STM32F411 USB FS DFU board; PCB model unreported",
     "soc": "STM32F411",
     "core": "Cortex-M4F",
     "target_triple": "thumbv7em-none-eabihf",
@@ -26,8 +26,10 @@
     "requested_target_features": "",
     "float_abi": "aapcs-vfp",
     "expected_fpu_mode": "hardware_fp32_software_fp64",
-    "measurement_status": "BLOCKED",
-    "reason": "Physical board, boot layout and capture transport have not been detected."
+    "measurement_status": "PASS",
+    "reason": "",
+    "device_id": "550055000951333138353736",
+    "results": "results/raw-logs/stm32f411"
   },
   {
     "id": "rp2350-arm",

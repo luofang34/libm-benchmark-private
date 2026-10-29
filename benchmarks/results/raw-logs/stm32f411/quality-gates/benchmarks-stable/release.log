@@ -1,0 +1,5 @@
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling libm v0.2.16 (https://github.com/rust-lang/compiler-builtins?rev=6bc104a50f83cb205790c61c5d33508046f5fad3#6bc104a5)
+   Compiling pow-bench-core v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/core)
+   Compiling pow-bench-host v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/host)
+    Finished `release` profile [optimized] target(s) in 3.92s

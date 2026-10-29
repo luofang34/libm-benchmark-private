@@ -1,0 +1,32 @@
+{
+  "board": "STM32F411 USB FS DFU board; PCB model unreported",
+  "soc": "STM32F411",
+  "dfu_serial": "368C358D3133",
+  "flash_address": "0x08000000",
+  "target_triple": "thumbv7em-none-eabihf",
+  "target_cpu": "cortex-m4",
+  "requested_target_features": "CPU defaults",
+  "float_abi": "aapcs-vfp",
+  "fpu_mode": "hardware_fp32_software_fp64",
+  "clock_source": "HSE measured with TIM11/HSI, rounded to integer MHz; PLL nominal 48 MHz",
+  "firmware_sha": "2bb4472d31e4826ebe04dfc3563cc8a502b25cf6c301360b5f7d3926291c297b",
+  "firmware_bytes": 73476,
+  "source_sha": "585febd52469c7c687939a839c7090b5b93fd6c6",
+  "compiler_version": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: aarch64-apple-darwin\nrelease: 1.99.0\nLLVM version: 23.1.1\n",
+  "build_flags": "-C target-cpu=cortex-m4 -C link-arg=-Tlink.x -C link-arg=-Timage-end.x",
+  "sections": {
+    ".vector_table": 408,
+    ".text": 55580,
+    ".rodata": 17484,
+    ".data": 0,
+    ".gnu.sgstubs": 0,
+    ".bss": 4,
+    ".uninit": 0,
+    ".comment": 153,
+    ".ARM.attributes": 69
+  },
+  "scope": "dual-algorithm firmware; static RAM excludes 80 KiB stack-resident telemetry buffer",
+  "transport": "USB FS PA11/PA12; HSE -> PLLQ at 48 MHz",
+  "preflight": "PASS",
+  "stack_bytes": null
+}
