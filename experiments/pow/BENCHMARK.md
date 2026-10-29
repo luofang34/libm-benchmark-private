@@ -1,6 +1,6 @@
-# Local pow experiment
+# Pow hardware-test experiment
 
-Scope: double-precision `libm::pow` and ordinary Rust `f64::powf` only. No fork, push, PR, shared CI change, or installed sysroot modification. `powf(f32)` and the P1 function ranking are deliberately outside this patch. Measurements were collected on 2026-10-29.
+Scope: double-precision `libm::pow` and ordinary Rust `f64::powf` only, hosted in a private repository for hardware testing. `powf(f32)` and the P1 function ranking are outside this patch. Measurements were collected on 2026-10-29.
 
 ## Source and environment
 
@@ -67,7 +67,7 @@ Corrected C++ native median: **8.862 ns/op**, 15 rounds, same precomputed positi
 
 ## Patch and retained artifacts
 
-The standalone [libm-pow-arm.patch](libm-pow-arm.patch) applies to checkout `6bc104a50f83cb205790c61c5d33508046f5fad3` and is already applied in this local workspace. It changes only f64 pow, its lookup data/tests, and removal of the helper only that function used. The experimental harness and logs are outside the patch. Reverse application was checked without modifying files.
+The standalone [libm-pow-arm.patch](libm-pow-arm.patch) applies to checkout `6bc104a50f83cb205790c61c5d33508046f5fad3` and is already applied on the `experiment/pow-wasm` branch. It changes only f64 pow, its lookup data/tests, and removal of the helper only that function used. The experimental harness and logs are outside the patch. Reverse application was checked without modifying files.
 
 The actual tested WASM modules are retained in `results/wasm/`, with SHA-256 values in `results/artifact-manifest.json`. `inputs.bin.gz`, `outputs.bin.gz`, and `accuracy-domains.txt.gz` preserve the raw accuracy stream and labels. Each output record contains eight little-endian u64 bit patterns: x, y, old libm, petir, stable std, candidate, rebuilt baseline std, rebuilt candidate std. To check the archived fixtures without rebuilding:
 
@@ -105,4 +105,4 @@ node experiments/pow/bench.mjs experiments/pow/target/wasm32-unknown-unknown/rel
 - The candidate remains `no_std`; wasm32-unknown-unknown and thumbv7em-none-eabihf builds pass. Native ARM64 execution and 151,083-case native/WASM bit comparison pass (excluding unspecified NaN payload differences).
 - Strict `RUSTDOCFLAGS="-D missing_docs -D broken_intra_doc_links" cargo doc -p libm --no-deps` fails on existing public functions outside pow. The identical gate also fails on an unmodified baseline copy: [baseline](results/raw/doc-baseline.log), [candidate](results/raw/doc-libm.log). No unrelated documentation or lint policy is changed. No claim is made that all repository CI jobs passed.
 - The repository has no `scripts/check-structure.sh` or `quality-gates` job. This experiment does not alter CI.
-- See [STD_INTEGRATION.md](STD_INTEGRATION.md), [size.csv](size.csv), and [accuracy.md](accuracy.md) for integration, marginal size, and accuracy evidence. This is a local experimental patch, not an upstream submission.
+- See [STD_INTEGRATION.md](STD_INTEGRATION.md), [size.csv](size.csv), and [accuracy.md](accuracy.md) for integration, marginal size, and accuracy evidence. The patch is intended for private hardware testing.
