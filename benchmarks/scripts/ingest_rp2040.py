@@ -25,7 +25,7 @@ def capability(device, manifest):
         raise ValueError('core cycle counter disagrees with USB frame clock')
     if not 0 < device['max_batch_us'] < 100_000:
         raise ValueError('ambiguous 24-bit SysTick interval')
-    if device['spi_baud'] != 4 or device['spi_ctrl'] >> 24 != 3:
+    if device['spi_baud'] != 4 or device['spi_ctrl'] != 0x218 or device['xip_ctrl'] != 3:
         raise ValueError('Flash configuration differs from generic 03h boot2')
 
 

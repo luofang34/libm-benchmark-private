@@ -27,6 +27,7 @@ fn start() -> Result<(), core::fmt::Error> {
     initialize_counter()?;
     let chip_id = dp.SYSINFO.chip_id().read().bits();
     let (jedec, uid) = flash_identity()?;
+    configure_flash_clock();
     let mut watchdog = hal::Watchdog::new(dp.WATCHDOG);
     let clocks = hal::clocks::init_clocks_and_plls(
         12_000_000,
@@ -102,6 +103,21 @@ fn initialize_counter() -> Result<(), core::fmt::Error> {
     cp.SYST.clear_current();
     cp.SYST.enable_counter();
     Ok(())
+}
+
+// SAFETY: SSI must stay accessible while XIP is disabled, so this routine runs in SRAM.
+#[unsafe(link_section = ".data.ram_func")]
+#[inline(never)]
+fn configure_flash_clock() {
+    // SAFETY: Core 1 is parked, IRQs/DMA are disabled, and Flash ID reads have finished.
+    // 03h reads need a conservative clock before PLL_SYS raises clk_sys to 125 MHz.
+    unsafe {
+        let ssi = &*hal::pac::XIP_SSI::ptr();
+        ssi.ssienr().write(|w| w.bits(0));
+        ssi.baudr().write(|w| w.bits(4));
+        ssi.ssienr().write(|w| w.bits(1));
+        core::arch::asm!("dsb", "isb", options(nostack, preserves_flags));
+    }
 }
 
 pub fn cycle_count() -> u32 {

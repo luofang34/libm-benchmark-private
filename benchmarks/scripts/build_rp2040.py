@@ -41,6 +41,8 @@ def build(directory, implementation=None):
     shutil.copyfile(BOARD / 'target' / TARGET / 'release' / name, elf)
     reports = {}
     for label, command in [('assembly', [tool('objdump'), '-d', '--demangle', '--mcpu=cortex-m0plus']),
+                           ('ram-code', [tool('objdump'), '-D', '--section=.data', '--demangle', '--mcpu=cortex-m0plus']),
+                           ('boot-code', [tool('objdump'), '-D', '--section=.boot2', '--mcpu=cortex-m0plus']),
                            ('symbols', [tool('nm'), '-S', '--demangle']),
                            ('sections', [tool('size'), '-A']), ('attributes', [tool('readelf'), '-A'])]:
         reports[label] = subprocess.check_output(command + [str(elf)], text=True)
@@ -56,6 +58,8 @@ def build(directory, implementation=None):
         if unwanted in reports['symbols']:
             raise ValueError('both algorithms are linked in a single-algorithm fixture')
     audit_arithmetic(reports, implementation is None)
+    if not implementation:
+        audit_flash_clock(reports)
     binary = directory / (name + '.bin')
     subprocess.run([tool('objcopy'), '-O', 'binary', str(elf), str(binary)], check=True)
     data = binary.read_bytes()
@@ -89,6 +93,22 @@ def audit_arithmetic(reports, probe):
             raise ValueError('actual software floating-point helper call missing: ' + helper)
 
 
+def audit_flash_clock(reports):
+    symbol = re.search(r'^(200[0-9a-f]+)\s+([0-9a-f]+)\s+\w\s+.*::configure_flash_clock$',
+                       reports['symbols'], re.M)
+    if not symbol:
+        raise ValueError('Flash clock configuration is not in SRAM')
+    start, size = int(symbol[1], 16), int(symbol[2], 16)
+    body = '\n'.join(line for line in reports['ram-code'].splitlines()
+                     if re.match(r'^[0-9a-f]+:', line) and start <= int(line.split(':')[0], 16) < start + size)
+    if re.search(r'\bblx?\s', body):
+        raise ValueError('Flash clock configuration must execute entirely in SRAM')
+    if not all(token in body for token in ['#0x4', '#0xc', '0x18000008', 'dsb', 'isb']):
+        raise ValueError('missing divider-4 SRAM register writes or barriers')
+    if not re.search(r'\bbl\s+.*configure_flash_clock', reports['assembly']):
+        raise ValueError('Flash divider configuration is not called')
+
+
 def main():
     directory = ROOT / 'firmware/rp2040'
     result = build(directory)
@@ -102,7 +122,7 @@ def main():
         source_sha=subprocess.check_output(['git', 'rev-parse', 'experiment/pow-wasm'], text=True).strip(),
         hal_revision='2fb63064c98edcf688694bc63dc05f57b89a71b2; rp2040-hal 0.11.0',
         clock_source='12 MHz XOSC assumption; PLL 125 MHz; checked against 50 USB SOF frames within 0.5%',
-        flash_mode='rp2040-boot2 0.3.0 GENERIC_03H; one-bit SPI; clk_sys/4; XIP cache',
+        flash_mode='rp2040-boot2 0.3.0 GENERIC_03H; SRAM routine sets clk_sys/4 before PLL; one-bit SPI 31.25 MHz; XIP cache',
         scope='dual-algorithm firmware; static RAM excludes 128 KiB retained payload and other stack frames', preflight='PASS')
     (directory / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(json.dumps(manifest, indent=2))
