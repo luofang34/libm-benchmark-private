@@ -1,8 +1,9 @@
 use core::fmt::Write;
 
-use crate::hardware::cycle_count;
 use heapless::String;
 use pow_bench_core::{DOMAINS, Implementation, Mode, cases, run, value};
+
+use crate::hardware::cycle_count;
 
 pub type Payload = String<131072>;
 

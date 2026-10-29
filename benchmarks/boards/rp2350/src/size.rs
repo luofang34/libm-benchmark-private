@@ -3,6 +3,7 @@
 #![no_main]
 
 use core::hint::black_box;
+
 use pow_bench_core::{DOMAINS, Implementation, Mode, cases, run};
 use rp235x_hal::entry;
 

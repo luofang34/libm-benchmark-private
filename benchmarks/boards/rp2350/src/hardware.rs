@@ -1,10 +1,13 @@
 // SAFETY: This module owns startup peripherals, core counters and immutable Flash reads.
 #![allow(unsafe_code)]
 
-use core::{fmt::Write, hint::black_box};
+use core::fmt::Write;
+use core::hint::black_box;
+
 use heapless::String;
 use rp235x_hal::{self as hal, Clock};
-use usb_device::{class_prelude::UsbBusAllocator, prelude::*};
+use usb_device::class_prelude::UsbBusAllocator;
+use usb_device::prelude::*;
 
 use crate::{measurements, telemetry};
 
