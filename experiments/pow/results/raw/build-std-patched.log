@@ -1,0 +1,1042 @@
+warning: failed to save last-use data
+This may prevent cargo from accurately tracking what is being used in its global cache. This information is used for automatically removing unused data in the cache.
+
+attempt to write a readonly database
+
+Caused by:
+  Error code 8: attempt to write a readonly database
+       Fresh core v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/core)
+       Dirty compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/compiler-builtins/compiler-builtins): the file `sysroot-patched/library/compiler-builtins/libm/src/math/mod.rs` has changed (1793263360.227152924s, 16m 22s after last build at 1793262378.782732981s)
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/compiler-builtins/compiler-builtins)
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=compiler_builtins CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/compiler-builtins/compiler-builtins CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/compiler-builtins/compiler-builtins/Cargo.toml CARGO_PKG_AUTHORS='Alex Crichton <alex@alexcrichton.com>:Amanieu d'\''Antras <amanieu@gmail.com>:Jorge Aparicio <japaricious@gmail.com>:Trevor Gross <tg@trevorgross.com>' CARGO_PKG_DESCRIPTION='Compiler intrinsics used by the Rust compiler.' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT AND Apache-2.0 WITH LLVM-exception AND (MIT OR Apache-2.0)' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=compiler_builtins CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/rust-lang/compiler-builtins' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.1.160 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=1 CARGO_PKG_VERSION_PATCH=160 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' OUT_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/ad04c2f071a0747d/out RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name compiler_builtins --edition=2024 sysroot-patched/library/compiler-builtins/compiler-builtins/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --cfg 'feature="arch"' --cfg 'feature="compiler-builtins"' --cfg 'feature="default"' --cfg 'feature="unmangled-names"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("arch", "c", "compiler-builtins", "default", "mem", "unmangled-names", "unstable-public-internals"))' -C metadata=b106a16d8a68c5d1 -C extra-filename=-f613e6d2f182e3a2 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/compiler_builtins/f613e6d2f182e3a2/out --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out/libcore-09eacc81d0a4d292.rmeta --cap-lints warn --force-warn=unused_crate_dependencies --cfg intrinsics_enabled --cfg optimizations_enabled --cfg f16_enabled --cfg f128_enabled --cfg 'feature="mem"' --check-cfg 'cfg(thumb)' --check-cfg 'cfg(thumb1_only)' --check-cfg 'cfg(target_abi_eabihf)' --check-cfg 'cfg(x86_no_sse2)' --check-cfg 'cfg(target_feature, values("vfp2sp", "vfp2"))' --check-cfg 'cfg(assert_no_panic)' --check-cfg 'cfg(intrinsics_enabled)' --check-cfg 'cfg(optimizations_enabled)' --check-cfg 'cfg(f16_enabled)' --check-cfg 'cfg(f128_enabled)' --check-cfg 'cfg(__ashldi3, values("optimized-c"))' --check-cfg 'cfg(__ashlsi3, values("optimized-c"))' --check-cfg 'cfg(__ashrdi3, values("optimized-c"))' --check-cfg 'cfg(__ashrsi3, values("optimized-c"))' --check-cfg 'cfg(__bswapsi2, values("optimized-c"))' --check-cfg 'cfg(__bswapdi2, values("optimized-c"))' --check-cfg 'cfg(__bswapti2, values("optimized-c"))' --check-cfg 'cfg(__divdi3, values("optimized-c"))' --check-cfg 'cfg(__divsi3, values("optimized-c"))' --check-cfg 'cfg(__divmoddi4, values("optimized-c"))' --check-cfg 'cfg(__divmodsi4, values("optimized-c"))' --check-cfg 'cfg(__divmodsi4, values("optimized-c"))' --check-cfg 'cfg(__divmodti4, values("optimized-c"))' --check-cfg 'cfg(__lshrdi3, values("optimized-c"))' --check-cfg 'cfg(__lshrsi3, values("optimized-c"))' --check-cfg 'cfg(__moddi3, values("optimized-c"))' --check-cfg 'cfg(__modsi3, values("optimized-c"))' --check-cfg 'cfg(__muldi3, values("optimized-c"))' --check-cfg 'cfg(__udivdi3, values("optimized-c"))' --check-cfg 'cfg(__udivmoddi4, values("optimized-c"))' --check-cfg 'cfg(__udivmodsi4, values("optimized-c"))' --check-cfg 'cfg(__udivsi3, values("optimized-c"))' --check-cfg 'cfg(__umoddi3, values("optimized-c"))' --check-cfg 'cfg(__umodsi3, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas1_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas1_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas1_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas1_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas2_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas2_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas2_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas2_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas4_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas4_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas4_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas4_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas8_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas8_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas8_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas8_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas16_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas16_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas16_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_cas16_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd1_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd1_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd1_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd1_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd2_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd2_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd2_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd2_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd4_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd4_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd4_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd4_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd8_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd8_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd8_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldadd8_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr1_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr1_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr1_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr1_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr2_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr2_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr2_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr2_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr4_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr4_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr4_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr4_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr8_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr8_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr8_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldclr8_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor1_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor1_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor1_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor1_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor2_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor2_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor2_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor2_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor4_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor4_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor4_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor4_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor8_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor8_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor8_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldeor8_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset1_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset1_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset1_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset1_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset2_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset2_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset2_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset2_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset4_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset4_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset4_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset4_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset8_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset8_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset8_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_ldset8_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp1_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp1_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp1_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp1_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp2_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp2_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp2_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp2_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp4_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp4_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp4_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp4_acq_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp8_relax, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp8_acq, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp8_rel, values("optimized-c"))' --check-cfg 'cfg(__aarch64_swp8_acq_rel, values("optimized-c"))' --check-cfg 'cfg(target_feature, values("vis3"))' --check-cfg 'cfg(mem_unaligned)' --check-cfg 'cfg(kernel_user_helpers)'`
+       Dirty rustc-std-workspace-core v1.99.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/rustc-std-workspace-core): the dependency `compiler_builtins` was rebuilt
+   Compiling rustc-std-workspace-core v1.99.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/rustc-std-workspace-core)
+       Dirty alloc v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/alloc): the dependency `compiler_builtins` was rebuilt
+   Compiling alloc v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/alloc)
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=rustc_std_workspace_core CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/rustc-std-workspace-core CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/rustc-std-workspace-core/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='Hack for the compiler'\''s own build system
+' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=rustc-std-workspace-core CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=1.99.0 CARGO_PKG_VERSION_MAJOR=1 CARGO_PKG_VERSION_MINOR=99 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name rustc_std_workspace_core --edition=2024 sysroot-patched/library/rustc-std-workspace-core/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values())' -C metadata=46bb7eee78c61b1d -C extra-filename=-3d7b4c0c07855298 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out --extern 'priv:compiler_builtins=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out/libcompiler_builtins-f613e6d2f182e3a2.rmeta' --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out/libcore-09eacc81d0a4d292.rmeta -Z unstable-options --cap-lints warn --force-warn=unused_crate_dependencies`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=alloc CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/alloc CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/alloc/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='The Rust core allocation and collections library' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=alloc CARGO_PKG_README='' CARGO_PKG_REPOSITORY='https://github.com/rust-lang/rust.git' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.0.0 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name alloc --edition=2024 sysroot-patched/library/alloc/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --warn=unexpected_cfgs --check-cfg 'cfg(no_global_oom_handling)' --check-cfg 'cfg(no_rc)' --check-cfg 'cfg(no_sync)' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("compiler-builtins-c", "compiler-builtins-mem", "optimize_for_size"))' -C metadata=79f714c34394cbe1 -C extra-filename=-9360459e05668670 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/alloc/9360459e05668670/out --extern 'priv:compiler_builtins=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out/libcompiler_builtins-f613e6d2f182e3a2.rmeta' --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out/libcore-09eacc81d0a4d292.rmeta -Z unstable-options --cap-lints warn --force-warn=unused_crate_dependencies`
+       Dirty libc v0.2.191: the dependency `rustc-std-workspace-core` was rebuilt
+   Compiling libc v0.2.191
+       Dirty memchr v2.8.3: the dependency `rustc-std-workspace-core` was rebuilt
+   Compiling memchr v2.8.3
+       Dirty adler2 v2.0.1: the dependency `rustc-std-workspace-core` was rebuilt
+   Compiling adler2 v2.0.1
+       Dirty cfg-if v1.0.4: the dependency `rustc-std-workspace-core` was rebuilt
+   Compiling cfg-if v1.0.4
+       Dirty rustc-demangle v0.1.28: the dependency `rustc-std-workspace-core` was rebuilt
+   Compiling rustc-demangle v0.1.28
+       Dirty rustc-literal-escaper v0.0.8: the dependency `rustc-std-workspace-core` was rebuilt
+   Compiling rustc-literal-escaper v0.0.8
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=libc CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.191 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.191/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='Raw FFI bindings to platform libraries like libc.' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=libc CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/rust-lang/libc' CARGO_PKG_RUST_VERSION=1.65 CARGO_PKG_VERSION=0.2.191 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=2 CARGO_PKG_VERSION_PATCH=191 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' OUT_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/7b496839ad6a5173/out RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name libc --edition=2021 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.191/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --allow=unused_qualifications '--warn=clippy::unnecessary_semicolon' '--allow=clippy::unnecessary_cast' '--warn=clippy::ptr_as_ptr' '--allow=clippy::non_minimal_cfg' '--allow=clippy::missing_safety_doc' '--warn=clippy::map_unwrap_or' '--warn=clippy::manual_assert' '--allow=clippy::identity_op' '--warn=clippy::explicit_iter_loop' --cfg 'feature="align"' --cfg 'feature="rustc-dep-of-std"' --cfg 'feature="rustc-std-workspace-core"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("align", "const-extern-fn", "default", "extra_traits", "rustc-dep-of-std", "rustc-std-workspace-core", "std", "use_std"))' -C metadata=f09a735714fb66c6 -C extra-filename=-21509f590a4a9c85 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/libc/21509f590a4a9c85/out --extern rustc_std_workspace_core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies --check-cfg 'cfg(libc_deny_warnings)' --check-cfg 'cfg(emscripten_old_stat_abi)' --check-cfg 'cfg(emscripten_fsblkcnt_is_32bit)' --check-cfg 'cfg(emscripten_sigset_large)' --check-cfg 'cfg(emscripten_nfds_is_ulong)' --check-cfg 'cfg(espidf_picolibc)' --check-cfg 'cfg(espidf_time32)' --check-cfg 'cfg(freebsd10)' --check-cfg 'cfg(freebsd11)' --check-cfg 'cfg(freebsd12)' --check-cfg 'cfg(freebsd13)' --check-cfg 'cfg(freebsd14)' --check-cfg 'cfg(freebsd15)' --check-cfg 'cfg(libc_elfv2)' --check-cfg 'cfg(vxworks_lt_25_09)' --check-cfg 'cfg(libc_pauthtest)' --check-cfg 'cfg(gnu_file_offset_bits64)' --check-cfg 'cfg(gnu_time_bits64)' --check-cfg 'cfg(linux_time_bits64)' --check-cfg 'cfg(musl_v1_2)' --check-cfg 'cfg(musl32_time64)' --check-cfg 'cfg(musl_redir_time64)' --check-cfg 'cfg(uclibc32_time64)' --check-cfg 'cfg(target_os,values("switch","aix","ohos","hurd","rtems","visionos","nuttx","cygwin","qurt","qnx","helenos"))' --check-cfg 'cfg(target_env,values("illumos","wasi","aix","ohos","nto71_iosock"))' --check-cfg 'cfg(target_arch,values("loongarch64","mips32r6","mips64r6","csky"))'`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=adler2 CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/adler2-2.0.1 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/adler2-2.0.1/Cargo.toml CARGO_PKG_AUTHORS='Jonas Schievink <jonasschievink@gmail.com>:oyvindln <oyvindln@users.noreply.github.com>' CARGO_PKG_DESCRIPTION='A simple clean-room implementation of the Adler-32 checksum' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='0BSD OR MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=adler2 CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/oyvindln/adler2' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=2.0.1 CARGO_PKG_VERSION_MAJOR=2 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=1 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name adler2 --edition=2021 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/adler2-2.0.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --cfg 'feature="core"' --cfg 'feature="rustc-dep-of-std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("core", "default", "rustc-dep-of-std", "std"))' -C metadata=eae71a947ef23043 -C extra-filename=-413b5fd88633c945 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/adler2/413b5fd88633c945/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/adler2/413b5fd88633c945/out --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=cfg_if CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cfg-if-1.0.4 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cfg-if-1.0.4/Cargo.toml CARGO_PKG_AUTHORS='Alex Crichton <alex@alexcrichton.com>' CARGO_PKG_DESCRIPTION='A macro to ergonomically define an item depending on a large number of #[cfg]
+parameters. Structured like an if-else chain, the first matching branch is the
+item that gets emitted.
+' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=cfg-if CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/rust-lang/cfg-if' CARGO_PKG_RUST_VERSION=1.32 CARGO_PKG_VERSION=1.0.4 CARGO_PKG_VERSION_MAJOR=1 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=4 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name cfg_if --edition=2018 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cfg-if-1.0.4/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --cfg 'feature="core"' --cfg 'feature="rustc-dep-of-std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("core", "rustc-dep-of-std"))' -C metadata=d19570f38aacac11 -C extra-filename=-4c72a8132b584c68 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/cfg-if/4c72a8132b584c68/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/cfg-if/4c72a8132b584c68/out --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=rustc_demangle CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustc-demangle-0.1.28 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustc-demangle-0.1.28/Cargo.toml CARGO_PKG_AUTHORS='Alex Crichton <alex@alexcrichton.com>' CARGO_PKG_DESCRIPTION='Rust compiler symbol demangling.
+' CARGO_PKG_HOMEPAGE='https://github.com/rust-lang/rustc-demangle' CARGO_PKG_LICENSE=MIT/Apache-2.0 CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=rustc-demangle CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/rust-lang/rustc-demangle' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.1.28 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=1 CARGO_PKG_VERSION_PATCH=28 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name rustc_demangle --edition=2015 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustc-demangle-0.1.28/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --cfg 'feature="core"' --cfg 'feature="rustc-dep-of-std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("compiler_builtins", "core", "rustc-dep-of-std", "std"))' -C metadata=b9732909210f0e21 -C extra-filename=-12a6f7443098486f --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-demangle/12a6f7443098486f/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/rustc-demangle/12a6f7443098486f/out --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=rustc_literal_escaper CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustc-literal-escaper-0.0.8 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustc-literal-escaper-0.0.8/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='Provides code to unescape string literals' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='Apache-2.0 OR MIT' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=rustc-literal-escaper CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/rust-lang/literal-escaper' CARGO_PKG_RUST_VERSION=1.89 CARGO_PKG_VERSION=0.0.8 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=8 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name rustc_literal_escaper --edition=2021 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustc-literal-escaper-0.0.8/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --cfg 'feature="rustc-dep-of-std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("rustc-dep-of-std"))' -C metadata=e6ebd6607062c211 -C extra-filename=-3afc9fb750ff303e --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-literal-escaper/3afc9fb750ff303e/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/rustc-literal-escaper/3afc9fb750ff303e/out --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=memchr CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/memchr-2.8.3 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/memchr-2.8.3/Cargo.toml CARGO_PKG_AUTHORS='Andrew Gallant <jamslam@gmail.com>:bluss' CARGO_PKG_DESCRIPTION='Provides extremely fast (uses SIMD on x86_64, aarch64 and wasm32) routines for
+1, 2 or 3 byte search and single substring search.
+' CARGO_PKG_HOMEPAGE='https://github.com/BurntSushi/memchr' CARGO_PKG_LICENSE='Unlicense OR MIT' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=memchr CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/BurntSushi/memchr' CARGO_PKG_RUST_VERSION=1.61 CARGO_PKG_VERSION=2.8.3 CARGO_PKG_VERSION_MAJOR=2 CARGO_PKG_VERSION_MINOR=8 CARGO_PKG_VERSION_PATCH=3 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name memchr --edition=2021 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/memchr-2.8.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --cfg 'feature="core"' --cfg 'feature="rustc-dep-of-std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("alloc", "core", "default", "libc", "logging", "rustc-dep-of-std", "std", "use_std"))' -C metadata=9d96b3f36974a97e -C extra-filename=-a0558279f33a4918 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/memchr/a0558279f33a4918/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/memchr/a0558279f33a4918/out --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+       Dirty dlmalloc v0.2.14: the dependency `cfg-if` was rebuilt
+   Compiling dlmalloc v0.2.14
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=dlmalloc CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dlmalloc-0.2.14 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dlmalloc-0.2.14/Cargo.toml CARGO_PKG_AUTHORS='Alex Crichton <alex@alexcrichton.com>' CARGO_PKG_DESCRIPTION='A Rust port of the dlmalloc allocator
+' CARGO_PKG_HOMEPAGE='https://github.com/alexcrichton/dlmalloc-rs' CARGO_PKG_LICENSE=MIT/Apache-2.0 CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=dlmalloc CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/alexcrichton/dlmalloc-rs' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.2.14 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=2 CARGO_PKG_VERSION_PATCH=14 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name dlmalloc --edition=2021 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dlmalloc-0.2.14/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --cfg 'feature="core"' --cfg 'feature="rustc-dep-of-std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("core", "debug", "global", "rustc-dep-of-std"))' -C metadata=97bd739a7766f22a -C extra-filename=-5d5cce06b1f2406f --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/dlmalloc/5d5cce06b1f2406f/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/dlmalloc/5d5cce06b1f2406f/out --extern cfg_if=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/cfg-if/4c72a8132b584c68/out/libcfg_if-4c72a8132b584c68.rmeta --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+       Dirty unwind v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/unwind): the dependency `rustc-std-workspace-core` was rebuilt
+   Compiling unwind v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/unwind)
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=unwind CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/unwind CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/unwind/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=unwind CARGO_PKG_README='' CARGO_PKG_REPOSITORY='https://github.com/rust-lang/rust.git' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.0.0 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name unwind --edition=2024 sysroot-patched/library/unwind/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --warn=unexpected_cfgs --check-cfg 'cfg(target_arch, values("loongarch32"))' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("llvm-libunwind", "system-llvm-libunwind"))' -C metadata=9ffee01e55774b49 -C extra-filename=-0a68eef3ddeebb29 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/unwind/0a68eef3ddeebb29/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/unwind/0a68eef3ddeebb29/out --extern libc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out/liblibc-21509f590a4a9c85.rmeta --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+warning: use of deprecated constant `rustc_std_workspace_core::u8::MAX`: replaced by the `MAX` associated constant on this type
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/memchr-2.8.3/src/arch/all/packedpair/mod.rs:179:41
+    |
+179 |         let max = usize::from(core::u8::MAX);
+    |                                         ^^^
+    |
+    = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated constant `rustc_std_workspace_core::u32::MAX`: replaced by the `MAX` associated constant on this type
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/memchr-2.8.3/src/memmem/searcher.rs:916:34
+    |
+916 |             Err(_) => core::u32::MAX,
+    |                                  ^^^
+
+warning: use of deprecated associated function `rustc_std_workspace_core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+    --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dlmalloc-0.2.14/src/dlmalloc.rs:1388:42
+     |
+1388 |                 self.trim_check = usize::max_value();
+     |                                          ^^^^^^^^^
+     |
+     = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated associated function `rustc_std_workspace_core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dlmalloc-0.2.14/src/wasm.rs:54:23
+   |
+54 |     if prev == usize::max_value() {
+   |                       ^^^^^^^^^
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustc-demangle-0.1.28/src/lib.rs:92:24
+   |
+92 | pub fn demangle(mut s: &str) -> Demangle {
+   |                        ^^^^     ^^^^^^^^ the same lifetime is hidden here
+   |                        |
+   |                        the lifetime is elided here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+   |
+92 | pub fn demangle(mut s: &str) -> Demangle<'_> {
+   |                                         ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustc-demangle-0.1.28/src/lib.rs:237:24
+    |
+237 | pub fn try_demangle(s: &str) -> Result<Demangle, TryDemangleError> {
+    |                        ^^^^            ^^^^^^^^ the same lifetime is hidden here
+    |                        |
+    |                        the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+    |
+237 | pub fn try_demangle(s: &str) -> Result<Demangle<'_>, TryDemangleError> {
+    |                                                ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustc-demangle-0.1.28/src/legacy.rs:49:20
+   |
+49 | pub fn demangle(s: &str) -> Result<(Demangle, &str), ()> {
+   |                    ^^^^             ^^^^^^^^  ^^^^ the same lifetime is elided here
+   |                    |                |
+   |                    |                the same lifetime is hidden here
+   |                    the lifetime is elided here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+   |
+49 | pub fn demangle(s: &str) -> Result<(Demangle<'_>, &str), ()> {
+   |                                             ++++
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rustc-demangle-0.1.28/src/v0.rs:37:20
+   |
+37 | pub fn demangle(s: &str) -> Result<(Demangle, &str), ParseError> {
+   |                    ^^^^             ^^^^^^^^  ^^^^ the same lifetime is elided here
+   |                    |                |
+   |                    |                the same lifetime is hidden here
+   |                    the lifetime is elided here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+help: use `'_` for type paths
+   |
+37 | pub fn demangle(s: &str) -> Result<(Demangle<'_>, &str), ParseError> {
+   |                                             ++++
+
+warning: `dlmalloc` (lib) generated 2 warnings
+warning: `memchr` (lib) generated 2 warnings
+warning: `rustc-demangle` (lib) generated 4 warnings
+       Dirty rustc-std-workspace-alloc v1.99.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/rustc-std-workspace-alloc): the dependency `alloc` was rebuilt
+   Compiling rustc-std-workspace-alloc v1.99.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/rustc-std-workspace-alloc)
+       Dirty panic_unwind v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/panic_unwind): the dependency `unwind` was rebuilt
+   Compiling panic_unwind v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/panic_unwind)
+       Dirty panic_abort v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/panic_abort): the dependency `alloc` was rebuilt
+   Compiling panic_abort v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/panic_abort)
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=rustc_std_workspace_alloc CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/rustc-std-workspace-alloc CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/rustc-std-workspace-alloc/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='Hack for the compiler'\''s own build system
+' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=rustc-std-workspace-alloc CARGO_PKG_README='' CARGO_PKG_REPOSITORY='' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=1.99.0 CARGO_PKG_VERSION_MAJOR=1 CARGO_PKG_VERSION_MINOR=99 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name rustc_std_workspace_alloc --edition=2024 sysroot-patched/library/rustc-std-workspace-alloc/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values())' -C metadata=85cd07e571a056db -C extra-filename=-d939b28a69f17ce7 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out --extern alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out/liballoc-9360459e05668670.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=panic_abort CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/panic_abort CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/panic_abort/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='Implementation of Rust panics via process aborts' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=panic_abort CARGO_PKG_README='' CARGO_PKG_REPOSITORY='https://github.com/rust-lang/rust.git' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.0.0 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name panic_abort --edition=2024 sysroot-patched/library/panic_abort/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values())' -C metadata=c8647b2aa4fd2665 -C extra-filename=-385065557a6334a8 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/panic_abort/385065557a6334a8/out --extern alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out/liballoc-9360459e05668670.rmeta --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=panic_unwind CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/panic_unwind CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/panic_unwind/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='Implementation of Rust panics via stack unwinding' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=panic_unwind CARGO_PKG_README='' CARGO_PKG_REPOSITORY='https://github.com/rust-lang/rust.git' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.0.0 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name panic_unwind --edition=2024 sysroot-patched/library/panic_unwind/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values())' -C metadata=a47d5321fc41ace1 -C extra-filename=-907be79730b105d3 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/panic_unwind/907be79730b105d3/out --extern alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out/liballoc-9360459e05668670.rmeta --extern libc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out/liblibc-21509f590a4a9c85.rmeta --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --extern unwind=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/unwind/0a68eef3ddeebb29/out/libunwind-0a68eef3ddeebb29.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+       Dirty gimli v0.34.0: the dependency `rustc-std-workspace-core` was rebuilt
+   Compiling gimli v0.34.0
+       Dirty object v0.39.1: the dependency `rustc-std-workspace-core` was rebuilt
+   Compiling object v0.39.1
+       Dirty miniz_oxide v0.9.1: the dependency `adler2` was rebuilt
+   Compiling miniz_oxide v0.9.1
+       Dirty hashbrown v0.17.1: the dependency `rustc-std-workspace-core` was rebuilt
+   Compiling hashbrown v0.17.1
+       Dirty std_detect v0.1.5 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/std_detect): the dependency `rustc-std-workspace-core` was rebuilt
+   Compiling std_detect v0.1.5 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/std_detect)
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=std_detect CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/std_detect CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/std_detect/Cargo.toml CARGO_PKG_AUTHORS='Alex Crichton <alex@alexcrichton.com>:Andrew Gallant <jamslam@gmail.com>:Gonzalo Brito Gadeschi <gonzalobg88@gmail.com>' CARGO_PKG_DESCRIPTION='`std::detect` - Rust'\''s standard library run-time CPU feature detection.' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=std_detect CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.1.5 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=1 CARGO_PKG_VERSION_PATCH=5 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name std_detect --edition=2024 sysroot-patched/library/std_detect/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("std_detect_env_override"))' -C metadata=3aad9cd6789b7c24 -C extra-filename=-06d55d04504e1192 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std_detect/06d55d04504e1192/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/std_detect/06d55d04504e1192/out --extern libc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out/liblibc-21509f590a4a9c85.rmeta --extern alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out/librustc_std_workspace_alloc-d939b28a69f17ce7.rmeta --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=miniz_oxide CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/miniz_oxide-0.9.1 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/miniz_oxide-0.9.1/Cargo.toml CARGO_PKG_AUTHORS='Frommi <daniil.liferenko@gmail.com>:oyvindln <oyvindln@users.noreply.github.com>:Rich Geldreich richgel99@gmail.com' CARGO_PKG_DESCRIPTION='DEFLATE compression and decompression library rewritten in Rust based on miniz' CARGO_PKG_HOMEPAGE='https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide' CARGO_PKG_LICENSE='MIT OR Zlib OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=miniz_oxide CARGO_PKG_README=Readme.md CARGO_PKG_REPOSITORY='https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.9.1 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=9 CARGO_PKG_VERSION_PATCH=1 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name miniz_oxide --edition=2021 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/miniz_oxide-0.9.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --warn=unexpected_cfgs --check-cfg 'cfg(fuzzing)' --cfg 'feature="alloc"' --cfg 'feature="core"' --cfg 'feature="rustc-dep-of-std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("alloc", "block-boundary", "core", "default", "rustc-dep-of-std", "serde", "simd", "simd-adler32", "std", "with-alloc"))' -C metadata=4a27624abf4290f3 -C extra-filename=-bd7b9b38aa42eb06 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/miniz_oxide/bd7b9b38aa42eb06/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/miniz_oxide/bd7b9b38aa42eb06/out --extern adler2=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/adler2/413b5fd88633c945/out/libadler2-413b5fd88633c945.rmeta --extern alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out/librustc_std_workspace_alloc-d939b28a69f17ce7.rmeta --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=hashbrown CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hashbrown-0.17.1 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hashbrown-0.17.1/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='A Rust port of Google'\''s SwissTable hash map' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=hashbrown CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/rust-lang/hashbrown' CARGO_PKG_RUST_VERSION=1.85.0 CARGO_PKG_VERSION=0.17.1 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=17 CARGO_PKG_VERSION_PATCH=1 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name hashbrown --edition=2024 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hashbrown-0.17.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --warn=unused_extern_crates --warn=unsafe_op_in_unsafe_fn --warn=unreachable_pub '--warn=clippy::str_to_string' '--warn=clippy::semicolon_if_nothing_returned' '--warn=clippy::ref_as_ptr' '--warn=clippy::redundant_else' '--warn=clippy::ptr_cast_constness' '--warn=clippy::ptr_as_ptr' '--allow=clippy::option_if_let_else' '--warn=clippy::needless_continue' '--allow=clippy::must_use_candidate' '--allow=clippy::module_name_repetitions' '--allow=clippy::missing_safety_doc' '--allow=clippy::missing_errors_doc' --warn=missing_docs '--allow=clippy::manual_map' '--warn=clippy::manual_let_else' --warn=explicit_outlives_requirements --warn=ellipsis_inclusive_range_patterns --warn=elided_lifetimes_in_paths '--allow=clippy::doc_markdown' '--warn=clippy::borrow_as_ptr' --warn=bare_trait_objects --cfg 'feature="alloc"' --cfg 'feature="core"' --cfg 'feature="nightly"' --cfg 'feature="rustc-dep-of-std"' --cfg 'feature="rustc-internal-api"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("alloc", "allocator-api2", "core", "default", "default-hasher", "equivalent", "inline-more", "nightly", "raw-entry", "rayon", "rustc-dep-of-std", "rustc-internal-api", "serde"))' -C metadata=f4f7ba43d75dcfaf -C extra-filename=-c94f92f6f38f54ba --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/hashbrown/c94f92f6f38f54ba/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/hashbrown/c94f92f6f38f54ba/out --extern alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out/librustc_std_workspace_alloc-d939b28a69f17ce7.rmeta --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=object CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/object-0.39.1 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/object-0.39.1/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='A unified interface for reading and writing object file formats.' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='Apache-2.0 OR MIT' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=object CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/gimli-rs/object' CARGO_PKG_RUST_VERSION=1.65 CARGO_PKG_VERSION=0.39.1 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=39 CARGO_PKG_VERSION_PATCH=1 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' OUT_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/object/66702c38f8b45afd/out RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name object --edition=2018 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/object-0.39.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 '--allow=clippy::uninlined_format_args' '--allow=clippy::type_complexity' '--allow=clippy::single_match' '--allow=clippy::should_implement_trait' '--allow=clippy::result_unit_err' '--allow=clippy::needless_lifetimes' '--allow=clippy::match_like_matches_macro' '--allow=clippy::manual_flatten' '--allow=clippy::field_reassign_with_default' '--allow=clippy::comparison_chain' '--allow=clippy::collapsible_match' '--allow=clippy::collapsible_if' '--allow=clippy::collapsible_else_if' --cfg 'feature="alloc"' --cfg 'feature="archive"' --cfg 'feature="coff"' --cfg 'feature="core"' --cfg 'feature="elf"' --cfg 'feature="macho"' --cfg 'feature="pe"' --cfg 'feature="read_core"' --cfg 'feature="rustc-dep-of-std"' --cfg 'feature="unaligned"' --cfg 'feature="xcoff"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("all", "alloc", "archive", "build", "build_core", "cargo-all", "coff", "compression", "core", "default", "doc", "elf", "macho", "pe", "read", "read_core", "rustc-dep-of-std", "std", "unaligned", "unstable", "unstable-all", "wasm", "write", "write_core", "write_std", "xcoff"))' -C metadata=d9513009799dc501 -C extra-filename=-ffbc08e0125dfae2 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/object/ffbc08e0125dfae2/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/object/ffbc08e0125dfae2/out --extern memchr=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/memchr/a0558279f33a4918/out/libmemchr-a0558279f33a4918.rmeta --extern alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out/librustc_std_workspace_alloc-d939b28a69f17ce7.rmeta --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies --cfg core_error --check-cfg 'cfg(core_error)'`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=gimli CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gimli-0.34.0 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gimli-0.34.0/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='A library for reading and writing the DWARF debugging format.' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=gimli CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/gimli-rs/gimli' CARGO_PKG_RUST_VERSION=1.88 CARGO_PKG_VERSION=0.34.0 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=34 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name gimli --edition=2024 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gimli-0.34.0/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --cfg 'feature="read"' --cfg 'feature="read-core"' --cfg 'feature="rustc-dep-of-std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("default", "endian-reader", "fallible-iterator", "read", "read-all", "read-core", "rustc-dep-of-std", "std", "write"))' -C metadata=e09444ef052b1a83 -C extra-filename=-375ecea4431ea06d --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/gimli/375ecea4431ea06d/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/gimli/375ecea4431ea06d/out --extern alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out/librustc_std_workspace_alloc-d939b28a69f17ce7.rmeta --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+warning: lint `fuzzy_provenance_casts` has been renamed to `implicit_provenance_casts`
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hashbrown-0.17.1/src/lib.rs:25:39
+   |
+25 | #![cfg_attr(feature = "nightly", warn(fuzzy_provenance_casts))]
+   |                                       ^^^^^^^^^^^^^^^^^^^^^^ help: use the new name: `implicit_provenance_casts`
+   |
+   = note: `#[warn(renamed_and_removed_lints)]` on by default
+
+warning: the feature `allocator_api` has been partially stabilized since 1.100.0 and is succeeded by the feature `allocator_ext`
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hashbrown-0.17.1/src/lib.rs:21:9
+   |
+21 |         allocator_api,
+   |         ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(stable_features)]` on by default
+help: if you are using features which are still unstable, change to using `allocator_ext`
+   |
+21 -         allocator_api,
+21 +         allocator_ext,
+   |
+help: if you are using features which are now stable, remove this line
+   |
+21 -         allocator_api,
+   |
+
+warning: cast from `*mut T` to `usize` implicitly exposes pointer provenance
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hashbrown-0.17.1/src/raw.rs:391:13
+    |
+391 |             self.ptr.as_ptr() as usize - 1
+    |             ^^^^^^^^^^^^^^^^^---------
+    |                              |
+    |                              help: use `.addr()` to obtain the address of a pointer: `.addr()`
+    |
+    = help: if conforming to strict provenance is not possible, use `.expose_provenance()`
+    = note: for more information, visit <https://doc.rust-lang.org/std/ptr/index.html#provenance>
+note: the lint level is defined here
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hashbrown-0.17.1/src/lib.rs:25:39
+    |
+ 25 | #![cfg_attr(feature = "nightly", warn(fuzzy_provenance_casts))]
+    |                                       ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: cast from `*mut T` to `usize` implicitly exposes pointer provenance
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hashbrown-0.17.1/src/raw.rs:464:25
+    |
+464 |             invalid_mut(self.ptr.as_ptr() as usize + offset)
+    |                         ^^^^^^^^^^^^^^^^^---------
+    |                                          |
+    |                                          help: use `.addr()` to obtain the address of a pointer: `.addr()`
+    |
+    = help: if conforming to strict provenance is not possible, use `.expose_provenance()`
+    = note: for more information, visit <https://doc.rust-lang.org/std/ptr/index.html#provenance>
+
+warning: cast from `*const u8` to `usize` implicitly exposes pointer provenance
+    --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/hashbrown-0.17.1/src/raw.rs:3578:26
+     |
+3578 |         debug_assert_eq!(ctrl as usize % Group::WIDTH, 0);
+     |                          ^^^^---------
+     |                              |
+     |                              help: use `.addr()` to obtain the address of a pointer: `.addr()`
+     |
+     = help: if conforming to strict provenance is not possible, use `.expose_provenance()`
+     = note: for more information, visit <https://doc.rust-lang.org/std/ptr/index.html#provenance>
+
+warning: `hashbrown` (lib) generated 5 warnings
+       Dirty addr2line v0.27.1: the dependency `gimli` was rebuilt
+   Compiling addr2line v0.27.1
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=addr2line CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/addr2line-0.27.1 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/addr2line-0.27.1/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='A cross-platform symbolication library written in Rust, using `gimli`' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='Apache-2.0 OR MIT' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=addr2line CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/gimli-rs/addr2line' CARGO_PKG_RUST_VERSION=1.88 CARGO_PKG_VERSION=0.27.1 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=27 CARGO_PKG_VERSION_PATCH=1 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name addr2line --edition=2018 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/addr2line-0.27.1/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --cfg 'feature="alloc"' --cfg 'feature="core"' --cfg 'feature="rustc-dep-of-std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("all", "alloc", "bin", "cargo-all", "core", "cpp_demangle", "default", "fallible-iterator", "loader", "rustc-demangle", "rustc-dep-of-std", "smallvec", "std", "wasm"))' -C metadata=a1273711ec7efa78 -C extra-filename=-fd7b3cd6c3f40e0d --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/addr2line/fd7b3cd6c3f40e0d/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/addr2line/fd7b3cd6c3f40e0d/out --extern gimli=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/gimli/375ecea4431ea06d/out/libgimli-375ecea4431ea06d.rmeta --extern alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out/librustc_std_workspace_alloc-d939b28a69f17ce7.rmeta --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out/librustc_std_workspace_core-3d7b4c0c07855298.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+       Dirty std v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/std): the dependency `unwind` was rebuilt
+   Compiling std v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/std)
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=std CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/std CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/std/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='The Rust Standard Library' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='MIT OR Apache-2.0' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=std CARGO_PKG_README='' CARGO_PKG_REPOSITORY='https://github.com/rust-lang/rust.git' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.0.0 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' OUT_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/885221efe327f014/out RUSTC_BOOTSTRAP=1 STD_ENV_ARCH=wasm32 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name std --edition=2024 sysroot-patched/library/std/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type rlib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --warn=unexpected_cfgs --check-cfg 'cfg(feature, values(any()))' --check-cfg 'cfg(target_has_reliable_f16)' --check-cfg 'cfg(target_has_reliable_f16_math)' --check-cfg 'cfg(target_has_reliable_f128)' --check-cfg 'cfg(target_has_reliable_f128_math)' --cfg 'feature="addr2line"' --cfg 'feature="backtrace"' --cfg 'feature="miniz_oxide"' --cfg 'feature="object"' --cfg 'feature="panic-unwind"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("addr2line", "backtrace", "backtrace-trace-only", "compiler-builtins-c", "compiler-builtins-mem", "debug_refcell", "llvm-libunwind", "miniz_oxide", "object", "optimize_for_size", "panic-unwind", "system-llvm-libunwind", "windows_raw_dylib"))' -C metadata=112ea2f906ee9df9 -C extra-filename=-b555540edc890c99 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/b555540edc890c99/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/adler2/413b5fd88633c945/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/cfg-if/4c72a8132b584c68/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/gimli/375ecea4431ea06d/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/memchr/a0558279f33a4918/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/unwind/0a68eef3ddeebb29/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/std/b555540edc890c99/out --extern 'priv:addr2line=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/addr2line/fd7b3cd6c3f40e0d/out/libaddr2line-fd7b3cd6c3f40e0d.rmeta' --extern alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out/liballoc-9360459e05668670.rmeta --extern 'priv:cfg_if=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/cfg-if/4c72a8132b584c68/out/libcfg_if-4c72a8132b584c68.rmeta' --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out/libcore-09eacc81d0a4d292.rmeta --extern 'priv:dlmalloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/dlmalloc/5d5cce06b1f2406f/out/libdlmalloc-5d5cce06b1f2406f.rmeta' --extern 'priv:hashbrown=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/hashbrown/c94f92f6f38f54ba/out/libhashbrown-c94f92f6f38f54ba.rmeta' --extern libc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out/liblibc-21509f590a4a9c85.rmeta --extern 'priv:miniz_oxide=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/miniz_oxide/bd7b9b38aa42eb06/out/libminiz_oxide-bd7b9b38aa42eb06.rmeta' --extern 'priv:object=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/object/ffbc08e0125dfae2/out/libobject-ffbc08e0125dfae2.rmeta' --extern 'priv:panic_abort=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out/libpanic_abort-385065557a6334a8.rmeta' --extern 'priv:panic_unwind=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out/libpanic_unwind-907be79730b105d3.rmeta' --extern 'priv:rustc_demangle=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-demangle/12a6f7443098486f/out/librustc_demangle-12a6f7443098486f.rmeta' --extern std_detect=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std_detect/06d55d04504e1192/out/libstd_detect-06d55d04504e1192.rmeta --extern 'priv:unwind=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/unwind/0a68eef3ddeebb29/out/libunwind-0a68eef3ddeebb29.rmeta' -Z unstable-options --cap-lints warn --force-warn=unused_crate_dependencies --cfg backtrace_in_libstd --check-cfg 'cfg(netbsd10)' --check-cfg 'cfg(no_global_oom_handling)' --check-cfg 'cfg(restricted_std)' --check-cfg 'cfg(backtrace_in_libstd)' --check-cfg 'cfg(vxworks_lt_25_09)'`
+       Dirty proc_macro v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/proc_macro): the dependency `std` was rebuilt
+   Compiling proc_macro v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/proc_macro)
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=proc_macro CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/proc_macro CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/proc_macro/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=proc_macro CARGO_PKG_README='' CARGO_PKG_REPOSITORY='' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.0.0 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' RUSTC_BOOTSTRAP=1 /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name proc_macro --edition=2024 sysroot-patched/library/proc_macro/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --warn=unexpected_cfgs --check-cfg 'cfg(bootstrap)' --cfg 'feature="default"' --cfg 'feature="rustc-dep-of-std"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("default", "rustc-dep-of-std"))' -C metadata=1b0b315905295c49 -C extra-filename=-95a4db30ca2a6157 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/proc_macro/95a4db30ca2a6157/out --target wasm32-unknown-unknown -C strip=debuginfo -Z force-unstable-if-unmarked -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/addr2line/fd7b3cd6c3f40e0d/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/adler2/413b5fd88633c945/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/cfg-if/4c72a8132b584c68/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/dlmalloc/5d5cce06b1f2406f/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/gimli/375ecea4431ea06d/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/hashbrown/c94f92f6f38f54ba/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/memchr/a0558279f33a4918/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/miniz_oxide/bd7b9b38aa42eb06/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/object/ffbc08e0125dfae2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-demangle/12a6f7443098486f/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std_detect/06d55d04504e1192/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/unwind/0a68eef3ddeebb29/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/proc_macro/95a4db30ca2a6157/out --extern core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out/libcore-09eacc81d0a4d292.rmeta --extern rustc_literal_escaper=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-literal-escaper/3afc9fb750ff303e/out/librustc_literal_escaper-3afc9fb750ff303e.rmeta --extern std=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/b555540edc890c99/out/libstd-b555540edc890c99.rmeta --cap-lints warn --force-warn=unused_crate_dependencies`
+       Dirty libm v0.2.16: the dependency `std` was rebuilt
+   Compiling libm v0.2.16
+       Dirty libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm): the dependency `std` was rebuilt
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=libm CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/Cargo.toml CARGO_PKG_AUTHORS='Alex Crichton <alex@alexcrichton.com>:Amanieu d'\''Antras <amanieu@gmail.com>:Jorge Aparicio <japaricious@gmail.com>:Trevor Gross <tg@trevorgross.com>' CARGO_PKG_DESCRIPTION='libm in pure Rust' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE=MIT CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=libm CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/rust-lang/compiler-builtins' CARGO_PKG_RUST_VERSION=1.63 CARGO_PKG_VERSION=0.2.16 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=2 CARGO_PKG_VERSION_PATCH=16 CARGO_PKG_VERSION_PRE='' CFG_CARGO_FEATURES='[]' CFG_OPT_LEVEL=3 CFG_TARGET_FEATURES='["bulk-memory", "multivalue", "mutable-globals", "nontrapping-fptoint", "reference-types", "sign-ext"]' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' OUT_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libm/e368d482ff13504d/out /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name libm --edition=2021 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --warn=unexpected_cfgs --check-cfg 'cfg(feature, values("compiler-builtins"))' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("arch", "default", "force-soft-floats", "unstable", "unstable-float", "unstable-intrinsics", "unstable-public-internals"))' -C metadata=7f0620de08d42262 -C extra-filename=-788379ddfd2ecff0 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libm/788379ddfd2ecff0/out --target wasm32-unknown-unknown -C strip=debuginfo -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/addr2line/fd7b3cd6c3f40e0d/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/adler2/413b5fd88633c945/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/cfg-if/4c72a8132b584c68/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/dlmalloc/5d5cce06b1f2406f/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/gimli/375ecea4431ea06d/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/hashbrown/c94f92f6f38f54ba/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/memchr/a0558279f33a4918/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/miniz_oxide/bd7b9b38aa42eb06/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/object/ffbc08e0125dfae2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-demangle/12a6f7443098486f/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-literal-escaper/3afc9fb750ff303e/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/b555540edc890c99/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std_detect/06d55d04504e1192/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/unwind/0a68eef3ddeebb29/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/libm/788379ddfd2ecff0/out --extern 'noprelude,nounused:alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out/liballoc-9360459e05668670.rmeta' --extern 'noprelude,nounused:compiler_builtins=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out/libcompiler_builtins-f613e6d2f182e3a2.rmeta' --extern 'noprelude,nounused:core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out/libcore-09eacc81d0a4d292.rmeta' --extern 'noprelude,nounused:panic_abort=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out/libpanic_abort-385065557a6334a8.rmeta' --extern 'noprelude,nounused:panic_unwind=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out/libpanic_unwind-907be79730b105d3.rmeta' --extern 'noprelude,nounused:proc_macro=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/proc_macro/95a4db30ca2a6157/out/libproc_macro-95a4db30ca2a6157.rmeta' --extern 'noprelude,nounused:std=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/b555540edc890c99/out/libstd-b555540edc890c99.rmeta' -Z unstable-options --cap-lints warn --force-warn=unused_crate_dependencies --cfg optimizations_enabled --check-cfg 'cfg(assert_no_panic)' --check-cfg 'cfg(intrinsics_enabled)' --check-cfg 'cfg(arch_enabled)' --check-cfg 'cfg(optimizations_enabled)' --check-cfg 'cfg(x86_no_sse)' --check-cfg 'cfg(f16_enabled)' --check-cfg 'cfg(f128_enabled)'`
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=libm CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/libm CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/libm/Cargo.toml CARGO_PKG_AUTHORS='Alex Crichton <alex@alexcrichton.com>:Amanieu d'\''Antras <amanieu@gmail.com>:Jorge Aparicio <japaricious@gmail.com>:Trevor Gross <tg@trevorgross.com>' CARGO_PKG_DESCRIPTION='libm in pure Rust' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE=MIT CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=libm CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/rust-lang/compiler-builtins' CARGO_PKG_RUST_VERSION=1.67 CARGO_PKG_VERSION=0.2.16 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=2 CARGO_PKG_VERSION_PATCH=16 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' OUT_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libm/01c52b0a76806b5f/out /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name libm --edition=2021 /Users/fangluo/Documents/ChatGPT/libm/libm/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --warn=unexpected_cfgs --check-cfg 'cfg(feature, values("compiler-builtins"))' --check-cfg 'cfg(feature, values("unmangled-names"))' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("arch", "default", "force-soft-floats", "unstable", "unstable-float", "unstable-intrinsics", "unstable-public-internals"))' -C metadata=59c06d037d092ff6 -C extra-filename=-d84194c2398dc25d --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libm/d84194c2398dc25d/out --target wasm32-unknown-unknown -C strip=debuginfo -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/addr2line/fd7b3cd6c3f40e0d/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/adler2/413b5fd88633c945/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/cfg-if/4c72a8132b584c68/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/dlmalloc/5d5cce06b1f2406f/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/gimli/375ecea4431ea06d/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/hashbrown/c94f92f6f38f54ba/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/memchr/a0558279f33a4918/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/miniz_oxide/bd7b9b38aa42eb06/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/object/ffbc08e0125dfae2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-demangle/12a6f7443098486f/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-literal-escaper/3afc9fb750ff303e/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/b555540edc890c99/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std_detect/06d55d04504e1192/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/unwind/0a68eef3ddeebb29/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/libm/d84194c2398dc25d/out --extern 'noprelude,nounused:alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out/liballoc-9360459e05668670.rmeta' --extern 'noprelude,nounused:compiler_builtins=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out/libcompiler_builtins-f613e6d2f182e3a2.rmeta' --extern 'noprelude,nounused:core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out/libcore-09eacc81d0a4d292.rmeta' --extern 'noprelude,nounused:panic_abort=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out/libpanic_abort-385065557a6334a8.rmeta' --extern 'noprelude,nounused:panic_unwind=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out/libpanic_unwind-907be79730b105d3.rmeta' --extern 'noprelude,nounused:proc_macro=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/proc_macro/95a4db30ca2a6157/out/libproc_macro-95a4db30ca2a6157.rmeta' --extern 'noprelude,nounused:std=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/b555540edc890c99/out/libstd-b555540edc890c99.rmeta' -Z unstable-options --force-warn=unused_crate_dependencies --cfg optimizations_enabled --check-cfg 'cfg(thumb)' --check-cfg 'cfg(thumb1_only)' --check-cfg 'cfg(target_abi_eabihf)' --check-cfg 'cfg(x86_no_sse2)' --check-cfg 'cfg(target_feature, values("vfp2sp", "vfp2"))' --check-cfg 'cfg(assert_no_panic)' --check-cfg 'cfg(intrinsics_enabled)' --check-cfg 'cfg(optimizations_enabled)' --check-cfg 'cfg(f16_enabled)' --check-cfg 'cfg(f128_enabled)'`
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/big.rs:200:14
+    |
+200 |         self.widen()
+    |              ^^^^^
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+    = note: `#[warn(unstable_name_collisions)]` (part of `#[warn(future_incompatible)]`) on by default
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u128>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: an associated constant with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/float_traits.rs:232:68
+    |
+207 |   macro_rules! float_impl {
+...
+232 |               const NEG_NAN: Self = $from_bits($to_bits(Self::NAN) | Self::SIGN_MASK);
+    |                                                                      ^^^^^^^^^^^^^^^
+...
+324 | / float_impl!(
+325 | |     f32,
+326 | |     u32,
+327 | |     i32,
+...   |
+333 | |     fmaf32
+334 | | );
+    | |_- in this macro invocation
+    |
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: use the fully qualified path to the associated const
+    |
+232 -             const NEG_NAN: Self = $from_bits($to_bits(Self::NAN) | Self::SIGN_MASK);
+232 +             const NEG_NAN: Self = $from_bits($to_bits(Self::NAN) | <f32 as float_traits::Float>::SIGN_MASK);
+    |
+help: add `#![feature(float_masks)]` to the crate attributes to enable `core::f32::<impl f32>::SIGN_MASK`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(float_masks)]
+    |
+
+warning: an associated constant with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/float_traits.rs:248:48
+    |
+207 |   macro_rules! float_impl {
+...
+248 |               const SIGN_MASK: Self::Int = 1 << (Self::BITS - 1);
+    |                                                  ^^^^^^^^^^
+...
+324 | / float_impl!(
+325 | |     f32,
+326 | |     u32,
+327 | |     i32,
+...   |
+333 | |     fmaf32
+334 | | );
+    | |_- in this macro invocation
+    |
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: use the fully qualified path to the associated const
+    |
+248 -             const SIGN_MASK: Self::Int = 1 << (Self::BITS - 1);
+248 +             const SIGN_MASK: Self::Int = 1 << (<f32 as float_traits::Float>::BITS - 1);
+    |
+help: add `#![feature(float_bits_const)]` to the crate attributes to enable `core::f32::<impl f32>::BITS`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(float_bits_const)]
+    |
+
+warning: an associated constant with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/float_traits.rs:250:43
+    |
+207 |   macro_rules! float_impl {
+...
+250 |               const EXP_MASK: Self::Int = !(Self::SIGN_MASK | Self::SIG_MASK);
+    |                                             ^^^^^^^^^^^^^^^
+...
+324 | / float_impl!(
+325 | |     f32,
+326 | |     u32,
+327 | |     i32,
+...   |
+333 | |     fmaf32
+334 | | );
+    | |_- in this macro invocation
+    |
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: use the fully qualified path to the associated const
+    |
+250 -             const EXP_MASK: Self::Int = !(Self::SIGN_MASK | Self::SIG_MASK);
+250 +             const EXP_MASK: Self::Int = !(<f32 as float_traits::Float>::SIGN_MASK | Self::SIG_MASK);
+    |
+help: add `#![feature(float_masks)]` to the crate attributes to enable `core::f32::<impl f32>::SIGN_MASK`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(float_masks)]
+    |
+
+warning: an associated constant with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/float_traits.rs:232:68
+    |
+207 |   macro_rules! float_impl {
+...
+232 |               const NEG_NAN: Self = $from_bits($to_bits(Self::NAN) | Self::SIGN_MASK);
+    |                                                                      ^^^^^^^^^^^^^^^
+...
+335 | / float_impl!(
+336 | |     f64,
+337 | |     u64,
+338 | |     i64,
+...   |
+344 | |     fmaf64
+345 | | );
+    | |_- in this macro invocation
+    |
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: use the fully qualified path to the associated const
+    |
+232 -             const NEG_NAN: Self = $from_bits($to_bits(Self::NAN) | Self::SIGN_MASK);
+232 +             const NEG_NAN: Self = $from_bits($to_bits(Self::NAN) | <f64 as float_traits::Float>::SIGN_MASK);
+    |
+help: add `#![feature(float_masks)]` to the crate attributes to enable `core::f64::<impl f64>::SIGN_MASK`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(float_masks)]
+    |
+
+warning: an associated constant with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/float_traits.rs:248:48
+    |
+207 |   macro_rules! float_impl {
+...
+248 |               const SIGN_MASK: Self::Int = 1 << (Self::BITS - 1);
+    |                                                  ^^^^^^^^^^
+...
+335 | / float_impl!(
+336 | |     f64,
+337 | |     u64,
+338 | |     i64,
+...   |
+344 | |     fmaf64
+345 | | );
+    | |_- in this macro invocation
+    |
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: use the fully qualified path to the associated const
+    |
+248 -             const SIGN_MASK: Self::Int = 1 << (Self::BITS - 1);
+248 +             const SIGN_MASK: Self::Int = 1 << (<f64 as float_traits::Float>::BITS - 1);
+    |
+help: add `#![feature(float_bits_const)]` to the crate attributes to enable `core::f64::<impl f64>::BITS`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(float_bits_const)]
+    |
+
+warning: an associated constant with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/float_traits.rs:250:43
+    |
+207 |   macro_rules! float_impl {
+...
+250 |               const EXP_MASK: Self::Int = !(Self::SIGN_MASK | Self::SIG_MASK);
+    |                                             ^^^^^^^^^^^^^^^
+...
+335 | / float_impl!(
+336 | |     f64,
+337 | |     u64,
+338 | |     i64,
+...   |
+344 | |     fmaf64
+345 | | );
+    | |_- in this macro invocation
+    |
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: use the fully qualified path to the associated const
+    |
+250 -             const EXP_MASK: Self::Int = !(Self::SIGN_MASK | Self::SIG_MASK);
+250 +             const EXP_MASK: Self::Int = !(<f64 as float_traits::Float>::SIGN_MASK | Self::SIG_MASK);
+    |
+help: add `#![feature(float_masks)]` to the crate attributes to enable `core::f64::<impl f64>::SIGN_MASK`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(float_masks)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits/narrowing_div.rs:37:28
+   |
+30 | macro_rules! impl_narrowing_div_primitive {
+...
+37 |                 ((self / n.widen()).cast(), (self % n.widen()).cast())
+   |                            ^^^^^
+...
+75 | impl_narrowing_div_primitive!(u16);
+   | ---------------------------------- in this macro invocation
+   |
+   = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+   = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+   = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u8>::widen`
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+   |
+26 + #![feature(integer_widen_truncate)]
+   |
+
+warning: a method with this name may be added to the standard library in the future
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits/narrowing_div.rs:37:55
+   |
+30 | macro_rules! impl_narrowing_div_primitive {
+...
+37 |                 ((self / n.widen()).cast(), (self % n.widen()).cast())
+   |                                                       ^^^^^
+...
+75 | impl_narrowing_div_primitive!(u16);
+   | ---------------------------------- in this macro invocation
+   |
+   = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+   = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+   = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u8>::widen`
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+   |
+26 + #![feature(integer_widen_truncate)]
+   |
+
+warning: a method with this name may be added to the standard library in the future
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits/narrowing_div.rs:37:28
+   |
+30 | macro_rules! impl_narrowing_div_primitive {
+...
+37 |                 ((self / n.widen()).cast(), (self % n.widen()).cast())
+   |                            ^^^^^
+...
+76 | impl_narrowing_div_primitive!(u32);
+   | ---------------------------------- in this macro invocation
+   |
+   = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+   = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+   = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u16>::widen`
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+   |
+26 + #![feature(integer_widen_truncate)]
+   |
+
+warning: a method with this name may be added to the standard library in the future
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits/narrowing_div.rs:37:55
+   |
+30 | macro_rules! impl_narrowing_div_primitive {
+...
+37 |                 ((self / n.widen()).cast(), (self % n.widen()).cast())
+   |                                                       ^^^^^
+...
+76 | impl_narrowing_div_primitive!(u32);
+   | ---------------------------------- in this macro invocation
+   |
+   = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+   = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+   = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u16>::widen`
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+   |
+26 + #![feature(integer_widen_truncate)]
+   |
+
+warning: a method with this name may be added to the standard library in the future
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits/narrowing_div.rs:37:28
+   |
+30 | macro_rules! impl_narrowing_div_primitive {
+...
+37 |                 ((self / n.widen()).cast(), (self % n.widen()).cast())
+   |                            ^^^^^
+...
+77 | impl_narrowing_div_primitive!(u64);
+   | ---------------------------------- in this macro invocation
+   |
+   = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+   = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+   = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u32>::widen`
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+   |
+26 + #![feature(integer_widen_truncate)]
+   |
+
+warning: a method with this name may be added to the standard library in the future
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits/narrowing_div.rs:37:55
+   |
+30 | macro_rules! impl_narrowing_div_primitive {
+...
+37 |                 ((self / n.widen()).cast(), (self % n.widen()).cast())
+   |                                                       ^^^^^
+...
+77 | impl_narrowing_div_primitive!(u64);
+   | ---------------------------------- in this macro invocation
+   |
+   = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+   = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+   = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u32>::widen`
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+   |
+26 + #![feature(integer_widen_truncate)]
+   |
+
+warning: a method with this name may be added to the standard library in the future
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits/narrowing_div.rs:37:28
+   |
+30 | macro_rules! impl_narrowing_div_primitive {
+...
+37 |                 ((self / n.widen()).cast(), (self % n.widen()).cast())
+   |                            ^^^^^
+...
+78 | impl_narrowing_div_primitive!(u128);
+   | ----------------------------------- in this macro invocation
+   |
+   = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+   = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+   = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u64>::widen`
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+   |
+26 + #![feature(integer_widen_truncate)]
+   |
+
+warning: a method with this name may be added to the standard library in the future
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits/narrowing_div.rs:37:55
+   |
+30 | macro_rules! impl_narrowing_div_primitive {
+...
+37 |                 ((self / n.widen()).cast(), (self % n.widen()).cast())
+   |                                                       ^^^^^
+...
+78 | impl_narrowing_div_primitive!(u128);
+   | ----------------------------------- in this macro invocation
+   |
+   = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+   = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+   = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u64>::widen`
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+   |
+26 + #![feature(integer_widen_truncate)]
+   |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:26
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                            ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u8>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:51
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                                                     ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u8>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:26
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                            ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u16>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:51
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                                                     ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u16>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:26
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                            ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u32>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:51
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                                                     ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u32>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:26
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                            ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u64>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:51
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                                                     ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl u64>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:26
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                            ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl i8>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:51
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                                                     ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl i8>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:26
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                            ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl i16>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:51
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                                                     ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl i16>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:26
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                            ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl i32>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:51
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                                                     ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl i32>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:26
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                            ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl i64>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: a method with this name may be added to the standard library in the future
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/support/int_traits.rs:382:51
+    |
+366 |   macro_rules! impl_h_int {
+...
+382 |                       self.widen().wrapping_mul(rhs.widen())
+    |                                                     ^^^^^
+...
+393 | / impl_h_int!(
+394 | |     u8 u8 u16,
+395 | |     u16 u16 u32,
+396 | |     u32 u32 u64,
+...   |
+401 | |     i64 u64 i128
+402 | | );
+    | |_- in this macro invocation
+    |
+    = help: call with fully qualified syntax `HInt::widen(...)` to keep using the current method
+    = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+    = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: add `#![feature(integer_widen_truncate)]` to the crate attributes to enable `core::num::<impl i64>::widen`
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+    |
+ 26 + #![feature(integer_widen_truncate)]
+    |
+
+warning: an associated constant with this name may be added to the standard library in the future
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/math/cbrt.rs:49:29
+   |
+49 |         let ix: u64 = hx & !f64::SIGN_MASK;
+   |                             ^^^^^^^^^^^^^^
+   |
+   = warning: once this associated item is added to the standard library, the ambiguity may cause an error or change in behavior!
+   = note: for more information, see issue #48919 <https://github.com/rust-lang/rust/issues/48919>
+help: use the fully qualified path to the associated const
+   |
+49 -         let ix: u64 = hx & !f64::SIGN_MASK;
+49 +         let ix: u64 = hx & !<f64 as float_traits::Float>::SIGN_MASK;
+   |
+help: add `#![feature(float_masks)]` to the crate attributes to enable `core::f64::<impl f64>::SIGN_MASK`
+  --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libm-0.2.16/src/lib.rs:26:1
+   |
+26 + #![feature(float_masks)]
+   |
+
+       Dirty petir v0.0.3: the dependency `std` was rebuilt
+   Compiling petir v0.0.3
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=petir CARGO_MANIFEST_DIR=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/petir-0.0.3 CARGO_MANIFEST_PATH=/Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/petir-0.0.3/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='PETIR — Polynomials, Equations, Transforms, Integration and Roots. A no_std, dependency-lean core numerics library ported from the GNU Scientific Library. Independent port, not affiliated with or endorsed by GSL or the FSF. AI-assisted draft: unverified and untrusted except where a specific V&V case demonstrates otherwise — not for safety-critical use.' CARGO_PKG_HOMEPAGE='https://github.com/theodoreOnzGit/outram-park-backend' CARGO_PKG_LICENSE=AGPL-3.0-only CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=petir CARGO_PKG_README=README.md CARGO_PKG_REPOSITORY='https://github.com/theodoreOnzGit/outram-park-backend' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.0.3 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=0 CARGO_PKG_VERSION_PATCH=3 CARGO_PKG_VERSION_PRE='' DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name petir --edition=2021 /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/petir-0.0.3/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("default", "faer", "std", "transfer-fn", "uom", "wgpu"))' -C metadata=99d02efbe74930e6 -C extra-filename=-2cfb0eadeffe9ae1 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/petir/2cfb0eadeffe9ae1/out --target wasm32-unknown-unknown -C strip=debuginfo -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/addr2line/fd7b3cd6c3f40e0d/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/adler2/413b5fd88633c945/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/cfg-if/4c72a8132b584c68/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/dlmalloc/5d5cce06b1f2406f/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/gimli/375ecea4431ea06d/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/hashbrown/c94f92f6f38f54ba/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/memchr/a0558279f33a4918/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/miniz_oxide/bd7b9b38aa42eb06/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/object/ffbc08e0125dfae2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/proc_macro/95a4db30ca2a6157/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-demangle/12a6f7443098486f/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-literal-escaper/3afc9fb750ff303e/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/b555540edc890c99/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std_detect/06d55d04504e1192/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/unwind/0a68eef3ddeebb29/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/petir/2cfb0eadeffe9ae1/out --extern 'noprelude,nounused:alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out/liballoc-9360459e05668670.rmeta' --extern 'noprelude,nounused:compiler_builtins=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out/libcompiler_builtins-f613e6d2f182e3a2.rmeta' --extern 'noprelude,nounused:core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out/libcore-09eacc81d0a4d292.rmeta' --extern libm=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libm/788379ddfd2ecff0/out/liblibm-788379ddfd2ecff0.rmeta --extern 'noprelude,nounused:panic_abort=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out/libpanic_abort-385065557a6334a8.rmeta' --extern 'noprelude,nounused:panic_unwind=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out/libpanic_unwind-907be79730b105d3.rmeta' --extern 'noprelude,nounused:proc_macro=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/proc_macro/95a4db30ca2a6157/out/libproc_macro-95a4db30ca2a6157.rmeta' --extern 'noprelude,nounused:std=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/b555540edc890c99/out/libstd-b555540edc890c99.rmeta' -Z unstable-options --cap-lints warn --force-warn=unused_crate_dependencies`
+warning: `libm` (lib) generated 32 warnings
+       Dirty pow-experiment v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow): the dependency `libm` was rebuilt
+   Compiling pow-experiment v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow)
+     Running `CARGO=/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo CARGO_CRATE_NAME=pow_experiment CARGO_MANIFEST_DIR=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow CARGO_MANIFEST_PATH=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/Cargo.toml CARGO_PKG_AUTHORS='' CARGO_PKG_DESCRIPTION='' CARGO_PKG_HOMEPAGE='' CARGO_PKG_LICENSE='' CARGO_PKG_LICENSE_FILE='' CARGO_PKG_NAME=pow-experiment CARGO_PKG_README='' CARGO_PKG_REPOSITORY='' CARGO_PKG_RUST_VERSION='' CARGO_PKG_VERSION=0.1.0 CARGO_PKG_VERSION_MAJOR=0 CARGO_PKG_VERSION_MINOR=1 CARGO_PKG_VERSION_PATCH=0 CARGO_PKG_VERSION_PRE='' CARGO_PRIMARY_PACKAGE=1 DYLD_FALLBACK_LIBRARY_PATH='/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib:/Users/fangluo/lib:/usr/local/lib:/usr/lib' /Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name pow_experiment --edition=2024 src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type rlib --crate-type cdylib --emit=dep-info,metadata,link -Z embed-metadata=no -C opt-level=3 -C panic=abort -C codegen-units=1 '--forbid=clippy::unwrap_used' --deny=unsafe_code '--forbid=clippy::unreachable' '--forbid=clippy::unimplemented' '--forbid=clippy::todo' '--forbid=clippy::panic' '--forbid=clippy::mem_forget' '--deny=clippy::let_underscore_must_use' '--deny=clippy::let_underscore_future' '--forbid=clippy::get_unwrap' '--forbid=clippy::expect_used' '--forbid=clippy::exit' '--deny=clippy::await_holding_lock' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values())' -C metadata=19912d890adfc014 --out-dir /Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/pow-experiment/97aa3bf98630e6a7/out --target wasm32-unknown-unknown -C strip=debuginfo -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/addr2line/fd7b3cd6c3f40e0d/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/adler2/413b5fd88633c945/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/cfg-if/4c72a8132b584c68/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/dlmalloc/5d5cce06b1f2406f/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/gimli/375ecea4431ea06d/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/hashbrown/c94f92f6f38f54ba/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libc/21509f590a4a9c85/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libm/788379ddfd2ecff0/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/memchr/a0558279f33a4918/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/miniz_oxide/bd7b9b38aa42eb06/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/object/ffbc08e0125dfae2/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/proc_macro/95a4db30ca2a6157/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-demangle/12a6f7443098486f/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-literal-escaper/3afc9fb750ff303e/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-alloc/d939b28a69f17ce7/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/rustc-std-workspace-core/3d7b4c0c07855298/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/b555540edc890c99/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std_detect/06d55d04504e1192/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/unwind/0a68eef3ddeebb29/out -L dependency=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/release/build/pow-experiment/97aa3bf98630e6a7/out --extern 'noprelude,nounused:alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out/liballoc-9360459e05668670.rlib' --extern 'noprelude,nounused:alloc=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/alloc/9360459e05668670/out/liballoc-9360459e05668670.rmeta' --extern 'noprelude,nounused:compiler_builtins=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out/libcompiler_builtins-f613e6d2f182e3a2.rlib' --extern 'noprelude,nounused:compiler_builtins=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/compiler_builtins/f613e6d2f182e3a2/out/libcompiler_builtins-f613e6d2f182e3a2.rmeta' --extern 'noprelude,nounused:core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out/libcore-09eacc81d0a4d292.rlib' --extern 'noprelude,nounused:core=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/core/09eacc81d0a4d292/out/libcore-09eacc81d0a4d292.rmeta' --extern libm_new=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libm/d84194c2398dc25d/out/liblibm-d84194c2398dc25d.rlib --extern libm_new=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libm/d84194c2398dc25d/out/liblibm-d84194c2398dc25d.rmeta --extern libm_old=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libm/788379ddfd2ecff0/out/liblibm-788379ddfd2ecff0.rlib --extern libm_old=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/libm/788379ddfd2ecff0/out/liblibm-788379ddfd2ecff0.rmeta --extern 'noprelude,nounused:panic_abort=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out/libpanic_abort-385065557a6334a8.rlib' --extern 'noprelude,nounused:panic_abort=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_abort/385065557a6334a8/out/libpanic_abort-385065557a6334a8.rmeta' --extern 'noprelude,nounused:panic_unwind=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out/libpanic_unwind-907be79730b105d3.rlib' --extern 'noprelude,nounused:panic_unwind=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/panic_unwind/907be79730b105d3/out/libpanic_unwind-907be79730b105d3.rmeta' --extern petir=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/petir/2cfb0eadeffe9ae1/out/libpetir-2cfb0eadeffe9ae1.rlib --extern petir=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/petir/2cfb0eadeffe9ae1/out/libpetir-2cfb0eadeffe9ae1.rmeta --extern 'noprelude,nounused:proc_macro=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/proc_macro/95a4db30ca2a6157/out/libproc_macro-95a4db30ca2a6157.rlib' --extern 'noprelude,nounused:proc_macro=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/proc_macro/95a4db30ca2a6157/out/libproc_macro-95a4db30ca2a6157.rmeta' --extern 'noprelude,nounused:std=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/b555540edc890c99/out/libstd-b555540edc890c99.rlib' --extern 'noprelude,nounused:std=/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/target/sysroot-patched/wasm32-unknown-unknown/release/build/std/b555540edc890c99/out/libstd-b555540edc890c99.rmeta' -Z unstable-options --force-warn=unused_crate_dependencies`
+    Finished `release` profile [optimized] target(s) in 12.15s

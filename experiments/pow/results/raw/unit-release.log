@@ -1,0 +1,122 @@
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+    Finished `release` profile [optimized] target(s) in 3.00s
+     Running unittests src/lib.rs (target/release/deps/libm-74d51cdb1cad7f13)
+
+running 114 tests
+test math::atan::tests::infinity ... ok
+test math::atan2::tests::sanity_check ... ok
+test math::atan::tests::minus_infinity ... ok
+test math::atan::tests::nan ... ok
+test math::atan::tests::zero ... ok
+test math::atan::tests::sanity_check ... ok
+test math::cbrt::tests::spot_checks ... ok
+test math::ceil::tests::check_f32 ... ok
+test math::copysign::tests::spec_tests_f32 ... ok
+test math::ceil::tests::check_f64 ... ok
+test math::copysign::tests::spec_tests_f64 ... ok
+test math::exp2::i0_wrap_test ... ok
+test math::exp2m1::tests::exact_integer_results ... ok
+test math::exp2m1::tests::known_results ... ok
+test math::exp2m1f::tests::known_results ... ok
+test math::expm1::tests::sanity_check ... ok
+test math::fabs::tests::sanity_check_f32 ... ok
+test math::fabs::tests::sanity_check_f64 ... ok
+test math::fabs::tests::spec_tests_f32 ... ok
+test math::fabs::tests::spec_tests_f64 ... ok
+test math::fdim::tests::check_f32 ... ok
+test math::fdim::tests::check_f64 ... ok
+test math::floor::tests::check_f32 ... ok
+test math::floor::tests::check_f64 ... ok
+test math::fma::tests::check_f32 ... ok
+test math::fma::tests::check_f64 ... ok
+test math::fma::tests::fma_sbb ... ok
+test math::fma::tests::fma_segfault ... ok
+test math::fma::tests::fma_underflow ... ok
+test math::fma::tests::issue_263 ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f32 ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f64 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f32 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f64 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f32 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f64 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f32 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f64 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f32 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f64 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f32 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f64 ... ok
+test math::j1f::tests::test_j1f_2488 ... ok
+test math::j1f::tests::test_y1f_2002 ... ok
+test math::pow::tests::infinity_as_base ... ok
+test math::pow::tests::infinity_as_exponent ... ok
+test math::pow::tests::nan_inputs ... ok
+test math::pow::tests::normal_cases ... ok
+test math::pow::tests::one_as_base ... ok
+test math::pow::tests::signed_underflow_and_nan_identities ... ok
+test math::pow::tests::subnormal_log_reduction ... ok
+test math::pow::tests::zero_as_base ... ok
+test math::pow::tests::special_cases ... ok
+test math::pow::tests::zero_as_exponent ... ok
+test math::rem_pio2::tests::test_near_pi ... ok
+test math::rem_pio2::tests::test_overflow_4747b9 ... ok
+test math::remquo::tests::test_q_overflow ... ok
+test math::rem_pio2::tests::test_overflow_b9b847 ... ok
+test math::rint::tests::check_f32 ... ok
+test math::round::tests::check_f32 ... ok
+test math::rint::tests::check_f64 ... ok
+test math::round::tests::check_f64 ... ok
+test math::scalbn::tests::spec_test_f32 ... ok
+test math::scalbn::tests::spec_test_f64 ... ok
+test math::sin::tests::test_near_pi ... ok
+test math::sincos::tests::rotational_symmetry ... ok
+test math::sincos::tests::with_pi ... ok
+test math::sincosf::tests::rotational_symmetry ... ok
+test math::sqrt::tests::conformance_tests_f32 ... ok
+test math::sqrt::tests::conformance_tests_f64 ... ok
+test math::sqrt::tests::sanity_check_f32 ... ok
+test math::sqrt::tests::sanity_check_f64 ... ok
+test math::sqrt::tests::spec_tests_f32 ... ok
+test math::sqrt::tests::spec_tests_f64 ... ok
+test math::support::big::tests::i256_ord ... ok
+test math::support::big::tests::i256_shifts ... ok
+test math::support::big::tests::shr_u256 ... ok
+test math::support::big::tests::shr_u256_overflow ... ok
+test math::support::big::tests::shl_u256 ... ok
+test math::support::big::tests::not_u256 ... ok
+test math::support::big::tests::u256_ord ... ok
+test math::support::big::tests::u256_shifts ... ok
+test math::support::big::tests::widen_i128 ... ok
+test math::support::big::tests::widen_mul_u128 ... ok
+test math::support::big::tests::widen_u128 ... ok
+test math::support::feature_detect::tests::flag_cache_is_used ... ok
+test math::support::feature_detect::tests::select_cache_is_used ... ok
+test math::support::feature_detect::tests::unique_masks ... ok
+test math::support::float_traits::tests::check_f32 ... ok
+test math::support::float_traits::tests::check_f64 ... ok
+test math::support::hex_float::parse_tests::test_f32 ... ok
+test math::support::hex_float::parse_tests::test_macros ... ok
+test math::support::hex_float::tests_panicking::test_f32_almost_extra_precision ... ok
+test math::support::hex_float::tests_panicking::test_f32_also_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_again_too_tiny - should panic ... ok
+test math::support::hex_float::print_tests::spot_checks ... ok
+test math::support::hex_float::parse_tests::test_f64 ... ok
+test math::support::hex_float::tests_panicking::test_f32_extra_precision - should panic ... ok
+test math::support::hex_float::parse_tests::rounding_extreme_underflow ... ok
+test math::support::hex_float::tests_panicking::test_f32_extra_precision2 - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_overflow - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_tiniest ... ok
+test math::support::hex_float::tests_panicking::test_f32_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f64_almost_extra_precision ... ok
+test math::support::hex_float::tests_panicking::test_f64_extra_precision - should panic ... ok
+test math::support::modular::test::reducer_ops ... ok
+test math::support::modular::test::reduction_u128 ... ok
+test math::support::hex_float::parse_tests::long_tail ... ok
+test math::trunc::tests::check_f32 ... ok
+test math::trunc::tests::check_f64 ... ok
+test math::support::int_traits::narrowing_div::test::inverse_mul ... ok
+test math::support::modular::test::reduction_u8 ... ok
+test math::support::big::tests::div_u256_by_u128 ... ok
+test math::support::hex_float::parse_tests::test_parse_any ... ok
+
+test result: ok. 114 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+

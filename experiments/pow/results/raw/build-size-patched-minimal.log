@@ -1,0 +1,24 @@
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/compiler-builtins/compiler-builtins)
+   Compiling rustc-std-workspace-core v1.99.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/rustc-std-workspace-core)
+   Compiling alloc v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/alloc)
+   Compiling libc v0.2.191
+   Compiling memchr v2.8.3
+   Compiling adler2 v2.0.1
+   Compiling cfg-if v1.0.4
+   Compiling rustc-demangle v0.1.28
+   Compiling rustc-literal-escaper v0.0.8
+   Compiling dlmalloc v0.2.14
+   Compiling unwind v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/unwind)
+   Compiling rustc-std-workspace-alloc v1.99.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/rustc-std-workspace-alloc)
+   Compiling panic_unwind v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/panic_unwind)
+   Compiling panic_abort v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/panic_abort)
+   Compiling gimli v0.34.0
+   Compiling object v0.39.1
+   Compiling miniz_oxide v0.9.1
+   Compiling hashbrown v0.17.1
+   Compiling std_detect v0.1.5 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/std_detect)
+   Compiling addr2line v0.27.1
+   Compiling std v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/std)
+   Compiling proc_macro v0.0.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/sysroot-patched/library/proc_macro)
+   Compiling pow-fixture v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/fixtures)
+    Finished `release` profile [optimized] target(s) in 7.02s

@@ -1,0 +1,5 @@
+/vendor/
+/target/
+/sysroot*/
+/results/artifacts/
+/results/raw/accuracy-domains.txt

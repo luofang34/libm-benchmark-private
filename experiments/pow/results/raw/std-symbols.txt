@@ -1,0 +1,19 @@
+ (func $_RNvNtCs48gFmcikNpg_14pow_experiment6kernel8standard (param $0 f64) (param $1 f64) (result f64)
+  (call $pow
+   (local.get $0)
+   (local.get $1)
+  )
+ )
+ (func $_RNvNtCs48gFmcikNpg_14pow_experiment6kernel7measure (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32) (param $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+ (func $pow (param $0 f64) (param $1 f64) (result f64)
+  (call $_RNvNtNtNtCsfFMOvBClpKy_17compiler_builtins4math9libm_math3pow3pow
+   (local.get $0)
+   (local.get $1)
+  )
+ )
+ ;; custom section "producers", size 60
+ ;; features section: mutable-globals, nontrapping-float-to-int, bulk-memory, sign-ext, reference-types, multivalue, bulk-memory-opt, call-indirect-overlong
+)
+No FMA symbol; only clock/report host imports.

@@ -1,0 +1,14 @@
+{
+  "LOG_TAB": {
+    "bytes": 3072,
+    "minimal": 1,
+    "medium": 1,
+    "application": 1
+  },
+  "EXP_TAB": {
+    "bytes": 2048,
+    "minimal": 1,
+    "medium": 1,
+    "application": 1
+  }
+}

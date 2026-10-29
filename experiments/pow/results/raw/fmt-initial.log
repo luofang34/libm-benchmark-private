@@ -1,0 +1,193 @@
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Diff in /Users/fangluo/Documents/ChatGPT/libm/libm/src/math/pow/exp.rs:8:
+         return if sign != 0 { -1.0 } else { 1.0 };
+     }
+     if abstop >= 0x409 {
+-        let value = if x.is_sign_negative() { 0.0 } else { f64::INFINITY };
++        let value = if x.is_sign_negative() {
++            0.0
++        } else {
++            f64::INFINITY
++        };
+         return if sign != 0 { -value } else { value };
+     }
+     let kd = x * INV_LN2_N + SHIFT;
+Diff in /Users/fangluo/Documents/ChatGPT/libm/libm/src/math/pow/exp.rs:19:
+     let top = ki.wrapping_add(u64::from(sign)).wrapping_shl(45);
+     let sbits = row[1].wrapping_add(top);
+     let r2 = r * r;
+-    let tmp = f64::from_bits(row[0]) + r + r2 * (C[0] + r * C[1])
+-        + r2 * r2 * (C[2] + r * C[3]);
++    let tmp = f64::from_bits(row[0]) + r + r2 * (C[0] + r * C[1]) + r2 * r2 * (C[2] + r * C[3]);
+     if abstop >= 0x408 {
+         specialcase(tmp, sbits, ki)
+     } else {
+Diff in /Users/fangluo/Documents/ChatGPT/libm/libm/src/math/pow/table.rs:7:
+ pub(super) const NEG_LN2_LO_N: f64 = f64::from_bits(0xbd0cf79abc9e3b3a);
+ pub(super) const SHIFT: f64 = f64::from_bits(0x4338000000000000);
+ pub(super) const LOG_POLY: [f64; 7] = [
+-f64::from_bits(0xbfe0000000000000),
+-f64::from_bits(0xbfe5555555555560),
+-f64::from_bits(0x3fe0000000000006),
+-f64::from_bits(0x3fe999999959554e),
+-f64::from_bits(0xbfe555555529a47a),
+-f64::from_bits(0xbff2495b9b4845e9),
+-f64::from_bits(0x3ff0002b8b263fc3),
++    f64::from_bits(0xbfe0000000000000),
++    f64::from_bits(0xbfe5555555555560),
++    f64::from_bits(0x3fe0000000000006),
++    f64::from_bits(0x3fe999999959554e),
++    f64::from_bits(0xbfe555555529a47a),
++    f64::from_bits(0xbff2495b9b4845e9),
++    f64::from_bits(0x3ff0002b8b263fc3),
+ ];
+ pub(super) const EXP_POLY: [f64; 4] = [
+-f64::from_bits(0x3fdffffffffffdbd),
+-f64::from_bits(0x3fc555555555543c),
+-f64::from_bits(0x3fa55555cf172b91),
+-f64::from_bits(0x3f81111167a4d017),
++    f64::from_bits(0x3fdffffffffffdbd),
++    f64::from_bits(0x3fc555555555543c),
++    f64::from_bits(0x3fa55555cf172b91),
++    f64::from_bits(0x3f81111167a4d017),
+ ];
+ #[rustfmt::skip]
+ pub(super) const LOG_TAB: [[u64; 3]; 128] = [
+Diff in /Users/fangluo/Documents/ChatGPT/libm/libm/src/math/pow.rs:49:
+         if ax2 == ONE * 2 {
+             return Some(1.0);
+         }
+-        return Some(if (ax2 < ONE * 2) == (iy >> 63 == 0) { 0.0 } else { y * y });
++        return Some(if (ax2 < ONE * 2) == (iy >> 63 == 0) {
++            0.0
++        } else {
++            y * y
++        });
+     }
+     if zero_inf_nan(*ix) {
+         let mut x2 = x * x;
+Diff in /Users/fangluo/Documents/ChatGPT/libm/libm/src/math/pow.rs:71:
+         if *ix == ONE || topy < 0x3be {
+             return Some(1.0);
+         }
+-        return Some(if (*ix > ONE) == (iy >> 63 == 0) { f64::INFINITY } else { 0.0 });
++        return Some(if (*ix > ONE) == (iy >> 63 == 0) {
++            f64::INFINITY
++        } else {
++            0.0
++        });
+     }
+     if *ix >> 52 == 0 {
+-        *ix = ((x * 4503599627370496.0).to_bits() & 0x7fffffffffffffff)
+-            .wrapping_sub(52u64 << 52);
++        *ix = ((x * 4503599627370496.0).to_bits() & 0x7fffffffffffffff).wrapping_sub(52u64 << 52);
+     }
+     None
+ }
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.
+Warning: can't set `imports_granularity = Module`, unstable features are only available in nightly channel.
+Warning: can't set `group_imports = StdExternalCrate`, unstable features are only available in nightly channel.

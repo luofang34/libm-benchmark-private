@@ -1,0 +1,6 @@
+minimal/base: executes, no host math imports, input changes consumed
+medium/base: executes, no host math imports, input changes consumed
+application/base: executes, no host math imports, input changes consumed
+minimal/patched: executes, no host math imports, input changes consumed
+medium/patched: executes, no host math imports, input changes consumed
+application/patched: executes, no host math imports, input changes consumed

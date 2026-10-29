@@ -1,0 +1,28 @@
+{
+  "git rev-parse HEAD": "6bc104a50f83cb205790c61c5d33508046f5fad3\n",
+  "rustc -vV": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: aarch64-apple-darwin\nrelease: 1.99.0\nLLVM version: 23.1.1\n",
+  "cargo -V": "cargo 1.99.0 (5f94df478 2026-08-27)\n",
+  "rustc +nightly -vV": "rustc 1.101.0-nightly (41089d07a 2026-10-27)\nbinary: rustc\ncommit-hash: 41089d07a0a2afc16adfe28a760d94d73d7298a4\ncommit-date: 2026-10-27\nhost: aarch64-apple-darwin\nrelease: 1.101.0-nightly\nLLVM version: 23.1.4\n",
+  "cargo +nightly -V": "cargo 1.101.0-nightly (cad07cf8e 2026-10-23)\n",
+  "clang --version": "Apple clang version 21.0.0 (clang-2100.4.1.1)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+  "node -p JSON.stringify(process.versions)": "{\"node\":\"26.12.1\",\"acorn\":\"8.19.0\",\"ada\":\"4.0.0\",\"amaro\":\"1.1.11\",\"ares\":\"1.34.9\",\"brotli\":\"1.2.1\",\"cldr\":\"48.0\",\"icu\":\"78.3\",\"libffi\":\"3.8.0\",\"llhttp\":\"9.4.3\",\"merve\":\"1.2.2\",\"modules\":\"147\",\"napi\":\"10\",\"nbytes\":\"0.1.4\",\"ncrypto\":\"0.0.1\",\"nghttp2\":\"1.70.0\",\"nghttp3\":\"\",\"ngtcp2\":\"\",\"openssl\":\"4.0.3\",\"simdjson\":\"5.0.5\",\"simdutf\":\"9.3.2\",\"sqlite\":\"3.54.1\",\"tz\":\"2026a\",\"undici\":\"8.12.2\",\"unicode\":\"17.0\",\"uv\":\"1.53.0\",\"uvwasi\":\"0.0.23\",\"v8\":\"14.6.202.34-node.40\",\"zlib\":\"1.2.12\",\"zstd\":\"1.5.7\"}\n",
+  "sw_vers": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0\nBuildVersion:\t\t26A5368g\n",
+  "uname -a": "Darwin MacBookPro 27.0.0 Darwin Kernel Version 27.0.0: Mon Jun 15 22:59:39 PDT 2026; root:xnu-13432.0.5.501.1~2/RELEASE_ARM64_T6031 arm64\n",
+  "wasm-opt --version": "wasm-opt version 128\n",
+  "brotli --version": "brotli 1.2.1\n",
+  "cpu": "Apple M3 Max",
+  "petir_version": "0.0.3",
+  "petir_sha": "f2205d867dfe44c3fc7478656f6f5ae56390f984",
+  "arm_sha": "2ee4b0d45680a9880412c1d186224b08652c35f6",
+  "registry_libm_pow_sha256": "c5566d0f48682d107e8803b0ed204ff3521503348f18a4f26cbe3f47fef15192",
+  "nightly_libm_pow_sha256": "581efb544966f82f440137757bbbdec99d873c3121efde0294493c4a9fc9d259",
+  "nightly_compiler_builtins_tree": {
+    "sha": "17a9e503efa529a41236ef11ef58108f840ccc72",
+    "type": "dir",
+    "html_url": "https://github.com/rust-lang/rust/tree/41089d07a0a2afc16adfe28a760d94d73d7298a4/library/compiler-builtins"
+  },
+  "checkout_pow_baseline_sha256": "581efb544966f82f440137757bbbdec99d873c3121efde0294493c4a9fc9d259",
+  "registry_libm_git_sha": "dfd2203a4d6110820ad7bb65cafe1bf331a03a3d",
+  "stable_compiler_builtins_version": "0.1.160",
+  "stable_pow_source_sha256": "581efb544966f82f440137757bbbdec99d873c3121efde0294493c4a9fc9d259"
+}

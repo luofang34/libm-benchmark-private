@@ -1,0 +1,35 @@
+[workspace]
+[package]
+name = "pow-experiment"
+version = "0.1.0"
+edition = "2024"
+publish = false
+[lib]
+crate-type = ["rlib", "cdylib"]
+[dependencies]
+libm_old = { package = "libm", version = "=0.2.16", default-features = false }
+libm_new = { package = "libm", path = "../../libm", default-features = false }
+petir = { version = "=0.0.3", default-features = false }
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+[lints]
+workspace = true
+[workspace.lints.rust]
+# ABI exports and two timer/report imports require unsafe attributes/declarations.
+unsafe_code = "deny"
+[workspace.lints.clippy]
+unwrap_used = "forbid"
+expect_used = "forbid"
+panic = "forbid"
+todo = "forbid"
+unimplemented = "forbid"
+unreachable = "forbid"
+exit = "forbid"
+mem_forget = "forbid"
+get_unwrap = "forbid"
+let_underscore_must_use = "deny"
+let_underscore_future = "deny"
+await_holding_lock = "deny"

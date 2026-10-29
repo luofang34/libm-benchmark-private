@@ -1,0 +1,102 @@
+{
+  "results/wasm/minimal-base-Oz.wasm": {
+    "bytes": 2267,
+    "sha256": "94d7dc920c27acd3f70e724f080d2be764e957b5f8acb8dbcabe65b3b4d54c50"
+  },
+  "results/wasm/medium-patched-O3.wasm": {
+    "bytes": 19973,
+    "sha256": "ca0361a1d953e2b16a55b9837bd007bdc49d0293e79d5b940a97a80b49a83405"
+  },
+  "results/wasm/application-patched.wasm": {
+    "bytes": 132973,
+    "sha256": "2a6f38c4dcdf3f232ad0895c299a64f869902b174114aee0dbe89cea83d90bbf"
+  },
+  "results/wasm/application-base-O3.wasm": {
+    "bytes": 117214,
+    "sha256": "2c185afe27e204b0f0a9203c410c873025ef58b18fb2dfc4a3405259b6ea04ac"
+  },
+  "results/wasm/application-base-Oz.wasm": {
+    "bytes": 116411,
+    "sha256": "7ff1200a5ed009cc6ff6d13fe84bb5a8c130a7e38ed966c98d29a6be8cf82928"
+  },
+  "results/wasm/harness-rebuilt-patch.wasm": {
+    "bytes": 49910,
+    "sha256": "78c9ea10d5e74e0f9afc8420dc61e3fe573ba6616023ae3a61e06ace6ac2829d"
+  },
+  "results/wasm/minimal-patched.wasm": {
+    "bytes": 6674,
+    "sha256": "d110bee247a0e6b7e24b6f80a9451389d2d9f91d8e7f704de033ba6c91dd5dcd"
+  },
+  "results/wasm/minimal-base-O3.wasm": {
+    "bytes": 2271,
+    "sha256": "f74e47182e69b664ca84e0c580279c1bf4c9cea7e00bad9245d26947a09950ae"
+  },
+  "results/wasm/minimal-base.wasm": {
+    "bytes": 2524,
+    "sha256": "1a768c7fb4091288b7d155f08eb18abcce25a3f5a6391682ed0e1471a5bd0af9"
+  },
+  "results/wasm/medium-patched-Oz.wasm": {
+    "bytes": 19970,
+    "sha256": "4f808c5db7cc8b6a3853df87b03574eb12988a7bfed102aa079b335497c26bb0"
+  },
+  "results/wasm/application-base.wasm": {
+    "bytes": 128761,
+    "sha256": "23dd3cfb6779b9d9f22dfeffe5cb547196acce4a1ba3826a5e0396ddcfc0fb07"
+  },
+  "results/wasm/medium-patched.wasm": {
+    "bytes": 20713,
+    "sha256": "267bdeb9cc8c5202282d60f398a2da0b49e8157e23e07fdebe768c59da9d7ad2"
+  },
+  "results/wasm/harness-stable.wasm": {
+    "bytes": 45454,
+    "sha256": "30d102598154b24db4a8d8b467b6d5089dc53c084be2c77bb88374396c5e7538"
+  },
+  "results/wasm/medium-base-O3.wasm": {
+    "bytes": 15677,
+    "sha256": "983ff3508271cff0a66154a9e40a3a05254c4ad44756bbf1c969a4f617344355"
+  },
+  "results/wasm/application-patched-O3.wasm": {
+    "bytes": 121558,
+    "sha256": "c492ab5b8d2d506fb0e9b9a44b71a588b7c3648fc1c458bbe0c4a32eeab92b3b"
+  },
+  "results/wasm/harness-rebuilt-base.wasm": {
+    "bytes": 45828,
+    "sha256": "b8e5d860b30a2ff2d307f984c3cb78357008dab0034f1ed044c683e87d66d631"
+  },
+  "results/wasm/minimal-patched-Oz.wasm": {
+    "bytes": 6557,
+    "sha256": "2e28637cda5b911cfc67270b1a6b2ba021f25d4dd777a7a8411c34d163e86e3c"
+  },
+  "results/wasm/minimal-patched-O3.wasm": {
+    "bytes": 6563,
+    "sha256": "d480cf31e5405a75379be0b917361ff5fb90b6726adf9f63b86c22d9724c4195"
+  },
+  "results/wasm/medium-base.wasm": {
+    "bytes": 16565,
+    "sha256": "094d507fd50453bc2d14a255e9859cca903285cf90ec8f45ad33b3d59af6b8b4"
+  },
+  "results/wasm/application-patched-Oz.wasm": {
+    "bytes": 120757,
+    "sha256": "86cdffede00e4e4d9b17f161a6907c6b0f76a1182b8a5c19fe24105cb7a1546a"
+  },
+  "results/wasm/medium-base-Oz.wasm": {
+    "bytes": 15672,
+    "sha256": "ff231bb1210c3b4a1ce513ca03a4e0314939cd6fef3de505c2041796442829e9"
+  },
+  "results/raw/inputs.bin.gz": {
+    "bytes": 1918726,
+    "sha256": "691c285cd71cf2a7c6a33a1ca5ca0d39bbddc3f07c2751f03bb94d771c8bd6b8"
+  },
+  "results/raw/outputs.bin.gz": {
+    "bytes": 3046411,
+    "sha256": "ec8efecf93f7a7ba3a00158e60c18bd20b13988a75e2715c701eda70a0912247"
+  },
+  "results/raw/accuracy-domains.txt.gz": {
+    "bytes": 5970,
+    "sha256": "5fa3b7578b6d4e57de9d13e484d7784ea803bd1186a7795e99f5a4fd33999cfc"
+  },
+  "libm-pow-arm.patch": {
+    "bytes": 51191,
+    "sha256": "22546dbaaf528775a4426660000549b5a478db46b7f6cf12b166061dafd18350"
+  }
+}
