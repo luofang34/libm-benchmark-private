@@ -1,0 +1,12 @@
+warning: unstable feature specified for `-Ctarget-feature`: `f`
+  |
+  = note: this feature is not stably supported; its behavior can change in the future
+
+warning: unstable feature specified for `-Ctarget-feature`: `d`
+  |
+  = note: this feature is not stably supported; its behavior can change in the future
+
+warning: `libm` (lib) generated 2 warnings
+   Compiling pow-bench-core v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/benchmarks/core)
+warning: `pow-bench-core` (lib) generated 2 warnings (2 duplicates)
+    Finished `release` profile [optimized] target(s) in 0.19s

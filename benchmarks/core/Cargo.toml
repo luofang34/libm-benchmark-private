@@ -1,0 +1,13 @@
+[package]
+name = "pow-bench-core"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+baseline.workspace = true
+candidate.workspace = true
+
+[lints]
+workspace = true
+

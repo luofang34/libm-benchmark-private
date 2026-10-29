@@ -1,0 +1,42 @@
+[workspace]
+
+[package]
+name = "pow-h743"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+pow-bench-core = { path = "../../core" }
+cortex-m = "=0.7.7"
+cortex-m-rt = "=0.7.7"
+stm32h7xx-hal = { version = "=0.16.0", features = ["stm32h743", "rt", "usb_hs"] }
+usb-device = "=0.3.2"
+usbd-serial = "=0.2.2"
+heapless = "=0.8.0"
+sha2 = { version = "=0.10.9", default-features = false }
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+
+[lints.rust]
+# Device register access, reset entry point and fixed Flash image bounds are isolated in hardware.rs.
+unsafe_code = "deny"
+
+[lints.clippy]
+unwrap_used = "forbid"
+expect_used = "forbid"
+panic = "forbid"
+todo = "forbid"
+unimplemented = "forbid"
+unreachable = "forbid"
+exit = "forbid"
+mem_forget = "forbid"
+get_unwrap = "forbid"
+let_underscore_must_use = "deny"
+let_underscore_future = "deny"
+await_holding_lock = "deny"
+

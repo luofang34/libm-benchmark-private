@@ -1,0 +1,6 @@
+{
+  "seed": 20261029,
+  "cases": 448,
+  "encoding": "little-endian pairs of u64 binary64 bits",
+  "sha256": "1b227b1001dd0b99b6b495f911d6ff83f6744557c7fb63778ed4ea259136bcbf"
+}

@@ -1,0 +1,42 @@
+name: Pow hosted hardware comparison
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Install reference arithmetic dependency
+        run: sudo apt-get update && sudo apt-get install -y libmpfr-dev libgmp-dev
+      - name: Select reproducible Rust toolchain
+        run: rustup toolchain install 1.99.0 --profile minimal && rustup override set 1.99.0
+      - name: Verify inputs and result validation
+        run: |
+          python3 benchmarks/scripts/generate_vectors.py --check
+          python3 -m unittest discover -s benchmarks/scripts -p 'test_*.py'
+          cargo test --manifest-path benchmarks/Cargo.toml --locked
+      - name: Run paired timing and MPFR validation
+        run: python3 benchmarks/scripts/run_host.py --output benchmarks/results/runs/hosted
+      - name: Clean compilation caches
+        if: always()
+        run: |
+          cargo clean --manifest-path benchmarks/Cargo.toml
+          cargo clean --manifest-path benchmarks/Cargo.toml --target-dir benchmarks/results/runs/hosted/target
+      - name: Preserve raw results and environment
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: pow-${{ matrix.runner }}-${{ github.sha }}
+          path: benchmarks/results/runs/hosted/
+
