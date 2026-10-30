@@ -2,6 +2,10 @@ name: Pow contribution validation
 on:
   workflow_dispatch:
     inputs:
+      target_matrix:
+        description: Optional JSON target subset; blank runs the full matrix
+        type: string
+        default: ""
       run_icount:
         description: Run the baseline and candidate instruction counts
         type: boolean
@@ -33,32 +37,34 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - { target: aarch64-apple-darwin, os: macos-26 }
-          - { target: x86_64-apple-darwin, os: macos-26-intel }
-          - { target: aarch64-unknown-linux-gnu, os: ubuntu-24.04-arm }
-          - { target: aarch64-pc-windows-msvc, os: windows-11-arm }
-          - { target: i686-pc-windows-msvc, os: windows-2025 }
-          - { target: x86_64-pc-windows-msvc, os: windows-2025 }
-          - { target: i686-pc-windows-gnu, os: windows-2025, toolchain: nightly-2026-10-28-x86_64-pc-windows-gnu }
-          - { target: x86_64-pc-windows-gnu, os: windows-2025, toolchain: nightly-2026-10-28-x86_64-pc-windows-gnu }
-          - { target: x86_64-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
-          - { target: i586-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
-          - { target: i686-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
-          - { target: arm-unknown-linux-gnueabi, os: ubuntu-24.04, docker: true }
-          - { target: arm-unknown-linux-gnueabihf, os: ubuntu-24.04, docker: true }
-          - { target: armv7-unknown-linux-gnueabihf, os: ubuntu-24.04, docker: true }
-          - { target: thumbv7neon-unknown-linux-gnueabihf, os: ubuntu-24.04, docker: true }
-          - { target: loongarch64-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
-          - { target: powerpc-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
-          - { target: powerpc64-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
-          - { target: powerpc64le-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
-          - { target: riscv64gc-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
-          - { target: thumbv6m-none-eabi, os: ubuntu-24.04, docker: true }
-          - { target: thumbv7em-none-eabi, os: ubuntu-24.04, docker: true }
-          - { target: thumbv7em-none-eabihf, os: ubuntu-24.04, docker: true }
-          - { target: thumbv7m-none-eabi, os: ubuntu-24.04, docker: true }
-          - { target: wasm32-unknown-unknown, os: ubuntu-24.04, docker: true }
+        include: >-
+          ${{ fromJSON(inputs.target_matrix || '[
+            {"target":"aarch64-apple-darwin","os":"macos-26"},
+            {"target":"x86_64-apple-darwin","os":"macos-26-intel"},
+            {"target":"aarch64-unknown-linux-gnu","os":"ubuntu-24.04-arm"},
+            {"target":"aarch64-pc-windows-msvc","os":"windows-11-arm"},
+            {"target":"i686-pc-windows-msvc","os":"windows-2025"},
+            {"target":"x86_64-pc-windows-msvc","os":"windows-2025"},
+            {"target":"i686-pc-windows-gnu","os":"windows-2025","toolchain":"nightly-2026-10-28-x86_64-pc-windows-gnu"},
+            {"target":"x86_64-pc-windows-gnu","os":"windows-2025","toolchain":"nightly-2026-10-28-x86_64-pc-windows-gnu"},
+            {"target":"x86_64-unknown-linux-gnu","os":"ubuntu-24.04","docker":true},
+            {"target":"i586-unknown-linux-gnu","os":"ubuntu-24.04","docker":true},
+            {"target":"i686-unknown-linux-gnu","os":"ubuntu-24.04","docker":true},
+            {"target":"arm-unknown-linux-gnueabi","os":"ubuntu-24.04","docker":true},
+            {"target":"arm-unknown-linux-gnueabihf","os":"ubuntu-24.04","docker":true},
+            {"target":"armv7-unknown-linux-gnueabihf","os":"ubuntu-24.04","docker":true},
+            {"target":"thumbv7neon-unknown-linux-gnueabihf","os":"ubuntu-24.04","docker":true},
+            {"target":"loongarch64-unknown-linux-gnu","os":"ubuntu-24.04","docker":true},
+            {"target":"powerpc-unknown-linux-gnu","os":"ubuntu-24.04","docker":true},
+            {"target":"powerpc64-unknown-linux-gnu","os":"ubuntu-24.04","docker":true},
+            {"target":"powerpc64le-unknown-linux-gnu","os":"ubuntu-24.04","docker":true},
+            {"target":"riscv64gc-unknown-linux-gnu","os":"ubuntu-24.04","docker":true},
+            {"target":"thumbv6m-none-eabi","os":"ubuntu-24.04","docker":true},
+            {"target":"thumbv7em-none-eabi","os":"ubuntu-24.04","docker":true},
+            {"target":"thumbv7em-none-eabihf","os":"ubuntu-24.04","docker":true},
+            {"target":"thumbv7m-none-eabi","os":"ubuntu-24.04","docker":true},
+            {"target":"wasm32-unknown-unknown","os":"ubuntu-24.04","docker":true}
+          ]') }}
     runs-on: ${{ matrix.os }}
     env:
       JOB_TARGET: ${{ matrix.target }}
@@ -67,7 +73,7 @@ jobs:
       MAY_SKIP_LIBM_CI: false
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with: { persist-credentials: false }
+        with: { persist-credentials: false, path: candidate }
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
@@ -82,7 +88,7 @@ jobs:
                    "pow/log.rs", "pow/table.rs", "pow/tests.rs"]
           hashes = {}
           for name in files:
-              source = root.parent / "libm/src/math" / name
+              source = root.parent / "candidate/libm/src/math" / name
               target = root / "libm/src/math" / name
               target.parent.mkdir(parents=True, exist_ok=True)
               shutil.copyfile(source, target)
