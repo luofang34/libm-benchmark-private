@@ -1,0 +1,16 @@
+{
+  "command": [
+    "cargo",
+    "+nightly",
+    "build",
+    "--release",
+    "--target",
+    "wasm32-unknown-unknown",
+    "--manifest-path",
+    "/tmp/libm-exp-implementation/libm/Cargo.toml",
+    "--offline"
+  ],
+  "environment_overrides": {},
+  "exit_code": 0,
+  "duration_seconds": 1.16154404199915
+}

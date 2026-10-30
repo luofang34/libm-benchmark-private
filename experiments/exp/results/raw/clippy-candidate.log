@@ -1,0 +1,3 @@
+   Compiling libm v0.2.16 (/tmp/libm-exp-validation/candidate/libm)
+    Checking exp-experiment v0.1.0 (/tmp/libm-exp-validation/candidate/harness)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.22s

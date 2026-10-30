@@ -1,0 +1,19 @@
+{
+  "base_revision": "ef357e6075c6d7eca9d2fd72412e43fb5fc1a5ff",
+  "arm_revision": "2ee4b0d45680a9880412c1d186224b08652c35f6",
+  "pow_arithmetic_unchanged": true,
+  "exp_table_bytes": 2048,
+  "log_table_bytes": 3072,
+  "exp_table_sha256": "a4014caf214c2bab90ea0fdf3f57941e0235ae04dc2282a6c2f72e7a480c87e4",
+  "log_table_sha256": "082f52ec135ce35a006c424df3279fc7d61a8128d97c6a234e6962c6275ef052",
+  "arm_polynomial_coefficients_exact": true,
+  "overlay_sha256": {
+    "overlay/libm/src/math/exp.rs": "cc70c324e72dffa7698e30bb21b28122899cce97ee64ecae960a42b80a5b69ff",
+    "overlay/libm/src/math/exp2.rs": "79825af920a7692f4879adc042d6cd3e29980148026509de34542a163c154c89",
+    "overlay/libm/src/math/exp_shared/table.rs": "ea925de2082eccd71a2fefb03a32c0fef114bdcff9fa6f74e7cc4a54f737b6a5",
+    "overlay/libm/src/math/exp_shared/tests.rs": "c61740d3a811d94100031d9ed8ba6d241aa0067a6e3ddc8e4c404321597f47eb",
+    "overlay/libm/src/math/exp_shared.rs": "32eb828c099be0c3a427cb83fb61522258717c69119673e4fda937813a632acd",
+    "overlay/libm/src/math/pow/exp.rs": "ea7b359bebad8bdfd2bc0bb592dd1456734d29e7f810beeedd4496ef4cef00e6",
+    "overlay/libm/src/math/pow/table.rs": "9d1d4988aa6d716f06acec025468f0d68382bbeb5f9d5a18a0b5f40c7d234946"
+  }
+}

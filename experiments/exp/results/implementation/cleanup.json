@@ -1,0 +1,38 @@
+[
+  {
+    "directory": "/tmp/libm-exp-implementation",
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--manifest-path",
+      "/tmp/libm-exp-implementation/libm/Cargo.toml"
+    ],
+    "exit_code": 0,
+    "output": "     Removed 1757 files, 158.9MiB total\n"
+  },
+  {
+    "directory": "/tmp/libm-exp-patch-candidate",
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--manifest-path",
+      "/tmp/libm-exp-patch-candidate/libm/Cargo.toml"
+    ],
+    "exit_code": 0,
+    "output": "     Removed 0 files\n"
+  },
+  {
+    "directory": "/tmp/libm-exp-patch-base",
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--manifest-path",
+      "/tmp/libm-exp-patch-base/libm/Cargo.toml"
+    ],
+    "exit_code": 0,
+    "output": "     Removed 0 files\n"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/mpfr-check",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/wasm-outputs.bin",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/domains.txt"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.45500412496039644
+}

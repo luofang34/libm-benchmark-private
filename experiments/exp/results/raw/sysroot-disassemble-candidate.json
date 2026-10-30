@@ -1,0 +1,10 @@
+{
+  "command": [
+    "wasm-dis",
+    "/private/tmp/libm-exp-sysroots/candidate/target/wasm32-unknown-unknown/release/exp_experiment.wasm",
+    "-o",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/raw/sysroot-candidate.wat"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.09302916697924957
+}

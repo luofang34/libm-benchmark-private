@@ -1,0 +1,214 @@
+{
+  "scope": "Separate exp/exp2 prototype; the pow-only proposed upstream patch is unchanged.",
+  "performance_status": "exploratory_background_load",
+  "formal_performance_acceptance": false,
+  "base_revision": "ef357e6075c6d7eca9d2fd72412e43fb5fc1a5ff",
+  "direct_measurement_groups": 192,
+  "ordinary_std_measurement_groups": 72,
+  "warmups": 5,
+  "rounds": 15,
+  "sample_count_per_function_per_runtime": 146097,
+  "candidate_accuracy": [
+    {
+      "runtime": "native",
+      "function": "exp",
+      "domain": "all",
+      "implementation": "libm_candidate",
+      "count": "146097",
+      "max_ulp": "0.50389969679319824",
+      "exact": "32577",
+      "le_half_ulp": "104753",
+      "le_one_ulp": "53",
+      "le_two_ulp": "0",
+      "gt_two_ulp": "0",
+      "class_mismatch": "0",
+      "signed_zero_mismatch": "0",
+      "arm_c_bit_difference": "0",
+      "worst_x": "-0x1.83d0f112bfd4ap+1",
+      "worst_actual": "0x1.8be01898525cp-5",
+      "worst_reference": "0x1.8be01898525c1p-5"
+    },
+    {
+      "runtime": "native",
+      "function": "exp2",
+      "domain": "all",
+      "implementation": "libm_candidate",
+      "count": "146097",
+      "max_ulp": "0.50383884757659858",
+      "exact": "32525",
+      "le_half_ulp": "104645",
+      "le_one_ulp": "52",
+      "le_two_ulp": "0",
+      "gt_two_ulp": "0",
+      "class_mismatch": "0",
+      "signed_zero_mismatch": "0",
+      "arm_c_bit_difference": "0",
+      "worst_x": "-0x1.da22e55386542p+8",
+      "worst_actual": "0x1.d1d6d64afee14p-475",
+      "worst_reference": "0x1.d1d6d64afee15p-475"
+    },
+    {
+      "runtime": "wasm",
+      "function": "exp",
+      "domain": "all",
+      "implementation": "libm_candidate",
+      "count": "146097",
+      "max_ulp": "0.50389969679319824",
+      "exact": "32577",
+      "le_half_ulp": "104753",
+      "le_one_ulp": "53",
+      "le_two_ulp": "0",
+      "gt_two_ulp": "0",
+      "class_mismatch": "0",
+      "signed_zero_mismatch": "0",
+      "arm_c_bit_difference": "0",
+      "worst_x": "-0x1.83d0f112bfd4ap+1",
+      "worst_actual": "0x1.8be01898525cp-5",
+      "worst_reference": "0x1.8be01898525c1p-5"
+    },
+    {
+      "runtime": "wasm",
+      "function": "exp2",
+      "domain": "all",
+      "implementation": "libm_candidate",
+      "count": "146097",
+      "max_ulp": "0.50383884757659858",
+      "exact": "32525",
+      "le_half_ulp": "104645",
+      "le_one_ulp": "52",
+      "le_two_ulp": "0",
+      "gt_two_ulp": "0",
+      "class_mismatch": "0",
+      "signed_zero_mismatch": "0",
+      "arm_c_bit_difference": "0",
+      "worst_x": "-0x1.da22e55386542p+8",
+      "worst_actual": "0x1.d1d6d64afee14p-475",
+      "worst_reference": "0x1.d1d6d64afee15p-475"
+    },
+    {
+      "runtime": "wasm_sysroot_node",
+      "function": "exp",
+      "domain": "all",
+      "implementation": "std_rebuilt_candidate",
+      "count": "146097",
+      "max_ulp": "0.50389969679319824",
+      "exact": "32577",
+      "le_half_ulp": "104753",
+      "le_one_ulp": "53",
+      "le_two_ulp": "0",
+      "gt_two_ulp": "0",
+      "class_mismatch": "0",
+      "signed_zero_mismatch": "0",
+      "arm_c_bit_difference": "0",
+      "worst_x": "-0x1.83d0f112bfd4ap+1",
+      "worst_actual": "0x1.8be01898525cp-5",
+      "worst_reference": "0x1.8be01898525c1p-5"
+    },
+    {
+      "runtime": "wasm_sysroot_node",
+      "function": "exp2",
+      "domain": "all",
+      "implementation": "std_rebuilt_candidate",
+      "count": "146097",
+      "max_ulp": "0.50383884757659858",
+      "exact": "32525",
+      "le_half_ulp": "104645",
+      "le_one_ulp": "52",
+      "le_two_ulp": "0",
+      "gt_two_ulp": "0",
+      "class_mismatch": "0",
+      "signed_zero_mismatch": "0",
+      "arm_c_bit_difference": "0",
+      "worst_x": "-0x1.da22e55386542p+8",
+      "worst_actual": "0x1.d1d6d64afee14p-475",
+      "worst_reference": "0x1.d1d6d64afee15p-475"
+    }
+  ],
+  "shared_table_bytes": 2048,
+  "final_linkage": [
+    {
+      "target_triple": "aarch64-apple-darwin",
+      "lto": "fat",
+      "sha256": "f4627883333543e9949ddd431d28bd85a371e7ec650851521b4601c3a7b6dc83",
+      "table_occurrences": 1,
+      "inspection": {
+        "full_table_binary_occurrences": 1,
+        "forbidden_libcalls": []
+      },
+      "status": "PASS"
+    },
+    {
+      "target_triple": "wasm32-unknown-unknown",
+      "lto": "fat",
+      "sha256": "6da0ef9665f2d24765661743d6629b625ae98e77606b2400bbc9d58a1e1c326a",
+      "table_occurrences": 1,
+      "inspection": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1048904
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "status": "PASS"
+    },
+    {
+      "target_triple": "aarch64-apple-darwin",
+      "lto": "off",
+      "sha256": "a3f8ba9f069d0a995252f02524ae263a02b891f441f765f9d76d456405f2b3d1",
+      "table_occurrences": 1,
+      "inspection": {
+        "full_table_binary_occurrences": 1,
+        "forbidden_libcalls": []
+      },
+      "status": "PASS"
+    },
+    {
+      "target_triple": "wasm32-unknown-unknown",
+      "lto": "off",
+      "sha256": "8989498f2c6aef29453d8f810909ee34c19bc2d15ced05027eed5a2db11c4d3e",
+      "table_occurrences": 1,
+      "inspection": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1048984
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "status": "PASS"
+    }
+  ],
+  "size_comparisons": 72,
+  "patched_sysroot_verified": true,
+  "known_limits": [
+    "Performance collected with background CPU and filesystem activity; requires an idle rerun.",
+    "No new MCU or remote Linux/Windows hardware run for exp/exp2.",
+    "The full 25-target upstream matrix and full extensive exp/exp2 sweeps have not run.",
+    "256-bit MPFR samples do not prove a global worst-case error bound.",
+    "Only round-to-nearest behavior tested; errno and full fenv behavior are outside this prototype.",
+    "Dependency measurements include bounded feedback and checksum overhead, not pure function latency."
+  ],
+  "reproducible_entry": "python3 experiments/exp/reproduce.py --help",
+  "metadata": "metadata.json",
+  "cpu_snapshots": [
+    "raw/cpu-before.json",
+    "raw/cpu-after.json"
+  ],
+  "performance": "performance.csv",
+  "ordinary_std_performance": "performance-std.csv",
+  "accuracy": "accuracy.csv",
+  "ordinary_std_accuracy": "accuracy-std.csv",
+  "sizes": "size.csv",
+  "strict_harness_fixture_documentation": {
+    "status": "PASS",
+    "logs": [
+      "raw/doc-final-harness.log",
+      "raw/doc-final-fixtures.log"
+    ],
+    "flags": "-D missing_docs -D broken_intra_doc_links"
+  },
+  "record_integrity_regressions": "record-validation.json"
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "variant": "base",
+    "compiler_builtins_exp_symbols": [
+      "$_RNvNtNtNtCs5cUd4OADQLd_17compiler_builtins4math9libm_math3exp3exp",
+      "$_RNvNtNtCs5cUd4OADQLd_17compiler_builtins4math20partial_availability4exp2"
+    ],
+    "software_fma_functions": [],
+    "inspection": {
+      "imports": [
+        {
+          "module": "env",
+          "name": "clock_ms",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "report",
+          "kind": "function"
+        }
+      ],
+      "table_occurrences": 0,
+      "table_offsets": [],
+      "initial_memory_bytes": 1114112,
+      "table_bytes": 2048
+    }
+  },
+  {
+    "variant": "candidate",
+    "compiler_builtins_exp_symbols": [
+      "$_RNvNtNtNtCs62tQcOokijN_17compiler_builtins4math9libm_math3exp3exp",
+      "$_RNvNtNtCs62tQcOokijN_17compiler_builtins4math20partial_availability4exp2"
+    ],
+    "software_fma_functions": [],
+    "inspection": {
+      "imports": [
+        {
+          "module": "env",
+          "name": "clock_ms",
+          "kind": "function"
+        },
+        {
+          "module": "env",
+          "name": "report",
+          "kind": "function"
+        }
+      ],
+      "table_occurrences": 1,
+      "table_offsets": [
+        1049360
+      ],
+      "initial_memory_bytes": 1114112,
+      "table_bytes": 2048
+    }
+  }
+]

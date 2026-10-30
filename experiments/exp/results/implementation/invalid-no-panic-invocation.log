@@ -1,0 +1,837 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling no-panic v0.1.37
+   Compiling libm v0.2.16 (/tmp/libm-exp-implementation/libm)
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/trunc.rs:29:29
+   |
+29 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/trunc.rs:15:29
+   |
+15 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/tgammaf.rs:4:29
+  |
+4 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/tgamma.rs:136:29
+    |
+136 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/tanhf.rs:6:29
+  |
+6 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/tanh.rs:11:29
+   |
+11 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/tanf.rs:30:29
+   |
+30 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/tan.rs:46:29
+   |
+46 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/sqrt.rs:36:29
+   |
+36 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/sqrt.rs:18:29
+   |
+18 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/sinhf.rs:4:29
+  |
+4 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/sinh.rs:9:29
+  |
+9 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/sinf.rs:30:29
+   |
+30 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/sincosf.rs:29:29
+   |
+29 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/sincos.rs:18:29
+   |
+18 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/sin.rs:47:29
+   |
+47 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/scalbn.rs:12:29
+   |
+12 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/scalbn.rs:7:29
+  |
+7 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/roundeven.rs:23:29
+   |
+23 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/roundeven.rs:16:29
+   |
+16 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/round.rs:17:29
+   |
+17 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/round.rs:11:29
+   |
+11 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/rint.rs:33:29
+   |
+33 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/rint.rs:17:29
+   |
+17 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/remquof.rs:1:29
+  |
+1 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/remquo.rs:1:29
+  |
+1 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/remainderf.rs:1:29
+  |
+1 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/remainder.rs:1:29
+  |
+1 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/powf.rs:49:29
+   |
+49 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/pow.rs:39:29
+   |
+39 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/nextafterf.rs:1:29
+  |
+1 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/nextafter.rs:1:29
+  |
+1 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/modff.rs:1:29
+  |
+1 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/modf.rs:1:29
+  |
+1 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/logf.rs:25:29
+   |
+25 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/log2f.rs:25:29
+   |
+25 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/log2.rs:31:29
+   |
+31 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/log1pf.rs:22:29
+   |
+22 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/log1p.rs:67:29
+   |
+67 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/log10f.rs:27:29
+   |
+27 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/log10.rs:33:29
+   |
+33 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/log.rs:74:29
+   |
+74 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/lgammaf_r.rs:105:29
+    |
+105 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/lgammaf.rs:5:29
+  |
+5 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/lgamma_r.rs:170:29
+    |
+170 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/lgamma.rs:5:29
+  |
+5 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/ldexp.rs:12:29
+   |
+12 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/ldexp.rs:7:29
+  |
+7 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/jnf.rs:195:29
+    |
+195 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/jnf.rs:19:29
+   |
+19 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/jn.rs:252:29
+    |
+252 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/jn.rs:42:29
+   |
+42 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/j1f.rs:113:29
+    |
+113 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/j1f.rs:67:29
+   |
+67 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/j1.rs:164:29
+    |
+164 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/j1.rs:117:29
+    |
+117 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/j0f.rs:113:29
+    |
+113 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/j0f.rs:66:29
+   |
+66 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/j0.rs:168:29
+    |
+168 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/j0.rs:113:29
+    |
+113 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/ilogb.rs:15:29
+   |
+15 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/ilogb.rs:9:29
+  |
+9 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/hypotf.rs:3:29
+  |
+3 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/hypot.rs:23:29
+   |
+23 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/frexp.rs:22:29
+   |
+22 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/frexp.rs:14:29
+   |
+14 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fmod.rs:15:29
+   |
+15 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/fmod.rs:9:29
+  |
+9 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fminimum_fmaximum_num.rs:55:29
+   |
+55 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fminimum_fmaximum_num.rs:47:29
+   |
+47 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fminimum_fmaximum_num.rs:21:29
+   |
+21 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fminimum_fmaximum_num.rs:13:29
+   |
+13 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fminimum_fmaximum.rs:55:29
+   |
+55 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fminimum_fmaximum.rs:47:29
+   |
+47 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fminimum_fmaximum.rs:21:29
+   |
+21 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fminimum_fmaximum.rs:13:29
+   |
+13 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fmin_fmax.rs:62:29
+   |
+62 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fmin_fmax.rs:53:29
+   |
+53 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fmin_fmax.rs:24:29
+   |
+24 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fmin_fmax.rs:15:29
+   |
+15 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fma.rs:27:29
+   |
+27 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/fma.rs:9:29
+  |
+9 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/floor.rs:30:29
+   |
+30 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/floor.rs:15:29
+   |
+15 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fdim.rs:36:29
+   |
+36 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fdim.rs:23:29
+   |
+23 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fabs.rs:30:29
+   |
+30 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/fabs.rs:15:29
+   |
+15 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/expm1f.rs:34:29
+   |
+34 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/expm1.rs:31:29
+   |
+31 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/expf.rs:33:29
+   |
+33 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/exp2m1f.rs:13:29
+   |
+13 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/exp2m1.rs:17:29
+   |
+17 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/exp2f.rs:76:29
+   |
+76 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/exp2.rs:26:29
+   |
+26 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/exp10f.rs:10:29
+   |
+10 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/exp10.rs:10:29
+   |
+10 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/exp.rs:28:29
+   |
+28 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/erff.rs:133:29
+    |
+133 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/erf.rs:222:29
+    |
+222 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/coshf.rs:8:29
+  |
+8 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/cosh.rs:8:29
+  |
+8 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/cosf.rs:30:29
+   |
+30 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/cos.rs:48:29
+   |
+48 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/copysign.rs:24:29
+   |
+24 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/copysign.rs:15:29
+   |
+15 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/ceil.rs:29:29
+   |
+29 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/ceil.rs:15:29
+   |
+15 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/cbrtf.rs:26:29
+   |
+26 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/cbrt.rs:11:29
+   |
+11 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/atanhf.rs:8:29
+  |
+8 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/atanh.rs:8:29
+  |
+8 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/atanf.rs:44:29
+   |
+44 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/atan2f.rs:26:29
+   |
+26 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/atan2.rs:50:29
+   |
+50 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/atan.rs:66:29
+   |
+66 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/asinhf.rs:10:29
+   |
+10 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/asinh.rs:10:29
+   |
+10 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/asinf.rs:38:29
+   |
+38 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/asin.rs:69:29
+   |
+69 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/acoshf.rs:10:29
+   |
+10 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/acosh.rs:10:29
+   |
+10 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/acosf.rs:36:29
+   |
+36 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/acos.rs:62:29
+   |
+62 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/rem_pio2f.rs:32:29
+   |
+32 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+   --> src/math/rem_pio2_large.rs:226:29
+    |
+226 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+    |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/rem_pio2.rs:44:29
+   |
+44 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/k_tanf.rs:22:29
+   |
+22 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/k_tan.rs:61:29
+   |
+61 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/k_sinf.rs:23:29
+   |
+23 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/k_sin.rs:46:29
+   |
+46 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/k_expo2f.rs:7:29
+  |
+7 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/k_expo2.rs:7:29
+  |
+7 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/k_cosf.rs:23:29
+   |
+23 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/k_cos.rs:54:29
+   |
+54 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+ --> src/math/expo2.rs:4:29
+  |
+4 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+  |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/relaxed/hypotf64.rs:18:29
+   |
+18 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+error[E0433]: cannot find module or crate `no_panic` in this scope
+  --> src/math/relaxed/cbrtf64.rs:33:29
+   |
+33 | #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+   |                             ^^^^^^^^ use of unresolved module or unlinked crate `no_panic`
+
+   Compiling syn v3.0.9
+For more information about this error, try `rustc --explain E0433`.
+error: could not compile `libm` (lib) due to 138 previous errors
+warning: build failed, waiting for other jobs to finish...

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "cargo",
+    "+nightly",
+    "clippy",
+    "--manifest-path",
+    "/tmp/libm-exp-implementation/libm/Cargo.toml",
+    "--all-targets",
+    "--offline",
+    "--",
+    "-D",
+    "warnings"
+  ],
+  "environment_overrides": {},
+  "exit_code": 0,
+  "duration_seconds": 0.6824232920189388
+}

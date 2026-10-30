@@ -1,0 +1,16 @@
+{
+  "command": [
+    "cargo",
+    "build",
+    "--manifest-path",
+    "/tmp/libm-exp-validation/candidate/libm/Cargo.toml",
+    "--lib",
+    "--release",
+    "--offline",
+    "--no-default-features",
+    "--target",
+    "riscv32imac-unknown-none-elf"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.0015042920131236
+}

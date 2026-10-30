@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/Users/fangluo/.local/bin/python3",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/accuracy_native.py",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/inputs.bin",
+    "/tmp/libm-exp-validation/base/target/release/libexp_experiment.dylib",
+    "/tmp/libm-exp-validation/candidate/target/release/libexp_experiment.dylib",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/native-outputs.bin"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.38343683298444375
+}

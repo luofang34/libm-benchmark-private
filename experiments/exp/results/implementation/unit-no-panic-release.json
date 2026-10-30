@@ -1,0 +1,20 @@
+{
+  "command": [
+    "cargo",
+    "+nightly",
+    "test",
+    "--lib",
+    "--release",
+    "--no-default-features",
+    "--manifest-path",
+    "/tmp/libm-exp-implementation/libm/Cargo.toml",
+    "--offline"
+  ],
+  "environment_overrides": {
+    "ENSURE_NO_PANIC": "1",
+    "CARGO_PROFILE_RELEASE_LTO": "fat",
+    "CARGO_PROFILE_RELEASE_CODEGEN_UNITS": "1"
+  },
+  "exit_code": 0,
+  "duration_seconds": 8.482528207998257
+}

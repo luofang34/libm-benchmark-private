@@ -1,0 +1,23 @@
+{
+  "checks_exit_codes": {
+    "format": 0,
+    "clippy": 0,
+    "unit-debug": 0,
+    "unit-no-panic-release": 0,
+    "build-wasm": 0,
+    "build-soft-fallback": 0,
+    "build-thumb-fallback": 0,
+    "no-panic-wasm": 0
+  },
+  "unit_tests_passed": 116,
+  "doc_tests_passed": 1,
+  "pow_arithmetic_unchanged": true,
+  "target_scope_unchanged": true,
+  "no_new_dependencies": true,
+  "new_code_has_no_unsafe_blocks": true,
+  "excluded_attempts": {
+    "invalid-no-panic-invocation": "RUSTFLAGS forced macro cfg on a normal library dependency without dev-dependencies; rerun successfully with ENSURE_NO_PANIC and --lib, fat LTO.",
+    "missing-nightly-thumb-target": "nightly lacks thumbv6m core; stable thumbv6m and nightly riscv32imac fallback builds subsequently passed."
+  },
+  "scope": "Local prototype checks only; not full upstream matrix, hardware or global worst-case proof."
+}

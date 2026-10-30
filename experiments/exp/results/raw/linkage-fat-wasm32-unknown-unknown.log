@@ -1,0 +1,3 @@
+   Compiling libm v0.2.16 (/private/tmp/libm-exp-validation/candidate/libm)
+   Compiling exp-fixture v0.1.0 (/private/tmp/libm-exp-validation/candidate/fixtures)
+    Finished `release` profile [optimized] target(s) in 1.34s

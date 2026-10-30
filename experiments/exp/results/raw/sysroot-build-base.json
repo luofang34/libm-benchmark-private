@@ -1,0 +1,19 @@
+{
+  "command": [
+    "cargo",
+    "+nightly",
+    "build",
+    "--manifest-path",
+    "/private/tmp/libm-exp-sysroots/base/harness/Cargo.toml",
+    "--release",
+    "--lib",
+    "--no-default-features",
+    "--target",
+    "wasm32-unknown-unknown",
+    "-Zbuild-std=std,panic_abort",
+    "--offline",
+    "-vv"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 13.368158917000983
+}

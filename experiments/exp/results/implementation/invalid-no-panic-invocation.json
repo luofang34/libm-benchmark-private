@@ -1,0 +1,16 @@
+{
+  "command": [
+    "cargo",
+    "+nightly",
+    "test",
+    "--release",
+    "--manifest-path",
+    "/tmp/libm-exp-implementation/libm/Cargo.toml",
+    "--offline"
+  ],
+  "environment_overrides": {
+    "RUSTFLAGS": "--cfg assert_no_panic"
+  },
+  "exit_code": 101,
+  "duration_seconds": 1.6510237920447253
+}

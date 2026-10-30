@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/Users/fangluo/.local/bin/python3",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/summarize.py",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/raw/performance-sysroot.csv",
+    "--output",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/performance-std.csv"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.034001790976617485
+}

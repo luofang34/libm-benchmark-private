@@ -1,0 +1,31 @@
+{
+  "scale": "minimal-exp",
+  "imports": [],
+  "tests": [
+    {
+      "export": "exponential",
+      "input": -10,
+      "output": 0.000045399929762484854
+    },
+    {
+      "export": "exponential",
+      "input": -1,
+      "output": 0.36787944117144233
+    },
+    {
+      "export": "exponential",
+      "input": 0,
+      "output": 1
+    },
+    {
+      "export": "exponential",
+      "input": 1,
+      "output": 2.718281828459045
+    },
+    {
+      "export": "exponential",
+      "input": 10,
+      "output": 22026.465794806718
+    }
+  ]
+}

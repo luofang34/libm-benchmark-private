@@ -1,0 +1,12 @@
+{
+  "seed": 20261030,
+  "cases": 292194,
+  "functions": [
+    "exp",
+    "exp2"
+  ],
+  "per_function": 146097,
+  "byte_order": "little",
+  "row_format": "u64 function index, u64 IEEE input bits",
+  "includes_exp2_i0_wrap_regression": true
+}

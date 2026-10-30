@@ -1,0 +1,11 @@
+{
+  "command": [
+    "cargo",
+    "fmt",
+    "--manifest-path",
+    "/tmp/libm-exp-validation/candidate/harness/Cargo.toml",
+    "--check"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.10452695802086964
+}

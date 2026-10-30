@@ -1,0 +1,14 @@
+{
+  "command": [
+    "cargo",
+    "+nightly",
+    "fmt",
+    "--manifest-path",
+    "/tmp/libm-exp-implementation/libm/Cargo.toml",
+    "--",
+    "--check"
+  ],
+  "environment_overrides": {},
+  "exit_code": 0,
+  "duration_seconds": 0.6294878339977004
+}

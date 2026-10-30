@@ -1,0 +1,28 @@
+{
+  "commands": [
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/libm-exp-exp2-shared.patch"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "patch",
+        "-p1",
+        "--batch",
+        "--forward",
+        "-i",
+        "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/libm-exp-exp2-shared.patch"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "patched_source_equals_overlay": true,
+  "tested_source_equals_overlay": true,
+  "rust_files_compared": 180,
+  "patch_sha256": "91cd88a86964687bc60c6ff0bfd9646a2cb88e433058c5bfd6c07158c5785779"
+}

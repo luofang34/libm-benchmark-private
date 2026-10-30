@@ -1,0 +1,54 @@
+{
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "commands": {
+    "rustc": {
+      "command": [
+        "rustc",
+        "-vV"
+      ],
+      "exit_code": 0,
+      "output": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: aarch64-apple-darwin\nrelease: 1.99.0\nLLVM version: 23.1.1\n"
+    },
+    "cargo": {
+      "command": [
+        "cargo",
+        "-V"
+      ],
+      "exit_code": 0,
+      "output": "cargo 1.99.0 (5f94df478 2026-08-27)\n"
+    },
+    "clang": {
+      "command": [
+        "clang",
+        "--version"
+      ],
+      "exit_code": 0,
+      "output": "Apple clang version 21.0.0 (clang-2100.4.1.1)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n"
+    },
+    "node_v8": {
+      "command": [
+        "node",
+        "-p",
+        "JSON.stringify(process.versions)"
+      ],
+      "exit_code": 0,
+      "output": "{\"node\":\"26.12.1\",\"acorn\":\"8.19.0\",\"ada\":\"4.0.0\",\"amaro\":\"1.1.11\",\"ares\":\"1.34.9\",\"brotli\":\"1.2.1\",\"cldr\":\"48.0\",\"icu\":\"78.3\",\"libffi\":\"3.8.0\",\"llhttp\":\"9.4.3\",\"merve\":\"1.2.2\",\"modules\":\"147\",\"napi\":\"10\",\"nbytes\":\"0.1.4\",\"ncrypto\":\"0.0.1\",\"nghttp2\":\"1.70.0\",\"nghttp3\":\"\",\"ngtcp2\":\"\",\"openssl\":\"4.0.3\",\"simdjson\":\"5.0.5\",\"simdutf\":\"9.3.2\",\"sqlite\":\"3.54.1\",\"tz\":\"2026a\",\"undici\":\"8.12.2\",\"unicode\":\"17.0\",\"uv\":\"1.53.0\",\"uvwasi\":\"0.0.23\",\"v8\":\"14.6.202.34-node.40\",\"zlib\":\"1.2.12\",\"zstd\":\"1.5.7\"}\n"
+    },
+    "cpu": {
+      "command": [
+        "sysctl",
+        "-n",
+        "machdep.cpu.brand_string"
+      ],
+      "exit_code": 0,
+      "output": "Apple M3 Max\n"
+    },
+    "system": {
+      "command": [
+        "sw_vers"
+      ],
+      "exit_code": 0,
+      "output": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0\nBuildVersion:\t\t26A5368g\n"
+    }
+  }
+}

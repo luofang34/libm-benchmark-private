@@ -1,0 +1,17 @@
+{
+  "command": [
+    "cargo",
+    "build",
+    "--manifest-path",
+    "/private/tmp/libm-exp-validation/base/fixtures/Cargo.toml",
+    "--release",
+    "--lib",
+    "--offline",
+    "--target",
+    "wasm32-unknown-unknown",
+    "--features",
+    "exp2"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.25234237499535084
+}

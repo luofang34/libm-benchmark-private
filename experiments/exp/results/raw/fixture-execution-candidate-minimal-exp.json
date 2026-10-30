@@ -1,0 +1,10 @@
+{
+  "command": [
+    "node",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/verify_fixture.mjs",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/minimal-exp-candidate.wasm",
+    "minimal-exp"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.1350475000217557
+}

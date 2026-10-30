@@ -1,0 +1,9 @@
+   Compiling libm v0.2.16 (/tmp/libm-exp-implementation/libm)
+error[E0463]: can't find crate for `core`
+  |
+  = note: the `thumbv6m-none-eabi` target may not be installed
+  = help: consider downloading the target with `rustup target add thumbv6m-none-eabi`
+  = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+For more information about this error, try `rustc --explain E0463`.
+error: could not compile `libm` (lib) due to 1 previous error

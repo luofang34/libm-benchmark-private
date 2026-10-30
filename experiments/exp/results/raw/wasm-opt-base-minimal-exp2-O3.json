@@ -1,0 +1,12 @@
+{
+  "command": [
+    "wasm-opt",
+    "--all-features",
+    "-O3",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/minimal-exp2-base.wasm",
+    "-o",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/minimal-exp2-base-O3.wasm"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.06743525003548712
+}

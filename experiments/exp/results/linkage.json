@@ -1,0 +1,56 @@
+[
+  {
+    "target_triple": "aarch64-apple-darwin",
+    "lto": "fat",
+    "sha256": "f4627883333543e9949ddd431d28bd85a371e7ec650851521b4601c3a7b6dc83",
+    "table_occurrences": 1,
+    "inspection": {
+      "full_table_binary_occurrences": 1,
+      "forbidden_libcalls": []
+    },
+    "status": "PASS"
+  },
+  {
+    "target_triple": "wasm32-unknown-unknown",
+    "lto": "fat",
+    "sha256": "6da0ef9665f2d24765661743d6629b625ae98e77606b2400bbc9d58a1e1c326a",
+    "table_occurrences": 1,
+    "inspection": {
+      "imports": [],
+      "table_occurrences": 1,
+      "table_offsets": [
+        1048904
+      ],
+      "initial_memory_bytes": 1114112,
+      "table_bytes": 2048
+    },
+    "status": "PASS"
+  },
+  {
+    "target_triple": "aarch64-apple-darwin",
+    "lto": "off",
+    "sha256": "a3f8ba9f069d0a995252f02524ae263a02b891f441f765f9d76d456405f2b3d1",
+    "table_occurrences": 1,
+    "inspection": {
+      "full_table_binary_occurrences": 1,
+      "forbidden_libcalls": []
+    },
+    "status": "PASS"
+  },
+  {
+    "target_triple": "wasm32-unknown-unknown",
+    "lto": "off",
+    "sha256": "8989498f2c6aef29453d8f810909ee34c19bc2d15ced05027eed5a2db11c4d3e",
+    "table_occurrences": 1,
+    "inspection": {
+      "imports": [],
+      "table_occurrences": 1,
+      "table_offsets": [
+        1048984
+      ],
+      "initial_memory_bytes": 1114112,
+      "table_bytes": 2048
+    },
+    "status": "PASS"
+  }
+]

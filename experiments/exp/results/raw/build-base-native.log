@@ -1,0 +1,3 @@
+   Compiling libm v0.2.16 (/tmp/libm-exp-validation/base/libm)
+   Compiling exp-experiment v0.1.0 (/tmp/libm-exp-validation/base/harness)
+    Finished `release` profile [optimized] target(s) in 2.28s

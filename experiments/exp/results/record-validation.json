@@ -1,0 +1,14 @@
+[
+  {
+    "case": "truncated-record",
+    "expected_exit": 6,
+    "observed_exit": 6,
+    "status": "PASS"
+  },
+  {
+    "case": "trailing-byte",
+    "expected_exit": 6,
+    "observed_exit": 6,
+    "status": "PASS"
+  }
+]

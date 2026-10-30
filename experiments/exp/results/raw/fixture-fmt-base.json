@@ -1,0 +1,11 @@
+{
+  "command": [
+    "cargo",
+    "fmt",
+    "--manifest-path",
+    "/private/tmp/libm-exp-validation/base/fixtures/Cargo.toml",
+    "--check"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.09752637497149408
+}

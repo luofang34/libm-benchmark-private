@@ -1,0 +1,12 @@
+{
+  "command": [
+    "node",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/accuracy_wasm.mjs",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/inputs.bin",
+    "/tmp/libm-exp-sysroots/base/target/wasm32-unknown-unknown/release/exp_experiment.wasm",
+    "/tmp/libm-exp-sysroots/candidate/target/wasm32-unknown-unknown/release/exp_experiment.wasm",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/sysroot-outputs.bin"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.26335129101062194
+}

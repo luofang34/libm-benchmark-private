@@ -1,0 +1,1772 @@
+diff --git a/libm/src/math/exp.rs b/libm/src/math/exp.rs
+--- a/libm/src/math/exp.rs
++++ b/libm/src/math/exp.rs
+@@ -1,156 +1,58 @@
+-/* origin: FreeBSD /usr/src/lib/msun/src/e_exp.c */
++// Copyright (c) 2018-2025, Arm Limited.
++// SPDX-License-Identifier: MIT
+ /*
+- * ====================================================
+- * Copyright (C) 2004 by Sun Microsystems, Inc. All rights reserved.
+- *
+- * Permission to use, copy, modify, and distribute this
+- * software is freely granted, provided that this notice
+- * is preserved.
+- * ====================================================
+- */
+-/* exp(x)
+- * Returns the exponential of x.
+- *
+- * Method
+- *   1. Argument reduction:
+- *      Reduce x to an r so that |r| <= 0.5*ln2 ~ 0.34658.
+- *      Given x, find r and integer k such that
+- *
+- *               x = k*ln2 + r,  |r| <= 0.5*ln2.
+- *
+- *      Here r will be represented as r = hi-lo for better
+- *      accuracy.
+- *
+- *   2. Approximation of exp(r) by a special rational function on
+- *      the interval [0,0.34658]:
+- *      Write
+- *          R(r**2) = r*(exp(r)+1)/(exp(r)-1) = 2 + r*r/6 - r**4/360 + ...
+- *      We use a special Remez algorithm on [0,0.34658] to generate
+- *      a polynomial of degree 5 to approximate R. The maximum error
+- *      of this polynomial approximation is bounded by 2**-59. In
+- *      other words,
+- *          R(z) ~ 2.0 + P1*z + P2*z**2 + P3*z**3 + P4*z**4 + P5*z**5
+- *      (where z=r*r, and the values of P1 to P5 are listed below)
+- *      and
+- *          |                  5          |     -59
+- *          | 2.0+P1*z+...+P5*z   -  R(z) | <= 2
+- *          |                             |
+- *      The computation of exp(r) thus becomes
+- *                              2*r
+- *              exp(r) = 1 + ----------
+- *                            R(r) - r
+- *                                 r*c(r)
+- *                     = 1 + r + ----------- (for better accuracy)
+- *                                2 - c(r)
+- *      where
+- *                              2       4             10
+- *              c(r) = r - (P1*r  + P2*r  + ... + P5*r   ).
+- *
+- *   3. Scale back to obtain exp(x):
+- *      From step 1, we have
+- *         exp(x) = 2^k * exp(r)
+- *
+- * Special cases:
+- *      exp(INF) is INF, exp(NaN) is NaN;
+- *      exp(-INF) is 0, and
+- *      for finite argument, only exp(0)=1 is exact.
+- *
+- * Accuracy:
+- *      according to an error analysis, the error is always less than
+- *      1 ulp (unit in the last place).
+- *
+- * Misc. info.
+- *      For IEEE double
+- *          if x >  709.782712893383973096 then exp(x) overflows
+- *          if x < -745.133219101941108420 then exp(x) underflows
+- */
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
+ 
+-use super::scalbn;
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
+ 
+-const HALF: [f64; 2] = [0.5, -0.5];
+-const LN2HI: f64 = 6.93147180369123816490e-01; /* 0x3fe62e42, 0xfee00000 */
+-const LN2LO: f64 = 1.90821492927058770002e-10; /* 0x3dea39ef, 0x35793c76 */
+-const INVLN2: f64 = 1.44269504088896338700e+00; /* 0x3ff71547, 0x652b82fe */
+-const P1: f64 = 1.66666666666666019037e-01; /* 0x3FC55555, 0x5555553E */
+-const P2: f64 = -2.77777777770155933842e-03; /* 0xBF66C16C, 0x16BEBD93 */
+-const P3: f64 = 6.61375632143793436117e-05; /* 0x3F11566A, 0xAF25DE2C */
+-const P4: f64 = -1.65339022054652515390e-06; /* 0xBEBBBD41, 0xC5D26BF1 */
+-const P5: f64 = 4.13813679705723846039e-08; /* 0x3E663769, 0x72BEA4D0 */
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
++*/
++use super::exp_shared::specialcase;
++use super::exp_shared::table::{
++    EXP_POLY as C, EXP_TAB, INV_LN2_N, NEG_LN2_HI_N, NEG_LN2_LO_N, SHIFT,
++};
+ 
+-/// Exponential, base *e* (f64)
+-///
+-/// Calculate the exponential of `x`, that is, *e* raised to the power `x`
+-/// (where *e* is the base of the natural system of logarithms, approximately 2.71828).
++/// Returns the exponential function of `x` (f64).
+ #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+-pub fn exp(mut x: f64) -> f64 {
+-    select_implementation! {
+-        name: x87_exp,
+-        use_arch_required: x86_no_sse2,
+-        args: x,
++pub fn exp(x: f64) -> f64 {
++    let bits = x.to_bits();
++    let abstop = ((bits >> 52) as u32) & 0x7ff;
++    if abstop < 0x3c9 {
++        return 1.0 + x;
+     }
+-
+-    let x1p1023 = f64::from_bits(0x7fe0000000000000); // 0x1p1023 === 2 ^ 1023
+-    let x1p_149 = f64::from_bits(0x36a0000000000000); // 0x1p-149 === 2 ^ -149
+-
+-    let hi: f64;
+-    let lo: f64;
+-    let c: f64;
+-    let xx: f64;
+-    let y: f64;
+-    let k: i32;
+-    let sign: i32;
+-    let mut hx: u32;
+-
+-    hx = (x.to_bits() >> 32) as u32;
+-    sign = (hx >> 31) as i32;
+-    hx &= 0x7fffffff; /* high word of |x| */
+-
+-    /* special cases */
+-    if hx >= 0x4086232b {
+-        /* if |x| >= 708.39... */
+-        if x.is_nan() {
+-            return x;
++    if abstop >= 0x409 {
++        if bits == f64::NEG_INFINITY.to_bits() {
++            return 0.0;
+         }
+-        if x > 709.782712893383973096 {
+-            /* overflow if x!=inf */
+-            x *= x1p1023;
+-            return x;
++        if abstop >= 0x7ff {
++            return 1.0 + x;
+         }
+-        if x < -708.39641853226410622 {
+-            /* underflow if x!=-inf */
+-            force_eval!((-x1p_149 / x) as f32);
+-            if x < -745.13321910194110842 {
+-                return 0.;
+-            }
+-        }
++        return if bits >> 63 != 0 { 0.0 } else { f64::INFINITY };
+     }
+-
+-    /* argument reduction */
+-    if hx > 0x3fd62e42 {
+-        /* if |x| > 0.5 ln2 */
+-        if hx >= 0x3ff0a2b2 {
+-            /* if |x| >= 1.5 ln2 */
+-            k = (INVLN2 * x + i!(HALF, sign as usize)) as i32;
+-        } else {
+-            k = 1 - sign - sign;
+-        }
+-        hi = x - k as f64 * LN2HI; /* k*ln2hi is exact here */
+-        lo = k as f64 * LN2LO;
+-        x = hi - lo;
+-    } else if hx > 0x3e300000 {
+-        /* if |x| > 2**-28 */
+-        k = 0;
+-        hi = x;
+-        lo = 0.;
++    let kd = x * INV_LN2_N + SHIFT;
++    let ki = kd.to_bits();
++    let kd = kd - SHIFT;
++    let r = x + kd * NEG_LN2_HI_N + kd * NEG_LN2_LO_N;
++    let row = EXP_TAB[(ki & 127) as usize];
++    let sbits = row[1].wrapping_add(ki.wrapping_shl(45));
++    let r2 = r * r;
++    let tmp = f64::from_bits(row[0]) + r + r2 * (C[0] + r * C[1]) + r2 * r2 * (C[2] + r * C[3]);
++    if abstop >= 0x408 {
++        specialcase(tmp, sbits, ki, 1009)
+     } else {
+-        /* inexact if x!=0 */
+-        force_eval!(x1p1023 + x);
+-        return 1. + x;
++        let scale = f64::from_bits(sbits);
++        scale + scale * tmp
+     }
+-
+-    /* x is now in primary range */
+-    xx = x * x;
+-    c = x - xx * (P1 + xx * (P2 + xx * (P3 + xx * (P4 + xx * P5))));
+-    y = 1. + (x * c / (2. - c) - lo + hi);
+-    if k == 0 { y } else { scalbn(y, k) }
+ }
+diff --git a/libm/src/math/exp2.rs b/libm/src/math/exp2.rs
+--- a/libm/src/math/exp2.rs
++++ b/libm/src/math/exp2.rs
+@@ -1,400 +1,62 @@
+-// origin: FreeBSD /usr/src/lib/msun/src/s_exp2.c */
+-//-
+-// Copyright (c) 2005 David Schultz <das@FreeBSD.ORG>
+-// All rights reserved.
+-//
+-// Redistribution and use in source and binary forms, with or without
+-// modification, are permitted provided that the following conditions
+-// are met:
+-// 1. Redistributions of source code must retain the above copyright
+-//    notice, this list of conditions and the following disclaimer.
+-// 2. Redistributions in binary form must reproduce the above copyright
+-//    notice, this list of conditions and the following disclaimer in the
+-//    documentation and/or other materials provided with the distribution.
+-//
+-// THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+-// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+-// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+-// ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+-// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+-// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+-// OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+-// HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+-// LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+-// OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+-// SUCH DAMAGE.
++// Copyright (c) 2018-2025, Arm Limited.
++// SPDX-License-Identifier: MIT
++/*
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
+ 
+-use super::scalbn;
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
+ 
+-const TBLSIZE: usize = 256;
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
++*/
++use super::exp_shared::specialcase;
++use super::exp_shared::table::{EXP_TAB, EXP2_POLY as C, EXP2_SHIFT as SHIFT};
+ 
+-#[rustfmt::skip]
+-static TBL: [u64; TBLSIZE * 2] = [
+-    //  exp2(z + eps)          eps
+-    0x3fe6a09e667f3d5d, 0x3d39880000000000,
+-    0x3fe6b052fa751744, 0x3cd8000000000000,
+-    0x3fe6c012750bd9fe, 0xbd28780000000000,
+-    0x3fe6cfdcddd476bf, 0x3d1ec00000000000,
+-    0x3fe6dfb23c651a29, 0xbcd8000000000000,
+-    0x3fe6ef9298593ae3, 0xbcbc000000000000,
+-    0x3fe6ff7df9519386, 0xbd2fd80000000000,
+-    0x3fe70f7466f42da3, 0xbd2c880000000000,
+-    0x3fe71f75e8ec5fc3, 0x3d13c00000000000,
+-    0x3fe72f8286eacf05, 0xbd38300000000000,
+-    0x3fe73f9a48a58152, 0xbd00c00000000000,
+-    0x3fe74fbd35d7ccfc, 0x3d2f880000000000,
+-    0x3fe75feb564267f1, 0x3d03e00000000000,
+-    0x3fe77024b1ab6d48, 0xbd27d00000000000,
+-    0x3fe780694fde5d38, 0xbcdd000000000000,
+-    0x3fe790b938ac1d00, 0x3ce3000000000000,
+-    0x3fe7a11473eb0178, 0xbced000000000000,
+-    0x3fe7b17b0976d060, 0x3d20400000000000,
+-    0x3fe7c1ed0130c133, 0x3ca0000000000000,
+-    0x3fe7d26a62ff8636, 0xbd26900000000000,
+-    0x3fe7e2f336cf4e3b, 0xbd02e00000000000,
+-    0x3fe7f3878491c3e8, 0xbd24580000000000,
+-    0x3fe80427543e1b4e, 0x3d33000000000000,
+-    0x3fe814d2add1071a, 0x3d0f000000000000,
+-    0x3fe82589994ccd7e, 0xbd21c00000000000,
+-    0x3fe8364c1eb942d0, 0x3d29d00000000000,
+-    0x3fe8471a4623cab5, 0x3d47100000000000,
+-    0x3fe857f4179f5bbc, 0x3d22600000000000,
+-    0x3fe868d99b4491af, 0xbd32c40000000000,
+-    0x3fe879cad931a395, 0xbd23000000000000,
+-    0x3fe88ac7d98a65b8, 0xbd2a800000000000,
+-    0x3fe89bd0a4785800, 0xbced000000000000,
+-    0x3fe8ace5422aa223, 0x3d33280000000000,
+-    0x3fe8be05bad619fa, 0x3d42b40000000000,
+-    0x3fe8cf3216b54383, 0xbd2ed00000000000,
+-    0x3fe8e06a5e08664c, 0xbd20500000000000,
+-    0x3fe8f1ae99157807, 0x3d28280000000000,
+-    0x3fe902fed0282c0e, 0xbd1cb00000000000,
+-    0x3fe9145b0b91ff96, 0xbd05e00000000000,
+-    0x3fe925c353aa2ff9, 0x3cf5400000000000,
+-    0x3fe93737b0cdc64a, 0x3d17200000000000,
+-    0x3fe948b82b5f98ae, 0xbd09000000000000,
+-    0x3fe95a44cbc852cb, 0x3d25680000000000,
+-    0x3fe96bdd9a766f21, 0xbd36d00000000000,
+-    0x3fe97d829fde4e2a, 0xbd01000000000000,
+-    0x3fe98f33e47a23a3, 0x3d2d000000000000,
+-    0x3fe9a0f170ca0604, 0xbd38a40000000000,
+-    0x3fe9b2bb4d53ff89, 0x3d355c0000000000,
+-    0x3fe9c49182a3f15b, 0x3d26b80000000000,
+-    0x3fe9d674194bb8c5, 0xbcec000000000000,
+-    0x3fe9e86319e3238e, 0x3d17d00000000000,
+-    0x3fe9fa5e8d07f302, 0x3d16400000000000,
+-    0x3fea0c667b5de54d, 0xbcf5000000000000,
+-    0x3fea1e7aed8eb8f6, 0x3d09e00000000000,
+-    0x3fea309bec4a2e27, 0x3d2ad80000000000,
+-    0x3fea42c980460a5d, 0xbd1af00000000000,
+-    0x3fea5503b23e259b, 0x3d0b600000000000,
+-    0x3fea674a8af46213, 0x3d38880000000000,
+-    0x3fea799e1330b3a7, 0x3d11200000000000,
+-    0x3fea8bfe53c12e8d, 0x3d06c00000000000,
+-    0x3fea9e6b5579fcd2, 0xbd29b80000000000,
+-    0x3feab0e521356fb8, 0x3d2b700000000000,
+-    0x3feac36bbfd3f381, 0x3cd9000000000000,
+-    0x3fead5ff3a3c2780, 0x3ce4000000000000,
+-    0x3feae89f995ad2a3, 0xbd2c900000000000,
+-    0x3feafb4ce622f367, 0x3d16500000000000,
+-    0x3feb0e07298db790, 0x3d2fd40000000000,
+-    0x3feb20ce6c9a89a9, 0x3d12700000000000,
+-    0x3feb33a2b84f1a4b, 0x3d4d470000000000,
+-    0x3feb468415b747e7, 0xbd38380000000000,
+-    0x3feb59728de5593a, 0x3c98000000000000,
+-    0x3feb6c6e29f1c56a, 0x3d0ad00000000000,
+-    0x3feb7f76f2fb5e50, 0x3cde800000000000,
+-    0x3feb928cf22749b2, 0xbd04c00000000000,
+-    0x3feba5b030a10603, 0xbd0d700000000000,
+-    0x3febb8e0b79a6f66, 0x3d0d900000000000,
+-    0x3febcc1e904bc1ff, 0x3d02a00000000000,
+-    0x3febdf69c3f3a16f, 0xbd1f780000000000,
+-    0x3febf2c25bd71db8, 0xbd10a00000000000,
+-    0x3fec06286141b2e9, 0xbd11400000000000,
+-    0x3fec199bdd8552e0, 0x3d0be00000000000,
+-    0x3fec2d1cd9fa64ee, 0xbd09400000000000,
+-    0x3fec40ab5fffd02f, 0xbd0ed00000000000,
+-    0x3fec544778fafd15, 0x3d39660000000000,
+-    0x3fec67f12e57d0cb, 0xbd1a100000000000,
+-    0x3fec7ba88988c1b6, 0xbd58458000000000,
+-    0x3fec8f6d9406e733, 0xbd1a480000000000,
+-    0x3feca3405751c4df, 0x3ccb000000000000,
+-    0x3fecb720dcef9094, 0x3d01400000000000,
+-    0x3feccb0f2e6d1689, 0x3cf0200000000000,
+-    0x3fecdf0b555dc412, 0x3cf3600000000000,
+-    0x3fecf3155b5bab3b, 0xbd06900000000000,
+-    0x3fed072d4a0789bc, 0x3d09a00000000000,
+-    0x3fed1b532b08c8fa, 0xbd15e00000000000,
+-    0x3fed2f87080d8a85, 0x3d1d280000000000,
+-    0x3fed43c8eacaa203, 0x3d01a00000000000,
+-    0x3fed5818dcfba491, 0x3cdf000000000000,
+-    0x3fed6c76e862e6a1, 0xbd03a00000000000,
+-    0x3fed80e316c9834e, 0xbd0cd80000000000,
+-    0x3fed955d71ff6090, 0x3cf4c00000000000,
+-    0x3feda9e603db32ae, 0x3cff900000000000,
+-    0x3fedbe7cd63a8325, 0x3ce9800000000000,
+-    0x3fedd321f301b445, 0xbcf5200000000000,
+-    0x3fede7d5641c05bf, 0xbd1d700000000000,
+-    0x3fedfc97337b9aec, 0xbd16140000000000,
+-    0x3fee11676b197d5e, 0x3d0b480000000000,
+-    0x3fee264614f5a3e7, 0x3d40ce0000000000,
+-    0x3fee3b333b16ee5c, 0x3d0c680000000000,
+-    0x3fee502ee78b3fb4, 0xbd09300000000000,
+-    0x3fee653924676d68, 0xbce5000000000000,
+-    0x3fee7a51fbc74c44, 0xbd07f80000000000,
+-    0x3fee8f7977cdb726, 0xbcf3700000000000,
+-    0x3feea4afa2a490e8, 0x3ce5d00000000000,
+-    0x3feeb9f4867ccae4, 0x3d161a0000000000,
+-    0x3feecf482d8e680d, 0x3cf5500000000000,
+-    0x3feee4aaa2188514, 0x3cc6400000000000,
+-    0x3feefa1bee615a13, 0xbcee800000000000,
+-    0x3fef0f9c1cb64106, 0xbcfa880000000000,
+-    0x3fef252b376bb963, 0xbd2c900000000000,
+-    0x3fef3ac948dd7275, 0x3caa000000000000,
+-    0x3fef50765b6e4524, 0xbcf4f00000000000,
+-    0x3fef6632798844fd, 0x3cca800000000000,
+-    0x3fef7bfdad9cbe38, 0x3cfabc0000000000,
+-    0x3fef91d802243c82, 0xbcd4600000000000,
+-    0x3fefa7c1819e908e, 0xbd0b0c0000000000,
+-    0x3fefbdba3692d511, 0xbcc0e00000000000,
+-    0x3fefd3c22b8f7194, 0xbd10de8000000000,
+-    0x3fefe9d96b2a23ee, 0x3cee430000000000,
+-    0x3ff0000000000000, 0x0,
+-    0x3ff00b1afa5abcbe, 0xbcb3400000000000,
+-    0x3ff0163da9fb3303, 0xbd12170000000000,
+-    0x3ff02168143b0282, 0x3cba400000000000,
+-    0x3ff02c9a3e77806c, 0x3cef980000000000,
+-    0x3ff037d42e11bbca, 0xbcc7400000000000,
+-    0x3ff04315e86e7f89, 0x3cd8300000000000,
+-    0x3ff04e5f72f65467, 0xbd1a3f0000000000,
+-    0x3ff059b0d315855a, 0xbd02840000000000,
+-    0x3ff0650a0e3c1f95, 0x3cf1600000000000,
+-    0x3ff0706b29ddf71a, 0x3d15240000000000,
+-    0x3ff07bd42b72a82d, 0xbce9a00000000000,
+-    0x3ff0874518759bd0, 0x3ce6400000000000,
+-    0x3ff092bdf66607c8, 0xbd00780000000000,
+-    0x3ff09e3ecac6f383, 0xbc98000000000000,
+-    0x3ff0a9c79b1f3930, 0x3cffa00000000000,
+-    0x3ff0b5586cf988fc, 0xbcfac80000000000,
+-    0x3ff0c0f145e46c8a, 0x3cd9c00000000000,
+-    0x3ff0cc922b724816, 0x3d05200000000000,
+-    0x3ff0d83b23395dd8, 0xbcfad00000000000,
+-    0x3ff0e3ec32d3d1f3, 0x3d1bac0000000000,
+-    0x3ff0efa55fdfa9a6, 0xbd04e80000000000,
+-    0x3ff0fb66affed2f0, 0xbd0d300000000000,
+-    0x3ff1073028d7234b, 0x3cf1500000000000,
+-    0x3ff11301d0125b5b, 0x3cec000000000000,
+-    0x3ff11edbab5e2af9, 0x3d16bc0000000000,
+-    0x3ff12abdc06c31d5, 0x3ce8400000000000,
+-    0x3ff136a814f2047d, 0xbd0ed00000000000,
+-    0x3ff1429aaea92de9, 0x3ce8e00000000000,
+-    0x3ff14e95934f3138, 0x3ceb400000000000,
+-    0x3ff15a98c8a58e71, 0x3d05300000000000,
+-    0x3ff166a45471c3df, 0x3d03380000000000,
+-    0x3ff172b83c7d5211, 0x3d28d40000000000,
+-    0x3ff17ed48695bb9f, 0xbd05d00000000000,
+-    0x3ff18af9388c8d93, 0xbd1c880000000000,
+-    0x3ff1972658375d66, 0x3d11f00000000000,
+-    0x3ff1a35beb6fcba7, 0x3d10480000000000,
+-    0x3ff1af99f81387e3, 0xbd47390000000000,
+-    0x3ff1bbe084045d54, 0x3d24e40000000000,
+-    0x3ff1c82f95281c43, 0xbd0a200000000000,
+-    0x3ff1d4873168b9b2, 0x3ce3800000000000,
+-    0x3ff1e0e75eb44031, 0x3ceac00000000000,
+-    0x3ff1ed5022fcd938, 0x3d01900000000000,
+-    0x3ff1f9c18438cdf7, 0xbd1b780000000000,
+-    0x3ff2063b88628d8f, 0x3d2d940000000000,
+-    0x3ff212be3578a81e, 0x3cd8000000000000,
+-    0x3ff21f49917ddd41, 0x3d2b340000000000,
+-    0x3ff22bdda2791323, 0x3d19f80000000000,
+-    0x3ff2387a6e7561e7, 0xbd19c80000000000,
+-    0x3ff2451ffb821427, 0x3d02300000000000,
+-    0x3ff251ce4fb2a602, 0xbd13480000000000,
+-    0x3ff25e85711eceb0, 0x3d12700000000000,
+-    0x3ff26b4565e27d16, 0x3d11d00000000000,
+-    0x3ff2780e341de00f, 0x3d31ee0000000000,
+-    0x3ff284dfe1f5633e, 0xbd14c00000000000,
+-    0x3ff291ba7591bb30, 0xbd13d80000000000,
+-    0x3ff29e9df51fdf09, 0x3d08b00000000000,
+-    0x3ff2ab8a66d10e9b, 0xbd227c0000000000,
+-    0x3ff2b87fd0dada3a, 0x3d2a340000000000,
+-    0x3ff2c57e39771af9, 0xbd10800000000000,
+-    0x3ff2d285a6e402d9, 0xbd0ed00000000000,
+-    0x3ff2df961f641579, 0xbcf4200000000000,
+-    0x3ff2ecafa93e2ecf, 0xbd24980000000000,
+-    0x3ff2f9d24abd8822, 0xbd16300000000000,
+-    0x3ff306fe0a31b625, 0xbd32360000000000,
+-    0x3ff31432edeea50b, 0xbd70df8000000000,
+-    0x3ff32170fc4cd7b8, 0xbd22480000000000,
+-    0x3ff32eb83ba8e9a2, 0xbd25980000000000,
+-    0x3ff33c08b2641766, 0x3d1ed00000000000,
+-    0x3ff3496266e3fa27, 0xbcdc000000000000,
+-    0x3ff356c55f929f0f, 0xbd30d80000000000,
+-    0x3ff36431a2de88b9, 0x3d22c80000000000,
+-    0x3ff371a7373aaa39, 0x3d20600000000000,
+-    0x3ff37f26231e74fe, 0xbd16600000000000,
+-    0x3ff38cae6d05d838, 0xbd0ae00000000000,
+-    0x3ff39a401b713ec3, 0xbd44720000000000,
+-    0x3ff3a7db34e5a020, 0x3d08200000000000,
+-    0x3ff3b57fbfec6e95, 0x3d3e800000000000,
+-    0x3ff3c32dc313a8f2, 0x3cef800000000000,
+-    0x3ff3d0e544ede122, 0xbd17a00000000000,
+-    0x3ff3dea64c1234bb, 0x3d26300000000000,
+-    0x3ff3ec70df1c4ecc, 0xbd48a60000000000,
+-    0x3ff3fa4504ac7e8c, 0xbd3cdc0000000000,
+-    0x3ff40822c367a0bb, 0x3d25b80000000000,
+-    0x3ff4160a21f72e95, 0x3d1ec00000000000,
+-    0x3ff423fb27094646, 0xbd13600000000000,
+-    0x3ff431f5d950a920, 0x3d23980000000000,
+-    0x3ff43ffa3f84b9eb, 0x3cfa000000000000,
+-    0x3ff44e0860618919, 0xbcf6c00000000000,
+-    0x3ff45c2042a7d201, 0xbd0bc00000000000,
+-    0x3ff46a41ed1d0016, 0xbd12800000000000,
+-    0x3ff4786d668b3326, 0x3d30e00000000000,
+-    0x3ff486a2b5c13c00, 0xbd2d400000000000,
+-    0x3ff494e1e192af04, 0x3d0c200000000000,
+-    0x3ff4a32af0d7d372, 0xbd1e500000000000,
+-    0x3ff4b17dea6db801, 0x3d07800000000000,
+-    0x3ff4bfdad53629e1, 0xbd13800000000000,
+-    0x3ff4ce41b817c132, 0x3d00800000000000,
+-    0x3ff4dcb299fddddb, 0x3d2c700000000000,
+-    0x3ff4eb2d81d8ab96, 0xbd1ce00000000000,
+-    0x3ff4f9b2769d2d02, 0x3d19200000000000,
+-    0x3ff508417f4531c1, 0xbd08c00000000000,
+-    0x3ff516daa2cf662a, 0xbcfa000000000000,
+-    0x3ff5257de83f51ea, 0x3d4a080000000000,
+-    0x3ff5342b569d4eda, 0xbd26d80000000000,
+-    0x3ff542e2f4f6ac1a, 0xbd32440000000000,
+-    0x3ff551a4ca5d94db, 0x3d483c0000000000,
+-    0x3ff56070dde9116b, 0x3d24b00000000000,
+-    0x3ff56f4736b529de, 0x3d415a0000000000,
+-    0x3ff57e27dbe2c40e, 0xbd29e00000000000,
+-    0x3ff58d12d497c76f, 0xbd23080000000000,
+-    0x3ff59c0827ff0b4c, 0x3d4dec0000000000,
+-    0x3ff5ab07dd485427, 0xbcc4000000000000,
+-    0x3ff5ba11fba87af4, 0x3d30080000000000,
+-    0x3ff5c9268a59460b, 0xbd26c80000000000,
+-    0x3ff5d84590998e3f, 0x3d469a0000000000,
+-    0x3ff5e76f15ad20e1, 0xbd1b400000000000,
+-    0x3ff5f6a320dcebca, 0x3d17700000000000,
+-    0x3ff605e1b976dcb8, 0x3d26f80000000000,
+-    0x3ff6152ae6cdf715, 0x3d01000000000000,
+-    0x3ff6247eb03a5531, 0xbd15d00000000000,
+-    0x3ff633dd1d1929b5, 0xbd12d00000000000,
+-    0x3ff6434634ccc313, 0xbcea800000000000,
+-    0x3ff652b9febc8efa, 0xbd28600000000000,
+-    0x3ff6623882553397, 0x3d71fe0000000000,
+-    0x3ff671c1c708328e, 0xbd37200000000000,
+-    0x3ff68155d44ca97e, 0x3ce6800000000000,
+-    0x3ff690f4b19e9471, 0xbd29780000000000,
+-];
+-
+-// exp2(x): compute the base 2 exponential of x
+-//
+-// Accuracy: Peak error < 0.503 ulp for normalized results.
+-//
+-// Method: (accurate tables)
+-//
+-//   Reduce x:
+-//     x = k + y, for integer k and |y| <= 1/2.
+-//     Thus we have exp2(x) = 2**k * exp2(y).
+-//
+-//   Reduce y:
+-//     y = i/TBLSIZE + z - eps[i] for integer i near y * TBLSIZE.
+-//     Thus we have exp2(y) = exp2(i/TBLSIZE) * exp2(z - eps[i]),
+-//     with |z - eps[i]| <= 2**-9 + 2**-39 for the table used.
+-//
+-//   We compute exp2(i/TBLSIZE) via table lookup and exp2(z - eps[i]) via
+-//   a degree-5 minimax polynomial with maximum error under 1.3 * 2**-61.
+-//   The values in exp2t[] and eps[] are chosen such that
+-//   exp2t[i] = exp2(i/TBLSIZE + eps[i]), and eps[i] is a small offset such
+-//   that exp2t[i] is accurate to 2**-64.
+-//
+-//   Note that the range of i is +-TBLSIZE/2, so we actually index the tables
+-//   by i0 = i + TBLSIZE/2.  For cache efficiency, exp2t[] and eps[] are
+-//   virtual tables, interleaved in the real table tbl[].
+-//
+-//   This method is due to Gal, with many details due to Gal and Bachelis:
+-//
+-//      Gal, S. and Bachelis, B.  An Accurate Elementary Mathematical Library
+-//      for the IEEE Floating Point Standard.  TOMS 17(1), 26-46 (1991).
+-
+-/// Exponential, base 2 (f64)
+-///
+-/// Calculate `2^x`, that is, 2 raised to the power `x`.
++/// Returns 2 raised to the power of `x` (f64).
+ #[cfg_attr(assert_no_panic, no_panic::no_panic)]
+-pub fn exp2(mut x: f64) -> f64 {
+-    select_implementation! {
+-        name: x87_exp2,
+-        use_arch_required: x86_no_sse2,
+-        args: x,
+-    }
+-
+-    let redux = f64::from_bits(0x4338000000000000) / TBLSIZE as f64;
+-    let p1 = f64::from_bits(0x3fe62e42fefa39ef);
+-    let p2 = f64::from_bits(0x3fcebfbdff82c575);
+-    let p3 = f64::from_bits(0x3fac6b08d704a0a6);
+-    let p4 = f64::from_bits(0x3f83b2ab88f70400);
+-    let p5 = f64::from_bits(0x3f55d88003875c74);
+-
+-    // double_t r, t, z;
+-    // uint32_t ix, i0;
+-    // union {double f; uint64_t i;} u = {x};
+-    // union {uint32_t u; int32_t i;} k;
+-    let x1p1023 = f64::from_bits(0x7fe0000000000000);
+-    let x1p52 = f64::from_bits(0x4330000000000000);
+-    let _0x1p_149 = f64::from_bits(0xb6a0000000000000);
+-
+-    /* Filter out exceptional cases. */
+-    let ui = f64::to_bits(x);
+-    let ix = (ui >> 32) & 0x7fffffff;
+-    if ix >= 0x408ff000 {
+-        /* |x| >= 1022 or nan */
+-        if ix >= 0x40900000 && ui >> 63 == 0 {
+-            /* x >= 1024 or nan */
+-            /* overflow */
+-            x *= x1p1023;
+-            return x;
+-        }
+-        if ix >= 0x7ff00000 {
+-            /* -inf or -nan */
+-            return -1.0 / x;
+-        }
+-        if ui >> 63 != 0 {
+-            /* x <= -1022 */
+-            /* underflow */
+-            if x <= -1075.0 || x - x1p52 + x1p52 != x {
+-                force_eval!((_0x1p_149 / x) as f32);
+-            }
+-            if x <= -1075.0 {
+-                return 0.0;
+-            }
+-        }
+-    } else if ix < 0x3c900000 {
+-        /* |x| < 0x1p-54 */
++pub fn exp2(x: f64) -> f64 {
++    let bits = x.to_bits();
++    let abstop = ((bits >> 52) as u32) & 0x7ff;
++    if abstop < 0x3c9 {
+         return 1.0 + x;
+     }
+-
+-    /* Reduce x, computing z, i0, and k. */
+-    let ui = f64::to_bits(x + redux);
+-    let mut i0 = ui as u32;
+-    i0 = i0.wrapping_add(TBLSIZE as u32 / 2);
+-    let ku = i0 / TBLSIZE as u32 * TBLSIZE as u32;
+-    let ki = (ku as i32) / TBLSIZE as i32;
+-    i0 %= TBLSIZE as u32;
+-    let uf = f64::from_bits(ui) - redux;
+-    let mut z = x - uf;
+-
+-    /* Compute r = exp2(y) = exp2t[i0] * p(z - eps[i]). */
+-    let t = f64::from_bits(i!(TBL, 2 * i0 as usize)); /* exp2t[i0] */
+-    z -= f64::from_bits(i!(TBL, 2 * i0 as usize + 1)); /* eps[i0]   */
+-    let r = t + t * z * (p1 + z * (p2 + z * (p3 + z * (p4 + z * p5))));
+-
+-    scalbn(r, ki)
++    if abstop >= 0x409 {
++        if bits == f64::NEG_INFINITY.to_bits() {
++            return 0.0;
++        }
++        if abstop >= 0x7ff {
++            return 1.0 + x;
++        }
++        if bits >> 63 == 0 {
++            return f64::INFINITY;
++        }
++        if bits >= (-1075.0f64).to_bits() {
++            return 0.0;
++        }
++    }
++    let kd = x + SHIFT;
++    let ki = kd.to_bits();
++    let kd = kd - SHIFT;
++    let r = x - kd;
++    let row = EXP_TAB[(ki & 127) as usize];
++    let sbits = row[1].wrapping_add(ki.wrapping_shl(45));
++    let r2 = r * r;
++    let tmp =
++        f64::from_bits(row[0]) + r * C[0] + r2 * (C[1] + r * C[2]) + r2 * r2 * (C[3] + r * C[4]);
++    if bits.wrapping_mul(2) > 928.0f64.to_bits() * 2 {
++        specialcase(tmp, sbits, ki, 1)
++    } else {
++        let scale = f64::from_bits(sbits);
++        scale + scale * tmp
++    }
+ }
+-
+-#[test]
+-fn i0_wrap_test() {
+-    let x = -3.0 / 256.0;
+-    assert_eq!(exp2(x), f64::from_bits(0x3fefbdba3692d514));
+-}
+diff --git a/libm/src/math/exp2_fdlibm.rs b/libm/src/math/exp2_fdlibm.rs
+new file mode 100644
+--- /dev/null
++++ b/libm/src/math/exp2_fdlibm.rs
+@@ -0,0 +1,400 @@
++// origin: FreeBSD /usr/src/lib/msun/src/s_exp2.c */
++//-
++// Copyright (c) 2005 David Schultz <das@FreeBSD.ORG>
++// All rights reserved.
++//
++// Redistribution and use in source and binary forms, with or without
++// modification, are permitted provided that the following conditions
++// are met:
++// 1. Redistributions of source code must retain the above copyright
++//    notice, this list of conditions and the following disclaimer.
++// 2. Redistributions in binary form must reproduce the above copyright
++//    notice, this list of conditions and the following disclaimer in the
++//    documentation and/or other materials provided with the distribution.
++//
++// THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
++// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
++// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
++// ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
++// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
++// DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
++// OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
++// HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
++// LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
++// OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
++// SUCH DAMAGE.
++
++use super::scalbn;
++
++const TBLSIZE: usize = 256;
++
++#[rustfmt::skip]
++static TBL: [u64; TBLSIZE * 2] = [
++    //  exp2(z + eps)          eps
++    0x3fe6a09e667f3d5d, 0x3d39880000000000,
++    0x3fe6b052fa751744, 0x3cd8000000000000,
++    0x3fe6c012750bd9fe, 0xbd28780000000000,
++    0x3fe6cfdcddd476bf, 0x3d1ec00000000000,
++    0x3fe6dfb23c651a29, 0xbcd8000000000000,
++    0x3fe6ef9298593ae3, 0xbcbc000000000000,
++    0x3fe6ff7df9519386, 0xbd2fd80000000000,
++    0x3fe70f7466f42da3, 0xbd2c880000000000,
++    0x3fe71f75e8ec5fc3, 0x3d13c00000000000,
++    0x3fe72f8286eacf05, 0xbd38300000000000,
++    0x3fe73f9a48a58152, 0xbd00c00000000000,
++    0x3fe74fbd35d7ccfc, 0x3d2f880000000000,
++    0x3fe75feb564267f1, 0x3d03e00000000000,
++    0x3fe77024b1ab6d48, 0xbd27d00000000000,
++    0x3fe780694fde5d38, 0xbcdd000000000000,
++    0x3fe790b938ac1d00, 0x3ce3000000000000,
++    0x3fe7a11473eb0178, 0xbced000000000000,
++    0x3fe7b17b0976d060, 0x3d20400000000000,
++    0x3fe7c1ed0130c133, 0x3ca0000000000000,
++    0x3fe7d26a62ff8636, 0xbd26900000000000,
++    0x3fe7e2f336cf4e3b, 0xbd02e00000000000,
++    0x3fe7f3878491c3e8, 0xbd24580000000000,
++    0x3fe80427543e1b4e, 0x3d33000000000000,
++    0x3fe814d2add1071a, 0x3d0f000000000000,
++    0x3fe82589994ccd7e, 0xbd21c00000000000,
++    0x3fe8364c1eb942d0, 0x3d29d00000000000,
++    0x3fe8471a4623cab5, 0x3d47100000000000,
++    0x3fe857f4179f5bbc, 0x3d22600000000000,
++    0x3fe868d99b4491af, 0xbd32c40000000000,
++    0x3fe879cad931a395, 0xbd23000000000000,
++    0x3fe88ac7d98a65b8, 0xbd2a800000000000,
++    0x3fe89bd0a4785800, 0xbced000000000000,
++    0x3fe8ace5422aa223, 0x3d33280000000000,
++    0x3fe8be05bad619fa, 0x3d42b40000000000,
++    0x3fe8cf3216b54383, 0xbd2ed00000000000,
++    0x3fe8e06a5e08664c, 0xbd20500000000000,
++    0x3fe8f1ae99157807, 0x3d28280000000000,
++    0x3fe902fed0282c0e, 0xbd1cb00000000000,
++    0x3fe9145b0b91ff96, 0xbd05e00000000000,
++    0x3fe925c353aa2ff9, 0x3cf5400000000000,
++    0x3fe93737b0cdc64a, 0x3d17200000000000,
++    0x3fe948b82b5f98ae, 0xbd09000000000000,
++    0x3fe95a44cbc852cb, 0x3d25680000000000,
++    0x3fe96bdd9a766f21, 0xbd36d00000000000,
++    0x3fe97d829fde4e2a, 0xbd01000000000000,
++    0x3fe98f33e47a23a3, 0x3d2d000000000000,
++    0x3fe9a0f170ca0604, 0xbd38a40000000000,
++    0x3fe9b2bb4d53ff89, 0x3d355c0000000000,
++    0x3fe9c49182a3f15b, 0x3d26b80000000000,
++    0x3fe9d674194bb8c5, 0xbcec000000000000,
++    0x3fe9e86319e3238e, 0x3d17d00000000000,
++    0x3fe9fa5e8d07f302, 0x3d16400000000000,
++    0x3fea0c667b5de54d, 0xbcf5000000000000,
++    0x3fea1e7aed8eb8f6, 0x3d09e00000000000,
++    0x3fea309bec4a2e27, 0x3d2ad80000000000,
++    0x3fea42c980460a5d, 0xbd1af00000000000,
++    0x3fea5503b23e259b, 0x3d0b600000000000,
++    0x3fea674a8af46213, 0x3d38880000000000,
++    0x3fea799e1330b3a7, 0x3d11200000000000,
++    0x3fea8bfe53c12e8d, 0x3d06c00000000000,
++    0x3fea9e6b5579fcd2, 0xbd29b80000000000,
++    0x3feab0e521356fb8, 0x3d2b700000000000,
++    0x3feac36bbfd3f381, 0x3cd9000000000000,
++    0x3fead5ff3a3c2780, 0x3ce4000000000000,
++    0x3feae89f995ad2a3, 0xbd2c900000000000,
++    0x3feafb4ce622f367, 0x3d16500000000000,
++    0x3feb0e07298db790, 0x3d2fd40000000000,
++    0x3feb20ce6c9a89a9, 0x3d12700000000000,
++    0x3feb33a2b84f1a4b, 0x3d4d470000000000,
++    0x3feb468415b747e7, 0xbd38380000000000,
++    0x3feb59728de5593a, 0x3c98000000000000,
++    0x3feb6c6e29f1c56a, 0x3d0ad00000000000,
++    0x3feb7f76f2fb5e50, 0x3cde800000000000,
++    0x3feb928cf22749b2, 0xbd04c00000000000,
++    0x3feba5b030a10603, 0xbd0d700000000000,
++    0x3febb8e0b79a6f66, 0x3d0d900000000000,
++    0x3febcc1e904bc1ff, 0x3d02a00000000000,
++    0x3febdf69c3f3a16f, 0xbd1f780000000000,
++    0x3febf2c25bd71db8, 0xbd10a00000000000,
++    0x3fec06286141b2e9, 0xbd11400000000000,
++    0x3fec199bdd8552e0, 0x3d0be00000000000,
++    0x3fec2d1cd9fa64ee, 0xbd09400000000000,
++    0x3fec40ab5fffd02f, 0xbd0ed00000000000,
++    0x3fec544778fafd15, 0x3d39660000000000,
++    0x3fec67f12e57d0cb, 0xbd1a100000000000,
++    0x3fec7ba88988c1b6, 0xbd58458000000000,
++    0x3fec8f6d9406e733, 0xbd1a480000000000,
++    0x3feca3405751c4df, 0x3ccb000000000000,
++    0x3fecb720dcef9094, 0x3d01400000000000,
++    0x3feccb0f2e6d1689, 0x3cf0200000000000,
++    0x3fecdf0b555dc412, 0x3cf3600000000000,
++    0x3fecf3155b5bab3b, 0xbd06900000000000,
++    0x3fed072d4a0789bc, 0x3d09a00000000000,
++    0x3fed1b532b08c8fa, 0xbd15e00000000000,
++    0x3fed2f87080d8a85, 0x3d1d280000000000,
++    0x3fed43c8eacaa203, 0x3d01a00000000000,
++    0x3fed5818dcfba491, 0x3cdf000000000000,
++    0x3fed6c76e862e6a1, 0xbd03a00000000000,
++    0x3fed80e316c9834e, 0xbd0cd80000000000,
++    0x3fed955d71ff6090, 0x3cf4c00000000000,
++    0x3feda9e603db32ae, 0x3cff900000000000,
++    0x3fedbe7cd63a8325, 0x3ce9800000000000,
++    0x3fedd321f301b445, 0xbcf5200000000000,
++    0x3fede7d5641c05bf, 0xbd1d700000000000,
++    0x3fedfc97337b9aec, 0xbd16140000000000,
++    0x3fee11676b197d5e, 0x3d0b480000000000,
++    0x3fee264614f5a3e7, 0x3d40ce0000000000,
++    0x3fee3b333b16ee5c, 0x3d0c680000000000,
++    0x3fee502ee78b3fb4, 0xbd09300000000000,
++    0x3fee653924676d68, 0xbce5000000000000,
++    0x3fee7a51fbc74c44, 0xbd07f80000000000,
++    0x3fee8f7977cdb726, 0xbcf3700000000000,
++    0x3feea4afa2a490e8, 0x3ce5d00000000000,
++    0x3feeb9f4867ccae4, 0x3d161a0000000000,
++    0x3feecf482d8e680d, 0x3cf5500000000000,
++    0x3feee4aaa2188514, 0x3cc6400000000000,
++    0x3feefa1bee615a13, 0xbcee800000000000,
++    0x3fef0f9c1cb64106, 0xbcfa880000000000,
++    0x3fef252b376bb963, 0xbd2c900000000000,
++    0x3fef3ac948dd7275, 0x3caa000000000000,
++    0x3fef50765b6e4524, 0xbcf4f00000000000,
++    0x3fef6632798844fd, 0x3cca800000000000,
++    0x3fef7bfdad9cbe38, 0x3cfabc0000000000,
++    0x3fef91d802243c82, 0xbcd4600000000000,
++    0x3fefa7c1819e908e, 0xbd0b0c0000000000,
++    0x3fefbdba3692d511, 0xbcc0e00000000000,
++    0x3fefd3c22b8f7194, 0xbd10de8000000000,
++    0x3fefe9d96b2a23ee, 0x3cee430000000000,
++    0x3ff0000000000000, 0x0,
++    0x3ff00b1afa5abcbe, 0xbcb3400000000000,
++    0x3ff0163da9fb3303, 0xbd12170000000000,
++    0x3ff02168143b0282, 0x3cba400000000000,
++    0x3ff02c9a3e77806c, 0x3cef980000000000,
++    0x3ff037d42e11bbca, 0xbcc7400000000000,
++    0x3ff04315e86e7f89, 0x3cd8300000000000,
++    0x3ff04e5f72f65467, 0xbd1a3f0000000000,
++    0x3ff059b0d315855a, 0xbd02840000000000,
++    0x3ff0650a0e3c1f95, 0x3cf1600000000000,
++    0x3ff0706b29ddf71a, 0x3d15240000000000,
++    0x3ff07bd42b72a82d, 0xbce9a00000000000,
++    0x3ff0874518759bd0, 0x3ce6400000000000,
++    0x3ff092bdf66607c8, 0xbd00780000000000,
++    0x3ff09e3ecac6f383, 0xbc98000000000000,
++    0x3ff0a9c79b1f3930, 0x3cffa00000000000,
++    0x3ff0b5586cf988fc, 0xbcfac80000000000,
++    0x3ff0c0f145e46c8a, 0x3cd9c00000000000,
++    0x3ff0cc922b724816, 0x3d05200000000000,
++    0x3ff0d83b23395dd8, 0xbcfad00000000000,
++    0x3ff0e3ec32d3d1f3, 0x3d1bac0000000000,
++    0x3ff0efa55fdfa9a6, 0xbd04e80000000000,
++    0x3ff0fb66affed2f0, 0xbd0d300000000000,
++    0x3ff1073028d7234b, 0x3cf1500000000000,
++    0x3ff11301d0125b5b, 0x3cec000000000000,
++    0x3ff11edbab5e2af9, 0x3d16bc0000000000,
++    0x3ff12abdc06c31d5, 0x3ce8400000000000,
++    0x3ff136a814f2047d, 0xbd0ed00000000000,
++    0x3ff1429aaea92de9, 0x3ce8e00000000000,
++    0x3ff14e95934f3138, 0x3ceb400000000000,
++    0x3ff15a98c8a58e71, 0x3d05300000000000,
++    0x3ff166a45471c3df, 0x3d03380000000000,
++    0x3ff172b83c7d5211, 0x3d28d40000000000,
++    0x3ff17ed48695bb9f, 0xbd05d00000000000,
++    0x3ff18af9388c8d93, 0xbd1c880000000000,
++    0x3ff1972658375d66, 0x3d11f00000000000,
++    0x3ff1a35beb6fcba7, 0x3d10480000000000,
++    0x3ff1af99f81387e3, 0xbd47390000000000,
++    0x3ff1bbe084045d54, 0x3d24e40000000000,
++    0x3ff1c82f95281c43, 0xbd0a200000000000,
++    0x3ff1d4873168b9b2, 0x3ce3800000000000,
++    0x3ff1e0e75eb44031, 0x3ceac00000000000,
++    0x3ff1ed5022fcd938, 0x3d01900000000000,
++    0x3ff1f9c18438cdf7, 0xbd1b780000000000,
++    0x3ff2063b88628d8f, 0x3d2d940000000000,
++    0x3ff212be3578a81e, 0x3cd8000000000000,
++    0x3ff21f49917ddd41, 0x3d2b340000000000,
++    0x3ff22bdda2791323, 0x3d19f80000000000,
++    0x3ff2387a6e7561e7, 0xbd19c80000000000,
++    0x3ff2451ffb821427, 0x3d02300000000000,
++    0x3ff251ce4fb2a602, 0xbd13480000000000,
++    0x3ff25e85711eceb0, 0x3d12700000000000,
++    0x3ff26b4565e27d16, 0x3d11d00000000000,
++    0x3ff2780e341de00f, 0x3d31ee0000000000,
++    0x3ff284dfe1f5633e, 0xbd14c00000000000,
++    0x3ff291ba7591bb30, 0xbd13d80000000000,
++    0x3ff29e9df51fdf09, 0x3d08b00000000000,
++    0x3ff2ab8a66d10e9b, 0xbd227c0000000000,
++    0x3ff2b87fd0dada3a, 0x3d2a340000000000,
++    0x3ff2c57e39771af9, 0xbd10800000000000,
++    0x3ff2d285a6e402d9, 0xbd0ed00000000000,
++    0x3ff2df961f641579, 0xbcf4200000000000,
++    0x3ff2ecafa93e2ecf, 0xbd24980000000000,
++    0x3ff2f9d24abd8822, 0xbd16300000000000,
++    0x3ff306fe0a31b625, 0xbd32360000000000,
++    0x3ff31432edeea50b, 0xbd70df8000000000,
++    0x3ff32170fc4cd7b8, 0xbd22480000000000,
++    0x3ff32eb83ba8e9a2, 0xbd25980000000000,
++    0x3ff33c08b2641766, 0x3d1ed00000000000,
++    0x3ff3496266e3fa27, 0xbcdc000000000000,
++    0x3ff356c55f929f0f, 0xbd30d80000000000,
++    0x3ff36431a2de88b9, 0x3d22c80000000000,
++    0x3ff371a7373aaa39, 0x3d20600000000000,
++    0x3ff37f26231e74fe, 0xbd16600000000000,
++    0x3ff38cae6d05d838, 0xbd0ae00000000000,
++    0x3ff39a401b713ec3, 0xbd44720000000000,
++    0x3ff3a7db34e5a020, 0x3d08200000000000,
++    0x3ff3b57fbfec6e95, 0x3d3e800000000000,
++    0x3ff3c32dc313a8f2, 0x3cef800000000000,
++    0x3ff3d0e544ede122, 0xbd17a00000000000,
++    0x3ff3dea64c1234bb, 0x3d26300000000000,
++    0x3ff3ec70df1c4ecc, 0xbd48a60000000000,
++    0x3ff3fa4504ac7e8c, 0xbd3cdc0000000000,
++    0x3ff40822c367a0bb, 0x3d25b80000000000,
++    0x3ff4160a21f72e95, 0x3d1ec00000000000,
++    0x3ff423fb27094646, 0xbd13600000000000,
++    0x3ff431f5d950a920, 0x3d23980000000000,
++    0x3ff43ffa3f84b9eb, 0x3cfa000000000000,
++    0x3ff44e0860618919, 0xbcf6c00000000000,
++    0x3ff45c2042a7d201, 0xbd0bc00000000000,
++    0x3ff46a41ed1d0016, 0xbd12800000000000,
++    0x3ff4786d668b3326, 0x3d30e00000000000,
++    0x3ff486a2b5c13c00, 0xbd2d400000000000,
++    0x3ff494e1e192af04, 0x3d0c200000000000,
++    0x3ff4a32af0d7d372, 0xbd1e500000000000,
++    0x3ff4b17dea6db801, 0x3d07800000000000,
++    0x3ff4bfdad53629e1, 0xbd13800000000000,
++    0x3ff4ce41b817c132, 0x3d00800000000000,
++    0x3ff4dcb299fddddb, 0x3d2c700000000000,
++    0x3ff4eb2d81d8ab96, 0xbd1ce00000000000,
++    0x3ff4f9b2769d2d02, 0x3d19200000000000,
++    0x3ff508417f4531c1, 0xbd08c00000000000,
++    0x3ff516daa2cf662a, 0xbcfa000000000000,
++    0x3ff5257de83f51ea, 0x3d4a080000000000,
++    0x3ff5342b569d4eda, 0xbd26d80000000000,
++    0x3ff542e2f4f6ac1a, 0xbd32440000000000,
++    0x3ff551a4ca5d94db, 0x3d483c0000000000,
++    0x3ff56070dde9116b, 0x3d24b00000000000,
++    0x3ff56f4736b529de, 0x3d415a0000000000,
++    0x3ff57e27dbe2c40e, 0xbd29e00000000000,
++    0x3ff58d12d497c76f, 0xbd23080000000000,
++    0x3ff59c0827ff0b4c, 0x3d4dec0000000000,
++    0x3ff5ab07dd485427, 0xbcc4000000000000,
++    0x3ff5ba11fba87af4, 0x3d30080000000000,
++    0x3ff5c9268a59460b, 0xbd26c80000000000,
++    0x3ff5d84590998e3f, 0x3d469a0000000000,
++    0x3ff5e76f15ad20e1, 0xbd1b400000000000,
++    0x3ff5f6a320dcebca, 0x3d17700000000000,
++    0x3ff605e1b976dcb8, 0x3d26f80000000000,
++    0x3ff6152ae6cdf715, 0x3d01000000000000,
++    0x3ff6247eb03a5531, 0xbd15d00000000000,
++    0x3ff633dd1d1929b5, 0xbd12d00000000000,
++    0x3ff6434634ccc313, 0xbcea800000000000,
++    0x3ff652b9febc8efa, 0xbd28600000000000,
++    0x3ff6623882553397, 0x3d71fe0000000000,
++    0x3ff671c1c708328e, 0xbd37200000000000,
++    0x3ff68155d44ca97e, 0x3ce6800000000000,
++    0x3ff690f4b19e9471, 0xbd29780000000000,
++];
++
++// exp2(x): compute the base 2 exponential of x
++//
++// Accuracy: Peak error < 0.503 ulp for normalized results.
++//
++// Method: (accurate tables)
++//
++//   Reduce x:
++//     x = k + y, for integer k and |y| <= 1/2.
++//     Thus we have exp2(x) = 2**k * exp2(y).
++//
++//   Reduce y:
++//     y = i/TBLSIZE + z - eps[i] for integer i near y * TBLSIZE.
++//     Thus we have exp2(y) = exp2(i/TBLSIZE) * exp2(z - eps[i]),
++//     with |z - eps[i]| <= 2**-9 + 2**-39 for the table used.
++//
++//   We compute exp2(i/TBLSIZE) via table lookup and exp2(z - eps[i]) via
++//   a degree-5 minimax polynomial with maximum error under 1.3 * 2**-61.
++//   The values in exp2t[] and eps[] are chosen such that
++//   exp2t[i] = exp2(i/TBLSIZE + eps[i]), and eps[i] is a small offset such
++//   that exp2t[i] is accurate to 2**-64.
++//
++//   Note that the range of i is +-TBLSIZE/2, so we actually index the tables
++//   by i0 = i + TBLSIZE/2.  For cache efficiency, exp2t[] and eps[] are
++//   virtual tables, interleaved in the real table tbl[].
++//
++//   This method is due to Gal, with many details due to Gal and Bachelis:
++//
++//      Gal, S. and Bachelis, B.  An Accurate Elementary Mathematical Library
++//      for the IEEE Floating Point Standard.  TOMS 17(1), 26-46 (1991).
++
++/// Exponential, base 2 (f64)
++///
++/// Calculate `2^x`, that is, 2 raised to the power `x`.
++#[cfg_attr(assert_no_panic, no_panic::no_panic)]
++pub fn exp2(mut x: f64) -> f64 {
++    select_implementation! {
++        name: x87_exp2,
++        use_arch_required: x86_no_sse2,
++        args: x,
++    }
++
++    let redux = f64::from_bits(0x4338000000000000) / TBLSIZE as f64;
++    let p1 = f64::from_bits(0x3fe62e42fefa39ef);
++    let p2 = f64::from_bits(0x3fcebfbdff82c575);
++    let p3 = f64::from_bits(0x3fac6b08d704a0a6);
++    let p4 = f64::from_bits(0x3f83b2ab88f70400);
++    let p5 = f64::from_bits(0x3f55d88003875c74);
++
++    // double_t r, t, z;
++    // uint32_t ix, i0;
++    // union {double f; uint64_t i;} u = {x};
++    // union {uint32_t u; int32_t i;} k;
++    let x1p1023 = f64::from_bits(0x7fe0000000000000);
++    let x1p52 = f64::from_bits(0x4330000000000000);
++    let _0x1p_149 = f64::from_bits(0xb6a0000000000000);
++
++    /* Filter out exceptional cases. */
++    let ui = f64::to_bits(x);
++    let ix = (ui >> 32) & 0x7fffffff;
++    if ix >= 0x408ff000 {
++        /* |x| >= 1022 or nan */
++        if ix >= 0x40900000 && ui >> 63 == 0 {
++            /* x >= 1024 or nan */
++            /* overflow */
++            x *= x1p1023;
++            return x;
++        }
++        if ix >= 0x7ff00000 {
++            /* -inf or -nan */
++            return -1.0 / x;
++        }
++        if ui >> 63 != 0 {
++            /* x <= -1022 */
++            /* underflow */
++            if x <= -1075.0 || x - x1p52 + x1p52 != x {
++                force_eval!((_0x1p_149 / x) as f32);
++            }
++            if x <= -1075.0 {
++                return 0.0;
++            }
++        }
++    } else if ix < 0x3c900000 {
++        /* |x| < 0x1p-54 */
++        return 1.0 + x;
++    }
++
++    /* Reduce x, computing z, i0, and k. */
++    let ui = f64::to_bits(x + redux);
++    let mut i0 = ui as u32;
++    i0 = i0.wrapping_add(TBLSIZE as u32 / 2);
++    let ku = i0 / TBLSIZE as u32 * TBLSIZE as u32;
++    let ki = (ku as i32) / TBLSIZE as i32;
++    i0 %= TBLSIZE as u32;
++    let uf = f64::from_bits(ui) - redux;
++    let mut z = x - uf;
++
++    /* Compute r = exp2(y) = exp2t[i0] * p(z - eps[i]). */
++    let t = f64::from_bits(i!(TBL, 2 * i0 as usize)); /* exp2t[i0] */
++    z -= f64::from_bits(i!(TBL, 2 * i0 as usize + 1)); /* eps[i0]   */
++    let r = t + t * z * (p1 + z * (p2 + z * (p3 + z * (p4 + z * p5))));
++
++    scalbn(r, ki)
++}
++
++#[test]
++fn i0_wrap_test() {
++    let x = -3.0 / 256.0;
++    assert_eq!(exp2(x), f64::from_bits(0x3fefbdba3692d514));
++}
+diff --git a/libm/src/math/exp_fdlibm.rs b/libm/src/math/exp_fdlibm.rs
+new file mode 100644
+--- /dev/null
++++ b/libm/src/math/exp_fdlibm.rs
+@@ -0,0 +1,156 @@
++/* origin: FreeBSD /usr/src/lib/msun/src/e_exp.c */
++/*
++ * ====================================================
++ * Copyright (C) 2004 by Sun Microsystems, Inc. All rights reserved.
++ *
++ * Permission to use, copy, modify, and distribute this
++ * software is freely granted, provided that this notice
++ * is preserved.
++ * ====================================================
++ */
++/* exp(x)
++ * Returns the exponential of x.
++ *
++ * Method
++ *   1. Argument reduction:
++ *      Reduce x to an r so that |r| <= 0.5*ln2 ~ 0.34658.
++ *      Given x, find r and integer k such that
++ *
++ *               x = k*ln2 + r,  |r| <= 0.5*ln2.
++ *
++ *      Here r will be represented as r = hi-lo for better
++ *      accuracy.
++ *
++ *   2. Approximation of exp(r) by a special rational function on
++ *      the interval [0,0.34658]:
++ *      Write
++ *          R(r**2) = r*(exp(r)+1)/(exp(r)-1) = 2 + r*r/6 - r**4/360 + ...
++ *      We use a special Remez algorithm on [0,0.34658] to generate
++ *      a polynomial of degree 5 to approximate R. The maximum error
++ *      of this polynomial approximation is bounded by 2**-59. In
++ *      other words,
++ *          R(z) ~ 2.0 + P1*z + P2*z**2 + P3*z**3 + P4*z**4 + P5*z**5
++ *      (where z=r*r, and the values of P1 to P5 are listed below)
++ *      and
++ *          |                  5          |     -59
++ *          | 2.0+P1*z+...+P5*z   -  R(z) | <= 2
++ *          |                             |
++ *      The computation of exp(r) thus becomes
++ *                              2*r
++ *              exp(r) = 1 + ----------
++ *                            R(r) - r
++ *                                 r*c(r)
++ *                     = 1 + r + ----------- (for better accuracy)
++ *                                2 - c(r)
++ *      where
++ *                              2       4             10
++ *              c(r) = r - (P1*r  + P2*r  + ... + P5*r   ).
++ *
++ *   3. Scale back to obtain exp(x):
++ *      From step 1, we have
++ *         exp(x) = 2^k * exp(r)
++ *
++ * Special cases:
++ *      exp(INF) is INF, exp(NaN) is NaN;
++ *      exp(-INF) is 0, and
++ *      for finite argument, only exp(0)=1 is exact.
++ *
++ * Accuracy:
++ *      according to an error analysis, the error is always less than
++ *      1 ulp (unit in the last place).
++ *
++ * Misc. info.
++ *      For IEEE double
++ *          if x >  709.782712893383973096 then exp(x) overflows
++ *          if x < -745.133219101941108420 then exp(x) underflows
++ */
++
++use super::scalbn;
++
++const HALF: [f64; 2] = [0.5, -0.5];
++const LN2HI: f64 = 6.93147180369123816490e-01; /* 0x3fe62e42, 0xfee00000 */
++const LN2LO: f64 = 1.90821492927058770002e-10; /* 0x3dea39ef, 0x35793c76 */
++const INVLN2: f64 = 1.44269504088896338700e+00; /* 0x3ff71547, 0x652b82fe */
++const P1: f64 = 1.66666666666666019037e-01; /* 0x3FC55555, 0x5555553E */
++const P2: f64 = -2.77777777770155933842e-03; /* 0xBF66C16C, 0x16BEBD93 */
++const P3: f64 = 6.61375632143793436117e-05; /* 0x3F11566A, 0xAF25DE2C */
++const P4: f64 = -1.65339022054652515390e-06; /* 0xBEBBBD41, 0xC5D26BF1 */
++const P5: f64 = 4.13813679705723846039e-08; /* 0x3E663769, 0x72BEA4D0 */
++
++/// Exponential, base *e* (f64)
++///
++/// Calculate the exponential of `x`, that is, *e* raised to the power `x`
++/// (where *e* is the base of the natural system of logarithms, approximately 2.71828).
++#[cfg_attr(assert_no_panic, no_panic::no_panic)]
++pub fn exp(mut x: f64) -> f64 {
++    select_implementation! {
++        name: x87_exp,
++        use_arch_required: x86_no_sse2,
++        args: x,
++    }
++
++    let x1p1023 = f64::from_bits(0x7fe0000000000000); // 0x1p1023 === 2 ^ 1023
++    let x1p_149 = f64::from_bits(0x36a0000000000000); // 0x1p-149 === 2 ^ -149
++
++    let hi: f64;
++    let lo: f64;
++    let c: f64;
++    let xx: f64;
++    let y: f64;
++    let k: i32;
++    let sign: i32;
++    let mut hx: u32;
++
++    hx = (x.to_bits() >> 32) as u32;
++    sign = (hx >> 31) as i32;
++    hx &= 0x7fffffff; /* high word of |x| */
++
++    /* special cases */
++    if hx >= 0x4086232b {
++        /* if |x| >= 708.39... */
++        if x.is_nan() {
++            return x;
++        }
++        if x > 709.782712893383973096 {
++            /* overflow if x!=inf */
++            x *= x1p1023;
++            return x;
++        }
++        if x < -708.39641853226410622 {
++            /* underflow if x!=-inf */
++            force_eval!((-x1p_149 / x) as f32);
++            if x < -745.13321910194110842 {
++                return 0.;
++            }
++        }
++    }
++
++    /* argument reduction */
++    if hx > 0x3fd62e42 {
++        /* if |x| > 0.5 ln2 */
++        if hx >= 0x3ff0a2b2 {
++            /* if |x| >= 1.5 ln2 */
++            k = (INVLN2 * x + i!(HALF, sign as usize)) as i32;
++        } else {
++            k = 1 - sign - sign;
++        }
++        hi = x - k as f64 * LN2HI; /* k*ln2hi is exact here */
++        lo = k as f64 * LN2LO;
++        x = hi - lo;
++    } else if hx > 0x3e300000 {
++        /* if |x| > 2**-28 */
++        k = 0;
++        hi = x;
++        lo = 0.;
++    } else {
++        /* inexact if x!=0 */
++        force_eval!(x1p1023 + x);
++        return 1. + x;
++    }
++
++    /* x is now in primary range */
++    xx = x * x;
++    c = x - xx * (P1 + xx * (P2 + xx * (P3 + xx * (P4 + xx * P5))));
++    y = 1. + (x * c / (2. - c) - lo + hi);
++    if k == 0 { y } else { scalbn(y, k) }
++}
+diff --git a/libm/src/math/exp_shared.rs b/libm/src/math/exp_shared.rs
+new file mode 100644
+--- /dev/null
++++ b/libm/src/math/exp_shared.rs
+@@ -0,0 +1,46 @@
++// Copyright (c) 2018-2025, Arm Limited.
++// SPDX-License-Identifier: MIT
++/*
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
++*/
++pub(super) mod table;
++#[cfg(test)]
++mod tests;
++
++// Scaling in two steps keeps the intermediate normal near the exponent limits.
++pub(super) fn specialcase(tmp: f64, sbits: u64, ki: u64, overflow_shift: u64) -> f64 {
++    if ki & 0x80000000 == 0 {
++        let scale = f64::from_bits(sbits.wrapping_sub(overflow_shift << 52));
++        let factor = f64::from_bits((1023 + overflow_shift) << 52);
++        return factor * (scale + scale * tmp);
++    }
++    let scale = f64::from_bits(sbits.wrapping_add(1022u64 << 52));
++    let mut y = scale + scale * tmp;
++    if y < 1.0 {
++        // Round before scaling to avoid double rounding in the subnormal range.
++        let lo = scale - y + scale * tmp;
++        let hi = 1.0 + y;
++        let lo = 1.0 - hi + y + lo;
++        y = (hi + lo) - 1.0;
++        if y == 0.0 {
++            y = 0.0;
++        }
++    }
++    f64::MIN_POSITIVE * y
++}
+diff --git a/libm/src/math/exp_shared/table.rs b/libm/src/math/exp_shared/table.rs
+new file mode 100644
+--- /dev/null
++++ b/libm/src/math/exp_shared/table.rs
+@@ -0,0 +1,171 @@
++// Copyright (c) 2018-2023, Arm Limited.
++// SPDX-License-Identifier: MIT
++/*
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
++*/
++// Binary64 exp data from ARM optimized-routines math/exp_data.c.
++pub(crate) const INV_LN2_N: f64 = 184.6649652337873;
++pub(crate) const NEG_LN2_HI_N: f64 = -0.005415212348111709;
++pub(crate) const NEG_LN2_LO_N: f64 = -1.2864023111638346e-14;
++pub(crate) const SHIFT: f64 = 6755399441055744.0;
++pub(crate) const EXP_POLY: [f64; 4] = [
++    0.49999999999996786,
++    0.16666666666665886,
++    0.0416666808410674,
++    0.008333335853059549,
++];
++pub(crate) const EXP2_SHIFT: f64 = 52776558133248.0;
++pub(crate) const EXP2_POLY: [f64; 5] = [
++    0.6931471805599453,
++    0.24022650695909065,
++    0.0555041086686087,
++    0.009618131975721055,
++    0.0013332074570119598,
++];
++#[rustfmt::skip]
++pub(crate) static EXP_TAB: [[u64; 2]; 128] = [
++[0x0000000000000000, 0x3ff0000000000000],
++[0x3c9b3b4f1a88bf6e, 0x3feff63da9fb3335],
++[0xbc7160139cd8dc5d, 0x3fefec9a3e778061],
++[0xbc905e7a108766d1, 0x3fefe315e86e7f85],
++[0x3c8cd2523567f613, 0x3fefd9b0d3158574],
++[0xbc8bce8023f98efa, 0x3fefd06b29ddf6de],
++[0x3c60f74e61e6c861, 0x3fefc74518759bc8],
++[0x3c90a3e45b33d399, 0x3fefbe3ecac6f383],
++[0x3c979aa65d837b6d, 0x3fefb5586cf9890f],
++[0x3c8eb51a92fdeffc, 0x3fefac922b7247f7],
++[0x3c3ebe3d702f9cd1, 0x3fefa3ec32d3d1a2],
++[0xbc6a033489906e0b, 0x3fef9b66affed31b],
++[0xbc9556522a2fbd0e, 0x3fef9301d0125b51],
++[0xbc5080ef8c4eea55, 0x3fef8abdc06c31cc],
++[0xbc91c923b9d5f416, 0x3fef829aaea92de0],
++[0x3c80d3e3e95c55af, 0x3fef7a98c8a58e51],
++[0xbc801b15eaa59348, 0x3fef72b83c7d517b],
++[0xbc8f1ff055de323d, 0x3fef6af9388c8dea],
++[0x3c8b898c3f1353bf, 0x3fef635beb6fcb75],
++[0xbc96d99c7611eb26, 0x3fef5be084045cd4],
++[0x3c9aecf73e3a2f60, 0x3fef54873168b9aa],
++[0xbc8fe782cb86389d, 0x3fef4d5022fcd91d],
++[0x3c8a6f4144a6c38d, 0x3fef463b88628cd6],
++[0x3c807a05b0e4047d, 0x3fef3f49917ddc96],
++[0x3c968efde3a8a894, 0x3fef387a6e756238],
++[0x3c875e18f274487d, 0x3fef31ce4fb2a63f],
++[0x3c80472b981fe7f2, 0x3fef2b4565e27cdd],
++[0xbc96b87b3f71085e, 0x3fef24dfe1f56381],
++[0x3c82f7e16d09ab31, 0x3fef1e9df51fdee1],
++[0xbc3d219b1a6fbffa, 0x3fef187fd0dad990],
++[0x3c8b3782720c0ab4, 0x3fef1285a6e4030b],
++[0x3c6e149289cecb8f, 0x3fef0cafa93e2f56],
++[0x3c834d754db0abb6, 0x3fef06fe0a31b715],
++[0x3c864201e2ac744c, 0x3fef0170fc4cd831],
++[0x3c8fdd395dd3f84a, 0x3feefc08b26416ff],
++[0xbc86a3803b8e5b04, 0x3feef6c55f929ff1],
++[0xbc924aedcc4b5068, 0x3feef1a7373aa9cb],
++[0xbc9907f81b512d8e, 0x3feeecae6d05d866],
++[0xbc71d1e83e9436d2, 0x3feee7db34e59ff7],
++[0xbc991919b3ce1b15, 0x3feee32dc313a8e5],
++[0x3c859f48a72a4c6d, 0x3feedea64c123422],
++[0xbc9312607a28698a, 0x3feeda4504ac801c],
++[0xbc58a78f4817895b, 0x3feed60a21f72e2a],
++[0xbc7c2c9b67499a1b, 0x3feed1f5d950a897],
++[0x3c4363ed60c2ac11, 0x3feece086061892d],
++[0x3c9666093b0664ef, 0x3feeca41ed1d0057],
++[0x3c6ecce1daa10379, 0x3feec6a2b5c13cd0],
++[0x3c93ff8e3f0f1230, 0x3feec32af0d7d3de],
++[0x3c7690cebb7aafb0, 0x3feebfdad5362a27],
++[0x3c931dbdeb54e077, 0x3feebcb299fddd0d],
++[0xbc8f94340071a38e, 0x3feeb9b2769d2ca7],
++[0xbc87deccdc93a349, 0x3feeb6daa2cf6642],
++[0xbc78dec6bd0f385f, 0x3feeb42b569d4f82],
++[0xbc861246ec7b5cf6, 0x3feeb1a4ca5d920f],
++[0x3c93350518fdd78e, 0x3feeaf4736b527da],
++[0x3c7b98b72f8a9b05, 0x3feead12d497c7fd],
++[0x3c9063e1e21c5409, 0x3feeab07dd485429],
++[0x3c34c7855019c6ea, 0x3feea9268a5946b7],
++[0x3c9432e62b64c035, 0x3feea76f15ad2148],
++[0xbc8ce44a6199769f, 0x3feea5e1b976dc09],
++[0xbc8c33c53bef4da8, 0x3feea47eb03a5585],
++[0xbc845378892be9ae, 0x3feea34634ccc320],
++[0xbc93cedd78565858, 0x3feea23882552225],
++[0x3c5710aa807e1964, 0x3feea155d44ca973],
++[0xbc93b3efbf5e2228, 0x3feea09e667f3bcd],
++[0xbc6a12ad8734b982, 0x3feea012750bdabf],
++[0xbc6367efb86da9ee, 0x3fee9fb23c651a2f],
++[0xbc80dc3d54e08851, 0x3fee9f7df9519484],
++[0xbc781f647e5a3ecf, 0x3fee9f75e8ec5f74],
++[0xbc86ee4ac08b7db0, 0x3fee9f9a48a58174],
++[0xbc8619321e55e68a, 0x3fee9feb564267c9],
++[0x3c909ccb5e09d4d3, 0x3feea0694fde5d3f],
++[0xbc7b32dcb94da51d, 0x3feea11473eb0187],
++[0x3c94ecfd5467c06b, 0x3feea1ed0130c132],
++[0x3c65ebe1abd66c55, 0x3feea2f336cf4e62],
++[0xbc88a1c52fb3cf42, 0x3feea427543e1a12],
++[0xbc9369b6f13b3734, 0x3feea589994cce13],
++[0xbc805e843a19ff1e, 0x3feea71a4623c7ad],
++[0xbc94d450d872576e, 0x3feea8d99b4492ed],
++[0x3c90ad675b0e8a00, 0x3feeaac7d98a6699],
++[0x3c8db72fc1f0eab4, 0x3feeace5422aa0db],
++[0xbc65b6609cc5e7ff, 0x3feeaf3216b5448c],
++[0x3c7bf68359f35f44, 0x3feeb1ae99157736],
++[0xbc93091fa71e3d83, 0x3feeb45b0b91ffc6],
++[0xbc5da9b88b6c1e29, 0x3feeb737b0cdc5e5],
++[0xbc6c23f97c90b959, 0x3feeba44cbc8520f],
++[0xbc92434322f4f9aa, 0x3feebd829fde4e50],
++[0xbc85ca6cd7668e4b, 0x3feec0f170ca07ba],
++[0x3c71affc2b91ce27, 0x3feec49182a3f090],
++[0x3c6dd235e10a73bb, 0x3feec86319e32323],
++[0xbc87c50422622263, 0x3feecc667b5de565],
++[0x3c8b1c86e3e231d5, 0x3feed09bec4a2d33],
++[0xbc91bbd1d3bcbb15, 0x3feed503b23e255d],
++[0x3c90cc319cee31d2, 0x3feed99e1330b358],
++[0x3c8469846e735ab3, 0x3feede6b5579fdbf],
++[0xbc82dfcd978e9db4, 0x3feee36bbfd3f37a],
++[0x3c8c1a7792cb3387, 0x3feee89f995ad3ad],
++[0xbc907b8f4ad1d9fa, 0x3feeee07298db666],
++[0xbc55c3d956dcaeba, 0x3feef3a2b84f15fb],
++[0xbc90a40e3da6f640, 0x3feef9728de5593a],
++[0xbc68d6f438ad9334, 0x3feeff76f2fb5e47],
++[0xbc91eee26b588a35, 0x3fef05b030a1064a],
++[0x3c74ffd70a5fddcd, 0x3fef0c1e904bc1d2],
++[0xbc91bdfbfa9298ac, 0x3fef12c25bd71e09],
++[0x3c736eae30af0cb3, 0x3fef199bdd85529c],
++[0x3c8ee3325c9ffd94, 0x3fef20ab5fffd07a],
++[0x3c84e08fd10959ac, 0x3fef27f12e57d14b],
++[0x3c63cdaf384e1a67, 0x3fef2f6d9406e7b5],
++[0x3c676b2c6c921968, 0x3fef3720dcef9069],
++[0xbc808a1883ccb5d2, 0x3fef3f0b555dc3fa],
++[0xbc8fad5d3ffffa6f, 0x3fef472d4a07897c],
++[0xbc900dae3875a949, 0x3fef4f87080d89f2],
++[0x3c74a385a63d07a7, 0x3fef5818dcfba487],
++[0xbc82919e2040220f, 0x3fef60e316c98398],
++[0x3c8e5a50d5c192ac, 0x3fef69e603db3285],
++[0x3c843a59ac016b4b, 0x3fef7321f301b460],
++[0xbc82d52107b43e1f, 0x3fef7c97337b9b5f],
++[0xbc892ab93b470dc9, 0x3fef864614f5a129],
++[0x3c74b604603a88d3, 0x3fef902ee78b3ff6],
++[0x3c83c5ec519d7271, 0x3fef9a51fbc74c83],
++[0xbc8ff7128fd391f0, 0x3fefa4afa2a490da],
++[0xbc8dae98e223747d, 0x3fefaf482d8e67f1],
++[0x3c8ec3bc41aa2008, 0x3fefba1bee615a27],
++[0x3c842b94c3a9eb32, 0x3fefc52b376bba97],
++[0x3c8a64a931d185ee, 0x3fefd0765b6e4540],
++[0xbc8e37bae43be3ed, 0x3fefdbfdad9cbe14],
++[0x3c77893b4d91cd9d, 0x3fefe7c1819e90d8],
++[0x3c5305c14160cc89, 0x3feff3c22b8f71f1],
++];
+diff --git a/libm/src/math/exp_shared/tests.rs b/libm/src/math/exp_shared/tests.rs
+new file mode 100644
+--- /dev/null
++++ b/libm/src/math/exp_shared/tests.rs
+@@ -0,0 +1,36 @@
++use super::super::{exp, exp2};
++
++#[test]
++fn exponential_special_values() {
++    for function in [exp as fn(f64) -> f64, exp2] {
++        for zero in [0.0, -0.0] {
++            assert_eq!(function(zero).to_bits(), 1.0f64.to_bits());
++        }
++        assert_eq!(function(f64::INFINITY), f64::INFINITY);
++        assert_eq!(function(f64::NEG_INFINITY).to_bits(), 0);
++        for bits in [0x7ff8_0000_0000_0001, 0x7ff0_0000_0000_0001] {
++            assert!(function(f64::from_bits(bits)).is_nan());
++        }
++    }
++    assert_eq!(exp(1000.0), f64::INFINITY);
++    assert_eq!(exp(-1000.0).to_bits(), 0);
++    assert_eq!(exp2(1024.0), f64::INFINITY);
++    assert_eq!(exp2(-1075.0).to_bits(), 0);
++}
++
++#[test]
++fn exp2_integer_powers_are_exact() {
++    for exponent in -1074..=1023 {
++        let expected = if exponent < -1022 {
++            1u64 << (exponent + 1074)
++        } else {
++            ((exponent + 1023) as u64) << 52
++        };
++        assert_eq!(exp2(f64::from(exponent)).to_bits(), expected);
++    }
++}
++
++#[test]
++fn exp2_negative_table_boundary() {
++    assert_eq!(exp2(-3.0 / 256.0).to_bits(), 0x3fef_bdba_3692_d514);
++}
+diff --git a/libm/src/math/mod.rs b/libm/src/math/mod.rs
+--- a/libm/src/math/mod.rs
++++ b/libm/src/math/mod.rs
+@@ -77,6 +77,24 @@
+ }
+ 
+ pub mod relaxed;
++
++#[cfg(any(
++    all(target_arch = "wasm32", target_os = "unknown"),
++    all(
++        target_arch = "aarch64",
++        target_feature = "neon",
++        any(target_os = "macos", all(target_os = "linux", target_env = "gnu"))
++    ),
++    all(
++        target_arch = "x86_64",
++        target_feature = "sse2",
++        any(
++            all(target_os = "linux", target_env = "gnu"),
++            all(target_os = "windows", target_env = "msvc")
++        )
++    )
++))]
++mod exp_shared;
+ 
+ // Private modules
+ mod arch;
+@@ -136,9 +154,47 @@
+ mod coshf;
+ mod erf;
+ mod erff;
++#[cfg_attr(
++    not(any(
++        all(target_arch = "wasm32", target_os = "unknown"),
++        all(
++            target_arch = "aarch64",
++            target_feature = "neon",
++            any(target_os = "macos", all(target_os = "linux", target_env = "gnu"))
++        ),
++        all(
++            target_arch = "x86_64",
++            target_feature = "sse2",
++            any(
++                all(target_os = "linux", target_env = "gnu"),
++                all(target_os = "windows", target_env = "msvc")
++            )
++        )
++    )),
++    path = "exp_fdlibm.rs"
++)]
+ mod exp;
+ mod exp10;
+ mod exp10f;
++#[cfg_attr(
++    not(any(
++        all(target_arch = "wasm32", target_os = "unknown"),
++        all(
++            target_arch = "aarch64",
++            target_feature = "neon",
++            any(target_os = "macos", all(target_os = "linux", target_env = "gnu"))
++        ),
++        all(
++            target_arch = "x86_64",
++            target_feature = "sse2",
++            any(
++                all(target_os = "linux", target_env = "gnu"),
++                all(target_os = "windows", target_env = "msvc")
++            )
++        )
++    )),
++    path = "exp2_fdlibm.rs"
++)]
+ mod exp2;
+ mod exp2f;
+ mod exp2m1;
+diff --git a/libm/src/math/pow/exp.rs b/libm/src/math/pow/exp.rs
+--- a/libm/src/math/pow/exp.rs
++++ b/libm/src/math/pow/exp.rs
+@@ -1,5 +1,7 @@
+ // Copyright (c) 2018-2026, Arm Limited. SPDX-License-Identifier: MIT
+-use super::table::{EXP_POLY as C, EXP_TAB, INV_LN2_N, NEG_LN2_HI_N, NEG_LN2_LO_N, SHIFT};
++use super::super::exp_shared::table::{
++    EXP_POLY as C, EXP_TAB, INV_LN2_N, NEG_LN2_HI_N, NEG_LN2_LO_N, SHIFT,
++};
+ 
+ #[inline]
+ pub(super) fn exp_inline(x: f64, tail: f64, sign: u32) -> f64 {
+diff --git a/libm/src/math/pow/table.rs b/libm/src/math/pow/table.rs
+--- a/libm/src/math/pow/table.rs
++++ b/libm/src/math/pow/table.rs
+@@ -1,11 +1,27 @@
+-// Copyright (c) 2018-2026, Arm Limited. SPDX-License-Identifier: MIT
+-// Binary64 tables from ARM optimized-routines math/pow_log_data.c and math/exp_data.c.
++// Copyright (c) 2018-2026, Arm Limited.
++// SPDX-License-Identifier: MIT
++/*
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
++*/
++// Binary64 log data from ARM optimized-routines math/pow_log_data.c.
+ pub(super) const LN2_HI: f64 = 0.6931471805598903;
+ pub(super) const LN2_LO: f64 = 5.497923018708371e-14;
+-pub(super) const INV_LN2_N: f64 = 184.6649652337873;
+-pub(super) const NEG_LN2_HI_N: f64 = -0.005415212348111709;
+-pub(super) const NEG_LN2_LO_N: f64 = -1.2864023111638346e-14;
+-pub(super) const SHIFT: f64 = 6755399441055744.0;
+ pub(super) const LOG_POLY: [f64; 7] = [
+     -0.5,
+     -0.6666666666666679,
+@@ -14,12 +30,6 @@
+     -0.6666666663487739,
+     -1.142909628459501,
+     1.0000415263675542,
+-];
+-pub(super) const EXP_POLY: [f64; 4] = [
+-    0.49999999999996786,
+-    0.16666666666665886,
+-    0.0416666808410674,
+-    0.008333335853059549,
+ ];
+ #[rustfmt::skip]
+ pub(super) const LOG_TAB: [[u64; 3]; 128] = [
+@@ -152,134 +162,3 @@
+ [0x3fe6e00000000000, 0x3fd57bf753c8d000, 0x3d1fadedee5d40ef],
+ [0x3fe6c00000000000, 0x3fd5d5bddf596000, 0xbd0a0b2a08a465dc],
+ ];
+-#[rustfmt::skip]
+-pub(super) const EXP_TAB: [[u64; 2]; 128] = [
+-[0x0000000000000000, 0x3ff0000000000000],
+-[0x3c9b3b4f1a88bf6e, 0x3feff63da9fb3335],
+-[0xbc7160139cd8dc5d, 0x3fefec9a3e778061],
+-[0xbc905e7a108766d1, 0x3fefe315e86e7f85],
+-[0x3c8cd2523567f613, 0x3fefd9b0d3158574],
+-[0xbc8bce8023f98efa, 0x3fefd06b29ddf6de],
+-[0x3c60f74e61e6c861, 0x3fefc74518759bc8],
+-[0x3c90a3e45b33d399, 0x3fefbe3ecac6f383],
+-[0x3c979aa65d837b6d, 0x3fefb5586cf9890f],
+-[0x3c8eb51a92fdeffc, 0x3fefac922b7247f7],
+-[0x3c3ebe3d702f9cd1, 0x3fefa3ec32d3d1a2],
+-[0xbc6a033489906e0b, 0x3fef9b66affed31b],
+-[0xbc9556522a2fbd0e, 0x3fef9301d0125b51],
+-[0xbc5080ef8c4eea55, 0x3fef8abdc06c31cc],
+-[0xbc91c923b9d5f416, 0x3fef829aaea92de0],
+-[0x3c80d3e3e95c55af, 0x3fef7a98c8a58e51],
+-[0xbc801b15eaa59348, 0x3fef72b83c7d517b],
+-[0xbc8f1ff055de323d, 0x3fef6af9388c8dea],
+-[0x3c8b898c3f1353bf, 0x3fef635beb6fcb75],
+-[0xbc96d99c7611eb26, 0x3fef5be084045cd4],
+-[0x3c9aecf73e3a2f60, 0x3fef54873168b9aa],
+-[0xbc8fe782cb86389d, 0x3fef4d5022fcd91d],
+-[0x3c8a6f4144a6c38d, 0x3fef463b88628cd6],
+-[0x3c807a05b0e4047d, 0x3fef3f49917ddc96],
+-[0x3c968efde3a8a894, 0x3fef387a6e756238],
+-[0x3c875e18f274487d, 0x3fef31ce4fb2a63f],
+-[0x3c80472b981fe7f2, 0x3fef2b4565e27cdd],
+-[0xbc96b87b3f71085e, 0x3fef24dfe1f56381],
+-[0x3c82f7e16d09ab31, 0x3fef1e9df51fdee1],
+-[0xbc3d219b1a6fbffa, 0x3fef187fd0dad990],
+-[0x3c8b3782720c0ab4, 0x3fef1285a6e4030b],
+-[0x3c6e149289cecb8f, 0x3fef0cafa93e2f56],
+-[0x3c834d754db0abb6, 0x3fef06fe0a31b715],
+-[0x3c864201e2ac744c, 0x3fef0170fc4cd831],
+-[0x3c8fdd395dd3f84a, 0x3feefc08b26416ff],
+-[0xbc86a3803b8e5b04, 0x3feef6c55f929ff1],
+-[0xbc924aedcc4b5068, 0x3feef1a7373aa9cb],
+-[0xbc9907f81b512d8e, 0x3feeecae6d05d866],
+-[0xbc71d1e83e9436d2, 0x3feee7db34e59ff7],
+-[0xbc991919b3ce1b15, 0x3feee32dc313a8e5],
+-[0x3c859f48a72a4c6d, 0x3feedea64c123422],
+-[0xbc9312607a28698a, 0x3feeda4504ac801c],
+-[0xbc58a78f4817895b, 0x3feed60a21f72e2a],
+-[0xbc7c2c9b67499a1b, 0x3feed1f5d950a897],
+-[0x3c4363ed60c2ac11, 0x3feece086061892d],
+-[0x3c9666093b0664ef, 0x3feeca41ed1d0057],
+-[0x3c6ecce1daa10379, 0x3feec6a2b5c13cd0],
+-[0x3c93ff8e3f0f1230, 0x3feec32af0d7d3de],
+-[0x3c7690cebb7aafb0, 0x3feebfdad5362a27],
+-[0x3c931dbdeb54e077, 0x3feebcb299fddd0d],
+-[0xbc8f94340071a38e, 0x3feeb9b2769d2ca7],
+-[0xbc87deccdc93a349, 0x3feeb6daa2cf6642],
+-[0xbc78dec6bd0f385f, 0x3feeb42b569d4f82],
+-[0xbc861246ec7b5cf6, 0x3feeb1a4ca5d920f],
+-[0x3c93350518fdd78e, 0x3feeaf4736b527da],
+-[0x3c7b98b72f8a9b05, 0x3feead12d497c7fd],
+-[0x3c9063e1e21c5409, 0x3feeab07dd485429],
+-[0x3c34c7855019c6ea, 0x3feea9268a5946b7],
+-[0x3c9432e62b64c035, 0x3feea76f15ad2148],
+-[0xbc8ce44a6199769f, 0x3feea5e1b976dc09],
+-[0xbc8c33c53bef4da8, 0x3feea47eb03a5585],
+-[0xbc845378892be9ae, 0x3feea34634ccc320],
+-[0xbc93cedd78565858, 0x3feea23882552225],
+-[0x3c5710aa807e1964, 0x3feea155d44ca973],
+-[0xbc93b3efbf5e2228, 0x3feea09e667f3bcd],
+-[0xbc6a12ad8734b982, 0x3feea012750bdabf],
+-[0xbc6367efb86da9ee, 0x3fee9fb23c651a2f],
+-[0xbc80dc3d54e08851, 0x3fee9f7df9519484],
+-[0xbc781f647e5a3ecf, 0x3fee9f75e8ec5f74],
+-[0xbc86ee4ac08b7db0, 0x3fee9f9a48a58174],
+-[0xbc8619321e55e68a, 0x3fee9feb564267c9],
+-[0x3c909ccb5e09d4d3, 0x3feea0694fde5d3f],
+-[0xbc7b32dcb94da51d, 0x3feea11473eb0187],
+-[0x3c94ecfd5467c06b, 0x3feea1ed0130c132],
+-[0x3c65ebe1abd66c55, 0x3feea2f336cf4e62],
+-[0xbc88a1c52fb3cf42, 0x3feea427543e1a12],
+-[0xbc9369b6f13b3734, 0x3feea589994cce13],
+-[0xbc805e843a19ff1e, 0x3feea71a4623c7ad],
+-[0xbc94d450d872576e, 0x3feea8d99b4492ed],
+-[0x3c90ad675b0e8a00, 0x3feeaac7d98a6699],
+-[0x3c8db72fc1f0eab4, 0x3feeace5422aa0db],
+-[0xbc65b6609cc5e7ff, 0x3feeaf3216b5448c],
+-[0x3c7bf68359f35f44, 0x3feeb1ae99157736],
+-[0xbc93091fa71e3d83, 0x3feeb45b0b91ffc6],
+-[0xbc5da9b88b6c1e29, 0x3feeb737b0cdc5e5],
+-[0xbc6c23f97c90b959, 0x3feeba44cbc8520f],
+-[0xbc92434322f4f9aa, 0x3feebd829fde4e50],
+-[0xbc85ca6cd7668e4b, 0x3feec0f170ca07ba],
+-[0x3c71affc2b91ce27, 0x3feec49182a3f090],
+-[0x3c6dd235e10a73bb, 0x3feec86319e32323],
+-[0xbc87c50422622263, 0x3feecc667b5de565],
+-[0x3c8b1c86e3e231d5, 0x3feed09bec4a2d33],
+-[0xbc91bbd1d3bcbb15, 0x3feed503b23e255d],
+-[0x3c90cc319cee31d2, 0x3feed99e1330b358],
+-[0x3c8469846e735ab3, 0x3feede6b5579fdbf],
+-[0xbc82dfcd978e9db4, 0x3feee36bbfd3f37a],
+-[0x3c8c1a7792cb3387, 0x3feee89f995ad3ad],
+-[0xbc907b8f4ad1d9fa, 0x3feeee07298db666],
+-[0xbc55c3d956dcaeba, 0x3feef3a2b84f15fb],
+-[0xbc90a40e3da6f640, 0x3feef9728de5593a],
+-[0xbc68d6f438ad9334, 0x3feeff76f2fb5e47],
+-[0xbc91eee26b588a35, 0x3fef05b030a1064a],
+-[0x3c74ffd70a5fddcd, 0x3fef0c1e904bc1d2],
+-[0xbc91bdfbfa9298ac, 0x3fef12c25bd71e09],
+-[0x3c736eae30af0cb3, 0x3fef199bdd85529c],
+-[0x3c8ee3325c9ffd94, 0x3fef20ab5fffd07a],
+-[0x3c84e08fd10959ac, 0x3fef27f12e57d14b],
+-[0x3c63cdaf384e1a67, 0x3fef2f6d9406e7b5],
+-[0x3c676b2c6c921968, 0x3fef3720dcef9069],
+-[0xbc808a1883ccb5d2, 0x3fef3f0b555dc3fa],
+-[0xbc8fad5d3ffffa6f, 0x3fef472d4a07897c],
+-[0xbc900dae3875a949, 0x3fef4f87080d89f2],
+-[0x3c74a385a63d07a7, 0x3fef5818dcfba487],
+-[0xbc82919e2040220f, 0x3fef60e316c98398],
+-[0x3c8e5a50d5c192ac, 0x3fef69e603db3285],
+-[0x3c843a59ac016b4b, 0x3fef7321f301b460],
+-[0xbc82d52107b43e1f, 0x3fef7c97337b9b5f],
+-[0xbc892ab93b470dc9, 0x3fef864614f5a129],
+-[0x3c74b604603a88d3, 0x3fef902ee78b3ff6],
+-[0x3c83c5ec519d7271, 0x3fef9a51fbc74c83],
+-[0xbc8ff7128fd391f0, 0x3fefa4afa2a490da],
+-[0xbc8dae98e223747d, 0x3fefaf482d8e67f1],
+-[0x3c8ec3bc41aa2008, 0x3fefba1bee615a27],
+-[0x3c842b94c3a9eb32, 0x3fefc52b376bba97],
+-[0x3c8a64a931d185ee, 0x3fefd0765b6e4540],
+-[0xbc8e37bae43be3ed, 0x3fefdbfdad9cbe14],
+-[0x3c77893b4d91cd9d, 0x3fefe7c1819e90d8],
+-[0x3c5305c14160cc89, 0x3feff3c22b8f71f1],
+-];

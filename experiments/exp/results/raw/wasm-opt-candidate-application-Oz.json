@@ -1,0 +1,12 @@
+{
+  "command": [
+    "wasm-opt",
+    "--all-features",
+    "-Oz",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/application-candidate.wasm",
+    "-o",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts/application-candidate-Oz.wasm"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.3371032499708235
+}

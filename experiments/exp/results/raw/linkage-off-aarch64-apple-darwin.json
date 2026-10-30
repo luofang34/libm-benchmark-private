@@ -1,0 +1,17 @@
+{
+  "command": [
+    "cargo",
+    "build",
+    "--manifest-path",
+    "/private/tmp/libm-exp-validation/candidate/fixtures/Cargo.toml",
+    "--release",
+    "--lib",
+    "--offline",
+    "--features",
+    "medium",
+    "--target",
+    "aarch64-apple-darwin"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 1.6371284580091015
+}

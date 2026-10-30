@@ -1,0 +1,379 @@
+{
+  "table_bytes": 2048,
+  "table_sha256": "a4014caf214c2bab90ea0fdf3f57941e0235ae04dc2282a6c2f72e7a480c87e4",
+  "records": [
+    {
+      "variant": "base",
+      "fixture": "minimal-exp",
+      "optimization": "none",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 0,
+        "table_offsets": [],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "3d72026b56a033ba57573299b26ac16d3468c8ae94929a1a7ca32008d6e85c50"
+    },
+    {
+      "variant": "base",
+      "fixture": "minimal-exp",
+      "optimization": "O3",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 0,
+        "table_offsets": [],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "1b47cab1cf87073cb43ba3f346f603a176f331a148f8db33c67abfb17aaaac66"
+    },
+    {
+      "variant": "base",
+      "fixture": "minimal-exp",
+      "optimization": "Oz",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 0,
+        "table_offsets": [],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "1b47cab1cf87073cb43ba3f346f603a176f331a148f8db33c67abfb17aaaac66"
+    },
+    {
+      "variant": "base",
+      "fixture": "minimal-exp2",
+      "optimization": "none",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 0,
+        "table_offsets": [],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "f6f08221f433a9bde62d127e4a7b97c611cfbd93ffb412ec480561600f1ab474"
+    },
+    {
+      "variant": "base",
+      "fixture": "minimal-exp2",
+      "optimization": "O3",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 0,
+        "table_offsets": [],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "cb0c2fc8278b93641d42bc63da3a8a7ce600796a127df809a73ccf440ac5e1b8"
+    },
+    {
+      "variant": "base",
+      "fixture": "minimal-exp2",
+      "optimization": "Oz",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 0,
+        "table_offsets": [],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "cb0c2fc8278b93641d42bc63da3a8a7ce600796a127df809a73ccf440ac5e1b8"
+    },
+    {
+      "variant": "base",
+      "fixture": "medium",
+      "optimization": "none",
+      "encoded_full_table_occurrences": 1,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1053016
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "13d3d0f638337d78db406a9824a3559f2ed6f74accb5bff6a78f30402e002c81"
+    },
+    {
+      "variant": "base",
+      "fixture": "medium",
+      "optimization": "O3",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1053016
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "d97468e8dbbf5ff8d240eaa7ebe59d1e15ae87828be4899e06586cdd9ba3bf0a"
+    },
+    {
+      "variant": "base",
+      "fixture": "medium",
+      "optimization": "Oz",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1053016
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "a7ee8546d31ac9fdfb8feab26885da8c95d0506128dbbf08e1dc8ceefd1b2331"
+    },
+    {
+      "variant": "base",
+      "fixture": "application",
+      "optimization": "none",
+      "encoded_full_table_occurrences": 1,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1061864
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "c1b0f5a8a36736f960b3a255175dd5271f1504896c8df9af557af8f6f9b6ef42"
+    },
+    {
+      "variant": "base",
+      "fixture": "application",
+      "optimization": "O3",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1061864
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "5b749f98c098cb99f4a869be5c4df4e3623de95fc5f0be9dfafa2ce398fce241"
+    },
+    {
+      "variant": "base",
+      "fixture": "application",
+      "optimization": "Oz",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1061864
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "a4cd97866865ea778d0ebe84e720c5b819c17d9c57aadb80717d8f0cc872aa61"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "minimal-exp",
+      "optimization": "none",
+      "encoded_full_table_occurrences": 1,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1048576
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "195fcc37d590fbc674cb17dd71781bcc8021d3c23683642f162ad06a0b684fa0"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "minimal-exp",
+      "optimization": "O3",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1048576
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "eb0e5f1cef4310683917afb832b48cb51885f2761c9b866ad0aa7e6c41fa6a3a"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "minimal-exp",
+      "optimization": "Oz",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1048576
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "eb0e5f1cef4310683917afb832b48cb51885f2761c9b866ad0aa7e6c41fa6a3a"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "minimal-exp2",
+      "optimization": "none",
+      "encoded_full_table_occurrences": 1,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1048576
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "ab1041129357615e45f0e0babbbef46d29fc3f2703f6b18ada6d5a908c924d93"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "minimal-exp2",
+      "optimization": "O3",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1048576
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "660ff604dae8b0530c98508f2fcef546b22c03796a623cb1547db76b62533b57"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "minimal-exp2",
+      "optimization": "Oz",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1048576
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "660ff604dae8b0530c98508f2fcef546b22c03796a623cb1547db76b62533b57"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "medium",
+      "optimization": "none",
+      "encoded_full_table_occurrences": 1,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1048904
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "6da0ef9665f2d24765661743d6629b625ae98e77606b2400bbc9d58a1e1c326a"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "medium",
+      "optimization": "O3",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1048904
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "2ad765d4857e7fddee4e9bc239daf23e649848efb4eb1c58a014d3b96e7d51d7"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "medium",
+      "optimization": "Oz",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1048904
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "579fe6c21ab455c733157dd62b6bf312d1a04249022e6a6b6ccda0d281a47283"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "application",
+      "optimization": "none",
+      "encoded_full_table_occurrences": 1,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1057752
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "24578491255fdce50a3e494f2ffbda72a692d915091458eadfbfeb35b81b0f15"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "application",
+      "optimization": "O3",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1057752
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "c5eb7458025d5d5cd9db10628fb1c6cc1eb308085bc85be03b7181c6814bcfbc"
+    },
+    {
+      "variant": "candidate",
+      "fixture": "application",
+      "optimization": "Oz",
+      "encoded_full_table_occurrences": 0,
+      "initialized_memory": {
+        "imports": [],
+        "table_occurrences": 1,
+        "table_offsets": [
+          1057752
+        ],
+        "initial_memory_bytes": 1114112,
+        "table_bytes": 2048
+      },
+      "module_sha256": "53413fdc1c62e4a98e370c8d83e8d008cad6eec4b4d1b111d7c75e1b53c32b34"
+    }
+  ],
+  "check": "Count the complete 2048-byte table in instantiated linear memory, including implicit zero initialization."
+}

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "cargo",
+    "+stable",
+    "build",
+    "--release",
+    "--target",
+    "thumbv6m-none-eabi",
+    "--manifest-path",
+    "/tmp/libm-exp-implementation/libm/Cargo.toml",
+    "--offline"
+  ],
+  "environment_overrides": {},
+  "exit_code": 0,
+  "duration_seconds": 1.285853292036336
+}

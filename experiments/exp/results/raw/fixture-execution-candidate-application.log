@@ -1,0 +1,76 @@
+{
+  "scale": "application",
+  "imports": [],
+  "tests": [
+    {
+      "export": "exponential",
+      "input": -10,
+      "output": 0.000045399929762484854
+    },
+    {
+      "export": "exponential",
+      "input": -1,
+      "output": 0.36787944117144233
+    },
+    {
+      "export": "exponential",
+      "input": 0,
+      "output": 1
+    },
+    {
+      "export": "exponential",
+      "input": 1,
+      "output": 2.718281828459045
+    },
+    {
+      "export": "exponential",
+      "input": 10,
+      "output": 22026.465794806718
+    },
+    {
+      "export": "binary_exponential",
+      "input": -1074,
+      "output": 5e-324
+    },
+    {
+      "export": "binary_exponential",
+      "input": -1022,
+      "output": 2.2250738585072014e-308
+    },
+    {
+      "export": "binary_exponential",
+      "input": -10,
+      "output": 0.0009765625
+    },
+    {
+      "export": "binary_exponential",
+      "input": -1,
+      "output": 0.5
+    },
+    {
+      "export": "binary_exponential",
+      "input": 0,
+      "output": 1
+    },
+    {
+      "export": "binary_exponential",
+      "input": 1,
+      "output": 2
+    },
+    {
+      "export": "binary_exponential",
+      "input": 10,
+      "output": 1024
+    },
+    {
+      "export": "binary_exponential",
+      "input": 1023,
+      "output": 8.98846567431158e+307
+    },
+    {
+      "export": "portfolio_report",
+      "first": "22206e70bfb99666",
+      "second": "55fa68401526777c"
+    }
+  ]
+}

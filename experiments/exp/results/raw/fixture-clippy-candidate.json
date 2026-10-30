@@ -1,0 +1,15 @@
+{
+  "command": [
+    "cargo",
+    "clippy",
+    "--manifest-path",
+    "/private/tmp/libm-exp-validation/candidate/fixtures/Cargo.toml",
+    "--all-targets",
+    "--all-features",
+    "--offline",
+    "--",
+    "-Dwarnings"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.26859754195902497
+}

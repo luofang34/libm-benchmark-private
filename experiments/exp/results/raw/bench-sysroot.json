@@ -1,0 +1,12 @@
+{
+  "command": [
+    "node",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/bench_wasm.mjs",
+    "/tmp/libm-exp-sysroots/base/target/wasm32-unknown-unknown/release/exp_experiment.wasm",
+    "/tmp/libm-exp-sysroots/candidate/target/wasm32-unknown-unknown/release/exp_experiment.wasm",
+    "32",
+    "sysroot"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 5.92221641598735
+}

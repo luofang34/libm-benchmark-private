@@ -1,0 +1,12 @@
+{
+  "command": [
+    "cargo",
+    "clean",
+    "--manifest-path",
+    "/private/tmp/libm-exp-sysroots/base/harness/Cargo.toml",
+    "--target-dir",
+    "/private/tmp/libm-exp-sysroots/base/target"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.0912373749888502
+}

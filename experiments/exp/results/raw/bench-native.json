@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/Users/fangluo/.local/bin/python3",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/bench_native.py",
+    "/tmp/libm-exp-validation/base/target/release/libexp_experiment.dylib",
+    "/tmp/libm-exp-validation/candidate/target/release/libexp_experiment.dylib"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 7.532977499999106
+}

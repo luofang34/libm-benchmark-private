@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/Users/fangluo/.local/bin/python3",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/accuracy_inputs.py",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/exp/results/artifacts"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.1506218749564141
+}

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "cargo",
+    "test",
+    "--lib",
+    "--manifest-path",
+    "/tmp/libm-exp-validation/candidate/libm/Cargo.toml",
+    "--offline"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 3.9017464999924414
+}

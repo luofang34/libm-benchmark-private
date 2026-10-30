@@ -1,0 +1,12 @@
+{
+  "command": [
+    "cargo",
+    "clean",
+    "--manifest-path",
+    "/private/tmp/libm-exp-validation/candidate/harness/Cargo.toml",
+    "--target-dir",
+    "/private/tmp/libm-exp-validation/candidate/target"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 0.08764570800121874
+}
