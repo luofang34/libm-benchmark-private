@@ -1,8 +1,8 @@
 // Copyright (c) 2018-2026, Arm Limited. SPDX-License-Identifier: MIT
-use super::table::{LN2_HI, LN2_LO, LOG_POLY as A, LOG_TAB};
+use super::log_data::{LN2_HI, LN2_LO, LOG_POLY as A, LOG_TAB};
 
 #[inline]
-pub(super) fn log_inline(ix: u64) -> (f64, f64) {
+pub(super) fn evaluate(ix: u64) -> (f64, f64) {
     let tmp = ix.wrapping_sub(0x3fe6955500000000);
     let index = ((tmp >> 45) & 127) as usize;
     let k = ((tmp as i64) >> 52) as f64;

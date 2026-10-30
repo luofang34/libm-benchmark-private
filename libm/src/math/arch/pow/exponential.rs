@@ -1,8 +1,8 @@
 // Copyright (c) 2018-2026, Arm Limited. SPDX-License-Identifier: MIT
-use super::table::{EXP_POLY as C, EXP_TAB, INV_LN2_N, NEG_LN2_HI_N, NEG_LN2_LO_N, SHIFT};
+use super::super::exp_data::{EXP_POLY as C, EXP_TAB, INV_LN2_N, NEG_LN2_HI_N, NEG_LN2_LO_N, SHIFT};
 
 #[inline]
-pub(super) fn exp_inline(x: f64, tail: f64, sign: u32) -> f64 {
+pub(super) fn evaluate(x: f64, tail: f64, sign: u32) -> f64 {
     let abstop = ((x.to_bits() >> 52) as u32) & 0x7ff;
     if abstop < 0x3c9 {
         return if sign != 0 { -1.0 } else { 1.0 };
