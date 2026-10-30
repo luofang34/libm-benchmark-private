@@ -28,6 +28,7 @@ jobs:
     timeout-minutes: 90
     defaults:
       run:
+        shell: bash --noprofile --norc -euo pipefail {0}
         working-directory: proposal
     strategy:
       fail-fast: false
@@ -91,8 +92,7 @@ jobs:
       - name: Configure MinGW tools
         if: contains(matrix.target, 'windows-gnu')
         run: |
-          echo 'C:\msys64\ucrt64\bin' >> "$GITHUB_PATH"
-          echo 'C:\msys64\usr\bin' >> "$GITHUB_PATH"
+          printf '%s\n' 'C:\msys64\ucrt64\bin' 'C:\msys64\usr\bin' >> "$GITHUB_PATH"
       - name: Set up target
         run: ./ci/install-test-deps.sh "$JOB_TARGET" "$JOB_HOST_TOOLCHAIN"
       - uses: taiki-e/install-action@f7e5d7c961414b23f5b25b2da9294395d08513ad
