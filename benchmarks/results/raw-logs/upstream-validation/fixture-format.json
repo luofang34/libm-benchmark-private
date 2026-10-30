@@ -1,0 +1,16 @@
+{
+  "command": [
+    "rustup",
+    "run",
+    "nightly",
+    "rustfmt",
+    "--check",
+    "benchmarks/results/raw-logs/upstream-validation/pow-link.rs"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.18262577056884766
+}

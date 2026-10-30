@@ -1,0 +1,722 @@
+$ ['bash', 'ci/miri.sh']
++ export 'MIRIFLAGS=-Zmiri-deterministic-floats -Zmiri-tree-borrows'
++ MIRIFLAGS='-Zmiri-deterministic-floats -Zmiri-tree-borrows'
++ targets=(x86_64-unknown-linux-gnu armv7-unknown-linux-gnueabihf s390x-unknown-linux-gnu)
++ for target in "${targets[@]}"
++ cargo miri test --manifest-path builtins-test/Cargo.toml --no-default-features --target x86_64-unknown-linux-gnu -- mem
+Preparing a sysroot for Miri (target: x86_64-unknown-linux-gnu)... done
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+   Compiling rand_core v0.10.1
+   Compiling paste v1.0.15
+   Compiling builtins-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/builtins-test)
+   Compiling rustc_apfloat v0.2.3+llvm-462a31f5a5ab
+   Compiling smallvec v1.16.2
+   Compiling bitflags v2.13.2
+   Compiling rand_xoshiro v0.8.1
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.42s
+     Running unittests src/lib.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/802626027f55e236/out/builtins_test-802626027f55e236)
+
+running 1 test
+test mem::test_alignment ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running tests/addsub.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/86def272023df89b/out/addsub-86def272023df89b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.04s
+
+     Running tests/cmp.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/6a650fa4682bddc7/out/cmp-6a650fa4682bddc7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.03s
+
+     Running tests/complex.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/ec52d7be57135590/out/complex-ec52d7be57135590)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.03s
+
+     Running tests/conv.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/2369080d05a8cdc7/out/conv-2369080d05a8cdc7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 35 filtered out; finished in 0.03s
+
+     Running tests/div_rem.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/1847a4fa2ed34e2e/out/div_rem-1847a4fa2ed34e2e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 7 filtered out; finished in 0.03s
+
+     Running tests/float_pow.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/d22ed28d7260be22/out/float_pow-d22ed28d7260be22)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.03s
+
+     Running tests/lse.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/ff3c34cafd554738/out/lse-ff3c34cafd554738)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/mem.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/7ae9a5d2248ee5d1/out/mem-7ae9a5d2248ee5d1)
+
+running 19 tests
+test memcmp_eq ... ok
+test memcmp_ne ... ok
+test memcpy_10 ... ok
+test memcpy_3 ... ok
+test memcpy_big ... ok
+test memmove_backward ... ok
+test memmove_backward_aligned ... ok
+test memmove_backward_misaligned_aligned_start ... ok
+test memmove_backward_misaligned_nonaligned_start ... ok
+test memmove_forward ... ok
+test memmove_forward_aligned ... ok
+test memmove_forward_misaligned_aligned_start ... ok
+test memmove_forward_misaligned_nonaligned_start ... ok
+test memmove_misaligned_bounds ... ok
+test memset_backward_aligned ... ok
+test memset_backward_misaligned_aligned_start ... ok
+test memset_backward_misaligned_nonaligned_start ... ok
+test memset_nonzero ... ok
+test memset_zero ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 10.60s
+
+     Running tests/misc.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/88f827b65136df1e/out/misc-88f827b65136df1e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.03s
+
+     Running tests/mul.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/ffc377353387b3db/out/mul-ffc377353387b3db)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 10 filtered out; finished in 0.03s
+
+     Running tests/shift.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/builtins-test/7304387aedc660d1/out/shift-7304387aedc660d1)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 9 filtered out; finished in 0.03s
+
+   Doc-tests builtins_test
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ cargo miri test --manifest-path libm/Cargo.toml --target x86_64-unknown-linux-gnu
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.27s
+     Running unittests src/lib.rs (/tmp/libm-miri-target/miri/x86_64-unknown-linux-gnu/debug/build/libm/12a0dfe336e8c1d7/out/libm-12a0dfe336e8c1d7)
+
+running 114 tests
+test math::atan2::tests::sanity_check ... ok
+test math::atan::tests::infinity ... ok
+test math::atan::tests::minus_infinity ... ok
+test math::atan::tests::nan ... ok
+test math::atan::tests::sanity_check ... ok
+test math::atan::tests::zero ... ok
+test math::cbrt::tests::spot_checks ... ok
+test math::ceil::tests::check_f32 ... ok
+test math::ceil::tests::check_f64 ... ok
+test math::copysign::tests::spec_tests_f32 ... ok
+test math::copysign::tests::spec_tests_f64 ... ok
+test math::exp2::i0_wrap_test ... ok
+test math::exp2m1::tests::exact_integer_results ... ok
+test math::exp2m1::tests::known_results ... ok
+test math::exp2m1f::tests::known_results ... ok
+test math::expm1::tests::sanity_check ... ok
+test math::fabs::tests::sanity_check_f32 ... ok
+test math::fabs::tests::sanity_check_f64 ... ok
+test math::fabs::tests::spec_tests_f32 ... ok
+test math::fabs::tests::spec_tests_f64 ... ok
+test math::fdim::tests::check_f32 ... ok
+test math::fdim::tests::check_f64 ... ok
+test math::floor::tests::check_f32 ... ok
+test math::floor::tests::check_f64 ... ok
+test math::fma::tests::check_f32 ... ok
+test math::fma::tests::check_f64 ... ok
+test math::fma::tests::fma_sbb ... ok
+test math::fma::tests::fma_segfault ... ok
+test math::fma::tests::fma_underflow ... ok
+test math::fma::tests::issue_263 ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f32 ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f64 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f32 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f64 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f32 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f64 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f32 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f64 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f32 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f64 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f32 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f64 ... ok
+test math::j1f::tests::test_j1f_2488 ... ok
+test math::j1f::tests::test_y1f_2002 ... ok
+test math::pow::tests::infinity_as_base ... ok
+test math::pow::tests::infinity_as_exponent ... ok
+test math::pow::tests::nan_inputs ... ok
+test math::pow::tests::normal_cases ... ok
+test math::pow::tests::one_as_base ... ok
+test math::pow::tests::signed_underflow_and_nan_identities ... ok
+test math::pow::tests::special_cases ... ok
+test math::pow::tests::subnormal_log_reduction ... ok
+test math::pow::tests::zero_as_base ... ok
+test math::pow::tests::zero_as_exponent ... ok
+test math::rem_pio2::tests::test_near_pi ... ok
+test math::rem_pio2::tests::test_overflow_4747b9 ... ok
+test math::rem_pio2::tests::test_overflow_b9b847 ... ok
+test math::remquo::tests::test_q_overflow ... ok
+test math::rint::tests::check_f32 ... ok
+test math::rint::tests::check_f64 ... ok
+test math::round::tests::check_f32 ... ok
+test math::round::tests::check_f64 ... ok
+test math::scalbn::tests::spec_test_f32 ... ok
+test math::scalbn::tests::spec_test_f64 ... ok
+test math::sin::tests::test_near_pi ... ok
+test math::sincos::tests::rotational_symmetry ... ok
+test math::sincos::tests::with_pi ... ok
+test math::sincosf::tests::rotational_symmetry ... ok
+test math::sqrt::tests::conformance_tests_f32 ... ok
+test math::sqrt::tests::conformance_tests_f64 ... ok
+test math::sqrt::tests::sanity_check_f32 ... ok
+test math::sqrt::tests::sanity_check_f64 ... ok
+test math::sqrt::tests::spec_tests_f32 ... ok
+test math::sqrt::tests::spec_tests_f64 ... ok
+test math::support::big::tests::div_u256_by_u128 ... ignored
+test math::support::big::tests::i256_ord ... ok
+test math::support::big::tests::i256_shifts ... ok
+test math::support::big::tests::not_u256 ... ok
+test math::support::big::tests::shl_u256 ... ok
+test math::support::big::tests::shr_u256 ... ok
+test math::support::big::tests::shr_u256_overflow - should panic ... ok
+test math::support::big::tests::u256_ord ... ok
+test math::support::big::tests::u256_shifts ... ok
+test math::support::big::tests::widen_i128 ... ok
+test math::support::big::tests::widen_mul_u128 ... ok
+test math::support::big::tests::widen_u128 ... ok
+test math::support::feature_detect::tests::flag_cache_is_used ... ok
+test math::support::feature_detect::tests::select_cache_is_used ... ok
+test math::support::feature_detect::tests::unique_masks ... ok
+test math::support::float_traits::tests::check_f32 ... ok
+test math::support::float_traits::tests::check_f64 ... ok
+test math::support::hex_float::parse_tests::long_tail ... ignored
+test math::support::hex_float::parse_tests::rounding_extreme_underflow ... ok
+test math::support::hex_float::parse_tests::test_f32 ... ok
+test math::support::hex_float::parse_tests::test_f64 ... ok
+test math::support::hex_float::parse_tests::test_macros ... ok
+test math::support::hex_float::parse_tests::test_parse_any ... ignored
+test math::support::hex_float::print_tests::spot_checks ... ok
+test math::support::hex_float::tests_panicking::test_f32_again_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_almost_extra_precision ... ok
+test math::support::hex_float::tests_panicking::test_f32_also_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_extra_precision - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_extra_precision2 - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_overflow - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_tiniest ... ok
+test math::support::hex_float::tests_panicking::test_f32_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f64_almost_extra_precision ... ok
+test math::support::hex_float::tests_panicking::test_f64_extra_precision - should panic ... ok
+test math::support::int_traits::narrowing_div::test::inverse_mul ... ignored
+test math::support::modular::test::reducer_ops ... ignored
+test math::support::modular::test::reduction_u128 ... ok
+test math::support::modular::test::reduction_u8 ... ignored
+test math::trunc::tests::check_f32 ... ok
+test math::trunc::tests::check_f64 ... ok
+
+test result: ok. 108 passed; 0 failed; 6 ignored; 0 measured; 0 filtered out; finished in 32.35s
+
+   Doc-tests libm
+
+running 1 test
+test libm/src/libm_helper.rs - libm_helper::Libm (line 10) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
++ for target in "${targets[@]}"
++ cargo miri test --manifest-path builtins-test/Cargo.toml --no-default-features --target armv7-unknown-linux-gnueabihf -- mem
+Preparing a sysroot for Miri (target: armv7-unknown-linux-gnueabihf)... done
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+   Compiling rand_core v0.10.1
+   Compiling smallvec v1.16.2
+   Compiling bitflags v2.13.2
+   Compiling rustc_apfloat v0.2.3+llvm-462a31f5a5ab
+   Compiling builtins-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/builtins-test)
+   Compiling rand_xoshiro v0.8.1
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.61s
+     Running unittests src/lib.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/068ea1d37cc857b4/out/builtins_test-068ea1d37cc857b4)
+
+running 1 test
+test mem::test_alignment ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running tests/addsub.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/4cc83b8346ed22e0/out/addsub-4cc83b8346ed22e0)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.03s
+
+     Running tests/cmp.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/2d73dbed3ccbbe13/out/cmp-2d73dbed3ccbbe13)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 6 filtered out; finished in 0.03s
+
+     Running tests/complex.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/b04cd81749ec97f6/out/complex-b04cd81749ec97f6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.03s
+
+     Running tests/conv.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/ed16d04e9492f174/out/conv-ed16d04e9492f174)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 35 filtered out; finished in 0.03s
+
+     Running tests/div_rem.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/1a179a96fb63408a/out/div_rem-1a179a96fb63408a)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 7 filtered out; finished in 0.03s
+
+     Running tests/float_pow.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/3d9d6422d6f05bcd/out/float_pow-3d9d6422d6f05bcd)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.03s
+
+     Running tests/lse.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/83a1bf6f883dc79c/out/lse-83a1bf6f883dc79c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/mem.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/edd3ee7a70a0e483/out/mem-edd3ee7a70a0e483)
+
+running 19 tests
+test memcmp_eq ... ok
+test memcmp_ne ... ok
+test memcpy_10 ... ok
+test memcpy_3 ... ok
+test memcpy_big ... ok
+test memmove_backward ... ok
+test memmove_backward_aligned ... ok
+test memmove_backward_misaligned_aligned_start ... ok
+test memmove_backward_misaligned_nonaligned_start ... ok
+test memmove_forward ... ok
+test memmove_forward_aligned ... ok
+test memmove_forward_misaligned_aligned_start ... ok
+test memmove_forward_misaligned_nonaligned_start ... ok
+test memmove_misaligned_bounds ... ok
+test memset_backward_aligned ... ok
+test memset_backward_misaligned_aligned_start ... ok
+test memset_backward_misaligned_nonaligned_start ... ok
+test memset_nonzero ... ok
+test memset_zero ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 10.77s
+
+     Running tests/misc.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/c90cc8e7ba2a907e/out/misc-c90cc8e7ba2a907e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.03s
+
+     Running tests/mul.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/124a51e5b4b5f001/out/mul-124a51e5b4b5f001)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 10 filtered out; finished in 0.03s
+
+     Running tests/shift.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/builtins-test/3a405b0a556e318a/out/shift-3a405b0a556e318a)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 9 filtered out; finished in 0.03s
+
+   Doc-tests builtins_test
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ cargo miri test --manifest-path libm/Cargo.toml --target armv7-unknown-linux-gnueabihf
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.44s
+     Running unittests src/lib.rs (/tmp/libm-miri-target/miri/armv7-unknown-linux-gnueabihf/debug/build/libm/a12d25be890439a4/out/libm-a12d25be890439a4)
+
+running 114 tests
+test math::atan2::tests::sanity_check ... ok
+test math::atan::tests::infinity ... ok
+test math::atan::tests::minus_infinity ... ok
+test math::atan::tests::nan ... ok
+test math::atan::tests::sanity_check ... ok
+test math::atan::tests::zero ... ok
+test math::cbrt::tests::spot_checks ... ok
+test math::ceil::tests::check_f32 ... ok
+test math::ceil::tests::check_f64 ... ok
+test math::copysign::tests::spec_tests_f32 ... ok
+test math::copysign::tests::spec_tests_f64 ... ok
+test math::exp2::i0_wrap_test ... ok
+test math::exp2m1::tests::exact_integer_results ... ok
+test math::exp2m1::tests::known_results ... ok
+test math::exp2m1f::tests::known_results ... ok
+test math::expm1::tests::sanity_check ... ok
+test math::fabs::tests::sanity_check_f32 ... ok
+test math::fabs::tests::sanity_check_f64 ... ok
+test math::fabs::tests::spec_tests_f32 ... ok
+test math::fabs::tests::spec_tests_f64 ... ok
+test math::fdim::tests::check_f32 ... ok
+test math::fdim::tests::check_f64 ... ok
+test math::floor::tests::check_f32 ... ok
+test math::floor::tests::check_f64 ... ok
+test math::fma::tests::check_f32 ... ok
+test math::fma::tests::check_f64 ... ok
+test math::fma::tests::fma_sbb ... ok
+test math::fma::tests::fma_segfault ... ok
+test math::fma::tests::fma_underflow ... ok
+test math::fma::tests::issue_263 ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f32 ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f64 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f32 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f64 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f32 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f64 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f32 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f64 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f32 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f64 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f32 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f64 ... ok
+test math::j1f::tests::test_j1f_2488 ... ok
+test math::j1f::tests::test_y1f_2002 ... ok
+test math::pow::tests::infinity_as_base ... ok
+test math::pow::tests::infinity_as_exponent ... ok
+test math::pow::tests::nan_inputs ... ok
+test math::pow::tests::normal_cases ... ok
+test math::pow::tests::one_as_base ... ok
+test math::pow::tests::signed_underflow_and_nan_identities ... ok
+test math::pow::tests::special_cases ... ok
+test math::pow::tests::subnormal_log_reduction ... ok
+test math::pow::tests::zero_as_base ... ok
+test math::pow::tests::zero_as_exponent ... ok
+test math::rem_pio2::tests::test_near_pi ... ok
+test math::rem_pio2::tests::test_overflow_4747b9 ... ok
+test math::rem_pio2::tests::test_overflow_b9b847 ... ok
+test math::remquo::tests::test_q_overflow ... ok
+test math::rint::tests::check_f32 ... ok
+test math::rint::tests::check_f64 ... ok
+test math::round::tests::check_f32 ... ok
+test math::round::tests::check_f64 ... ok
+test math::scalbn::tests::spec_test_f32 ... ok
+test math::scalbn::tests::spec_test_f64 ... ok
+test math::sin::tests::test_near_pi ... ok
+test math::sincos::tests::rotational_symmetry ... ok
+test math::sincos::tests::with_pi ... ok
+test math::sincosf::tests::rotational_symmetry ... ok
+test math::sqrt::tests::conformance_tests_f32 ... ok
+test math::sqrt::tests::conformance_tests_f64 ... ok
+test math::sqrt::tests::sanity_check_f32 ... ok
+test math::sqrt::tests::sanity_check_f64 ... ok
+test math::sqrt::tests::spec_tests_f32 ... ok
+test math::sqrt::tests::spec_tests_f64 ... ok
+test math::support::big::tests::div_u256_by_u128 ... ignored
+test math::support::big::tests::i256_ord ... ok
+test math::support::big::tests::i256_shifts ... ok
+test math::support::big::tests::not_u256 ... ok
+test math::support::big::tests::shl_u256 ... ok
+test math::support::big::tests::shr_u256 ... ok
+test math::support::big::tests::shr_u256_overflow - should panic ... ok
+test math::support::big::tests::u256_ord ... ok
+test math::support::big::tests::u256_shifts ... ok
+test math::support::big::tests::widen_i128 ... ok
+test math::support::big::tests::widen_mul_u128 ... ok
+test math::support::big::tests::widen_u128 ... ok
+test math::support::feature_detect::tests::flag_cache_is_used ... ok
+test math::support::feature_detect::tests::select_cache_is_used ... ok
+test math::support::feature_detect::tests::unique_masks ... ok
+test math::support::float_traits::tests::check_f32 ... ok
+test math::support::float_traits::tests::check_f64 ... ok
+test math::support::hex_float::parse_tests::long_tail ... ignored
+test math::support::hex_float::parse_tests::rounding_extreme_underflow ... ok
+test math::support::hex_float::parse_tests::test_f32 ... ok
+test math::support::hex_float::parse_tests::test_f64 ... ok
+test math::support::hex_float::parse_tests::test_macros ... ok
+test math::support::hex_float::parse_tests::test_parse_any ... ignored
+test math::support::hex_float::print_tests::spot_checks ... ok
+test math::support::hex_float::tests_panicking::test_f32_again_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_almost_extra_precision ... ok
+test math::support::hex_float::tests_panicking::test_f32_also_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_extra_precision - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_extra_precision2 - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_overflow - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_tiniest ... ok
+test math::support::hex_float::tests_panicking::test_f32_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f64_almost_extra_precision ... ok
+test math::support::hex_float::tests_panicking::test_f64_extra_precision - should panic ... ok
+test math::support::int_traits::narrowing_div::test::inverse_mul ... ignored
+test math::support::modular::test::reducer_ops ... ignored
+test math::support::modular::test::reduction_u128 ... ok
+test math::support::modular::test::reduction_u8 ... ignored
+test math::trunc::tests::check_f32 ... ok
+test math::trunc::tests::check_f64 ... ok
+
+test result: ok. 108 passed; 0 failed; 6 ignored; 0 measured; 0 filtered out; finished in 32.13s
+
+   Doc-tests libm
+
+running 1 test
+test libm/src/libm_helper.rs - libm_helper::Libm (line 10) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
++ for target in "${targets[@]}"
++ cargo miri test --manifest-path builtins-test/Cargo.toml --no-default-features --target s390x-unknown-linux-gnu -- mem
+Preparing a sysroot for Miri (target: s390x-unknown-linux-gnu)... done
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+   Compiling rand_core v0.10.1
+   Compiling bitflags v2.13.2
+   Compiling smallvec v1.16.2
+   Compiling rustc_apfloat v0.2.3+llvm-462a31f5a5ab
+   Compiling builtins-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/builtins-test)
+   Compiling rand_xoshiro v0.8.1
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.56s
+     Running unittests src/lib.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/4a2408ce216bb69d/out/builtins_test-4a2408ce216bb69d)
+
+running 1 test
+test mem::test_alignment ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+     Running tests/addsub.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/f24004bbb84e66a6/out/addsub-f24004bbb84e66a6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.03s
+
+     Running tests/cmp.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/971c7b898f9b8398/out/cmp-971c7b898f9b8398)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.03s
+
+     Running tests/complex.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/655de3649087597f/out/complex-655de3649087597f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 8 filtered out; finished in 0.03s
+
+     Running tests/conv.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/fc6c474c9cb5caab/out/conv-fc6c474c9cb5caab)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 35 filtered out; finished in 0.03s
+
+     Running tests/div_rem.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/627d485b02b40375/out/div_rem-627d485b02b40375)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 7 filtered out; finished in 0.03s
+
+     Running tests/float_pow.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/78940c81dc695364/out/float_pow-78940c81dc695364)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.03s
+
+     Running tests/lse.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/14fc1b5fea079c04/out/lse-14fc1b5fea079c04)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/mem.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/a3d729ffc650d8b3/out/mem-a3d729ffc650d8b3)
+
+running 19 tests
+test memcmp_eq ... ok
+test memcmp_ne ... ok
+test memcpy_10 ... ok
+test memcpy_3 ... ok
+test memcpy_big ... ok
+test memmove_backward ... ok
+test memmove_backward_aligned ... ok
+test memmove_backward_misaligned_aligned_start ... ok
+test memmove_backward_misaligned_nonaligned_start ... ok
+test memmove_forward ... ok
+test memmove_forward_aligned ... ok
+test memmove_forward_misaligned_aligned_start ... ok
+test memmove_forward_misaligned_nonaligned_start ... ok
+test memmove_misaligned_bounds ... ok
+test memset_backward_aligned ... ok
+test memset_backward_misaligned_aligned_start ... ok
+test memset_backward_misaligned_nonaligned_start ... ok
+test memset_nonzero ... ok
+test memset_zero ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 10.34s
+
+     Running tests/misc.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/918a6f06d3622b4d/out/misc-918a6f06d3622b4d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.03s
+
+     Running tests/mul.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/e44d8d3ff65f5b44/out/mul-e44d8d3ff65f5b44)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 10 filtered out; finished in 0.03s
+
+     Running tests/shift.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/builtins-test/cb5b396168d89e30/out/shift-cb5b396168d89e30)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 9 filtered out; finished in 0.03s
+
+   Doc-tests builtins_test
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ cargo miri test --manifest-path libm/Cargo.toml --target s390x-unknown-linux-gnu
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.00s
+     Running unittests src/lib.rs (/tmp/libm-miri-target/miri/s390x-unknown-linux-gnu/debug/build/libm/68f920ec90d71450/out/libm-68f920ec90d71450)
+
+running 114 tests
+test math::atan2::tests::sanity_check ... ok
+test math::atan::tests::infinity ... ok
+test math::atan::tests::minus_infinity ... ok
+test math::atan::tests::nan ... ok
+test math::atan::tests::sanity_check ... ok
+test math::atan::tests::zero ... ok
+test math::cbrt::tests::spot_checks ... ok
+test math::ceil::tests::check_f32 ... ok
+test math::ceil::tests::check_f64 ... ok
+test math::copysign::tests::spec_tests_f32 ... ok
+test math::copysign::tests::spec_tests_f64 ... ok
+test math::exp2::i0_wrap_test ... ok
+test math::exp2m1::tests::exact_integer_results ... ok
+test math::exp2m1::tests::known_results ... ok
+test math::exp2m1f::tests::known_results ... ok
+test math::expm1::tests::sanity_check ... ok
+test math::fabs::tests::sanity_check_f32 ... ok
+test math::fabs::tests::sanity_check_f64 ... ok
+test math::fabs::tests::spec_tests_f32 ... ok
+test math::fabs::tests::spec_tests_f64 ... ok
+test math::fdim::tests::check_f32 ... ok
+test math::fdim::tests::check_f64 ... ok
+test math::floor::tests::check_f32 ... ok
+test math::floor::tests::check_f64 ... ok
+test math::fma::tests::check_f32 ... ok
+test math::fma::tests::check_f64 ... ok
+test math::fma::tests::fma_sbb ... ok
+test math::fma::tests::fma_segfault ... ok
+test math::fma::tests::fma_underflow ... ok
+test math::fma::tests::issue_263 ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f32 ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f64 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f32 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f64 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f32 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f64 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f32 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f64 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f32 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f64 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f32 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f64 ... ok
+test math::j1f::tests::test_j1f_2488 ... ok
+test math::j1f::tests::test_y1f_2002 ... ok
+test math::pow::tests::infinity_as_base ... ok
+test math::pow::tests::infinity_as_exponent ... ok
+test math::pow::tests::nan_inputs ... ok
+test math::pow::tests::normal_cases ... ok
+test math::pow::tests::one_as_base ... ok
+test math::pow::tests::signed_underflow_and_nan_identities ... ok
+test math::pow::tests::special_cases ... ok
+test math::pow::tests::subnormal_log_reduction ... ok
+test math::pow::tests::zero_as_base ... ok
+test math::pow::tests::zero_as_exponent ... ok
+test math::rem_pio2::tests::test_near_pi ... ok
+test math::rem_pio2::tests::test_overflow_4747b9 ... ok
+test math::rem_pio2::tests::test_overflow_b9b847 ... ok
+test math::remquo::tests::test_q_overflow ... ok
+test math::rint::tests::check_f32 ... ok
+test math::rint::tests::check_f64 ... ok
+test math::round::tests::check_f32 ... ok
+test math::round::tests::check_f64 ... ok
+test math::scalbn::tests::spec_test_f32 ... ok
+test math::scalbn::tests::spec_test_f64 ... ok
+test math::sin::tests::test_near_pi ... ok
+test math::sincos::tests::rotational_symmetry ... ok
+test math::sincos::tests::with_pi ... ok
+test math::sincosf::tests::rotational_symmetry ... ok
+test math::sqrt::tests::conformance_tests_f32 ... ok
+test math::sqrt::tests::conformance_tests_f64 ... ok
+test math::sqrt::tests::sanity_check_f32 ... ok
+test math::sqrt::tests::sanity_check_f64 ... ok
+test math::sqrt::tests::spec_tests_f32 ... ok
+test math::sqrt::tests::spec_tests_f64 ... ok
+test math::support::big::tests::div_u256_by_u128 ... ignored
+test math::support::big::tests::i256_ord ... ok
+test math::support::big::tests::i256_shifts ... ok
+test math::support::big::tests::not_u256 ... ok
+test math::support::big::tests::shl_u256 ... ok
+test math::support::big::tests::shr_u256 ... ok
+test math::support::big::tests::shr_u256_overflow - should panic ... ok
+test math::support::big::tests::u256_ord ... ok
+test math::support::big::tests::u256_shifts ... ok
+test math::support::big::tests::widen_i128 ... ok
+test math::support::big::tests::widen_mul_u128 ... ok
+test math::support::big::tests::widen_u128 ... ok
+test math::support::feature_detect::tests::flag_cache_is_used ... ok
+test math::support::feature_detect::tests::select_cache_is_used ... ok
+test math::support::feature_detect::tests::unique_masks ... ok
+test math::support::float_traits::tests::check_f32 ... ok
+test math::support::float_traits::tests::check_f64 ... ok
+test math::support::hex_float::parse_tests::long_tail ... ignored
+test math::support::hex_float::parse_tests::rounding_extreme_underflow ... ok
+test math::support::hex_float::parse_tests::test_f32 ... ok
+test math::support::hex_float::parse_tests::test_f64 ... ok
+test math::support::hex_float::parse_tests::test_macros ... ok
+test math::support::hex_float::parse_tests::test_parse_any ... ignored
+test math::support::hex_float::print_tests::spot_checks ... ok
+test math::support::hex_float::tests_panicking::test_f32_again_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_almost_extra_precision ... ok
+test math::support::hex_float::tests_panicking::test_f32_also_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_extra_precision - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_extra_precision2 - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_overflow - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_tiniest ... ok
+test math::support::hex_float::tests_panicking::test_f32_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f64_almost_extra_precision ... ok
+test math::support::hex_float::tests_panicking::test_f64_extra_precision - should panic ... ok
+test math::support::int_traits::narrowing_div::test::inverse_mul ... ignored
+test math::support::modular::test::reducer_ops ... ignored
+test math::support::modular::test::reduction_u128 ... ok
+test math::support::modular::test::reduction_u8 ... ignored
+test math::trunc::tests::check_f32 ... ok
+test math::trunc::tests::check_f64 ... ok
+
+test result: ok. 108 passed; 0 failed; 6 ignored; 0 measured; 0 filtered out; finished in 32.46s
+
+   Doc-tests libm
+
+running 1 test
+test libm/src/libm_helper.rs - libm_helper::Libm (line 10) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+

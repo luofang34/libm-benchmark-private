@@ -1,0 +1,20 @@
+{
+  "command": [
+    "cargo",
+    "clippy",
+    "-p",
+    "libm",
+    "--all-targets",
+    "--all-features",
+    "--",
+    "-D",
+    "warnings"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+    "VALIDATION_CWD": "/tmp/libm-upstream-validation-base"
+  },
+  "exit_code": 101,
+  "elapsed_seconds": 9.046401977539062
+}

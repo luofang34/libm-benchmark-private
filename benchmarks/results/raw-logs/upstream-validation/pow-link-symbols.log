@@ -1,0 +1,9 @@
+$ ['cargo', 'run', '-p', 'symcheck', '--release', '--', '--check', '--target', 'wasm32-unknown-unknown', '--no-visibility', 'benchmarks/results/raw-logs/upstream-validation/pow-link.wasm']
+    Finished `release` profile [optimized] target(s) in 0.06s
+     Running `target/release/symcheck --check --target wasm32-unknown-unknown --no-visibility benchmarks/results/raw-logs/upstream-validation/pow-link.wasm`
+running: "rustc" "--target" "wasm32-unknown-unknown" "--print=cfg"
+Checking benchmarks/results/raw-logs/upstream-validation/pow-link.wasm
+    success: no duplicate symbols found
+    success: no undefined references to core found
+    success: object files match target
+    success: no writeable+executable stack indicators found

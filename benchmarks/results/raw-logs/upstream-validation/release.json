@@ -1,0 +1,13 @@
+{
+  "command": [
+    "cargo",
+    "build",
+    "--release"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 7.106048107147217
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "etc/update-api-list.py",
+    "--check"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.43973612785339355
+}

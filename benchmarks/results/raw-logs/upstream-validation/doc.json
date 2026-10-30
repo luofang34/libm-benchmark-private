@@ -1,0 +1,13 @@
+{
+  "command": [
+    "cargo",
+    "doc"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "RUSTDOCFLAGS": "-D missing_docs -D broken_intra_doc_links",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 101,
+  "elapsed_seconds": 2.344749927520752
+}

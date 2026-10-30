@@ -1,0 +1,9 @@
+$ ['cargo', 'run', '--target', 'aarch64-apple-darwin', '--verbose', '--manifest-path', 'builtins-test-intrinsics/Cargo.toml', '--features', 'c']
+       Fresh shlex v2.0.1
+       Fresh find-msvc-tools v0.1.14
+       Fresh panic-handler v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/panic-handler)
+       Fresh cc v1.6.0
+       Fresh compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+       Fresh builtins-test-intrinsics v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/builtins-test-intrinsics)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running `/tmp/libm-validation-link-target/aarch64-apple-darwin/debug/builtins-test-intrinsics`

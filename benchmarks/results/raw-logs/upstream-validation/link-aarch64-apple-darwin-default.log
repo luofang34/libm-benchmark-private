@@ -1,0 +1,81 @@
+$ ['cargo', 'run', '-p', 'symcheck', '--release', '--', '--build-and-check', '--target', 'aarch64-apple-darwin', '--', '--verbose', '--manifest-path', 'builtins-test-intrinsics/Cargo.toml']
+   Compiling memchr v2.8.3
+   Compiling crc32fast v1.5.2
+   Compiling zmij v1.0.23
+   Compiling simd-adler32 v0.3.10
+   Compiling adler2 v2.0.1
+   Compiling cfg-if v1.0.5
+   Compiling serde_core v1.0.229
+   Compiling serde_json v1.0.151
+   Compiling regex-syntax v0.8.11
+   Compiling bitflags v2.13.2
+   Compiling twox-hash v2.1.5
+   Compiling unicode-width v0.2.2
+   Compiling itoa v1.0.18
+   Compiling symcheck v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/symcheck)
+   Compiling miniz_oxide v0.9.1
+   Compiling ruzstd v0.9.0
+   Compiling getopts v0.2.24
+   Compiling wasmparser v0.255.0
+   Compiling aho-corasick v1.1.5
+   Compiling flate2 v1.1.10
+   Compiling regex-automata v0.4.18
+   Compiling object v0.40.0
+   Compiling regex v1.13.1
+    Finished `release` profile [optimized] target(s) in 7.32s
+     Running `/tmp/libm-validation-link-target/release/symcheck --build-and-check --target aarch64-apple-darwin -- --verbose --manifest-path builtins-test-intrinsics/Cargo.toml`
+running: "rustc" "--target" "aarch64-apple-darwin" "--print=cfg"
+running: "cargo" "build" "--target" "aarch64-apple-darwin" "--message-format=json-diagnostic-rendered-ansi" "--verbose" "--manifest-path" "builtins-test-intrinsics/Cargo.toml"
+    Updating git repository `https://github.com/japaric/utest`
+     Running `git -c core.fsmonitor=false -c advice.fetchShowForcedUpdates=false -c http.maxRetries=3 -c http.retryAfter=1 -c http.maxRetryTime=10 fetch --no-tags --verbose --no-show-forced-updates --force --update-head-ok --recurse-submodules=no 'https://github.com/japaric/utest' '+e32073e2b078e3bee46001c13ae4c1acf368d762:refs/commit/e32073e2b078e3bee46001c13ae4c1acf368d762'`
+POST git-upload-pack (174 bytes)
+From https://github.com/japaric/utest
+ * [new ref]         e32073e2b078e3bee46001c13ae4c1acf368d762 -> refs/commit/e32073e2b078e3bee46001c13ae4c1acf368d762
+    Updating crates.io index
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+   Compiling builtins-test-intrinsics v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/builtins-test-intrinsics)
+   Compiling panic-handler v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/panic-handler)
+     Running `/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name build_script_build --edition=2024 /Users/fangluo/Documents/ChatGPT/libm/builtins-shim/../compiler-builtins/build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type bin --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 -C split-debuginfo=unpacked --cfg 'feature="arch"' --cfg 'feature="compiler-builtins"' --cfg 'feature="default"' --cfg 'feature="unmangled-names"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("arch", "c", "compiler-builtins", "default", "mem", "unmangled-names", "unstable-public-internals"))' -C metadata=4750448c42edbcda --out-dir /tmp/libm-validation-link-target/debug/build/compiler_builtins/07b37486b662bfc8/out -C incremental=/tmp/libm-validation-link-target/debug/incremental --force-warn=unused_crate_dependencies`
+     Running `/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name build_script_build --edition=2024 build.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type bin --emit=dep-info,link -C embed-bitcode=no -C debuginfo=2 -C split-debuginfo=unpacked --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("c"))' -C metadata=844ad87b8325e750 --out-dir /tmp/libm-validation-link-target/debug/build/builtins-test-intrinsics/fc125c06fb89fa81/out -C incremental=/tmp/libm-validation-link-target/debug/incremental --force-warn=unused_crate_dependencies`
+     Running `/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name panic_handler --edition=2024 /Users/fangluo/Documents/ChatGPT/libm/crates/panic-handler/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C panic=abort -C embed-bitcode=no -C debuginfo=2 -C split-debuginfo=unpacked --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values())' -C metadata=920db89a9bebe184 -C extra-filename=-05af36a30bcdcb77 --out-dir /tmp/libm-validation-link-target/aarch64-apple-darwin/debug/build/panic-handler/05af36a30bcdcb77/out --target aarch64-apple-darwin -C incremental=/tmp/libm-validation-link-target/aarch64-apple-darwin/debug/incremental -L dependency=/tmp/libm-validation-link-target/debug/build/panic-handler/05af36a30bcdcb77/out --force-warn=unused_crate_dependencies`
+     Running `/tmp/libm-validation-link-target/debug/build/compiler_builtins/07b37486b662bfc8/out/build_script_build`
+build script output: {
+  "cfgs": [
+    "intrinsics_enabled",
+    "f16_enabled",
+    "f128_enabled",
+    "mem_unaligned"
+  ],
+  "env": [],
+  "linked_libs": [],
+  "linked_paths": [],
+  "out_dir": "/tmp/libm-validation-link-target/aarch64-apple-darwin/debug/build/compiler_builtins/b32e4e6e2f1ea196/out",
+  "package_id": "path+file:///Users/fangluo/Documents/ChatGPT/libm/builtins-shim#compiler_builtins@0.1.160",
+  "reason": "build-script-executed"
+}
+     Running `/tmp/libm-validation-link-target/debug/build/builtins-test-intrinsics/fc125c06fb89fa81/out/build_script_build`
+     Running `/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name compiler_builtins --edition=2024 /Users/fangluo/Documents/ChatGPT/libm/builtins-shim/../compiler-builtins/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C panic=abort -C embed-bitcode=no -C debuginfo=2 -C split-debuginfo=unpacked --cfg 'feature="arch"' --cfg 'feature="compiler-builtins"' --cfg 'feature="default"' --cfg 'feature="unmangled-names"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("arch", "c", "compiler-builtins", "default", "mem", "unmangled-names", "unstable-public-internals"))' -C metadata=49ee464a68a47b6f -C extra-filename=-b944ae35347a4622 --out-dir /tmp/libm-validation-link-target/aarch64-apple-darwin/debug/build/compiler_builtins/b944ae35347a4622/out --target aarch64-apple-darwin -C incremental=/tmp/libm-validation-link-target/aarch64-apple-darwin/debug/incremental -L dependency=/tmp/libm-validation-link-target/debug/build/compiler_builtins/b944ae35347a4622/out --force-warn=unused_crate_dependencies --cfg intrinsics_enabled --cfg f16_enabled --cfg f128_enabled --cfg mem_unaligned --check-cfg 'cfg(thumb)' --check-cfg 'cfg(thumb1_only)' --check-cfg 'cfg(target_abi_eabihf)' --check-cfg 'cfg(x86_no_sse2)' --check-cfg 'cfg(target_feature, values("vfp2sp", "vfp2"))' --check-cfg 'cfg(assert_no_panic)' --check-cfg 'cfg(intrinsics_enabled)' --check-cfg 'cfg(optimizations_enabled)' --check-cfg 'cfg(f16_enabled)' --check-cfg 'cfg(f128_enabled)' --check-cfg 'cfg(__ashldi3, values("optimized-c"))' --check-cfg 'cfg(__ashlsi3, values("optimized-c"))' --check-cfg 'cfg(__ashrdi3, values("optimized-c"))' --check-cfg 'cfg(__ashrsi3, values("optimized-c"))' --check-cfg 'cfg(__bswapsi2, values("optimized-c"))' --check-cfg 'cfg(__bswapdi2, values("optimized-c"))' --check-cfg 'cfg(__bswapti2, values("optimized-c"))' --check-cfg 'cfg(__divdi3, values("optimized-c"))' --check-cfg 'cfg(__divsi3, values("optimized-c"))' --check-cfg 'cfg(__divmoddi4, values("optimized-c"))' --check-cfg 'cfg(__divmodsi4, values("optimized-c"))' --check-cfg 'cfg(__divmodsi4, values("optimized-c"))' --check-cfg 'cfg(__divmodti4, values("optimized-c"))' --check-cfg 'cfg(__lshrdi3, values("optimized-c"))' --check-cfg 'cfg(__lshrsi3, values("optimized-c"))' --check-cfg 'cfg(__moddi3, values("optimized-c"))' --check-cfg 'cfg(__modsi3, values("optimized-c"))' --check-cfg 'cfg(__muldi3, values("optimized-c"))' --check-cfg 'cfg(__udivdi3, values("optimized-c"))' --check-cfg 'cfg(__udivmoddi4, values("optimized-c"))' --check-cfg 'cfg(__udivmodsi4, values("optimized-c"))' --check-cfg 'cfg(__udivsi3, values("optimized-c"))' --check-cfg 'cfg(__umoddi3, values("optimized-c"))' --check-cfg 'cfg(__umodsi3, values("optimized-c"))' --check-cfg 'cfg(target_feature, values("vis3"))' --check-cfg 'cfg(mem_unaligned)' --check-cfg 'cfg(kernel_user_helpers)'`
+build script output: {
+  "cfgs": [
+    "f16_enabled",
+    "f128_enabled"
+  ],
+  "env": [],
+  "linked_libs": [],
+  "linked_paths": [],
+  "out_dir": "/tmp/libm-validation-link-target/aarch64-apple-darwin/debug/build/builtins-test-intrinsics/0a5b4a392adb7bd0/out",
+  "package_id": "path+file:///Users/fangluo/Documents/ChatGPT/libm/builtins-test-intrinsics#0.1.0",
+  "reason": "build-script-executed"
+}
+     Running `/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name builtins_test_intrinsics --edition=2024 src/main.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type bin --emit=dep-info,link -C panic=abort -C embed-bitcode=no -C debuginfo=2 -C split-debuginfo=unpacked --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("c"))' -C metadata=2e114ee5154ffb14 --out-dir /tmp/libm-validation-link-target/aarch64-apple-darwin/debug/build/builtins-test-intrinsics/3c074b891e6181fc/out --target aarch64-apple-darwin -C incremental=/tmp/libm-validation-link-target/aarch64-apple-darwin/debug/incremental -L dependency=/tmp/libm-validation-link-target/debug/build/builtins-test-intrinsics/3c074b891e6181fc/out --extern compiler_builtins=/tmp/libm-validation-link-target/aarch64-apple-darwin/debug/build/compiler_builtins/b944ae35347a4622/out/libcompiler_builtins-b944ae35347a4622.rlib --extern compiler_builtins=/tmp/libm-validation-link-target/aarch64-apple-darwin/debug/build/compiler_builtins/b944ae35347a4622/out/libcompiler_builtins-b944ae35347a4622.rmeta --extern panic_handler=/tmp/libm-validation-link-target/aarch64-apple-darwin/debug/build/panic-handler/05af36a30bcdcb77/out/libpanic_handler-05af36a30bcdcb77.rlib --extern panic_handler=/tmp/libm-validation-link-target/aarch64-apple-darwin/debug/build/panic-handler/05af36a30bcdcb77/out/libpanic_handler-05af36a30bcdcb77.rmeta --force-warn=unused_crate_dependencies --cfg f16_enabled --cfg f128_enabled --check-cfg 'cfg(thumb)' --check-cfg 'cfg(thumb1_only)' --check-cfg 'cfg(target_abi_eabihf)' --check-cfg 'cfg(x86_no_sse2)' --check-cfg 'cfg(target_feature, values("vfp2sp", "vfp2"))' --check-cfg 'cfg(f16_enabled)' --check-cfg 'cfg(f128_enabled)'`
+    Finishedbuild finshed. success: true
+ `dev` profile [unoptimized + debuginfo] target(s) in 3.09s
+Collected the following rlibs to check: [
+    "/tmp/libm-validation-link-target/aarch64-apple-darwin/debug/build/compiler_builtins/b944ae35347a4622/out/libcompiler_builtins-b944ae35347a4622.rlib",
+]
+Checking /tmp/libm-validation-link-target/aarch64-apple-darwin/debug/build/compiler_builtins/b944ae35347a4622/out/libcompiler_builtins-b944ae35347a4622.rlib
+    success: no duplicate symbols found
+    success: no undefined references to core found
+    success: object files match target
+    success: no writeable+executable stack indicators found
+    success: no visible symbols found

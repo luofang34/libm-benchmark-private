@@ -1,0 +1,8 @@
+$ ['cargo', 'build', '-p', 'libm', '--target', 'aarch64-apple-darwin', '--no-default-features', '--features', 'unstable-float', '--tests', '--profile', 'release-opt']
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling no-panic v0.1.37
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling syn v3.0.6
+    Finished `release-opt` profile [optimized] target(s) in 26.21s

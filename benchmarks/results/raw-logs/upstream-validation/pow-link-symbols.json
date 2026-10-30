@@ -1,0 +1,21 @@
+{
+  "command": [
+    "cargo",
+    "run",
+    "-p",
+    "symcheck",
+    "--release",
+    "--",
+    "--check",
+    "--target",
+    "wasm32-unknown-unknown",
+    "--no-visibility",
+    "benchmarks/results/raw-logs/upstream-validation/pow-link.wasm"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.34166502952575684
+}

@@ -1,0 +1,21 @@
+$ ['cargo', 'clippy', '-p', 'libm', '--all-targets', '--all-features', '--', '-D', 'warnings']
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling no-panic v0.1.37
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling syn v3.0.6
+error: current MSRV (Minimum Supported Rust Version) is `1.67.0` but this item is stable since `1.95.0`
+  --> libm/src/math/support/mod.rs:36:5
+   |
+36 |     core::hint::cold_path();
+   |     ^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: you may want to conditionally increase the MSRV considered by Clippy using the `clippy::msrv` attribute
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/main/index.html#incompatible_msrv
+   = note: `-D clippy::incompatible-msrv` implied by `-D warnings`
+   = help: to override `-D warnings` add `#[allow(clippy::incompatible_msrv)]`
+
+error: could not compile `libm` (lib) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `libm` (lib test) due to 1 previous error

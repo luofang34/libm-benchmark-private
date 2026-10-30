@@ -1,0 +1,17 @@
+{
+  "command": [
+    "cargo",
+    "test",
+    "--workspace",
+    "--no-default-features",
+    "--features",
+    "arch,unstable-float,unstable-intrinsics,mem"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 14.04961109161377
+}

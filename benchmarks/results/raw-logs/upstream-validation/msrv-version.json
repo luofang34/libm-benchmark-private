@@ -1,0 +1,15 @@
+{
+  "command": [
+    "rustup",
+    "run",
+    "1.67.0",
+    "rustc",
+    "-vV"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.13843894004821777
+}

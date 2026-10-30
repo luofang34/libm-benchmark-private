@@ -1,0 +1,17 @@
+$ ['node', 'benchmarks/results/raw-logs/upstream-validation/verify-pow-link.mjs', 'benchmarks/results/raw-logs/upstream-validation/pow-link.wasm', 'benchmarks/results/raw-logs/target-scope/std/large-accuracy/accuracy-bits.csv.gz']
+{
+  "inputs": 151083,
+  "nanPairs": 5391,
+  "nonNanBitMismatches": 0,
+  "imports": [],
+  "exports": [
+    {
+      "name": "memory",
+      "kind": "memory"
+    },
+    {
+      "name": "pow_bits",
+      "kind": "function"
+    }
+  ]
+}

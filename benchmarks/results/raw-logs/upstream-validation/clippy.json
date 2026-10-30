@@ -1,0 +1,16 @@
+{
+  "command": [
+    "cargo",
+    "clippy",
+    "--all-targets",
+    "--",
+    "-D",
+    "warnings"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "LIBM_TEST_SEED": "pow-feature-validation-20261029!!"
+  },
+  "exit_code": 101,
+  "elapsed_seconds": 5.1784820556640625
+}

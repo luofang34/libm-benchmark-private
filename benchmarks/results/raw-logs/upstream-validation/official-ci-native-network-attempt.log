@@ -1,0 +1,86 @@
+$ ['bash', 'ci/run.sh', 'aarch64-apple-darwin']
++ export RUST_BACKTRACE=1
++ RUST_BACKTRACE=1
++ export NEXTEST_STATUS_LEVEL=all
++ NEXTEST_STATUS_LEVEL=all
++ target=aarch64-apple-darwin
+++ rustc --print host-tuple
++ host_tuple=aarch64-apple-darwin
++ '[' -z aarch64-apple-darwin ']'
++ uname -a
+Darwin MacBookPro 27.0.0 Darwin Kernel Version 27.0.0: Mon Jun 15 22:59:39 PDT 2026; root:xnu-13432.0.5.501.1~2/RELEASE_ARM64_T6031 arm64
++ lscpu
+ci/run.sh: line 18: lscpu: command not found
++ true
++ rustc -Vv
+rustc 1.101.0-nightly (41089d07a 2026-10-27)
+binary: rustc
+commit-hash: 41089d07a0a2afc16adfe28a760d94d73d7298a4
+commit-date: 2026-10-27
+host: aarch64-apple-darwin
+release: 1.101.0-nightly
+LLVM version: 23.1.4
++ cc -v
+Apple clang version 21.0.0 (clang-2100.4.1.1)
+Target: arm64-apple-darwin27.0.0
+Thread model: posix
+InstalledDir: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
++ '[' '' = 1 ']'
++ command -v cargo-nextest
+/Users/fangluo/.cargo/bin/cargo-nextest
++ nextest=1
++ '[' 1 = 1 ']'
++ test_runner=(cargo nextest run --max-fail=20)
++ profile_flag=--cargo-profile
++ '[' -n '' ']'
++ [[ aarch64-apple-darwin = *wasm* ]]
++ '[' '' = 1 ']'
++ cargo run -p sysbench --target aarch64-apple-darwin --release
+   Compiling sysbench v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/sysbench)
+    Finished `release` profile [optimized] target(s) in 0.24s
+     Running `target/aarch64-apple-darwin/release/sysbench`
+Starting integer multiplication bench... 536870912 iterations completed in 1.118s (2.083 ns/iter)
+Starting float multiplication bench... 1431655766 iterations completed in 1.036s (0.724 ns/iter)
+Starting float fma bench... 1431655766 iterations completed in 1.304s (0.911 ns/iter)
+Starting oneshot bench... completed in 256.261ms
+Available parallelism: 16
+Single-core performance score: 931
+Multi-core performance score: 13500
++ test_builtins=("${test_runner[@]}" --package builtins-test --target "$target")
++ asgroup cargo nextest run --max-fail=20 --package builtins-test --target aarch64-apple-darwin
++ echo '::group::cargo nextest run --max-fail=20 --package builtins-test --target aarch64-apple-darwin'
+::group::cargo nextest run --max-fail=20 --package builtins-test --target aarch64-apple-darwin
++ cargo nextest run --max-fail=20 --package builtins-test --target aarch64-apple-darwin
+ Downloading crates ...
+warning: spurious network error (3 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (3 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (3 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (3 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (3 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (3 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (3 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (3 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (3 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (2 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (2 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (2 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (2 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (2 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (2 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (2 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (2 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (2 tries remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (1 try remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (1 try remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (1 try remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (1 try remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (1 try remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (1 try remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (1 try remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (1 try remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+warning: spurious network error (1 try remaining): [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+error: failed to download from `https://static.crates.io/crates/proc-macro-error-attr3/3.1.1/download`
+
+Caused by:
+  [6] Couldn't resolve host name (Could not resolve host: static.crates.io)
+error: command `/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/cargo metadata '--format-version=1' --all-features --filter-platform aarch64-apple-darwin` failed with exit status: 101

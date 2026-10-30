@@ -1,0 +1,32 @@
+$ ['cargo', 'run', '-p', 'symcheck', '--release', '--', '--build-and-check', '--target', 'aarch64-apple-darwin', '--', '--package', 'compiler_builtins', '--features', 'compiler-builtins', '--no-default-features', '--release']
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `/tmp/libm-validation-symbol-target/release/symcheck --build-and-check --target aarch64-apple-darwin -- --package compiler_builtins --features compiler-builtins --no-default-features --release`
+running: "rustc" "--target" "aarch64-apple-darwin" "--print=cfg"
+running: "cargo" "build" "--target" "aarch64-apple-darwin" "--message-format=json-diagnostic-rendered-ansi" "--package" "compiler_builtins" "--features" "compiler-builtins" "--no-default-features" "--release"
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+build script output: {
+  "cfgs": [
+    "intrinsics_enabled",
+    "optimizations_enabled",
+    "f16_enabled",
+    "f128_enabled",
+    "mem_unaligned"
+  ],
+  "env": [],
+  "linked_libs": [],
+  "linked_paths": [],
+  "out_dir": "/tmp/libm-validation-symbol-target/aarch64-apple-darwin/release/build/compiler_builtins/bb65354e4fd1109f/out",
+  "package_id": "path+file:///Users/fangluo/Documents/ChatGPT/libm/builtins-shim#compiler_builtins@0.1.160",
+  "reason": "build-script-executed"
+}
+    Finished `release` profile [optimized] target(s) in 1.96s
+build finshed. success: true
+Collected the following rlibs to check: [
+    "/tmp/libm-validation-symbol-target/aarch64-apple-darwin/release/build/compiler_builtins/f6bc548f976a6674/out/libcompiler_builtins-f6bc548f976a6674.rlib",
+]
+Checking /tmp/libm-validation-symbol-target/aarch64-apple-darwin/release/build/compiler_builtins/f6bc548f976a6674/out/libcompiler_builtins-f6bc548f976a6674.rlib
+    success: no duplicate symbols found
+    success: no undefined references to core found
+    success: object files match target
+    success: no writeable+executable stack indicators found
+    success: no visible symbols found

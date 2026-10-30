@@ -1,0 +1,210 @@
+$ ['cargo', 'doc']
+warning: output filename collision at /tmp/libm-upstream-validation-base/target/doc/libm/index.html
+  |
+  = note: the lib target `libm` in package `libm v0.2.16` has the same output filename as the lib target `libm` in package `libm v0.2.16 (/private/tmp/libm-upstream-validation-base/libm)`
+  = note: this is a known bug where multiple crates with the same name use the same path; see <https://github.com/rust-lang/cargo/issues/6313>
+   Compiling proc-macro2 v1.0.107
+   Compiling libc v0.2.190
+    Checking unicode-ident v1.0.26
+ Documenting rand_core v0.10.1
+   Compiling compiler_builtins v0.1.160 (/private/tmp/libm-upstream-validation-base/builtins-shim)
+ Documenting unicode-ident v1.0.26
+   Compiling libm v0.2.16 (/private/tmp/libm-upstream-validation-base/libm)
+   Compiling quote v1.0.47
+ Documenting cfg-if v1.0.5
+ Documenting zerocopy v0.8.62
+    Checking ppv-lite86 v0.2.21
+ Documenting libm v0.2.16
+   Compiling api-list-common v0.1.0 (/private/tmp/libm-upstream-validation-base/crates/api-list-common)
+ Documenting az v1.3.0
+ Documenting heck v0.5.0
+    Checking heck v0.5.0
+   Compiling builtins-test v0.1.0 (/private/tmp/libm-upstream-validation-base/builtins-test)
+ Documenting proc-macro2 v1.0.107
+   Compiling libm-test v0.1.0 (/private/tmp/libm-upstream-validation-base/libm-test)
+ Documenting paste v1.0.15
+ Documenting anyhow v1.0.104
+ Documenting chacha20 v0.10.2
+ Documenting rand_xoshiro v0.8.1
+    Checking rand_chacha v0.10.0
+ Documenting api-list-common v0.1.0 (/private/tmp/libm-upstream-validation-base/crates/api-list-common)
+warning: lint `broken_intra_doc_links` has been renamed to `rustdoc::broken_intra_doc_links`
+  |
+  = help: use the new name `rustdoc::broken_intra_doc_links`
+  = note: requested on the command line with `-D broken_intra_doc_links`
+  = note: `#[warn(renamed_and_removed_lints)]` on by default
+
+ Documenting quote v1.0.47
+error: missing documentation for a method
+  --> crates/api-list-common/src/lib.rs:35:5
+   |
+35 |     pub fn defined_in_compiler_builtins(self) -> bool {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: requested on the command line with `-D missing-docs`
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1362:5
+     |
+1362 |     F16,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1363:5
+     |
+1363 |     F32,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1364:5
+     |
+1364 |     F64,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1365:5
+     |
+1365 |     F128,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1366:5
+     |
+1366 |     I32,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1367:5
+     |
+1367 |     I64,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1368:5
+     |
+1368 |     I128,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1369:5
+     |
+1369 |     U32,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1370:5
+     |
+1370 |     U64,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1371:5
+     |
+1371 |     U128,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1372:5
+     |
+1372 |     USize,
+     |     ^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1373:5
+     |
+1373 |     Bool,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1374:5
+     |
+1374 |     CInt,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1375:5
+     |
+1375 |     MutF16,
+     |     ^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1376:5
+     |
+1376 |     MutF32,
+     |     ^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1377:5
+     |
+1377 |     MutF64,
+     |     ^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1378:5
+     |
+1378 |     MutF128,
+     |     ^^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1379:5
+     |
+1379 |     MutI32,
+     |     ^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1380:5
+     |
+1380 |     MutCInt,
+     |     ^^^^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1448:5
+     |
+1448 |     F16,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1449:5
+     |
+1449 |     F32,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1450:5
+     |
+1450 |     F64,
+     |     ^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1451:5
+     |
+1451 |     F128,
+     |     ^^^^
+
+error: missing documentation for a variant
+    --> crates/api-list-common/src/lib.rs:1452:5
+     |
+1452 |     Integer,
+     |     ^^^^^^^
+
+error: missing documentation for a struct field
+    --> crates/api-list-common/src/lib.rs:1485:5
+     |
+1485 |     pub args: &'static [Ty],
+     |     ^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+    --> crates/api-list-common/src/lib.rs:1486:5
+     |
+1486 |     pub returns: &'static [Ty],
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a struct field
+    --> crates/api-list-common/src/lib.rs:1492:5
+     |
+1492 |     pub name: &'static str,
+     |     ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `api-list-common` (lib doc) generated 1 warning
+error: could not document `api-list-common`
+warning: build failed, waiting for other jobs to finish...

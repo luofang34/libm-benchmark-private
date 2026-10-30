@@ -1,0 +1,14 @@
+{
+  "command": [
+    "bash",
+    "ci/run.sh",
+    "aarch64-apple-darwin"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 546.6270470619202
+}

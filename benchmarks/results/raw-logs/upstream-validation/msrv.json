@@ -1,0 +1,20 @@
+{
+  "command": [
+    "cargo",
+    "+1.67.0",
+    "-Z",
+    "sparse-registry",
+    "build"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+    "VALIDATION_CWD": "/tmp/libm-msrv-official",
+    "CARGO_TARGET_DIR": "/tmp/libm-msrv-official/target",
+    "RUSTC_BOOTSTRAP": "1",
+    "CARGO_REGISTRIES_CRATES_IO_PROTOCOL": "sparse"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 3.169610023498535,
+  "scope": "Original libm manifest and source copied outside the workspace; no dependencies removed. Cargo -Z sparse-registry only enables registry transport; rustc remains 1.67.0."
+}

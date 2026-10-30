@@ -1,0 +1,1 @@
+$ ['rustup', 'run', 'nightly', 'rustfmt', '--check', 'benchmarks/results/raw-logs/upstream-validation/pow-link.rs']

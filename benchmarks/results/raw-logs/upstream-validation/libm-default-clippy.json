@@ -1,0 +1,19 @@
+{
+  "command": [
+    "cargo",
+    "clippy",
+    "-p",
+    "libm",
+    "--all-targets",
+    "--",
+    "-D",
+    "warnings"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+    "CARGO_TARGET_DIR": "/tmp/libm-validation-lints"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 3.420067071914673
+}

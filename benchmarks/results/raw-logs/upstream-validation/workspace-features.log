@@ -1,0 +1,1123 @@
+$ ['cargo', 'test', '--workspace', '--no-default-features', '--features', 'arch,unstable-float,unstable-intrinsics,mem']
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling libm-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/libm-test)
+   Compiling musl-math-sys v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/musl-math-sys)
+   Compiling util v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/util)
+   Compiling builtins-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/builtins-test)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 8.59s
+     Running unittests src/lib.rs (target/debug/build/api-list-common/74de2c2a5ebf3030/out/api_list_common-74de2c2a5ebf3030)
+
+running 2 tests
+test tests::sorted_fn_list ... ok
+test tests::no_duplicates_in_list ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/build/builtins-test/362a533ecd3c3e9f/out/builtins_test-362a533ecd3c3e9f)
+
+running 1 test
+test mem::test_alignment ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/addsub.rs (target/debug/build/builtins-test/c3c45a49fd493c57/out/addsub-c3c45a49fd493c57)
+
+running 8 tests
+test float_addsub::__addhf3 ... ok
+test float_addsub::__addsf3 ... ok
+test float_addsub::__adddf3 ... ok
+test int_addsub::__rust_i128_add ... ok
+test int_addsub::__rust_u128_add ... ok
+test int_addsub::__rust_u128_addo ... ok
+test int_addsub::__rust_i128_addo ... ok
+test float_addsub::__addtf3 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/cmp.rs (target/debug/build/builtins-test/355c16bd27b04f0d/out/cmp-355c16bd27b04f0d)
+
+running 4 tests
+test float_comparisons::cmp_f16 ... ok
+test float_comparisons::cmp_f32 ... ok
+test float_comparisons::cmp_f64 ... ok
+test float_comparisons::cmp_f128 ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests/complex.rs (target/debug/build/builtins-test/2a5c42c134806b45/out/complex-2a5c42c134806b45)
+
+running 8 tests
+test complex::__mulsc3 ... ok
+test complex::__muldc3 ... ok
+test complex::__rust_mulhc3 ... ok
+test complex::__rust_multc3 ... ok
+test complex::__divdc3 ... ok
+test complex::__divsc3 ... ok
+test complex::__rust_divhc3 ... ok
+test complex::__rust_divtc3 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/conv.rs (target/debug/build/builtins-test/c09a889c6aa9cfa2/out/conv-c09a889c6aa9cfa2)
+
+running 35 tests
+test extend::check_gnu_h2f_ieee ... ok
+test extend::__extendsfdf2 ... ok
+test i_to_f::__floatdidf ... ok
+test i_to_f::__floatdisf ... ok
+test f_to_i::f32_to_int ... ok
+test i_to_f::__floatsidf ... ok
+test extend::__extendhfsf2 ... ok
+test i_to_f::__floatsitf ... ok
+test i_to_f::__floatditf ... ok
+test extend::__extendsftf2 ... ok
+test f_to_i::f64_to_int ... ok
+test extend::__extendhfdf2 ... ok
+test extend::__extendhftf2 ... ok
+test i_to_f::__floatsisf ... ok
+test i_to_f::__floatundisf ... ok
+test i_to_f::__floatunsisf ... ok
+test i_to_f::__floatunditf ... ok
+test i_to_f::__floatunsitf ... ok
+test i_to_f::__floatunsidf ... ok
+test extend::__extenddftf2 ... ok
+test i_to_f::__floatundidf ... ok
+test trunc::__truncsfhf2 ... ok
+test i_to_f::__floattidf ... ok
+test trunc::__truncdfsf2 ... ok
+test i_to_f::__floattisf ... ok
+test trunc::__truncdfhf2 ... ok
+test i_to_f::__floatuntidf ... ok
+test trunc::check_gnu_f2h_ieee ... ok
+test i_to_f::__floattitf ... ok
+test i_to_f::__floatuntisf ... ok
+test i_to_f::__floatuntitf ... ok
+test trunc::__trunctfdf2 ... ok
+test trunc::__trunctfhf2 ... ok
+test trunc::__trunctfsf2 ... ok
+test f_to_i::f128_to_int ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/div_rem.rs (target/debug/build/builtins-test/f78d1ee99f5120f0/out/div_rem-f78d1ee99f5120f0)
+
+running 7 tests
+test div_rem_si4 ... ok
+test float_div::__divsf3 ... ok
+test div_rem_di4 ... ok
+test float_div::__divdf3 ... ok
+test divide_sparc ... ok
+test div_rem_ti4 ... ok
+test float_div::__divtf3 ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+
+     Running tests/float_pow.rs (target/debug/build/builtins-test/43810b652ec86275/out/float_pow-43810b652ec86275)
+
+running 2 tests
+test __powisf2 ... ok
+test __powidf2 ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/lse.rs (target/debug/build/builtins-test/da9b98216308dc2d/out/lse-da9b98216308dc2d)
+
+running 100 tests
+test __aarch64_cas2_acq ... ok
+test __aarch64_cas1_acq ... ok
+test __aarch64_cas16_rel ... ok
+test __aarch64_cas2_acq_rel ... ok
+test __aarch64_cas1_acq_rel ... ok
+test __aarch64_cas2_rel ... ok
+test __aarch64_cas4_acq ... ok
+test __aarch64_cas4_rel ... ok
+test __aarch64_cas16_acq ... ok
+test __aarch64_cas1_relax ... ok
+test __aarch64_cas1_rel ... ok
+test __aarch64_cas16_acq_rel ... ok
+test __aarch64_cas16_relax ... ok
+test __aarch64_cas2_relax ... ok
+test __aarch64_cas4_acq_rel ... ok
+test __aarch64_cas4_relax ... ok
+test __aarch64_cas8_acq ... ok
+test __aarch64_cas8_acq_rel ... ok
+test __aarch64_cas8_rel ... ok
+test __aarch64_cas8_relax ... ok
+test __aarch64_ldadd1_acq ... ok
+test __aarch64_ldadd1_acq_rel ... ok
+test __aarch64_ldadd1_rel ... ok
+test __aarch64_ldadd1_relax ... ok
+test __aarch64_ldadd2_acq ... ok
+test __aarch64_ldadd2_acq_rel ... ok
+test __aarch64_ldadd2_rel ... ok
+test __aarch64_ldadd2_relax ... ok
+test __aarch64_ldadd4_acq ... ok
+test __aarch64_ldadd4_acq_rel ... ok
+test __aarch64_ldadd4_rel ... ok
+test __aarch64_ldadd4_relax ... ok
+test __aarch64_ldadd8_acq ... ok
+test __aarch64_ldadd8_acq_rel ... ok
+test __aarch64_ldadd8_rel ... ok
+test __aarch64_ldadd8_relax ... ok
+test __aarch64_ldclr1_acq ... ok
+test __aarch64_ldclr1_acq_rel ... ok
+test __aarch64_ldclr1_rel ... ok
+test __aarch64_ldclr1_relax ... ok
+test __aarch64_ldclr2_acq ... ok
+test __aarch64_ldclr2_acq_rel ... ok
+test __aarch64_ldclr2_rel ... ok
+test __aarch64_ldclr2_relax ... ok
+test __aarch64_ldclr4_acq ... ok
+test __aarch64_ldclr4_acq_rel ... ok
+test __aarch64_ldclr4_rel ... ok
+test __aarch64_ldclr4_relax ... ok
+test __aarch64_ldclr8_acq ... ok
+test __aarch64_ldclr8_acq_rel ... ok
+test __aarch64_ldclr8_rel ... ok
+test __aarch64_ldclr8_relax ... ok
+test __aarch64_ldeor1_acq ... ok
+test __aarch64_ldeor1_acq_rel ... ok
+test __aarch64_ldeor1_rel ... ok
+test __aarch64_ldeor1_relax ... ok
+test __aarch64_ldeor2_acq ... ok
+test __aarch64_ldeor2_acq_rel ... ok
+test __aarch64_ldeor2_rel ... ok
+test __aarch64_ldeor2_relax ... ok
+test __aarch64_ldeor4_acq ... ok
+test __aarch64_ldeor4_acq_rel ... ok
+test __aarch64_ldeor4_rel ... ok
+test __aarch64_ldeor4_relax ... ok
+test __aarch64_ldeor8_acq ... ok
+test __aarch64_ldeor8_acq_rel ... ok
+test __aarch64_ldeor8_rel ... ok
+test __aarch64_ldeor8_relax ... ok
+test __aarch64_ldset1_acq ... ok
+test __aarch64_ldset1_acq_rel ... ok
+test __aarch64_ldset1_rel ... ok
+test __aarch64_ldset1_relax ... ok
+test __aarch64_ldset2_acq ... ok
+test __aarch64_ldset2_acq_rel ... ok
+test __aarch64_ldset2_rel ... ok
+test __aarch64_ldset2_relax ... ok
+test __aarch64_ldset4_acq ... ok
+test __aarch64_ldset4_acq_rel ... ok
+test __aarch64_ldset4_rel ... ok
+test __aarch64_ldset4_relax ... ok
+test __aarch64_ldset8_acq ... ok
+test __aarch64_ldset8_acq_rel ... ok
+test __aarch64_ldset8_rel ... ok
+test __aarch64_ldset8_relax ... ok
+test __aarch64_swp1_acq ... ok
+test __aarch64_swp1_acq_rel ... ok
+test __aarch64_swp1_rel ... ok
+test __aarch64_swp1_relax ... ok
+test __aarch64_swp2_acq ... ok
+test __aarch64_swp2_acq_rel ... ok
+test __aarch64_swp2_rel ... ok
+test __aarch64_swp2_relax ... ok
+test __aarch64_swp4_acq ... ok
+test __aarch64_swp4_rel ... ok
+test __aarch64_swp8_acq ... ok
+test __aarch64_swp8_rel ... ok
+test __aarch64_swp4_acq_rel ... ok
+test __aarch64_swp8_acq_rel ... ok
+test __aarch64_swp4_relax ... ok
+test __aarch64_swp8_relax ... ok
+
+test result: ok. 100 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.64s
+
+     Running tests/mem.rs (target/debug/build/builtins-test/cf32f0792b49e49a/out/mem-cf32f0792b49e49a)
+
+running 21 tests
+test memcpy_10 ... ok
+test memcpy_3 ... ok
+test memcpy_big ... ok
+test memmove_backward_aligned ... ok
+test memmove_backward ... ok
+test memmove_backward_misaligned_nonaligned_start ... ok
+test memmove_backward_misaligned_aligned_start ... ok
+test memmove_forward ... ok
+test memmove_forward_aligned ... ok
+test memmove_forward_misaligned_aligned_start ... ok
+test memcmp_eq ... ok
+test memmove_forward_misaligned_nonaligned_start ... ok
+test memmove_misaligned_bounds ... ok
+test memset_backward_aligned ... ok
+test memset_backward_misaligned_aligned_start ... ok
+test memset_backward_misaligned_nonaligned_start ... ok
+test memset_nonzero ... ok
+test memset_zero ... ok
+test test_strlen ... ok
+test wide_string_length ... ok
+test memcmp_ne ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/misc.rs (target/debug/build/builtins-test/22073478bf951f97/out/misc-22073478bf951f97)
+
+running 4 tests
+test fuzz_values ... ok
+test bswap ... ok
+test trailing_zeros ... ok
+test leading_zeros ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/mul.rs (target/debug/build/builtins-test/db8ccad6be57a58d/out/mul-db8ccad6be57a58d)
+
+running 10 tests
+test int_overflowing_mul::__mulosi4 ... ok
+test float_mul::__mulhf3 ... ok
+test int_overflowing_mul::__mulodi4 ... ok
+test int_mul::__muldi3 ... ok
+test float_mul::__mulsf3 ... ok
+test float_mul::__muldf3 ... ok
+test int_overflowing_mul::__muloti4 ... ok
+test int_overflowing_mul::overflowing_mul_u128 ... ok
+test int_mul::__multi3 ... ok
+test float_mul::__multf3 ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/shift.rs (target/debug/build/builtins-test/b7d8e0ff30983f9b/out/shift-b7d8e0ff30983f9b)
+
+running 9 tests
+test __ashldi3 ... ok
+test __ashlsi3 ... ok
+test __ashrdi3 ... ok
+test __ashrsi3 ... ok
+test __ashlti3 ... ok
+test __lshrdi3 ... ok
+test __ashrti3 ... ok
+test __lshrti3 ... ok
+test __lshrsi3 ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/build/libm/f4fbb8a9ed6197b0/out/libm-f4fbb8a9ed6197b0)
+
+running 178 tests
+test math::atan::tests::infinity ... ok
+test math::atan::tests::nan ... ok
+test math::atan::tests::minus_infinity ... ok
+test math::atan::tests::zero ... ok
+test math::atan2::tests::sanity_check ... ok
+test math::atan::tests::sanity_check ... ok
+test math::cbrt::tests::spot_checks ... ok
+test math::copysign::tests::spec_tests_f16 ... ok
+test math::ceil::tests::check_f16 ... ok
+test math::exp2::i0_wrap_test ... ok
+test math::ceil::tests::check_f64 ... ok
+test math::ceil::tests::check_f32 ... ok
+test math::ceil::tests::check_f128 ... ok
+test math::exp2m1::tests::exact_integer_results ... ok
+test math::copysign::tests::spec_tests_f32 ... ok
+test math::copysign::tests::spec_tests_f128 ... ok
+test math::exp2m1::tests::known_results ... ok
+test math::copysign::tests::spec_tests_f64 ... ok
+test math::exp2m1f16::tests::known_results ... ok
+test math::exp2m1f::tests::known_results ... ok
+test math::expm1::tests::sanity_check ... ok
+test math::fabs::tests::sanity_check_f128 ... ok
+test math::fabs::tests::sanity_check_f16 ... ok
+test math::fabs::tests::sanity_check_f32 ... ok
+test math::fabs::tests::sanity_check_f64 ... ok
+test math::fabs::tests::spec_tests_f128 ... ok
+test math::fabs::tests::spec_tests_f16 ... ok
+test math::fabs::tests::spec_tests_f32 ... ok
+test math::fabs::tests::spec_tests_f64 ... ok
+test math::fdim::tests::check_f128 ... ok
+test math::fdim::tests::check_f16 ... ok
+test math::fdim::tests::check_f32 ... ok
+test math::fdim::tests::check_f64 ... ok
+test math::floor::tests::check_f128 ... ok
+test math::floor::tests::check_f16 ... ok
+test math::floor::tests::check_f32 ... ok
+test math::floor::tests::check_f64 ... ok
+test math::fma::tests::check_f128 ... ok
+test math::fma::tests::check_f16 ... ok
+test math::fma::tests::check_f32 ... ok
+test math::fma::tests::check_f64 ... ok
+test math::fma::tests::fma_sbb ... ok
+test math::fma::tests::fma_segfault ... ok
+test math::fma::tests::fma_underflow ... ok
+test math::fma::tests::issue_263 ... ok
+test math::fmaf16::tests::test_from_fixed ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f128 ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f16 ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f32 ... ok
+test math::fmin_fmax::tests::fmax_spec_tests_f64 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f128 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f16 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f32 ... ok
+test math::fmin_fmax::tests::fmin_spec_tests_f64 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f128 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f16 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f32 ... ok
+test math::fminimum_fmaximum::tests::fmaximum_spec_tests_f64 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f128 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f16 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f32 ... ok
+test math::fminimum_fmaximum::tests::fminimum_spec_tests_f64 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f128 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f16 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f32 ... ok
+test math::fminimum_fmaximum_num::tests::fmaximum_num_spec_tests_f64 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f128 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f16 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f32 ... ok
+test math::fminimum_fmaximum_num::tests::fminimum_num_spec_tests_f64 ... ok
+test math::j1f::tests::test_j1f_2488 ... ok
+test math::j1f::tests::test_y1f_2002 ... ok
+test math::pow::tests::infinity_as_base ... ok
+test math::pow::tests::infinity_as_exponent ... ok
+test math::pow::tests::nan_inputs ... ok
+test math::pow::tests::normal_cases ... ok
+test math::pow::tests::one_as_base ... ok
+test math::pow::tests::signed_underflow_and_nan_identities ... ok
+test math::pow::tests::subnormal_log_reduction ... ok
+test math::pow::tests::zero_as_base ... ok
+test math::pow::tests::zero_as_exponent ... ok
+test math::rem_pio2::tests::test_near_pi ... ok
+test math::rem_pio2::tests::test_overflow_4747b9 ... ok
+test math::rem_pio2::tests::test_overflow_b9b847 ... ok
+test math::remquo::tests::test_q_overflow ... ok
+test math::pow::tests::special_cases ... ok
+test math::rint::tests::check_f128 ... ok
+test math::rint::tests::check_f16 ... ok
+test math::rint::tests::check_f32 ... ok
+test math::rint::tests::check_f64 ... ok
+test math::round::tests::check_f128 ... ok
+test math::round::tests::check_f16 ... ok
+test math::round::tests::check_f32 ... ok
+test math::round::tests::check_f64 ... ok
+test math::scalbn::tests::spec_test_f128 ... ok
+test math::scalbn::tests::spec_test_f16 ... ok
+test math::scalbn::tests::spec_test_f32 ... ok
+test math::scalbn::tests::spec_test_f64 ... ok
+test math::sin::tests::test_near_pi ... ok
+test math::sincos::tests::rotational_symmetry ... ok
+test math::sincos::tests::with_pi ... ok
+test math::sincosf::tests::rotational_symmetry ... ok
+test math::sqrt::tests::conformance_tests_f128 ... ok
+test math::sqrt::tests::conformance_tests_f16 ... ok
+test math::sqrt::tests::conformance_tests_f32 ... ok
+test math::sqrt::tests::conformance_tests_f64 ... ok
+test math::sqrt::tests::sanity_check_f128 ... ok
+test math::sqrt::tests::sanity_check_f16 ... ok
+test math::sqrt::tests::sanity_check_f32 ... ok
+test math::sqrt::tests::sanity_check_f64 ... ok
+test math::sqrt::tests::spec_tests_f128 ... ok
+test math::sqrt::tests::spec_tests_f16 ... ok
+test math::sqrt::tests::spec_tests_f32 ... ok
+test math::sqrt::tests::spec_tests_f64 ... ok
+test math::support::big::tests::not_u256 ... ok
+test math::support::big::tests::i256_ord ... ok
+test math::support::big::tests::i256_shifts ... ok
+test math::support::big::tests::widen_i128 ... ok
+test math::support::big::tests::u256_shifts ... ok
+test math::support::big::tests::u256_ord ... ok
+test math::support::big::tests::widen_mul_u128 ... ok
+test math::support::big::tests::widen_u128 ... ok
+test math::support::feature_detect::tests::flag_cache_is_used ... ok
+test math::support::feature_detect::tests::select_cache_is_used ... ok
+test math::support::big::tests::shr_u256 ... ok
+test math::support::feature_detect::tests::unique_masks ... ok
+test math::support::float_traits::tests::check_f128 ... ok
+test math::support::float_traits::tests::check_f16 ... ok
+test math::support::float_traits::tests::check_f32 ... ok
+test math::support::float_traits::tests::check_f64 ... ok
+test math::support::big::tests::shl_u256 ... ok
+test math::support::hex_float::parse_tests::test_f128 ... ok
+test math::support::hex_float::parse_tests::test_f16 ... ok
+test math::support::hex_float::parse_tests::test_f32 ... ok
+test math::support::hex_float::parse_tests::test_f64 ... ok
+test math::support::hex_float::parse_tests::test_macros ... ok
+test math::support::hex_float::print_tests::spot_checks ... ok
+test math::support::hex_float::parse_tests::rounding_extreme_underflow ... ok
+test math::support::hex_float::tests_panicking::test_f128_almost_extra_precision ... ok
+test math::support::hex_float::tests_panicking::test_f128_tiniest ... ok
+test math::support::hex_float::tests_panicking::test_f16_almost_extra_precision ... ok
+test math::support::big::tests::shr_u256_overflow - should panic ... ok
+test math::support::hex_float::parse_tests::long_tail ... ok
+test math::support::hex_float::tests_panicking::test_f128_again_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f16_tiniest ... ok
+test math::support::hex_float::tests_panicking::test_f128_also_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_almost_extra_precision ... ok
+test math::support::hex_float::tests_panicking::test_f128_extra_precision - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_also_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_extra_precision - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f128_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f16_again_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_tiniest ... ok
+test math::support::hex_float::tests_panicking::test_f64_almost_extra_precision ... ok
+test math::support::hex_float::tests_panicking::test_f16_also_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f16_extra_precision - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f16_overflow - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f16_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f32_again_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f128_extra_precision_overflow - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f128_overflow - should panic ... ok
+test math::trunc::tests::check_f128 ... ok
+test math::trunc::tests::check_f16 ... ok
+test math::support::modular::test::reducer_ops ... ok
+test math::support::hex_float::tests_panicking::test_f32_extra_precision2 - should panic ... ok
+test math::support::modular::test::reduction_u128 ... ok
+test math::trunc::tests::check_f32 ... ok
+test math::support::hex_float::tests_panicking::test_f32_overflow - should panic ... ok
+test math::trunc::tests::check_f64 ... ok
+test math::support::hex_float::tests_panicking::test_f32_too_tiny - should panic ... ok
+test math::support::hex_float::tests_panicking::test_f64_extra_precision - should panic ... ok
+test math::support::int_traits::narrowing_div::test::inverse_mul ... ok
+test math::support::hex_float::print_tests::test_f16 ... ok
+test math::support::hex_float::parse_tests::test_rounding ... ok
+test math::support::big::tests::div_u256_by_u128 ... ok
+test math::support::modular::test::reduction_u8 ... ok
+test math::support::hex_float::print_tests::test_f16_to_f32 ... ok
+test math::support::hex_float::parse_tests::test_parse_any ... ok
+
+test result: ok. 178 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
+     Running unittests src/lib.rs (target/debug/build/libm-macros/b2b0135cc6599943/out/libm_macros-b2b0135cc6599943)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/basic.rs (target/debug/build/libm-macros/d0c1039d541e4918/out/basic-d0c1039d541e4918)
+
+running 2 tests
+test test_fn_extra_expansion ... ok
+test test_skip_f16_f128 ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/enum.rs (target/debug/build/libm-macros/3260b4c8112ed8ac/out/enum-3260b4c8112ed8ac)
+
+running 3 tests
+test as_str ... ok
+test basename ... ok
+test from_str ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/build/libm-test/293c673b9034e141/out/libm_test-293c673b9034e141)
+
+running 19 tests
+test num::tests::test_consts ... ok
+test generate::bitpattern::test::gen_int_with_fillers ... ok
+test generate::bitpattern::test::most_wanted_int ... ok
+test generate::bitpattern::test::specific ... ok
+test generate::bitpattern::test::gen_includes_specials ... ok
+test num::tests::test_logspace ... ok
+test num::tests::test_linear_ints ... ok
+test generate::bitpattern::test::most_wanted ... ok
+test num::tests::test_n_up_down_inf_nan_zero ... ok
+test generate::bitpattern::test::gen_with_fillers ... ok
+test generate::bitpattern::test::count ... ok
+test num::tests::test_n_up_down_quick ... ok
+test num::tests::test_next_up_down ... ok
+test num::tests::test_n_up_down_one ... ok
+test num::tests::test_next_up_down_inf_nan ... ok
+test num::tests::test_ulp_between_inf_nan_zero ... ok
+test generate::bitpattern::test::equivalence ... ok
+test num::tests::test_n_up_down ... ok
+test num::tests::test_ulp_between ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/check_coverage.rs (target/debug/build/libm-test/991faf4d4195388a/out/check_coverage-991faf4d4195388a)
+
+running 2 tests
+test test_for_each_function_all_included ... ok
+function list output matches expected; success
+source list output matches expected; success
+test ensure_list_updated ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.42s
+
+     Running tests/compare_built_musl.rs (target/debug/build/libm-test/1a69f1f90dc556d8/out/compare_built_musl-1a69f1f90dc556d8)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/multiprecision.rs (target/debug/build/libm-test/b33bad8ae4f5a031/out/multiprecision-b33bad8ae4f5a031)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/standalone.rs (target/debug/build/libm-test/d2ebe6ca58cbc227/out/standalone-d2ebe6ca58cbc227)
+
+running 312 tests
+test standalone_addf128 ... ok
+test standalone_addf32 ... ok
+test standalone_ashl_u32 ... ok
+test standalone_acoshf ... ok
+test standalone_ashl_u128 ... ok
+test standalone_ashr_i64 ... ok
+test standalone_ashl_u64 ... ok
+test standalone_ashr_i128 ... ok
+test standalone_addf64 ... ok
+test standalone_acosf ... ok
+test standalone_acos ... ok
+test standalone_asinf ... ok
+test standalone_asin ... ok
+test standalone_ashr_i32 ... ok
+test standalone_addf16 ... ok
+test standalone_acosh ... ok
+test standalone_asinh ... ok
+test standalone_atan ... ok
+test standalone_atan2 ... ok
+test standalone_atan2f ... ok
+test standalone_atanf ... ok
+test standalone_atanh ... ok
+test standalone_asinhf ... ok
+test standalone_atanhf ... ok
+test standalone_cbrt ... ok
+test standalone_cbrtf ... ok
+test standalone_ceil ... ok
+test standalone_ceilf ... ok
+test standalone_ceilf128 ... ok
+test standalone_ceilf16 ... ok
+test standalone_copysign ... ok
+test standalone_copysignf ... ok
+test standalone_copysignf128 ... ok
+test standalone_copysignf16 ... ok
+test standalone_cosf ... ok
+test standalone_cos ... ok
+test standalone_cosh ... ok
+test standalone_coshf ... ok
+test standalone_divf128 ... ok
+test standalone_divf32 ... ok
+test standalone_divf64 ... ok
+test standalone_eqf128 ... ok
+test standalone_eqf16 ... ok
+test standalone_eqf32 ... ok
+test standalone_eqf64 ... ok
+test standalone_erf ... ok
+test standalone_erfc ... ok
+test standalone_erfcf ... ok
+test standalone_erff ... ok
+test standalone_exp ... ok
+test standalone_exp10 ... ok
+test standalone_exp10f ... ok
+test standalone_exp2 ... ok
+test standalone_exp2f ... ok
+test standalone_exp2m1 ... ok
+test standalone_exp2m1f ... ok
+test standalone_exp2m1f16 ... ok
+test standalone_expm1 ... ok
+test standalone_expm1f ... ok
+test standalone_expf ... ok
+test standalone_extend_f16_f128 ... ok
+test standalone_extend_f16_f32 ... ok
+test standalone_extend_f16_f64 ... ok
+test standalone_extend_f32_f128 ... ok
+test standalone_extend_f32_f64 ... ok
+test standalone_extend_f64_f128 ... ok
+test standalone_fabs ... ok
+test standalone_fabsf ... ok
+test standalone_fabsf128 ... ok
+test standalone_fabsf16 ... ok
+test standalone_fdimf ... ok
+test standalone_fdim ... ok
+test standalone_fdimf128 ... ok
+test standalone_fdimf16 ... ok
+test standalone_floor ... ok
+test standalone_floorf ... ok
+test standalone_floorf128 ... ok
+test standalone_floorf16 ... ok
+test standalone_fma ... ok
+test standalone_fmaf ... ok
+test standalone_fmax ... ok
+test standalone_fmaf128 ... ok
+test standalone_fmaxf ... ok
+test standalone_fmaf16 ... ok
+test standalone_fmaxf128 ... ok
+test standalone_fmaxf16 ... ok
+test standalone_fmaximum ... ok
+test standalone_fmaximum_num ... ok
+test standalone_fmaximum_numf ... ok
+test standalone_fmaximum_numf128 ... ok
+test standalone_fmaximum_numf16 ... ok
+test standalone_fmaximumf ... ok
+test standalone_fmaximumf128 ... ok
+test standalone_fmaximumf16 ... ok
+test standalone_fmin ... ok
+test standalone_fminf ... ok
+test standalone_fminf128 ... ok
+test standalone_fminf16 ... ok
+test standalone_fminimum ... ok
+test standalone_fminimum_num ... ok
+test standalone_fminimum_numf ... ok
+test standalone_fminimum_numf128 ... ok
+test standalone_fminimum_numf16 ... ok
+test standalone_fminimumf ... ok
+test standalone_fminimumf128 ... ok
+test standalone_fminimumf16 ... ok
+test standalone_fmod ... ok
+test standalone_fmodf ... ok
+test standalone_fmodf128 ... ok
+test standalone_fmodf16 ... ok
+test standalone_frexp ... ok
+test standalone_frexpf ... ok
+test standalone_frexpf128 ... ok
+test standalone_frexpf16 ... ok
+test standalone_ftoi_f128_i128 ... ok
+test standalone_ftoi_f128_i32 ... ok
+test standalone_ftoi_f128_i64 ... ok
+test standalone_ftoi_f128_u128 ... ok
+test standalone_ftoi_f128_u32 ... ok
+test standalone_ftoi_f128_u64 ... ok
+test standalone_ftoi_f32_i128 ... ok
+test standalone_ftoi_f32_i32 ... ok
+test standalone_ftoi_f32_i64 ... ok
+test standalone_ftoi_f32_u128 ... ok
+test standalone_ftoi_f32_u32 ... ok
+test standalone_ftoi_f32_u64 ... ok
+test standalone_ftoi_f64_i128 ... ok
+test standalone_ftoi_f64_i32 ... ok
+test standalone_ftoi_f64_i64 ... ok
+test standalone_ftoi_f64_u128 ... ok
+test standalone_ftoi_f64_u32 ... ok
+test standalone_ftoi_f64_u64 ... ok
+test standalone_gef128 ... ok
+test standalone_gef16 ... ok
+test standalone_gef32 ... ok
+test standalone_gef64 ... ok
+test standalone_gtf128 ... ok
+test standalone_gtf16 ... ok
+test standalone_gtf32 ... ok
+test standalone_gtf64 ... ok
+test standalone_hypot ... ok
+test standalone_hypotf ... ok
+test standalone_iadd_i128 ... ok
+test standalone_iadd_u128 ... ok
+test standalone_iaddo_i128 ... ok
+test standalone_iaddo_u128 ... ok
+test standalone_idiv_i128 ... ok
+test standalone_idiv_i32 ... ok
+test standalone_idiv_i64 ... ok
+test standalone_idiv_u128 ... ok
+test standalone_idiv_u32 ... ok
+test standalone_idiv_u64 ... ok
+test standalone_idivmod_i128 ... ok
+test standalone_idivmod_i32 ... ok
+test standalone_idivmod_i64 ... ok
+test standalone_idivmod_u128 ... ok
+test standalone_idivmod_u32 ... ok
+test standalone_idivmod_u64 ... ok
+test standalone_ilogb ... ok
+test standalone_ilogbf ... ok
+test standalone_ilogbf128 ... ok
+test standalone_ilogbf16 ... ok
+test standalone_imod_i128 ... ok
+test standalone_imod_i32 ... ok
+test standalone_imod_i64 ... ok
+test standalone_imod_u128 ... ok
+test standalone_imod_u32 ... ok
+test standalone_imod_u64 ... ok
+test standalone_imul_i128 ... ok
+test standalone_imul_u64 ... ok
+test standalone_imulo_i128 ... ok
+test standalone_imulo_i32 ... ok
+test standalone_imulo_i64 ... ok
+test standalone_imulo_u128 ... ok
+test standalone_isub_i128 ... ok
+test standalone_isub_u128 ... ok
+test standalone_isubo_i128 ... ok
+test standalone_isubo_u128 ... ok
+test standalone_itof_i128_f128 ... ok
+test standalone_itof_i128_f32 ... ok
+test standalone_itof_i128_f64 ... ok
+test standalone_itof_i32_f128 ... ok
+test standalone_itof_i32_f32 ... ok
+test standalone_itof_i32_f64 ... ok
+test standalone_itof_i64_f128 ... ok
+test standalone_itof_i64_f32 ... ok
+test standalone_itof_i64_f64 ... ok
+test standalone_itof_u128_f128 ... ok
+test standalone_itof_u128_f32 ... ok
+test standalone_itof_u128_f64 ... ok
+test standalone_itof_u32_f128 ... ok
+test standalone_itof_u32_f32 ... ok
+test standalone_itof_u32_f64 ... ok
+test standalone_itof_u64_f128 ... ok
+test standalone_itof_u64_f32 ... ok
+test standalone_itof_u64_f64 ... ok
+test standalone_j0 ... ok
+test standalone_j0f ... ok
+test standalone_j1 ... ok
+test standalone_j1f ... ok
+test standalone_jn ... ok
+test standalone_jnf ... ok
+test standalone_ldexp ... ok
+test standalone_ldexpf ... ok
+test standalone_ldexpf128 ... ok
+test standalone_ldexpf16 ... ok
+test standalone_leading_zeros_u128 ... ok
+test standalone_leading_zeros_u32 ... ok
+test standalone_leading_zeros_u64 ... ok
+test standalone_lef128 ... ok
+test standalone_lef16 ... ok
+test standalone_lef32 ... ok
+test standalone_lef64 ... ok
+test standalone_lgamma ... ok
+test standalone_lgamma_r ... ok
+test standalone_lgammaf ... ok
+test standalone_lgammaf_r ... ok
+test standalone_log ... ok
+test standalone_log10 ... ok
+test standalone_log10f ... ok
+test standalone_log1p ... ok
+test standalone_log1pf ... ok
+test standalone_log2 ... ok
+test standalone_log2f ... ok
+test standalone_logf ... ok
+test standalone_lshr_u128 ... ok
+test standalone_lshr_u32 ... ok
+test standalone_lshr_u64 ... ok
+test standalone_ltf128 ... ok
+test standalone_ltf16 ... ok
+test standalone_ltf32 ... ok
+test standalone_ltf64 ... ok
+test standalone_modf ... ok
+test standalone_modff ... ok
+test standalone_mulf128 ... ok
+test standalone_mulf16 ... ok
+test standalone_mulf32 ... ok
+test standalone_mulf64 ... ok
+test standalone_narrow_f128_f16 ... ok
+test standalone_narrow_f128_f32 ... ok
+test standalone_narrow_f128_f64 ... ok
+test standalone_narrow_f32_f16 ... ok
+test standalone_narrow_f64_f16 ... ok
+test standalone_narrow_f64_f32 ... ok
+test standalone_nef128 ... ok
+test standalone_nef16 ... ok
+test standalone_nef32 ... ok
+test standalone_nef64 ... ok
+test standalone_nextafter ... ok
+test standalone_nextafterf ... ok
+test standalone_pow ... ok
+test standalone_powf ... ok
+test standalone_powif128 ... ok
+test standalone_powif32 ... ok
+test standalone_remainder ... ok
+test standalone_powif64 ... ok
+test standalone_remainderf ... ok
+test standalone_remquo ... ok
+test standalone_remquof ... ok
+test standalone_rint ... ok
+test standalone_rintf ... ok
+test standalone_rintf128 ... ok
+test standalone_rintf16 ... ok
+test standalone_round ... ok
+test standalone_roundeven ... ok
+test standalone_roundevenf ... ok
+test standalone_roundevenf128 ... ok
+test standalone_roundevenf16 ... ok
+test standalone_roundf ... ok
+test standalone_roundf128 ... ok
+test standalone_roundf16 ... ok
+test standalone_scalbn ... ok
+test standalone_scalbnf ... ok
+test standalone_scalbnf128 ... ok
+test standalone_scalbnf16 ... ok
+test standalone_sin ... ok
+test standalone_sincos ... ok
+test standalone_sincosf ... ok
+test standalone_sinf ... ok
+test standalone_sinh ... ok
+test standalone_sinhf ... ok
+test standalone_sqrt ... ok
+test standalone_sqrtf ... ok
+test standalone_sqrtf128 ... ok
+test standalone_sqrtf16 ... ok
+test standalone_subf128 ... ok
+test standalone_subf16 ... ok
+test standalone_subf32 ... ok
+test standalone_subf64 ... ok
+test standalone_tan ... ok
+test standalone_tanf ... ok
+test standalone_tanh ... ok
+test standalone_tanhf ... ok
+test standalone_tgamma ... ok
+test standalone_tgammaf ... ok
+test standalone_trailing_zeros_u128 ... ok
+test standalone_trailing_zeros_u32 ... ok
+test standalone_trailing_zeros_u64 ... ok
+test standalone_trunc ... ok
+test standalone_truncf ... ok
+test standalone_truncf128 ... ok
+test standalone_truncf16 ... ok
+test standalone_unordf128 ... ok
+test standalone_unordf16 ... ok
+test standalone_unordf32 ... ok
+test standalone_unordf64 ... ok
+test standalone_y0 ... ok
+test standalone_y0f ... ok
+test standalone_y1 ... ok
+test standalone_y1f ... ok
+test standalone_yn ... ok
+test standalone_ynf ... ok
+
+test result: ok. 312 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/u256.rs (target/debug/build/libm-test/04da6817ca871614/out/u256-04da6817ca871614)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/z_extensive/main.rs (target/debug/build/libm-test/6d1762c3311ff6eb/out/z_extensive-6d1762c3311ff6eb)
+multiprecision not enabled; skipping extensive tests
+     Running unittests src/lib.rs (target/debug/build/musl-math-sys/5970f5a21340515f/out/musl_math_sys-5970f5a21340515f)
+
+running 130 tests
+test tests::asinf ... ok
+test tests::asin ... ok
+test tests::acos ... ok
+test tests::acosf ... ok
+test tests::acoshf ... ok
+test tests::acosh ... ok
+test tests::asinhf ... ok
+test tests::asinh ... ok
+test tests::atan ... ok
+test tests::atan2 ... ok
+test tests::atan2f ... ok
+test tests::atanf ... ok
+test tests::atanh ... ok
+test tests::atanhf ... ok
+test tests::cbrt ... ok
+test tests::cbrtf ... ok
+test tests::ceil ... ok
+test tests::ceilf ... ok
+test tests::copysign ... ok
+test tests::copysignf ... ok
+test tests::cos ... ok
+test tests::cosf ... ok
+test tests::cosh ... ok
+test tests::coshf ... ok
+test tests::drem ... ok
+test tests::dremf ... ok
+test tests::erf ... ok
+test tests::erfc ... ok
+test tests::erfcf ... ok
+test tests::erff ... ok
+test tests::exp ... ok
+test tests::exp10 ... ok
+test tests::exp10f ... ok
+test tests::exp2 ... ok
+test tests::exp2f ... ok
+test tests::expf ... ok
+test tests::expm1 ... ok
+test tests::expm1f ... ok
+test tests::fabs ... ok
+test tests::fabsf ... ok
+test tests::fdim ... ok
+test tests::fdimf ... ok
+test tests::finite ... ok
+test tests::finitef ... ok
+test tests::floor ... ok
+test tests::floorf ... ok
+test tests::fma ... ok
+test tests::fmaf ... ok
+test tests::fmax ... ok
+test tests::fmaxf ... ok
+test tests::fmin ... ok
+test tests::fminf ... ok
+test tests::fmod ... ok
+test tests::fmodf ... ok
+test tests::frexp ... ok
+test tests::frexpf ... ok
+test tests::hypot ... ok
+test tests::hypotf ... ok
+test tests::ilogb ... ok
+test tests::ilogbf ... ok
+test tests::j0 ... ok
+test tests::j0f ... ok
+test tests::j1 ... ok
+test tests::j1f ... ok
+test tests::jn ... ok
+test tests::jnf ... ok
+test tests::ldexp ... ok
+test tests::ldexpf ... ok
+test tests::lgamma ... ok
+test tests::lgamma_r ... ok
+test tests::lgammaf ... ok
+test tests::lgammaf_r ... ok
+test tests::log ... ok
+test tests::log10 ... ok
+test tests::log10f ... ok
+test tests::log1p ... ok
+test tests::log1pf ... ok
+test tests::log2 ... ok
+test tests::log2f ... ok
+test tests::logb ... ok
+test tests::logbf ... ok
+test tests::logf ... ok
+test tests::modf ... ok
+test tests::modff ... ok
+test tests::nan ... ok
+test tests::nanf ... ok
+test tests::nearbyint ... ok
+test tests::nearbyintf ... ok
+test tests::nextafter ... ok
+test tests::nextafterf ... ok
+test tests::pow ... ok
+test tests::pow10 ... ok
+test tests::pow10f ... ok
+test tests::powf ... ok
+test tests::remainder ... ok
+test tests::remainderf ... ok
+test tests::remquo ... ok
+test tests::remquof ... ok
+test tests::rint ... ok
+test tests::rintf ... ok
+test tests::round ... ok
+test tests::roundf ... ok
+test tests::scalbln ... ok
+test tests::scalblnf ... ok
+test tests::scalbn ... ok
+test tests::scalbnf ... ok
+test tests::significand ... ok
+test tests::significandf ... ok
+test tests::sin ... ok
+test tests::sincos ... ok
+test tests::sincosf ... ok
+test tests::sinf ... ok
+test tests::sinh ... ok
+test tests::sinhf ... ok
+test tests::sqrt ... ok
+test tests::sqrtf ... ok
+test tests::tan ... ok
+test tests::tanf ... ok
+test tests::tanh ... ok
+test tests::tanhf ... ok
+test tests::tgamma ... ok
+test tests::tgammaf ... ok
+test tests::trunc ... ok
+test tests::truncf ... ok
+test tests::y0 ... ok
+test tests::y0f ... ok
+test tests::y1 ... ok
+test tests::y1f ... ok
+test tests::yn ... ok
+test tests::ynf ... ok
+
+test result: ok. 130 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/build/symcheck/69b5268ee198fe96/out/symcheck-69b5268ee198fe96)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/all.rs (target/debug/build/symcheck/2c62fa607c208437/out/all-2c62fa607c208437)
+
+running 9 tests
+test exe_stack::test_execstack_bin ... ok
+cargo:warning=clang: error: unknown argument: '-?'
+cargo:warning=clang: error: no input files
+cargo:warning=clang: error: unknown argument: '-?'
+cargo:warning=clang: error: no input files
+cargo:warning=clang: error: unknown argument: '-?'
+cargo:warning=clang: error: no input files
+test exe_stack::test_exe_gnu_stack_section ... ok
+cargo:warning=clang: error: unknown argument: '-?'
+cargo:warning=clang: error: no input files
+test test_good_bin ... ok
+test test_good_lib ... ok
+test test_duplicates ... ok
+test exe_stack::test_missing_gnu_stack_section ... ok
+test test_core_symbols ... ok
+test test_visible_symbols ... ok
+cargo:warning=clang: error: unknown argument: '-?'
+cargo:warning=clang: error: no input files
+test test_target_mismatch ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.45s
+
+     Running unittests src/main.rs (target/debug/build/sysbench/c4a189701566ca97/out/sysbench-c4a189701566ca97)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/build/update-api-list/439b6ea8a8c01a1c/out/update_api_list-439b6ea8a8c01a1c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/all.rs (target/debug/build/update-api-list/59720c03fc1d2bea/out/all-59720c03fc1d2bea)
+
+running 1 test
+test tidy_lists ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
+
+     Running unittests src/main.rs (target/debug/build/util/d124c1e5927a256c/out/util-d124c1e5927a256c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests api_list_common
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests builtins_test
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests libm
+
+running 1 test
+test libm/src/libm_helper.rs - libm_helper::Libm (line 10) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+
+   Doc-tests libm_macros
+
+running 2 tests
+test crates/libm-macros/src/parse.rs - parse::AttributeMap (line 286) ... ignored
+test crates/libm-macros/src/lib.rs - for_each_function (line 62) ... ok
+
+test result: ok. 1 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+all doctests ran in 0.27s; merged doctests compilation took 0.20s
+   Doc-tests libm_test
+
+running 1 test
+test libm-test/src/generate/bitpattern.rs - generate::bitpattern::bitwise_subsets (line 14) ... ignored
+
+test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+all doctests ran in 0.24s; merged doctests compilation took 0.18s
+   Doc-tests musl_math_sys
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests panic_handler
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests update_api_list
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,15 @@
+$ ['rustc', '+nightly', 'benchmarks/results/raw-logs/upstream-validation/pow-link.rs', '--crate-type', 'cdylib', '--target', 'wasm32-unknown-unknown', '--edition', '2024', '-C', 'opt-level=3', '-C', 'panic=abort', '--extern', 'compiler_builtins=/tmp/libm-validation-symbol-target/wasm32-unknown-unknown/release/build/compiler_builtins/c8fd295b5471f17e/out/libcompiler_builtins-c8fd295b5471f17e.rlib', '--extern', 'panic_handler=/tmp/libm-validation-link-target/wasm32-unknown-unknown/release/build/panic-handler/f5de80aadf246bdd/out/libpanic_handler-f5de80aadf246bdd.rlib', '-o', 'benchmarks/results/raw-logs/upstream-validation/pow-link.wasm']
+error: only metadata stub found for `rlib` dependency `compiler_builtins`. Please provide path to the corresponding .rmeta file with full metadata
+ --> benchmarks/results/raw-logs/upstream-validation/pow-link.rs:3:1
+  |
+3 | extern crate compiler_builtins;
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: only metadata stub found for `rlib` dependency `panic_handler`. Please provide path to the corresponding .rmeta file with full metadata
+ --> benchmarks/results/raw-logs/upstream-validation/pow-link.rs:4:1
+  |
+4 | extern crate panic_handler;
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: aborting due to 2 previous errors
+

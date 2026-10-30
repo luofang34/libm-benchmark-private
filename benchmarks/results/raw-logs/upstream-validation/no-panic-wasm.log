@@ -1,0 +1,3 @@
+$ ['cargo', 'build', '-p', 'libm', '--target', 'wasm32-unknown-unknown', '--no-default-features', '--features', 'unstable-float', '--tests', '--profile', 'release-opt']
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+    Finished `release-opt` profile [optimized] target(s) in 5.85s

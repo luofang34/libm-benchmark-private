@@ -1,0 +1,133 @@
+[
+  {
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--target-dir",
+      "/tmp/libm-miri-target"
+    ],
+    "exit_code": 101,
+    "stderr": "missing or invalid CACHEDIR.TAG; actual Miri build directory is /tmp/libm-miri-target/miri"
+  },
+  {
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--target-dir",
+      "/tmp/libm-validation-symbol-target"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "     Removed 0 files\n"
+  },
+  {
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--target-dir",
+      "/tmp/libm-validation-link-target"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "     Removed 0 files\n"
+  },
+  {
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--target-dir",
+      "/tmp/libm-validation-no-panic"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "     Removed 0 files\n"
+  },
+  {
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--target-dir",
+      "/tmp/libm-validation-lints"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "     Removed 0 files\n"
+  },
+  {
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--target-dir",
+      "/tmp/libm-validation-libm-doc"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "     Removed 0 files\n"
+  },
+  {
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--target-dir",
+      "/tmp/libm-miri-target/miri"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "     Removed 1472 files, 559.2MiB total\n"
+  },
+  {
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--target-dir",
+      "/tmp/libm-msrv-official/target"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "     Removed 342 files, 37.3MiB total\n"
+  },
+  {
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--target-dir",
+      "/tmp/libm-upstream-validation-base/target"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "     Removed 3007 files, 398.1MiB total\n"
+  },
+  {
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--target-dir",
+      "/Users/fangluo/Documents/ChatGPT/libm/builtins-test-intrinsics/target"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "     Removed 2857 files, 243.2MiB total\n"
+  },
+  {
+    "command": [
+      "cargo",
+      "+nightly",
+      "clean",
+      "--target-dir",
+      "/Users/fangluo/Documents/ChatGPT/libm/target"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "     Removed 41524 files, 5.9GiB total\n"
+  }
+]

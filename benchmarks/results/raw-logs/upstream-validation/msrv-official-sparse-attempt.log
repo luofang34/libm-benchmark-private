@@ -1,0 +1,12 @@
+$ ['cargo', '+1.67.0', 'build']
+warning: unused manifest key: lints
+error: failed to get `no-panic` as a dependency of package `libm v0.2.16 (/private/tmp/libm-msrv-official)`
+
+Caused by:
+  failed to load source for dependency `no-panic`
+
+Caused by:
+  Unable to update registry `crates-io`
+
+Caused by:
+  usage of sparse registries requires `-Z sparse-registry`

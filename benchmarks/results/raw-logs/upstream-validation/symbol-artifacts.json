@@ -1,0 +1,170 @@
+[
+  {
+    "check": "symbol-aarch64-apple-darwin-c-release",
+    "artifact": "/tmp/libm-validation-symbol-target/aarch64-apple-darwin/release/build/compiler_builtins/63ca8f51dd2a8bb7/out/libcompiler_builtins-63ca8f51dd2a8bb7.rlib",
+    "sha256": "34ff85ec5a8f0750c8d73070befbda174d285acee6a85384f87d9484fec7e51e",
+    "bytes": 190280
+  },
+  {
+    "check": "symbol-aarch64-apple-darwin-c",
+    "artifact": "/tmp/libm-validation-symbol-target/aarch64-apple-darwin/debug/build/compiler_builtins/6d83bcae2534c750/out/libcompiler_builtins-6d83bcae2534c750.rlib",
+    "sha256": "7bcfeb642c2759f892fe47bd6c876209e5177fad948fd86c7d2dc30e00311be0",
+    "bytes": 2492288
+  },
+  {
+    "check": "symbol-aarch64-apple-darwin-default",
+    "artifact": "/tmp/libm-validation-symbol-target/aarch64-apple-darwin/debug/build/compiler_builtins/f9162d3bc591d215/out/libcompiler_builtins-f9162d3bc591d215.rlib",
+    "sha256": "cafe431e6579b03cbec5b52d65a043eb74a7476948b6fc9c77189e5d538668bb",
+    "bytes": 2370080
+  },
+  {
+    "check": "symbol-aarch64-apple-darwin-generic-release",
+    "artifact": "/tmp/libm-validation-symbol-target/aarch64-apple-darwin/release/build/compiler_builtins/f6bc548f976a6674/out/libcompiler_builtins-f6bc548f976a6674.rlib",
+    "sha256": "d4514362c3cdf6eba2001e63c9d56457495c7ed911c1cf7b17913324584ef57a",
+    "bytes": 165736
+  },
+  {
+    "check": "symbol-aarch64-apple-darwin-generic",
+    "artifact": "/tmp/libm-validation-symbol-target/aarch64-apple-darwin/debug/build/compiler_builtins/743312d08320ae9c/out/libcompiler_builtins-743312d08320ae9c.rlib",
+    "sha256": "5d017f3ad6f7a2cccf3ee266a1e170dcc49fcc30474ed01fd10fea25c100ecb1",
+    "bytes": 2399120
+  },
+  {
+    "check": "symbol-aarch64-apple-darwin-release",
+    "artifact": "/tmp/libm-validation-symbol-target/aarch64-apple-darwin/release/build/compiler_builtins/52d19084a5c76570/out/libcompiler_builtins-52d19084a5c76570.rlib",
+    "sha256": "9ffa109230ac8783488d2c021fa324ab38d90090a77d86f5d4ec6a0ca6ab75e8",
+    "bytes": 165200
+  },
+  {
+    "check": "symbol-aarch64-unknown-linux-gnu-default",
+    "artifact": "/tmp/libm-validation-symbol-target/aarch64-unknown-linux-gnu/debug/build/compiler_builtins/7f0c350817f43189/out/libcompiler_builtins-7f0c350817f43189.rlib",
+    "sha256": "f664081e8c70db8167bfdd866e805c9c5a0a89792d9bd79186c2ff5d9061cd89",
+    "bytes": 4252800
+  },
+  {
+    "check": "symbol-aarch64-unknown-linux-gnu-generic-release",
+    "artifact": "/tmp/libm-validation-symbol-target/aarch64-unknown-linux-gnu/release/build/compiler_builtins/6e7e8e4c9f6c8500/out/libcompiler_builtins-6e7e8e4c9f6c8500.rlib",
+    "sha256": "8c4886b44abf38c489c5841b937abe7f425d79644df83b0cf22003a0c54a5895",
+    "bytes": 405640
+  },
+  {
+    "check": "symbol-aarch64-unknown-linux-gnu-generic",
+    "artifact": "/tmp/libm-validation-symbol-target/aarch64-unknown-linux-gnu/debug/build/compiler_builtins/4ca08a91800bdc5c/out/libcompiler_builtins-4ca08a91800bdc5c.rlib",
+    "sha256": "404049434c93022ad78b95390a5682da6c61a7f4cae2b35f384e0b9386640391",
+    "bytes": 4353250
+  },
+  {
+    "check": "symbol-aarch64-unknown-linux-gnu-release",
+    "artifact": "/tmp/libm-validation-symbol-target/aarch64-unknown-linux-gnu/release/build/compiler_builtins/e5f07962275b9b18/out/libcompiler_builtins-e5f07962275b9b18.rlib",
+    "sha256": "7bc15b752f921ca3c7cb41d982a59209033134efc97aed0ead89e31084a416b2",
+    "bytes": 394484
+  },
+  {
+    "check": "symbol-thumbv7em-none-eabihf-default",
+    "artifact": "/tmp/libm-validation-symbol-target/thumbv7em-none-eabihf/debug/build/compiler_builtins/4005bb6cfd841e7e/out/libcompiler_builtins-4005bb6cfd841e7e.rlib",
+    "sha256": "0a6a716c86c518daf20f92dd8bc6190ccb5ce12959b268c9447e394193fc41da",
+    "bytes": 3813612
+  },
+  {
+    "check": "symbol-thumbv7em-none-eabihf-generic-release",
+    "artifact": "/tmp/libm-validation-symbol-target/thumbv7em-none-eabihf/release/build/compiler_builtins/6d26ea35373eb632/out/libcompiler_builtins-6d26ea35373eb632.rlib",
+    "sha256": "67bdff02e5ee3a564b71b132e516d4facc6f2693dd3dfe6fd56b6b45a5667d69",
+    "bytes": 579778
+  },
+  {
+    "check": "symbol-thumbv7em-none-eabihf-generic",
+    "artifact": "/tmp/libm-validation-symbol-target/thumbv7em-none-eabihf/debug/build/compiler_builtins/a81b850c037790f5/out/libcompiler_builtins-a81b850c037790f5.rlib",
+    "sha256": "cd6f3a88479f6fb4e8d15dd8b06b1c229b3c3c086921265c7fa7d12230ed8812",
+    "bytes": 3823106
+  },
+  {
+    "check": "symbol-thumbv7em-none-eabihf-release",
+    "artifact": "/tmp/libm-validation-symbol-target/thumbv7em-none-eabihf/release/build/compiler_builtins/690f475f56448eb2/out/libcompiler_builtins-690f475f56448eb2.rlib",
+    "sha256": "22898ad588c7aa3a605333d53fdd15c2539f71ab1d72c812a714cf3f08e2d5fb",
+    "bytes": 567646
+  },
+  {
+    "check": "symbol-wasm32-unknown-unknown-c-release",
+    "artifact": "/tmp/libm-validation-symbol-target/wasm32-unknown-unknown/release/build/compiler_builtins/d7ac5ef130e38b5b/out/libcompiler_builtins-d7ac5ef130e38b5b.rlib",
+    "sha256": "b658a2ee1fa7ac2265a1b793cc05244d98c9b2a522f399fe711c30d5f308a00e",
+    "bytes": 293082
+  },
+  {
+    "check": "symbol-wasm32-unknown-unknown-c",
+    "artifact": "/tmp/libm-validation-symbol-target/wasm32-unknown-unknown/debug/build/compiler_builtins/338d31047ec4fb56/out/libcompiler_builtins-338d31047ec4fb56.rlib",
+    "sha256": "31bbdad20f778f9d950a8e6c729ec258af629383aed65a2706da1b7a46242c2a",
+    "bytes": 2686364
+  },
+  {
+    "check": "symbol-wasm32-unknown-unknown-default",
+    "artifact": "/tmp/libm-validation-symbol-target/wasm32-unknown-unknown/debug/build/compiler_builtins/f7d56230c2dc32a8/out/libcompiler_builtins-f7d56230c2dc32a8.rlib",
+    "sha256": "4087cc2a02459dd94220be6b7edb7ddbca46bc90f392026f973caf4ca7e5256a",
+    "bytes": 2686386
+  },
+  {
+    "check": "symbol-wasm32-unknown-unknown-generic-release",
+    "artifact": "/tmp/libm-validation-symbol-target/wasm32-unknown-unknown/release/build/compiler_builtins/4a4810b6faa061dc/out/libcompiler_builtins-4a4810b6faa061dc.rlib",
+    "sha256": "2fbd64b5af543ee4d94945b01d06914dbb5f6fa180a1933608def6dc74521d6e",
+    "bytes": 303922
+  },
+  {
+    "check": "symbol-wasm32-unknown-unknown-generic",
+    "artifact": "/tmp/libm-validation-symbol-target/wasm32-unknown-unknown/debug/build/compiler_builtins/8377a3201ac013d6/out/libcompiler_builtins-8377a3201ac013d6.rlib",
+    "sha256": "12ea79f2729c512ddc1e2c4477d630e183422dcfbd9b288cdbef6f2f419a477e",
+    "bytes": 2708078
+  },
+  {
+    "check": "symbol-wasm32-unknown-unknown-release",
+    "artifact": "/tmp/libm-validation-symbol-target/wasm32-unknown-unknown/release/build/compiler_builtins/c8fd295b5471f17e/out/libcompiler_builtins-c8fd295b5471f17e.rlib",
+    "sha256": "c3ea4eb7b0ebc27bfdf384ebe9415dec32acbc9adf5a4fd37119962ddaf2a1fb",
+    "bytes": 291790
+  },
+  {
+    "check": "symbol-x86_64-pc-windows-msvc-default",
+    "artifact": "/tmp/libm-validation-symbol-target/x86_64-pc-windows-msvc/debug/build/compiler_builtins/159e5734cfee8697/out/libcompiler_builtins-159e5734cfee8697.rlib",
+    "sha256": "8f5c8962f75cd33ed13e86d6a298243af38aac5473023666e76564af71d4e4ac",
+    "bytes": 3691530
+  },
+  {
+    "check": "symbol-x86_64-pc-windows-msvc-generic-release",
+    "artifact": "/tmp/libm-validation-symbol-target/x86_64-pc-windows-msvc/release/build/compiler_builtins/3d37ea99b81198bd/out/libcompiler_builtins-3d37ea99b81198bd.rlib",
+    "sha256": "3bf84accb59813e773778c7dec91bdfb56f8db4935062e1545c96426623403ac",
+    "bytes": 439042
+  },
+  {
+    "check": "symbol-x86_64-pc-windows-msvc-generic",
+    "artifact": "/tmp/libm-validation-symbol-target/x86_64-pc-windows-msvc/debug/build/compiler_builtins/901cf7d515dd3376/out/libcompiler_builtins-901cf7d515dd3376.rlib",
+    "sha256": "a573e82875ecab9cbf103031db40ccd54309409cea550002ccba638b7a3ad355",
+    "bytes": 3523734
+  },
+  {
+    "check": "symbol-x86_64-pc-windows-msvc-release",
+    "artifact": "/tmp/libm-validation-symbol-target/x86_64-pc-windows-msvc/release/build/compiler_builtins/2bb16d95bf42aad8/out/libcompiler_builtins-2bb16d95bf42aad8.rlib",
+    "sha256": "b05d9a66cbb7af2d5d491bcc4d03ad11a928be77374026caf4c2231c473365ea",
+    "bytes": 444658
+  },
+  {
+    "check": "symbol-x86_64-unknown-linux-gnu-default",
+    "artifact": "/tmp/libm-validation-symbol-target/x86_64-unknown-linux-gnu/debug/build/compiler_builtins/bf76e8019bb34e85/out/libcompiler_builtins-bf76e8019bb34e85.rlib",
+    "sha256": "67eab7b98fbdfada1d52c530a716dd19185cda3a26d3a9ea2416f720abc1b1f1",
+    "bytes": 4057002
+  },
+  {
+    "check": "symbol-x86_64-unknown-linux-gnu-generic-release",
+    "artifact": "/tmp/libm-validation-symbol-target/x86_64-unknown-linux-gnu/release/build/compiler_builtins/6f532cd760f40bed/out/libcompiler_builtins-6f532cd760f40bed.rlib",
+    "sha256": "f0adf02e026d23c10d6716464a06a673d1ebd687e227dfc43cb51cfe3ecdd0f0",
+    "bytes": 340712
+  },
+  {
+    "check": "symbol-x86_64-unknown-linux-gnu-generic",
+    "artifact": "/tmp/libm-validation-symbol-target/x86_64-unknown-linux-gnu/debug/build/compiler_builtins/83202a7b822cacf3/out/libcompiler_builtins-83202a7b822cacf3.rlib",
+    "sha256": "5b891263408dad0c570987a758f2f54a2976aef10e074d2355a88552046cfd25",
+    "bytes": 3967864
+  },
+  {
+    "check": "symbol-x86_64-unknown-linux-gnu-release",
+    "artifact": "/tmp/libm-validation-symbol-target/x86_64-unknown-linux-gnu/release/build/compiler_builtins/2450743936a67e64/out/libcompiler_builtins-2450743936a67e64.rlib",
+    "sha256": "7e17fc7a4ccc78b1e00ddf0defdbd2efcbf474ffbad345250ca40a6b781e2a40",
+    "bytes": 347096
+  }
+]

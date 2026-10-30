@@ -1,0 +1,94 @@
+$ ['cargo', 'run', '-p', 'symcheck', '--release', '--', '--build-and-check', '--target', 'wasm32-unknown-unknown', '--', '--verbose', '--manifest-path', 'builtins-test-intrinsics/Cargo.toml', '--features', 'c']
+    Finished `release` profile [optimized] target(s) in 0.05s
+     Running `/tmp/libm-validation-link-target/release/symcheck --build-and-check --target wasm32-unknown-unknown -- --verbose --manifest-path builtins-test-intrinsics/Cargo.toml --features c`
+running: "rustc" "--target" "wasm32-unknown-unknown" "--print=cfg"
+running: "cargo" "build" "--target" "wasm32-unknown-unknown" "--message-format=json-diagnostic-rendered-ansi" "--verbose" "--manifest-path" "builtins-test-intrinsics/Cargo.toml" "--features" "c"
+       Fresh shlex v2.0.1
+       Fresh find-msvc-tools v0.1.14
+       Fresh panic-handler v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/panic-handler)
+       Fresh cc v1.6.0
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+     Running `/tmp/libm-validation-link-target/debug/build/compiler_builtins/779a353e91846df6/out/build_script_build`
+build script output: {
+  "cfgs": [
+    "intrinsics_enabled",
+    "f16_enabled",
+    "f128_enabled",
+    "feature=\"mem\"",
+    "__absvdi2=\"optimized-c\"",
+    "__absvsi2=\"optimized-c\"",
+    "__absvti2=\"optimized-c\"",
+    "__addvdi3=\"optimized-c\"",
+    "__addvsi3=\"optimized-c\"",
+    "__addvti3=\"optimized-c\"",
+    "__cmpdi2=\"optimized-c\"",
+    "__cmpti2=\"optimized-c\"",
+    "__ffsti2=\"optimized-c\"",
+    "__int_util=\"optimized-c\"",
+    "__mulvdi3=\"optimized-c\"",
+    "__mulvsi3=\"optimized-c\"",
+    "__mulvti3=\"optimized-c\"",
+    "__negdf2=\"optimized-c\"",
+    "__negdi2=\"optimized-c\"",
+    "__negsf2=\"optimized-c\"",
+    "__negti2=\"optimized-c\"",
+    "__negvdi2=\"optimized-c\"",
+    "__negvsi2=\"optimized-c\"",
+    "__negvti2=\"optimized-c\"",
+    "__paritydi2=\"optimized-c\"",
+    "__paritysi2=\"optimized-c\"",
+    "__parityti2=\"optimized-c\"",
+    "__popcountdi2=\"optimized-c\"",
+    "__popcountsi2=\"optimized-c\"",
+    "__popcountti2=\"optimized-c\"",
+    "__subvdi3=\"optimized-c\"",
+    "__subvsi3=\"optimized-c\"",
+    "__subvti3=\"optimized-c\"",
+    "__ucmpdi2=\"optimized-c\"",
+    "__ucmpti2=\"optimized-c\""
+  ],
+  "env": [],
+  "linked_libs": [
+    "static=compiler-rt"
+  ],
+  "linked_paths": [
+    "native=/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/compiler_builtins/eea7dc3b4d3a4dcb/out"
+  ],
+  "out_dir": "/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/compiler_builtins/eea7dc3b4d3a4dcb/out",
+  "package_id": "path+file:///Users/fangluo/Documents/ChatGPT/libm/builtins-shim#compiler_builtins@0.1.160",
+  "reason": "build-script-executed"
+}
+warning: compiler_builtins@0.1.160: ranlib: warning: archive member '7f0699212538159c-absvdi2.o' not a mach-o file
+warning: compiler_builtins@0.1.160: ranlib: warning: archive member '7f0699212538159c-ucmpdi2.o' not a mach-o file
+   Compiling builtins-test-intrinsics v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/builtins-test-intrinsics)
+     Running `/tmp/libm-validation-link-target/debug/build/builtins-test-intrinsics/26fb763f11919f8d/out/build_script_build`
+     Running `/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name compiler_builtins --edition=2024 /Users/fangluo/Documents/ChatGPT/libm/builtins-shim/../compiler-builtins/src/lib.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type lib --emit=dep-info,metadata,link -Z embed-metadata=no -C panic=abort -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="arch"' --cfg 'feature="c"' --cfg 'feature="compiler-builtins"' --cfg 'feature="default"' --cfg 'feature="unmangled-names"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("arch", "c", "compiler-builtins", "default", "mem", "unmangled-names", "unstable-public-internals"))' -C metadata=9114a5d5400317ae -C extra-filename=-9cad8e8417a285ee --out-dir /tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/compiler_builtins/9cad8e8417a285ee/out --target wasm32-unknown-unknown -C incremental=/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/incremental -L dependency=/tmp/libm-validation-link-target/debug/build/compiler_builtins/9cad8e8417a285ee/out --force-warn=unused_crate_dependencies -L native=/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/compiler_builtins/eea7dc3b4d3a4dcb/out -l static=compiler-rt --cfg intrinsics_enabled --cfg f16_enabled --cfg f128_enabled --cfg 'feature="mem"' --cfg '__absvdi2="optimized-c"' --cfg '__absvsi2="optimized-c"' --cfg '__absvti2="optimized-c"' --cfg '__addvdi3="optimized-c"' --cfg '__addvsi3="optimized-c"' --cfg '__addvti3="optimized-c"' --cfg '__cmpdi2="optimized-c"' --cfg '__cmpti2="optimized-c"' --cfg '__ffsti2="optimized-c"' --cfg '__int_util="optimized-c"' --cfg '__mulvdi3="optimized-c"' --cfg '__mulvsi3="optimized-c"' --cfg '__mulvti3="optimized-c"' --cfg '__negdf2="optimized-c"' --cfg '__negdi2="optimized-c"' --cfg '__negsf2="optimized-c"' --cfg '__negti2="optimized-c"' --cfg '__negvdi2="optimized-c"' --cfg '__negvsi2="optimized-c"' --cfg '__negvti2="optimized-c"' --cfg '__paritydi2="optimized-c"' --cfg '__paritysi2="optimized-c"' --cfg '__parityti2="optimized-c"' --cfg '__popcountdi2="optimized-c"' --cfg '__popcountsi2="optimized-c"' --cfg '__popcountti2="optimized-c"' --cfg '__subvdi3="optimized-c"' --cfg '__subvsi3="optimized-c"' --cfg '__subvti3="optimized-c"' --cfg '__ucmpdi2="optimized-c"' --cfg '__ucmpti2="optimized-c"' --check-cfg 'cfg(thumb)' --check-cfg 'cfg(thumb1_only)' --check-cfg 'cfg(target_abi_eabihf)' --check-cfg 'cfg(x86_no_sse2)' --check-cfg 'cfg(target_feature, values("vfp2sp", "vfp2"))' --check-cfg 'cfg(assert_no_panic)' --check-cfg 'cfg(intrinsics_enabled)' --check-cfg 'cfg(optimizations_enabled)' --check-cfg 'cfg(f16_enabled)' --check-cfg 'cfg(f128_enabled)' --check-cfg 'cfg(__ashldi3, values("optimized-c"))' --check-cfg 'cfg(__ashlsi3, values("optimized-c"))' --check-cfg 'cfg(__ashrdi3, values("optimized-c"))' --check-cfg 'cfg(__ashrsi3, values("optimized-c"))' --check-cfg 'cfg(__bswapsi2, values("optimized-c"))' --check-cfg 'cfg(__bswapdi2, values("optimized-c"))' --check-cfg 'cfg(__bswapti2, values("optimized-c"))' --check-cfg 'cfg(__divdi3, values("optimized-c"))' --check-cfg 'cfg(__divsi3, values("optimized-c"))' --check-cfg 'cfg(__divmoddi4, values("optimized-c"))' --check-cfg 'cfg(__divmodsi4, values("optimized-c"))' --check-cfg 'cfg(__divmodsi4, values("optimized-c"))' --check-cfg 'cfg(__divmodti4, values("optimized-c"))' --check-cfg 'cfg(__lshrdi3, values("optimized-c"))' --check-cfg 'cfg(__lshrsi3, values("optimized-c"))' --check-cfg 'cfg(__moddi3, values("optimized-c"))' --check-cfg 'cfg(__modsi3, values("optimized-c"))' --check-cfg 'cfg(__muldi3, values("optimized-c"))' --check-cfg 'cfg(__udivdi3, values("optimized-c"))' --check-cfg 'cfg(__udivmoddi4, values("optimized-c"))' --check-cfg 'cfg(__udivmodsi4, values("optimized-c"))' --check-cfg 'cfg(__udivsi3, values("optimized-c"))' --check-cfg 'cfg(__umoddi3, values("optimized-c"))' --check-cfg 'cfg(__umodsi3, values("optimized-c"))' --check-cfg 'cfg(target_feature, values("vis3"))' --check-cfg 'cfg(mem_unaligned)' --check-cfg 'cfg(kernel_user_helpers)'`
+build script output: {
+  "cfgs": [
+    "f16_enabled",
+    "f128_enabled"
+  ],
+  "env": [],
+  "linked_libs": [],
+  "linked_paths": [],
+  "out_dir": "/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/builtins-test-intrinsics/f5f770167902b36a/out",
+  "package_id": "path+file:///Users/fangluo/Documents/ChatGPT/libm/builtins-test-intrinsics#0.1.0",
+  "reason": "build-script-executed"
+}
+[1m[33mwarning[0m[1m: archive `/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/compiler_builtins/eea7dc3b4d3a4dcb/out/libcompiler-rt.a` was built as BSD format, but the target expects GNU[0m
+  [1m[94m|[0m
+  [1m[94m= [0m[1mhelp[0m: this often occurs when using BSD-format archive tools on a Linux target; rebuild the archive with the correct format for the target platform
+
+
+     Running `/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/bin/rustc --crate-name builtins_test_intrinsics --edition=2024 src/main.rs --error-format=json --json=diagnostic-rendered-ansi,artifacts,future-incompat,unused-externs-silent --crate-type bin --emit=dep-info,link -C panic=abort -C embed-bitcode=no -C debuginfo=2 --cfg 'feature="c"' --check-cfg 'cfg(docsrs,test)' --check-cfg 'cfg(feature, values("c"))' -C metadata=c5b7df10ce34ced7 --out-dir /tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/builtins-test-intrinsics/168fadb006d364a4/out --target wasm32-unknown-unknown -C incremental=/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/incremental -L dependency=/tmp/libm-validation-link-target/debug/build/builtins-test-intrinsics/168fadb006d364a4/out --extern compiler_builtins=/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/compiler_builtins/9cad8e8417a285ee/out/libcompiler_builtins-9cad8e8417a285ee.rlib --extern compiler_builtins=/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/compiler_builtins/9cad8e8417a285ee/out/libcompiler_builtins-9cad8e8417a285ee.rmeta --extern panic_handler=/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/panic-handler/80910d57319e38da/out/libpanic_handler-80910d57319e38da.rlib --extern panic_handler=/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/panic-handler/80910d57319e38da/out/libpanic_handler-80910d57319e38da.rmeta --force-warn=unused_crate_dependencies -L native=/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/compiler_builtins/eea7dc3b4d3a4dcb/out --cfg f16_enabled --cfg f128_enabled --check-cfg 'cfg(thumb)' --check-cfg 'cfg(thumb1_only)' --check-cfg 'cfg(target_abi_eabihf)' --check-cfg 'cfg(x86_no_sse2)' --check-cfg 'cfg(target_feature, values("vfp2sp", "vfp2"))' --check-cfg 'cfg(f16_enabled)' --check-cfg 'cfg(f128_enabled)'`
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 3.13s
+build finshed. success: true
+Collected the following rlibs to check: [
+    "/tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/compiler_builtins/9cad8e8417a285ee/out/libcompiler_builtins-9cad8e8417a285ee.rlib",
+]
+Checking /tmp/libm-validation-link-target/wasm32-unknown-unknown/debug/build/compiler_builtins/9cad8e8417a285ee/out/libcompiler_builtins-9cad8e8417a285ee.rlib
+    success: no duplicate symbols found
+    success: no undefined references to core found
+    success: object files match target
+    success: no writeable+executable stack indicators found
+    success: no visible symbols found

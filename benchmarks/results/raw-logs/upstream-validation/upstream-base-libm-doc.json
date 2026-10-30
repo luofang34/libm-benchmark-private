@@ -1,0 +1,18 @@
+{
+  "command": [
+    "cargo",
+    "doc",
+    "-p",
+    "libm",
+    "--no-default-features",
+    "--no-deps"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "RUSTDOCFLAGS": "-D missing_docs -D broken_intra_doc_links",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+    "VALIDATION_CWD": "/tmp/libm-upstream-validation-base"
+  },
+  "exit_code": 101,
+  "elapsed_seconds": 0.47915077209472656
+}

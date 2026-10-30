@@ -1,0 +1,21 @@
+{
+  "command": [
+    "cargo",
+    "run",
+    "--target",
+    "aarch64-apple-darwin",
+    "--verbose",
+    "--manifest-path",
+    "builtins-test-intrinsics/Cargo.toml",
+    "--release"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+    "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target",
+    "CARGO_PROFILE_RELEASE_LTO": "true"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.10163712501525879
+}

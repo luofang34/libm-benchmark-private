@@ -1,0 +1,27 @@
+{
+  "command": [
+    "cargo",
+    "run",
+    "-p",
+    "symcheck",
+    "--release",
+    "--",
+    "--build-and-check",
+    "--target",
+    "aarch64-unknown-linux-gnu",
+    "--",
+    "--package",
+    "compiler_builtins",
+    "--features",
+    "compiler-builtins",
+    "--release"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+    "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 1.9367802143096924
+}

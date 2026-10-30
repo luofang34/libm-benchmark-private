@@ -1,0 +1,3 @@
+$ ['cargo', 'clippy', '-p', 'libm', '--all-targets', '--', '-D', 'warnings']
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 3.29s

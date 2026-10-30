@@ -1,0 +1,1836 @@
+{
+  "symbol-x86_64-unknown-linux-gnu-generic-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "x86_64-unknown-linux-gnu",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 1.915315866470337
+  },
+  "libm-default-clippy": {
+    "command": [
+      "cargo",
+      "clippy",
+      "-p",
+      "libm",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-lints"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 3.420067071914673
+  },
+  "symbol-wasm32-unknown-unknown-default": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.4167697429656982
+  },
+  "libm-doc": {
+    "command": [
+      "cargo",
+      "doc",
+      "-p",
+      "libm",
+      "--no-default-features",
+      "--no-deps"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUSTDOCFLAGS": "-D missing_docs -D broken_intra_doc_links",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-libm-doc"
+    },
+    "exit_code": 101,
+    "elapsed_seconds": 1.3472990989685059
+  },
+  "pow-link-symbols-visibility-attempt": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "benchmarks/results/raw-logs/upstream-validation/pow-link.wasm"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": -6,
+    "elapsed_seconds": 0.5008358955383301
+  },
+  "link-aarch64-apple-darwin-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.181502342224121
+  },
+  "symbol-thumbv7em-none-eabihf-generic": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "thumbv7em-none-eabihf",
+      "--no-os",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 4.0843422412872314
+  },
+  "fixture-format": {
+    "command": [
+      "rustup",
+      "run",
+      "nightly",
+      "rustfmt",
+      "--check",
+      "benchmarks/results/raw-logs/upstream-validation/pow-link.rs"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.18262577056884766
+  },
+  "link-aarch64-apple-darwin-lto": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target",
+      "CARGO_PROFILE_DEV_LTO": "true"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.593870162963867
+  },
+  "symbol-aarch64-unknown-linux-gnu-generic-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-unknown-linux-gnu",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.0710949897766113
+  },
+  "link-wasm32-unknown-unknown-lto": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target",
+      "CARGO_PROFILE_DEV_LTO": "true"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.3599600791931152
+  },
+  "symbol-aarch64-unknown-linux-gnu-generic": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-unknown-linux-gnu",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.172379970550537
+  },
+  "pow-link-build-metadata-attempt": {
+    "command": [
+      "rustc",
+      "+nightly",
+      "benchmarks/results/raw-logs/upstream-validation/pow-link.rs",
+      "--crate-type",
+      "cdylib",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--edition",
+      "2024",
+      "-C",
+      "opt-level=3",
+      "-C",
+      "panic=abort",
+      "--extern",
+      "compiler_builtins=/tmp/libm-validation-symbol-target/wasm32-unknown-unknown/release/build/compiler_builtins/c8fd295b5471f17e/out/libcompiler_builtins-c8fd295b5471f17e.rlib",
+      "--extern",
+      "panic_handler=/tmp/libm-validation-link-target/wasm32-unknown-unknown/release/build/panic-handler/f5de80aadf246bdd/out/libpanic_handler-f5de80aadf246bdd.rlib",
+      "-o",
+      "benchmarks/results/raw-logs/upstream-validation/pow-link.wasm"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 1,
+    "elapsed_seconds": 0.11296916007995605
+  },
+  "workspace-basic-network-attempt": {
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--no-default-features"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 101,
+    "elapsed_seconds": 11.143042087554932
+  },
+  "symbol-x86_64-pc-windows-msvc-generic": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "x86_64-pc-windows-msvc",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.104526996612549
+  },
+  "msrv": {
+    "command": [
+      "cargo",
+      "+1.67.0",
+      "-Z",
+      "sparse-registry",
+      "build"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "VALIDATION_CWD": "/tmp/libm-msrv-official",
+      "CARGO_TARGET_DIR": "/tmp/libm-msrv-official/target",
+      "RUSTC_BOOTSTRAP": "1",
+      "CARGO_REGISTRIES_CRATES_IO_PROTOCOL": "sparse"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 3.169610023498535,
+    "scope": "Original libm manifest and source copied outside the workspace; no dependencies removed. Cargo -Z sparse-registry only enables registry transport; rustc remains 1.67.0."
+  },
+  "api": {
+    "command": [
+      "python3",
+      "etc/update-api-list.py",
+      "--check"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.43973612785339355
+  },
+  "symbol-x86_64-unknown-linux-gnu-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "x86_64-unknown-linux-gnu",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 1.9369399547576904
+  },
+  "clippy": {
+    "command": [
+      "cargo",
+      "clippy",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_TEST_SEED": "pow-feature-validation-20261029!!"
+    },
+    "exit_code": 101,
+    "elapsed_seconds": 5.1784820556640625
+  },
+  "link-wasm32-unknown-unknown-default": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.399932861328125
+  },
+  "link-wasm32-unknown-unknown-c-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--features",
+      "c",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.956205129623413
+  },
+  "link-aarch64-apple-darwin-default": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 10.582546710968018
+  },
+  "upstream-base-libm-clippy": {
+    "command": [
+      "cargo",
+      "clippy",
+      "-p",
+      "libm",
+      "--all-targets",
+      "--all-features",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "VALIDATION_CWD": "/tmp/libm-upstream-validation-base"
+    },
+    "exit_code": 101,
+    "elapsed_seconds": 9.046401977539062
+  },
+  "fmt": {
+    "command": [
+      "cargo",
+      "fmt",
+      "--check"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_TEST_SEED": "pow-feature-validation-20261029!!"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 1.025007963180542
+  },
+  "upstream-base-doc": {
+    "command": [
+      "cargo",
+      "doc"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUSTDOCFLAGS": "-D missing_docs -D broken_intra_doc_links",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "VALIDATION_CWD": "/tmp/libm-upstream-validation-base",
+      "CARGO_TARGET_DIR": "/tmp/libm-upstream-validation-base/target"
+    },
+    "exit_code": 101,
+    "elapsed_seconds": 2.354642868041992
+  },
+  "symbol-wasm32-unknown-unknown-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 1.9731898307800293
+  },
+  "msrv-version": {
+    "command": [
+      "rustup",
+      "run",
+      "1.67.0",
+      "rustc",
+      "-vV"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.13843894004821777
+  },
+  "link-aarch64-apple-darwin-c-release-execute": {
+    "command": [
+      "cargo",
+      "run",
+      "--target",
+      "aarch64-apple-darwin",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--features",
+      "c",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.10623478889465332
+  },
+  "link-wasm32-unknown-unknown-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 1.916802167892456
+  },
+  "symbol-x86_64-unknown-linux-gnu-default": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "x86_64-unknown-linux-gnu",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.3313028812408447
+  },
+  "official-ci-native-network-attempt": {
+    "command": [
+      "bash",
+      "ci/run.sh",
+      "aarch64-apple-darwin"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 102,
+    "elapsed_seconds": 16.62106704711914
+  },
+  "symbol-aarch64-apple-darwin-generic-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.165862798690796
+  },
+  "symbol-aarch64-apple-darwin-generic": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.7587714195251465
+  },
+  "test": {
+    "command": [
+      "cargo",
+      "test",
+      "--all-targets"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 16.10149908065796
+  },
+  "symbol-aarch64-apple-darwin-c": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--features",
+      "c"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 9.271574974060059
+  },
+  "link-aarch64-apple-darwin-lto-release-execute": {
+    "command": [
+      "cargo",
+      "run",
+      "--target",
+      "aarch64-apple-darwin",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target",
+      "CARGO_PROFILE_RELEASE_LTO": "true"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.10163712501525879
+  },
+  "symbol-wasm32-unknown-unknown-c-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--features",
+      "c",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 3.0300698280334473
+  },
+  "libm-clippy": {
+    "command": [
+      "cargo",
+      "clippy",
+      "-p",
+      "libm",
+      "--all-targets",
+      "--all-features",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-lints"
+    },
+    "exit_code": 101,
+    "elapsed_seconds": 8.120784997940063
+  },
+  "symbol-aarch64-apple-darwin-default": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 17.05125904083252
+  },
+  "pow-link-execute": {
+    "command": [
+      "node",
+      "benchmarks/results/raw-logs/upstream-validation/verify-pow-link.mjs",
+      "benchmarks/results/raw-logs/upstream-validation/pow-link.wasm",
+      "benchmarks/results/raw-logs/target-scope/std/large-accuracy/accuracy-bits.csv.gz"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.4481930732727051
+  },
+  "symbol-x86_64-unknown-linux-gnu-generic": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "x86_64-unknown-linux-gnu",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.1798012256622314
+  },
+  "pow-link-build": {
+    "command": [
+      "rustc",
+      "+nightly",
+      "benchmarks/results/raw-logs/upstream-validation/pow-link.rs",
+      "--crate-type",
+      "cdylib",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--edition",
+      "2024",
+      "-C",
+      "opt-level=3",
+      "-C",
+      "panic=abort",
+      "--extern",
+      "compiler_builtins=/tmp/libm-validation-symbol-target/wasm32-unknown-unknown/release/build/compiler_builtins/c8fd295b5471f17e/out/libcompiler_builtins-c8fd295b5471f17e.rlib",
+      "--extern",
+      "panic_handler=/tmp/libm-validation-link-target/wasm32-unknown-unknown/release/build/panic-handler/f5de80aadf246bdd/out/libpanic_handler-f5de80aadf246bdd.rlib",
+      "-o",
+      "benchmarks/results/raw-logs/upstream-validation/pow-link.wasm",
+      "--extern",
+      "compiler_builtins=/tmp/libm-validation-symbol-target/wasm32-unknown-unknown/release/build/compiler_builtins/c8fd295b5471f17e/out/libcompiler_builtins-c8fd295b5471f17e.rmeta",
+      "--extern",
+      "panic_handler=/tmp/libm-validation-link-target/wasm32-unknown-unknown/release/build/panic-handler/f5de80aadf246bdd/out/libpanic_handler-f5de80aadf246bdd.rmeta"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.5646259784698486
+  },
+  "release": {
+    "command": [
+      "cargo",
+      "build",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 7.106048107147217
+  },
+  "workspace-features": {
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--no-default-features",
+      "--features",
+      "arch,unstable-float,unstable-intrinsics,mem"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 14.04961109161377
+  },
+  "link-aarch64-apple-darwin-lto-execute": {
+    "command": [
+      "cargo",
+      "run",
+      "--target",
+      "aarch64-apple-darwin",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target",
+      "CARGO_PROFILE_DEV_LTO": "true"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.09980583190917969
+  },
+  "symbol-thumbv7em-none-eabihf-generic-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "thumbv7em-none-eabihf",
+      "--no-os",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.663999080657959
+  },
+  "symbol-aarch64-apple-darwin-c-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--features",
+      "c",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 5.164120197296143
+  },
+  "link-aarch64-apple-darwin-lto-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target",
+      "CARGO_PROFILE_RELEASE_LTO": "true"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 15.370940208435059
+  },
+  "symbol-x86_64-pc-windows-msvc-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "x86_64-pc-windows-msvc",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 1.8870649337768555
+  },
+  "symbol-aarch64-unknown-linux-gnu-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-unknown-linux-gnu",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 1.9367802143096924
+  },
+  "msrv-official-sandbox-attempt": {
+    "command": [
+      "cargo",
+      "+1.67.0",
+      "build"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "VALIDATION_CWD": "/tmp/libm-msrv-official",
+      "CARGO_TARGET_DIR": "/tmp/libm-msrv-official/target"
+    },
+    "exit_code": 101,
+    "elapsed_seconds": 0.41022801399230957
+  },
+  "doc": {
+    "command": [
+      "cargo",
+      "doc"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUSTDOCFLAGS": "-D missing_docs -D broken_intra_doc_links",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 101,
+    "elapsed_seconds": 2.344749927520752
+  },
+  "link-aarch64-apple-darwin-c-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--features",
+      "c",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 4.279772996902466
+  },
+  "link-aarch64-apple-darwin-c": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--features",
+      "c"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 4.495517015457153
+  },
+  "symbol-thumbv7em-none-eabihf-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "thumbv7em-none-eabihf",
+      "--no-os",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.267040967941284
+  },
+  "upstream-base-clippy": {
+    "command": [
+      "cargo",
+      "clippy",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "VALIDATION_CWD": "/tmp/libm-upstream-validation-base",
+      "CARGO_TARGET_DIR": "/tmp/libm-upstream-validation-base/target"
+    },
+    "exit_code": 101,
+    "elapsed_seconds": 5.1720311641693115
+  },
+  "link-aarch64-apple-darwin-c-execute": {
+    "command": [
+      "cargo",
+      "run",
+      "--target",
+      "aarch64-apple-darwin",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--features",
+      "c"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.09555506706237793
+  },
+  "symbol-wasm32-unknown-unknown-c": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--features",
+      "c"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 4.161659002304077
+  },
+  "upstream-base-libm-doc": {
+    "command": [
+      "cargo",
+      "doc",
+      "-p",
+      "libm",
+      "--no-default-features",
+      "--no-deps"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUSTDOCFLAGS": "-D missing_docs -D broken_intra_doc_links",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "VALIDATION_CWD": "/tmp/libm-upstream-validation-base"
+    },
+    "exit_code": 101,
+    "elapsed_seconds": 0.47915077209472656
+  },
+  "miri-pow": {
+    "command": [
+      "cargo",
+      "miri",
+      "test",
+      "-p",
+      "libm",
+      "--no-default-features",
+      "--",
+      "pow::tests"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-miri-target",
+      "MIRIFLAGS": "-Zmiri-deterministic-floats -Zmiri-tree-borrows"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 20.45551300048828
+  },
+  "workspace-basic": {
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--no-default-features"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 19.687856197357178
+  },
+  "official-ci-native": {
+    "command": [
+      "bash",
+      "ci/run.sh",
+      "aarch64-apple-darwin"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 546.6270470619202
+  },
+  "msrv-official-sparse-attempt": {
+    "command": [
+      "cargo",
+      "+1.67.0",
+      "build"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "VALIDATION_CWD": "/tmp/libm-msrv-official",
+      "CARGO_TARGET_DIR": "/tmp/libm-msrv-official/target"
+    },
+    "exit_code": 101,
+    "elapsed_seconds": 0.3514399528503418
+  },
+  "api-test": {
+    "command": [
+      "cargo",
+      "test",
+      "-p",
+      "update-api-list"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.8530852794647217
+  },
+  "symcheck-selftest": {
+    "command": [
+      "cargo",
+      "test",
+      "-p",
+      "symcheck",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target",
+      "SYMCHECK_TEST_TARGET": "aarch64-apple-darwin"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 23.70178198814392
+  },
+  "link-wasm32-unknown-unknown-c": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--features",
+      "c"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 3.361318826675415
+  },
+  "link-aarch64-apple-darwin-default-execute": {
+    "command": [
+      "cargo",
+      "run",
+      "--target",
+      "aarch64-apple-darwin",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.09443807601928711
+  },
+  "symbol-x86_64-pc-windows-msvc-default": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "x86_64-pc-windows-msvc",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.33833909034729
+  },
+  "miri-official": {
+    "command": [
+      "bash",
+      "ci/miri.sh"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-miri-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 151.52929615974426
+  },
+  "symbol-x86_64-pc-windows-msvc-generic-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "x86_64-pc-windows-msvc",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 1.892199993133545
+  },
+  "symbol-aarch64-apple-darwin-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-apple-darwin",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 4.013684988021851
+  },
+  "no-panic": {
+    "command": [
+      "cargo",
+      "build",
+      "-p",
+      "libm",
+      "--target",
+      "aarch64-apple-darwin",
+      "--no-default-features",
+      "--features",
+      "unstable-float",
+      "--tests",
+      "--profile",
+      "release-opt"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-no-panic",
+      "ENSURE_NO_PANIC": "1"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 26.258100032806396
+  },
+  "link-aarch64-apple-darwin-release-execute": {
+    "command": [
+      "cargo",
+      "run",
+      "--target",
+      "aarch64-apple-darwin",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.09494590759277344
+  },
+  "link-wasm32-unknown-unknown-lto-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--verbose",
+      "--manifest-path",
+      "builtins-test-intrinsics/Cargo.toml",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-link-target",
+      "CARGO_PROFILE_RELEASE_LTO": "true"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 1.9036030769348145
+  },
+  "symbol-wasm32-unknown-unknown-generic": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.180835008621216
+  },
+  "symbol-aarch64-unknown-linux-gnu-default": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "aarch64-unknown-linux-gnu",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.321159839630127
+  },
+  "patch-check": {
+    "command": [
+      "git",
+      "apply",
+      "--check",
+      "/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/libm-pow-arm.patch"
+    ],
+    "cwd": "/tmp/libm-upstream-validation-base",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "no-panic-wasm": {
+    "command": [
+      "cargo",
+      "build",
+      "-p",
+      "libm",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--no-default-features",
+      "--features",
+      "unstable-float",
+      "--tests",
+      "--profile",
+      "release-opt"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-no-panic",
+      "ENSURE_NO_PANIC": "1"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 5.882100820541382
+  },
+  "pow-link-symbols": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--no-visibility",
+      "benchmarks/results/raw-logs/upstream-validation/pow-link.wasm"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 0.34166502952575684
+  },
+  "symbol-thumbv7em-none-eabihf-default": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "thumbv7em-none-eabihf",
+      "--no-os",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 2.411526918411255
+  },
+  "workspace-mpfr-musl": {
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--no-default-features",
+      "--features",
+      "arch,unstable-float,unstable-intrinsics,mem",
+      "--features",
+      "build-mpfr,build-musl",
+      "--profile",
+      "release-checked"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 181.45467114448547
+  },
+  "symbol-wasm32-unknown-unknown-generic-release": {
+    "command": [
+      "cargo",
+      "run",
+      "-p",
+      "symcheck",
+      "--release",
+      "--",
+      "--build-and-check",
+      "--target",
+      "wasm32-unknown-unknown",
+      "--",
+      "--package",
+      "compiler_builtins",
+      "--features",
+      "compiler-builtins",
+      "--no-default-features",
+      "--release"
+    ],
+    "environment": {
+      "RUSTUP_TOOLCHAIN": "nightly",
+      "RUST_COMPILER_RT_ROOT": "/Users/fangluo/Documents/ChatGPT/libm/compiler-rt",
+      "LIBM_SEED": "0123456789abcdef0123456789abcdef",
+      "CARGO_TARGET_DIR": "/tmp/libm-validation-symbol-target"
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 1.9189658164978027
+  }
+}

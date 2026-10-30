@@ -1,0 +1,39 @@
+{
+  "libm/src/math/mod.rs": {
+    "lines": 403,
+    "sha256": "bf547bca1ab365c9a16f66f6ebfeae9881fcf13b582ac18d232d351dd0f0c05f",
+    "runtime_dependency_or_unsafe_added": false
+  },
+  "libm/src/math/pow.rs": {
+    "lines": 132,
+    "sha256": "31d2ee6b57d0d479b77c71f3cb2fb7f5270bcebe5b5d8d8b967d02f3a508da24",
+    "runtime_dependency_or_unsafe_added": false
+  },
+  "libm/src/math/pow_fdlibm.rs": {
+    "lines": 414,
+    "sha256": "1d0ac93f1d5cdb3291b88fca2000d6abc28a86f1f05d73cd93f667c6287fccf9",
+    "runtime_dependency_or_unsafe_added": false
+  },
+  "libm/src/math/pow/log.rs": {
+    "lines": 37,
+    "sha256": "f818e2d22f656e8d64cb93a95e447c80d127487b480dcbd25bfd464c30e44ba7",
+    "runtime_dependency_or_unsafe_added": false
+  },
+  "libm/src/math/pow/exp.rs": {
+    "lines": 55,
+    "sha256": "16f51c05c94dce117d6790953196f52de383bbe7b2ddcb1ba68824376f8ef980",
+    "runtime_dependency_or_unsafe_added": false
+  },
+  "libm/src/math/pow/table.rs": {
+    "lines": 285,
+    "sha256": "d35b159af2b7179f534dd69b556b6a081597a26cbb5d0e5aea671470e0676fb3",
+    "runtime_dependency_or_unsafe_added": false
+  },
+  "libm/src/math/pow/tests.rs": {
+    "lines": 205,
+    "sha256": "5667c0e35671a8294b9cac273ba60cca77e474c5b7c8ca7cecfecd7584b600b1",
+    "runtime_dependency_or_unsafe_added": false
+  },
+  "patch_bytes": 66491,
+  "patch_sha256": "47a4a9732d78d2d744bf9d48d10c3159f001fe10d76cd572c5d89c41537fc5e6"
+}

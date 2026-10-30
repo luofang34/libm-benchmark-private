@@ -1,0 +1,160 @@
+$ ['cargo', 'doc', '-p', 'libm', '--no-default-features', '--no-deps']
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+ Documenting libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+warning: lint `broken_intra_doc_links` has been renamed to `rustdoc::broken_intra_doc_links`
+  |
+  = help: use the new name `rustdoc::broken_intra_doc_links`
+  = note: requested on the command line with `-D broken_intra_doc_links`
+  = note: `#[warn(renamed_and_removed_lints)]` on by default
+
+error: missing documentation for an associated function
+   --> libm/src/libm_helper.rs:41:9
+    |
+ 24 |   macro_rules! libm_helper {
+...
+ 41 |           pub fn $func($($arg: $arg_typ),*) -> ($($ret_typ),*) {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+ 48 | / libm_helper! {
+ 49 | |     f32,
+ 50 | |     funcs: {
+...   |
+113 | | }
+    | |_- in this macro invocation
+    |
+    = note: requested on the command line with `-D missing-docs`
+
+error: missing documentation for an associated function
+   --> libm/src/libm_helper.rs:41:9
+    |
+ 24 |   macro_rules! libm_helper {
+...
+ 41 |           pub fn $func($($arg: $arg_typ),*) -> ($($ret_typ),*) {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+ 48 | / libm_helper! {
+ 49 | |     f32,
+ 50 | |     funcs: {
+...   |
+113 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for an associated function
+   --> libm/src/libm_helper.rs:41:9
+    |
+ 24 |   macro_rules! libm_helper {
+...
+ 41 |           pub fn $func($($arg: $arg_typ),*) -> ($($ret_typ),*) {
+    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+...
+115 | / libm_helper! {
+116 | |     f64,
+117 | |     funcs: {
+...   |
+188 | | }
+    | |_- in this macro invocation
+
+error: missing documentation for a function
+  --> libm/src/math/relaxed/hypotf64.rs:19:1
+   |
+19 | pub fn hypotf64(mut x: f64, mut y: f64) -> f64 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/hypot.rs:24:1
+   |
+24 | pub fn hypot(x: f64, y: f64) -> f64 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/hypotf.rs:4:1
+  |
+4 | pub fn hypotf(mut x: f32, mut y: f32) -> f32 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/ldexp.rs:8:1
+  |
+8 | pub fn ldexpf(x: f32, n: i32) -> f32 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/ldexp.rs:13:1
+   |
+13 | pub fn ldexp(x: f64, n: i32) -> f64 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+   --> libm/src/math/lgamma_r.rs:171:1
+    |
+171 | pub fn lgamma_r(mut x: f64) -> (f64, i32) {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+   --> libm/src/math/lgammaf_r.rs:106:1
+    |
+106 | pub fn lgammaf_r(mut x: f32) -> (f32, i32) {
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/modf.rs:2:1
+  |
+2 | pub fn modf(x: f64) -> (f64, f64) {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/modff.rs:2:1
+  |
+2 | pub fn modff(x: f32) -> (f32, f32) {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/nextafter.rs:2:1
+  |
+2 | pub fn nextafter(x: f64, y: f64) -> f64 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/nextafterf.rs:2:1
+  |
+2 | pub fn nextafterf(x: f32, y: f32) -> f32 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/remainder.rs:2:1
+  |
+2 | pub fn remainder(x: f64, y: f64) -> f64 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/remainderf.rs:2:1
+  |
+2 | pub fn remainderf(x: f32, y: f32) -> f32 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/remquo.rs:2:1
+  |
+2 | pub fn remquo(mut x: f64, mut y: f64) -> (f64, i32) {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/remquof.rs:2:1
+  |
+2 | pub fn remquof(mut x: f32, mut y: f32) -> (f32, i32) {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+ --> libm/src/math/scalbn.rs:8:1
+  |
+8 | pub fn scalbnf(x: f32, n: i32) -> f32 {
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: missing documentation for a function
+  --> libm/src/math/scalbn.rs:13:1
+   |
+13 | pub fn scalbn(x: f64, n: i32) -> f64 {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `libm` (lib doc) generated 1 warning
+error: could not document `libm`

@@ -1,0 +1,54 @@
+$ ['cargo', '+1.67.0', '-Z', 'sparse-registry', 'build']
+warning: unused manifest key: lints
+    Updating crates.io index
+   Compiling libm v0.2.16 (/private/tmp/libm-msrv-official)
+warning: cargo:rustc-check-cfg requires -Zcheck-cfg=output flag
+warning: cargo:rustc-check-cfg requires -Zcheck-cfg=output flag
+warning: cargo:rustc-check-cfg requires -Zcheck-cfg=output flag
+warning: cargo:rustc-check-cfg requires -Zcheck-cfg=output flag
+warning: cargo:rustc-check-cfg requires -Zcheck-cfg=output flag
+warning: cargo:rustc-check-cfg requires -Zcheck-cfg=output flag
+warning: cargo:rustc-check-cfg requires -Zcheck-cfg=output flag
+warning: cargo:rustc-check-cfg requires -Zcheck-cfg=output flag
+warning: cargo:rustc-check-cfg requires -Zcheck-cfg=output flag
+warning: cargo:rustc-check-cfg requires -Zcheck-cfg=output flag
+warning: unknown lint: `rust_2024_compatibility`
+  --> src/lib.rs:14:9
+   |
+14 | #![deny(rust_2024_compatibility)]
+   |         ^^^^^^^^^^^^^^^^^^^^^^^ help: did you mean: `rust_2021_compatibility`
+   |
+   = note: `#[warn(unknown_lints)]` on by default
+
+warning: unknown lint: `edition_2024_expr_fragment_specifier`
+  --> src/lib.rs:15:10
+   |
+15 | #![allow(edition_2024_expr_fragment_specifier)]
+   |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unknown lint: `unnecessary_transmutes`
+   --> src/math/support/float_traits.rs:526:9
+    |
+526 | #[allow(unnecessary_transmutes)] // lint appears in newer versions of Rust
+    |         ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unknown lint: `unnecessary_transmutes`
+   --> src/math/support/float_traits.rs:534:9
+    |
+534 | #[allow(unnecessary_transmutes)] // lint appears in newer versions of Rust
+    |         ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unknown lint: `unnecessary_transmutes`
+   --> src/math/support/float_traits.rs:541:9
+    |
+541 | #[allow(unnecessary_transmutes)] // lint appears in newer versions of Rust
+    |         ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unknown lint: `unnecessary_transmutes`
+   --> src/math/support/float_traits.rs:549:9
+    |
+549 | #[allow(unnecessary_transmutes)] // lint appears in newer versions of Rust
+    |         ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `libm` (lib) generated 6 warnings
+    Finished dev [unoptimized + debuginfo] target(s) in 3.12s

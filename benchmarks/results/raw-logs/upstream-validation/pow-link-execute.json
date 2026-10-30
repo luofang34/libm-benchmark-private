@@ -1,0 +1,14 @@
+{
+  "command": [
+    "node",
+    "benchmarks/results/raw-logs/upstream-validation/verify-pow-link.mjs",
+    "benchmarks/results/raw-logs/upstream-validation/pow-link.wasm",
+    "benchmarks/results/raw-logs/target-scope/std/large-accuracy/accuracy-bits.csv.gz"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.4481930732727051
+}

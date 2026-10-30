@@ -1,0 +1,12 @@
+{
+  "command": [
+    "git",
+    "apply",
+    "--check",
+    "/Users/fangluo/Documents/ChatGPT/libm/experiments/pow/libm-pow-arm.patch"
+  ],
+  "cwd": "/tmp/libm-upstream-validation-base",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

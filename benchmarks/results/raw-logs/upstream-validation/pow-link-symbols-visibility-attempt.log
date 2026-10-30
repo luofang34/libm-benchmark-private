@@ -1,0 +1,43 @@
+$ ['cargo', 'run', '-p', 'symcheck', '--release', '--', '--check', '--target', 'wasm32-unknown-unknown', 'benchmarks/results/raw-logs/upstream-validation/pow-link.wasm']
+    Finished `release` profile [optimized] target(s) in 0.14s
+     Running `target/release/symcheck --check --target wasm32-unknown-unknown benchmarks/results/raw-logs/upstream-validation/pow-link.wasm`
+running: "rustc" "--target" "wasm32-unknown-unknown" "--print=cfg"
+Checking benchmarks/results/raw-logs/upstream-validation/pow-link.wasm
+    success: no duplicate symbols found
+    success: no undefined references to core found
+    success: object files match target
+    success: no writeable+executable stack indicators found
+
+thread 'main' (54519091) panicked at crates/symcheck/src/main.rs:606:9:
+found 2 visible symbols: [
+    SymInfo {
+        name: "memory",
+        kind: Data,
+        scope: Dynamic,
+        section: "<data>",
+        is_undefined: false,
+        is_global: true,
+        is_local: false,
+        is_weak: false,
+        is_common: false,
+        address: 0,
+        object: "benchmarks/results/raw-logs/upstream-validation/pow-link.wasm",
+    },
+    SymInfo {
+        name: "pow_bits",
+        kind: Text,
+        scope: Dynamic,
+        section: "<code>",
+        is_undefined: false,
+        is_global: true,
+        is_local: false,
+        is_weak: false,
+        is_common: false,
+        address: 2,
+        object: "benchmarks/results/raw-logs/upstream-validation/pow-link.wasm",
+    },
+]
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+   1: core::panicking::panic_fmt
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.

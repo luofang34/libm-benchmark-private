@@ -1,0 +1,72 @@
+{
+  "clippy": {
+    "base_errors": {
+      "doc list item without indentation": 4,
+      "unsafe function's docs are missing a `# Safety` section": 8,
+      "could not compile `compiler_builtins` (lib) due to 105 previous errors": 2
+    },
+    "patch_errors": {
+      "doc list item without indentation": 4,
+      "unsafe function's docs are missing a `# Safety` section": 8,
+      "could not compile `compiler_builtins` (lib) due to 105 previous errors": 2
+    },
+    "added": {},
+    "removed": {}
+  },
+  "doc": {
+    "base_errors": {
+      "missing documentation for a method": 1,
+      "missing documentation for a variant": 24,
+      "missing documentation for a struct field": 3,
+      "could not document `api-list-common`": 1
+    },
+    "patch_errors": {
+      "missing documentation for the crate": 1,
+      "missing documentation for a module": 30,
+      "missing documentation for a function": 72,
+      "missing documentation for a type alias": 2,
+      "missing documentation for a struct field": 15,
+      "missing documentation for an associated constant": 50,
+      "missing documentation for an associated function": 11,
+      "missing documentation for a method": 57,
+      "missing documentation for a struct": 2,
+      "missing documentation for a trait": 2,
+      "missing documentation for a macro": 7,
+      "missing documentation for a variant": 24,
+      "could not document `compiler_builtins`": 1,
+      "could not document `api-list-common`": 1,
+      "could not document `libm`": 1
+    },
+    "scope": "Workspace parallel failure may cancel other crates; compare libm separately.",
+    "comparable": false,
+    "reason": "Cargo cancelled pending rustdoc jobs after a dependency failed; only the isolated libm comparison supports a no-new-diagnostics claim."
+  },
+  "libm-doc": {
+    "base_errors": {
+      "missing documentation for an associated function": 3,
+      "missing documentation for a function": 17,
+      "could not document `libm`": 1
+    },
+    "patch_errors": {
+      "missing documentation for an associated function": 3,
+      "missing documentation for a function": 17,
+      "could not document `libm`": 1
+    },
+    "added": {},
+    "removed": {}
+  },
+  "libm-clippy": {
+    "base_errors": {
+      "current MSRV (Minimum Supported Rust Version) is `1.67.0` but this item is stable since `1.95.0`": 1,
+      "could not compile `libm` (lib) due to 1 previous error": 1,
+      "could not compile `libm` (lib test) due to 1 previous error": 1
+    },
+    "patch_errors": {
+      "current MSRV (Minimum Supported Rust Version) is `1.67.0` but this item is stable since `1.95.0`": 1,
+      "could not compile `libm` (lib) due to 1 previous error": 1,
+      "could not compile `libm` (lib test) due to 1 previous error": 1
+    },
+    "added": {},
+    "removed": {}
+  }
+}
