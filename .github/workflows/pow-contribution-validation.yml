@@ -1,6 +1,11 @@
 name: Pow contribution validation
 on:
   workflow_dispatch:
+    inputs:
+      run_icount:
+        description: Run the baseline and candidate instruction counts
+        type: boolean
+        default: true
 permissions:
   contents: read
 
@@ -21,6 +26,9 @@ defaults:
 jobs:
   test:
     timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: proposal
     strategy:
       fail-fast: false
       matrix:
@@ -59,6 +67,27 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with: { persist-credentials: false }
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          path: proposal
+          ref: 6bc104a50f83cb205790c61c5d33508046f5fad3
+      - name: Apply only the proposed math changes
+        shell: python
+        run: |
+          import hashlib, json, pathlib, shutil
+          root = pathlib.Path.cwd()
+          files = ["mod.rs", "pow.rs", "pow_fdlibm.rs", "pow/exp.rs",
+                   "pow/log.rs", "pow/table.rs", "pow/tests.rs"]
+          hashes = {}
+          for name in files:
+              source = root.parent / "libm/src/math" / name
+              target = root / "libm/src/math" / name
+              target.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copyfile(source, target)
+              hashes[name] = hashlib.sha256(target.read_bytes()).hexdigest()
+          (root / "validation").mkdir(exist_ok=True)
+          (root / "validation/source-sha256.json").write_text(json.dumps(hashes, indent=2))
       - name: Configure MinGW tools
         if: contains(matrix.target, 'windows-gnu')
         run: |
@@ -69,6 +98,8 @@ jobs:
       - uses: taiki-e/install-action@f7e5d7c961414b23f5b25b2da9294395d08513ad
         continue-on-error: true
         with: { tool: 'nextest@0.9.131', fallback: none }
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069
+        if: matrix.docker
       - name: Download references
         run: |
           ./ci/download-compiler-rt.sh
@@ -95,10 +126,11 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: contribution-${{ matrix.target }}-${{ github.sha }}
-          path: validation/
+          path: proposal/validation/
           retention-days: 30
 
   icount:
+    if: inputs.run_icount
     timeout-minutes: 60
     strategy:
       fail-fast: false
