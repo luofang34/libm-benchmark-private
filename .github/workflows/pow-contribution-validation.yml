@@ -1,0 +1,160 @@
+name: Pow contribution validation
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: never
+  CARGO_BUILD_WARNINGS: deny
+  LIBM_BUILD_VERBOSE: true
+  RUSTDOCFLAGS: -Dwarnings
+  RUSTFLAGS: -Dwarnings -Dlinker_messages
+  RUST_BACKTRACE: full
+  LIBM_SEED: '0123456789abcdef0123456789abcdef'
+  BENCHMARK_RUSTC: nightly-2026-10-28
+
+defaults:
+  run:
+    shell: bash --noprofile --norc -euo pipefail {0}
+
+jobs:
+  test:
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { target: aarch64-apple-darwin, os: macos-26 }
+          - { target: x86_64-apple-darwin, os: macos-26-intel }
+          - { target: aarch64-unknown-linux-gnu, os: ubuntu-24.04-arm }
+          - { target: aarch64-pc-windows-msvc, os: windows-11-arm }
+          - { target: i686-pc-windows-msvc, os: windows-2025 }
+          - { target: x86_64-pc-windows-msvc, os: windows-2025 }
+          - { target: i686-pc-windows-gnu, os: windows-2025, toolchain: nightly-2026-10-28-x86_64-pc-windows-gnu }
+          - { target: x86_64-pc-windows-gnu, os: windows-2025, toolchain: nightly-2026-10-28-x86_64-pc-windows-gnu }
+          - { target: x86_64-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
+          - { target: i586-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
+          - { target: i686-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
+          - { target: arm-unknown-linux-gnueabi, os: ubuntu-24.04, docker: true }
+          - { target: arm-unknown-linux-gnueabihf, os: ubuntu-24.04, docker: true }
+          - { target: armv7-unknown-linux-gnueabihf, os: ubuntu-24.04, docker: true }
+          - { target: thumbv7neon-unknown-linux-gnueabihf, os: ubuntu-24.04, docker: true }
+          - { target: loongarch64-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
+          - { target: powerpc-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
+          - { target: powerpc64-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
+          - { target: powerpc64le-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
+          - { target: riscv64gc-unknown-linux-gnu, os: ubuntu-24.04, docker: true }
+          - { target: thumbv6m-none-eabi, os: ubuntu-24.04, docker: true }
+          - { target: thumbv7em-none-eabi, os: ubuntu-24.04, docker: true }
+          - { target: thumbv7em-none-eabihf, os: ubuntu-24.04, docker: true }
+          - { target: thumbv7m-none-eabi, os: ubuntu-24.04, docker: true }
+          - { target: wasm32-unknown-unknown, os: ubuntu-24.04, docker: true }
+    runs-on: ${{ matrix.os }}
+    env:
+      JOB_TARGET: ${{ matrix.target }}
+      JOB_HOST_TOOLCHAIN: ${{ matrix.toolchain || 'nightly-2026-10-28' }}
+      RUN_IN_DOCKER: ${{ matrix.docker || false }}
+      MAY_SKIP_LIBM_CI: false
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with: { persist-credentials: false }
+      - name: Configure MinGW tools
+        if: contains(matrix.target, 'windows-gnu')
+        run: |
+          echo 'C:\msys64\ucrt64\bin' >> "$GITHUB_PATH"
+          echo 'C:\msys64\usr\bin' >> "$GITHUB_PATH"
+      - name: Set up target
+        run: ./ci/install-test-deps.sh "$JOB_TARGET" "$JOB_HOST_TOOLCHAIN"
+      - uses: taiki-e/install-action@f7e5d7c961414b23f5b25b2da9294395d08513ad
+        continue-on-error: true
+        with: { tool: 'nextest@0.9.131', fallback: none }
+      - name: Download references
+        run: |
+          ./ci/download-compiler-rt.sh
+          ./ci/update-musl.sh
+          echo "RUST_COMPILER_RT_ROOT=$(realpath ./compiler-rt)" >> "$GITHUB_ENV"
+      - name: Verify API
+        if: runner.os == 'Linux'
+        run: |
+          python3 etc/update-api-list.py --check
+          cargo test -p update-api-list
+      - name: Run upstream tests
+        run: |
+          mkdir -p validation
+          if [ "$RUN_IN_DOCKER" = true ]; then
+            ./ci/run-docker.sh "$JOB_TARGET" 2>&1 | tee validation/test.log
+          else
+            ./ci/run.sh "$JOB_TARGET" 2>&1 | tee validation/test.log
+          fi
+      - name: Clean build products
+        if: always()
+        run: cargo clean
+      - name: Preserve logs
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: contribution-${{ matrix.target }}-${{ github.sha }}
+          path: validation/
+          retention-days: 30
+
+  icount:
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { target: aarch64-unknown-linux-gnu, os: ubuntu-24.04-arm }
+          - { target: x86_64-unknown-linux-gnu, os: ubuntu-24.04 }
+          - { target: i686-unknown-linux-gnu, os: ubuntu-24.04 }
+    runs-on: ${{ matrix.os }}
+    env:
+      JOB_TARGET: ${{ matrix.target }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with: { persist-credentials: false, path: candidate }
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          path: upstream-base
+          ref: 6bc104a50f83cb205790c61c5d33508046f5fad3
+      - uses: taiki-e/install-action@f7e5d7c961414b23f5b25b2da9294395d08513ad
+        with: { tool: 'cargo-binstall@1.17.7' }
+      - name: Install benchmark dependencies
+        working-directory: candidate
+        run: ./ci/install-bench-deps.sh "$JOB_TARGET"
+      - name: Compare exact upstream base and candidate
+        run: |
+          mkdir -p evidence
+          rustc -vV > evidence/rustc.txt
+          valgrind --version > evidence/valgrind.txt
+          lscpu > evidence/cpu.txt
+          result=0
+          for revision in upstream-base candidate; do
+            for arch in disabled enabled; do
+              extra=()
+              if [ "$arch" = enabled ]; then extra=(--features arch); fi
+              (
+                cd "$revision"
+                cargo bench --target "$JOB_TARGET" --bench '*icount*' \
+                  --no-default-features --features 'unstable unstable-float icount' \
+                  --features compiler_builtins/unmangled-names "${extra[@]}" -- \
+                  --home "$GITHUB_WORKSPACE/evidence/gungraun-home" \
+                  --callgrind-limits=ir=5.0% --save-summary \
+                  --save-baseline="arch_$arch"
+              ) 2>&1 | tee "evidence/$revision-$arch.log" || result=1
+            done
+          done
+          test "$result" = 0
+      - name: Clean build products
+        if: always()
+        run: |
+          cargo clean --manifest-path candidate/Cargo.toml
+          cargo clean --manifest-path upstream-base/Cargo.toml
+      - name: Preserve measurements
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: icount-${{ matrix.target }}-${{ github.sha }}
+          path: evidence/
+          retention-days: 30

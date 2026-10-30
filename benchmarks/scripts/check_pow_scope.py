@@ -47,7 +47,10 @@ def check(directory):
         env = os.environ | {'CARGO_TARGET_DIR': str(directory / 'target'), 'RUSTFLAGS': ''}
         with (destination / 'build.log').open('w') as stream:
             subprocess.run(command, env=env, stdout=stream, stderr=subprocess.STDOUT, check=True)
-        artifact = next((directory / 'target' / target / 'release/deps').glob('libm-*.o'))
+        artifacts = list((directory / 'target' / target / 'release').rglob('libm-*.o'))
+        if len(artifacts) != 1:
+            raise ValueError(f'{target}: expected one libm object, found {len(artifacts)}')
+        artifact = artifacts[0]
         obj = artifact.read_bytes()
         counts = {name: obj.count(data) for name, data in expected_tables.items()}
         if any(count != int(selected) for count in counts.values()):
