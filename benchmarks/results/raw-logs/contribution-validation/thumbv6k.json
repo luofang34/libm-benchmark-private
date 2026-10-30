@@ -1,0 +1,23 @@
+{
+  "command": [
+    "cargo",
+    "build",
+    "-p",
+    "compiler_builtins",
+    "-p",
+    "libm",
+    "--target",
+    "etc/thumbv6-none-eabi.json",
+    "-Zbuild-std=core",
+    "-Zjson-target-spec"
+  ],
+  "environment": {
+    "CARGO_TARGET_DIR": "/tmp/libm-contribution-thumb",
+    "RUSTFLAGS": "-Dwarnings -Dlinker_messages",
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "CARGO_TERM_COLOR": "never",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 23.52947497367859
+}

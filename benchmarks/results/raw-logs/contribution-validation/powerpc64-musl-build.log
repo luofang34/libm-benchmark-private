@@ -1,0 +1,6 @@
+$ ['cargo', 'build', '-p', 'compiler_builtins', '-p', 'libm', '--target', 'powerpc64-unknown-linux-musl', '-Zbuild-std=core']
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib/rustlib/src/rust/library/compiler-builtins/compiler-builtins)
+   Compiling core v0.0.0 (/Users/fangluo/.rustup/toolchains/nightly-aarch64-apple-darwin/lib/rustlib/src/rust/library/core)
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 55.08s

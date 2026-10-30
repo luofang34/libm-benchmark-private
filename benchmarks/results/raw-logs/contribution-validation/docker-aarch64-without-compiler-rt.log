@@ -1,0 +1,2530 @@
+$ ['bash', 'ci/run-docker.sh', 'aarch64-unknown-linux-gnu']
+++ uname -m
+++ sed s/arm64/aarch64/
++ host_arch=aarch64
++ mkdir -p target
++ '[' aarch64-unknown-linux-gnu = --help ']'
++ '[' 1 -gt 1 ']'
++ '[' -z aarch64-unknown-linux-gnu ']'
++ run aarch64-unknown-linux-gnu
++ local target=aarch64-unknown-linux-gnu
++ echo 'testing target: aarch64-unknown-linux-gnu'
+testing target: aarch64-unknown-linux-gnu
++ emulated=
+++ echo aarch64-unknown-linux-gnu
+++ cut -d- -f1
++ target_arch=aarch64
++ '[' aarch64 '!=' aarch64 ']'
++ run_cmd=HOME=/tmp
++ '[' '' = true ']'
+++ uname -s
++ '[' Darwin = Linux ']'
++ docker volume create compiler-builtins-cache
+compiler-builtins-cache
++ build_args=("--build-arg" "IMAGE=${DOCKER_BASE_IMAGE:-rustlang/rust:nightly}")
++ run_args=(-v "compiler-builtins-cache:/builtins-target")
++ run_cmd='HOME=/tmp HOME=/tmp USING_CONTAINER_RUSTC=1'
++ '[' -d compiler-rt ']'
++ run_cmd='HOME=/tmp HOME=/tmp USING_CONTAINER_RUSTC=1 ci/run.sh aarch64-unknown-linux-gnu'
++ docker build -t builtins-aarch64-unknown-linux-gnu --build-arg IMAGE=rustlang/rust:nightly ci/docker/aarch64-unknown-linux-gnu
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 655B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/rustlang/rust:nightly
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM docker.io/rustlang/rust:nightly@sha256:a795d3e2a14ec010bbf66c8f8c212db96a686c41d4b86176ff449b3bc5049c21
+#4 resolve docker.io/rustlang/rust:nightly@sha256:a795d3e2a14ec010bbf66c8f8c212db96a686c41d4b86176ff449b3bc5049c21 done
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 0B / 190.94MB 0.2s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 0B / 227.13MB 0.2s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 0B / 67.63MB 0.2s
+#4 sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537 0B / 25.04MB 0.2s
+#4 sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537 3.15MB / 25.04MB 0.5s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 11.53MB / 227.13MB 0.6s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 5.24MB / 67.63MB 0.6s
+#4 sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537 6.29MB / 25.04MB 0.6s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 10.49MB / 67.63MB 0.9s
+#4 sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537 10.49MB / 25.04MB 0.9s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 23.07MB / 227.13MB 1.1s
+#4 sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537 12.58MB / 25.04MB 1.1s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 15.73MB / 67.63MB 1.2s
+#4 sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537 14.68MB / 25.04MB 1.2s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 34.60MB / 227.13MB 1.5s
+#4 sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537 16.78MB / 25.04MB 1.4s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 20.97MB / 67.63MB 1.5s
+#4 sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537 18.87MB / 25.04MB 1.5s
+#4 sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537 22.02MB / 25.04MB 1.7s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 26.21MB / 67.63MB 1.8s
+#4 sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537 25.04MB / 25.04MB 1.9s done
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 49.28MB / 227.13MB 2.0s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 1.05MB / 49.78MB 0.2s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 32.51MB / 67.63MB 2.1s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 4.19MB / 49.78MB 0.5s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 60.82MB / 227.13MB 2.4s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 37.75MB / 67.63MB 2.4s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 8.39MB / 49.78MB 0.8s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 41.94MB / 67.63MB 2.7s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 74.45MB / 227.13MB 2.9s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 12.58MB / 49.78MB 1.1s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 10.49MB / 190.94MB 3.0s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 48.23MB / 67.63MB 3.0s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 15.73MB / 49.78MB 1.4s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 85.98MB / 227.13MB 3.3s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 53.48MB / 67.63MB 3.3s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 18.87MB / 49.78MB 1.7s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 58.72MB / 67.63MB 3.6s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 97.52MB / 227.13MB 3.8s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 23.07MB / 49.78MB 2.0s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 65.01MB / 67.63MB 3.9s
+#4 sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 67.63MB / 67.63MB 4.1s done
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 26.21MB / 49.78MB 2.3s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 111.15MB / 227.13MB 4.4s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 31.46MB / 49.78MB 2.6s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 36.70MB / 49.78MB 2.9s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 125.83MB / 227.13MB 4.8s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 41.94MB / 49.78MB 3.2s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 20.97MB / 190.94MB 5.3s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 140.51MB / 227.13MB 5.3s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 48.23MB / 49.78MB 3.5s
+#4 sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 49.78MB / 49.78MB 3.5s done
+#4 extracting sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 157.29MB / 227.13MB 5.7s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 174.06MB / 227.13MB 6.2s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 188.74MB / 227.13MB 6.5s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 31.46MB / 190.94MB 6.6s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 204.47MB / 227.13MB 6.9s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 217.06MB / 227.13MB 7.4s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 41.94MB / 190.94MB 7.8s
+#4 sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 227.13MB / 227.13MB 8.0s done
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 53.05MB / 190.94MB 8.6s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 65.01MB / 190.94MB 8.9s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 75.50MB / 190.94MB 9.2s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 88.08MB / 190.94MB 9.5s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 99.61MB / 190.94MB 9.8s
+#4 extracting sha256:dfb68c024d5cdf4872bb7f0be8d63874aa6d0b7a0050f1b06169573e34ea543a 4.3s done
+#4 extracting sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 114.29MB / 190.94MB 10.1s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 131.07MB / 190.94MB 10.4s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 147.85MB / 190.94MB 10.7s
+#4 extracting sha256:ea47142302fe74338cf6ed49f9110b011080a21c8ad97badf03a6bb996588537 1.0s done
+#4 extracting sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 164.63MB / 190.94MB 11.0s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 181.40MB / 190.94MB 11.4s
+#4 sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 190.94MB / 190.94MB 11.8s done
+#4 extracting sha256:fe8bb6fc1504f78dd21539a6470860dc388c32916976117deb157b66d9d076c3 2.4s done
+#4 DONE 13.2s
+
+#4 [1/2] FROM docker.io/rustlang/rust:nightly@sha256:a795d3e2a14ec010bbf66c8f8c212db96a686c41d4b86176ff449b3bc5049c21
+#4 extracting sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309
+#4 extracting sha256:0a48e1a423f7b0196a5eeb30fa9312d4ddac8315491bfd1dec87951691b59309 7.4s done
+#4 DONE 20.6s
+
+#4 [1/2] FROM docker.io/rustlang/rust:nightly@sha256:a795d3e2a14ec010bbf66c8f8c212db96a686c41d4b86176ff449b3bc5049c21
+#4 extracting sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0
+#4 extracting sha256:0ab7ad4719e4ba9d76e11c79f21366633227a8771ca9f9f2ece60955fa5a47d0 6.1s done
+#4 DONE 26.7s
+
+#5 [2/2] RUN apt-get update && apt-get install -y --no-install-recommends     ca-certificates     gcc     gcc-aarch64-linux-gnu     libc6-dev     libc6-dev-arm64-cross     m4     make     qemu-user
+#5 0.413 Hit:1 http://deb.debian.org/debian trixie InRelease
+#5 0.423 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#5 0.458 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#5 0.483 Get:4 http://deb.debian.org/debian trixie/main arm64 Packages [9614 kB]
+#5 0.724 Get:5 http://deb.debian.org/debian trixie-updates/main arm64 Packages [720 B]
+#5 0.742 Get:6 http://deb.debian.org/debian-security trixie-security/main arm64 Packages [271 kB]
+#5 1.607 Fetched 9977 kB in 1s (7789 kB/s)
+#5 1.607 Reading package lists...
+#5 2.016 Reading package lists...
+#5 2.367 Building dependency tree...
+#5 2.466 Reading state information...
+#5 2.620 ca-certificates is already the newest version (20250419+deb13u1).
+#5 2.620 gcc is already the newest version (4:14.2.0-1).
+#5 2.620 gcc-aarch64-linux-gnu is already the newest version (4:14.2.0-1).
+#5 2.620 gcc-aarch64-linux-gnu set to manually installed.
+#5 2.620 libc6-dev is already the newest version (2.41-12+deb13u4).
+#5 2.620 m4 is already the newest version (1.4.19-8).
+#5 2.620 m4 set to manually installed.
+#5 2.620 make is already the newest version (4.4.1-2).
+#5 2.620 The following additional packages will be installed:
+#5 2.623   libc6-arm64-cross linux-libc-dev-arm64-cross
+#5 2.623 Recommended packages:
+#5 2.623   qemu-user-binfmt
+#5 2.655 The following NEW packages will be installed:
+#5 2.655   libc6-arm64-cross libc6-dev-arm64-cross linux-libc-dev-arm64-cross qemu-user
+#5 2.713 0 upgraded, 4 newly installed, 0 to remove and 13 not upgraded.
+#5 2.713 Need to get 69.4 MB of archives.
+#5 2.713 After this operation, 483 MB of additional disk space will be used.
+#5 2.713 Get:1 http://deb.debian.org/debian trixie/main arm64 libc6-arm64-cross all 2.41-11cross1 [1168 kB]
+#5 2.834 Get:2 http://deb.debian.org/debian trixie/main arm64 linux-libc-dev-arm64-cross all 6.12.38-1cross1 [2446 kB]
+#5 2.905 Get:3 http://deb.debian.org/debian trixie/main arm64 libc6-dev-arm64-cross all 2.41-11cross1 [1617 kB]
+#5 2.986 Get:4 http://deb.debian.org/debian trixie/main arm64 qemu-user arm64 1:10.0.13+ds-0+deb13u1 [64.2 MB]
+#5 4.766 debconf: unable to initialize frontend: Dialog
+#5 4.766 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 4.766 debconf: falling back to frontend: Readline
+#5 4.773 debconf: unable to initialize frontend: Readline
+#5 4.773 debconf: (This frontend requires a controlling tty.)
+#5 4.773 debconf: falling back to frontend: Teletype
+#5 4.777 debconf: unable to initialize frontend: Teletype
+#5 4.777 debconf: (This frontend requires a controlling tty.)
+#5 4.777 debconf: falling back to frontend: Noninteractive
+#5 5.314 Fetched 69.4 MB in 2s (36.5 MB/s)
+#5 5.338 Selecting previously unselected package libc6-arm64-cross.
+#5 5.338 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 26151 files and directories currently installed.)
+#5 5.347 Preparing to unpack .../libc6-arm64-cross_2.41-11cross1_all.deb ...
+#5 5.352 Unpacking libc6-arm64-cross (2.41-11cross1) ...
+#5 5.533 Selecting previously unselected package linux-libc-dev-arm64-cross.
+#5 5.536 Preparing to unpack .../linux-libc-dev-arm64-cross_6.12.38-1cross1_all.deb ...
+#5 5.543 Unpacking linux-libc-dev-arm64-cross (6.12.38-1cross1) ...
+#5 5.829 Selecting previously unselected package libc6-dev-arm64-cross.
+#5 5.830 Preparing to unpack .../libc6-dev-arm64-cross_2.41-11cross1_all.deb ...
+#5 5.848 Unpacking libc6-dev-arm64-cross (2.41-11cross1) ...
+#5 6.043 Selecting previously unselected package qemu-user.
+#5 6.049 Preparing to unpack .../qemu-user_1%3a10.0.13+ds-0+deb13u1_arm64.deb ...
+#5 6.064 Unpacking qemu-user (1:10.0.13+ds-0+deb13u1) ...
+#5 11.37 Setting up qemu-user (1:10.0.13+ds-0+deb13u1) ...
+#5 11.38 Setting up libc6-arm64-cross (2.41-11cross1) ...
+#5 11.38 Setting up linux-libc-dev-arm64-cross (6.12.38-1cross1) ...
+#5 11.39 Setting up libc6-dev-arm64-cross (2.41-11cross1) ...
+#5 DONE 12.2s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 13.8s done
+#6 exporting manifest sha256:e13eb65074bdb98b95a558d8dd11901c4b7fe0350dcb32ee2c6e49eec9897bce
+#6 exporting manifest sha256:e13eb65074bdb98b95a558d8dd11901c4b7fe0350dcb32ee2c6e49eec9897bce done
+#6 exporting config sha256:c34e75844492ab46a5bcf91b6d8e79e54aebf002f8d25466ba47707e1bbbb62c done
+#6 exporting attestation manifest sha256:4557a47ae41930767c0bd8aff02746da27b3f8f1d1d9ffd63b3049f8a8d0bc51 done
+#6 exporting manifest list sha256:97507a83b2634b64bb4b2896297345b3fd136c20fa647b13092e689faf626176 done
+#6 naming to docker.io/library/builtins-aarch64-unknown-linux-gnu:latest done
+#6 unpacking to docker.io/library/builtins-aarch64-unknown-linux-gnu:latest
+#6 unpacking to docker.io/library/builtins-aarch64-unknown-linux-gnu:latest 5.6s done
+#6 DONE 19.5s
+++ pwd
++ docker run --rm -e CI -e CARGO_TARGET_DIR=/builtins-target -e CARGO_TERM_COLOR -e CARGO_BUILD_WARNINGS -e LIBM_BUILD_VERBOSE -e MAY_SKIP_LIBM_CI -e RUSTFLAGS -e RUST_BACKTRACE -e RUST_COMPILER_RT_ROOT -e EMULATED= -v /Users/fangluo/Documents/ChatGPT/libm:/checkout:ro -w /checkout -v compiler-builtins-cache:/builtins-target --init builtins-aarch64-unknown-linux-gnu sh -c 'HOME=/tmp HOME=/tmp USING_CONTAINER_RUSTC=1 ci/run.sh aarch64-unknown-linux-gnu'
++ export RUST_BACKTRACE=full
++ RUST_BACKTRACE=full
++ export NEXTEST_STATUS_LEVEL=all
++ NEXTEST_STATUS_LEVEL=all
++ target=aarch64-unknown-linux-gnu
+++ rustc --print host-tuple
++ host_tuple=aarch64-unknown-linux-gnu
++ '[' -z aarch64-unknown-linux-gnu ']'
++ uname -a
+Linux 98de2d8b852a 6.10.14-linuxkit #1 SMP Fri Nov 29 17:22:03 UTC 2024 aarch64 GNU/Linux
++ lscpu
+Architecture:                         aarch64
+CPU op-mode(s):                       64-bit
+Byte Order:                           Little Endian
+CPU(s):                               16
+On-line CPU(s) list:                  0-15
+Vendor ID:                            Apple
+Model name:                           -
+Model:                                0
+Thread(s) per core:                   1
+Core(s) per cluster:                  16
+Socket(s):                            -
+Cluster(s):                           1
+Stepping:                             0x0
+BogoMIPS:                             48.00
+Flags:                                fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm jscvt fcma lrcpc dcpop sha3 asimddp sha512 asimdfhm dit uscat ilrcpc flagm sb paca pacg dcpodp flagm2 frint i8mm bf16 bti afp rpres
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          Not affected
+Vulnerability L1tf:                   Not affected
+Vulnerability Mds:                    Not affected
+Vulnerability Meltdown:               Not affected
+Vulnerability Mmio stale data:        Not affected
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Not affected
+Vulnerability Spec rstack overflow:   Not affected
+Vulnerability Spec store bypass:      Vulnerable
+Vulnerability Spectre v1:             Mitigation; __user pointer sanitization
+Vulnerability Spectre v2:             Not affected
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Not affected
++ rustc -Vv
+rustc 1.101.0-nightly (92ffebece 2026-10-28)
+binary: rustc
+commit-hash: 92ffebeceaa0a071066f233873c2438e73d70fe7
+commit-date: 2026-10-28
+host: aarch64-unknown-linux-gnu
+release: 1.101.0-nightly
+LLVM version: 23.1.4
++ cc -v
+Using built-in specs.
+COLLECT_GCC=cc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/aarch64-linux-gnu/14/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: aarch64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=aarch64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-libquadmath --disable-libquadmath-support --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --enable-fix-cortex-a53-843419 --disable-werror --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=aarch64-linux-gnu --host=aarch64-linux-gnu --target=aarch64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 14.2.0 (Debian 14.2.0-19) 
++ '[' 1 = 1 ']'
++ rustup target list --installed
++ grep -E '^aarch64-unknown-linux-gnu$'
+aarch64-unknown-linux-gnu
++ command -v cargo-nextest
++ nextest=0
++ '[' 0 = 1 ']'
++ test_runner=(cargo test --no-fail-fast)
++ profile_flag=--profile
++ '[' '' = 1 ']'
++ cargo run -p sysbench --target aarch64-unknown-linux-gnu --release
+    Updating crates.io index
+   Compiling sysbench v0.1.0 (/checkout/crates/sysbench)
+    Finished `release` profile [optimized] target(s) in 2.30s
+     Running `qemu-aarch64 /builtins-target/aarch64-unknown-linux-gnu/release/sysbench`
+Starting integer multiplication bench... 85899346 iterations completed in 1.051s (12.233 ns/iter)
+Starting float multiplication bench... 74051161 iterations completed in 750.080ms (10.129 ns/iter)
+Starting float fma bench... 58835169 iterations completed in 578.856ms (9.839 ns/iter)
+Starting oneshot bench... completed in 4.764s
+Available parallelism: 16
+Single-core performance score: 91
+Multi-core performance score: 1326
+::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu
++ test_builtins=("${test_runner[@]}" --package builtins-test --target "$target")
++ asgroup cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu
++ echo '::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu'
++ cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu
+ Downloading crates ...
+  Downloaded smallvec v1.16.2
+  Downloaded rand_core v0.10.1
+  Downloaded bitflags v2.13.2
+  Downloaded rand_xoshiro v0.8.1
+  Downloaded rustc_apfloat v0.2.3+llvm-462a31f5a5ab
+  Downloaded paste v1.0.15
+   Compiling compiler_builtins v0.1.160 (/checkout/builtins-shim)
+   Compiling rand_core v0.10.1
+   Compiling rustc_apfloat v0.2.3+llvm-462a31f5a5ab
+   Compiling paste v1.0.15
+   Compiling builtins-test v0.1.0 (/checkout/builtins-test)
+   Compiling bitflags v2.13.2
+   Compiling smallvec v1.16.2
+   Compiling rand_xoshiro v0.8.1
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.71s
+     Running unittests src/lib.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/3f8dff0189e48990/out/builtins_test-3f8dff0189e48990)
+
+running 1 test
+test mem::test_alignment ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/addsub.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/901a30721d229de9/out/addsub-901a30721d229de9)
+
+running 8 tests
+test float_addsub::__addsf3 ... ok
+test float_addsub::__addhf3 ... ok
+test float_addsub::__adddf3 ... ok
+test int_addsub::__rust_i128_addo ... ok
+test int_addsub::__rust_i128_add ... ok
+test int_addsub::__rust_u128_add ... ok
+test int_addsub::__rust_u128_addo ... ok
+test float_addsub::__addtf3 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
+
+     Running tests/cmp.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/9bd83e9c54ba1296/out/cmp-9bd83e9c54ba1296)
+
+running 4 tests
+test float_comparisons::cmp_f16 ... ok
+test float_comparisons::cmp_f32 ... ok
+test float_comparisons::cmp_f64 ... ok
+test float_comparisons::cmp_f128 ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.35s
+
+     Running tests/complex.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/008c7e391b866e82/out/complex-008c7e391b866e82)
+
+running 8 tests
+test complex::__muldc3 ... ok
+test complex::__divdc3 ... ok
+test complex::__mulsc3 ... ok
+test complex::__rust_multc3 ... ok
+test complex::__rust_mulhc3 ... ok
+test complex::__divsc3 ... ok
+test complex::__rust_divhc3 ... ok
+test complex::__rust_divtc3 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.30s
+
+     Running tests/conv.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/9c97e12fc4e1aa80/out/conv-9c97e12fc4e1aa80)
+
+running 35 tests
+test extend::__extenddftf2 ... ok
+test extend::__extendhfdf2 ... ok
+test i_to_f::__floatdidf ... ok
+test f_to_i::f32_to_int ... ok
+test i_to_f::__floatsidf ... ok
+test extend::__extendhfsf2 ... ok
+test i_to_f::__floatdisf ... ok
+test extend::check_gnu_h2f_ieee ... ok
+test i_to_f::__floatsisf ... ok
+test i_to_f::__floatditf ... ok
+test i_to_f::__floatsitf ... ok
+test extend::__extendsftf2 ... ok
+test extend::__extendsfdf2 ... ok
+test f_to_i::f64_to_int ... ok
+test extend::__extendhftf2 ... ok
+test i_to_f::__floatunsidf ... ok
+test i_to_f::__floatundidf ... ok
+test i_to_f::__floatunsisf ... ok
+test i_to_f::__floatundisf ... ok
+test f_to_i::f128_to_int ... ok
+test i_to_f::__floattitf ... ok
+test i_to_f::__floatunsitf ... ok
+test i_to_f::__floatunditf ... ok
+test i_to_f::__floattisf ... ok
+test i_to_f::__floattidf ... ok
+test trunc::__truncdfsf2 ... ok
+test i_to_f::__floatuntidf ... ok
+test i_to_f::__floatuntitf ... ok
+test trunc::__truncsfhf2 ... ok
+test i_to_f::__floatuntisf ... ok
+test trunc::__trunctfdf2 ... ok
+test trunc::__trunctfsf2 ... ok
+test trunc::__truncdfhf2 ... ok
+test trunc::check_gnu_f2h_ieee ... ok
+test trunc::__trunctfhf2 ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.60s
+
+     Running tests/div_rem.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/277932c6ed946b6e/out/div_rem-277932c6ed946b6e)
+
+running 7 tests
+test div_rem_si4 ... ok
+test div_rem_di4 ... ok
+test float_div::__divsf3 ... ok
+test float_div::__divdf3 ... ok
+test div_rem_ti4 ... ok
+test divide_sparc ... ok
+test float_div::__divtf3 ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.42s
+
+     Running tests/float_pow.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/9ace92f6763a35a8/out/float_pow-9ace92f6763a35a8)
+
+running 3 tests
+test __powisf2 ... ok
+test __powidf2 ... ok
+test __powitf2 ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+
+     Running tests/lse.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/a583d3bb0e64c395/out/lse-a583d3bb0e64c395)
+
+running 100 tests
+test __aarch64_cas16_acq ... ok
+test __aarch64_cas1_rel ... ok
+test __aarch64_cas1_acq ... ok
+test __aarch64_cas1_acq_rel ... ok
+test __aarch64_cas2_relax ... ok
+test __aarch64_cas2_acq_rel ... ok
+test __aarch64_cas2_acq ... ok
+test __aarch64_cas16_acq_rel ... ok
+test __aarch64_cas16_rel ... ok
+test __aarch64_cas16_relax ... ok
+test __aarch64_cas2_rel ... ok
+test __aarch64_cas4_rel ... ok
+test __aarch64_cas4_relax ... ok
+test __aarch64_cas4_acq ... ok
+test __aarch64_cas4_acq_rel ... ok
+test __aarch64_cas1_relax ... ok
+test __aarch64_ldadd1_relax ... ok
+test __aarch64_cas8_acq ... ok
+test __aarch64_cas8_acq_rel ... ok
+test __aarch64_cas8_rel ... ok
+test __aarch64_cas8_relax ... ok
+test __aarch64_ldadd1_acq ... ok
+test __aarch64_ldadd1_acq_rel ... ok
+test __aarch64_ldadd1_rel ... ok
+test __aarch64_ldadd2_acq ... ok
+test __aarch64_ldadd2_acq_rel ... ok
+test __aarch64_ldadd2_rel ... ok
+test __aarch64_ldadd2_relax ... ok
+test __aarch64_ldadd4_acq ... ok
+test __aarch64_ldadd4_acq_rel ... ok
+test __aarch64_ldadd4_rel ... ok
+test __aarch64_ldadd4_relax ... ok
+test __aarch64_ldadd8_acq ... ok
+test __aarch64_ldadd8_acq_rel ... ok
+test __aarch64_ldadd8_rel ... ok
+test __aarch64_ldadd8_relax ... ok
+test __aarch64_ldclr1_acq ... ok
+test __aarch64_ldclr1_acq_rel ... ok
+test __aarch64_ldclr1_rel ... ok
+test __aarch64_ldclr1_relax ... ok
+test __aarch64_ldclr2_acq ... ok
+test __aarch64_ldclr2_acq_rel ... ok
+test __aarch64_ldclr2_rel ... ok
+test __aarch64_ldclr2_relax ... ok
+test __aarch64_ldclr4_acq ... ok
+test __aarch64_ldclr4_acq_rel ... ok
+test __aarch64_ldclr4_rel ... ok
+test __aarch64_ldclr4_relax ... ok
+test __aarch64_ldclr8_acq ... ok
+test __aarch64_ldclr8_acq_rel ... ok
+test __aarch64_ldclr8_rel ... ok
+test __aarch64_ldclr8_relax ... ok
+test __aarch64_ldeor1_acq ... ok
+test __aarch64_ldeor1_acq_rel ... ok
+test __aarch64_ldeor1_rel ... ok
+test __aarch64_ldeor1_relax ... ok
+test __aarch64_ldeor2_acq ... ok
+test __aarch64_ldeor2_acq_rel ... ok
+test __aarch64_ldeor2_rel ... ok
+test __aarch64_ldeor2_relax ... ok
+test __aarch64_ldeor4_acq ... ok
+test __aarch64_ldeor4_acq_rel ... ok
+test __aarch64_ldeor4_rel ... ok
+test __aarch64_ldeor4_relax ... ok
+test __aarch64_ldeor8_acq ... ok
+test __aarch64_ldeor8_acq_rel ... ok
+test __aarch64_ldeor8_rel ... ok
+test __aarch64_ldeor8_relax ... ok
+test __aarch64_ldset1_acq ... ok
+test __aarch64_ldset1_acq_rel ... ok
+test __aarch64_ldset1_rel ... ok
+test __aarch64_ldset1_relax ... ok
+test __aarch64_ldset2_acq ... ok
+test __aarch64_ldset2_acq_rel ... ok
+test __aarch64_ldset2_rel ... ok
+test __aarch64_ldset2_relax ... ok
+test __aarch64_ldset4_acq ... ok
+test __aarch64_ldset4_acq_rel ... ok
+test __aarch64_ldset4_rel ... ok
+test __aarch64_ldset4_relax ... ok
+test __aarch64_ldset8_acq ... ok
+test __aarch64_ldset8_acq_rel ... ok
+test __aarch64_ldset8_rel ... ok
+test __aarch64_ldset8_relax ... ok
+test __aarch64_swp1_acq ... ok
+test __aarch64_swp1_acq_rel ... ok
+test __aarch64_swp1_rel ... ok
+test __aarch64_swp1_relax ... ok
+test __aarch64_swp2_acq ... ok
+test __aarch64_swp2_acq_rel ... ok
+test __aarch64_swp2_rel ... ok
+test __aarch64_swp2_relax ... ok
+test __aarch64_swp4_acq ... ok
+test __aarch64_swp4_rel ... ok
+test __aarch64_swp8_acq ... ok
+test __aarch64_swp8_rel ... ok
+test __aarch64_swp4_acq_rel ... ok
+test __aarch64_swp8_acq_rel ... ok
+test __aarch64_swp4_relax ... ok
+test __aarch64_swp8_relax ... ok
+
+test result: ok. 100 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 10.53s
+
+     Running tests/mem.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/99dfa2d4bf8f0bd8/out/mem-99dfa2d4bf8f0bd8)
+
+running 21 tests
+test memcmp_eq ... ok
+test memcpy_10 ... ok
+test memcpy_3 ... ok
+test memmove_backward_aligned ... ok
+test memmove_backward_misaligned_nonaligned_start ... ok
+test memcmp_ne ... ok
+test memmove_forward_aligned ... ok
+test memmove_forward ... ok
+test memset_backward_misaligned_aligned_start ... ok
+test memcpy_big ... ok
+test memmove_forward_misaligned_aligned_start ... ok
+test memmove_forward_misaligned_nonaligned_start ... ok
+test memset_backward_aligned ... ok
+test memmove_backward_misaligned_aligned_start ... ok
+test memmove_backward ... ok
+test memmove_misaligned_bounds ... ok
+test memset_zero ... ok
+test memset_nonzero ... ok
+test memset_backward_misaligned_nonaligned_start ... ok
+test test_strlen ... ok
+test wide_string_length ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests/misc.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/3e56b9d603c76a66/out/misc-3e56b9d603c76a66)
+
+running 4 tests
+test fuzz_values ... ok
+test bswap ... ok
+test trailing_zeros ... ok
+test leading_zeros ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
+
+     Running tests/mul.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/57b1873b7dac42cf/out/mul-57b1873b7dac42cf)
+
+running 10 tests
+test float_mul::__mulhf3 ... ok
+test float_mul::__muldf3 ... ok
+test float_mul::__mulsf3 ... ok
+test int_overflowing_mul::__mulosi4 ... ok
+test int_overflowing_mul::__mulodi4 ... ok
+test int_mul::__muldi3 ... ok
+test float_mul::__multf3 ... ok
+test int_overflowing_mul::__muloti4 ... ok
+test int_overflowing_mul::overflowing_mul_u128 ... ok
+test int_mul::__multi3 ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.37s
+
+     Running tests/shift.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/fefaf66a6f87bb05/out/shift-fefaf66a6f87bb05)
+
+running 9 tests
+test __ashlti3 ... ok
+test __ashlsi3 ... ok
+test __ashrdi3 ... ok
+test __ashldi3 ... ok
+test __ashrsi3 ... ok
+test __lshrdi3 ... ok
+test __lshrsi3 ... ok
+test __ashrti3 ... ok
+test __lshrti3 ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+   Doc-tests builtins_test
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ echo ::endgroup
++ asgroup cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --release
++ echo '::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --release'
++ cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --release
+::endgroup
+::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --release
+   Compiling compiler_builtins v0.1.160 (/checkout/builtins-shim)
+   Compiling rand_core v0.10.1
+   Compiling paste v1.0.15
+   Compiling builtins-test v0.1.0 (/checkout/builtins-test)
+   Compiling rustc_apfloat v0.2.3+llvm-462a31f5a5ab
+   Compiling bitflags v2.13.2
+   Compiling smallvec v1.16.2
+   Compiling rand_xoshiro v0.8.1
+    Finished `release` profile [optimized] target(s) in 6.48s
+     Running unittests src/lib.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/2e797f6931e50a57/out/builtins_test-2e797f6931e50a57)
+
+running 1 test
+test mem::test_alignment ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/addsub.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/cc8df007cfecd1f1/out/addsub-cc8df007cfecd1f1)
+
+running 8 tests
+test float_addsub::__addsf3 ... ok
+test float_addsub::__addhf3 ... ok
+test float_addsub::__adddf3 ... ok
+test float_addsub::__addtf3 ... ok
+test int_addsub::__rust_i128_add ... ok
+test int_addsub::__rust_i128_addo ... ok
+test int_addsub::__rust_u128_add ... ok
+test int_addsub::__rust_u128_addo ... ok
+     Running tests/cmp.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/834d211606fd184d/out/cmp-834d211606fd184d)
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+
+running 4 tests
+test float_comparisons::cmp_f16 ... ok
+test float_comparisons::cmp_f64 ... ok
+test float_comparisons::cmp_f32 ... ok
+test float_comparisons::cmp_f128 ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/complex.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/3535c5affe6d43fd/out/complex-3535c5affe6d43fd)
+
+running 8 tests
+test complex::__divsc3 ... ok
+test complex::__divdc3 ... ok
+test complex::__rust_multc3 ... ok
+test complex::__muldc3 ... ok
+test complex::__mulsc3 ... ok
+test complex::__rust_divhc3 ... ok
+test complex::__rust_mulhc3 ... ok
+test complex::__rust_divtc3 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+
+     Running tests/conv.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/66c2bfc19383043f/out/conv-66c2bfc19383043f)
+
+running 35 tests
+test extend::__extenddftf2 ... ok
+test extend::__extendsftf2 ... ok
+test i_to_f::__floatdisf ... ok
+test extend::__extendhfdf2 ... ok
+test i_to_f::__floatdidf ... ok
+test f_to_i::f32_to_int ... ok
+test f_to_i::f128_to_int ... ok
+test extend::check_gnu_h2f_ieee ... ok
+test extend::__extendhfsf2 ... ok
+test i_to_f::__floattitf ... ok
+test i_to_f::__floattidf ... ok
+test i_to_f::__floatsidf ... ok
+test extend::__extendhftf2 ... ok
+test i_to_f::__floatsitf ... ok
+test extend::__extendsfdf2 ... ok
+test i_to_f::__floatditf ... ok
+test i_to_f::__floatsisf ... ok
+test i_to_f::__floattisf ... ok
+test f_to_i::f64_to_int ... ok
+test i_to_f::__floatundidf ... ok
+test i_to_f::__floatunsidf ... ok
+test i_to_f::__floatunditf ... ok
+test i_to_f::__floatunsisf ... ok
+test i_to_f::__floatuntitf ... ok
+test i_to_f::__floatundisf ... ok
+test i_to_f::__floatunsitf ... ok
+test i_to_f::__floatuntisf ... ok
+test trunc::__truncdfhf2 ... ok
+test trunc::__trunctfdf2 ... ok
+test trunc::check_gnu_f2h_ieee ... ok
+test trunc::__truncsfhf2 ... ok
+test i_to_f::__floatuntidf ... ok
+test trunc::__trunctfhf2 ... ok
+test trunc::__truncdfsf2 ... ok
+test trunc::__trunctfsf2 ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+
+     Running tests/div_rem.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/60167673d4159af7/out/div_rem-60167673d4159af7)
+
+running 7 tests
+test div_rem_si4 ... ok
+test div_rem_di4 ... ok
+test float_div::__divdf3 ... ok
+test div_rem_ti4 ... ok
+test divide_sparc ... ok
+test float_div::__divsf3 ... ok
+test float_div::__divtf3 ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/float_pow.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/a6b57fde3b68d7e4/out/float_pow-a6b57fde3b68d7e4)
+
+running 3 tests
+test __powisf2 ... ok
+test __powidf2 ... ok
+test __powitf2 ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/lse.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/0310930bfac88f80/out/lse-0310930bfac88f80)
+
+running 100 tests
+test __aarch64_cas16_acq ... ok
+test __aarch64_cas16_acq_rel ... ok
+test __aarch64_cas16_relax ... ok
+test __aarch64_cas1_acq ... ok
+test __aarch64_cas1_acq_rel ... ok
+test __aarch64_cas1_rel ... ok
+test __aarch64_cas16_rel ... ok
+test __aarch64_cas4_acq_rel ... ok
+test __aarch64_cas2_acq ... ok
+test __aarch64_cas4_acq ... ok
+test __aarch64_cas1_relax ... ok
+test __aarch64_ldadd1_acq ... ok
+test __aarch64_cas4_relax ... ok
+test __aarch64_cas8_acq_rel ... ok
+test __aarch64_cas8_acq ... ok
+test __aarch64_ldadd1_acq_rel ... ok
+test __aarch64_cas2_relax ... ok
+test __aarch64_cas4_rel ... ok
+test __aarch64_ldadd2_acq_rel ... ok
+test __aarch64_ldadd1_relax ... ok
+test __aarch64_cas2_rel ... ok
+test __aarch64_ldadd8_relax ... ok
+test __aarch64_ldadd4_acq_rel ... ok
+test __aarch64_ldadd4_rel ... ok
+test __aarch64_ldadd4_relax ... ok
+test __aarch64_ldadd2_acq ... ok
+test __aarch64_ldadd8_acq_rel ... ok
+test __aarch64_ldadd8_rel ... ok
+test __aarch64_ldadd4_acq ... ok
+test __aarch64_cas8_relax ... ok
+test __aarch64_ldclr1_acq ... ok
+test __aarch64_cas2_acq_rel ... ok
+test __aarch64_ldclr4_rel ... ok
+test __aarch64_ldclr2_acq ... ok
+test __aarch64_ldclr2_acq_rel ... ok
+test __aarch64_ldadd2_rel ... ok
+test __aarch64_ldclr2_rel ... ok
+test __aarch64_ldclr2_relax ... ok
+test __aarch64_cas8_rel ... ok
+test __aarch64_ldclr1_acq_rel ... ok
+test __aarch64_ldclr1_relax ... ok
+test __aarch64_ldadd1_rel ... ok
+test __aarch64_ldadd8_acq ... ok
+test __aarch64_ldclr8_rel ... ok
+test __aarch64_ldadd2_relax ... ok
+test __aarch64_ldeor1_acq ... ok
+test __aarch64_ldeor1_acq_rel ... ok
+test __aarch64_ldeor1_rel ... ok
+test __aarch64_ldeor4_rel ... ok
+test __aarch64_ldeor1_relax ... ok
+test __aarch64_ldclr8_acq ... ok
+test __aarch64_ldeor2_acq_rel ... ok
+test __aarch64_ldclr8_acq_rel ... ok
+test __aarch64_ldeor2_rel ... ok
+test __aarch64_ldclr8_relax ... ok
+test __aarch64_ldeor4_acq ... ok
+test __aarch64_ldclr4_acq ... ok
+test __aarch64_ldeor4_acq_rel ... ok
+test __aarch64_ldset2_acq ... ok
+test __aarch64_ldeor4_relax ... ok
+test __aarch64_ldeor8_acq ... ok
+test __aarch64_ldeor2_relax ... ok
+test __aarch64_ldeor8_rel ... ok
+test __aarch64_ldclr4_acq_rel ... ok
+test __aarch64_ldset1_rel ... ok
+test __aarch64_ldset1_relax ... ok
+test __aarch64_ldclr1_rel ... ok
+test __aarch64_ldset2_acq_rel ... ok
+test __aarch64_ldset2_rel ... ok
+test __aarch64_ldset2_relax ... ok
+test __aarch64_ldset4_acq ... ok
+test __aarch64_ldset1_acq ... ok
+test __aarch64_ldset4_relax ... ok
+test __aarch64_ldeor8_relax ... ok
+test __aarch64_ldset8_acq_rel ... ok
+test __aarch64_ldclr4_relax ... ok
+test __aarch64_ldset8_relax ... ok
+test __aarch64_ldeor8_acq_rel ... ok
+test __aarch64_swp1_rel ... ok
+test __aarch64_ldset4_rel ... ok
+test __aarch64_ldset1_acq_rel ... ok
+test __aarch64_ldset8_acq ... ok
+test __aarch64_swp2_acq_rel ... ok
+test __aarch64_ldset8_rel ... ok
+test __aarch64_ldeor2_acq ... ok
+test __aarch64_swp1_acq ... ok
+test __aarch64_ldset4_acq_rel ... ok
+test __aarch64_swp4_acq_rel ... ok
+test __aarch64_swp1_relax ... ok
+test __aarch64_swp2_acq ... ok
+test __aarch64_swp8_acq_rel ... ok
+test __aarch64_swp8_rel ... ok
+test __aarch64_swp2_relax ... ok
+test __aarch64_swp4_acq ... ok
+test __aarch64_swp1_acq_rel ... ok
+test __aarch64_swp4_rel ... ok
+test __aarch64_swp8_acq ... ok
+test __aarch64_swp8_relax ... ok
+test __aarch64_swp2_rel ... ok
+test __aarch64_swp4_relax ... ok
+
+test result: ok. 100 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.95s
+
+     Running tests/mem.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/e82d8696702cb1ce/out/mem-e82d8696702cb1ce)
+
+running 21 tests
+test memcmp_eq ... ok
+test memcpy_3 ... ok
+test memcpy_10 ... ok
+test memcpy_big ... ok
+test memcmp_ne ... ok
+test memmove_backward ... ok
+test memmove_backward_aligned ... ok
+test memmove_backward_misaligned_aligned_start ... ok
+test memmove_backward_misaligned_nonaligned_start ... ok
+test memmove_forward ... ok
+test memmove_forward_aligned ... ok
+test memmove_forward_misaligned_aligned_start ... ok
+test memset_backward_aligned ... ok
+test memmove_forward_misaligned_nonaligned_start ... ok
+test memset_backward_misaligned_aligned_start ... ok
+test memmove_misaligned_bounds ... ok
+test memset_backward_misaligned_nonaligned_start ... ok
+test memset_nonzero ... ok
+test test_strlen ... ok
+test memset_zero ... ok
+test wide_string_length ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/misc.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/87f31eee048d441e/out/misc-87f31eee048d441e)
+
+running 4 tests
+test bswap ... ok
+test fuzz_values ... ok
+test leading_zeros ... ok
+test trailing_zeros ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/mul.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/459fcf59e3296487/out/mul-459fcf59e3296487)
+
+running 10 tests
+test float_mul::__mulhf3 ... ok
+test float_mul::__muldf3 ... ok
+test float_mul::__mulsf3 ... ok
+test int_mul::__muldi3 ... ok
+test float_mul::__multf3 ... ok
+test int_overflowing_mul::__mulodi4 ... ok
+test int_mul::__multi3 ... ok
+test int_overflowing_mul::__mulosi4 ... ok
+test int_overflowing_mul::overflowing_mul_u128 ... ok
+test int_overflowing_mul::__muloti4 ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/shift.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/a45815f16c7df22d/out/shift-a45815f16c7df22d)
+
+running 9 tests
+test __ashldi3 ... ok
+test __ashlsi3 ... ok
+test __ashlti3 ... ok
+test __ashrdi3 ... ok
+test __ashrsi3 ... ok
+test __ashrti3 ... ok
+test __lshrdi3 ... ok
+test __lshrsi3 ... ok
+test __lshrti3 ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+   Doc-tests builtins_test
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ echo ::endgroup
++ asgroup cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --features c
++ echo '::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --features c'
++ cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --features c
+::endgroup
+::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --features c
+ Downloading crates ...
+  Downloaded find-msvc-tools v0.1.14
+  Downloaded shlex v2.0.1
+  Downloaded cc v1.6.0
+   Compiling shlex v2.0.1
+   Compiling find-msvc-tools v0.1.14
+   Compiling builtins-test v0.1.0 (/checkout/builtins-test)
+   Compiling cc v1.6.0
+   Compiling compiler_builtins v0.1.160 (/checkout/builtins-shim)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.75s
+     Running unittests src/lib.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/1cd4253af5d7281b/out/builtins_test-1cd4253af5d7281b)
+
+running 1 test
+test mem::test_alignment ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/addsub.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/eb5e7a57668fbf8d/out/addsub-eb5e7a57668fbf8d)
+
+running 8 tests
+test float_addsub::__addhf3 ... ok
+test float_addsub::__adddf3 ... ok
+test float_addsub::__addsf3 ... ok
+test int_addsub::__rust_i128_add ... ok
+test int_addsub::__rust_u128_add ... ok
+test int_addsub::__rust_u128_addo ... ok
+test int_addsub::__rust_i128_addo ... ok
+test float_addsub::__addtf3 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.44s
+
+     Running tests/cmp.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/34faad7fe175dc2e/out/cmp-34faad7fe175dc2e)
+
+running 4 tests
+test float_comparisons::cmp_f16 ... ok
+test float_comparisons::cmp_f32 ... ok
+test float_comparisons::cmp_f64 ... ok
+test float_comparisons::cmp_f128 ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.29s
+
+     Running tests/complex.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/eb69ab821f9e8627/out/complex-eb69ab821f9e8627)
+
+running 8 tests
+test complex::__mulsc3 ... ok
+test complex::__muldc3 ... ok
+test complex::__divdc3 ... ok
+test complex::__rust_mulhc3 ... ok
+test complex::__rust_multc3 ... ok
+test complex::__divsc3 ... ok
+test complex::__rust_divhc3 ... ok
+test complex::__rust_divtc3 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.23s
+
+     Running tests/conv.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/b4a3b98ec10b595f/out/conv-b4a3b98ec10b595f)
+
+running 35 tests
+test extend::__extendsfdf2 ... ok
+test extend::__extenddftf2 ... ok
+test extend::__extendsftf2 ... ok
+test i_to_f::__floatsidf ... ok
+test i_to_f::__floatsisf ... ok
+test extend::__extendhftf2 ... ok
+test extend::__extendhfdf2 ... ok
+test extend::__extendhfsf2 ... ok
+test i_to_f::__floatsitf ... ok
+test i_to_f::__floatdidf ... ok
+test extend::check_gnu_h2f_ieee ... ok
+test i_to_f::__floatditf ... ok
+test f_to_i::f32_to_int ... ok
+test i_to_f::__floatunsidf ... ok
+test i_to_f::__floatdisf ... ok
+test i_to_f::__floatunsisf ... ok
+test i_to_f::__floatundidf ... ok
+test i_to_f::__floatunditf ... ok
+test i_to_f::__floatundisf ... ok
+test f_to_i::f64_to_int ... ok
+test i_to_f::__floattidf ... ok
+test i_to_f::__floattitf ... ok
+test i_to_f::__floatuntisf ... ok
+test i_to_f::__floatuntidf ... ok
+test i_to_f::__floattisf ... ok
+test f_to_i::f128_to_int ... ok
+test trunc::__truncdfsf2 ... ok
+test i_to_f::__floatunsitf ... ok
+test trunc::__trunctfdf2 ... ok
+test i_to_f::__floatuntitf ... ok
+test trunc::__truncdfhf2 ... ok
+test trunc::check_gnu_f2h_ieee ... ok
+test trunc::__trunctfsf2 ... ok
+test trunc::__truncsfhf2 ... ok
+test trunc::__trunctfhf2 ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.59s
+
+     Running tests/div_rem.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/a03e9be7a6476381/out/div_rem-a03e9be7a6476381)
+
+running 7 tests
+test div_rem_di4 ... ok
+test div_rem_si4 ... ok
+test float_div::__divsf3 ... ok
+test float_div::__divdf3 ... ok
+test div_rem_ti4 ... ok
+test divide_sparc ... ok
+test float_div::__divtf3 ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.39s
+
+     Running tests/float_pow.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/8a5bc6c6e6858be0/out/float_pow-8a5bc6c6e6858be0)
+
+running 3 tests
+test __powisf2 ... ok
+test __powidf2 ... ok
+test __powitf2 ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.32s
+
+     Running tests/lse.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/2b892a8779d68269/out/lse-2b892a8779d68269)
+
+running 100 tests
+test __aarch64_cas16_acq_rel ... ok
+test __aarch64_cas16_acq ... ok
+test __aarch64_cas16_relax ... ok
+test __aarch64_cas1_rel ... ok
+test __aarch64_cas2_rel ... ok
+test __aarch64_cas2_relax ... ok
+test __aarch64_cas4_rel ... ok
+test __aarch64_cas4_relax ... ok
+test __aarch64_cas8_acq ... ok
+test __aarch64_cas8_acq_rel ... ok
+test __aarch64_cas8_rel ... ok
+test __aarch64_cas8_relax ... ok
+test __aarch64_ldadd1_acq ... ok
+test __aarch64_cas2_acq ... ok
+test __aarch64_cas4_acq ... ok
+test __aarch64_cas16_rel ... ok
+test __aarch64_cas1_acq ... ok
+test __aarch64_cas1_acq_rel ... ok
+test __aarch64_cas1_relax ... ok
+test __aarch64_cas2_acq_rel ... ok
+test __aarch64_cas4_acq_rel ... ok
+test __aarch64_ldadd4_acq ... ok
+test __aarch64_ldadd4_acq_rel ... ok
+test __aarch64_ldadd4_rel ... ok
+test __aarch64_ldadd4_relax ... ok
+test __aarch64_ldadd8_acq ... ok
+test __aarch64_ldadd8_acq_rel ... ok
+test __aarch64_ldadd8_rel ... ok
+test __aarch64_ldadd8_relax ... ok
+test __aarch64_ldadd1_acq_rel ... ok
+test __aarch64_ldadd1_rel ... ok
+test __aarch64_ldadd1_relax ... ok
+test __aarch64_ldadd2_acq ... ok
+test __aarch64_ldadd2_acq_rel ... ok
+test __aarch64_ldadd2_rel ... ok
+test __aarch64_ldadd2_relax ... ok
+test __aarch64_ldclr1_acq ... ok
+test __aarch64_ldclr1_acq_rel ... ok
+test __aarch64_ldclr1_rel ... ok
+test __aarch64_ldclr1_relax ... ok
+test __aarch64_ldclr2_acq ... ok
+test __aarch64_ldclr2_acq_rel ... ok
+test __aarch64_ldclr2_rel ... ok
+test __aarch64_ldclr2_relax ... ok
+test __aarch64_ldclr4_acq ... ok
+test __aarch64_ldclr4_acq_rel ... ok
+test __aarch64_ldclr4_rel ... ok
+test __aarch64_ldclr4_relax ... ok
+test __aarch64_ldclr8_acq ... ok
+test __aarch64_ldclr8_acq_rel ... ok
+test __aarch64_ldclr8_rel ... ok
+test __aarch64_ldclr8_relax ... ok
+test __aarch64_ldeor1_acq ... ok
+test __aarch64_ldeor1_acq_rel ... ok
+test __aarch64_ldeor1_rel ... ok
+test __aarch64_ldeor1_relax ... ok
+test __aarch64_ldeor2_acq ... ok
+test __aarch64_ldeor2_acq_rel ... ok
+test __aarch64_ldeor2_rel ... ok
+test __aarch64_ldeor2_relax ... ok
+test __aarch64_ldeor4_acq ... ok
+test __aarch64_ldeor4_acq_rel ... ok
+test __aarch64_ldeor4_rel ... ok
+test __aarch64_ldeor4_relax ... ok
+test __aarch64_ldeor8_acq ... ok
+test __aarch64_ldeor8_acq_rel ... ok
+test __aarch64_ldeor8_rel ... ok
+test __aarch64_ldeor8_relax ... ok
+test __aarch64_ldset1_acq ... ok
+test __aarch64_ldset1_acq_rel ... ok
+test __aarch64_ldset1_rel ... ok
+test __aarch64_ldset1_relax ... ok
+test __aarch64_ldset2_acq ... ok
+test __aarch64_ldset2_acq_rel ... ok
+test __aarch64_ldset2_rel ... ok
+test __aarch64_ldset2_relax ... ok
+test __aarch64_ldset4_acq ... ok
+test __aarch64_ldset4_acq_rel ... ok
+test __aarch64_ldset4_rel ... ok
+test __aarch64_ldset4_relax ... ok
+test __aarch64_ldset8_acq ... ok
+test __aarch64_ldset8_acq_rel ... ok
+test __aarch64_ldset8_rel ... ok
+test __aarch64_ldset8_relax ... ok
+test __aarch64_swp1_acq ... ok
+test __aarch64_swp1_acq_rel ... ok
+test __aarch64_swp1_rel ... ok
+test __aarch64_swp1_relax ... ok
+test __aarch64_swp2_acq ... ok
+test __aarch64_swp2_acq_rel ... ok
+test __aarch64_swp2_rel ... ok
+test __aarch64_swp2_relax ... ok
+test __aarch64_swp4_acq ... ok
+test __aarch64_swp4_rel ... ok
+test __aarch64_swp8_acq ... ok
+test __aarch64_swp8_rel ... ok
+test __aarch64_swp4_acq_rel ... ok
+test __aarch64_swp8_acq_rel ... ok
+test __aarch64_swp4_relax ... ok
+test __aarch64_swp8_relax ... ok
+
+test result: ok. 100 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.51s
+
+     Running tests/mem.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/0fb79fdda3b0042e/out/mem-0fb79fdda3b0042e)
+
+running 21 tests
+test memcpy_10 ... ok
+test memcmp_eq ... ok
+test memcpy_3 ... ok
+test memcmp_ne ... ok
+test memmove_backward ... ok
+test memcpy_big ... ok
+test memmove_forward_aligned ... ok
+test memmove_forward_misaligned_aligned_start ... ok
+test memmove_misaligned_bounds ... ok
+test memset_backward_misaligned_aligned_start ... ok
+test memset_backward_aligned ... ok
+test memmove_forward ... ok
+test memmove_backward_misaligned_nonaligned_start ... ok
+test memmove_backward_aligned ... ok
+test memmove_forward_misaligned_nonaligned_start ... ok
+test memset_backward_misaligned_nonaligned_start ... ok
+test memmove_backward_misaligned_aligned_start ... ok
+test memset_nonzero ... ok
+test test_strlen ... ok
+test memset_zero ... ok
+test wide_string_length ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/misc.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/d647e62412b82625/out/misc-d647e62412b82625)
+
+running 4 tests
+test fuzz_values ... ok
+test leading_zeros ... ok
+test bswap ... ok
+test trailing_zeros ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+
+     Running tests/mul.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/f94809de32c64c80/out/mul-f94809de32c64c80)
+
+running 10 tests
+test float_mul::__mulhf3 ... ok
+test int_mul::__muldi3 ... ok
+test int_overflowing_mul::__mulosi4 ... ok
+test float_mul::__mulsf3 ... ok
+test float_mul::__muldf3 ... ok
+test int_overflowing_mul::__mulodi4 ... ok
+test int_mul::__multi3 ... ok
+test float_mul::__multf3 ... ok
+test int_overflowing_mul::__muloti4 ... ok
+test int_overflowing_mul::overflowing_mul_u128 ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.33s
+
+     Running tests/shift.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/08ebcc20fa99fa71/out/shift-08ebcc20fa99fa71)
+
+running 9 tests
+test __ashlsi3 ... ok
+test __ashlti3 ... ok
+test __ashldi3 ... ok
+test __ashrdi3 ... ok
+test __ashrsi3 ... ok
+test __ashrti3 ... ok
+test __lshrsi3 ... ok
+test __lshrdi3 ... ok
+test __lshrti3 ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+   Doc-tests builtins_test
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ echo ::endgroup
++ asgroup cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --features c --release
++ echo '::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --features c --release'
++ cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --features c --release
+::endgroup
+::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --features c --release
+   Compiling shlex v2.0.1
+   Compiling find-msvc-tools v0.1.14
+   Compiling builtins-test v0.1.0 (/checkout/builtins-test)
+   Compiling cc v1.6.0
+   Compiling compiler_builtins v0.1.160 (/checkout/builtins-shim)
+    Finished `release` profile [optimized] target(s) in 6.39s
+     Running unittests src/lib.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/f0297280c9c68d67/out/builtins_test-f0297280c9c68d67)
+
+running 1 test
+test mem::test_alignment ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/addsub.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/0031d7da40323764/out/addsub-0031d7da40323764)
+
+running 8 tests
+test float_addsub::__addhf3 ... ok
+test float_addsub::__adddf3 ... ok
+test int_addsub::__rust_i128_add ... ok
+test float_addsub::__addtf3 ... ok
+test int_addsub::__rust_u128_addo ... ok
+test int_addsub::__rust_u128_add ... ok
+test int_addsub::__rust_i128_addo ... ok
+test float_addsub::__addsf3 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/cmp.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/a8c077039c049f4a/out/cmp-a8c077039c049f4a)
+
+running 4 tests
+test float_comparisons::cmp_f128 ... ok
+test float_comparisons::cmp_f16 ... ok
+test float_comparisons::cmp_f32 ... ok
+test float_comparisons::cmp_f64 ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/complex.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/48f0135bcd3d2f6b/out/complex-48f0135bcd3d2f6b)
+
+running 8 tests
+test complex::__divdc3 ... ok
+test complex::__muldc3 ... ok
+test complex::__divsc3 ... ok
+test complex::__mulsc3 ... ok
+test complex::__rust_divhc3 ... ok
+test complex::__rust_mulhc3 ... ok
+test complex::__rust_divtc3 ... ok
+test complex::__rust_multc3 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests/conv.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/2581b5a38fb2aba5/out/conv-2581b5a38fb2aba5)
+
+running 35 tests
+test extend::__extenddftf2 ... ok
+test extend::__extendhfdf2 ... ok
+test extend::__extendsftf2 ... ok
+test f_to_i::f32_to_int ... ok
+test i_to_f::__floatsidf ... ok
+test f_to_i::f64_to_int ... ok
+test i_to_f::__floatdisf ... ok
+test i_to_f::__floatdidf ... ok
+test extend::check_gnu_h2f_ieee ... ok
+test extend::__extendhfsf2 ... ok
+test extend::__extendsfdf2 ... ok
+test i_to_f::__floatditf ... ok
+test extend::__extendhftf2 ... ok
+test i_to_f::__floatsisf ... ok
+test i_to_f::__floatsitf ... ok
+test i_to_f::__floattidf ... ok
+test f_to_i::f128_to_int ... ok
+test i_to_f::__floatundidf ... ok
+test i_to_f::__floattisf ... ok
+test i_to_f::__floatundisf ... ok
+test i_to_f::__floattitf ... ok
+test i_to_f::__floatunditf ... ok
+test i_to_f::__floatunsidf ... ok
+test i_to_f::__floatunsitf ... ok
+test i_to_f::__floatunsisf ... ok
+test i_to_f::__floatuntitf ... ok
+test i_to_f::__floatuntisf ... ok
+test trunc::__truncdfhf2 ... ok
+test i_to_f::__floatuntidf ... ok
+test trunc::__truncdfsf2 ... ok
+test trunc::__truncsfhf2 ... ok
+test trunc::__trunctfhf2 ... ok
+test trunc::__trunctfdf2 ... ok
+test trunc::__trunctfsf2 ... ok
+test trunc::check_gnu_f2h_ieee ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running tests/div_rem.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/0b40866135f00ff3/out/div_rem-0b40866135f00ff3)
+
+running 7 tests
+test div_rem_si4 ... ok
+test div_rem_di4 ... ok
+test float_div::__divsf3 ... ok
+test divide_sparc ... ok
+test div_rem_ti4 ... ok
+test float_div::__divdf3 ... ok
+test float_div::__divtf3 ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/float_pow.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/b959ebfe27d272d8/out/float_pow-b959ebfe27d272d8)
+
+running 3 tests
+test __powidf2 ... ok
+test __powisf2 ... ok
+test __powitf2 ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests/lse.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/71970bce6fde4f18/out/lse-71970bce6fde4f18)
+
+running 100 tests
+test __aarch64_cas16_acq ... ok
+test __aarch64_cas1_acq_rel ... ok
+test __aarch64_cas1_relax ... ok
+test __aarch64_cas4_relax ... ok
+test __aarch64_cas1_rel ... ok
+test __aarch64_cas16_relax ... ok
+test __aarch64_cas2_relax ... ok
+test __aarch64_cas4_acq_rel ... ok
+test __aarch64_cas16_rel ... ok
+test __aarch64_cas2_acq ... ok
+test __aarch64_cas8_acq ... ok
+test __aarch64_cas8_rel ... ok
+test __aarch64_cas1_acq ... ok
+test __aarch64_cas16_acq_rel ... ok
+test __aarch64_cas4_acq ... ok
+test __aarch64_cas2_rel ... ok
+test __aarch64_cas4_rel ... ok
+test __aarch64_cas8_acq_rel ... ok
+test __aarch64_cas2_acq_rel ... ok
+test __aarch64_cas8_relax ... ok
+test __aarch64_ldadd1_acq ... ok
+test __aarch64_ldadd4_acq ... ok
+test __aarch64_ldadd4_acq_rel ... ok
+test __aarch64_ldadd1_relax ... ok
+test __aarch64_ldadd2_acq_rel ... ok
+test __aarch64_ldadd4_relax ... ok
+test __aarch64_ldadd2_rel ... ok
+test __aarch64_ldadd8_rel ... ok
+test __aarch64_ldadd8_relax ... ok
+test __aarch64_ldadd1_rel ... ok
+test __aarch64_ldclr1_acq ... ok
+test __aarch64_ldclr1_acq_rel ... ok
+test __aarch64_ldclr1_rel ... ok
+test __aarch64_ldadd8_acq ... ok
+test __aarch64_ldclr2_acq_rel ... ok
+test __aarch64_ldadd2_relax ... ok
+test __aarch64_ldclr2_relax ... ok
+test __aarch64_ldclr4_acq ... ok
+test __aarch64_ldclr4_rel ... ok
+test __aarch64_ldclr4_relax ... ok
+test __aarch64_ldclr1_relax ... ok
+test __aarch64_ldclr8_acq ... ok
+test __aarch64_ldadd8_acq_rel ... ok
+test __aarch64_ldclr2_rel ... ok
+test __aarch64_ldadd1_acq_rel ... ok
+test __aarch64_ldeor1_acq ... ok
+test __aarch64_ldadd2_acq ... ok
+test __aarch64_ldeor1_acq_rel ... ok
+test __aarch64_ldeor4_rel ... ok
+test __aarch64_ldclr8_acq_rel ... ok
+test __aarch64_ldclr8_rel ... ok
+test __aarch64_ldeor2_acq_rel ... ok
+test __aarch64_ldeor2_rel ... ok
+test __aarch64_ldeor2_relax ... ok
+test __aarch64_ldclr4_acq_rel ... ok
+test __aarch64_ldeor4_acq_rel ... ok
+test __aarch64_ldeor1_relax ... ok
+test __aarch64_ldclr2_acq ... ok
+test __aarch64_ldeor8_acq ... ok
+test __aarch64_ldeor8_acq_rel ... ok
+test __aarch64_ldset1_acq ... ok
+test __aarch64_ldeor8_rel ... ok
+test __aarch64_ldset1_acq_rel ... ok
+test __aarch64_ldset1_rel ... ok
+test __aarch64_ldeor1_rel ... ok
+test __aarch64_ldeor4_relax ... ok
+test __aarch64_ldset2_acq ... ok
+test __aarch64_ldeor2_acq ... ok
+test __aarch64_ldclr8_relax ... ok
+test __aarch64_ldset2_relax ... ok
+test __aarch64_swp1_acq ... ok
+test __aarch64_ldset4_acq_rel ... ok
+test __aarch64_ldset4_rel ... ok
+test __aarch64_swp1_relax ... ok
+test __aarch64_ldset2_acq_rel ... ok
+test __aarch64_ldset8_rel ... ok
+test __aarch64_ldset8_relax ... ok
+test __aarch64_swp1_acq_rel ... ok
+test __aarch64_ldadd4_rel ... ok
+test __aarch64_swp1_rel ... ok
+test __aarch64_ldset4_relax ... ok
+test __aarch64_swp2_acq ... ok
+test __aarch64_swp2_acq_rel ... ok
+test __aarch64_ldset2_rel ... ok
+test __aarch64_ldeor8_relax ... ok
+test __aarch64_ldset4_acq ... ok
+test __aarch64_ldeor4_acq ... ok
+test __aarch64_swp4_acq_rel ... ok
+test __aarch64_swp4_relax ... ok
+test __aarch64_swp8_acq ... ok
+test __aarch64_ldset8_acq_rel ... ok
+test __aarch64_swp8_acq_rel ... ok
+test __aarch64_swp8_rel ... ok
+test __aarch64_swp2_relax ... ok
+test __aarch64_swp4_acq ... ok
+test __aarch64_ldset8_acq ... ok
+test __aarch64_ldset1_relax ... ok
+test __aarch64_swp8_relax ... ok
+test __aarch64_swp2_rel ... ok
+test __aarch64_swp4_rel ... ok
+
+test result: ok. 100 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.09s
+
+     Running tests/mem.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/99b86ab753125c2b/out/mem-99b86ab753125c2b)
+
+running 21 tests
+test memcmp_eq ... ok
+test memmove_backward ... ok
+test memcpy_3 ... ok
+test memmove_backward_misaligned_aligned_start ... ok
+test memmove_backward_misaligned_nonaligned_start ... ok
+test memcpy_big ... ok
+test memmove_backward_aligned ... ok
+test memcpy_10 ... ok
+test memcmp_ne ... ok
+test memmove_forward_misaligned_aligned_start ... ok
+test memmove_forward ... ok
+test memset_backward_misaligned_aligned_start ... ok
+test memmove_forward_misaligned_nonaligned_start ... ok
+test memset_backward_misaligned_nonaligned_start ... ok
+test memmove_misaligned_bounds ... ok
+test memset_zero ... ok
+test memmove_forward_aligned ... ok
+test memset_nonzero ... ok
+test test_strlen ... ok
+test wide_string_length ... ok
+test memset_backward_aligned ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests/misc.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/5dab3695d57b3b71/out/misc-5dab3695d57b3b71)
+
+running 4 tests
+test bswap ... ok
+test fuzz_values ... ok
+test trailing_zeros ... ok
+test leading_zeros ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/mul.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/1492f3872fc526c1/out/mul-1492f3872fc526c1)
+
+running 10 tests
+test float_mul::__muldf3 ... ok
+test float_mul::__mulhf3 ... ok
+test float_mul::__mulsf3 ... ok
+test int_mul::__muldi3 ... ok
+test float_mul::__multf3 ... ok
+test int_overflowing_mul::__mulodi4 ... ok
+test int_mul::__multi3 ... ok
+test int_overflowing_mul::__mulosi4 ... ok
+test int_overflowing_mul::__muloti4 ... ok
+test int_overflowing_mul::overflowing_mul_u128 ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/shift.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/e3dc9924e093568f/out/shift-e3dc9924e093568f)
+
+running 9 tests
+test __ashlsi3 ... ok
+test __ashldi3 ... ok
+test __ashlti3 ... ok
+test __ashrdi3 ... ok
+test __ashrsi3 ... ok
+test __lshrdi3 ... ok
+test __lshrsi3 ... ok
+test __ashrti3 ... ok
+test __lshrti3 ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+   Doc-tests builtins_test
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ echo ::endgroup
++ asgroup cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --benches --release
++ echo '::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --benches --release'
++ cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --benches --release
+::endgroup
+::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --benches --release
+   Compiling builtins-test v0.1.0 (/checkout/builtins-test)
+    Finished `release` profile [optimized] target(s) in 0.49s
+     Running unittests src/lib.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/2e797f6931e50a57/out/builtins_test-2e797f6931e50a57)
+
+running 1 test
+test mem::test_alignment ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running benches/mem.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/d30e7d83c3f272a5/out/mem-d30e7d83c3f272a5)
+
+running 52 tests
+test memcmp_builtin_16 ... ok
+test memcmp_builtin_1048576 ... ok
+test memcmp_builtin_4096 ... ok
+test memcmp_builtin_64 ... ok
+test memcmp_builtin_unaligned_4095 ... ok
+test memcmp_builtin_unaligned_7 ... ok
+test memcmp_rust_16 ... ok
+test memcmp_rust_32 ... ok
+test memcmp_builtin_unaligned_31 ... ok
+test memcmp_rust_4096 ... ok
+test memcmp_builtin_unaligned_63 ... ok
+test memcmp_rust_1048576 ... ok
+test memcmp_rust_64 ... ok
+test memcmp_rust_8 ... ok
+test memcmp_builtin_32 ... ok
+test memcmp_builtin_unaligned_1048575 ... ok
+test memcmp_builtin_unaligned_15 ... ok
+test memcmp_rust_unaligned_15 ... ok
+test memcmp_rust_unaligned_31 ... ok
+test memcmp_rust_unaligned_4095 ... ok
+test memcmp_builtin_8 ... ok
+test memcmp_rust_unaligned_7 ... ok
+test memcmp_rust_unaligned_63 ... ok
+test memcmp_rust_unaligned_1048575 ... ok
+test memcpy_builtin_1048576 ... ok
+test memcpy_builtin_1048576_misalign ... ok
+test memcpy_builtin_1048576_offset ... ok
+test memcpy_builtin_4096 ... ok
+test memcpy_rust_1048576 ... ok
+test memcpy_builtin_4096_misalign ... ok
+test memcpy_rust_1048576_misalign ... ok
+test memcpy_builtin_4096_offset ... ok
+test memcpy_rust_1048576_offset ... ok
+test memcpy_rust_4096 ... ok
+test memcpy_rust_4096_offset ... ok
+test memcpy_rust_4096_misalign ... ok
+test memmove_builtin_4096 ... ok
+test memmove_builtin_1048576_misalign ... ok
+test memmove_builtin_4096_misalign ... ok
+test memmove_rust_1048576_misalign ... ok
+test memset_builtin_1048576_offset ... ok
+test memmove_rust_4096 ... ok
+test memset_builtin_4096 ... ok
+test memmove_builtin_1048576 ... ok
+test memset_builtin_4096_offset ... ok
+test memmove_rust_4096_misalign ... ok
+test memset_rust_1048576 ... ok
+test memmove_rust_1048576 ... ok
+test memset_rust_1048576_offset ... ok
+test memset_rust_4096 ... ok
+test memset_builtin_1048576 ... ok
+test memset_rust_4096_offset ... ok
+
+test result: ok. 52 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
++ echo ::endgroup
++ asgroup cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --no-default-features
++ echo '::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --no-default-features'
++ cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --no-default-features
+::endgroup
+::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --no-default-features
+   Compiling compiler_builtins v0.1.160 (/checkout/builtins-shim)
+   Compiling builtins-test v0.1.0 (/checkout/builtins-test)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.67s
+     Running unittests src/lib.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/e0278065d90fc891/out/builtins_test-e0278065d90fc891)
+
+running 1 test
+test mem::test_alignment ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/addsub.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/b291bd214bf9f4dd/out/addsub-b291bd214bf9f4dd)
+
+running 8 tests
+test float_addsub::__addhf3 ... ok
+test float_addsub::__addsf3 ... ok
+test float_addsub::__adddf3 ... ok
+test int_addsub::__rust_u128_add ... ok
+test float_addsub::__addtf3 ... ok
+test int_addsub::__rust_i128_add ... ok
+test int_addsub::__rust_i128_addo ... ok
+test int_addsub::__rust_u128_addo ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.40s
+
+     Running tests/cmp.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/10714636132cb865/out/cmp-10714636132cb865)
+
+running 4 tests
+test float_comparisons::cmp_f16 ... ok
+test float_comparisons::cmp_f32 ... ok
+test float_comparisons::cmp_f64 ... ok
+test float_comparisons::cmp_f128 ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.26s
+
+     Running tests/complex.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/fabe516d763048a5/out/complex-fabe516d763048a5)
+
+running 8 tests
+test complex::__muldc3 ... ok
+test complex::__rust_mulhc3 ... ok
+test complex::__mulsc3 ... ok
+test complex::__divdc3 ... ok
+test complex::__rust_multc3 ... ok
+test complex::__divsc3 ... ok
+test complex::__rust_divhc3 ... ok
+test complex::__rust_divtc3 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
+
+     Running tests/conv.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/85c9a6cc6c3a5d96/out/conv-85c9a6cc6c3a5d96)
+
+running 35 tests
+test extend::__extenddftf2 ... ok
+test extend::__extendhfdf2 ... ok
+test extend::__extendhfsf2 ... ok
+test i_to_f::__floatsisf ... ok
+test i_to_f::__floatdisf ... ok
+test f_to_i::f32_to_int ... ok
+test i_to_f::__floatdidf ... ok
+test i_to_f::__floatsitf ... ok
+test extend::__extendsfdf2 ... ok
+test i_to_f::__floatsidf ... ok
+test extend::__extendsftf2 ... ok
+test extend::check_gnu_h2f_ieee ... ok
+test f_to_i::f64_to_int ... ok
+test i_to_f::__floatditf ... ok
+test i_to_f::__floatundisf ... ok
+test extend::__extendhftf2 ... ok
+test i_to_f::__floatunsisf ... ok
+test i_to_f::__floatunsidf ... ok
+test i_to_f::__floatunsitf ... ok
+test i_to_f::__floatunditf ... ok
+test f_to_i::f128_to_int ... ok
+test i_to_f::__floattisf ... ok
+test i_to_f::__floatundidf ... ok
+test i_to_f::__floattidf ... ok
+test i_to_f::__floattitf ... ok
+test i_to_f::__floatuntidf ... ok
+test i_to_f::__floatuntisf ... ok
+test trunc::__truncdfsf2 ... ok
+test trunc::__trunctfdf2 ... ok
+test trunc::__truncsfhf2 ... ok
+test trunc::check_gnu_f2h_ieee ... ok
+test i_to_f::__floatuntitf ... ok
+test trunc::__trunctfsf2 ... ok
+test trunc::__truncdfhf2 ... ok
+test trunc::__trunctfhf2 ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.54s
+
+     Running tests/div_rem.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/adb73c0793065424/out/div_rem-adb73c0793065424)
+
+running 7 tests
+test div_rem_si4 ... ok
+test div_rem_di4 ... ok
+test float_div::__divdf3 ... ok
+test div_rem_ti4 ... ok
+test float_div::__divsf3 ... ok
+test divide_sparc ... ok
+test float_div::__divtf3 ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.39s
+
+     Running tests/float_pow.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/9a4e50876b4fca49/out/float_pow-9a4e50876b4fca49)
+
+running 3 tests
+test __powisf2 ... ok
+test __powidf2 ... ok
+test __powitf2 ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.25s
+
+     Running tests/lse.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/e5c349622d3c4fc7/out/lse-e5c349622d3c4fc7)
+
+running 100 tests
+test __aarch64_cas16_acq ... ok
+test __aarch64_cas16_rel ... ok
+test __aarch64_cas1_acq ... ok
+test __aarch64_cas2_acq ... ok
+test __aarch64_cas1_relax ... ok
+test __aarch64_cas1_rel ... ok
+test __aarch64_cas4_acq ... ok
+test __aarch64_cas4_acq_rel ... ok
+test __aarch64_cas16_acq_rel ... ok
+test __aarch64_cas16_relax ... ok
+test __aarch64_cas2_acq_rel ... ok
+test __aarch64_cas1_acq_rel ... ok
+test __aarch64_cas2_rel ... ok
+test __aarch64_cas2_relax ... ok
+test __aarch64_cas4_rel ... ok
+test __aarch64_cas4_relax ... ok
+test __aarch64_cas8_acq ... ok
+test __aarch64_cas8_acq_rel ... ok
+test __aarch64_cas8_rel ... ok
+test __aarch64_cas8_relax ... ok
+test __aarch64_ldadd1_acq ... ok
+test __aarch64_ldadd1_acq_rel ... ok
+test __aarch64_ldadd1_rel ... ok
+test __aarch64_ldadd4_relax ... ok
+test __aarch64_ldadd8_acq ... ok
+test __aarch64_ldadd8_acq_rel ... ok
+test __aarch64_ldadd8_rel ... ok
+test __aarch64_ldadd8_relax ... ok
+test __aarch64_ldclr1_acq ... ok
+test __aarch64_ldclr1_acq_rel ... ok
+test __aarch64_ldclr1_rel ... ok
+test __aarch64_ldadd2_acq ... ok
+test __aarch64_ldadd2_acq_rel ... ok
+test __aarch64_ldadd2_rel ... ok
+test __aarch64_ldadd2_relax ... ok
+test __aarch64_ldadd4_acq ... ok
+test __aarch64_ldadd4_acq_rel ... ok
+test __aarch64_ldadd4_rel ... ok
+test __aarch64_ldadd1_relax ... ok
+test __aarch64_ldclr4_rel ... ok
+test __aarch64_ldclr4_relax ... ok
+test __aarch64_ldclr8_acq ... ok
+test __aarch64_ldclr8_acq_rel ... ok
+test __aarch64_ldclr8_rel ... ok
+test __aarch64_ldclr8_relax ... ok
+test __aarch64_ldeor1_acq ... ok
+test __aarch64_ldeor1_acq_rel ... ok
+test __aarch64_ldclr1_relax ... ok
+test __aarch64_ldclr2_acq ... ok
+test __aarch64_ldclr2_acq_rel ... ok
+test __aarch64_ldclr2_rel ... ok
+test __aarch64_ldeor2_relax ... ok
+test __aarch64_ldeor4_acq ... ok
+test __aarch64_ldeor4_acq_rel ... ok
+test __aarch64_ldeor4_rel ... ok
+test __aarch64_ldeor4_relax ... ok
+test __aarch64_ldeor8_acq ... ok
+test __aarch64_ldeor8_acq_rel ... ok
+test __aarch64_ldeor8_rel ... ok
+test __aarch64_ldclr4_acq ... ok
+test __aarch64_ldclr4_acq_rel ... ok
+test __aarch64_ldeor1_rel ... ok
+test __aarch64_ldeor1_relax ... ok
+test __aarch64_ldeor2_acq ... ok
+test __aarch64_ldeor2_acq_rel ... ok
+test __aarch64_ldeor2_rel ... ok
+test __aarch64_ldclr2_relax ... ok
+test __aarch64_ldset2_rel ... ok
+test __aarch64_ldset2_relax ... ok
+test __aarch64_ldset1_acq_rel ... ok
+test __aarch64_ldset1_rel ... ok
+test __aarch64_ldset1_relax ... ok
+test __aarch64_ldset2_acq ... ok
+test __aarch64_ldset2_acq_rel ... ok
+test __aarch64_ldset8_rel ... ok
+test __aarch64_ldset8_relax ... ok
+test __aarch64_swp1_acq ... ok
+test __aarch64_ldset4_acq_rel ... ok
+test __aarch64_ldset4_rel ... ok
+test __aarch64_ldset4_relax ... ok
+test __aarch64_swp2_acq ... ok
+test __aarch64_swp2_acq_rel ... ok
+test __aarch64_swp2_rel ... ok
+test __aarch64_swp2_relax ... ok
+test __aarch64_swp4_acq ... ok
+test __aarch64_swp4_acq_rel ... ok
+test __aarch64_swp4_rel ... ok
+test __aarch64_swp4_relax ... ok
+test __aarch64_ldset8_acq_rel ... ok
+test __aarch64_ldeor8_relax ... ok
+test __aarch64_ldset1_acq ... ok
+test __aarch64_ldset4_acq ... ok
+test __aarch64_swp8_relax ... ok
+test __aarch64_swp1_rel ... ok
+test __aarch64_ldset8_acq ... ok
+test __aarch64_swp8_acq ... ok
+test __aarch64_swp8_rel ... ok
+test __aarch64_swp1_relax ... ok
+test __aarch64_swp1_acq_rel ... ok
+test __aarch64_swp8_acq_rel ... ok
+
+test result: ok. 100 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 10.13s
+
+     Running tests/mem.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/c7ee4513dc8f2b7c/out/mem-c7ee4513dc8f2b7c)
+
+running 21 tests
+test memcmp_eq ... ok
+test memcpy_10 ... ok
+test memcpy_3 ... ok
+test memcpy_big ... ok
+test memmove_forward_misaligned_aligned_start ... ok
+test memmove_forward_misaligned_nonaligned_start ... ok
+test memmove_backward_misaligned_aligned_start ... ok
+test memmove_forward ... ok
+test memmove_forward_aligned ... ok
+test memcmp_ne ... ok
+test memmove_backward ... ok
+test memmove_backward_misaligned_nonaligned_start ... ok
+test memset_backward_misaligned_nonaligned_start ... ok
+test memset_backward_misaligned_aligned_start ... ok
+test memset_backward_aligned ... ok
+test memmove_misaligned_bounds ... ok
+test memmove_backward_aligned ... ok
+test memset_nonzero ... ok
+test memset_zero ... ok
+test test_strlen ... ok
+test wide_string_length ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/misc.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/dd1f9a4f7ae8bee1/out/misc-dd1f9a4f7ae8bee1)
+
+running 4 tests
+test fuzz_values ... ok
+test bswap ... ok
+test leading_zeros ... ok
+test trailing_zeros ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running tests/mul.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/3c584a6f00d40692/out/mul-3c584a6f00d40692)
+
+running 10 tests
+test int_overflowing_mul::__mulosi4 ... ok
+test float_mul::__mulhf3 ... ok
+test int_mul::__muldi3 ... ok
+test float_mul::__mulsf3 ... ok
+test int_overflowing_mul::__mulodi4 ... ok
+test float_mul::__muldf3 ... ok
+test int_mul::__multi3 ... ok
+test float_mul::__multf3 ... ok
+test int_overflowing_mul::__muloti4 ... ok
+test int_overflowing_mul::overflowing_mul_u128 ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.43s
+
+     Running tests/shift.rs (/builtins-target/aarch64-unknown-linux-gnu/debug/build/builtins-test/f8d49bfb5fc2d5f6/out/shift-f8d49bfb5fc2d5f6)
+
+running 9 tests
+test __ashldi3 ... ok
+test __ashlsi3 ... ok
+test __ashlti3 ... ok
+test __ashrdi3 ... ok
+test __ashrsi3 ... ok
+test __ashrti3 ... ok
+test __lshrdi3 ... ok
+test __lshrsi3 ... ok
+test __lshrti3 ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+   Doc-tests builtins_test
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ echo ::endgroup
++ asgroup cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --no-default-features --release
++ echo '::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --no-default-features --release'
++ cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --no-default-features --release
+::endgroup
+::group::cargo test --no-fail-fast --package builtins-test --target aarch64-unknown-linux-gnu --no-default-features --release
+   Compiling compiler_builtins v0.1.160 (/checkout/builtins-shim)
+   Compiling builtins-test v0.1.0 (/checkout/builtins-test)
+    Finished `release` profile [optimized] target(s) in 5.67s
+     Running unittests src/lib.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/5dc1a00e4ecec66b/out/builtins_test-5dc1a00e4ecec66b)
+
+running 1 test
+test mem::test_alignment ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/addsub.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/9b20ce56344fd339/out/addsub-9b20ce56344fd339)
+
+running 8 tests
+test float_addsub::__addsf3 ... ok
+test int_addsub::__rust_i128_add ... ok
+test int_addsub::__rust_i128_addo ... ok
+test float_addsub::__adddf3 ... ok
+test float_addsub::__addtf3 ... ok
+test int_addsub::__rust_u128_add ... ok
+test float_addsub::__addhf3 ... ok
+test int_addsub::__rust_u128_addo ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/cmp.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/b50b59bc8a225e22/out/cmp-b50b59bc8a225e22)
+
+running 4 tests
+test float_comparisons::cmp_f128 ... ok
+test float_comparisons::cmp_f32 ... ok
+test float_comparisons::cmp_f16 ... ok
+test float_comparisons::cmp_f64 ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/complex.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/255800abab7d6767/out/complex-255800abab7d6767)
+
+running 8 tests
+test complex::__divdc3 ... ok
+test complex::__divsc3 ... ok
+test complex::__muldc3 ... ok
+test complex::__mulsc3 ... ok
+test complex::__rust_divhc3 ... ok
+test complex::__rust_mulhc3 ... ok
+test complex::__rust_multc3 ... ok
+test complex::__rust_divtc3 ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running tests/conv.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/fd0b5b1b07fc18e5/out/conv-fd0b5b1b07fc18e5)
+
+running 35 tests
+test extend::__extenddftf2 ... ok
+test extend::__extendhfdf2 ... ok
+test extend::__extendhftf2 ... ok
+test extend::__extendhfsf2 ... ok
+test extend::__extendsfdf2 ... ok
+test extend::__extendsftf2 ... ok
+test extend::check_gnu_h2f_ieee ... ok
+test f_to_i::f32_to_int ... ok
+test f_to_i::f64_to_int ... ok
+test i_to_f::__floatdidf ... ok
+test f_to_i::f128_to_int ... ok
+test i_to_f::__floatdisf ... ok
+test i_to_f::__floatditf ... ok
+test i_to_f::__floatsisf ... ok
+test i_to_f::__floatsidf ... ok
+test i_to_f::__floattidf ... ok
+test i_to_f::__floatsitf ... ok
+test i_to_f::__floatundidf ... ok
+test i_to_f::__floattisf ... ok
+test i_to_f::__floattitf ... ok
+test i_to_f::__floatunsidf ... ok
+test i_to_f::__floatunsisf ... ok
+test i_to_f::__floatunditf ... ok
+test i_to_f::__floatuntidf ... ok
+test i_to_f::__floatundisf ... ok
+test i_to_f::__floatunsitf ... ok
+test i_to_f::__floatuntisf ... ok
+test trunc::__truncdfhf2 ... ok
+test trunc::__truncdfsf2 ... ok
+test trunc::__truncsfhf2 ... ok
+test i_to_f::__floatuntitf ... ok
+test trunc::__trunctfdf2 ... ok
+test trunc::__trunctfhf2 ... ok
+test trunc::__trunctfsf2 ... ok
+test trunc::check_gnu_f2h_ieee ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
+
+     Running tests/div_rem.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/8961e8e4c8e3d29d/out/div_rem-8961e8e4c8e3d29d)
+
+running 7 tests
+test div_rem_si4 ... ok
+test float_div::__divsf3 ... ok
+test float_div::__divdf3 ... ok
+test div_rem_di4 ... ok
+test divide_sparc ... ok
+test div_rem_ti4 ... ok
+test float_div::__divtf3 ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/float_pow.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/70e8c544f6bbb3a2/out/float_pow-70e8c544f6bbb3a2)
+
+running 3 tests
+test __powidf2 ... ok
+test __powisf2 ... ok
+test __powitf2 ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests/lse.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/53908d4f0b5523b3/out/lse-53908d4f0b5523b3)
+
+running 100 tests
+test __aarch64_cas16_acq ... ok
+test __aarch64_cas16_rel ... ok
+test __aarch64_cas1_acq ... ok
+test __aarch64_cas1_relax ... ok
+test __aarch64_cas1_acq_rel ... ok
+test __aarch64_cas2_acq_rel ... ok
+test __aarch64_cas2_rel ... ok
+test __aarch64_cas4_acq ... ok
+test __aarch64_cas2_relax ... ok
+test __aarch64_cas8_acq ... ok
+test __aarch64_cas16_acq_rel ... ok
+test __aarch64_cas8_rel ... ok
+test __aarch64_cas1_rel ... ok
+test __aarch64_cas16_relax ... ok
+test __aarch64_cas4_acq_rel ... ok
+test __aarch64_ldadd1_rel ... ok
+test __aarch64_cas4_relax ... ok
+test __aarch64_cas8_acq_rel ... ok
+test __aarch64_cas2_acq ... ok
+test __aarch64_cas8_relax ... ok
+test __aarch64_ldadd1_acq ... ok
+test __aarch64_ldadd1_acq_rel ... ok
+test __aarch64_cas4_rel ... ok
+test __aarch64_ldadd4_rel ... ok
+test __aarch64_ldadd4_relax ... ok
+test __aarch64_ldadd8_acq ... ok
+test __aarch64_ldadd8_acq_rel ... ok
+test __aarch64_ldadd2_relax ... ok
+test __aarch64_ldadd4_acq ... ok
+test __aarch64_ldclr2_relax ... ok
+test __aarch64_ldadd1_relax ... ok
+test __aarch64_ldclr1_rel ... ok
+test __aarch64_ldclr1_relax ... ok
+test __aarch64_ldclr2_acq ... ok
+test __aarch64_ldclr2_acq_rel ... ok
+test __aarch64_ldclr2_rel ... ok
+test __aarch64_ldadd8_relax ... ok
+test __aarch64_ldadd4_acq_rel ... ok
+test __aarch64_ldclr4_acq_rel ... ok
+test __aarch64_ldclr4_rel ... ok
+test __aarch64_ldeor1_relax ... ok
+test __aarch64_ldadd2_acq_rel ... ok
+test __aarch64_ldadd2_rel ... ok
+test __aarch64_ldclr8_rel ... ok
+test __aarch64_ldclr8_relax ... ok
+test __aarch64_ldeor1_acq ... ok
+test __aarch64_ldeor1_acq_rel ... ok
+test __aarch64_ldeor1_rel ... ok
+test __aarch64_ldadd2_acq ... ok
+test __aarch64_ldclr4_relax ... ok
+test __aarch64_ldeor2_acq ... ok
+test __aarch64_ldclr8_acq_rel ... ok
+test __aarch64_ldeor2_rel ... ok
+test __aarch64_ldclr1_acq ... ok
+test __aarch64_ldclr4_acq ... ok
+test __aarch64_ldclr1_acq_rel ... ok
+test __aarch64_ldeor4_rel ... ok
+test __aarch64_ldclr8_acq ... ok
+test __aarch64_ldeor8_acq ... ok
+test __aarch64_ldset1_rel ... ok
+test __aarch64_ldeor8_rel ... ok
+test __aarch64_ldeor2_relax ... ok
+test __aarch64_ldeor4_acq ... ok
+test __aarch64_ldeor4_acq_rel ... ok
+test __aarch64_ldset1_relax ... ok
+test __aarch64_ldeor8_acq_rel ... ok
+test __aarch64_ldset2_acq ... ok
+test __aarch64_ldset2_rel ... ok
+test __aarch64_ldset2_relax ... ok
+test __aarch64_ldset4_acq ... ok
+test __aarch64_ldset4_acq_rel ... ok
+test __aarch64_ldset1_acq_rel ... ok
+test __aarch64_ldset4_rel ... ok
+test __aarch64_ldset8_acq ... ok
+test __aarch64_ldset8_acq_rel ... ok
+test __aarch64_ldset8_rel ... ok
+test __aarch64_swp2_relax ... ok
+test __aarch64_swp1_acq ... ok
+test __aarch64_swp1_rel ... ok
+test __aarch64_ldset4_relax ... ok
+test __aarch64_ldeor2_acq_rel ... ok
+test __aarch64_ldset2_acq_rel ... ok
+test __aarch64_swp2_rel ... ok
+test __aarch64_ldeor8_relax ... ok
+test __aarch64_ldset1_acq ... ok
+test __aarch64_swp4_acq ... ok
+test __aarch64_swp4_acq_rel ... ok
+test __aarch64_ldeor4_relax ... ok
+test __aarch64_swp4_rel ... ok
+test __aarch64_swp2_acq ... ok
+test __aarch64_swp8_acq ... ok
+test __aarch64_swp2_acq_rel ... ok
+test __aarch64_ldadd8_rel ... ok
+test __aarch64_ldset8_relax ... ok
+test __aarch64_swp8_relax ... ok
+test __aarch64_swp1_relax ... ok
+test __aarch64_swp4_relax ... ok
+test __aarch64_swp8_rel ... ok
+test __aarch64_swp8_acq_rel ... ok
+test __aarch64_swp1_acq_rel ... ok
+
+test result: ok. 100 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.92s
+
+     Running tests/mem.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/2b828bd0d12d9b35/out/mem-2b828bd0d12d9b35)
+
+running 21 tests
+test memcmp_eq ... ok
+test memcpy_10 ... ok
+test memcmp_ne ... ok
+test memcpy_3 ... ok
+test memmove_backward_misaligned_aligned_start ... ok
+test memmove_backward_aligned ... ok
+test memcpy_big ... ok
+test memmove_backward_misaligned_nonaligned_start ... ok
+test memmove_forward ... ok
+test memmove_forward_aligned ... ok
+test memmove_backward ... ok
+test memmove_forward_misaligned_nonaligned_start ... ok
+test memmove_misaligned_bounds ... ok
+test memmove_forward_misaligned_aligned_start ... ok
+test memset_backward_aligned ... ok
+test memset_backward_misaligned_aligned_start ... ok
+test memset_backward_misaligned_nonaligned_start ... ok
+test memset_zero ... ok
+test test_strlen ... ok
+test memset_nonzero ... ok
+test wide_string_length ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/misc.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/bc34fc692e39a4c8/out/misc-bc34fc692e39a4c8)
+
+running 4 tests
+test fuzz_values ... ok
+test bswap ... ok
+test trailing_zeros ... ok
+test leading_zeros ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/mul.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/ea12735541859275/out/mul-ea12735541859275)
+
+running 10 tests
+test float_mul::__muldf3 ... ok
+test float_mul::__mulsf3 ... ok
+test float_mul::__multf3 ... ok
+test int_mul::__muldi3 ... ok
+test float_mul::__mulhf3 ... ok
+test int_overflowing_mul::__mulodi4 ... ok
+test int_overflowing_mul::__mulosi4 ... ok
+test int_mul::__multi3 ... ok
+test int_overflowing_mul::__muloti4 ... ok
+test int_overflowing_mul::overflowing_mul_u128 ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests/shift.rs (/builtins-target/aarch64-unknown-linux-gnu/release/build/builtins-test/f6afaeda45007ece/out/shift-f6afaeda45007ece)
+
+running 9 tests
+test __ashldi3 ... ok
+test __ashlsi3 ... ok
+test __ashlti3 ... ok
+test __ashrdi3 ... ok
+test __ashrsi3 ... ok
+test __ashrti3 ... ok
+test __lshrsi3 ... ok
+test __lshrdi3 ... ok
+test __lshrti3 ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+   Doc-tests builtins_test
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
++ echo ::endgroup
++ [[ aarch64-unknown-linux-gnu = *\w\i\n\d\o\w\s* ]]
++ echo '::group::Run symcheck'
++ SYMCHECK_TEST_TARGET=aarch64-unknown-linux-gnu
++ cargo test -p symcheck --release
+::endgroup
+::group::Run symcheck
+ Downloading crates ...
+  Downloaded assert_cmd v2.2.2
+  Downloaded adler2 v2.0.1
+  Downloaded errno v0.3.14
+  Downloaded cfg-if v1.0.5
+  Downloaded termtree v0.5.1
+  Downloaded wait-timeout v0.2.1
+  Downloaded predicates-tree v1.0.13
+  Downloaded anstyle v1.0.14
+  Downloaded itoa v1.0.18
+  Downloaded difflib v0.4.0
+  Downloaded getopts v0.2.24
+  Downloaded predicates-core v1.0.10
+  Downloaded zmij v1.0.23
+  Downloaded fastrand v2.5.0
+  Downloaded predicates v3.1.4
+  Downloaded simd-adler32 v0.3.10
+  Downloaded aho-corasick v1.1.5
+  Downloaded once_cell v1.21.4
+  Downloaded crc32fast v1.5.2
+  Downloaded twox-hash v2.1.5
+  Downloaded serde_core v1.0.229
+  Downloaded getrandom v0.4.3
+  Downloaded tempfile v3.27.0
+  Downloaded miniz_oxide v0.9.1
+  Downloaded flate2 v1.1.10
+  Downloaded memchr v2.8.3
+  Downloaded ruzstd v0.9.0
+  Downloaded regex v1.13.1
+  Downloaded serde_json v1.0.151
+  Downloaded zlib-rs v0.6.8
+  Downloaded wasmparser v0.255.0
+  Downloaded unicode-width v0.2.2
+  Downloaded bstr v1.13.1
+  Downloaded regex-syntax v0.8.11
+  Downloaded rustix v1.1.5
+  Downloaded object v0.40.0
+  Downloaded regex-automata v0.4.18
+  Downloaded libc v0.2.190
+  Downloaded linux-raw-sys v0.12.1
+   Compiling crc32fast v1.5.2
+   Compiling memchr v2.8.3
+   Compiling libc v0.2.190
+   Compiling zmij v1.0.23
+   Compiling serde_core v1.0.229
+   Compiling cfg-if v1.0.5
+   Compiling bitflags v2.13.2
+   Compiling serde_json v1.0.151
+   Compiling regex-syntax v0.8.11
+   Compiling simd-adler32 v0.3.10
+   Compiling getrandom v0.4.3
+   Compiling adler2 v2.0.1
+   Compiling rustix v1.1.5
+   Compiling predicates-core v1.0.10
+   Compiling miniz_oxide v0.9.1
+   Compiling linux-raw-sys v0.12.1
+   Compiling difflib v0.4.0
+   Compiling aho-corasick v1.1.5
+   Compiling termtree v0.5.1
+   Compiling anstyle v1.0.14
+   Compiling assert_cmd v2.2.2
+   Compiling twox-hash v2.1.5
+   Compiling symcheck v0.1.0 (/checkout/crates/symcheck)
+   Compiling ruzstd v0.9.0
+   Compiling flate2 v1.1.10
+   Compiling predicates v3.1.4
+   Compiling predicates-tree v1.0.13
+   Compiling wasmparser v0.255.0
+   Compiling regex-automata v0.4.18
+   Compiling wait-timeout v0.2.1
+   Compiling unicode-width v0.2.2
+   Compiling shlex v2.0.1
+   Compiling once_cell v1.21.4
+   Compiling find-msvc-tools v0.1.14
+   Compiling itoa v1.0.18
+   Compiling fastrand v2.5.0
+   Compiling getopts v0.2.24
+   Compiling tempfile v3.27.0
+   Compiling cc v1.6.0
+   Compiling object v0.40.0
+   Compiling bstr v1.13.1
+   Compiling regex v1.13.1
+    Finished `release` profile [optimized] target(s) in 13.50s
+     Running unittests src/main.rs (/builtins-target/release/build/symcheck/72f3953d974a4870/out/symcheck-72f3953d974a4870)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/all.rs (/builtins-target/release/build/symcheck/b3d0ef73024a35e3/out/all-b3d0ef73024a35e3)
+
+running 9 tests
+test test_good_lib ... ok
+test test_core_symbols ... ok
+test test_visible_symbols ... ok
+test test_duplicates ... ok
+cargo:warning=aarch64-linux-gnu-gcc: error: unrecognized command-line option '-?'
+cargo:warning=aarch64-linux-gnu-gcc: error: unrecognized command-line option '-?'
+cargo:warning=aarch64-linux-gnu-gcc: fatal error: no input files
+cargo:warning=aarch64-linux-gnu-gcc: error: unrecognized command-line option '-?'
+cargo:warning=compilation terminated.
+cargo:warning=aarch64-linux-gnu-gcc: fatal error: no input files
+cargo:warning=compilation terminated.
+cargo:warning=aarch64-linux-gnu-gcc: error: unrecognized command-line option '-?'
+cargo:warning=aarch64-linux-gnu-gcc: error: unrecognized command-line option '-?'
+cargo:warning=aarch64-linux-gnu-gcc: fatal error: no input files
+cargo:warning=compilation terminated.
+cargo:warning=aarch64-linux-gnu-gcc: fatal error: no input files
+cargo:warning=compilation terminated.
+cargo:warning=aarch64-linux-gnu-gcc: fatal error: no input files
+cargo:warning=compilation terminated.
+cargo:warning=aarch64-linux-gnu-gcc: error: unrecognized command-line option '-?'
+cargo:warning=aarch64-linux-gnu-gcc: fatal error: no input files
+cargo:warning=compilation terminated.
+cargo:warning=aarch64-linux-gnu-gcc: error: unrecognized command-line option '-?'
+cargo:warning=aarch64-linux-gnu-gcc: fatal error: no input files
+cargo:warning=compilation terminated.
+test test_target_mismatch ... ok
+test exe_stack::test_missing_gnu_stack_section ... ok
+test exe_stack::test_exe_gnu_stack_section ... ok
+test test_good_bin ... ok
+test exe_stack::test_execstack_bin ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.42s
+
++ symcheck=(cargo run -p symcheck --release)
++ symcheck+=(-- --build-and-check --target "$target")
++ [[ aarch64-unknown-linux-gnu == *\-\n\o\n\e* ]]
++ symcheck_cb_args=(-- --package compiler_builtins --features compiler-builtins)
++ cargo run -p symcheck --release -- --build-and-check --target aarch64-unknown-linux-gnu -- --package compiler_builtins --features compiler-builtins
+   Compiling bitflags v2.13.2
+   Compiling regex-automata v0.4.18
+   Compiling wasmparser v0.255.0
+   Compiling object v0.40.0
+   Compiling regex v1.13.1
+   Compiling symcheck v0.1.0 (/checkout/crates/symcheck)
+    Finished `release` profile [optimized] target(s) in 4.72s
+     Running `qemu-aarch64 /builtins-target/release/symcheck --build-and-check --target aarch64-unknown-linux-gnu -- --package compiler_builtins --features compiler-builtins`
+running: "rustc" "--target" "aarch64-unknown-linux-gnu" "--print=cfg"
+running: "cargo" "build" "--target" "aarch64-unknown-linux-gnu" "--message-format=json-diagnostic-rendered-ansi" "--package" "compiler_builtins" "--features" "compiler-builtins"
+   Compiling compiler_builtins v0.1.160 (/checkout/builtins-shim)
+build script output: {
+  "cfgs": [
+    "intrinsics_enabled",
+    "f16_enabled",
+    "f128_enabled",
+    "mem_unaligned"
+  ],
+  "env": [],
+  "linked_libs": [],
+  "linked_paths": [],
+  "out_dir": "/builtins-target/aarch64-unknown-linux-gnu/debug/build/compiler_builtins/6180a04f82bc44ea/out",
+  "package_id": "path+file:///checkout/builtins-shim#compiler_builtins@0.1.160",
+  "reason": "build-script-executed"
+}
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 3.39s
+build finshed. success: true
+Collected the following rlibs to check: [
+    "/builtins-target/aarch64-unknown-linux-gnu/debug/build/compiler_builtins/589508f6b6aef4b5/out/libcompiler_builtins-589508f6b6aef4b5.rlib",
+]
+Checking /builtins-target/aarch64-unknown-linux-gnu/debug/build/compiler_builtins/589508f6b6aef4b5/out/libcompiler_builtins-589508f6b6aef4b5.rlib
+    success: no duplicate symbols found
+    success: no undefined references to core found
+    success: object files match target
+    success: no writeable+executable stack indicators found
+    success: no visible symbols found
++ cargo run -p symcheck --release -- --build-and-check --target aarch64-unknown-linux-gnu -- --package compiler_builtins --features compiler-builtins --release
+    Finished `release` profile [optimized] target(s) in 0.11s
+     Running `qemu-aarch64 /builtins-target/release/symcheck --build-and-check --target aarch64-unknown-linux-gnu -- --package compiler_builtins --features compiler-builtins --release`
+running: "rustc" "--target" "aarch64-unknown-linux-gnu" "--print=cfg"
+running: "cargo" "build" "--target" "aarch64-unknown-linux-gnu" "--message-format=json-diagnostic-rendered-ansi" "--package" "compiler_builtins" "--features" "compiler-builtins" "--release"
+   Compiling compiler_builtins v0.1.160 (/checkout/builtins-shim)
+build script output: {
+  "cfgs": [
+    "intrinsics_enabled",
+    "optimizations_enabled",
+    "f16_enabled",
+    "f128_enabled",
+    "mem_unaligned"
+  ],
+  "env": [],
+  "linked_libs": [],
+  "linked_paths": [],
+  "out_dir": "/builtins-target/aarch64-unknown-linux-gnu/release/build/compiler_builtins/5b16d96e7bb2e5e5/out",
+  "package_id": "path+file:///checkout/builtins-shim#compiler_builtins@0.1.160",
+  "reason": "build-script-executed"
+}
+    Finished `release` profile [optimized] target(s) in 2.26s
+build finshed. success: true
+Collected the following rlibs to check: [
+    "/builtins-target/aarch64-unknown-linux-gnu/release/build/compiler_builtins/851c752094165b6a/out/libcompiler_builtins-851c752094165b6a.rlib",
+]
+Checking /builtins-target/aarch64-unknown-linux-gnu/release/build/compiler_builtins/851c752094165b6a/out/libcompiler_builtins-851c752094165b6a.rlib
+    success: no duplicate symbols found
+    success: no undefined references to core found
+    success: object files match target
+    success: no writeable+executable stack indicators found
+    success: no visible symbols found
++ cargo run -p symcheck --release -- --build-and-check --target aarch64-unknown-linux-gnu -- --package compiler_builtins --features compiler-builtins --features c
+    Finished `release` profile [optimized] target(s) in 0.21s
+     Running `qemu-aarch64 /builtins-target/release/symcheck --build-and-check --target aarch64-unknown-linux-gnu -- --package compiler_builtins --features compiler-builtins --features c`
+running: "rustc" "--target" "aarch64-unknown-linux-gnu" "--print=cfg"
+running: "cargo" "build" "--target" "aarch64-unknown-linux-gnu" "--message-format=json-diagnostic-rendered-ansi" "--package" "compiler_builtins" "--features" "compiler-builtins" "--features" "c"
+   Compiling compiler_builtins v0.1.160 (/checkout/builtins-shim)
+error: failed to run custom build command for `compiler_builtins v0.1.160 (/checkout/builtins-shim)`
+
+Caused by:
+  process didn't exit successfully: `/builtins-target/debug/build/compiler_builtins/b5cf957306dc5067/out/build_script_build` (exit status: 101)
+  --- stdout
+  cargo:rerun-if-env-changed=LIBM_BUILD_VERBOSE
+  cargo::rerun-if-changed=../compiler-builtins/build.rs
+  cargo::rerun-if-changed=../libm/configure.rs
+  cargo:rustc-check-cfg=cfg(thumb)
+  cargo:rustc-check-cfg=cfg(thumb1_only)
+  cargo:rustc-check-cfg=cfg(target_abi_eabihf)
+  cargo:rustc-check-cfg=cfg(x86_no_sse2)
+  cargo:rustc-check-cfg=cfg(target_feature, values("vfp2sp", "vfp2"))
+  cargo:rustc-check-cfg=cfg(assert_no_panic)
+  cargo:rustc-check-cfg=cfg(intrinsics_enabled)
+  cargo:rustc-cfg=intrinsics_enabled
+  cargo:rustc-check-cfg=cfg(optimizations_enabled)
+  cargo:rustc-check-cfg=cfg(f16_enabled)
+  cargo:rustc-cfg=f16_enabled
+  cargo:rustc-check-cfg=cfg(f128_enabled)
+  cargo:rustc-cfg=f128_enabled
+  cargo::rustc-check-cfg=cfg(__ashldi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__ashlsi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__ashrdi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__ashrsi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__bswapsi2, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__bswapdi2, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__bswapti2, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__divdi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__divsi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__divmoddi4, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__divmodsi4, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__divmodsi4, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__divmodti4, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__lshrdi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__lshrsi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__moddi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__modsi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__muldi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__udivdi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__udivmoddi4, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__udivmodsi4, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__udivsi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__umoddi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(__umodsi3, values("optimized-c"))
+  cargo::rustc-check-cfg=cfg(target_feature, values("vis3"))
+  cargo:compiler-rt=/checkout/builtins-shim/compiler-rt
+  cargo:rustc-check-cfg=cfg(mem_unaligned)
+  cargo:rustc-cfg=mem_unaligned
+  cargo:rustc-check-cfg=cfg(kernel_user_helpers)
+
+  --- stderr
+
+  thread 'main' (7369) panicked at builtins-shim/../compiler-builtins/build.rs:495:17:
+  RUST_COMPILER_RT_ROOT is not set. You may need to run `ci/download-compiler-rt.sh`.
+  stack backtrace:
+     0:     0xaaaae5460f68 - std[6504cb405966be06]::backtrace_rs::backtrace::libunwind::trace
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/../../backtrace/src/backtrace/libunwind.rs:117:9
+     1:     0xaaaae5460f68 - std[6504cb405966be06]::backtrace_rs::backtrace::trace_unsynchronized::<std[6504cb405966be06]::sys::backtrace::_print_fmt::{closure#1}>
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/../../backtrace/src/backtrace/mod.rs:66:14
+     2:     0xaaaae5460f68 - std[6504cb405966be06]::sys::backtrace::_print_fmt
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/sys/backtrace.rs:74:9
+     3:     0xaaaae5460f68 - <<std[6504cb405966be06]::sys::backtrace::BacktraceLock>::print::DisplayBacktrace as core[2882ef73ddfb1533]::fmt::Display>::fmt
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/sys/backtrace.rs:44:26
+     4:     0xaaaae5473c64 - <core[2882ef73ddfb1533]::fmt::rt::Argument>::fmt
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/core/src/fmt/rt.rs:152:76
+     5:     0xaaaae5473c64 - core[2882ef73ddfb1533]::fmt::write
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/core/src/fmt/mod.rs:1687:22
+     6:     0xaaaae5465a34 - core[2882ef73ddfb1533]::io::write::default_write_fmt::<std[6504cb405966be06]::sys::stdio::unix::Stderr>
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/core/src/io/write.rs:402:11
+     7:     0xaaaae5465a34 - <std[6504cb405966be06]::sys::stdio::unix::Stderr as core[2882ef73ddfb1533]::io::write::Write>::write_fmt
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/core/src/io/write.rs:335:13
+     8:     0xaaaae5445498 - <std[6504cb405966be06]::sys::backtrace::BacktraceLock>::print
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/sys/backtrace.rs:47:9
+     9:     0xaaaae5445498 - std[6504cb405966be06]::panicking::default_hook::{closure#0}
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/panicking.rs:289:27
+    10:     0xaaaae545babc - std[6504cb405966be06]::panicking::default_hook
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/panicking.rs:316:9
+    11:     0xaaaae545bc7c - std[6504cb405966be06]::panicking::panic_with_hook
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/panicking.rs:811:13
+    12:     0xaaaae544555c - std[6504cb405966be06]::panicking::panic_handler::{closure#0}
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/panicking.rs:678:13
+    13:     0xaaaae543f190 - std[6504cb405966be06]::sys::backtrace::__rust_end_short_backtrace::<std[6504cb405966be06]::panicking::panic_handler::{closure#0}, !>
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/sys/backtrace.rs:182:18
+    14:     0xaaaae5445c70 - __rustc[24b41f7b1eaff5c4]::rust_begin_unwind
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/panicking.rs:676:5
+    15:     0xaaaae53a680c - core[2882ef73ddfb1533]::panicking::panic_fmt
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/core/src/panicking.rs:80:14
+    16:     0xaaaae53a8880 - build_script_build[28f9a2508f253d4a]::c::compile
+                                 at /checkout/builtins-shim/../compiler-builtins/build.rs:495:17
+    17:     0xaaaae53bb090 - build_script_build[28f9a2508f253d4a]::main
+                                 at /checkout/builtins-shim/../compiler-builtins/build.rs:84:9
+    18:     0xaaaae53a9f00 - <fn() as core[2882ef73ddfb1533]::ops::function::FnOnce<()>>::call_once
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/core/src/ops/function.rs:250:5
+    19:     0xaaaae53a6ba8 - std[6504cb405966be06]::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/sys/backtrace.rs:166:18
+    20:     0xaaaae53ab640 - std[6504cb405966be06]::rt::lang_start::<()>::{closure#0}
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/rt.rs:206:18
+    21:     0xaaaae545aa60 - <&dyn core[2882ef73ddfb1533]::ops::function::Fn<(), Output = i32> + core[2882ef73ddfb1533]::marker::Sync + core[2882ef73ddfb1533]::panic::unwind_safe::RefUnwindSafe as core[2882ef73ddfb1533]::ops::function::FnOnce<()>>::call_once
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/core/src/ops/function.rs:287:21
+    22:     0xaaaae545aa60 - std[6504cb405966be06]::panicking::catch_unwind::do_call::<&dyn core[2882ef73ddfb1533]::ops::function::Fn<(), Output = i32> + core[2882ef73ddfb1533]::marker::Sync + core[2882ef73ddfb1533]::panic::unwind_safe::RefUnwindSafe, i32>
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/panicking.rs:573:43
+    23:     0xaaaae545aa60 - std[6504cb405966be06]::panicking::catch_unwind::<i32, &dyn core[2882ef73ddfb1533]::ops::function::Fn<(), Output = i32> + core[2882ef73ddfb1533]::marker::Sync + core[2882ef73ddfb1533]::panic::unwind_safe::RefUnwindSafe>
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/panicking.rs:541:19
+    24:     0xaaaae545aa60 - std[6504cb405966be06]::panic::catch_unwind::<&dyn core[2882ef73ddfb1533]::ops::function::Fn<(), Output = i32> + core[2882ef73ddfb1533]::marker::Sync + core[2882ef73ddfb1533]::panic::unwind_safe::RefUnwindSafe, i32>
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/panic.rs:359:14
+    25:     0xaaaae545aa60 - std[6504cb405966be06]::rt::lang_start_internal::{closure#0}
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/rt.rs:175:24
+    26:     0xaaaae545aa60 - std[6504cb405966be06]::panicking::catch_unwind::do_call::<std[6504cb405966be06]::rt::lang_start_internal::{closure#0}, isize>
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/panicking.rs:573:43
+    27:     0xaaaae545aa60 - std[6504cb405966be06]::panicking::catch_unwind::<isize, std[6504cb405966be06]::rt::lang_start_internal::{closure#0}>
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/panicking.rs:541:19
+    28:     0xaaaae545aa60 - std[6504cb405966be06]::panic::catch_unwind::<std[6504cb405966be06]::rt::lang_start_internal::{closure#0}, isize>
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/panic.rs:359:14
+    29:     0xaaaae545aa60 - std[6504cb405966be06]::rt::lang_start_internal
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/rt.rs:171:5
+    30:     0xaaaae53ab618 - std[6504cb405966be06]::rt::lang_start::<()>
+                                 at /rustc/92ffebeceaa0a071066f233873c2438e73d70fe7/library/std/src/rt.rs:205:5
+    31:     0xaaaae53bb0ec - main
+    32:     0xffffb350225c - <unknown>
+    33:     0xffffb350233c - __libc_start_main
+    34:     0xaaaae53a6a30 - _start
+    35:                0x0 - <unknown>
+build finshed. success: false
+
+thread 'main' (7250) panicked at crates/symcheck/src/main.rs:415:5:
+assertion failed: child.wait().expect("failed to wait on Cargo").success()
+stack backtrace:
+   0:     0xaaaaaabd2434 - <<std[6504cb405966be06]::sys::backtrace::BacktraceLock>::print::DisplayBacktrace as core[2882ef73ddfb1533]::fmt::Display>::fmt
+   1:     0xaaaaaabe5c60 - core[2882ef73ddfb1533]::fmt::write
+   2:     0xaaaaaabd7784 - <std[6504cb405966be06]::sys::stdio::unix::Stderr as core[2882ef73ddfb1533]::io::write::Write>::write_fmt
+   3:     0xaaaaaabb8228 - std[6504cb405966be06]::panicking::default_hook::{closure#0}
+   4:     0xaaaaaabcc004 - std[6504cb405966be06]::panicking::default_hook
+   5:     0xaaaaaabcc1c4 - std[6504cb405966be06]::panicking::panic_with_hook
+   6:     0xaaaaaabb82ec - std[6504cb405966be06]::panicking::panic_handler::{closure#0}
+   7:     0xaaaaaabb1b8c - std[6504cb405966be06]::sys::backtrace::__rust_end_short_backtrace::<std[6504cb405966be06]::panicking::panic_handler::{closure#0}, !>
+   8:     0xaaaaaabb8cc8 - __rustc[24b41f7b1eaff5c4]::rust_begin_unwind
+   9:     0xaaaaaaaefa9c - core[2882ef73ddfb1533]::panicking::panic_fmt
+  10:     0xaaaaaaaefa74 - core[2882ef73ddfb1533]::panicking::panic
+  11:     0xaaaaaaaf6720 - symcheck[6d4d73c267e05bb0]::main
+  12:     0xaaaaaab02bb8 - std[6504cb405966be06]::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13:     0xaaaaaaafeeb0 - std[6504cb405966be06]::rt::lang_start::<()>::{closure#0}
+  14:     0xaaaaaabcb1d8 - std[6504cb405966be06]::rt::lang_start_internal
+  15:     0xaaaaaaaf7a00 - main
+qemu: uncaught target signal 6 (Aborted) - core dumped
+ci/run.sh: line 104:  7250 Aborted                 "${symcheck[@]}" "${symcheck_cb_args[@]}" --features c

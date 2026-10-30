@@ -1,0 +1,12 @@
+[
+  {
+    "target_dir": "target",
+    "exit_code": 0,
+    "output": "     Removed 10768 files, 1.9GiB total\n"
+  },
+  {
+    "target_dir": "/tmp/libm-contribution-walltime-base",
+    "exit_code": 0,
+    "output": "     Removed 1021 files, 273.3MiB total\n"
+  }
+]

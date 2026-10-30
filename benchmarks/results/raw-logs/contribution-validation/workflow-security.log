@@ -1,0 +1,9 @@
+$ ['uvx', 'zizmor', '--offline', '.github/workflows']
+ INFO zizmor: 🌈 zizmor v1.31.1
+ INFO audit: zizmor: 🌈 completed .github/workflows/main.yaml
+ INFO audit: zizmor: 🌈 completed .github/workflows/pow-contribution-validation.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/pow-hardware-hosts.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/pow-target-evidence.yml
+ INFO audit: zizmor: 🌈 completed .github/workflows/publish.yaml
+ INFO audit: zizmor: 🌈 completed .github/workflows/rustc-pull.yml
+No findings to report. Good job! (17 suppressed)

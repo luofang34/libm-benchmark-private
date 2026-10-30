@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "benchmarks/scripts/check_pow_scope.py",
+    "--output",
+    "/tmp/libm-contribution-scope-nightly"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "CARGO_TERM_COLOR": "never",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 19.186118125915527
+}

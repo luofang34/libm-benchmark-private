@@ -1,0 +1,24 @@
+{
+  "command": [
+    "cargo",
+    "bench",
+    "--no-default-features",
+    "--features",
+    "arch,unstable-float,unstable-intrinsics,mem",
+    "--features",
+    "benchmarking-reports",
+    "--bench",
+    "random",
+    "--",
+    "^pow/"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "CARGO_TERM_COLOR": "never",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 102.02461385726929,
+  "timing_valid_for_comparison": false,
+  "reason": "Concurrent extensive and container workloads; superseded by idle walltime runs."
+}

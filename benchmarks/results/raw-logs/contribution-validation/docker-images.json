@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "sha256:b46720558728197b629c351e0056c5e3dae2d9969dd7f35f31a08934cc5e048d",
+    "RepoTags": [
+      "builtins-aarch64-unknown-linux-gnu:latest"
+    ],
+    "RepoDigests": [
+      "builtins-aarch64-unknown-linux-gnu@sha256:b46720558728197b629c351e0056c5e3dae2d9969dd7f35f31a08934cc5e048d"
+    ],
+    "Created": "2026-10-30T03:39:29.246148544Z",
+    "Architecture": "arm64",
+    "Os": "linux"
+  },
+  {
+    "Id": "sha256:b6349be51759611179e94ea39ecd32d090cd6f08fde0ed6a3a99925559fcc8b4",
+    "RepoTags": [
+      "libm-pow-contribution-icount:latest"
+    ],
+    "RepoDigests": [
+      "libm-pow-contribution-icount@sha256:b6349be51759611179e94ea39ecd32d090cd6f08fde0ed6a3a99925559fcc8b4"
+    ],
+    "Created": "2026-10-30T03:45:07.748745923Z",
+    "Architecture": "arm64",
+    "Os": "linux"
+  }
+]

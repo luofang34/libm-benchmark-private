@@ -1,0 +1,17 @@
+{
+  "command": [
+    "cargo",
+    "clippy",
+    "--all-targets",
+    "--",
+    "-D",
+    "warnings"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "CARGO_TERM_COLOR": "never",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 101,
+  "elapsed_seconds": 19.04519510269165
+}

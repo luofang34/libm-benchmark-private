@@ -1,0 +1,14 @@
+{
+  "command": [
+    "bash",
+    "ci/run-extensive.sh"
+  ],
+  "environment": {
+    "TO_TEST": "pow",
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "CARGO_TERM_COLOR": "never",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 1595.8681797981262
+}

@@ -1,0 +1,12 @@
+{
+  "clippy": {
+    "same_diagnostic_multiset_as_previous_candidate_run": true,
+    "diagnostic_summary_lines": 14,
+    "baseline_comparison": "../upstream-validation/diagnostic-comparison.json"
+  },
+  "doc": {
+    "same_diagnostic_multiset_as_previous_candidate_run": true,
+    "diagnostic_summary_lines": 276,
+    "baseline_comparison": "../upstream-validation/diagnostic-comparison.json"
+  }
+}

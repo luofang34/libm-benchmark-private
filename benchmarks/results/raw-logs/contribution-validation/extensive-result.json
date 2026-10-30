@@ -1,0 +1,14 @@
+{
+  "function": "pow",
+  "inputs": 17179869184,
+  "generator": "upstream spaced Cartesian inputs",
+  "iteration_override": null,
+  "reference": "upstream rug/MPFR correctly rounded result",
+  "reference_result_precision_bits": 53,
+  "comparison": "upstream libm-test ULP-distance and IEEE classification checks",
+  "profile": "release-checked",
+  "failed": 0,
+  "primary_test_elapsed_seconds": 1534.38,
+  "higher_precision_ulp_distribution": "experiments/pow/accuracy.md records the separate 256-bit corpus experiment",
+  "full_domain_worst_case_proof": false
+}

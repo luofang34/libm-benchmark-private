@@ -1,0 +1,5 @@
+$ ['cargo', 'build', '--manifest-path', 'builtins-test-intrinsics/Cargo.toml']
+   Compiling compiler_builtins v0.1.160 (/private/tmp/libm-proposal-preflight/proposal/builtins-shim)
+   Compiling builtins-test-intrinsics v0.1.0 (/private/tmp/libm-proposal-preflight/proposal/builtins-test-intrinsics)
+   Compiling panic-handler v0.1.0 (/private/tmp/libm-proposal-preflight/proposal/crates/panic-handler)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 3.33s

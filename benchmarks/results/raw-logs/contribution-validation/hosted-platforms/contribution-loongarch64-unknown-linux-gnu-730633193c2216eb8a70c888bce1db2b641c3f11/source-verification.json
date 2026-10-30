@@ -1,0 +1,12 @@
+{
+  "matches_measured_math_revision": true,
+  "line_endings": {
+    "mod.rs": "LF",
+    "pow.rs": "LF",
+    "pow_fdlibm.rs": "LF",
+    "pow/exp.rs": "LF",
+    "pow/log.rs": "LF",
+    "pow/table.rs": "LF",
+    "pow/tests.rs": "LF"
+  }
+}

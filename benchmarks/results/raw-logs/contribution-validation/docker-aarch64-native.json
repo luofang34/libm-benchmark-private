@@ -1,0 +1,14 @@
+{
+  "command": [
+    "bash",
+    "-c",
+    "docker run --rm --init -v \"$PWD:/checkout:ro\" -v compiler-builtins-cache:/builtins-target -w /checkout -e CARGO_TARGET_DIR=/builtins-target -e RUST_COMPILER_RT_ROOT=/checkout/compiler-rt -e CARGO_BUILD_WARNINGS=deny -e \"RUSTFLAGS=-Dwarnings -Dlinker_messages\" -e USING_CONTAINER_RUSTC=1 builtins-aarch64-unknown-linux-gnu env -u CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_RUNNER bash ci/run.sh aarch64-unknown-linux-gnu"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "CARGO_TERM_COLOR": "never",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 430.77028608322144
+}

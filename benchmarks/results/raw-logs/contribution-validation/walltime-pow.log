@@ -1,0 +1,560 @@
+$ ['cargo', 'bench', '--no-default-features', '--features', 'arch,unstable-float,unstable-intrinsics,mem', '--features', 'benchmarking-reports', '--bench', 'random', '--', '^pow/']
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling libc v0.2.190
+   Compiling zerocopy v0.8.62
+   Compiling cfg-if v1.0.5
+   Compiling serde_core v1.0.229
+   Compiling utf8parse v0.2.2
+   Compiling zmij v1.0.23
+   Compiling shlex v2.0.1
+   Compiling find-msvc-tools v0.1.14
+   Compiling autocfg v1.5.1
+   Compiling heck v0.5.0
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling anstyle-query v1.1.5
+   Compiling serde v1.0.229
+   Compiling anstyle-parse v1.0.0
+   Compiling crossbeam-utils v0.8.23
+   Compiling colorchoice v1.0.5
+   Compiling anstyle v1.0.14
+   Compiling cc v1.6.0
+   Compiling serde_json v1.0.151
+   Compiling crossbeam-epoch v0.9.21
+   Compiling either v1.19.0
+   Compiling clap_lex v1.1.1
+   Compiling num-traits v0.2.19
+   Compiling anstream v1.0.0
+   Compiling rand_core v0.10.1
+   Compiling strsim v0.11.1
+   Compiling memchr v2.8.3
+   Compiling regex-syntax v0.8.11
+   Compiling ciborium-io v0.2.2
+   Compiling getrandom v0.4.3
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+   Compiling itoa v1.0.18
+   Compiling plotters-backend v0.3.7
+   Compiling clap_builder v4.6.7
+   Compiling crossbeam-deque v0.8.8
+   Compiling itertools v0.13.0
+   Compiling plotters-svg v0.3.7
+   Compiling portable-atomic v1.15.0
+   Compiling paste v1.0.15
+   Compiling same-file v1.0.6
+   Compiling rayon-core v1.13.0
+   Compiling cast v0.3.0
+   Compiling anyhow v1.0.104
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+   Compiling syn v3.0.6
+   Compiling syn v2.0.119
+   Compiling walkdir v2.5.0
+   Compiling chacha20 v0.10.2
+   Compiling anes v0.1.6
+   Compiling oorandom v11.1.5
+   Compiling libm-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/libm-test)
+   Compiling api-list-common v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/api-list-common)
+   Compiling plotters v0.3.7
+   Compiling page_size v0.6.0
+   Compiling console v0.16.6
+   Compiling rand v0.10.3
+   Compiling alloca v0.4.0
+   Compiling escape8259 v0.5.4
+   Compiling unit-prefix v0.5.2
+   Compiling indicatif v0.18.6
+   Compiling rayon v1.12.0
+   Compiling regex-automata v0.4.18
+   Compiling criterion-plot v0.8.2
+   Compiling zerocopy-derive v0.8.62
+   Compiling regex v1.13.1
+   Compiling serde_derive v1.0.229
+   Compiling clap_derive v4.6.7
+   Compiling libm-macros v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/libm-macros)
+   Compiling clap v4.6.7
+   Compiling libtest-mimic v0.8.2
+   Compiling tinytemplate v1.2.1
+   Compiling half v2.7.1
+   Compiling ppv-lite86 v0.2.21
+   Compiling rand_chacha v0.10.0
+   Compiling ciborium-ll v0.2.2
+   Compiling ciborium v0.2.2
+   Compiling criterion v0.8.2
+    Finished `bench` profile [optimized + debuginfo] target(s) in 1m 16s
+     Running benches/random.rs (target/release/build/libm-test/ba16e5bcb2b37eff/out/random-ba16e5bcb2b37eff)
+Gnuplot not found, using plotters backend
+Random Musl acos arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl acosf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl acosh arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl acoshf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl addf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl addf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl addf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl addf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl addf32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl addf32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl addf64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl addf64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashl_u128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashl_u128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashl_u32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashl_u32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashl_u64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashl_u64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashr_i128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashr_i128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashr_i32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashr_i32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashr_i64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ashr_i64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl asin arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl asinf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl asinh arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl asinhf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl atan arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl atan2 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl atan2 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl atan2f arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl atan2f arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl atanf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl atanh arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl atanhf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl cbrt arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl cbrtf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ceil arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ceilf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ceilf128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ceilf16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl copysign arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl copysign arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl copysignf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl copysignf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl copysignf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl copysignf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl copysignf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl copysignf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl cos arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl cosf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl cosh arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl coshf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl divf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl divf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl divf32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl divf32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl divf64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl divf64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl eqf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl eqf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl eqf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl eqf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl eqf32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl eqf32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl eqf64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl eqf64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl erf arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl erfc arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl erfcf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl erff arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl exp arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl exp10 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl exp10f arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl exp2 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl exp2f arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl exp2m1 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl exp2m1f arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl exp2m1f16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl expf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl expm1 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl expm1f arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl extend_f16_f128 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl extend_f16_f32 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl extend_f16_f64 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl extend_f32_f128 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl extend_f32_f64 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl extend_f64_f128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fabs arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fabsf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fabsf128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fabsf16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fdim arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fdim arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fdimf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fdimf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fdimf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fdimf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fdimf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fdimf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl floor arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl floorf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl floorf128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl floorf16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fma arg 1/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fma arg 2/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fma arg 3/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaf arg 1/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaf arg 2/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaf arg 3/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaf128 arg 1/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaf128 arg 2/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaf128 arg 3/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaf16 arg 1/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaf16 arg 2/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaf16 arg 3/3: 99 iterations (970299 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmax arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmax arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaxf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaxf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaxf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaxf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaxf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaxf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximum arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximum arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximum_num arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximum_num arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximum_numf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximum_numf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximum_numf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximum_numf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximum_numf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximum_numf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximumf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximumf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximumf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximumf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximumf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmaximumf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmin arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmin arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimum arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimum arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimum_num arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimum_num arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimum_numf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimum_numf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimum_numf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimum_numf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimum_numf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimum_numf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimumf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimumf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimumf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimumf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimumf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fminimumf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmod arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmod arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmodf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmodf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmodf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmodf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmodf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl fmodf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl frexp arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl frexpf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl frexpf128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl frexpf16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f128_i128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f128_i32 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f128_i64 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f128_u128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f128_u32 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f128_u64 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f32_i128 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f32_i32 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f32_i64 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f32_u128 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f32_u32 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f32_u64 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f64_i128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f64_i32 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f64_i64 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f64_u128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f64_u32 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ftoi_f64_u64 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gef128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gef128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gef16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gef16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gef32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gef32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gef64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gef64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gtf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gtf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gtf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gtf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gtf32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gtf32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gtf64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl gtf64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl hypot arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl hypot arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl hypotf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl hypotf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl iadd_i128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl iadd_i128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl iadd_u128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl iadd_u128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl iaddo_i128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl iaddo_i128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl iaddo_u128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl iaddo_u128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_i128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_i128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_i32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_i32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_i64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_i64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_u128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_u128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_u32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_u32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_u64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idiv_u64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_i128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_i128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_i32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_i32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_i64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_i64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_u128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_u128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_u32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_u32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_u64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl idivmod_u64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ilogb arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ilogbf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ilogbf128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ilogbf16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_i128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_i128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_i32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_i32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_i64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_i64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_u128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_u128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_u32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_u32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_u64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imod_u64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imul_i128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imul_i128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imul_u64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imul_u64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imulo_i128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imulo_i128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imulo_i32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imulo_i32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imulo_i64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imulo_i64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imulo_u128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl imulo_u128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl isub_i128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl isub_i128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl isub_u128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl isub_u128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl isubo_i128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl isubo_i128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl isubo_u128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl isubo_u128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_i128_f128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_i128_f32 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_i128_f64 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_i32_f128 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_i32_f32 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_i32_f64 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_i64_f128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_i64_f32 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_i64_f64 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_u128_f128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_u128_f32 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_u128_f64 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_u32_f128 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_u32_f32 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_u32_f64 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_u64_f128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_u64_f32 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl itof_u64_f64 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl j0 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl j0f arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl j1 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl j1f arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl jn arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl jn arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl jnf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl jnf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ldexp arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ldexp arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ldexpf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ldexpf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ldexpf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ldexpf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ldexpf16 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ldexpf16 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl leading_zeros_u128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl leading_zeros_u32 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl leading_zeros_u64 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lef128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lef128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lef16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lef16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lef32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lef32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lef64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lef64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lgamma arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lgamma_r arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lgammaf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lgammaf_r arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl log arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl log10 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl log10f arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl log1p arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl log1pf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl log2 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl log2f arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl logf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lshr_u128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lshr_u128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lshr_u32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lshr_u32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lshr_u64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl lshr_u64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ltf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ltf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ltf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ltf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ltf32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ltf32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ltf64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ltf64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl modf arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl modff arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl mulf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl mulf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl mulf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl mulf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl mulf32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl mulf32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl mulf64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl mulf64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl narrow_f128_f16 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl narrow_f128_f32 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl narrow_f128_f64 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl narrow_f32_f16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl narrow_f64_f16 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl narrow_f64_f32 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nef128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nef128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nef16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nef16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nef32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nef32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nef64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nef64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nextafter arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nextafter arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nextafterf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl nextafterf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl pow arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl pow arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Benchmarking pow/crate
+Benchmarking pow/crate: Warming up for 3.0000 s
+Benchmarking pow/crate: Collecting 100 samples in estimated 5.0153 s (1.5M iterations)
+Benchmarking pow/crate: Analyzing
+pow/crate               time:   [3.5983 µs 4.0881 µs 4.6309 µs]
+Found 6 outliers among 100 measurements (6.00%)
+  5 (5.00%) high mild
+  1 (1.00%) high severe
+
+Random Musl powf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl powf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl powif128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl powif128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl powif32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl powif32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl powif64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl powif64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl remainder arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl remainder arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl remainderf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl remainderf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl remquo arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl remquo arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl remquof arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl remquof arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl rint arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl rintf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl rintf128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl rintf16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl round arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl roundeven arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl roundevenf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl roundevenf128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl roundevenf16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl roundf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl roundf128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl roundf16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl scalbn arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl scalbn arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl scalbnf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl scalbnf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl scalbnf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl scalbnf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl scalbnf16 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl scalbnf16 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl sin arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl sincos arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl sincosf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl sinf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl sinh arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl sinhf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl sqrt arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl sqrtf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl sqrtf128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl sqrtf16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl subf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl subf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl subf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl subf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl subf32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl subf32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl subf64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl subf64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl tan arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl tanf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl tanh arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl tanhf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl tgamma arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl tgammaf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl trailing_zeros_u128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl trailing_zeros_u32 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl trailing_zeros_u64 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl trunc arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl truncf arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl truncf128 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl truncf16 arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl unordf128 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl unordf128 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl unordf16 arg 1/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl unordf16 arg 2/2: 283 iterations (80089 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl unordf32 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl unordf32 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl unordf64 arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl unordf64 arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl y0 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl y0f arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl y1 arg 1/1: 160000 iterations (160000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl y1f arg 1/1: 40000 iterations (40000 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl yn arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl yn arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ynf arg 1/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`
+Random Musl ynf arg 2/2: 566 iterations (320356 total) using `LIBM_SEED=0123456789abcdef0123456789abcdef`

@@ -1,0 +1,22 @@
+{
+  "command": [
+    "cargo",
+    "build",
+    "-p",
+    "compiler_builtins",
+    "-p",
+    "libm",
+    "--target",
+    "s390x-unknown-linux-gnu",
+    "-Zbuild-std=core"
+  ],
+  "environment": {
+    "CARGO_TARGET_DIR": "/tmp/libm-contribution-s390x",
+    "RUSTFLAGS": "-Dwarnings -Dlinker_messages",
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "CARGO_TERM_COLOR": "never",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 57.23287868499756
+}

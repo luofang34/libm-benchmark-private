@@ -1,0 +1,13 @@
+{
+  "command": [
+    "bash",
+    "ci/download-compiler-rt.sh"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "CARGO_TERM_COLOR": "never",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 46.91932487487793
+}

@@ -175,6 +175,7 @@ jobs:
               (
                 cd "$revision"
                 cargo bench --target "$JOB_TARGET" --bench '*icount*' \
+                  --target-dir "$GITHUB_WORKSPACE/$revision/target" \
                   --no-default-features --features 'unstable unstable-float icount' \
                   --features compiler_builtins/unmangled-names "${extra[@]}" -- \
                   --home "$GITHUB_WORKSPACE/evidence/gungraun-home" \

@@ -1,0 +1,23 @@
+{
+  "command": [
+    "cargo",
+    "bench",
+    "--no-default-features",
+    "--features",
+    "arch,unstable-float,unstable-intrinsics,mem",
+    "--features",
+    "benchmarking-reports",
+    "--bench",
+    "random",
+    "--no-run"
+  ],
+  "environment": {
+    "VALIDATION_CWD": "/tmp/libm-contribution-base",
+    "CARGO_TARGET_DIR": "/tmp/libm-contribution-walltime-base",
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "CARGO_TERM_COLOR": "never",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 89.46009302139282
+}

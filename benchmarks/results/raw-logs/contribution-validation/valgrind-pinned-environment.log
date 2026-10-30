@@ -1,0 +1,48 @@
+$ ['docker', 'build', '-t', 'libm-pow-contribution-icount', '/tmp/libm-contribution-image']
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 370B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/builtins-aarch64-unknown-linux-gnu:latest
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/builtins-aarch64-unknown-linux-gnu:latest@sha256:b46720558728197b629c351e0056c5e3dae2d9969dd7f35f31a08934cc5e048d
+#4 resolve docker.io/library/builtins-aarch64-unknown-linux-gnu:latest@sha256:b46720558728197b629c351e0056c5e3dae2d9969dd7f35f31a08934cc5e048d
+#4 resolve docker.io/library/builtins-aarch64-unknown-linux-gnu:latest@sha256:b46720558728197b629c351e0056c5e3dae2d9969dd7f35f31a08934cc5e048d 0.6s done
+#4 DONE 0.6s
+
+#5 [2/4] RUN apt-get update && apt-get install -y --no-install-recommends valgrind gdb libc6-dbg
+#5 CACHED
+
+#6 [3/4] RUN cargo install gungraun-runner --version 0.20.0 --locked
+#6 CACHED
+
+#7 [4/4] RUN rustup toolchain install nightly-2026-10-28 --profile minimal
+#7 0.186 info: syncing channel updates for nightly-2026-10-28-aarch64-unknown-linux-gnu
+#7 1.549 info: latest update on 2026-10-28 for version 1.101.0-nightly (41089d07a 2026-10-27)
+#7 1.549 info: downloading 3 components
+#7 13.70 
+#7 13.71   nightly-2026-10-28-aarch64-unknown-linux-gnu installed - rustc 1.101.0-nightly (41089d07a 2026-10-27)
+#7 13.71 
+#7 13.72 info: checking for self-update (current version: 1.29.2)
+#7 DONE 14.4s
+
+#8 exporting to image
+#8 exporting layers
+#8 exporting layers 19.4s done
+#8 exporting manifest sha256:347835b5cf25490177eb766d9090bd1ba260f2bfbe128abb629bf2f4a0a5b8d5
+#8 exporting manifest sha256:347835b5cf25490177eb766d9090bd1ba260f2bfbe128abb629bf2f4a0a5b8d5 0.0s done
+#8 exporting config sha256:13c887e3edde616c646a75bebb86106ea0b6e4e17f180780640963fdf7d312ff 0.0s done
+#8 exporting attestation manifest sha256:2f422d8dac25b6348475236c5d1410f68a85987fff6e2d55cc89c40f3bb16c60 0.0s done
+#8 exporting manifest list sha256:b6349be51759611179e94ea39ecd32d090cd6f08fde0ed6a3a99925559fcc8b4 0.0s done
+#8 naming to docker.io/library/libm-pow-contribution-icount:latest
+#8 naming to docker.io/library/libm-pow-contribution-icount:latest done
+#8 unpacking to docker.io/library/libm-pow-contribution-icount:latest
+#8 unpacking to docker.io/library/libm-pow-contribution-icount:latest 9.9s done
+#8 DONE 29.4s

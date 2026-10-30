@@ -1,0 +1,18 @@
+[
+  {
+    "path": "compiler-rt",
+    "removed": true
+  },
+  {
+    "path": "code.tar.gz",
+    "removed": true
+  },
+  {
+    "path": "crates/musl-math-sys/musl",
+    "removed": true
+  },
+  {
+    "path": "libm-test/target",
+    "removed": true
+  }
+]

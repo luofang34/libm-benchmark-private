@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "math_revision": "f39774d821b2bbc19c98dca827678fdce636d075",
+  "math_source_unchanged": true,
+  "upstream_base": "6bc104a50f83cb205790c61c5d33508046f5fad3",
+  "upstream_pr_created": false,
+  "hosted_target_checks": {
+    "passed": 25,
+    "runtime_test_targets": 20,
+    "upstream_build_only_targets": 5,
+    "results": "platform-results.json",
+    "aggregated_from_successful_jobs_in_runs": [
+      41000772134,
+      41001421845
+    ],
+    "single_full_matrix_run_passed": false
+  },
+  "additional_cross_builds": {
+    "s390x-unknown-linux-gnu": {
+      "exit_code": 0,
+      "runtime_executed": false
+    },
+    "powerpc64-unknown-linux-musl": {
+      "exit_code": 0,
+      "runtime_executed": false
+    }
+  },
+  "extensive_pow": {
+    "function": "pow",
+    "inputs": 17179869184,
+    "generator": "upstream spaced Cartesian inputs",
+    "iteration_override": null,
+    "reference": "upstream rug/MPFR correctly rounded result",
+    "reference_result_precision_bits": 53,
+    "comparison": "upstream libm-test ULP-distance and IEEE classification checks",
+    "profile": "release-checked",
+    "failed": 0,
+    "primary_test_elapsed_seconds": 1534.38,
+    "higher_precision_ulp_distribution": "experiments/pow/accuracy.md records the separate 256-bit corpus experiment",
+    "full_domain_worst_case_proof": false
+  },
+  "official_icount": {
+    "valid_comparisons": 2862,
+    "regressions": 0,
+    "target_count": 3,
+    "arch_modes": [
+      "disabled",
+      "enabled"
+    ],
+    "results": "icount-results.json",
+    "workflow_run": 40999515115,
+    "metric": "whole-harness instruction counts, not cycles or ns/op"
+  },
+  "scope_guard": {
+    "targets_passed": 13,
+    "candidate_targets": 5,
+    "fallback_targets": 8,
+    "results": "scope/scope.json"
+  },
+  "local_gate_exit_codes": {
+    "fmt": 0,
+    "clippy": 101,
+    "test": 0,
+    "doc": 101,
+    "release": 0
+  },
+  "diagnostic_baseline_comparison": "diagnostic-recheck.json",
+  "preexisting_strict_gate_failures": [
+    "clippy",
+    "doc"
+  ],
+  "benchmark_guard_tests": {
+    "passed": 36,
+    "failed": 0,
+    "log": "benchmark-guards.log"
+  },
+  "workflow_validation": {
+    "syntax": 0,
+    "security": 0
+  },
+  "prior_unchanged_source_evidence": "../upstream-validation",
+  "excluded_measurements": [
+    {
+      "record": "official-icount-aarch64.json",
+      "reason": "shared target directory reused baseline artifacts; hosted independent builds supersede this invalid comparison"
+    },
+    {
+      "record": "walltime-pow.json",
+      "reason": "concurrent local CPU work; superseded by idle baseline/candidate Criterion runs"
+    }
+  ],
+  "known_coverage_limits": [
+    "s390x GNU and powerpc64 musl only cross-built in this validation; dedicated upstream runners unavailable",
+    "25 hosted target results combine successful jobs from two workflow runs",
+    "extensive pow uses upstream 53-bit MPFR result precision; separate 256-bit corpus evidence is in experiments/pow/accuracy.md",
+    "observed accuracy tests do not prove a full-domain worst-case ULP bound",
+    "strict whole-workspace Clippy and documentation gates retain reproduced upstream diagnostics"
+  ]
+}

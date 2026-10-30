@@ -1,0 +1,12 @@
+{
+  "matches_measured_math_revision": true,
+  "line_endings": {
+    "mod.rs": "CRLF",
+    "pow.rs": "CRLF",
+    "pow_fdlibm.rs": "CRLF",
+    "pow/exp.rs": "CRLF",
+    "pow/log.rs": "CRLF",
+    "pow/table.rs": "CRLF",
+    "pow/tests.rs": "CRLF"
+  }
+}

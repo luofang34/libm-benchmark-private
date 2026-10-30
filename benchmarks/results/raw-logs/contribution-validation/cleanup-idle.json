@@ -1,0 +1,37 @@
+[
+  {
+    "target_dir": "/tmp/libm-contribution-custom",
+    "exit_code": 0,
+    "output": "     Removed 752 files, 149.9MiB total\n"
+  },
+  {
+    "target_dir": "/tmp/libm-contribution-thumb",
+    "exit_code": 0,
+    "output": "     Removed 754 files, 146.6MiB total\n"
+  },
+  {
+    "target_dir": "/tmp/libm-contribution-s390x",
+    "exit_code": 0,
+    "output": "     Removed 680 files, 147.9MiB total\n"
+  },
+  {
+    "target_dir": "/tmp/libm-contribution-ppc-musl",
+    "exit_code": 0,
+    "output": "     Removed 677 files, 144.5MiB total\n"
+  },
+  {
+    "target_dir": "/tmp/libm-contribution-scope/target",
+    "exit_code": 0,
+    "output": "     Removed 66 files, 15.1MiB total\n"
+  },
+  {
+    "target_dir": "/tmp/libm-contribution-scope-nightly/target",
+    "exit_code": 0,
+    "output": "     Removed 232 files, 35.8MiB total\n"
+  },
+  {
+    "target_dir": "/tmp/libm-contribution-proposal-build",
+    "exit_code": 0,
+    "output": "     Removed 738 files, 61.4MiB total\n"
+  }
+]

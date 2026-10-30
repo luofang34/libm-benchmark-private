@@ -1,0 +1,499 @@
+$ ['docker', 'build', '-t', 'libm-pow-contribution-icount', '/tmp/libm-contribution-image']
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 264B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/builtins-aarch64-unknown-linux-gnu:latest
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/builtins-aarch64-unknown-linux-gnu:latest@sha256:b46720558728197b629c351e0056c5e3dae2d9969dd7f35f31a08934cc5e048d
+#4 resolve docker.io/library/builtins-aarch64-unknown-linux-gnu:latest@sha256:b46720558728197b629c351e0056c5e3dae2d9969dd7f35f31a08934cc5e048d
+#4 resolve docker.io/library/builtins-aarch64-unknown-linux-gnu:latest@sha256:b46720558728197b629c351e0056c5e3dae2d9969dd7f35f31a08934cc5e048d 0.9s done
+#4 DONE 0.9s
+
+#4 [1/3] FROM docker.io/library/builtins-aarch64-unknown-linux-gnu:latest@sha256:b46720558728197b629c351e0056c5e3dae2d9969dd7f35f31a08934cc5e048d
+#4 DONE 0.9s
+
+#5 [2/3] RUN apt-get update && apt-get install -y --no-install-recommends valgrind gdb libc6-dbg
+#5 0.483 Hit:1 http://deb.debian.org/debian trixie InRelease
+#5 0.483 Hit:2 http://deb.debian.org/debian trixie-updates InRelease
+#5 0.488 Hit:3 http://deb.debian.org/debian-security trixie-security InRelease
+#5 0.539 Reading package lists...
+#5 0.994 Reading package lists...
+#5 2.450 Building dependency tree...
+#5 2.576 Reading state information...
+#5 2.733 The following additional packages will be installed:
+#5 2.733   libbabeltrace1 libdebuginfod-common libdebuginfod1t64 libdw1t64 libjson-c5
+#5 2.733   libpython3.13 libsource-highlight-common libsource-highlight4t64
+#5 2.733 Suggested packages:
+#5 2.733   gdb-doc gdbserver valgrind-mpi kcachegrind
+#5 2.822 The following NEW packages will be installed:
+#5 2.822   gdb libbabeltrace1 libc6-dbg libdebuginfod-common libdebuginfod1t64
+#5 2.822   libdw1t64 libjson-c5 libpython3.13 libsource-highlight-common
+#5 2.822   libsource-highlight4t64 valgrind
+#5 2.886 0 upgraded, 11 newly installed, 0 to remove and 13 not upgraded.
+#5 2.886 Need to get 22.9 MB of archives.
+#5 2.886 After this operation, 93.0 MB of additional disk space will be used.
+#5 2.886 Get:1 http://deb.debian.org/debian trixie/main arm64 libdebuginfod-common all 0.192-4 [23.7 kB]
+#5 2.911 Get:2 http://deb.debian.org/debian trixie/main arm64 libdw1t64 arm64 0.192-4 [237 kB]
+#5 2.970 Get:3 http://deb.debian.org/debian trixie/main arm64 libbabeltrace1 arm64 1.5.11-4+b2 [164 kB]
+#5 2.977 Get:4 http://deb.debian.org/debian trixie/main arm64 libjson-c5 arm64 0.18+ds-1 [45.2 kB]
+#5 2.981 Get:5 http://deb.debian.org/debian trixie/main arm64 libdebuginfod1t64 arm64 0.192-4 [31.3 kB]
+#5 2.998 Get:6 http://deb.debian.org/debian trixie/main arm64 libpython3.13 arm64 3.13.5-2+deb13u5 [1977 kB]
+#5 3.050 Get:7 http://deb.debian.org/debian trixie/main arm64 libsource-highlight-common all 3.1.9-4.3 [77.5 kB]
+#5 3.066 Get:8 http://deb.debian.org/debian trixie/main arm64 libsource-highlight4t64 arm64 3.1.9-4.3+b1 [294 kB]
+#5 3.090 Get:9 http://deb.debian.org/debian trixie/main arm64 gdb arm64 16.3-1 [4552 kB]
+#5 3.188 Get:10 http://deb.debian.org/debian trixie/main arm64 libc6-dbg arm64 2.41-12+deb13u4 [6653 kB]
+#5 3.323 Get:11 http://deb.debian.org/debian trixie/main arm64 valgrind arm64 1:3.24.0-3 [8820 kB]
+#5 3.622 debconf: unable to initialize frontend: Dialog
+#5 3.622 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 3.622 debconf: falling back to frontend: Readline
+#5 3.628 debconf: unable to initialize frontend: Readline
+#5 3.628 debconf: (This frontend requires a controlling tty.)
+#5 3.628 debconf: falling back to frontend: Teletype
+#5 3.631 debconf: unable to initialize frontend: Teletype
+#5 3.631 debconf: (This frontend requires a controlling tty.)
+#5 3.631 debconf: falling back to frontend: Noninteractive
+#5 3.994 Preconfiguring packages ...
+#5 4.035 Fetched 22.9 MB in 1s (33.9 MB/s)
+#5 4.069 Selecting previously unselected package libdebuginfod-common.
+#5 4.069 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 27892 files and directories currently installed.)
+#5 4.090 Preparing to unpack .../00-libdebuginfod-common_0.192-4_all.deb ...
+#5 4.096 Unpacking libdebuginfod-common (0.192-4) ...
+#5 4.142 Selecting previously unselected package libdw1t64:arm64.
+#5 4.145 Preparing to unpack .../01-libdw1t64_0.192-4_arm64.deb ...
+#5 4.154 Unpacking libdw1t64:arm64 (0.192-4) ...
+#5 4.198 Selecting previously unselected package libbabeltrace1:arm64.
+#5 4.200 Preparing to unpack .../02-libbabeltrace1_1.5.11-4+b2_arm64.deb ...
+#5 4.207 Unpacking libbabeltrace1:arm64 (1.5.11-4+b2) ...
+#5 4.249 Selecting previously unselected package libjson-c5:arm64.
+#5 4.250 Preparing to unpack .../03-libjson-c5_0.18+ds-1_arm64.deb ...
+#5 4.256 Unpacking libjson-c5:arm64 (0.18+ds-1) ...
+#5 4.291 Selecting previously unselected package libdebuginfod1t64:arm64.
+#5 4.292 Preparing to unpack .../04-libdebuginfod1t64_0.192-4_arm64.deb ...
+#5 4.297 Unpacking libdebuginfod1t64:arm64 (0.192-4) ...
+#5 4.331 Selecting previously unselected package libpython3.13:arm64.
+#5 4.333 Preparing to unpack .../05-libpython3.13_3.13.5-2+deb13u5_arm64.deb ...
+#5 4.338 Unpacking libpython3.13:arm64 (3.13.5-2+deb13u5) ...
+#5 4.479 Selecting previously unselected package libsource-highlight-common.
+#5 4.481 Preparing to unpack .../06-libsource-highlight-common_3.1.9-4.3_all.deb ...
+#5 4.485 Unpacking libsource-highlight-common (3.1.9-4.3) ...
+#5 4.540 Selecting previously unselected package libsource-highlight4t64:arm64.
+#5 4.542 Preparing to unpack .../07-libsource-highlight4t64_3.1.9-4.3+b1_arm64.deb ...
+#5 4.552 Unpacking libsource-highlight4t64:arm64 (3.1.9-4.3+b1) ...
+#5 4.606 Selecting previously unselected package gdb.
+#5 4.610 Preparing to unpack .../08-gdb_16.3-1_arm64.deb ...
+#5 4.622 Unpacking gdb (16.3-1) ...
+#5 5.032 Selecting previously unselected package libc6-dbg:arm64.
+#5 5.033 Preparing to unpack .../09-libc6-dbg_2.41-12+deb13u4_arm64.deb ...
+#5 5.044 Unpacking libc6-dbg:arm64 (2.41-12+deb13u4) ...
+#5 5.331 Selecting previously unselected package valgrind.
+#5 5.334 Preparing to unpack .../10-valgrind_1%3a3.24.0-3_arm64.deb ...
+#5 5.343 Unpacking valgrind (1:3.24.0-3) ...
+#5 5.809 Setting up libpython3.13:arm64 (3.13.5-2+deb13u5) ...
+#5 5.828 Setting up libdebuginfod-common (0.192-4) ...
+#5 5.884 debconf: unable to initialize frontend: Dialog
+#5 5.884 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 5.884 debconf: falling back to frontend: Readline
+#5 5.887 debconf: unable to initialize frontend: Readline
+#5 5.887 debconf: (This frontend requires a controlling tty.)
+#5 5.887 debconf: falling back to frontend: Teletype
+#5 5.890 debconf: unable to initialize frontend: Teletype
+#5 5.890 debconf: (This frontend requires a controlling tty.)
+#5 5.890 debconf: falling back to frontend: Noninteractive
+#5 5.921 Setting up libsource-highlight-common (3.1.9-4.3) ...
+#5 5.939 Setting up libc6-dbg:arm64 (2.41-12+deb13u4) ...
+#5 5.962 Setting up libdw1t64:arm64 (0.192-4) ...
+#5 5.979 Setting up libbabeltrace1:arm64 (1.5.11-4+b2) ...
+#5 5.994 Setting up valgrind (1:3.24.0-3) ...
+#5 6.008 Setting up libjson-c5:arm64 (0.18+ds-1) ...
+#5 6.021 Setting up libdebuginfod1t64:arm64 (0.192-4) ...
+#5 6.039 Setting up libsource-highlight4t64:arm64 (3.1.9-4.3+b1) ...
+#5 6.099 Setting up gdb (16.3-1) ...
+#5 6.126 Processing triggers for libc-bin (2.41-12+deb13u4) ...
+#5 DONE 6.4s
+
+#6 [3/3] RUN cargo install gungraun-runner --version 0.20.0 --locked
+#6 0.245     Updating crates.io index
+#6 0.365  Downloading crates ...
+#6 0.516   Downloaded gungraun-runner v0.20.0
+#6 0.601   Installing gungraun-runner v0.20.0
+#6 0.616     Updating crates.io index
+#6 2.412 warning: package `yoke-derive v0.8.3` in Cargo.lock is yanked in registry `crates-io`
+#6 2.472     Updating crates.io index
+#6 2.910  Downloading crates ...
+#6 2.975   Downloaded ahash v0.8.12
+#6 2.975   Downloaded anstyle v1.0.14
+#6 2.975   Downloaded anstyle-parse v1.0.0
+#6 2.975   Downloaded anyhow v1.0.104
+#6 2.976   Downloaded anstream v1.0.0
+#6 2.978   Downloaded clap_lex v1.1.1
+#6 2.978   Downloaded getrandom v0.3.4
+#6 2.982   Downloaded hashbrown v0.17.1
+#6 2.982   Downloaded itoa v1.0.18
+#6 2.982   Downloaded libm v0.2.16
+#6 2.995   Downloaded aho-corasick v1.1.5
+#6 3.005   Downloaded anstyle-query v1.1.5
+#6 3.005   Downloaded bitflags v1.3.2
+#6 3.018   Downloaded clap v4.6.7
+#6 3.026   Downloaded crossbeam-epoch v0.9.21
+#6 3.026   Downloaded defmt v1.1.1
+#6 3.030   Downloaded erased-serde v0.4.10
+#6 3.030   Downloaded errno v0.3.14
+#6 3.032   Downloaded autocfg v1.5.1
+#6 3.032   Downloaded bitflags v2.13.2
+#6 3.034   Downloaded bytemuck v1.25.2
+#6 3.035   Downloaded cargo_metadata v0.20.0
+#6 3.038   Downloaded crossbeam-deque v0.8.8
+#6 3.038   Downloaded crossbeam-utils v0.8.23
+#6 3.040   Downloaded cargo-platform v0.2.0
+#6 3.040   Downloaded cfg-if v1.0.5
+#6 3.041   Downloaded crossbeam v0.8.5
+#6 3.041   Downloaded dashmap v6.2.1
+#6 3.042   Downloaded defmt-parser v1.0.0
+#6 3.042   Downloaded env_filter v2.0.0
+#6 3.046   Downloaded form_urlencoded v1.2.2
+#6 3.046   Downloaded getrandom v0.4.3
+#6 3.046   Downloaded jiff-static v0.2.37
+#6 3.050   Downloaded os_str_bytes v7.2.1
+#6 3.051   Downloaded arrayvec v0.7.8
+#6 3.052   Downloaded camino v1.2.6
+#6 3.054   Downloaded colorchoice v1.0.5
+#6 3.054   Downloaded colored v3.1.1
+#6 3.057   Downloaded crossbeam-channel v0.5.17
+#6 3.062   Downloaded either v1.18.0
+#6 3.062   Downloaded equivalent v1.0.2
+#6 3.062   Downloaded gungraun-common v0.1.0
+#6 3.066   Downloaded num_cpus v1.17.0
+#6 3.066   Downloaded approx v0.5.1
+#6 3.066   Downloaded cfg_aliases v0.2.2
+#6 3.066   Downloaded crossbeam-queue v0.3.14
+#6 3.068   Downloaded derive_more v2.1.1
+#6 3.076   Downloaded clap_derive v4.6.7
+#6 3.076   Downloaded defmt-macros v1.1.1
+#6 3.077   Downloaded env_logger v0.11.11
+#6 3.077   Downloaded heck v0.5.0
+#6 3.077   Downloaded idna_adapter v1.2.2
+#6 3.079   Downloaded macro_rules_attribute v0.2.3
+#6 3.079   Downloaded macro_rules_attribute-proc_macro v0.2.3
+#6 3.080   Downloaded never-say-never v6.6.666
+#6 3.084   Downloaded ordered-float v2.10.1
+#6 3.086   Downloaded rustc_version v0.4.1
+#6 3.086   Downloaded fundu v2.1.1
+#6 3.086   Downloaded num-complex v0.4.6
+#6 3.087   Downloaded num-traits v0.2.19
+#6 3.091   Downloaded bincode-next v2.1.0
+#6 3.091   Downloaded displaydoc v0.2.7
+#6 3.094   Downloaded is_terminal_polyfill v1.70.2
+#6 3.094   Downloaded lock_api v0.4.14
+#6 3.094   Downloaded num-integer v0.1.47
+#6 3.099   Downloaded num-rational v0.4.2
+#6 3.099   Downloaded cargo-util-schemas v0.2.0
+#6 3.104   Downloaded glob v0.3.4
+#6 3.104   Downloaded higher-kinded-types v0.2.1
+#6 3.104   Downloaded once_cell v1.21.4
+#6 3.108   Downloaded parking_lot v0.12.5
+#6 3.108   Downloaded fastrand v2.5.0
+#6 3.109   Downloaded log v0.4.34
+#6 3.112   Downloaded fundu-core v0.4.1
+#6 3.112   Downloaded getrandom v0.2.17
+#6 3.112   Downloaded percent-encoding v2.3.2
+#6 3.112   Downloaded either-or-both v0.3.1
+#6 3.115   Downloaded icu_provider v2.3.1
+#6 3.118   Downloaded litemap v0.8.3
+#6 3.118   Downloaded num-format v0.4.4
+#6 3.119   Downloaded ppv-lite86 v0.2.21
+#6 3.119   Downloaded matrixmultiply v0.3.11
+#6 3.126   Downloaded icu_normalizer_data v2.3.0
+#6 3.129   Downloaded polonius-the-crab v0.5.0
+#6 3.134   Downloaded potential_utf v0.1.6
+#6 3.135   Downloaded derive_more-impl v2.1.1
+#6 3.143   Downloaded icu_collections v2.3.0
+#6 3.145   Downloaded icu_locale_core v2.3.0
+#6 3.152   Downloaded indexmap v2.14.2
+#6 3.156   Downloaded memchr v2.8.3
+#6 3.178   Downloaded num-bigint v0.4.8
+#6 3.178   Downloaded icu_properties v2.3.0
+#6 3.178   Downloaded inferno v0.12.8
+#6 3.178   Downloaded jiff-core v0.1.1
+#6 3.180   Downloaded hashbrown v0.14.5
+#6 3.186   Downloaded idna v1.1.0
+#6 3.196   Downloaded icu_properties_data v2.3.0
+#6 3.196   Downloaded itertools v0.15.0
+#6 3.199   Downloaded clap_builder v4.6.7
+#6 3.203   Downloaded nix v0.31.3
+#6 3.216   Downloaded nalgebra v0.33.3
+#6 3.243   Downloaded icu_normalizer v2.3.0
+#6 3.267   Downloaded jiff v0.2.37
+#6 3.295   Downloaded scopeguard v1.2.0
+#6 3.295   Downloaded libc v0.2.189
+#6 3.329   Downloaded strsim v0.11.1
+#6 3.330   Downloaded serde_json v1.0.151
+#6 3.335   Downloaded toml_datetime v0.6.11
+#6 3.338   Downloaded utf8parse v0.2.2
+#6 3.338   Downloaded sanitize-filename v0.6.0
+#6 3.340   Downloaded version_check v0.9.5
+#6 3.342   Downloaded zerofrom v0.1.8
+#6 3.342   Downloaded serde-value v0.7.0
+#6 3.348   Downloaded stable_deref_trait v1.2.1
+#6 3.348   Downloaded terminal_size v0.4.4
+#6 3.348   Downloaded linux-raw-sys v0.12.1
+#6 3.382   Downloaded rand_chacha v0.3.1
+#6 3.382   Downloaded rawpointer v0.2.1
+#6 3.382   Downloaded str_stack v0.1.1
+#6 3.382   Downloaded toml_write v0.1.2
+#6 3.383   Downloaded typeid v1.0.3
+#6 3.388   Downloaded unicode-xid v0.2.6
+#6 3.388   Downloaded serde_spanned v0.6.9
+#6 3.388   Downloaded strum v0.28.0
+#6 3.388   Downloaded unty-next v0.1.2
+#6 3.390   Downloaded utf8_iter v1.0.4
+#6 3.390   Downloaded version-compare v0.2.1
+#6 3.391   Downloaded yoke-derive v0.8.3
+#6 3.394   Downloaded zerofrom-derive v0.1.8
+#6 3.396   Downloaded quote v1.0.47
+#6 3.397   Downloaded serde-untagged v0.1.9
+#6 3.397   Downloaded thiserror-impl v1.0.69
+#6 3.397   Downloaded zerovec-derive v0.11.6
+#6 3.397   Downloaded pastey v0.2.3
+#6 3.398   Downloaded rand_core v0.6.4
+#6 3.399   Downloaded shlex v2.0.1
+#6 3.399   Downloaded synstructure v0.14.0
+#6 3.399   Downloaded thiserror v1.0.69
+#6 3.404   Downloaded thiserror v2.0.21
+#6 3.406   Downloaded thiserror-impl v2.0.21
+#6 3.407   Downloaded tinystr v0.8.4
+#6 3.408   Downloaded unicode-ident v1.0.26
+#6 3.410   Downloaded which v8.0.6
+#6 3.411   Downloaded writeable v0.6.4
+#6 3.425   Downloaded zmij v1.0.23
+#6 3.425   Downloaded paste v1.0.15
+#6 3.425   Downloaded yoke v0.8.3
+#6 3.425   Downloaded rgb v0.8.53
+#6 3.425   Downloaded simplematch v0.3.1
+#6 3.425   Downloaded strum_macros v0.28.0
+#6 3.425   Downloaded toml v0.8.23
+#6 3.425   Downloaded parking_lot_core v0.9.12
+#6 3.427   Downloaded smallvec v1.16.2
+#6 3.427   Downloaded tempfile v3.27.0
+#6 3.431   Downloaded semver v1.0.28
+#6 3.431   Downloaded proc-macro2 v1.0.107
+#6 3.434   Downloaded serde_core v1.0.229
+#6 3.434   Downloaded simba v0.9.1
+#6 3.434   Downloaded serde_derive v1.0.229
+#6 3.435   Downloaded rand_distr v0.4.3
+#6 3.438   Downloaded toml_edit v0.22.27
+#6 3.438   Downloaded safe_arch v0.7.4
+#6 3.443   Downloaded zerotrie v0.2.5
+#6 3.450   Downloaded rand v0.8.8
+#6 3.450   Downloaded serde v1.0.229
+#6 3.452   Downloaded url v2.5.8
+#6 3.455   Downloaded wide v0.7.33
+#6 3.459   Downloaded typenum v1.20.1
+#6 3.462   Downloaded zerovec v0.11.8
+#6 3.465   Downloaded regex v1.13.1
+#6 3.470   Downloaded statrs v0.18.0
+#6 3.473   Downloaded winnow v0.7.15
+#6 3.478   Downloaded quick-xml v0.41.0
+#6 3.482   Downloaded zerocopy v0.8.59
+#6 3.490   Downloaded syn v3.0.6
+#6 3.496   Downloaded syn v2.0.119
+#6 3.503   Downloaded regex-syntax v0.8.11
+#6 3.505   Downloaded rustix v1.1.5
+#6 3.526   Downloaded regex-automata v0.4.18
+#6 3.584    Compiling proc-macro2 v1.0.107
+#6 3.584    Compiling unicode-ident v1.0.26
+#6 3.584    Compiling quote v1.0.47
+#6 3.584    Compiling libc v0.2.189
+#6 3.584    Compiling serde_core v1.0.229
+#6 3.587    Compiling autocfg v1.5.1
+#6 3.587    Compiling cfg-if v1.0.5
+#6 3.596    Compiling stable_deref_trait v1.2.1
+#6 3.596    Compiling libm v0.2.16
+#6 3.596    Compiling serde v1.0.229
+#6 3.596    Compiling memchr v2.8.3
+#6 3.596    Compiling smallvec v1.16.2
+#6 3.601    Compiling zerocopy v0.8.59
+#6 3.628    Compiling crossbeam-utils v0.8.23
+#6 3.634    Compiling litemap v0.8.3
+#6 3.635    Compiling writeable v0.6.4
+#6 3.665    Compiling icu_normalizer_data v2.3.0
+#6 3.676    Compiling utf8_iter v1.0.4
+#6 3.676    Compiling icu_properties_data v2.3.0
+#6 3.831    Compiling bytemuck v1.25.2
+#6 3.858    Compiling paste v1.0.15
+#6 3.872    Compiling rustix v1.1.5
+#6 3.956    Compiling num-traits v0.2.19
+#6 4.018    Compiling hashbrown v0.17.1
+#6 4.041    Compiling typeid v1.0.3
+#6 4.088    Compiling bitflags v2.13.2
+#6 4.159    Compiling equivalent v1.0.2
+#6 4.269    Compiling aho-corasick v1.1.5
+#6 4.270    Compiling linux-raw-sys v0.12.1
+#6 4.342    Compiling erased-serde v0.4.10
+#6 4.437    Compiling regex-syntax v0.8.11
+#6 4.495    Compiling parking_lot_core v0.9.12
+#6 4.547    Compiling utf8parse v0.2.2
+#6 4.620    Compiling anstyle-parse v1.0.0
+#6 4.870    Compiling safe_arch v0.7.4
+#6 4.879    Compiling matrixmultiply v0.3.11
+#6 4.885    Compiling scopeguard v1.2.0
+#6 4.887    Compiling is_terminal_polyfill v1.70.2
+#6 4.931    Compiling toml_write v0.1.2
+#6 4.984    Compiling crossbeam-epoch v0.9.21
+#6 4.984    Compiling anstyle v1.0.14
+#6 5.053    Compiling syn v3.0.6
+#6 5.058    Compiling syn v2.0.119
+#6 5.090    Compiling getrandom v0.3.4
+#6 5.110    Compiling zmij v1.0.23
+#6 5.126    Compiling heck v0.5.0
+#6 5.158    Compiling winnow v0.7.15
+#6 5.182    Compiling version_check v0.9.5
+#6 5.219    Compiling itoa v1.0.18
+#6 5.275    Compiling anstyle-query v1.1.5
+#6 5.446    Compiling percent-encoding v2.3.2
+#6 5.447    Compiling colorchoice v1.0.5
+#6 5.467    Compiling once_cell v1.21.4
+#6 5.663    Compiling thiserror v1.0.69
+#6 5.736    Compiling form_urlencoded v1.2.2
+#6 5.740    Compiling ahash v0.8.12
+#6 5.826    Compiling anstream v1.0.0
+#6 6.064    Compiling lock_api v0.4.14
+#6 6.192    Compiling getrandom v0.2.17
+#6 6.212    Compiling wide v0.7.33
+#6 6.328    Compiling camino v1.2.6
+#6 6.457    Compiling rand_core v0.6.4
+#6 6.505    Compiling crossbeam-deque v0.8.8
+#6 6.507    Compiling macro_rules_attribute-proc_macro v0.2.3
+#6 6.558    Compiling getrandom v0.4.3
+#6 6.608    Compiling serde_json v1.0.151
+#6 7.884    Compiling regex-automata v0.4.18
+#6 7.884    Compiling num-integer v0.1.47
+#6 7.896    Compiling num-complex v0.4.6
+#6 7.927    Compiling approx v0.5.1
+#6 8.016    Compiling ordered-float v2.10.1
+#6 8.016    Compiling rawpointer v0.2.1
+#6 8.042    Compiling cfg_aliases v0.2.2
+#6 8.061    Compiling pastey v0.2.3
+#6 8.093    Compiling log v0.4.34
+#6 8.131    Compiling thiserror v2.0.21
+#6 8.288    Compiling indexmap v2.14.2
+#6 8.740    Compiling semver v1.0.28
+#6 8.850    Compiling num-rational v0.4.2
+#6 8.991    Compiling macro_rules_attribute v0.2.3
+#6 9.102    Compiling nix v0.31.3
+#6 9.305    Compiling terminal_size v0.4.4
+#6 9.608    Compiling serde-untagged v0.1.9
+#6 9.731    Compiling simba v0.9.1
+#6 10.16    Compiling crossbeam-channel v0.5.17
+#6 10.21    Compiling unicode-xid v0.2.6
+#6 10.39    Compiling thiserror-impl v1.0.69
+#6 10.42    Compiling anyhow v1.0.104
+#6 10.45    Compiling gungraun-common v0.1.0
+#6 10.57    Compiling clap_lex v1.1.1
+#6 10.63    Compiling typenum v1.20.1
+#6 10.65    Compiling arrayvec v0.7.8
+#6 10.73    Compiling strsim v0.11.1
+#6 10.76    Compiling jiff-core v0.1.1
+#6 10.79    Compiling hashbrown v0.14.5
+#6 10.88    Compiling synstructure v0.14.0
+#6 11.00    Compiling never-say-never v6.6.666
+#6 11.03    Compiling clap_builder v4.6.7
+#6 11.08    Compiling higher-kinded-types v0.2.1
+#6 11.15    Compiling num-format v0.4.4
+#6 11.37    Compiling ppv-lite86 v0.2.21
+#6 11.62    Compiling derive_more-impl v2.1.1
+#6 11.66    Compiling dashmap v6.2.1
+#6 11.72    Compiling rand_chacha v0.3.1
+#6 11.73    Compiling strum_macros v0.28.0
+#6 11.94    Compiling rand v0.8.8
+#6 12.20    Compiling jiff v0.2.37
+#6 12.30    Compiling regex v1.13.1
+#6 12.87    Compiling zerofrom-derive v0.1.8
+#6 12.88    Compiling yoke-derive v0.8.3
+#6 12.97    Compiling zerovec-derive v0.11.6
+#6 13.11    Compiling displaydoc v0.2.7
+#6 13.33    Compiling serde_derive v1.0.229
+#6 13.33    Compiling thiserror-impl v2.0.21
+#6 13.38    Compiling rand_distr v0.4.3
+#6 13.55    Compiling env_filter v2.0.0
+#6 15.90    Compiling clap_derive v4.6.7
+#6 16.65    Compiling nalgebra v0.33.3
+#6 21.78    Compiling crossbeam-queue v0.3.14
+#6 21.78    Compiling rgb v0.8.53
+#6 21.79    Compiling quick-xml v0.41.0
+#6 21.80    Compiling fundu-core v0.4.1
+#6 21.80    Compiling str_stack v0.1.1
+#6 21.93    Compiling fastrand v2.5.0
+#6 21.96    Compiling either v1.18.0
+#6 21.97    Compiling unty-next v0.1.2
+#6 21.99    Compiling zerofrom v0.1.8
+#6 22.11    Compiling crossbeam v0.8.5
+#6 22.15    Compiling yoke v0.8.3
+#6 23.06    Compiling zerovec v0.11.8
+#6 23.60    Compiling zerotrie v0.2.5
+#6 23.63    Compiling inferno v0.12.8
+#6 23.64    Compiling itertools v0.15.0
+#6 23.64    Compiling fundu v2.1.1
+#6 23.74    Compiling tempfile v3.27.0
+#6 23.86    Compiling strum v0.28.0
+#6 23.98    Compiling env_logger v0.11.11
+#6 24.13    Compiling derive_more v2.1.1
+#6 24.20    Compiling clap v4.6.7
+#6 24.20    Compiling sanitize-filename v0.6.0
+#6 24.48    Compiling polonius-the-crab v0.5.0
+#6 24.53    Compiling parking_lot v0.12.5
+#6 24.61    Compiling tinystr v0.8.4
+#6 24.63    Compiling potential_utf v0.1.6
+#6 24.64    Compiling num_cpus v1.17.0
+#6 24.77    Compiling icu_locale_core v2.3.0
+#6 24.77    Compiling icu_collections v2.3.0
+#6 24.87    Compiling which v8.0.6
+#6 25.06    Compiling os_str_bytes v7.2.1
+#6 25.63    Compiling shlex v2.0.1
+#6 25.65    Compiling toml_datetime v0.6.11
+#6 25.67    Compiling serde_spanned v0.6.9
+#6 25.73    Compiling serde-value v0.7.0
+#6 25.76    Compiling cargo-platform v0.2.0
+#6 25.80    Compiling bincode-next v2.1.0
+#6 26.44    Compiling icu_provider v2.3.1
+#6 26.46    Compiling toml_edit v0.22.27
+#6 26.55    Compiling either-or-both v0.3.1
+#6 26.65    Compiling simplematch v0.3.1
+#6 26.71    Compiling glob v0.3.4
+#6 26.93    Compiling icu_normalizer v2.3.0
+#6 27.02    Compiling icu_properties v2.3.0
+#6 29.05    Compiling version-compare v0.2.1
+#6 29.06    Compiling colored v3.1.1
+#6 30.47    Compiling idna_adapter v1.2.2
+#6 30.59    Compiling idna v1.1.0
+#6 31.46    Compiling toml v0.8.23
+#6 32.06    Compiling url v2.5.8
+#6 33.28    Compiling cargo-util-schemas v0.2.0
+#6 34.58    Compiling cargo_metadata v0.20.0
+#6 35.39    Compiling statrs v0.18.0
+#6 35.73    Compiling gungraun-runner v0.20.0
+#6 43.96     Finished `release` profile [optimized] target(s) in 43.75s
+#6 43.98   Installing /usr/local/cargo/bin/gungraun-runner
+#6 43.98    Installed package `gungraun-runner v0.20.0` (executable `gungraun-runner`)
+#6 DONE 44.2s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 6.5s done
+#7 exporting manifest sha256:e1af38ec8f4f149fcc77ffc82174d3d6196b7bb52780ee71ec7ff910c98fe1d2
+#7 exporting manifest sha256:e1af38ec8f4f149fcc77ffc82174d3d6196b7bb52780ee71ec7ff910c98fe1d2 0.0s done
+#7 exporting config sha256:db1ca7173452734a67cc4ce562dd018684fccded5bf4ed1610494169379663e5 0.1s done
+#7 exporting attestation manifest sha256:f557ccb15ffa67a353316f6a3fc7528d738a5d9acb5dc6284cdb299056651e12 0.0s done
+#7 exporting manifest list sha256:2be9582bba307b002735eed939f03adf017de5a0ec01956a74a9ede8298e0e0e
+#7 exporting manifest list sha256:2be9582bba307b002735eed939f03adf017de5a0ec01956a74a9ede8298e0e0e 0.0s done
+#7 naming to docker.io/library/libm-pow-contribution-icount:latest done
+#7 unpacking to docker.io/library/libm-pow-contribution-icount:latest
+#7 unpacking to docker.io/library/libm-pow-contribution-icount:latest 7.5s done
+#7 DONE 14.3s

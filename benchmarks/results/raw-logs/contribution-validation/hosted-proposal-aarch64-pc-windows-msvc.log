@@ -1,0 +1,588 @@
+﻿2026-10-30T03:58:32.8575486Z Current runner version: '2.338.0'
+2026-10-30T03:58:32.8607727Z ##[group]Runner Image Provisioner
+2026-10-30T03:58:32.8608864Z Hosted Compute Agent
+2026-10-30T03:58:32.8609360Z Version: 20261021.618
+2026-10-30T03:58:32.8609921Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-30T03:58:32.8610522Z Build Date: 2026-10-21T00:45:21Z
+2026-10-30T03:58:32.8611077Z Worker ID: {c0c6bd42-710e-4f91-87a6-f90c6a467f0e}
+2026-10-30T03:58:32.8611675Z Region: eastus2
+2026-10-30T03:58:32.8612122Z Cloud: Azure
+2026-10-30T03:58:32.8612564Z ##[endgroup]
+2026-10-30T03:58:32.8614254Z ##[group]Operating System
+2026-10-30T03:58:32.8614807Z Microsoft Windows 11
+2026-10-30T03:58:32.8615279Z 10.0.26200
+2026-10-30T03:58:32.8615725Z Enterprise
+2026-10-30T03:58:32.8616221Z ##[endgroup]
+2026-10-30T03:58:32.8616658Z ##[group]Runner Image
+2026-10-30T03:58:32.8617221Z Image: windows-11-vs2026-arm64
+2026-10-30T03:58:32.8617765Z Version: 20261025.196.1
+2026-10-30T03:58:32.8619368Z Included Software: https://github.com/actions/runner-images/blob/win11-vs2026-arm64/20261025.196/images/windows/Windows11-VS2026-Arm64-Readme.md
+2026-10-30T03:58:32.8621128Z Image Release: https://github.com/actions/runner-images/releases/tag/win11-vs2026-arm64%2F20261025.196
+2026-10-30T03:58:32.8622048Z ##[endgroup]
+2026-10-30T03:58:32.8623129Z ##[group]GITHUB_TOKEN Permissions
+2026-10-30T03:58:32.8625997Z Contents: read
+2026-10-30T03:58:32.8626515Z Metadata: read
+2026-10-30T03:58:32.8626952Z ##[endgroup]
+2026-10-30T03:58:32.8629623Z Secret source: Actions
+2026-10-30T03:58:32.8630436Z Cache mode: write
+2026-10-30T03:58:32.8631289Z Prepare workflow directory
+2026-10-30T03:58:32.9495391Z Prepare all required actions
+2026-10-30T03:58:32.9545269Z Getting action download info
+2026-10-30T03:58:33.1477632Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-30T03:58:33.9675676Z Download action repository 'taiki-e/install-action@f7e5d7c961414b23f5b25b2da9294395d08513ad' (SHA:f7e5d7c961414b23f5b25b2da9294395d08513ad)
+2026-10-30T03:58:34.7070385Z Download action repository 'docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069' (SHA:f87e5991a6d7451dcb8d9637bfbc97413f497069)
+2026-10-30T03:58:35.2521805Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-10-30T03:58:35.5980243Z Complete job name: test (aarch64-pc-windows-msvc, windows-11-arm)
+2026-10-30T03:58:35.7568256Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-30T03:58:35.7570054Z with:
+2026-10-30T03:58:35.7570607Z   persist-credentials: false
+2026-10-30T03:58:35.7571199Z   repository: luofang34/libm-benchmark-private
+2026-10-30T03:58:35.7574688Z   token: ***
+2026-10-30T03:58:35.7575174Z   ssh-strict: true
+2026-10-30T03:58:35.7575665Z   ssh-user: git
+2026-10-30T03:58:35.7576156Z   clean: true
+2026-10-30T03:58:35.7576662Z   sparse-checkout-cone-mode: true
+2026-10-30T03:58:35.7577243Z   fetch-depth: 1
+2026-10-30T03:58:35.7577737Z   fetch-tags: false
+2026-10-30T03:58:35.7578239Z   show-progress: true
+2026-10-30T03:58:35.7578728Z   lfs: false
+2026-10-30T03:58:35.7579192Z   submodules: false
+2026-10-30T03:58:35.7579683Z   set-safe-directory: true
+2026-10-30T03:58:35.7580239Z   allow-unsafe-pr-checkout: false
+2026-10-30T03:58:35.7581242Z env:
+2026-10-30T03:58:35.7581741Z   CARGO_TERM_COLOR: never
+2026-10-30T03:58:35.7582338Z   CARGO_BUILD_WARNINGS: deny
+2026-10-30T03:58:35.7582875Z   LIBM_BUILD_VERBOSE: true
+2026-10-30T03:58:35.7583446Z   RUSTDOCFLAGS: -Dwarnings
+2026-10-30T03:58:35.7583995Z   RUSTFLAGS: -Dwarnings -Dlinker_messages
+2026-10-30T03:58:35.7584916Z   RUST_BACKTRACE: full
+2026-10-30T03:58:35.7585476Z   LIBM_SEED: 0123456789abcdef0123456789abcdef
+2026-10-30T03:58:35.7586068Z   BENCHMARK_RUSTC: nightly-2026-10-28
+2026-10-30T03:58:35.7586669Z   JOB_TARGET: aarch64-pc-windows-msvc
+2026-10-30T03:58:35.7587291Z   JOB_HOST_TOOLCHAIN: nightly-2026-10-28
+2026-10-30T03:58:35.7590418Z   RUN_IN_DOCKER: false
+2026-10-30T03:58:35.7590936Z   MAY_SKIP_LIBM_CI: false
+2026-10-30T03:58:35.7591441Z ##[endgroup]
+2026-10-30T03:58:37.7427458Z Syncing repository: luofang34/libm-benchmark-private
+2026-10-30T03:58:37.7432473Z ##[group]Getting Git version info
+2026-10-30T03:58:37.7433451Z Working directory is 'C:\a\libm-benchmark-private\libm-benchmark-private'
+2026-10-30T03:58:37.7434396Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-30T03:58:37.7434863Z git version 2.56.0.windows.3
+2026-10-30T03:58:37.7437463Z ##[endgroup]
+2026-10-30T03:58:37.7465699Z Temporarily overriding HOME='C:\a\_temp\a795f2fc-8117-419f-8e68-0876b4033c44' before making global git config changes
+2026-10-30T03:58:37.7466571Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-30T03:58:37.7467625Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory C:\a\libm-benchmark-private\libm-benchmark-private
+2026-10-30T03:58:37.7469154Z Deleting the contents of 'C:\a\libm-benchmark-private\libm-benchmark-private'
+2026-10-30T03:58:37.7469947Z ##[group]Determining repository object format
+2026-10-30T03:58:37.7470499Z ##[endgroup]
+2026-10-30T03:58:37.7470980Z ##[group]Initializing the repository
+2026-10-30T03:58:37.7471528Z [command]"C:\Program Files\Git\bin\git.exe" init C:\a\libm-benchmark-private\libm-benchmark-private
+2026-10-30T03:58:37.7472276Z Initialized empty Git repository in C:/a/libm-benchmark-private/libm-benchmark-private/.git/
+2026-10-30T03:58:37.7473941Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/luofang34/libm-benchmark-private
+2026-10-30T03:58:37.7475152Z ##[endgroup]
+2026-10-30T03:58:37.7475620Z ##[group]Disabling automatic garbage collection
+2026-10-30T03:58:37.7476154Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-10-30T03:58:37.7477168Z ##[endgroup]
+2026-10-30T03:58:37.7477473Z ##[group]Setting up auth
+2026-10-30T03:58:37.7477851Z Removing SSH command configuration
+2026-10-30T03:58:37.7478402Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-30T03:58:37.7480024Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-30T03:58:39.2677716Z Removing HTTP extra header
+2026-10-30T03:58:39.2687323Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-30T03:58:39.3369710Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-30T03:58:40.6309118Z Removing includeIf entries pointing to credentials config files
+2026-10-30T03:58:40.6317877Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-30T03:58:40.6871075Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-30T03:58:41.9554921Z [command]"C:\Program Files\Git\bin\git.exe" config --file C:\a\_temp\git-credentials-c9a6e315-e130-4e02-8747-f72b8dc40ecb.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-10-30T03:58:42.0172093Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/.git.path C:\a\_temp\git-credentials-c9a6e315-e130-4e02-8747-f72b8dc40ecb.config
+2026-10-30T03:58:42.0792915Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path C:\a\_temp\git-credentials-c9a6e315-e130-4e02-8747-f72b8dc40ecb.config
+2026-10-30T03:58:42.1421781Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-c9a6e315-e130-4e02-8747-f72b8dc40ecb.config
+2026-10-30T03:58:42.2043561Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-c9a6e315-e130-4e02-8747-f72b8dc40ecb.config
+2026-10-30T03:58:42.2629787Z ##[endgroup]
+2026-10-30T03:58:42.2630323Z ##[group]Fetching the repository
+2026-10-30T03:58:42.2642509Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +22657966c9d61eea8b32b02e41c940a35dee461d:refs/remotes/origin/experiment/pow-wasm
+2026-10-30T03:58:43.7768345Z From https://github.com/luofang34/libm-benchmark-private
+2026-10-30T03:58:43.7769194Z  * [new ref]         22657966c9d61eea8b32b02e41c940a35dee461d -> origin/experiment/pow-wasm
+2026-10-30T03:58:43.7839378Z [command]"C:\Program Files\Git\bin\git.exe" branch --list --remote origin/experiment/pow-wasm
+2026-10-30T03:58:43.8423489Z   origin/experiment/pow-wasm
+2026-10-30T03:58:43.8480514Z [command]"C:\Program Files\Git\bin\git.exe" rev-parse refs/remotes/origin/experiment/pow-wasm
+2026-10-30T03:58:43.9073088Z 22657966c9d61eea8b32b02e41c940a35dee461d
+2026-10-30T03:58:43.9120087Z ##[endgroup]
+2026-10-30T03:58:43.9129276Z ##[group]Determining the checkout info
+2026-10-30T03:58:43.9129985Z ##[endgroup]
+2026-10-30T03:58:43.9130473Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-10-30T03:58:43.9883567Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-10-30T03:58:44.0470031Z ##[group]Checking out the ref
+2026-10-30T03:58:44.0505583Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B experiment/pow-wasm refs/remotes/origin/experiment/pow-wasm
+2026-10-30T03:58:45.1438132Z Updating files:  51% (784/1525)
+2026-10-30T03:58:45.1555248Z Updating files:  52% (793/1525)
+2026-10-30T03:58:45.1697121Z Updating files:  53% (809/1525)
+2026-10-30T03:58:45.1845534Z Updating files:  54% (824/1525)
+2026-10-30T03:58:45.1973078Z Updating files:  55% (839/1525)
+2026-10-30T03:58:45.2115773Z Updating files:  56% (854/1525)
+2026-10-30T03:58:45.2255747Z Updating files:  57% (870/1525)
+2026-10-30T03:58:45.2366880Z Updating files:  58% (885/1525)
+2026-10-30T03:58:45.2459481Z Updating files:  59% (900/1525)
+2026-10-30T03:58:45.2583685Z Updating files:  60% (915/1525)
+2026-10-30T03:58:45.2697056Z Updating files:  61% (931/1525)
+2026-10-30T03:58:45.3114569Z Updating files:  62% (946/1525)
+2026-10-30T03:58:45.3369125Z Updating files:  63% (961/1525)
+2026-10-30T03:58:45.3484527Z Updating files:  64% (976/1525)
+2026-10-30T03:58:45.3644951Z Updating files:  65% (992/1525)
+2026-10-30T03:58:45.3805871Z Updating files:  66% (1007/1525)
+2026-10-30T03:58:45.4012949Z Updating files:  67% (1022/1525)
+2026-10-30T03:58:45.4259217Z Updating files:  68% (1037/1525)
+2026-10-30T03:58:45.4435973Z Updating files:  69% (1053/1525)
+2026-10-30T03:58:45.4570696Z Updating files:  70% (1068/1525)
+2026-10-30T03:58:45.4714061Z Updating files:  71% (1083/1525)
+2026-10-30T03:58:45.4849029Z Updating files:  72% (1098/1525)
+2026-10-30T03:58:45.4973131Z Updating files:  73% (1114/1525)
+2026-10-30T03:58:45.5111374Z Updating files:  74% (1129/1525)
+2026-10-30T03:58:45.5249091Z Updating files:  75% (1144/1525)
+2026-10-30T03:58:45.5442506Z Updating files:  76% (1159/1525)
+2026-10-30T03:58:45.5624019Z Updating files:  77% (1175/1525)
+2026-10-30T03:58:45.5751994Z Updating files:  78% (1190/1525)
+2026-10-30T03:58:45.5894438Z Updating files:  79% (1205/1525)
+2026-10-30T03:58:45.6026857Z Updating files:  80% (1220/1525)
+2026-10-30T03:58:45.6155193Z Updating files:  81% (1236/1525)
+2026-10-30T03:58:45.6454206Z Updating files:  82% (1251/1525)
+2026-10-30T03:58:45.6698015Z Updating files:  83% (1266/1525)
+2026-10-30T03:58:45.7461732Z Updating files:  84% (1281/1525)
+2026-10-30T03:58:45.7736890Z Updating files:  85% (1297/1525)
+2026-10-30T03:58:45.8173387Z Updating files:  86% (1312/1525)
+2026-10-30T03:58:45.8525650Z Updating files:  87% (1327/1525)
+2026-10-30T03:58:45.8828056Z Updating files:  88% (1342/1525)
+2026-10-30T03:58:45.9126993Z Updating files:  89% (1358/1525)
+2026-10-30T03:58:45.9386793Z Updating files:  90% (1373/1525)
+2026-10-30T03:58:45.9611001Z Updating files:  91% (1388/1525)
+2026-10-30T03:58:45.9847814Z Updating files:  92% (1403/1525)
+2026-10-30T03:58:46.0083725Z Updating files:  93% (1419/1525)
+2026-10-30T03:58:46.0190617Z Updating files:  94% (1434/1525)
+2026-10-30T03:58:46.0297812Z Updating files:  95% (1449/1525)
+2026-10-30T03:58:46.0382212Z Updating files:  96% (1464/1525)
+2026-10-30T03:58:46.0469782Z Updating files:  97% (1480/1525)
+2026-10-30T03:58:46.0583159Z Updating files:  98% (1495/1525)
+2026-10-30T03:58:46.0693927Z Updating files:  99% (1510/1525)
+2026-10-30T03:58:46.0694371Z Updating files: 100% (1525/1525)
+2026-10-30T03:58:46.0694685Z Updating files: 100% (1525/1525), done.
+2026-10-30T03:58:46.0903677Z Switched to a new branch 'experiment/pow-wasm'
+2026-10-30T03:58:46.0937940Z branch 'experiment/pow-wasm' set up to track 'origin/experiment/pow-wasm'.
+2026-10-30T03:58:46.1039227Z ##[endgroup]
+2026-10-30T03:58:46.1651802Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-10-30T03:58:46.2198161Z 22657966c9d61eea8b32b02e41c940a35dee461d
+2026-10-30T03:58:46.2255041Z ##[group]Removing auth
+2026-10-30T03:58:46.2255461Z Removing SSH command configuration
+2026-10-30T03:58:46.2265708Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-30T03:58:46.2819131Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-30T03:58:47.6362971Z Removing HTTP extra header
+2026-10-30T03:58:47.6372125Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-30T03:58:47.6923267Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-30T03:58:48.9815536Z Removing includeIf entries pointing to credentials config files
+2026-10-30T03:58:48.9825516Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-30T03:58:49.0332261Z includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/.git.path
+2026-10-30T03:58:49.0333197Z includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path
+2026-10-30T03:58:49.0334431Z includeif.gitdir:/github/workspace/.git.path
+2026-10-30T03:58:49.0334997Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-30T03:58:49.0391724Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/.git.path
+2026-10-30T03:58:49.0930497Z C:\a\_temp\git-credentials-c9a6e315-e130-4e02-8747-f72b8dc40ecb.config
+2026-10-30T03:58:49.0991860Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/.git.path C\:\\a\\_temp\\git\-credentials\-c9a6e315\-e130\-4e02\-8747\-f72b8dc40ecb\.config
+2026-10-30T03:58:49.1681954Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path
+2026-10-30T03:58:49.2225325Z C:\a\_temp\git-credentials-c9a6e315-e130-4e02-8747-f72b8dc40ecb.config
+2026-10-30T03:58:49.2285437Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/.git/worktrees/*.path C\:\\a\\_temp\\git\-credentials\-c9a6e315\-e130\-4e02\-8747\-f72b8dc40ecb\.config
+2026-10-30T03:58:49.8331507Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-30T03:58:49.8332145Z /github/runner_temp/git-credentials-c9a6e315-e130-4e02-8747-f72b8dc40ecb.config
+2026-10-30T03:58:49.8333558Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-c9a6e315\-e130\-4e02\-8747\-f72b8dc40ecb\.config
+2026-10-30T03:58:49.8334792Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-30T03:58:49.8335423Z /github/runner_temp/git-credentials-c9a6e315-e130-4e02-8747-f72b8dc40ecb.config
+2026-10-30T03:58:49.8336568Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-c9a6e315\-e130\-4e02\-8747\-f72b8dc40ecb\.config
+2026-10-30T03:58:49.8343370Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-30T03:58:50.7984502Z Removing credentials config 'C:\a\_temp\git-credentials-c9a6e315-e130-4e02-8747-f72b8dc40ecb.config'
+2026-10-30T03:58:50.8001114Z ##[endgroup]
+2026-10-30T03:58:50.8516902Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-30T03:58:50.8517391Z with:
+2026-10-30T03:58:50.8517590Z   persist-credentials: false
+2026-10-30T03:58:50.8517801Z   path: proposal
+2026-10-30T03:58:50.8518000Z   ref: 6bc104a50f83cb205790c61c5d33508046f5fad3
+2026-10-30T03:58:50.8518285Z   repository: luofang34/libm-benchmark-private
+2026-10-30T03:58:50.8521037Z   token: ***
+2026-10-30T03:58:50.8521206Z   ssh-strict: true
+2026-10-30T03:58:50.8521379Z   ssh-user: git
+2026-10-30T03:58:50.8521538Z   clean: true
+2026-10-30T03:58:50.8521717Z   sparse-checkout-cone-mode: true
+2026-10-30T03:58:50.8521961Z   fetch-depth: 1
+2026-10-30T03:58:50.8522128Z   fetch-tags: false
+2026-10-30T03:58:50.8522302Z   show-progress: true
+2026-10-30T03:58:50.8522478Z   lfs: false
+2026-10-30T03:58:50.8522635Z   submodules: false
+2026-10-30T03:58:50.8522812Z   set-safe-directory: true
+2026-10-30T03:58:50.8523025Z   allow-unsafe-pr-checkout: false
+2026-10-30T03:58:50.8523289Z env:
+2026-10-30T03:58:50.8523450Z   CARGO_TERM_COLOR: never
+2026-10-30T03:58:50.8523652Z   CARGO_BUILD_WARNINGS: deny
+2026-10-30T03:58:50.8523865Z   LIBM_BUILD_VERBOSE: true
+2026-10-30T03:58:50.8524068Z   RUSTDOCFLAGS: -Dwarnings
+2026-10-30T03:58:50.8524287Z   RUSTFLAGS: -Dwarnings -Dlinker_messages
+2026-10-30T03:58:50.8524527Z   RUST_BACKTRACE: full
+2026-10-30T03:58:50.8524734Z   LIBM_SEED: 0123456789abcdef0123456789abcdef
+2026-10-30T03:58:50.8524996Z   BENCHMARK_RUSTC: nightly-2026-10-28
+2026-10-30T03:58:50.8525254Z   JOB_TARGET: aarch64-pc-windows-msvc
+2026-10-30T03:58:50.8525503Z   JOB_HOST_TOOLCHAIN: nightly-2026-10-28
+2026-10-30T03:58:50.8525745Z   RUN_IN_DOCKER: false
+2026-10-30T03:58:50.8525936Z   MAY_SKIP_LIBM_CI: false
+2026-10-30T03:58:50.8526394Z ##[endgroup]
+2026-10-30T03:58:51.0563541Z Syncing repository: luofang34/libm-benchmark-private
+2026-10-30T03:58:51.0575482Z ##[group]Getting Git version info
+2026-10-30T03:58:51.0576097Z Working directory is 'C:\a\libm-benchmark-private\libm-benchmark-private\proposal'
+2026-10-30T03:58:51.1667916Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-30T03:58:51.2223748Z git version 2.56.0.windows.3
+2026-10-30T03:58:51.2285992Z ##[endgroup]
+2026-10-30T03:58:51.2304126Z Temporarily overriding HOME='C:\a\_temp\79fe7f5a-9e09-4421-8a02-30a6eba7d25e' before making global git config changes
+2026-10-30T03:58:51.2305005Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-30T03:58:51.2315174Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory C:\a\libm-benchmark-private\libm-benchmark-private\proposal
+2026-10-30T03:58:51.2982894Z ##[group]Determining repository object format
+2026-10-30T03:58:51.3004734Z ##[endgroup]
+2026-10-30T03:58:51.3022011Z ##[group]Initializing the repository
+2026-10-30T03:58:51.3041070Z [command]"C:\Program Files\Git\bin\git.exe" init C:\a\libm-benchmark-private\libm-benchmark-private\proposal
+2026-10-30T03:58:51.3681160Z Initialized empty Git repository in C:/a/libm-benchmark-private/libm-benchmark-private/proposal/.git/
+2026-10-30T03:58:51.3792069Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/luofang34/libm-benchmark-private
+2026-10-30T03:58:51.4509923Z ##[endgroup]
+2026-10-30T03:58:51.4511370Z ##[group]Disabling automatic garbage collection
+2026-10-30T03:58:51.4515918Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-10-30T03:58:51.5122691Z ##[endgroup]
+2026-10-30T03:58:51.5146564Z ##[group]Setting up auth
+2026-10-30T03:58:51.5150402Z Removing SSH command configuration
+2026-10-30T03:58:51.5151418Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-30T03:58:51.5651611Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-30T03:58:52.8521980Z Removing HTTP extra header
+2026-10-30T03:58:52.8528917Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-30T03:58:52.9136182Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-30T03:58:54.2299824Z Removing includeIf entries pointing to credentials config files
+2026-10-30T03:58:54.2307636Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-30T03:58:54.2904224Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-30T03:58:55.5884774Z [command]"C:\Program Files\Git\bin\git.exe" config --file C:\a\_temp\git-credentials-db92e314-0873-4fba-94aa-707e47a2fb26.config http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-10-30T03:58:55.6509248Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/proposal/.git.path C:\a\_temp\git-credentials-db92e314-0873-4fba-94aa-707e47a2fb26.config
+2026-10-30T03:58:55.7134025Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/proposal/.git/worktrees/*.path C:\a\_temp\git-credentials-db92e314-0873-4fba-94aa-707e47a2fb26.config
+2026-10-30T03:58:55.7774026Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/proposal/.git.path /github/runner_temp/git-credentials-db92e314-0873-4fba-94aa-707e47a2fb26.config
+2026-10-30T03:58:55.8396049Z [command]"C:\Program Files\Git\bin\git.exe" config --local includeIf.gitdir:/github/workspace/proposal/.git/worktrees/*.path /github/runner_temp/git-credentials-db92e314-0873-4fba-94aa-707e47a2fb26.config
+2026-10-30T03:58:55.9022029Z ##[endgroup]
+2026-10-30T03:58:55.9022368Z ##[group]Fetching the repository
+2026-10-30T03:58:55.9035549Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 6bc104a50f83cb205790c61c5d33508046f5fad3
+2026-10-30T03:58:56.2807445Z From https://github.com/luofang34/libm-benchmark-private
+2026-10-30T03:58:56.2807895Z  * branch            6bc104a50f83cb205790c61c5d33508046f5fad3 -> FETCH_HEAD
+2026-10-30T03:58:56.2876083Z [command]"C:\Program Files\Git\bin\git.exe" rev-parse --verify --quiet 6bc104a50f83cb205790c61c5d33508046f5fad3^{object}
+2026-10-30T03:58:56.3400961Z 6bc104a50f83cb205790c61c5d33508046f5fad3
+2026-10-30T03:58:56.3451743Z ##[endgroup]
+2026-10-30T03:58:56.3452214Z ##[group]Determining the checkout info
+2026-10-30T03:58:56.3452709Z ##[endgroup]
+2026-10-30T03:58:56.3463716Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-10-30T03:58:56.4120156Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-10-30T03:58:56.4706853Z ##[group]Checking out the ref
+2026-10-30T03:58:56.4728969Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force 6bc104a50f83cb205790c61c5d33508046f5fad3
+2026-10-30T03:58:56.9543783Z Note: switching to '6bc104a50f83cb205790c61c5d33508046f5fad3'.
+2026-10-30T03:58:56.9544287Z 
+2026-10-30T03:58:56.9544618Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-30T03:58:56.9545160Z changes and commit them, and you can discard any commits you make in this
+2026-10-30T03:58:56.9545726Z state without impacting any branches by switching back to a branch.
+2026-10-30T03:58:56.9546405Z 
+2026-10-30T03:58:56.9546747Z If you want to create a new branch to retain commits you create, you may
+2026-10-30T03:58:56.9547193Z do so (now or later) by using -c with the switch command. Example:
+2026-10-30T03:58:56.9547433Z 
+2026-10-30T03:58:56.9548554Z   git switch -c <new-branch-name>
+2026-10-30T03:58:56.9549074Z 
+2026-10-30T03:58:56.9549192Z Or undo this operation with:
+2026-10-30T03:58:56.9549493Z 
+2026-10-30T03:58:56.9549602Z   git switch -
+2026-10-30T03:58:56.9549714Z 
+2026-10-30T03:58:56.9549913Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-30T03:58:56.9550195Z 
+2026-10-30T03:58:56.9550379Z HEAD is now at 6bc104a renovate: Fix the regex manager to not run every Monday
+2026-10-30T03:58:56.9630309Z ##[endgroup]
+2026-10-30T03:58:57.0251097Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-10-30T03:58:57.0798085Z 6bc104a50f83cb205790c61c5d33508046f5fad3
+2026-10-30T03:58:57.0855902Z ##[group]Removing auth
+2026-10-30T03:58:57.0856322Z Removing SSH command configuration
+2026-10-30T03:58:57.0868132Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-30T03:58:57.1433365Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-30T03:58:58.4227274Z Removing HTTP extra header
+2026-10-30T03:58:58.4242323Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-30T03:58:58.4804208Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-30T03:58:59.8157457Z Removing includeIf entries pointing to credentials config files
+2026-10-30T03:58:59.8161728Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-30T03:58:59.8665542Z includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/proposal/.git.path
+2026-10-30T03:58:59.8673245Z includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/proposal/.git/worktrees/*.path
+2026-10-30T03:58:59.8674725Z includeif.gitdir:/github/workspace/proposal/.git.path
+2026-10-30T03:58:59.8677395Z includeif.gitdir:/github/workspace/proposal/.git/worktrees/*.path
+2026-10-30T03:58:59.8733131Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/proposal/.git.path
+2026-10-30T03:58:59.9288246Z C:\a\_temp\git-credentials-db92e314-0873-4fba-94aa-707e47a2fb26.config
+2026-10-30T03:58:59.9352841Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/proposal/.git.path C\:\\a\\_temp\\git\-credentials\-db92e314\-0873\-4fba\-94aa\-707e47a2fb26\.config
+2026-10-30T03:58:59.9996576Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/proposal/.git/worktrees/*.path
+2026-10-30T03:59:00.0610567Z C:\a\_temp\git-credentials-db92e314-0873-4fba-94aa-707e47a2fb26.config
+2026-10-30T03:59:00.0680162Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:C:/a/libm-benchmark-private/libm-benchmark-private/proposal/.git/worktrees/*.path C\:\\a\\_temp\\git\-credentials\-db92e314\-0873\-4fba\-94aa\-707e47a2fb26\.config
+2026-10-30T03:59:00.1276263Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/proposal/.git.path
+2026-10-30T03:59:00.1802419Z /github/runner_temp/git-credentials-db92e314-0873-4fba-94aa-707e47a2fb26.config
+2026-10-30T03:59:00.1862341Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/proposal/.git.path \/github\/runner_temp\/git\-credentials\-db92e314\-0873\-4fba\-94aa\-707e47a2fb26\.config
+2026-10-30T03:59:00.2471193Z [command]"C:\Program Files\Git\bin\git.exe" config --local --get-all includeif.gitdir:/github/workspace/proposal/.git/worktrees/*.path
+2026-10-30T03:59:00.3009797Z /github/runner_temp/git-credentials-db92e314-0873-4fba-94aa-707e47a2fb26.config
+2026-10-30T03:59:00.3076678Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset includeif.gitdir:/github/workspace/proposal/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-db92e314\-0873\-4fba\-94aa\-707e47a2fb26\.config
+2026-10-30T03:59:00.3688160Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-30T03:59:01.6832704Z Removing credentials config 'C:\a\_temp\git-credentials-db92e314-0873-4fba-94aa-707e47a2fb26.config'
+2026-10-30T03:59:01.6852462Z ##[endgroup]
+2026-10-30T03:59:01.7343616Z ##[group]Run import hashlib, json, pathlib, shutil
+2026-10-30T03:59:01.7344218Z [36;1mimport hashlib, json, pathlib, shutil[0m
+2026-10-30T03:59:01.7344492Z [36;1mroot = pathlib.Path.cwd()[0m
+2026-10-30T03:59:01.7344803Z [36;1mfiles = ["mod.rs", "pow.rs", "pow_fdlibm.rs", "pow/exp.rs",[0m
+2026-10-30T03:59:01.7345166Z [36;1m         "pow/log.rs", "pow/table.rs", "pow/tests.rs"][0m
+2026-10-30T03:59:01.7345449Z [36;1mhashes = {}[0m
+2026-10-30T03:59:01.7345637Z [36;1mfor name in files:[0m
+2026-10-30T03:59:01.7345888Z [36;1m    source = root.parent / "libm/src/math" / name[0m
+2026-10-30T03:59:01.7346198Z [36;1m    target = root / "libm/src/math" / name[0m
+2026-10-30T03:59:01.7346516Z [36;1m    target.parent.mkdir(parents=True, exist_ok=True)[0m
+2026-10-30T03:59:01.7346831Z [36;1m    shutil.copyfile(source, target)[0m
+2026-10-30T03:59:01.7347180Z [36;1m    hashes[name] = hashlib.sha256(target.read_bytes()).hexdigest()[0m
+2026-10-30T03:59:01.7347628Z [36;1m(root / "validation").mkdir(exist_ok=True)[0m
+2026-10-30T03:59:01.7348050Z [36;1m(root / "validation/source-sha256.json").write_text(json.dumps(hashes, indent=2))[0m
+2026-10-30T03:59:01.7382380Z shell: C:\hostedtoolcache\windows\Python\3.13.17\arm64\python.EXE {0}
+2026-10-30T03:59:01.7382731Z env:
+2026-10-30T03:59:01.7382910Z   CARGO_TERM_COLOR: never
+2026-10-30T03:59:01.7383121Z   CARGO_BUILD_WARNINGS: deny
+2026-10-30T03:59:01.7383331Z   LIBM_BUILD_VERBOSE: true
+2026-10-30T03:59:01.7383542Z   RUSTDOCFLAGS: -Dwarnings
+2026-10-30T03:59:01.7383758Z   RUSTFLAGS: -Dwarnings -Dlinker_messages
+2026-10-30T03:59:01.7383997Z   RUST_BACKTRACE: full
+2026-10-30T03:59:01.7384198Z   LIBM_SEED: 0123456789abcdef0123456789abcdef
+2026-10-30T03:59:01.7384452Z   BENCHMARK_RUSTC: nightly-2026-10-28
+2026-10-30T03:59:01.7384697Z   JOB_TARGET: aarch64-pc-windows-msvc
+2026-10-30T03:59:01.7384940Z   JOB_HOST_TOOLCHAIN: nightly-2026-10-28
+2026-10-30T03:59:01.7385710Z   RUN_IN_DOCKER: false
+2026-10-30T03:59:01.7385912Z   MAY_SKIP_LIBM_CI: false
+2026-10-30T03:59:01.7386110Z ##[endgroup]
+2026-10-30T03:59:03.1418477Z ##[group]Run ./ci/install-test-deps.sh "$JOB_TARGET" "$JOB_HOST_TOOLCHAIN"
+2026-10-30T03:59:03.1419111Z [36;1m./ci/install-test-deps.sh "$JOB_TARGET" "$JOB_HOST_TOOLCHAIN"[0m
+2026-10-30T03:59:03.1475932Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-30T03:59:03.1476266Z env:
+2026-10-30T03:59:03.1476438Z   CARGO_TERM_COLOR: never
+2026-10-30T03:59:03.1476642Z   CARGO_BUILD_WARNINGS: deny
+2026-10-30T03:59:03.1476849Z   LIBM_BUILD_VERBOSE: true
+2026-10-30T03:59:03.1477052Z   RUSTDOCFLAGS: -Dwarnings
+2026-10-30T03:59:03.1477269Z   RUSTFLAGS: -Dwarnings -Dlinker_messages
+2026-10-30T03:59:03.1477512Z   RUST_BACKTRACE: full
+2026-10-30T03:59:03.1477715Z   LIBM_SEED: 0123456789abcdef0123456789abcdef
+2026-10-30T03:59:03.1477970Z   BENCHMARK_RUSTC: nightly-2026-10-28
+2026-10-30T03:59:03.1478339Z   JOB_TARGET: aarch64-pc-windows-msvc
+2026-10-30T03:59:03.1478666Z   JOB_HOST_TOOLCHAIN: nightly-2026-10-28
+2026-10-30T03:59:03.1479014Z   RUN_IN_DOCKER: false
+2026-10-30T03:59:03.1479271Z   MAY_SKIP_LIBM_CI: false
+2026-10-30T03:59:03.1479508Z ##[endgroup]
+2026-10-30T03:59:04.9197928Z ##[group]Run taiki-e/install-action@f7e5d7c961414b23f5b25b2da9294395d08513ad
+2026-10-30T03:59:04.9198407Z with:
+2026-10-30T03:59:04.9198584Z   tool: nextest@0.9.131
+2026-10-30T03:59:04.9198772Z   fallback: none
+2026-10-30T03:59:04.9198950Z   checksum: true
+2026-10-30T03:59:04.9199112Z env:
+2026-10-30T03:59:04.9199267Z   CARGO_TERM_COLOR: never
+2026-10-30T03:59:04.9199470Z   CARGO_BUILD_WARNINGS: deny
+2026-10-30T03:59:04.9199675Z   LIBM_BUILD_VERBOSE: true
+2026-10-30T03:59:04.9199880Z   RUSTDOCFLAGS: -Dwarnings
+2026-10-30T03:59:04.9200098Z   RUSTFLAGS: -Dwarnings -Dlinker_messages
+2026-10-30T03:59:04.9200341Z   RUST_BACKTRACE: full
+2026-10-30T03:59:04.9200545Z   LIBM_SEED: 0123456789abcdef0123456789abcdef
+2026-10-30T03:59:04.9200827Z   BENCHMARK_RUSTC: nightly-2026-10-28
+2026-10-30T03:59:04.9201077Z   JOB_TARGET: aarch64-pc-windows-msvc
+2026-10-30T03:59:04.9201427Z   JOB_HOST_TOOLCHAIN: nightly-2026-10-28
+2026-10-30T03:59:04.9201665Z   RUN_IN_DOCKER: false
+2026-10-30T03:59:04.9201922Z   MAY_SKIP_LIBM_CI: false
+2026-10-30T03:59:04.9202116Z ##[endgroup]
+2026-10-30T03:59:04.9296148Z ##[start-action display=Run bail() {;id=__taiki-e_install-action.__run]
+2026-10-30T03:59:04.9306422Z ##[end-action id=__taiki-e_install-action.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-30T03:59:04.9311424Z ##[start-action display=Run Set-StrictMode -Version Latest;id=__taiki-e_install-action.__run_2]
+2026-10-30T03:59:04.9570036Z ##[group]Run Set-StrictMode -Version Latest
+2026-10-30T03:59:04.9570380Z [36;1mSet-StrictMode -Version Latest[0m
+2026-10-30T03:59:04.9570764Z [36;1m$remove_env = @('ENV','BASH_ENV','CDPATH','SHELLOPTS','BASHOPTS','BASH_FUNC_*')[0m
+2026-10-30T03:59:04.9571144Z [36;1mforeach ($name in $remove_env) {[0m
+2026-10-30T03:59:04.9571485Z [36;1m  if (Test-Path "Env:$name") { Remove-Item "Env:\$name" }[0m
+2026-10-30T03:59:04.9571777Z [36;1m}[0m
+2026-10-30T03:59:04.9571946Z [36;1mfor ($i=1; $i -le 10; $i++) {[0m
+2026-10-30T03:59:04.9572230Z [36;1m  $prev_err_action = $ErrorActionPreference[0m
+2026-10-30T03:59:04.9572534Z [36;1m  $ErrorActionPreference = "Continue"[0m
+2026-10-30T03:59:04.9572871Z [36;1m  & bash --noprofile --norc "$env:GITHUB_ACTION_PATH\main.sh"[0m
+2026-10-30T03:59:04.9573192Z [36;1m  $code = $LASTEXITCODE[0m
+2026-10-30T03:59:04.9573458Z [36;1m  $ErrorActionPreference = "$prev_err_action"[0m
+2026-10-30T03:59:04.9574238Z [36;1m  if (Test-Path "$env:USERPROFILE\.install-action\init") {[0m
+2026-10-30T03:59:04.9574638Z [36;1m    # If bash started successfully, main.sh creates init file.[0m
+2026-10-30T03:59:04.9575041Z [36;1m    Remove-Item "$env:USERPROFILE\.install-action\init" -Force[0m
+2026-10-30T03:59:04.9575359Z [36;1m    exit $code[0m
+2026-10-30T03:59:04.9576599Z [36;1m  }[0m
+2026-10-30T03:59:04.9576770Z [36;1m  if ($i -lt 10) {[0m
+2026-10-30T03:59:04.9577430Z [36;1m    Write-Output "::warning::install-action: installation failed due to bash startup failure (<https://github.com/actions/partner-runner-images/issues/169>); retrying..."[0m
+2026-10-30T03:59:04.9578098Z [36;1m  }[0m
+2026-10-30T03:59:04.9578253Z [36;1m}[0m
+2026-10-30T03:59:04.9578927Z [36;1mWrite-Output "::error::install-action: installation failed due to bash startup failure (<https://github.com/actions/partner-runner-images/issues/169>); this maybe resolved by re-running job"[0m
+2026-10-30T03:59:04.9579670Z [36;1mexit 1[0m
+2026-10-30T03:59:04.9643781Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-30T03:59:04.9644298Z env:
+2026-10-30T03:59:04.9644497Z   CARGO_TERM_COLOR: never
+2026-10-30T03:59:04.9644706Z   CARGO_BUILD_WARNINGS: deny
+2026-10-30T03:59:04.9645249Z   LIBM_BUILD_VERBOSE: true
+2026-10-30T03:59:04.9645492Z   RUSTDOCFLAGS: -Dwarnings
+2026-10-30T03:59:04.9652819Z   RUSTFLAGS: -Dwarnings -Dlinker_messages
+2026-10-30T03:59:04.9654465Z   RUST_BACKTRACE: full
+2026-10-30T03:59:04.9654686Z   LIBM_SEED: 0123456789abcdef0123456789abcdef
+2026-10-30T03:59:04.9656839Z   BENCHMARK_RUSTC: nightly-2026-10-28
+2026-10-30T03:59:04.9657186Z   JOB_TARGET: aarch64-pc-windows-msvc
+2026-10-30T03:59:04.9657438Z   JOB_HOST_TOOLCHAIN: nightly-2026-10-28
+2026-10-30T03:59:04.9657677Z   RUN_IN_DOCKER: false
+2026-10-30T03:59:04.9657865Z   MAY_SKIP_LIBM_CI: false
+2026-10-30T03:59:04.9658068Z   INPUT_TOOL: nextest@0.9.131
+2026-10-30T03:59:04.9658273Z   INPUT_CHECKSUM: true
+2026-10-30T03:59:04.9658459Z   INPUT_FALLBACK: none
+2026-10-30T03:59:04.9658651Z   DEFAULT_GITHUB_TOKEN: 
+2026-10-30T03:59:04.9658984Z   ACTION_USER_AGENT: taiki-e/install-action (f7e5d7c961414b23f5b25b2da9294395d08513ad)
+2026-10-30T03:59:04.9659357Z   RUNNER_OS: Windows
+2026-10-30T03:59:04.9659654Z   RUNNER_ARCH: ARM64
+2026-10-30T03:59:04.9659839Z ##[endgroup]
+2026-10-30T03:59:05.9839263Z info: host platform: aarch64_windows
+2026-10-30T03:59:06.1627512Z info: cargo is located at /c/Users/runneradmin/.cargo/bin/cargo
+2026-10-30T03:59:10.5907624Z info: installing cargo-nextest@0.9.131
+2026-10-30T03:59:12.6188969Z info: downloading https://github.com/nextest-rs/nextest/releases/download/cargo-nextest-0.9.131/cargo-nextest-0.9.131-aarch64-pc-windows-msvc.tar.gz
+2026-10-30T03:59:13.1163453Z info: verifying sha256 checksum for cargo-nextest-0.9.131-aarch64-pc-windows-msvc.tar.gz
+2026-10-30T03:59:14.0861709Z info: cargo-nextest installed at /c/Users/runneradmin/.cargo/bin/cargo-nextest.exe
+2026-10-30T03:59:14.1197320Z + cargo-nextest nextest --version
+2026-10-30T03:59:14.1574109Z cargo-nextest 0.9.131 (af40d2e87 2026-03-18)
+2026-10-30T03:59:14.1574598Z release: 0.9.131
+2026-10-30T03:59:14.1574982Z commit-hash: af40d2e87c71179067fbb9ffa8b6b3ae724af573
+2026-10-30T03:59:14.1575365Z commit-date: 2026-03-18
+2026-10-30T03:59:14.1575661Z host: aarch64-pc-windows-msvc
+2026-10-30T03:59:14.1625570Z 
+2026-10-30T03:59:14.2465912Z ##[end-action id=__taiki-e_install-action.__run_2;outcome=success;conclusion=success;duration_ms=9315]
+2026-10-30T03:59:14.2703217Z ##[group]Run ./ci/download-compiler-rt.sh
+2026-10-30T03:59:14.2703705Z [36;1m./ci/download-compiler-rt.sh[0m
+2026-10-30T03:59:14.2703952Z [36;1m./ci/update-musl.sh[0m
+2026-10-30T03:59:14.2704284Z [36;1mecho "RUST_COMPILER_RT_ROOT=$(realpath ./compiler-rt)" >> "$GITHUB_ENV"[0m
+2026-10-30T03:59:14.2757483Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-30T03:59:14.2757887Z env:
+2026-10-30T03:59:14.2758057Z   CARGO_TERM_COLOR: never
+2026-10-30T03:59:14.2758264Z   CARGO_BUILD_WARNINGS: deny
+2026-10-30T03:59:14.2758484Z   LIBM_BUILD_VERBOSE: true
+2026-10-30T03:59:14.2758687Z   RUSTDOCFLAGS: -Dwarnings
+2026-10-30T03:59:14.2758910Z   RUSTFLAGS: -Dwarnings -Dlinker_messages
+2026-10-30T03:59:14.2759148Z   RUST_BACKTRACE: full
+2026-10-30T03:59:14.2759351Z   LIBM_SEED: 0123456789abcdef0123456789abcdef
+2026-10-30T03:59:14.2760183Z   BENCHMARK_RUSTC: nightly-2026-10-28
+2026-10-30T03:59:14.2760437Z   JOB_TARGET: aarch64-pc-windows-msvc
+2026-10-30T03:59:14.2760724Z   JOB_HOST_TOOLCHAIN: nightly-2026-10-28
+2026-10-30T03:59:14.2760968Z   RUN_IN_DOCKER: false
+2026-10-30T03:59:14.2761157Z   MAY_SKIP_LIBM_CI: false
+2026-10-30T03:59:14.2761345Z ##[endgroup]
+2026-10-30T03:59:15.6169565Z ##[group]Run mkdir -p validation
+2026-10-30T03:59:15.6169943Z [36;1mmkdir -p validation[0m
+2026-10-30T03:59:15.6170185Z [36;1mif [ "$RUN_IN_DOCKER" = true ]; then[0m
+2026-10-30T03:59:15.6170532Z [36;1m  ./ci/run-docker.sh "$JOB_TARGET" 2>&1 | tee validation/test.log[0m
+2026-10-30T03:59:15.6170856Z [36;1melse[0m
+2026-10-30T03:59:15.6171088Z [36;1m  ./ci/run.sh "$JOB_TARGET" 2>&1 | tee validation/test.log[0m
+2026-10-30T03:59:15.6171592Z [36;1mfi[0m
+2026-10-30T03:59:15.6220347Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-30T03:59:15.6220667Z env:
+2026-10-30T03:59:15.6220853Z   CARGO_TERM_COLOR: never
+2026-10-30T03:59:15.6221055Z   CARGO_BUILD_WARNINGS: deny
+2026-10-30T03:59:15.6221269Z   LIBM_BUILD_VERBOSE: true
+2026-10-30T03:59:15.6221470Z   RUSTDOCFLAGS: -Dwarnings
+2026-10-30T03:59:15.6221689Z   RUSTFLAGS: -Dwarnings -Dlinker_messages
+2026-10-30T03:59:15.6221927Z   RUST_BACKTRACE: full
+2026-10-30T03:59:15.6222166Z   LIBM_SEED: 0123456789abcdef0123456789abcdef
+2026-10-30T03:59:15.6222421Z   BENCHMARK_RUSTC: nightly-2026-10-28
+2026-10-30T03:59:15.6222761Z   JOB_TARGET: aarch64-pc-windows-msvc
+2026-10-30T03:59:15.6223011Z   JOB_HOST_TOOLCHAIN: nightly-2026-10-28
+2026-10-30T03:59:15.6223243Z   RUN_IN_DOCKER: false
+2026-10-30T03:59:15.6223430Z   MAY_SKIP_LIBM_CI: false
+2026-10-30T03:59:15.6223617Z ##[endgroup]
+2026-10-30T03:59:16.1845930Z [31;1mParserError: [0mC:\a\_temp\9c2f23b1-bb34-4e2b-a14f-4782a57ee328.ps1:3[0m
+2026-10-30T03:59:16.1847167Z [31;1m[0m[36;1mLine |[0m
+2026-10-30T03:59:16.1847744Z [31;1m[0m[36;1m[36;1m   3 | [0m if[36;1m [0m[ "$RUN_IN_DOCKER" = true ]; then[0m
+2026-10-30T03:59:16.1848276Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~[0m
+2026-10-30T03:59:16.1848801Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mMissing '(' after 'if' in if statement.[0m
+2026-10-30T03:59:16.2441083Z ##[error]Process completed with exit code 1.
+2026-10-30T03:59:16.2750572Z ##[group]Run cargo clean
+2026-10-30T03:59:16.2750936Z [36;1mcargo clean[0m
+2026-10-30T03:59:16.2802561Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-10-30T03:59:16.2802889Z env:
+2026-10-30T03:59:16.2803061Z   CARGO_TERM_COLOR: never
+2026-10-30T03:59:16.2803265Z   CARGO_BUILD_WARNINGS: deny
+2026-10-30T03:59:16.2803473Z   LIBM_BUILD_VERBOSE: true
+2026-10-30T03:59:16.2803675Z   RUSTDOCFLAGS: -Dwarnings
+2026-10-30T03:59:16.2803890Z   RUSTFLAGS: -Dwarnings -Dlinker_messages
+2026-10-30T03:59:16.2804133Z   RUST_BACKTRACE: full
+2026-10-30T03:59:16.2804341Z   LIBM_SEED: 0123456789abcdef0123456789abcdef
+2026-10-30T03:59:16.2804623Z   BENCHMARK_RUSTC: nightly-2026-10-28
+2026-10-30T03:59:16.2804870Z   JOB_TARGET: aarch64-pc-windows-msvc
+2026-10-30T03:59:16.2805114Z   JOB_HOST_TOOLCHAIN: nightly-2026-10-28
+2026-10-30T03:59:16.2805346Z   RUN_IN_DOCKER: false
+2026-10-30T03:59:16.2805537Z   MAY_SKIP_LIBM_CI: false
+2026-10-30T03:59:16.2805768Z ##[endgroup]
+2026-10-30T03:59:21.7750588Z      Removed 0 files
+2026-10-30T03:59:21.9729853Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-10-30T03:59:21.9730377Z with:
+2026-10-30T03:59:21.9730736Z   name: contribution-aarch64-pc-windows-msvc-22657966c9d61eea8b32b02e41c940a35dee461d
+2026-10-30T03:59:21.9731157Z   path: proposal/validation/
+2026-10-30T03:59:21.9731365Z   retention-days: 30
+2026-10-30T03:59:21.9731555Z   if-no-files-found: warn
+2026-10-30T03:59:21.9731754Z   compression-level: 6
+2026-10-30T03:59:21.9731939Z   overwrite: false
+2026-10-30T03:59:21.9732124Z   include-hidden-files: false
+2026-10-30T03:59:21.9732684Z   archive: true
+2026-10-30T03:59:21.9732862Z env:
+2026-10-30T03:59:21.9733020Z   CARGO_TERM_COLOR: never
+2026-10-30T03:59:21.9733222Z   CARGO_BUILD_WARNINGS: deny
+2026-10-30T03:59:21.9733426Z   LIBM_BUILD_VERBOSE: true
+2026-10-30T03:59:21.9733631Z   RUSTDOCFLAGS: -Dwarnings
+2026-10-30T03:59:21.9733848Z   RUSTFLAGS: -Dwarnings -Dlinker_messages
+2026-10-30T03:59:21.9734087Z   RUST_BACKTRACE: full
+2026-10-30T03:59:21.9734326Z   LIBM_SEED: 0123456789abcdef0123456789abcdef
+2026-10-30T03:59:21.9734597Z   BENCHMARK_RUSTC: nightly-2026-10-28
+2026-10-30T03:59:21.9734842Z   JOB_TARGET: aarch64-pc-windows-msvc
+2026-10-30T03:59:21.9735088Z   JOB_HOST_TOOLCHAIN: nightly-2026-10-28
+2026-10-30T03:59:21.9735333Z   RUN_IN_DOCKER: false
+2026-10-30T03:59:21.9735526Z   MAY_SKIP_LIBM_CI: false
+2026-10-30T03:59:21.9735711Z ##[endgroup]
+2026-10-30T03:59:22.2579623Z With the provided path, there will be 1 file uploaded
+2026-10-30T03:59:22.2624503Z Artifact name is valid!
+2026-10-30T03:59:22.2645539Z Root directory input is valid!
+2026-10-30T03:59:22.4544432Z Uploading artifact: contribution-aarch64-pc-windows-msvc-22657966c9d61eea8b32b02e41c940a35dee461d.zip
+2026-10-30T03:59:22.4582840Z Beginning upload of artifact content to blob storage
+2026-10-30T03:59:22.5340365Z Uploaded bytes 485
+2026-10-30T03:59:22.5466516Z Finished uploading artifact content to blob storage!
+2026-10-30T03:59:22.5469662Z SHA256 digest of uploaded artifact is 41c3834674cab2651970c2dc1b40387ea249ed588349f2d7930360f43ac694f9
+2026-10-30T03:59:22.5470291Z Finalizing artifact upload
+2026-10-30T03:59:23.0369658Z Artifact contribution-aarch64-pc-windows-msvc-22657966c9d61eea8b32b02e41c940a35dee461d successfully finalized. Artifact ID 12952458890
+2026-10-30T03:59:23.0370911Z Artifact contribution-aarch64-pc-windows-msvc-22657966c9d61eea8b32b02e41c940a35dee461d has been successfully uploaded! Final size is 485 bytes. Artifact ID is 12952458890
+2026-10-30T03:59:23.0383990Z Artifact download URL: https://github.com/luofang34/libm-benchmark-private/actions/runs/41000276246/artifacts/12952458890
+2026-10-30T03:59:23.0829186Z Post job cleanup.
+2026-10-30T03:59:23.3780150Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-30T03:59:23.4348224Z git version 2.56.0.windows.3
+2026-10-30T03:59:23.4437121Z Temporarily overriding HOME='C:\a\_temp\29ab8428-81a9-4838-9bb2-bfdf502b33f9' before making global git config changes
+2026-10-30T03:59:23.4437894Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-30T03:59:23.4446018Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory C:\a\libm-benchmark-private\libm-benchmark-private\proposal
+2026-10-30T03:59:23.5042441Z Removing SSH command configuration
+2026-10-30T03:59:23.5054059Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-30T03:59:23.5643649Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-30T03:59:24.9072364Z Removing HTTP extra header
+2026-10-30T03:59:24.9085019Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-30T03:59:24.9700764Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-30T03:59:26.2468080Z Removing includeIf entries pointing to credentials config files
+2026-10-30T03:59:26.2480802Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-30T03:59:26.3071377Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-30T03:59:27.6425330Z Post job cleanup.
+2026-10-30T03:59:27.9423914Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-10-30T03:59:27.9977360Z git version 2.56.0.windows.3
+2026-10-30T03:59:28.0069121Z Temporarily overriding HOME='C:\a\_temp\43fc6cee-0e08-4d5f-b2d0-28c5e45be705' before making global git config changes
+2026-10-30T03:59:28.0069905Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-30T03:59:28.0076666Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory C:\a\libm-benchmark-private\libm-benchmark-private
+2026-10-30T03:59:28.0661220Z Removing SSH command configuration
+2026-10-30T03:59:28.0673282Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-10-30T03:59:28.1266436Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-10-30T03:59:29.3982783Z Removing HTTP extra header
+2026-10-30T03:59:29.3994331Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-30T03:59:29.4581855Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-10-30T03:59:30.7395885Z Removing includeIf entries pointing to credentials config files
+2026-10-30T03:59:30.7408686Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-30T03:59:30.7986990Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-10-30T03:59:32.1441047Z Cleaning up orphan processes

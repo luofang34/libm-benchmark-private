@@ -18,6 +18,8 @@ TARGETS = {
     'x86_64-unknown-linux-gnu': True,
     'x86_64-pc-windows-msvc': True,
     'wasm32-wasip1': False,
+    'aarch64-unknown-linux-musl': False,
+    'x86_64-unknown-linux-musl': False,
     'aarch64-unknown-none': False,
     'thumbv7em-none-eabihf': False,
     'riscv32imac-unknown-none-elf': False,

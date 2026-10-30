@@ -1,0 +1,16 @@
+{
+  "rustc": "rustc 1.101.0-nightly (41089d07a 2026-10-27)\nbinary: rustc\ncommit-hash: 41089d07a0a2afc16adfe28a760d94d73d7298a4\ncommit-date: 2026-10-27\nhost: aarch64-apple-darwin\nrelease: 1.101.0-nightly\nLLVM version: 23.1.4\n",
+  "cargo": "cargo 1.101.0-nightly (cad07cf8e 2026-10-23)\n",
+  "clang": "Apple clang version 21.0.0 (clang-2100.4.1.1)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+  "os": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0\nBuildVersion:\t\t26A5368g\n",
+  "cpu": "Apple M3 Max\n",
+  "upstream_base": "6bc104a50f83cb205790c61c5d33508046f5fad3",
+  "math_revision": "f39774d821b2bbc19c98dca827678fdce636d075",
+  "contributing_sha256": "ed822d8fd1ba3fe37fbd14f080c64b82737b7d7f31531466cb5987caa1d37580",
+  "benchmark_toolchain": "nightly-2026-10-28",
+  "upstream_benchmark_and_test_scripts_unmodified": true,
+  "compiler_rt_revision": "0a5579eb649d3634a9c30ac873300cc2944fa070",
+  "musl_revision": "c47ad25ea3b484e10326f933e927c0bc8cded3da",
+  "actionlint_version": "1.7.12",
+  "zizmor_version": "1.31.1"
+}

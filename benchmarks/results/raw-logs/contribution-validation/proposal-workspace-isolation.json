@@ -1,0 +1,17 @@
+{
+  "command": [
+    "cargo",
+    "build",
+    "--manifest-path",
+    "builtins-test-intrinsics/Cargo.toml"
+  ],
+  "environment": {
+    "VALIDATION_CWD": "/tmp/libm-proposal-preflight/proposal",
+    "CARGO_TARGET_DIR": "/tmp/libm-contribution-proposal-build",
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "CARGO_TERM_COLOR": "never",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 3.394995927810669
+}

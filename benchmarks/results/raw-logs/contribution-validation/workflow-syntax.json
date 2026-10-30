@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/tmp/libm-contribution-tools/actionlint",
+    ".github/workflows/pow-contribution-validation.yml"
+  ],
+  "environment": {
+    "RUSTUP_TOOLCHAIN": "nightly",
+    "CARGO_TERM_COLOR": "never",
+    "LIBM_SEED": "0123456789abcdef0123456789abcdef"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.13741111755371094
+}
