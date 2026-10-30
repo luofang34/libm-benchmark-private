@@ -1,0 +1,71 @@
+{
+  "rustc_commit": "41089d07a0a2afc16adfe28a760d94d73d7298a4",
+  "valid_gates": {
+    "fmt": {
+      "command": [
+        "cargo",
+        "fmt",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.91
+    },
+    "clippy": {
+      "command": [
+        "cargo",
+        "clippy",
+        "--all-targets",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 101,
+      "seconds": 5.94
+    },
+    "test": {
+      "command": [
+        "cargo",
+        "test",
+        "--all-targets"
+      ],
+      "exit_code": 0,
+      "seconds": 25.43
+    },
+    "doc": {
+      "command": [
+        "cargo",
+        "doc"
+      ],
+      "exit_code": 101,
+      "seconds": 2.78
+    },
+    "release": {
+      "command": [
+        "cargo",
+        "build",
+        "--release"
+      ],
+      "exit_code": 0,
+      "seconds": 6.43
+    }
+  },
+  "strict_gate_diagnostics": {
+    "clippy": {
+      "same_diagnostic_multiset": true,
+      "current_error_summary_lines": 14,
+      "previous_log": "benchmarks/results/raw-logs/contribution-validation/gate-clippy.log"
+    },
+    "doc": {
+      "same_diagnostic_multiset": true,
+      "current_error_summary_lines": 276,
+      "previous_log": "benchmarks/results/raw-logs/contribution-validation/gate-doc.log"
+    }
+  },
+  "setup_attempts": {
+    "stable": "Root commands require existing upstream nightly-only features; use installed pinned nightly.",
+    "dated_nightly_alias": "Not installed; rustup sandbox write failed. Installed nightly alias was verified to the exact requested commit."
+  },
+  "root_structural_guard_scripts": [],
+  "root_quality_gates_job": false,
+  "cargo_clean_exit_code": 0
+}

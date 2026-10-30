@@ -1,0 +1,12 @@
+{
+  "clippy": {
+    "same_diagnostic_multiset": true,
+    "current_error_summary_lines": 14,
+    "previous_log": "benchmarks/results/raw-logs/contribution-validation/gate-clippy.log"
+  },
+  "doc": {
+    "same_diagnostic_multiset": true,
+    "current_error_summary_lines": 276,
+    "previous_log": "benchmarks/results/raw-logs/contribution-validation/gate-doc.log"
+  }
+}

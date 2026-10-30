@@ -1,0 +1,49 @@
+{
+  "fmt": {
+    "command": [
+      "cargo",
+      "fmt",
+      "--check"
+    ],
+    "exit_code": 1,
+    "seconds": 0.02
+  },
+  "clippy": {
+    "command": [
+      "cargo",
+      "clippy",
+      "--all-targets",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 1,
+    "seconds": 0.01
+  },
+  "test": {
+    "command": [
+      "cargo",
+      "test",
+      "--all-targets"
+    ],
+    "exit_code": 1,
+    "seconds": 0.01
+  },
+  "doc": {
+    "command": [
+      "cargo",
+      "doc"
+    ],
+    "exit_code": 1,
+    "seconds": 0.01
+  },
+  "release": {
+    "command": [
+      "cargo",
+      "build",
+      "--release"
+    ],
+    "exit_code": 1,
+    "seconds": 0.01
+  }
+}

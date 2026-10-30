@@ -1,0 +1,214 @@
+$ cargo clippy --all-targets -- -D warnings
+   Compiling compiler_builtins v0.1.160 (/Users/fangluo/Documents/ChatGPT/libm/builtins-shim)
+   Compiling proc-macro2 v1.0.107
+    Checking rand_core v0.10.1
+   Compiling quote v1.0.47
+   Compiling libc v0.2.190
+   Compiling paste v1.0.15
+   Compiling unicode-ident v1.0.26
+   Compiling crossbeam-utils v0.8.23
+   Compiling heck v0.5.0
+   Compiling crossbeam-epoch v0.9.21
+   Compiling zerocopy v0.8.62
+   Compiling gmp-mpfr-sys v1.7.1
+   Compiling builtins-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/builtins-test)
+   Compiling libm v0.2.16
+   Compiling crossbeam-deque v0.8.8
+   Compiling getrandom v0.4.3
+   Compiling rustc_apfloat v0.2.3+llvm-462a31f5a5ab
+    Checking rand_xoshiro v0.8.1
+    Checking bitflags v2.13.2
+   Compiling libm v0.2.16 (/Users/fangluo/Documents/ChatGPT/libm/libm)
+    Checking smallvec v1.16.2
+   Compiling portable-atomic v1.15.0
+   Compiling rug v1.30.0
+   Compiling rayon-core v1.13.0
+   Compiling anyhow v1.0.104
+   Compiling api-list-common v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/api-list-common)
+    Checking utf8parse v0.2.2
+    Checking anstyle-parse v1.0.0
+    Checking colorchoice v1.0.5
+    Checking cfg-if v1.0.5
+    Checking anstyle v1.0.14
+   Compiling libm-test v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/libm-test)
+    Checking is_terminal_polyfill v1.70.2
+    Checking anstyle-query v1.1.5
+    Checking strsim v0.11.1
+    Checking clap_lex v1.1.1
+    Checking anstream v1.0.0
+    Checking chacha20 v0.10.2
+    Checking az v1.3.0
+    Checking escape8259 v0.5.4
+    Checking clap_builder v4.6.7
+    Checking unit-prefix v0.5.2
+   Compiling syn v3.0.6
+    Checking either v1.19.0
+    Checking console v0.16.6
+    Checking rand v0.10.3
+    Checking rayon v1.12.0
+    Checking indicatif v0.18.6
+   Compiling no-panic v0.1.37
+error[E0554]: `#![feature]` may not be used on the stable release channel
+   --> /Users/fangluo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rug-1.30.0/src/lib.rs:458:40
+    |
+458 | #![cfg_attr(feature = "nightly-float", feature(f16, f128))]
+    |                                        ^^^^^^^^^^^^^^^^^^
+
+    Checking libm-macros v0.1.0 (/Users/fangluo/Documents/ChatGPT/libm/crates/libm-macros)
+    Checking ppv-lite86 v0.2.21
+    Checking rand_chacha v0.10.0
+   Compiling clap_derive v4.6.7
+For more information about this error, try `rustc --explain E0554`.
+error: could not compile `rug` (lib) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `rug` (lib) due to 1 previous error
+error[E0425]: cannot find function `fma` in module `core::intrinsics`
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:436:43
+    |
+436 |                           core::intrinsics::fma(self, y, z)
+    |                                             ^^^ not found in `core::intrinsics`
+...
+485 | / float_impl!(
+486 | |     f32,
+487 | |     u32,
+488 | |     i32,
+...   |
+495 | |     roundevenf
+496 | | );
+    | |_- in this macro invocation
+    |
+    = note: this error originates in the macro `float_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider importing one of these functions
+    |
+  1 + use crate::math::libm_math::arch::fma;
+    |
+  1 + use crate::math::libm_math::fma;
+    |
+
+error[E0425]: cannot find function `floor` in module `core::intrinsics`
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:447:43
+    |
+447 |                           core::intrinsics::floor(self)
+    |                                             ^^^^^ not found in `core::intrinsics`
+...
+485 | / float_impl!(
+486 | |     f32,
+487 | |     u32,
+488 | |     i32,
+...   |
+495 | |     roundevenf
+496 | | );
+    | |_- in this macro invocation
+    |
+    = note: this error originates in the macro `float_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider importing this function through its public re-export
+    |
+  1 + use crate::math::libm_math::floor;
+    |
+
+error[E0425]: cannot find function `round_ties_even` in module `core::intrinsics`
+    --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:457:43
+     |
+ 457 |                           core::intrinsics::round_ties_even(self)
+     |                                             ^^^^^^^^^^^^^^^
+...
+ 485 | / float_impl!(
+ 486 | |     f32,
+ 487 | |     u32,
+ 488 | |     i32,
+...    |
+ 495 | |     roundevenf
+ 496 | | );
+     | |_- in this macro invocation
+     |
+    ::: /Users/fangluo/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/intrinsics/mod.rs:1680:1
+     |
+1680 |   pub const fn round_ties_even_f16(x: f16) -> f16 {
+     |   ----------------------------------------------- similarly named function `round_ties_even_f16` defined here
+     |
+     = note: this error originates in the macro `float_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: a function with a similar name exists
+     |
+ 457 |                         core::intrinsics::round_ties_even_f16(self)
+     |                                                          ++++
+
+error[E0425]: cannot find function `fma` in module `core::intrinsics`
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:436:43
+    |
+436 |                           core::intrinsics::fma(self, y, z)
+    |                                             ^^^ not found in `core::intrinsics`
+...
+497 | / float_impl!(
+498 | |     f64,
+499 | |     u64,
+500 | |     i64,
+...   |
+507 | |     roundeven
+508 | | );
+    | |_- in this macro invocation
+    |
+    = note: this error originates in the macro `float_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider importing one of these functions
+    |
+  1 + use crate::math::libm_math::arch::fma;
+    |
+  1 + use crate::math::libm_math::fma;
+    |
+
+error[E0425]: cannot find function `floor` in module `core::intrinsics`
+   --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:447:43
+    |
+447 |                           core::intrinsics::floor(self)
+    |                                             ^^^^^ not found in `core::intrinsics`
+...
+497 | / float_impl!(
+498 | |     f64,
+499 | |     u64,
+500 | |     i64,
+...   |
+507 | |     roundeven
+508 | | );
+    | |_- in this macro invocation
+    |
+    = note: this error originates in the macro `float_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider importing this function through its public re-export
+    |
+  1 + use crate::math::libm_math::floor;
+    |
+
+error[E0425]: cannot find function `round_ties_even` in module `core::intrinsics`
+    --> builtins-shim/../compiler-builtins/src/math/../../../libm/src/math/support/float_traits.rs:457:43
+     |
+ 457 |                           core::intrinsics::round_ties_even(self)
+     |                                             ^^^^^^^^^^^^^^^
+...
+ 497 | / float_impl!(
+ 498 | |     f64,
+ 499 | |     u64,
+ 500 | |     i64,
+...    |
+ 507 | |     roundeven
+ 508 | | );
+     | |_- in this macro invocation
+     |
+    ::: /Users/fangluo/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/intrinsics/mod.rs:1680:1
+     |
+1680 |   pub const fn round_ties_even_f16(x: f16) -> f16 {
+     |   ----------------------------------------------- similarly named function `round_ties_even_f16` defined here
+     |
+     = note: this error originates in the macro `float_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: a function with a similar name exists
+     |
+ 457 |                         core::intrinsics::round_ties_even_f16(self)
+     |                                                          ++++
+
+error[E0554]: `#![feature]` may not be used on the stable release channel
+ --> builtins-shim/../compiler-builtins/src/lib.rs:5:1
+  |
+5 | #![feature(abi_custom)]
+  | ^^^^^^^^^^^^^^^^^^^^^^^
+
+Some errors have detailed explanations: E0425, E0554.
+For more information about an error, try `rustc --explain E0425`.
+error: could not compile `compiler_builtins` (lib) due to 7 previous errors
+error: could not compile `compiler_builtins` (lib) due to 7 previous errors
