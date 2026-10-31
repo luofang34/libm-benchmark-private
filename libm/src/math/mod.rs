@@ -181,26 +181,6 @@ mod modf;
 mod modff;
 mod nextafter;
 mod nextafterf;
-// Keep table costs off targets without hosted hardware evidence.
-#[cfg_attr(
-    not(any(
-        all(target_arch = "wasm32", target_os = "unknown"),
-        all(
-            target_arch = "aarch64",
-            target_feature = "neon",
-            any(target_os = "macos", all(target_os = "linux", target_env = "gnu"))
-        ),
-        all(
-            target_arch = "x86_64",
-            target_feature = "sse2",
-            any(
-                all(target_os = "linux", target_env = "gnu"),
-                all(target_os = "windows", target_env = "msvc")
-            )
-        )
-    )),
-    path = "pow_fdlibm.rs"
-)]
 mod pow;
 mod powf;
 mod remainder;
